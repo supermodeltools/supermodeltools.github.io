@@ -59,9 +59,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Copy CNAME to site directory
+	// Copy CNAME and static root files to site directory
 	if cname, err := os.ReadFile("CNAME"); err == nil {
 		os.WriteFile("site/CNAME", cname, 0644)
+	}
+	if vf, err := os.ReadFile("google3f45b72e3ef79ea3.html"); err == nil {
+		os.WriteFile("site/google3f45b72e3ef79ea3.html", vf, 0644)
 	}
 
 	totalRepos := 0
