@@ -2,7 +2,7 @@ name: Build Index
 
 on:
   push:
-    paths: [repos.yaml, generate-index.go]
+    paths: [repos.yaml, generate-index.go, go.mod, go.sum, .github/workflows/build-index.yml]
   workflow_dispatch:
 
 permissions:
@@ -26,11 +26,6 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '1.24'
-
-      - name: Init Go module
-        run: |
-          go mod init generate-index
-          go mod tidy
 
       - name: Generate site
         run: go run generate-index.go
