@@ -79,9 +79,6 @@ func generateSitemap(cfg Config) error {
 	b.WriteString(`<?xml version="1.0" encoding="UTF-8"?>` + "\n")
 	b.WriteString(`<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">` + "\n")
 	for _, cat := range cfg.Categories {
-		if cat.Slug != "supermodel" {
-			continue
-		}
 		for _, repo := range cat.Repos {
 			b.WriteString(fmt.Sprintf("  <sitemap>\n    <loc>%s/%s/sitemap.xml</loc>\n  </sitemap>\n", baseURL, url.PathEscape(repo.Name)))
 		}
