@@ -35,11 +35,6 @@ categories:
         description: "A JavaScript library for building user interfaces"
         pill: "Frontend"
         pill_class: "pill-blue"
-      - name: next.js
-        upstream: vercel/next.js
-        description: "The React Framework"
-        pill: "Frontend"
-        pill_class: "pill-blue"
       - name: vue
         upstream: vuejs/vue
         description: "A progressive JavaScript framework for building UI on the web"
@@ -65,39 +60,14 @@ categories:
         description: "The Python micro framework for building web applications"
         pill: "Backend"
         pill_class: "pill-green"
-      - name: django
-        upstream: django/django
-        description: "The web framework for perfectionists with deadlines"
-        pill: "Backend"
+      - name: fastapi
+        upstream: tiangolo/fastapi
+        description: "Modern, fast web framework for building APIs with Python based on type hints"
+        pill: "Python"
         pill_class: "pill-green"
-      - name: go
-        upstream: golang/go
-        description: "The Go programming language"
-        pill: "Language"
-        pill_class: "pill-accent"
-      - name: rust
-        upstream: rust-lang/rust
-        description: "The Rust programming language"
-        pill: "Language"
-        pill_class: "pill-accent"
-      - name: deno
-        upstream: denoland/deno
-        description: "A modern runtime for JavaScript and TypeScript"
-        pill: "Runtime"
-        pill_class: "pill-accent"
-      - name: bun
-        upstream: oven-sh/bun
-        description: "Incredibly fast JavaScript runtime, bundler, test runner, and package manager"
-        pill: "Runtime"
-        pill_class: "pill-accent"
       - name: langchain
         upstream: langchain-ai/langchain
         description: "Build context-aware reasoning applications"
-        pill: "AI/ML"
-        pill_class: "pill-orange"
-      - name: transformers
-        upstream: huggingface/transformers
-        description: "State-of-the-art Machine Learning for PyTorch, TensorFlow, and JAX"
         pill: "AI/ML"
         pill_class: "pill-orange"
       - name: anthropic-sdk-python
@@ -105,11 +75,11 @@ categories:
         description: "The official Python library for the Anthropic API"
         pill: "AI/ML"
         pill_class: "pill-orange"
-      - name: supabase
-        upstream: supabase/supabase
-        description: "The open source Firebase alternative"
-        pill: "Database"
-        pill_class: "pill-green"
+      - name: scikit-learn
+        upstream: scikit-learn/scikit-learn
+        description: "Machine learning in Python — simple and efficient tools for data analysis"
+        pill: "AI/ML"
+        pill_class: "pill-orange"
       - name: drizzle-orm
         upstream: drizzle-team/drizzle-orm
         description: "TypeScript ORM that lets you think in SQL"
@@ -130,31 +100,21 @@ categories:
         description: "The web framework for content-driven websites"
         pill: "Meta-framework"
         pill_class: "pill-accent"
-      - name: spring-boot
-        upstream: spring-projects/spring-boot
-        description: "Build production-ready Spring applications with minimal configuration"
-        pill: "Java"
-        pill_class: "pill-orange"
-      - name: spring-framework
-        upstream: spring-projects/spring-framework
-        description: "The foundational framework for enterprise Java development"
-        pill: "Java"
-        pill_class: "pill-orange"
-      - name: guava
-        upstream: google/guava
-        description: "Google core libraries for Java — collections, caching, concurrency, and more"
-        pill: "Java"
-        pill_class: "pill-orange"
-      - name: elasticsearch
-        upstream: elastic/elasticsearch
-        description: "Free and open distributed search and analytics engine"
-        pill: "Java"
-        pill_class: "pill-orange"
-      - name: kafka
-        upstream: apache/kafka
-        description: "Distributed event streaming platform for high-performance data pipelines"
-        pill: "Java"
-        pill_class: "pill-orange"
+      - name: trpc
+        upstream: trpc/trpc
+        description: "End-to-end typesafe APIs made easy"
+        pill: "TypeScript"
+        pill_class: "pill-blue"
+      - name: zod
+        upstream: colinhacks/zod
+        description: "TypeScript-first schema validation with static type inference"
+        pill: "TypeScript"
+        pill_class: "pill-blue"
+      - name: requests
+        upstream: psf/requests
+        description: "A simple, yet elegant, HTTP library for Python"
+        pill: "Python"
+        pill_class: "pill-green"
       - name: RxJava
         upstream: ReactiveX/RxJava
         description: "Reactive extensions for the JVM — composable asynchronous programming"
@@ -175,51 +135,6 @@ categories:
         description: "Asynchronous event-driven network application framework for Java"
         pill: "Java"
         pill_class: "pill-orange"
-      - name: flink
-        upstream: apache/flink
-        description: "Stream processing framework for distributed, high-performing data pipelines"
-        pill: "Java"
-        pill_class: "pill-orange"
-      - name: fastapi
-        upstream: tiangolo/fastapi
-        description: "Modern, fast web framework for building APIs with Python based on type hints"
-        pill: "Python"
-        pill_class: "pill-green"
-      - name: pytorch
-        upstream: pytorch/pytorch
-        description: "Tensors and dynamic neural networks in Python with strong GPU acceleration"
-        pill: "AI/ML"
-        pill_class: "pill-orange"
-      - name: scikit-learn
-        upstream: scikit-learn/scikit-learn
-        description: "Machine learning in Python — simple and efficient tools for data analysis"
-        pill: "AI/ML"
-        pill_class: "pill-orange"
-      - name: requests
-        upstream: psf/requests
-        description: "A simple, yet elegant, HTTP library for Python"
-        pill: "Python"
-        pill_class: "pill-green"
-      - name: nest
-        upstream: nestjs/nest
-        description: "A progressive Node.js framework for building scalable server-side applications"
-        pill: "Backend"
-        pill_class: "pill-green"
-      - name: prisma
-        upstream: prisma/prisma
-        description: "Next-generation ORM for Node.js and TypeScript"
-        pill: "Database"
-        pill_class: "pill-green"
-      - name: trpc
-        upstream: trpc/trpc
-        description: "End-to-end typesafe APIs made easy"
-        pill: "TypeScript"
-        pill_class: "pill-blue"
-      - name: zod
-        upstream: colinhacks/zod
-        description: "TypeScript-first schema validation with static type inference"
-        pill: "TypeScript"
-        pill_class: "pill-blue"
       - name: gin
         upstream: gin-gonic/gin
         description: "The fastest full-featured HTTP web framework for Go"
@@ -240,18 +155,8 @@ categories:
         description: "Next generation frontend tooling — fast, lean, and flexible"
         pill: "Build Tool"
         pill_class: "pill-blue"
-      - name: webpack
-        upstream: webpack/webpack
-        description: "A bundler for JavaScript and friends"
-        pill: "Build Tool"
-        pill_class: "pill-blue"
       - name: terraform
         upstream: hashicorp/terraform
         description: "Infrastructure as code — safely and predictably provision infrastructure"
-        pill: "DevOps"
-        pill_class: "pill-green"
-      - name: grafana
-        upstream: grafana/grafana
-        description: "The open and composable observability and data visualization platform"
         pill: "DevOps"
         pill_class: "pill-green"
