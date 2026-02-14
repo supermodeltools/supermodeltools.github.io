@@ -2,6 +2,7 @@ name: Build Index
 
 on:
   push:
+    branches: [main]
     paths:
       - 'data/**'
       - 'templates/**'
@@ -34,6 +35,9 @@ jobs:
 
       - name: Install pssg
         run: go install github.com/greynewell/pssg/cmd/pssg@v0.3.0
+
+      - name: Add Go bin to PATH
+        run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
       - name: Build site
         run: pssg build -config pssg.yaml
