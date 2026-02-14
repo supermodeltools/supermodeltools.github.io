@@ -2,7 +2,12 @@ name: Build Index
 
 on:
   push:
-    paths: [repos.yaml, generate-index.go, go.mod, go.sum, .github/workflows/build-index.yml]
+    paths:
+      - 'data/**'
+      - 'templates/**'
+      - 'pssg.yaml'
+      - 'static/**'
+      - '.github/workflows/build-index.yml'
   workflow_dispatch:
 
 permissions:
@@ -27,8 +32,11 @@ jobs:
         with:
           go-version: '1.24'
 
-      - name: Generate site
-        run: go run generate-index.go
+      - name: Install pssg
+        run: go install github.com/greynewell/pssg/cmd/pssg@v0.3.0
+
+      - name: Build site
+        run: pssg build -config pssg.yaml
 
       - uses: actions/upload-pages-artifact@v3
         with:

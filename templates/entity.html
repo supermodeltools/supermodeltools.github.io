@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{field .Entity "title"}} — {{.Site.Name}}</title>
+  <meta name="description" content="Architecture documentation for {{field .Entity "title"}}. {{field .Entity "description"}}">
+  <link rel="canonical" href="{{.CanonicalURL}}">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{field .Entity "title"}} — Architecture Docs">
+  <meta property="og:description" content="{{field .Entity "description"}}">
+  <meta property="og:url" content="{{.CanonicalURL}}">
+  <meta property="og:site_name" content="{{.Site.Name}}">
+  {{if .OG.ImageURL}}<meta property="og:image" content="{{.OG.ImageURL}}">{{end}}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{field .Entity "title"}} — Architecture Docs">
+  <meta name="twitter:description" content="{{field .Entity "description"}}">
+  {{if .OG.ImageURL}}<meta name="twitter:image" content="{{.OG.ImageURL}}">{{end}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  {{.JsonLD}}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-brand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+        {{.Site.Name}}
+      </a>
+      <nav class="site-nav">
+        <a href="https://supermodeltools.com">Website</a>
+        <a href="https://github.com/supermodeltools">GitHub</a>
+        <a href="https://x.com/supermodeltools">X</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      {{if .Breadcrumbs}}
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        {{range $i, $b := .Breadcrumbs}}{{if $i}}<span>/</span>{{end}}{{if $b.URL}}<a href="{{$b.URL}}">{{$b.Name}}</a>{{else}}{{$b.Name}}{{end}}{{end}}
+      </nav>
+      {{end}}
+
+      <div class="entity-header">
+        <h1>{{field .Entity "title"}}</h1>
+        <p>{{field .Entity "description"}}</p>
+        <div class="card-meta" style="margin-top: 16px;">
+          <span class="pill{{if field .Entity "pill_class"}} {{field .Entity "pill_class"}}{{end}}">{{field .Entity "pill"}}</span>
+          {{if hasField .Entity "upstream"}}<img class="star-badge" src="https://img.shields.io/github/stars/{{field .Entity "upstream"}}?style=flat&logo=github&color=818cf8&labelColor=1a1d27" alt="GitHub Stars" loading="lazy">{{end}}
+        </div>
+        <div class="entity-actions">
+          <a href="{{field .Entity "docs_url"}}" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            View Architecture Docs
+          </a>
+          {{if hasField .Entity "upstream"}}
+          <a href="https://github.com/{{field .Entity "upstream"}}" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View on GitHub
+          </a>
+          {{end}}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built with <a href="https://github.com/greynewell/pssg">pssg</a>, <a href="https://supermodeltools.com">supermodeltools</a>, and <a href="https://github.com/supermodeltools/graph2md">graph2md</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{.Entry.Name}} — {{.Site.Name}}</title>
+  <meta name="description" content="{{.OG.Description}}">
+  <link rel="canonical" href="{{.OG.URL}}">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{.OG.Title}}">
+  <meta property="og:description" content="{{.OG.Description}}">
+  <meta property="og:url" content="{{.OG.URL}}">
+  <meta property="og:site_name" content="{{.Site.Name}}">
+  {{if .OG.ImageURL}}<meta property="og:image" content="{{.OG.ImageURL}}">{{end}}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{.OG.Title}}">
+  <meta name="twitter:description" content="{{.OG.Description}}">
+  {{if .OG.ImageURL}}<meta name="twitter:image" content="{{.OG.ImageURL}}">{{end}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  {{.JsonLD}}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-brand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+        {{.Site.Name}}
+      </a>
+      <nav class="site-nav">
+        <a href="https://supermodeltools.com">Website</a>
+        <a href="https://github.com/supermodeltools">GitHub</a>
+        <a href="https://x.com/supermodeltools">X</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      {{if .Breadcrumbs}}
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        {{range $i, $b := .Breadcrumbs}}{{if $i}}<span>/</span>{{end}}{{if $b.URL}}<a href="{{$b.URL}}">{{$b.Name}}</a>{{else}}{{$b.Name}}{{end}}{{end}}
+      </nav>
+      {{end}}
+
+      <div class="hero" style="padding-bottom: 32px;">
+        <h1>{{.Entry.Name}}</h1>
+        <p>{{len .Entities}} repositories with architecture documentation</p>
+      </div>
+
+      <div class="section">
+        <div class="card-grid">
+          {{range .Entities}}
+          <a href="{{field . "docs_url"}}" class="card">
+            <div class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              {{field . "title"}}
+            </div>
+            <div class="card-desc">{{field . "description"}}</div>
+            <div class="card-meta">
+              <span class="pill{{if field . "pill_class"}} {{field . "pill_class"}}{{end}}">{{field . "pill"}}</span>
+              {{if hasField . "upstream"}}<img class="star-badge" src="https://img.shields.io/github/stars/{{field . "upstream"}}?style=flat&logo=github&color=818cf8&labelColor=1a1d27" alt="GitHub Stars" loading="lazy">{{end}}
+            </div>
+          </a>
+          {{end}}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built with <a href="https://github.com/greynewell/pssg">pssg</a>, <a href="https://supermodeltools.com">supermodeltools</a>, and <a href="https://github.com/supermodeltools/graph2md">graph2md</a></p>
+    </div>
+  </footer>
+</body>
+</html>

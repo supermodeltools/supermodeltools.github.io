@@ -1,0 +1,105 @@
+site:
+  name: "Supermodel Tools"
+  base_url: "https://repos.supermodeltools.com"
+  description: "Architecture documentation for popular open source repositories. Browse code graphs, dependency diagrams, and codebase structure."
+  language: "en"
+  version: "0.3.0"
+  author: "Supermodel Tools"
+  author_url: "https://supermodeltools.com"
+  license: "MIT"
+  cname: "repos.supermodeltools.com"
+  repo_url: "https://github.com/supermodeltools"
+
+paths:
+  data: "./data"
+  templates: "./templates"
+  output: "./site"
+  cache: ".cache"
+  static: "./static"
+
+data:
+  format: "markdown"
+  entity_type: "repository"
+  entity_slug:
+    source: "filename"
+
+taxonomies:
+  - name: "category"
+    label: "Categories"
+    label_singular: "Category"
+    field: "category"
+    multi_value: false
+    min_entities: 1
+    hub_title: "{{.Name}} Repositories"
+    hub_meta_description: "Architecture documentation for {{.Name}} repositories. Browse code graphs, dependency diagrams, and codebase structure."
+    hub_subheading: "{{.Count}} repositories with architecture documentation"
+
+  - name: "pill"
+    label: "Types"
+    label_singular: "Type"
+    field: "pill"
+    multi_value: false
+    min_entities: 1
+    hub_title: "{{.Name}} Repositories"
+    hub_meta_description: "Browse {{.Name}} repositories with architecture documentation."
+
+pagination:
+  entities_per_page: 100
+
+structured_data:
+  entity_type: "SoftwareSourceCode"
+  field_mappings:
+    name: "title"
+    description: "description"
+  extra_keywords:
+    - "architecture documentation"
+    - "code graph"
+    - "dependency diagram"
+    - "codebase structure"
+  date_published: "2025-01-01"
+  homepage_schemas:
+    - "WebSite"
+    - "ItemList"
+  entity_schemas:
+    - "SoftwareSourceCode"
+    - "BreadcrumbList"
+  hub_schemas:
+    - "CollectionPage"
+    - "BreadcrumbList"
+  index_schemas:
+    - "CollectionPage"
+
+sitemap:
+  max_urls_per_file: 50000
+  priorities:
+    homepage: 1.0
+    entity: 0.7
+    taxonomy_index: 0.8
+    hub_page_1: 0.6
+    hub_page_n: 0.5
+    letter_page: 0.4
+  change_freqs:
+    homepage: "weekly"
+    entity: "monthly"
+    taxonomy_index: "weekly"
+    hub_page_1: "weekly"
+    hub_page_n: "monthly"
+    letter_page: "monthly"
+
+robots:
+  allow_all: true
+  extra_bots:
+    - "GPTBot"
+    - "ClaudeBot"
+    - "PerplexityBot"
+    - "GoogleOther"
+
+templates:
+  entity: "entity.html"
+  homepage: "index.html"
+  hub: "hub.html"
+  taxonomy_index: "taxonomy_index.html"
+
+output:
+  clean_build: false
+  extract_css: "styles.css"

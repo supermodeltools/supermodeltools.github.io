@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{.Site.Name}} — Architecture Docs</title>
+  <meta name="description" content="{{.Site.Description}}">
+  <link rel="canonical" href="{{.Site.BaseURL}}/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{.Site.Name}} — Architecture Docs">
+  <meta property="og:description" content="{{.Site.Description}}">
+  <meta property="og:url" content="{{.Site.BaseURL}}/">
+  <meta property="og:site_name" content="{{.Site.Name}}">
+  {{if .OG.ImageURL}}<meta property="og:image" content="{{.OG.ImageURL}}">{{end}}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{.Site.Name}} — Architecture Docs">
+  <meta name="twitter:description" content="{{.Site.Description}}">
+  {{if .OG.ImageURL}}<meta name="twitter:image" content="{{.OG.ImageURL}}">{{end}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  {{.JsonLD}}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-brand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+        {{.Site.Name}}
+      </a>
+      <nav class="site-nav">
+        <a href="https://supermodeltools.com">Website</a>
+        <a href="https://github.com/supermodeltools">GitHub</a>
+        <a href="https://x.com/supermodeltools">X</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="hero">
+        <h1>Architecture Docs</h1>
+        <p>Browse architecture documentation, dependency graphs, and code structure for popular open source repositories.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">{{.EntityCount}}</div>
+            <div class="label">Repositories</div>
+          </div>
+          {{range .Taxonomies}}{{if eq .Name "category"}}{{range .Entries}}
+          <div class="hero-stat">
+            <div class="num">{{len .Entities}}</div>
+            <div class="label">{{.Name}}</div>
+          </div>
+          {{end}}{{end}}{{end}}
+        </div>
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" class="search-input" id="search" placeholder="Search repositories..." autocomplete="off">
+        </div>
+      </div>
+
+      <div id="no-results" class="no-results">No repositories match your search.</div>
+
+      {{range .Taxonomies}}{{if eq .Name "category"}}
+      {{range .Entries}}{{if eq .Slug "supermodel-open-source"}}
+      <div class="section" data-section="{{.Slug}}">
+        <h2 class="section-title">{{.Name}}</h2>
+        <div class="card-grid">
+          {{range .Entities}}
+          <a href="{{field . "docs_url"}}" class="card" data-name="{{field . "title"}}" data-desc="{{field . "description"}}">
+            <div class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              {{field . "title"}}
+            </div>
+            <div class="card-desc">{{field . "description"}}</div>
+            <div class="card-meta">
+              <span class="pill{{if field . "pill_class"}} {{field . "pill_class"}}{{end}}">{{field . "pill"}}</span>
+              {{if hasField . "upstream"}}<img class="star-badge" src="https://img.shields.io/github/stars/{{field . "upstream"}}?style=flat&logo=github&color=818cf8&labelColor=1a1d27" alt="GitHub Stars" loading="lazy">{{end}}
+            </div>
+          </a>
+          {{end}}
+        </div>
+      </div>
+      {{end}}{{end}}
+      {{range .Entries}}{{if ne .Slug "supermodel-open-source"}}
+      <div class="section" data-section="{{.Slug}}">
+        <h2 class="section-title">{{.Name}}</h2>
+        <div class="card-grid">
+          {{range .Entities}}
+          <a href="{{field . "docs_url"}}" class="card" data-name="{{field . "title"}}" data-desc="{{field . "description"}}">
+            <div class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              {{field . "title"}}
+            </div>
+            <div class="card-desc">{{field . "description"}}</div>
+            <div class="card-meta">
+              <span class="pill{{if field . "pill_class"}} {{field . "pill_class"}}{{end}}">{{field . "pill"}}</span>
+              {{if hasField . "upstream"}}<img class="star-badge" src="https://img.shields.io/github/stars/{{field . "upstream"}}?style=flat&logo=github&color=818cf8&labelColor=1a1d27" alt="GitHub Stars" loading="lazy">{{end}}
+            </div>
+          </a>
+          {{end}}
+        </div>
+      </div>
+      {{end}}{{end}}
+      {{end}}{{end}}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built with <a href="https://github.com/greynewell/pssg">pssg</a>, <a href="https://supermodeltools.com">supermodeltools</a>, and <a href="https://github.com/supermodeltools/graph2md">graph2md</a></p>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    var input = document.getElementById('search');
+    var cards = document.querySelectorAll('.card');
+    var sections = document.querySelectorAll('.section');
+    var noResults = document.getElementById('no-results');
+
+    input.addEventListener('input', function() {
+      var q = this.value.toLowerCase().trim();
+      var anyVisible = false;
+
+      cards.forEach(function(card) {
+        var name = (card.getAttribute('data-name') || '').toLowerCase();
+        var desc = (card.getAttribute('data-desc') || '').toLowerCase();
+        var match = !q || name.indexOf(q) !== -1 || desc.indexOf(q) !== -1;
+        card.classList.toggle('hidden', !match);
+        if (match) anyVisible = true;
+      });
+
+      sections.forEach(function(section) {
+        var visibleCards = section.querySelectorAll('.card:not(.hidden)');
+        section.style.display = visibleCards.length ? '' : 'none';
+      });
+
+      noResults.style.display = anyVisible ? 'none' : 'block';
+    });
+  })();
+  </script>
+</body>
+</html>
