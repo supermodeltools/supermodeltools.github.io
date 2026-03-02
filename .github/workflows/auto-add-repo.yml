@@ -1,0 +1,328 @@
+name: Auto-add Requested Repo
+
+on:
+  issues:
+    types: [opened, labeled]
+
+concurrency:
+  group: add-repo
+  cancel-in-progress: false
+
+jobs:
+  process-request:
+    if: contains(github.event.issue.labels.*.name, 'repo-request')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    env:
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse repo URL from issue
+        id: parse
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          REPO_URL=$(echo "$ISSUE_BODY" | grep -oE 'https://github\.com/[a-zA-Z0-9._-]+/[a-zA-Z0-9._-]+' | head -1)
+
+          if [ -z "$REPO_URL" ]; then
+            echo "error=true" >> "$GITHUB_OUTPUT"
+            echo "error_msg=No valid GitHub repository URL found in the issue." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Normalize: strip trailing slashes or .git
+          REPO_URL=$(echo "$REPO_URL" | sed 's|\.git$||; s|/$||')
+          UPSTREAM=$(echo "$REPO_URL" | sed 's|https://github.com/||')
+          REPO_NAME=$(echo "$UPSTREAM" | cut -d'/' -f2)
+
+          echo "repo_url=$REPO_URL" >> "$GITHUB_OUTPUT"
+          echo "upstream=$UPSTREAM" >> "$GITHUB_OUTPUT"
+          echo "repo_name=$REPO_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Validate repository
+        if: steps.parse.outputs.error != 'true'
+        id: validate
+        env:
+          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+          UPSTREAM: ${{ steps.parse.outputs.upstream }}
+          REPO_NAME: ${{ steps.parse.outputs.repo_name }}
+        run: |
+          # 1. Check repo exists and is accessible
+          if ! REPO_JSON=$(gh api "repos/$UPSTREAM" 2>/dev/null); then
+            echo "error=true" >> "$GITHUB_OUTPUT"
+            echo "error_msg=Repository \`$UPSTREAM\` not found or not accessible." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # 2. Must be public
+          IS_PRIVATE=$(echo "$REPO_JSON" | jq -r '.private')
+          if [ "$IS_PRIVATE" = "true" ]; then
+            echo "error=true" >> "$GITHUB_OUTPUT"
+            echo "error_msg=Repository is private. Only public repositories can be added." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # 3. Must not be archived
+          IS_ARCHIVED=$(echo "$REPO_JSON" | jq -r '.archived')
+          if [ "$IS_ARCHIVED" = "true" ]; then
+            echo "error=true" >> "$GITHUB_OUTPUT"
+            echo "error_msg=Repository is archived." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # 4. Must not be empty
+          SIZE=$(echo "$REPO_JSON" | jq -r '.size')
+          if [ "$SIZE" = "0" ]; then
+            echo "error=true" >> "$GITHUB_OUTPUT"
+            echo "error_msg=Repository appears to be empty." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # 5. Must not already be listed
+          if grep -q "^      - name: ${REPO_NAME}$" repos.yaml; then
+            echo "error=true" >> "$GITHUB_OUTPUT"
+            echo "error_msg=Repository \`$REPO_NAME\` is already listed on the homepage." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # 6. Must not conflict with an existing org repo that isn't a fork of this upstream
+          if gh api "repos/supermodeltools/$REPO_NAME" &>/dev/null; then
+            EXISTING_PARENT=$(gh api "repos/supermodeltools/$REPO_NAME" --jq '.parent.full_name // ""')
+            if [ -n "$EXISTING_PARENT" ] && [ "$EXISTING_PARENT" != "$UPSTREAM" ]; then
+              echo "error=true" >> "$GITHUB_OUTPUT"
+              echo "error_msg=A repo named \`$REPO_NAME\` already exists in the org as a fork of \`$EXISTING_PARENT\`, not \`$UPSTREAM\`." >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+
+          # Extract metadata
+          DESCRIPTION=$(echo "$REPO_JSON" | jq -r '.description // "No description provided"' | head -c 200)
+          LANGUAGE=$(echo "$REPO_JSON" | jq -r '.language // "Unknown"')
+          STARS=$(echo "$REPO_JSON" | jq -r '.stargazers_count')
+
+          echo "valid=true" >> "$GITHUB_OUTPUT"
+          echo "stars=$STARS" >> "$GITHUB_OUTPUT"
+          echo "language=$LANGUAGE" >> "$GITHUB_OUTPUT"
+          {
+            echo "description<<DESCEOF"
+            echo "$DESCRIPTION"
+            echo "DESCEOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Map language to pill
+        if: steps.validate.outputs.valid == 'true'
+        id: pill
+        env:
+          LANGUAGE: ${{ steps.validate.outputs.language }}
+        run: |
+          case "$LANGUAGE" in
+            JavaScript)  PILL="JavaScript";  PILL_CLASS="pill-blue"   ;;
+            TypeScript)  PILL="TypeScript";  PILL_CLASS="pill-blue"   ;;
+            Python)      PILL="Python";      PILL_CLASS="pill-green"  ;;
+            Go)          PILL="Go";          PILL_CLASS="pill-accent" ;;
+            Rust)        PILL="Rust";        PILL_CLASS="pill-accent" ;;
+            Java)        PILL="Java";        PILL_CLASS="pill-orange" ;;
+            Kotlin)      PILL="Kotlin";      PILL_CLASS="pill-orange" ;;
+            Scala)       PILL="Scala";       PILL_CLASS="pill-orange" ;;
+            Ruby)        PILL="Ruby";        PILL_CLASS="pill-orange" ;;
+            C)           PILL="C";           PILL_CLASS="pill-accent" ;;
+            C++)         PILL="C++";         PILL_CLASS="pill-accent" ;;
+            C#)          PILL="C#";          PILL_CLASS="pill-green"  ;;
+            Swift)       PILL="Swift";       PILL_CLASS="pill-orange" ;;
+            PHP)         PILL="PHP";         PILL_CLASS="pill-blue"   ;;
+            CSS)         PILL="CSS";         PILL_CLASS="pill-blue"   ;;
+            Shell|Bash)  PILL="DevOps";      PILL_CLASS="pill-green"  ;;
+            HCL)         PILL="DevOps";      PILL_CLASS="pill-green"  ;;
+            Jupyter*)    PILL="AI/ML";       PILL_CLASS="pill-orange" ;;
+            *)           PILL="$LANGUAGE";   PILL_CLASS="pill-blue"   ;;
+          esac
+          echo "pill=$PILL" >> "$GITHUB_OUTPUT"
+          echo "pill_class=$PILL_CLASS" >> "$GITHUB_OUTPUT"
+
+      - name: Fork and setup arch-docs
+        if: steps.validate.outputs.valid == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+          SUPERMODEL_API_KEY: ${{ secrets.SUPERMODEL_API_KEY }}
+          UPSTREAM: ${{ steps.parse.outputs.upstream }}
+          REPO_NAME: ${{ steps.parse.outputs.repo_name }}
+        run: |
+          ORG="supermodeltools"
+          FORK="${ORG}/${REPO_NAME}"
+
+          # 1. Fork (skip if already exists)
+          if gh repo view "$FORK" &>/dev/null; then
+            echo "Fork $FORK already exists, skipping fork"
+          else
+            echo "Forking $UPSTREAM into $ORG..."
+            gh repo fork "$UPSTREAM" --org "$ORG" --clone=false
+            echo "Waiting for fork to be ready..."
+            sleep 5
+          fi
+
+          # 2. Set the SUPERMODEL_API_KEY secret
+          echo "Setting SUPERMODEL_API_KEY secret..."
+          gh secret set SUPERMODEL_API_KEY --repo "$FORK" --body "$SUPERMODEL_API_KEY"
+
+          # 3. Detect default branch
+          DEFAULT_BRANCH=$(gh api "repos/$FORK" --jq '.default_branch')
+          echo "Default branch: $DEFAULT_BRANCH"
+
+          # 4. Push the arch-docs workflow
+          WORKFLOW_CONTENT='name: Architecture Docs
+
+          on:
+            push:
+              branches: [main, master]
+            workflow_dispatch:
+
+          permissions:
+            contents: write
+            pages: write
+            id-token: write
+
+          concurrency:
+            group: pages
+            cancel-in-progress: true
+
+          jobs:
+            build-and-deploy:
+              runs-on: ubuntu-latest
+              environment:
+                name: github-pages
+                url: ${{ steps.deploy.outputs.page_url }}
+              steps:
+                - uses: actions/checkout@v4
+
+                - uses: supermodeltools/arch-docs@main
+                  id: docs
+                  with:
+                    supermodel-api-key: ${{ secrets.SUPERMODEL_API_KEY }}
+
+                - uses: actions/configure-pages@v5
+
+                - uses: actions/upload-pages-artifact@v3
+                  with:
+                    path: ./arch-docs-output
+
+                - uses: actions/deploy-pages@v4
+                  id: deploy'
+
+          # Dedent the workflow content (remove leading spaces from heredoc)
+          WORKFLOW_CONTENT=$(echo "$WORKFLOW_CONTENT" | sed 's/^          //')
+          ENCODED=$(echo -n "$WORKFLOW_CONTENT" | base64 -w0)
+
+          EXISTING_SHA=$(gh api "repos/$FORK/contents/.github/workflows/arch-docs.yml" --jq '.sha' 2>/dev/null || echo "")
+
+          if [ -n "$EXISTING_SHA" ]; then
+            gh api --method PUT "repos/$FORK/contents/.github/workflows/arch-docs.yml" \
+              -f message="Add arch-docs workflow" \
+              -f content="$ENCODED" \
+              -f branch="$DEFAULT_BRANCH" \
+              -f sha="$EXISTING_SHA" \
+              --silent
+          else
+            gh api --method PUT "repos/$FORK/contents/.github/workflows/arch-docs.yml" \
+              -f message="Add arch-docs workflow" \
+              -f content="$ENCODED" \
+              -f branch="$DEFAULT_BRANCH" \
+              --silent
+          fi
+
+          # 5. Enable GitHub Pages
+          echo "Enabling GitHub Pages..."
+          gh api --method POST "repos/$FORK/pages" \
+            -f build_type="workflow" \
+            --silent 2>/dev/null || \
+          gh api --method PUT "repos/$FORK/pages" \
+            -f build_type="workflow" \
+            --silent 2>/dev/null || \
+          echo "Pages may already be configured"
+
+          # 6. Trigger the arch-docs workflow
+          echo "Triggering arch-docs workflow..."
+          gh workflow run arch-docs.yml --repo "$FORK" --ref "$DEFAULT_BRANCH" 2>/dev/null || \
+            echo "Workflow trigger pending — will run on next push"
+
+          echo "Setup complete for $FORK"
+
+      - name: Add repo to repos.yaml
+        if: steps.validate.outputs.valid == 'true'
+        env:
+          REPO_NAME: ${{ steps.parse.outputs.repo_name }}
+          UPSTREAM: ${{ steps.parse.outputs.upstream }}
+          DESCRIPTION: ${{ steps.validate.outputs.description }}
+          PILL: ${{ steps.pill.outputs.pill }}
+          PILL_CLASS: ${{ steps.pill.outputs.pill_class }}
+        run: |
+          # Use yq to append to the Community category (index 1)
+          yq -i '.categories[1].repos += [{
+            "name": strenv(REPO_NAME),
+            "upstream": strenv(UPSTREAM),
+            "description": strenv(DESCRIPTION),
+            "pill": strenv(PILL),
+            "pill_class": strenv(PILL_CLASS)
+          }]' repos.yaml
+
+          echo "Added $REPO_NAME to repos.yaml"
+          tail -8 repos.yaml
+
+      - name: Commit and push
+        if: steps.validate.outputs.valid == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+          REPO_NAME: ${{ steps.parse.outputs.repo_name }}
+          UPSTREAM: ${{ steps.parse.outputs.upstream }}
+        run: |
+          # Pull latest in case another request was processed concurrently
+          git pull --rebase origin main
+
+          git config user.name "supermodel-bot"
+          git config user.email "bot@supermodeltools.com"
+          git add repos.yaml
+          git commit -m "Add ${REPO_NAME} to community repos (closes #${ISSUE_NUMBER})"
+
+          # Push with BOT_TOKEN so it triggers the build-index workflow
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git push origin main
+
+      - name: Comment and close issue (success)
+        if: steps.validate.outputs.valid == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_NAME: ${{ steps.parse.outputs.repo_name }}
+          UPSTREAM: ${{ steps.parse.outputs.upstream }}
+          STARS: ${{ steps.validate.outputs.stars }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --body "$(cat <<EOF
+          ✅ **Done!** \`$UPSTREAM\` has been added automatically.
+
+          | | |
+          |---|---|
+          | **Repo** | [$UPSTREAM](https://github.com/$UPSTREAM) |
+          | **Stars** | $STARS |
+          | **Arch docs** | [repos.supermodeltools.com/$REPO_NAME](https://repos.supermodeltools.com/$REPO_NAME/) |
+          | **Homepage** | [repos.supermodeltools.com](https://repos.supermodeltools.com/) |
+
+          The architecture docs are being generated now. They'll be live at the link above shortly.
+          EOF
+          )"
+          gh issue close "$ISSUE_NUMBER" --reason completed
+
+      - name: Comment on issue (validation failed)
+        if: steps.parse.outputs.error == 'true' || steps.validate.outputs.error == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PARSE_ERROR: ${{ steps.parse.outputs.error_msg }}
+          VALIDATE_ERROR: ${{ steps.validate.outputs.error_msg }}
+        run: |
+          ERROR_MSG="${PARSE_ERROR:-$VALIDATE_ERROR}"
+          gh issue comment "$ISSUE_NUMBER" --body "❌ **Could not add this repository.**
+
+          $ERROR_MSG
+
+          Please fix the issue and open a new request."
+          gh issue close "$ISSUE_NUMBER" --reason "not_planned"
