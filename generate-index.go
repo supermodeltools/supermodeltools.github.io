@@ -196,18 +196,6 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
 .site-nav { display: flex; gap: 16px; align-items: center; }
 .site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
 .site-nav a:hover { color: var(--text); text-decoration: none; }
-.request-btn {
-  color: var(--accent-light) !important;
-  border: 1px solid var(--accent);
-  border-radius: var(--radius);
-  padding: 6px 12px;
-  transition: background 0.2s, color 0.2s;
-}
-.request-btn:hover {
-  background: var(--accent);
-  color: #fff !important;
-  text-decoration: none !important;
-}
 .hero {
   padding: 64px 0 48px;
   text-align: center;
@@ -395,14 +383,21 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
   pointer-events: auto;
 }
 .submit-btn.active:hover { background: var(--accent-light); }
-.submit-preview {
-  margin-top: 8px;
+.submit-btn.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.submit-feedback {
+  margin-top: 10px;
   font-size: 13px;
-  color: var(--green);
   font-family: var(--mono);
   display: none;
 }
-.submit-preview.visible { display: block; }
+.submit-feedback.visible { display: block; }
+.submit-feedback.preview { color: var(--text-muted); }
+.submit-feedback.success { color: var(--green); }
+.submit-feedback.success a { color: var(--green); text-decoration: underline; }
+.submit-feedback.error { color: var(--red); }
 @media (max-width: 768px) {
   .container { padding: 0 16px; }
   .hero { padding: 40px 0 32px; }
@@ -432,7 +427,6 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
         <a href="https://supermodeltools.com">Website</a>
         <a href="https://github.com/supermodeltools">GitHub</a>
         <a href="https://x.com/supermodeltools">X</a>
-        <a href="https://github.com/supermodeltools/supermodeltools.github.io/issues/new?template=request-repo.yml" class="request-btn">+ Request a Repo</a>
       </nav>
     </div>
   </header>
@@ -464,7 +458,7 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
             <input type="text" class="submit-input" id="submit-url" placeholder="https://github.com/owner/repo" autocomplete="off" spellcheck="false">
             <button class="submit-btn" id="submit-btn" type="button">Request</button>
           </div>
-          <div class="submit-preview" id="submit-preview"></div>
+          <div class="submit-feedback" id="submit-feedback"></div>
         </div>
       </div>
 
@@ -510,10 +504,10 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
     var noResults = document.getElementById('no-results');
     var submitInput = document.getElementById('submit-url');
     var submitBtn = document.getElementById('submit-btn');
-    var submitPreview = document.getElementById('submit-preview');
+    var feedback = document.getElementById('submit-feedback');
     var noResultsRequest = document.getElementById('no-results-request');
 
-    var issueBase = 'https://github.com/supermodeltools/supermodeltools.github.io/issues/new?template=request-repo.yml';
+    var API_URL = '/api/request';
 
     // --- Search ---
     searchInput.addEventListener('input', function() {
@@ -546,36 +540,71 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
       return null;
     }
 
+    function showFeedback(msg, type) {
+      feedback.className = 'submit-feedback visible ' + type;
+      feedback.innerHTML = msg;
+    }
+
     submitInput.addEventListener('input', function() {
       var parsed = parseRepo(this.value);
       if (parsed) {
         var name = parsed.split('/')[1];
-        submitPreview.textContent = '\u2192 Docs will be at repos.supermodeltools.com/' + name + '/';
-        submitPreview.classList.add('visible');
+        showFeedback('\u2192 repos.supermodeltools.com/' + name + '/', 'preview');
         submitBtn.classList.add('active');
       } else {
-        submitPreview.classList.remove('visible');
+        feedback.className = 'submit-feedback';
         submitBtn.classList.remove('active');
       }
     });
 
-    function submitRequest() {
+    async function submitRequest() {
       var parsed = parseRepo(submitInput.value);
       if (!parsed) return;
+
       var repoUrl = 'https://github.com/' + parsed;
       var name = parsed.split('/')[1];
-      var url = issueBase
-        + '&repo_url=' + encodeURIComponent(repoUrl)
-        + '&title=' + encodeURIComponent('[Repo Request] ' + name);
-      window.open(url, '_blank');
+
+      // Loading state
+      submitBtn.classList.add('loading');
+      submitBtn.textContent = 'Submitting...';
+      showFeedback('Setting up ' + name + '...', 'preview');
+
+      try {
+        var resp = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: repoUrl }),
+        });
+        var data = await resp.json();
+
+        if (!resp.ok || !data.success) {
+          showFeedback(data.error || 'Something went wrong. Please try again.', 'error');
+          submitBtn.classList.remove('loading');
+          submitBtn.textContent = 'Request';
+          return;
+        }
+
+        // Success — show the link, clear the input
+        showFeedback(
+          '\u2713 Submitted! Docs will be generated at <a href="' + data.docs_url + '">' +
+          'repos.supermodeltools.com/' + name + '/</a>', 'success'
+        );
+        submitInput.value = '';
+        submitBtn.classList.remove('active', 'loading');
+        submitBtn.textContent = 'Request';
+      } catch (e) {
+        showFeedback('Network error. Please try again.', 'error');
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = 'Request';
+      }
     }
 
     submitBtn.addEventListener('click', submitRequest);
     submitInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') submitRequest();
+      if (e.key === 'Enter' && submitBtn.classList.contains('active')) submitRequest();
     });
 
-    // "No results" request link: pre-fill with search query as a guess
+    // "No results" link: scroll up and focus the submit input
     noResultsRequest.addEventListener('click', function() {
       var q = searchInput.value.trim();
       submitInput.value = q;
