@@ -59,6 +59,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	if err := generate404(); err != nil {
+		fmt.Fprintf(os.Stderr, "Error generating 404.html: %v\n", err)
+		os.Exit(1)
+	}
+
 	// Copy CNAME and static root files to site directory
 	if cname, err := os.ReadFile("CNAME"); err == nil {
 		os.WriteFile("site/CNAME", cname, 0644)
@@ -71,7 +76,11 @@ func main() {
 	for _, cat := range cfg.Categories {
 		totalRepos += len(cat.Repos)
 	}
-	fmt.Printf("Generated index.html and sitemap.xml (%d repos)\n", totalRepos)
+	fmt.Printf("Generated site (%d repos)\n", totalRepos)
+}
+
+func generate404() error {
+	return os.WriteFile("site/404.html", []byte(notFoundTemplate), 0644)
 }
 
 func generateSitemap(cfg Config) error {
@@ -456,7 +465,7 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
           <div class="submit-label">Don't see your repo? Paste a URL to generate arch docs:</div>
           <div class="submit-row">
             <input type="text" class="submit-input" id="submit-url" placeholder="https://github.com/owner/repo" autocomplete="off" spellcheck="false">
-            <button class="submit-btn" id="submit-btn" type="button">Request</button>
+            <button class="submit-btn" id="submit-btn" type="button">Generate</button>
           </div>
           <div class="submit-feedback" id="submit-feedback"></div>
         </div>
@@ -566,7 +575,7 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
 
       // Loading state
       submitBtn.classList.add('loading');
-      submitBtn.textContent = 'Submitting...';
+      submitBtn.textContent = 'Generating...';
       showFeedback('Setting up ' + name + '...', 'preview');
 
       try {
@@ -580,22 +589,16 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
         if (!resp.ok || !data.success) {
           showFeedback(data.error || 'Something went wrong. Please try again.', 'error');
           submitBtn.classList.remove('loading');
-          submitBtn.textContent = 'Request';
+          submitBtn.textContent = 'Generate';
           return;
         }
 
-        // Success — show the link, clear the input
-        showFeedback(
-          '\u2713 Submitted! Docs will be generated at <a href="' + data.docs_url + '">' +
-          'repos.supermodeltools.com/' + name + '/</a>', 'success'
-        );
-        submitInput.value = '';
-        submitBtn.classList.remove('active', 'loading');
-        submitBtn.textContent = 'Request';
+        // Redirect to the docs page — 404.html shows loading until docs are ready
+        window.location.href = data.docs_url;
       } catch (e) {
         showFeedback('Network error. Please try again.', 'error');
         submitBtn.classList.remove('loading');
-        submitBtn.textContent = 'Request';
+        submitBtn.textContent = 'Generate';
       }
     }
 
@@ -612,6 +615,308 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
       submitInput.focus();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  })();
+  </script>
+</body>
+</html>
+`
+
+const notFoundTemplate = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generating — Supermodel Architecture Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.loading-container {
+  text-align: center;
+  max-width: 480px;
+  padding: 24px;
+}
+
+/* Eye logo animation */
+.eye-wrap {
+  width: 120px;
+  height: 104px;
+  margin: 0 auto 32px;
+  position: relative;
+}
+.eye-wrap svg {
+  width: 120px;
+  height: 104px;
+  color: var(--accent-light);
+}
+.eye-wrap svg path {
+  animation: eyePulse 2.4s ease-in-out infinite;
+}
+@keyframes eyePulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Scanning line */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-light), transparent);
+  animation: scan 2.4s ease-in-out infinite;
+  border-radius: 1px;
+}
+@keyframes scan {
+  0% { top: 15%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 85%; opacity: 0; }
+}
+
+.loading-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.loading-repo {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--accent-light);
+  margin-bottom: 24px;
+}
+
+/* Progress steps */
+.steps {
+  text-align: left;
+  margin: 0 auto;
+  display: inline-block;
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+.step.active { color: var(--text); }
+.step.done { color: var(--accent-light); }
+.step-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent-light);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.step-check { color: var(--accent-light); }
+.step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.loading-hint {
+  margin-top: 32px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* 404 state (not a repo path) */
+.not-found {
+  text-align: center;
+  max-width: 480px;
+  padding: 24px;
+}
+.not-found h1 {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.not-found p {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.hidden { display: none; }
+
+@media (max-width: 768px) {
+  .loading-title { font-size: 18px; }
+  .loading-repo { font-size: 14px; }
+}
+  </style>
+</head>
+<body>
+  <!-- Loading state (repo generation in progress) -->
+  <div class="loading-container hidden" id="loading">
+    <div class="eye-wrap">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      <div class="scan-line"></div>
+    </div>
+    <div class="loading-title">Generating Architecture Docs</div>
+    <div class="loading-repo" id="loading-repo"></div>
+    <div class="steps" id="steps">
+      <div class="step" data-step="fork">
+        <div class="step-icon"><div class="step-dot"></div></div>
+        <span>Forking repository</span>
+      </div>
+      <div class="step" data-step="analyze">
+        <div class="step-icon"><div class="step-dot"></div></div>
+        <span>Analyzing codebase</span>
+      </div>
+      <div class="step" data-step="graph">
+        <div class="step-icon"><div class="step-dot"></div></div>
+        <span>Building code graphs</span>
+      </div>
+      <div class="step" data-step="deploy">
+        <div class="step-icon"><div class="step-dot"></div></div>
+        <span>Deploying documentation</span>
+      </div>
+    </div>
+    <div class="loading-hint">This usually takes 2–5 minutes. The page will refresh automatically.</div>
+  </div>
+
+  <!-- Genuine 404 state -->
+  <div class="not-found hidden" id="not-found">
+    <h1>404</h1>
+    <p>This page doesn't exist.</p>
+    <a href="/">Browse all repositories &rarr;</a>
+  </div>
+
+  <script>
+  (function() {
+    var path = window.location.pathname.replace(/\/+$/, '').replace(/^\/+/, '');
+    var segments = path.split('/').filter(Boolean);
+
+    // If the path looks like a repo name (single segment, no dots suggesting a file),
+    // show the loading page. Otherwise show genuine 404.
+    var isRepoPath = segments.length >= 1 && !segments[0].includes('.');
+    var repoName = segments[0] || '';
+
+    if (isRepoPath && repoName) {
+      document.getElementById('loading').classList.remove('hidden');
+      document.getElementById('loading-repo').textContent = repoName;
+      document.title = 'Generating ' + repoName + ' — Supermodel Architecture Docs';
+
+      // Animate steps over time to show progress
+      var steps = document.querySelectorAll('.step');
+      var stepTimings = [0, 8000, 30000, 60000]; // approximate real timings
+
+      function activateStep(index) {
+        steps.forEach(function(s, i) {
+          var icon = s.querySelector('.step-icon');
+          if (i < index) {
+            s.classList.add('done');
+            s.classList.remove('active');
+            icon.innerHTML = '<svg class="step-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+          } else if (i === index) {
+            s.classList.add('active');
+            s.classList.remove('done');
+            icon.innerHTML = '<div class="step-spinner"></div>';
+          } else {
+            s.classList.remove('active', 'done');
+            icon.innerHTML = '<div class="step-dot"></div>';
+          }
+        });
+      }
+
+      // Start first step immediately
+      activateStep(0);
+      var currentStep = 0;
+
+      // Advance steps on a timer
+      function advanceStep() {
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          activateStep(currentStep);
+        }
+      }
+      setTimeout(advanceStep, 8000);   // ~8s: fork done, analyzing
+      setTimeout(advanceStep, 35000);  // ~35s: graphs building
+      setTimeout(advanceStep, 70000);  // ~70s: deploying
+
+      // Poll for the real docs page
+      var pollInterval = 5000;
+      var maxPolls = 120; // 10 minutes max
+      var pollCount = 0;
+
+      function pollForDocs() {
+        pollCount++;
+        if (pollCount > maxPolls) return;
+
+        fetch(window.location.href, { cache: 'no-store', redirect: 'follow' })
+          .then(function(resp) {
+            if (resp.ok) {
+              return resp.text().then(function(html) {
+                // Make sure it's the real docs page, not this 404 page
+                if (html.indexOf('arch-docs') !== -1 && html.indexOf('loading-container') === -1) {
+                  // Docs are ready — mark all steps done then reload
+                  activateStep(steps.length);
+                  setTimeout(function() { window.location.reload(); }, 800);
+                  return;
+                }
+                setTimeout(pollForDocs, pollInterval);
+              });
+            } else {
+              setTimeout(pollForDocs, pollInterval);
+            }
+          })
+          .catch(function() {
+            setTimeout(pollForDocs, pollInterval);
+          });
+      }
+
+      setTimeout(pollForDocs, pollInterval);
+    } else {
+      document.getElementById('not-found').classList.remove('hidden');
+      document.title = '404 — Supermodel Architecture Docs';
+    }
   })();
   </script>
 </body>
