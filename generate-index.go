@@ -347,6 +347,62 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
   font-size: 15px;
   display: none;
 }
+.no-results a { cursor: pointer; }
+.submit-box {
+  max-width: 480px;
+  margin: 16px auto 0;
+}
+.submit-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.submit-row {
+  display: flex;
+  gap: 8px;
+}
+.submit-input {
+  flex: 1;
+  padding: 10px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-family: var(--mono);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.submit-input:focus { border-color: var(--accent); }
+.submit-input::placeholder { color: var(--text-muted); font-family: var(--font); }
+.submit-btn {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.submit-btn.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.submit-btn.active:hover { background: var(--accent-light); }
+.submit-preview {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--green);
+  font-family: var(--mono);
+  display: none;
+}
+.submit-preview.visible { display: block; }
 @media (max-width: 768px) {
   .container { padding: 0 16px; }
   .hero { padding: 40px 0 32px; }
@@ -357,6 +413,9 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
   .card { padding: 18px; }
   .section-title { font-size: 18px; }
   .site-footer { margin-top: 40px; padding: 24px 0; }
+  .submit-row { flex-direction: column; }
+  .submit-btn { width: 100%; }
+  .site-nav { gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
 }
   </style>
 </head>
@@ -399,9 +458,20 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
           <input type="text" class="search-input" id="search" placeholder="Search repositories..." autocomplete="off">
         </div>
+        <div class="submit-box">
+          <div class="submit-label">Don't see your repo? Paste a URL to generate arch docs:</div>
+          <div class="submit-row">
+            <input type="text" class="submit-input" id="submit-url" placeholder="https://github.com/owner/repo" autocomplete="off" spellcheck="false">
+            <button class="submit-btn" id="submit-btn" type="button">Request</button>
+          </div>
+          <div class="submit-preview" id="submit-preview"></div>
+        </div>
       </div>
 
-      <div id="no-results" class="no-results">No repositories match your search.</div>
+      <div id="no-results" class="no-results">
+        No repositories match your search.
+        <br><a id="no-results-request">Request docs for this repo &rarr;</a>
+      </div>
 
       {{range .Categories}}
       <div class="section" data-section="{{.Slug}}">
@@ -434,12 +504,19 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
 
   <script>
   (function() {
-    var input = document.getElementById('search');
+    var searchInput = document.getElementById('search');
     var cards = document.querySelectorAll('.card');
     var sections = document.querySelectorAll('.section');
     var noResults = document.getElementById('no-results');
+    var submitInput = document.getElementById('submit-url');
+    var submitBtn = document.getElementById('submit-btn');
+    var submitPreview = document.getElementById('submit-preview');
+    var noResultsRequest = document.getElementById('no-results-request');
 
-    input.addEventListener('input', function() {
+    var issueBase = 'https://github.com/supermodeltools/supermodeltools.github.io/issues/new?template=request-repo.yml';
+
+    // --- Search ---
+    searchInput.addEventListener('input', function() {
       var q = this.value.toLowerCase().trim();
       var anyVisible = false;
 
@@ -457,6 +534,54 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
       });
 
       noResults.style.display = anyVisible ? 'none' : 'block';
+    });
+
+    // --- Submit form ---
+    function parseRepo(val) {
+      val = val.trim().replace(/\/+$/, '').replace(/\.git$/, '');
+      var m = val.match(/github\.com\/([a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+)/);
+      if (m) return m[1];
+      m = val.match(/^([a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+)$/);
+      if (m) return m[1];
+      return null;
+    }
+
+    submitInput.addEventListener('input', function() {
+      var parsed = parseRepo(this.value);
+      if (parsed) {
+        var name = parsed.split('/')[1];
+        submitPreview.textContent = '\u2192 Docs will be at repos.supermodeltools.com/' + name + '/';
+        submitPreview.classList.add('visible');
+        submitBtn.classList.add('active');
+      } else {
+        submitPreview.classList.remove('visible');
+        submitBtn.classList.remove('active');
+      }
+    });
+
+    function submitRequest() {
+      var parsed = parseRepo(submitInput.value);
+      if (!parsed) return;
+      var repoUrl = 'https://github.com/' + parsed;
+      var name = parsed.split('/')[1];
+      var url = issueBase
+        + '&repo_url=' + encodeURIComponent(repoUrl)
+        + '&title=' + encodeURIComponent('[Repo Request] ' + name);
+      window.open(url, '_blank');
+    }
+
+    submitBtn.addEventListener('click', submitRequest);
+    submitInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') submitRequest();
+    });
+
+    // "No results" request link: pre-fill with search query as a guess
+    noResultsRequest.addEventListener('click', function() {
+      var q = searchInput.value.trim();
+      submitInput.value = q;
+      submitInput.dispatchEvent(new Event('input'));
+      submitInput.focus();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   })();
   </script>
