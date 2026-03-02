@@ -29,6 +29,8 @@ jobs:
 
       - name: Generate site
         run: go run generate-index.go
+        env:
+          ISSUES_TOKEN: ${{ secrets.ISSUES_TOKEN }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
