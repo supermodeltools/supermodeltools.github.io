@@ -196,6 +196,18 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
 .site-nav { display: flex; gap: 16px; align-items: center; }
 .site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
 .site-nav a:hover { color: var(--text); text-decoration: none; }
+.request-btn {
+  color: var(--accent-light) !important;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  transition: background 0.2s, color 0.2s;
+}
+.request-btn:hover {
+  background: var(--accent);
+  color: #fff !important;
+  text-decoration: none !important;
+}
 .hero {
   padding: 64px 0 48px;
   text-align: center;
@@ -361,6 +373,7 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
         <a href="https://supermodeltools.com">Website</a>
         <a href="https://github.com/supermodeltools">GitHub</a>
         <a href="https://x.com/supermodeltools">X</a>
+        <a href="https://github.com/supermodeltools/supermodeltools.github.io/issues/new?template=request-repo.yml" class="request-btn">+ Request a Repo</a>
       </nav>
     </div>
   </header>
