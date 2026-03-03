@@ -1,0 +1,154 @@
+name: Auto Add Repo
+
+on:
+  issues:
+    types: [opened, edited]
+
+concurrency:
+  group: add-repo
+  cancel-in-progress: false
+
+jobs:
+  add-repo:
+    if: startsWith(github.event.issue.title, '[Repo Request]')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.BOT_TOKEN }}
+
+      - name: Process repo request
+        env:
+          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          SUPERMODEL_API_KEY: ${{ secrets.SUPERMODEL_API_KEY }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          comment() { gh issue comment "$ISSUE_NUMBER" --repo "$REPO" --body "$1"; }
+          fail()    { comment "$1"; gh issue edit "$ISSUE_NUMBER" --repo "$REPO" --add-label "invalid" 2>/dev/null || true; exit 0; }
+          finish()  { comment "$1"; gh issue close "$ISSUE_NUMBER" --repo "$REPO"; exit 0; }
+
+          # 1. Parse GitHub repo from issue body
+          OWNER_REPO=$(printf '%s' "$ISSUE_BODY" | grep -oE 'https://github\.com/[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+' | head -1 | sed 's|https://github.com/||') || OWNER_REPO=""
+          if [ -z "$OWNER_REPO" ]; then
+            OWNER_REPO=$(printf '%s' "$ISSUE_BODY" | grep -oE '\b[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+\b' | head -1) || OWNER_REPO=""
+          fi
+          [ -z "$OWNER_REPO" ] && fail "❌ Could not find a GitHub repo in the issue body. Please include a URL like \`https://github.com/owner/repo\`."
+
+          REPO_NAME=$(echo "$OWNER_REPO" | cut -d'/' -f2)
+
+          # 2. Validate: exists, public, not archived, not empty
+          if ! REPO_DATA=$(gh api "repos/$OWNER_REPO" 2>&1); then
+            fail "❌ Repository \`$OWNER_REPO\` was not found or is private."
+          fi
+
+          IS_ARCHIVED=$(echo "$REPO_DATA" | python3 -c "import sys,json; print(json.load(sys.stdin)['archived'])")
+          [ "$IS_ARCHIVED" = "True" ] && fail "❌ Repository \`$OWNER_REPO\` is archived."
+
+          REPO_SIZE=$(echo "$REPO_DATA" | python3 -c "import sys,json; print(json.load(sys.stdin)['size'])")
+          [ "$REPO_SIZE" = "0" ] && fail "❌ Repository \`$OWNER_REPO\` appears to be empty."
+
+          # 3. Check not already in org or repos.yaml
+          if gh api "repos/supermodeltools/$REPO_NAME" &>/dev/null; then
+            finish "ℹ️ \`supermodeltools/$REPO_NAME\` already exists in the org — it may already be set up!"
+          fi
+          if grep -qF "upstream: $OWNER_REPO" repos.yaml; then
+            finish "ℹ️ \`$OWNER_REPO\` is already listed in repos.yaml."
+          fi
+
+          # 4. Gather metadata
+          DESCRIPTION=$(echo "$REPO_DATA" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('description') or '')")
+          LANGUAGE=$(echo    "$REPO_DATA" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('language') or '')")
+
+          case "$LANGUAGE" in
+            TypeScript|JavaScript) PILL="TypeScript"; PILL_CLASS="pill-blue"   ;;
+            Python)                PILL="Python";     PILL_CLASS="pill-green"  ;;
+            Go)                    PILL="Go";         PILL_CLASS="pill-accent" ;;
+            Rust)                  PILL="Rust";       PILL_CLASS="pill-accent" ;;
+            Java|Kotlin)           PILL="Java";       PILL_CLASS="pill-orange" ;;
+            Ruby)                  PILL="Ruby";       PILL_CLASS="pill-orange" ;;
+            *)                     PILL="${LANGUAGE:-Other}"; PILL_CLASS=""    ;;
+          esac
+
+          # 5. Fork into org
+          if ! gh repo fork "$OWNER_REPO" --org supermodeltools --clone=false; then
+            comment "❌ Failed to fork \`$OWNER_REPO\`. Ensure BOT_TOKEN has \`admin:org\` scope."
+            exit 1
+          fi
+          sleep 10
+
+          DEFAULT_BRANCH=$(gh api "repos/supermodeltools/$REPO_NAME" --jq '.default_branch')
+
+          # 6. Set SUPERMODEL_API_KEY secret on the fork
+          printf '%s' "$SUPERMODEL_API_KEY" | gh secret set SUPERMODEL_API_KEY \
+            --repo "supermodeltools/$REPO_NAME" || true
+
+          # 7. Install arch-docs workflow on the fork via API
+          cat > /tmp/arch-docs.yml << 'ARCH_DOCS'
+name: Arch Docs
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  arch-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supermodeltools/arch-docs@v1
+        with:
+          api_key: ${{ secrets.SUPERMODEL_API_KEY }}
+ARCH_DOCS
+
+          WORKFLOW_CONTENT=$(base64 -w 0 < /tmp/arch-docs.yml)
+          gh api --method PUT "repos/supermodeltools/$REPO_NAME/contents/.github/workflows/arch-docs.yml" \
+            -f message="Add arch-docs workflow" \
+            -f content="$WORKFLOW_CONTENT" \
+            -f branch="$DEFAULT_BRANCH" 2>/dev/null || true
+
+          # 8. Enable GitHub Pages (best-effort)
+          gh api --method POST "repos/supermodeltools/$REPO_NAME/pages" \
+            -f source='{"branch":"gh-pages","path":"/"}' 2>/dev/null || true
+
+          # 9. Add entry to repos.yaml and push
+          git config user.email "bot@supermodeltools.com"
+          git config user.name "Supermodel Bot"
+
+          export REPO_NAME OWNER_REPO DESCRIPTION PILL PILL_CLASS
+          python3 - << 'PYEOF'
+import os
+repo_name   = os.environ['REPO_NAME']
+owner_repo  = os.environ['OWNER_REPO']
+description = os.environ['DESCRIPTION'].replace('"', '\\"')
+pill        = os.environ['PILL']
+pill_class  = os.environ['PILL_CLASS']
+with open('repos.yaml', 'a') as f:
+    f.write(f'      - name: {repo_name}\n')
+    f.write(f'        upstream: {owner_repo}\n')
+    f.write(f'        description: "{description}"\n')
+    f.write(f'        pill: "{pill}"\n')
+    f.write(f'        pill_class: "{pill_class}"\n')
+PYEOF
+
+          git add repos.yaml
+          git commit -m "Add $REPO_NAME ($OWNER_REPO) to community repos"
+          git push
+
+          # 10. Comment success and close issue
+          finish "✅ **[$REPO_NAME](https://github.com/supermodeltools/$REPO_NAME)** has been added to the community!
+
+- Forked to [supermodeltools/$REPO_NAME](https://github.com/supermodeltools/$REPO_NAME)
+- Installed arch-docs workflow
+- Added to repos.yaml
+
+The homepage will rebuild automatically. 🎉"
