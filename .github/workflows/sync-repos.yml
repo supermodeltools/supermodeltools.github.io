@@ -1,0 +1,129 @@
+name: Sync Repos
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: add-repo
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # BOT_TOKEN (PAT with 'repo' and 'workflow' scopes) is required so that
+          # the push triggers the build-index.yml workflow. The default GITHUB_TOKEN
+          # cannot trigger downstream workflow runs due to GitHub's security model.
+          # To create: Settings → Secrets and variables → Actions → New secret named BOT_TOKEN.
+          token: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Install yq
+        run: |
+          sudo wget -qO /usr/local/bin/yq \
+            https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+
+      - name: Sync repos with arch-docs
+        id: sync
+        env:
+          GH_TOKEN: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          ADDED=0
+
+          # Fetch all org repos, one JSON object per line
+          gh api --paginate \
+            "orgs/supermodeltools/repos?per_page=100&type=all" \
+            --jq '.[] | @json' > /tmp/repos.ndjson
+
+          while IFS= read -r repo_json; do
+            REPO_NAME=$(echo "$repo_json" | jq -r '.name')
+            IS_FORK=$(echo "$repo_json" | jq -r '.fork')
+            DESCRIPTION=$(echo "$repo_json" | jq -r '.description // ""')
+            LANGUAGE=$(echo "$repo_json" | jq -r '.language // ""')
+            PARENT=$(echo "$repo_json" | jq -r '.parent.full_name // ""')
+
+            # Skip this repository itself
+            if [ "$REPO_NAME" = "supermodeltools.github.io" ]; then
+              continue
+            fi
+
+            # Skip if already listed in repos.yaml
+            if grep -qE "^\s+name: ${REPO_NAME}$" repos.yaml; then
+              continue
+            fi
+
+            # Check for arch-docs workflow — skip if not present
+            if ! gh api "repos/supermodeltools/${REPO_NAME}/contents/.github/workflows/arch-docs.yml" \
+                >/dev/null 2>&1; then
+              continue
+            fi
+
+            # Map language to pill_class
+            case "$LANGUAGE" in
+              JavaScript|TypeScript)        PILL_CLASS="pill-blue" ;;
+              Python)                       PILL_CLASS="pill-green" ;;
+              Go|Rust|C|"C++")             PILL_CLASS="pill-accent" ;;
+              Java|Kotlin|Scala|Ruby|Swift) PILL_CLASS="pill-orange" ;;
+              Shell|HCL)                    PILL_CLASS="pill-green" ;;
+              *)                            PILL_CLASS="" ;;
+            esac
+
+            # Map language to pill label (Shell/HCL → DevOps)
+            case "$LANGUAGE" in
+              Shell|HCL) PILL="DevOps" ;;
+              "")        PILL="" ;;
+              *)         PILL="$LANGUAGE" ;;
+            esac
+
+            echo "Adding: ${REPO_NAME} (fork=${IS_FORK}, lang=${LANGUAGE})"
+
+            if [ "$IS_FORK" = "true" ]; then
+              # Append to Community category (index 1)
+              REPO_NAME="$REPO_NAME" \
+              DESCRIPTION="$DESCRIPTION" \
+              PILL="$PILL" \
+              PILL_CLASS="$PILL_CLASS" \
+              UPSTREAM="$PARENT" \
+              yq -i '.categories[1].repos += [{
+                "name": env(REPO_NAME),
+                "upstream": env(UPSTREAM),
+                "description": env(DESCRIPTION),
+                "pill": env(PILL),
+                "pill_class": env(PILL_CLASS)
+              }]' repos.yaml
+            else
+              # Append to Supermodel Open Source category (index 0)
+              REPO_NAME="$REPO_NAME" \
+              DESCRIPTION="$DESCRIPTION" \
+              PILL="$PILL" \
+              PILL_CLASS="$PILL_CLASS" \
+              yq -i '.categories[0].repos += [{
+                "name": env(REPO_NAME),
+                "description": env(DESCRIPTION),
+                "pill": env(PILL),
+                "pill_class": env(PILL_CLASS)
+              }]' repos.yaml
+            fi
+
+            ADDED=$((ADDED + 1))
+          done < /tmp/repos.ndjson
+
+          echo "added=${ADDED}" >> "$GITHUB_OUTPUT"
+          echo "Sync complete: ${ADDED} repo(s) added"
+
+      - name: Commit and push
+        if: steps.sync.outputs.added != '0'
+        run: |
+          git config user.name "supermodel-bot"
+          git config user.email "bot@supermodeltools.com"
+          git add repos.yaml
+          git commit -m "Sync ${{ steps.sync.outputs.added }} repo(s) discovered with arch-docs"
+          git push
