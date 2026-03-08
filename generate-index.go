@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"html"
 	"net/url"
@@ -59,6 +60,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	if err := generate404(cfg); err != nil {
+		fmt.Fprintf(os.Stderr, "Error generating 404: %v\n", err)
+		os.Exit(1)
+	}
+
 	// Copy CNAME and static root files to site directory
 	if cname, err := os.ReadFile("CNAME"); err == nil {
 		os.WriteFile("site/CNAME", cname, 0644)
@@ -71,7 +77,7 @@ func main() {
 	for _, cat := range cfg.Categories {
 		totalRepos += len(cat.Repos)
 	}
-	fmt.Printf("Generated index.html and sitemap.xml (%d repos)\n", totalRepos)
+	fmt.Printf("Generated index.html, sitemap.xml, and 404.html (%d repos)\n", totalRepos)
 }
 
 func generateSitemap(cfg Config) error {
@@ -445,6 +451,272 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
 
       noResults.style.display = anyVisible ? 'none' : 'block';
     });
+  })();
+  </script>
+</body>
+</html>
+`
+
+func generate404(cfg Config) error {
+	var repoNames []string
+	for _, cat := range cfg.Categories {
+		for _, repo := range cat.Repos {
+			repoNames = append(repoNames, repo.Name)
+		}
+	}
+	repoNamesJSON, err := json.Marshal(repoNames)
+	if err != nil {
+		return fmt.Errorf("marshaling repo names: %w", err)
+	}
+
+	type data404 struct {
+		RepoNamesJSON string
+	}
+
+	tmpl, err := template.New("404").Parse(notFoundTemplate)
+	if err != nil {
+		return fmt.Errorf("parsing 404 template: %w", err)
+	}
+
+	f, err := os.Create("site/404.html")
+	if err != nil {
+		return fmt.Errorf("creating 404.html: %w", err)
+	}
+	defer f.Close()
+
+	return tmpl.Execute(f, data404{RepoNamesJSON: string(repoNamesJSON)})
+}
+
+const notFoundTemplate = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supermodel Tools — Not Found</title>
+  <meta name="description" content="Architecture documentation for popular open source repositories.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { overflow-x: hidden; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  background: var(--bg);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.generate-hero {
+  text-align: center;
+  padding: 64px 24px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.generate-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  color: var(--accent-light);
+  opacity: 0.8;
+}
+.generate-hero h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.repo-slug {
+  color: var(--accent-light);
+  font-family: var(--mono);
+}
+.generate-hero p {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.btn-generate {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font);
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-generate:hover {
+  background: var(--accent-light);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.btn-generate svg { width: 18px; height: 18px; }
+.browse-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+#content { display: none; width: 100%; }
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .generate-hero { padding: 48px 0; }
+  .generate-hero h1 { font-size: 22px; }
+  .generate-hero p { font-size: 15px; }
+}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-brand">
+        <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+        </svg>
+        Supermodel Tools
+      </a>
+      <nav class="site-nav">
+        <a href="https://supermodeltools.com">Website</a>
+        <a href="https://github.com/supermodeltools">GitHub</a>
+        <a href="https://x.com/supermodeltools">X</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div id="content">
+      <div class="generate-hero">
+        <svg class="generate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        <h1 id="page-title">No docs yet for <span class="repo-slug" id="repo-name"></span></h1>
+        <p id="page-desc">Architecture docs for this repository haven&#39;t been generated yet.<br>Request them and we&#39;ll add it to the index.</p>
+        <a href="#" id="generate-btn" class="btn-generate" style="display:none" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          Generate Docs
+        </a>
+        <p class="browse-link"><a href="/">Browse existing docs</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <style>#content { display: block !important; }</style>
+  </noscript>
+
+  <script>
+  (function() {
+    var knownRepos = {{.RepoNamesJSON}};
+
+    // Extract first path segment from the current URL
+    var rawPath = window.location.pathname;
+    var slug = rawPath.replace(/^\/+/, '').split('/')[0] || '';
+
+    // If the slug is a known repo, redirect to its docs
+    if (slug && knownRepos.indexOf(slug) !== -1) {
+      window.location.replace('/' + slug + '/');
+      return;
+    }
+
+    // Show the landing page
+    var content = document.getElementById('content');
+    if (content) content.style.display = 'block';
+
+    var titleEl = document.getElementById('page-title');
+    var nameEl = document.getElementById('repo-name');
+    var descEl = document.getElementById('page-desc');
+
+    if (slug) {
+      // Safely set repo name using textContent (XSS-safe — no innerHTML)
+      if (nameEl) nameEl.textContent = slug;
+
+      // Configure the Generate Docs button
+      var btn = document.getElementById('generate-btn');
+      if (btn) {
+        var title = '[Repo Request] ' + slug;
+        var body = 'Please generate architecture docs for the \u0060' + slug + '\u0060 repository.\n\n@claude';
+        btn.href = 'https://github.com/supermodeltools/supermodeltools.github.io/issues/new'
+          + '?title=' + encodeURIComponent(title)
+          + '&body=' + encodeURIComponent(body);
+        btn.style.display = 'inline-flex';
+      }
+    } else {
+      // No slug — generic not-found message
+      if (titleEl) titleEl.textContent = 'Page not found';
+      if (descEl) descEl.textContent = 'The page you\u2019re looking for doesn\u2019t exist.';
+    }
   })();
   </script>
 </body>
