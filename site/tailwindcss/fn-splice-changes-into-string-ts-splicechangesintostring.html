@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/upgrade.html" class="pill pill-green">Upgrade</a>
-        <a href="/subdomain/configmigration.html" class="pill pill-orange">ConfigMigration</a>
+        <a href="/domain/upgradetoolchain.html" class="pill pill-green">UpgradeToolchain</a>
+        <a href="/subdomain/templatemigration.html" class="pill pill-orange">TemplateMigration</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Upgrade","slug":"domain-upgrade"},"entity":{"name":"spliceChangesIntoString","slug":"fn-splice-changes-into-string-ts-splicechangesintostring","type":"Function"},"subdomain":{"name":"ConfigMigration","slug":"subdomain-configmigration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"UpgradeToolchain","slug":"domain-upgradetoolchain"},"entity":{"name":"spliceChangesIntoString","slug":"fn-splice-changes-into-string-ts-splicechangesintostring","type":"Function"},"subdomain":{"name":"TemplateMigration","slug":"subdomain-templatemigration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/upgrade.html">Upgrade</a><span class="arch-sep">&rarr;</span>
-            <a href="/configmigration.html">ConfigMigration</a><span class="arch-sep">&rarr;</span>
+            <a href="/upgradetoolchain.html">UpgradeToolchain</a><span class="arch-sep">&rarr;</span>
+            <a href="/templatemigration.html">TemplateMigration</a><span class="arch-sep">&rarr;</span>
             <span>spliceChangesIntoString() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  fe6c691b_48a4_270e_5fdf_4e3ebec5bb7f["spliceChangesIntoString()"]
-  ddbeda40_3521_231f_a526_86f12c1cb86c["migrateContents()"]
-  ddbeda40_3521_231f_a526_86f12c1cb86c -->|calls| fe6c691b_48a4_270e_5fdf_4e3ebec5bb7f
-  style fe6c691b_48a4_270e_5fdf_4e3ebec5bb7f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  f2a7806b_f97e_a855_de65_28d7ee6bbc2d["spliceChangesIntoString()"]
+  c6b5df1a_1b83_78c1_b55f_bf7fa7171140["migrateContents()"]
+  c6b5df1a_1b83_78c1_b55f_bf7fa7171140 -->|calls| f2a7806b_f97e_a855_de65_28d7ee6bbc2d
+  style f2a7806b_f97e_a855_de65_28d7ee6bbc2d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-splice-changes-into-string-ts-splicechangesintostring"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"fe6c691b:48a4:270e:5fdf:4e3ebec5bb7f","label":"spliceChangesIntoString","type":"Function","slug":"fn-splice-changes-into-string-ts-splicechangesintostring","lc":32,"lang":"typescript","cbc":1},{"id":"ddbeda40:3521:231f:a526:86f12c1cb86c","label":"migrateContents","type":"Function","slug":"fn-migrate-ts-migratecontents-2","lc":30,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:Upgrade","label":"Upgrade","type":"Domain","slug":"domain-upgrade"},{"id":"subdomain:Upgrade:ConfigMigration","label":"ConfigMigration","type":"Subdomain","slug":"subdomain-configmigration"}],"edges":[{"source":"ddbeda40:3521:231f:a526:86f12c1cb86c","target":"fe6c691b:48a4:270e:5fdf:4e3ebec5bb7f","type":"calls"},{"source":"fe6c691b:48a4:270e:5fdf:4e3ebec5bb7f","target":"domain:Upgrade","type":"belongsTo"},{"source":"fe6c691b:48a4:270e:5fdf:4e3ebec5bb7f","target":"subdomain:Upgrade:ConfigMigration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"f2a7806b:f97e:a855:de65:28d7ee6bbc2d","label":"spliceChangesIntoString","type":"Function","slug":"fn-splice-changes-into-string-ts-splicechangesintostring","lc":32,"lang":"typescript","cbc":1},{"id":"c6b5df1a:1b83:78c1:b55f:bf7fa7171140","label":"migrateContents","type":"Function","slug":"fn-migrate-ts-migratecontents-2","lc":30,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:UpgradeToolchain","label":"UpgradeToolchain","type":"Domain","slug":"domain-upgradetoolchain"},{"id":"subdomain:UpgradeToolchain:TemplateMigration","label":"TemplateMigration","type":"Subdomain","slug":"subdomain-templatemigration"}],"edges":[{"source":"c6b5df1a:1b83:78c1:b55f:bf7fa7171140","target":"f2a7806b:f97e:a855:de65:28d7ee6bbc2d","type":"calls"},{"source":"f2a7806b:f97e:a855:de65:28d7ee6bbc2d","target":"domain:UpgradeToolchain","type":"belongsTo"},{"source":"f2a7806b:f97e:a855:de65:28d7ee6bbc2d","target":"subdomain:UpgradeToolchain:TemplateMigration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -975,14 +975,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-upgrade.html">Upgrade</a></li></ul>
+      <ul><li><a href="/domain-upgradetoolchain.html">UpgradeToolchain</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-configmigration.html">ConfigMigration</a></li></ul>
+      <ul><li><a href="/subdomain-templatemigration.html">TemplateMigration</a></li></ul>
     </div>
     
 

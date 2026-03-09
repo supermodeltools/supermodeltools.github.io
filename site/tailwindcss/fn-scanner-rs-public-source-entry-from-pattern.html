@@ -869,7 +869,7 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/rust.html" class="pill pill-blue">rust</a>
-        <a href="/domain/oxide.html" class="pill pill-green">Oxide</a>
+        <a href="/domain/oxideengine.html" class="pill pill-green">OxideEngine</a>
         <a href="/subdomain/scanner.html" class="pill pill-orange">Scanner</a>
         
         
@@ -894,10 +894,10 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Oxide","slug":"domain-oxide"},"entity":{"name":"public_source_entry_from_pattern","slug":"fn-scanner-rs-public-source-entry-from-pattern","type":"Function"},"subdomain":{"name":"Scanner","slug":"subdomain-scanner"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideEngine","slug":"domain-oxideengine"},"entity":{"name":"public_source_entry_from_pattern","slug":"fn-scanner-rs-public-source-entry-from-pattern","type":"Function"},"subdomain":{"name":"Scanner","slug":"subdomain-scanner"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/oxide.html">Oxide</a><span class="arch-sep">&rarr;</span>
+            <a href="/oxideengine.html">OxideEngine</a><span class="arch-sep">&rarr;</span>
             <a href="/scanner.html">Scanner</a><span class="arch-sep">&rarr;</span>
             <span>public_source_entry_from_pattern() — tailwindcss Function Reference</span>
           </div>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ed66f41e_bc58_39b6_5ca8_294d059ea1e5["public_source_entry_from_pattern()"]
-  b96c0a12_5f59_9c3c_31b1_163179873993["scan_with_globs()"]
-  b96c0a12_5f59_9c3c_31b1_163179873993 -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  63fe804a_a1de_acc5_025d_783455b3dbd6["it_should_pick_up_new_files()"]
-  63fe804a_a1de_acc5_025d_783455b3dbd6 -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  1c77377e_0a80_2185_32f7_2c54c7a2a3c9["skips_ignore_files_outside_of_a_repo()"]
-  1c77377e_0a80_2185_32f7_2c54c7a2a3c9 -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  64a1959d_d6fd_1738_aca0_1ac64474c449["test_explicitly_ignore_explicitly_allowed_files()"]
-  64a1959d_d6fd_1738_aca0_1ac64474c449 -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  ac1fecd0_4574_6f1f_578e_eb37bb80d1f0["test_works_with_filenames_containing_glob_characters()"]
-  ac1fecd0_4574_6f1f_578e_eb37bb80d1f0 -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  cada9ff5_6986_c8c6_4f89_e243520a885d["test_ignore_files_can_be_included_with_custom_source_rule()"]
-  cada9ff5_6986_c8c6_4f89_e243520a885d -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  ba6f3bda_4e33_fe12_fef5_c704475d3843["test_allow_default_ignored_files()"]
-  ba6f3bda_4e33_fe12_fef5_c704475d3843 -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  713795e1_6e01_0a04_4c81_161b6682ca51["test_allow_default_ignored_files_via_gitignore()"]
-  713795e1_6e01_0a04_4c81_161b6682ca51 -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  0393d670_a931_7905_9d31_fb20d49fba1a["test_allow_explicit_node_modules_paths()"]
-  0393d670_a931_7905_9d31_fb20d49fba1a -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  d16652cd_12a6_0470_6d51_92d6887d4ce5["test_manually_scanning_files_should_follow_all_rules()"]
-  d16652cd_12a6_0470_6d51_92d6887d4ce5 -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  8afbe6eb_2c95_e923_6e68_a74787a71ffb["test_glob_with_symlinks()"]
-  8afbe6eb_2c95_e923_6e68_a74787a71ffb -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  247f75c2_5743_cdec_dc7d_17a2c6b5adbf["test_globs_with_recursive_symlinks()"]
-  247f75c2_5743_cdec_dc7d_17a2c6b5adbf -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  fe15acf3_99dc_9eae_c004_c56b7485b3a3["test_partial_globs_with_symlinks()"]
-  fe15acf3_99dc_9eae_c004_c56b7485b3a3 -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  6e12b601_e431_e1cf_994b_096e388fd24d["test_extract_used_css_variables_from_css()"]
-  6e12b601_e431_e1cf_994b_096e388fd24d -->|calls| ed66f41e_bc58_39b6_5ca8_294d059ea1e5
-  style ed66f41e_bc58_39b6_5ca8_294d059ea1e5 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  bf88d489_4727_0de3_f429_2abaafac8839["public_source_entry_from_pattern()"]
+  162a750f_046d_3958_0a98_a1d218e1e0ca["scan_with_globs()"]
+  162a750f_046d_3958_0a98_a1d218e1e0ca -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  9808d181_225a_82b8_c821_d9036503ffe4["it_should_pick_up_new_files()"]
+  9808d181_225a_82b8_c821_d9036503ffe4 -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  18f86b6e_602a_ac6e_f518_dee5cbf0a9ce["skips_ignore_files_outside_of_a_repo()"]
+  18f86b6e_602a_ac6e_f518_dee5cbf0a9ce -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  b9d6e5e1_b9a2_e9a4_0fe5_ad790e72b184["test_explicitly_ignore_explicitly_allowed_files()"]
+  b9d6e5e1_b9a2_e9a4_0fe5_ad790e72b184 -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  35c6fcaa_d15c_a904_3e67_b7544b50df31["test_works_with_filenames_containing_glob_characters()"]
+  35c6fcaa_d15c_a904_3e67_b7544b50df31 -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  866c81ab_f369_d504_34c9_c96b9a3c990f["test_ignore_files_can_be_included_with_custom_source_rule()"]
+  866c81ab_f369_d504_34c9_c96b9a3c990f -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  688c819f_7892_ff4b_414b_5b4690d705bd["test_allow_default_ignored_files()"]
+  688c819f_7892_ff4b_414b_5b4690d705bd -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  6cb01935_5fbe_efc7_4c55_fa9ccc5fbc76["test_allow_default_ignored_files_via_gitignore()"]
+  6cb01935_5fbe_efc7_4c55_fa9ccc5fbc76 -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  b096436d_e122_5240_ed09_a04e8c62f245["test_allow_explicit_node_modules_paths()"]
+  b096436d_e122_5240_ed09_a04e8c62f245 -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  f7444500_c17e_2a44_a75c_1dd5dea9743b["test_manually_scanning_files_should_follow_all_rules()"]
+  f7444500_c17e_2a44_a75c_1dd5dea9743b -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  599e21a7_5cbe_9f80_0ed0_a78bbc8ee8c4["test_glob_with_symlinks()"]
+  599e21a7_5cbe_9f80_0ed0_a78bbc8ee8c4 -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  8a294cd9_75b8_6784_b729_64cd798c33a1["test_globs_with_recursive_symlinks()"]
+  8a294cd9_75b8_6784_b729_64cd798c33a1 -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  fd0fc328_6bb1_efd3_6e57_165afc9403f9["test_partial_globs_with_symlinks()"]
+  fd0fc328_6bb1_efd3_6e57_165afc9403f9 -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  185ae4f0_14da_a5fc_c313_da706d2ac6d9["test_extract_used_css_variables_from_css()"]
+  185ae4f0_14da_a5fc_c313_da706d2ac6d9 -->|calls| bf88d489_4727_0de3_f429_2abaafac8839
+  style bf88d489_4727_0de3_f429_2abaafac8839 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-scanner-rs-public-source-entry-from-pattern"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","label":"public_source_entry_from_pattern","type":"Function","slug":"fn-scanner-rs-public-source-entry-from-pattern","lc":19,"lang":"rust","cbc":14},{"id":"b96c0a12:5f59:9c3c:31b1:163179873993","label":"scan_with_globs","type":"Function","slug":"fn-scanner-rs-scan-with-globs","lc":76,"lang":"rust","cc":3,"cbc":16},{"id":"63fe804a:a1de:acc5:025d:783455b3dbd6","label":"it_should_pick_up_new_files","type":"Function","slug":"fn-scanner-rs-it-should-pick-up-new-files","lc":129,"lang":"rust","cc":3},{"id":"1c77377e:0a80:2185:32f7:2c54c7a2a3c9","label":"skips_ignore_files_outside_of_a_repo","type":"Function","slug":"fn-scanner-rs-skips-ignore-files-outside-of-a-repo","lc":162,"lang":"rust","cc":3},{"id":"64a1959d:d6fd:1738:aca0:1ac64474c449","label":"test_explicitly_ignore_explicitly_allowed_files","type":"Function","slug":"fn-scanner-rs-test-explicitly-ignore-explicitly-allowed-files","lc":22,"lang":"rust","cc":3},{"id":"ac1fecd0:4574:6f1f:578e:eb37bb80d1f0","label":"test_works_with_filenames_containing_glob_characters","type":"Function","slug":"fn-scanner-rs-test-works-with-filenames-containing-glob-characters","lc":25,"lang":"rust","cc":3},{"id":"cada9ff5:6986:c8c6:4f89:e243520a885d","label":"test_ignore_files_can_be_included_with_custom_source_rule","type":"Function","slug":"fn-scanner-rs-test-ignore-files-can-be-included-with-custom-source-rule","lc":58,"lang":"rust","cc":3},{"id":"ba6f3bda:4e33:fe12:fef5:c704475d3843","label":"test_allow_default_ignored_files","type":"Function","slug":"fn-scanner-rs-test-allow-default-ignored-files","lc":26,"lang":"rust","cc":3},{"id":"713795e1:6e01:0a04:4c81:161b6682ca51","label":"test_allow_default_ignored_files_via_gitignore","type":"Function","slug":"fn-scanner-rs-test-allow-default-ignored-files-via-gitignore","lc":29,"lang":"rust","cc":3},{"id":"0393d670:a931:7905:9d31:fb20d49fba1a","label":"test_allow_explicit_node_modules_paths","type":"Function","slug":"fn-scanner-rs-test-allow-explicit-node-modules-paths","lc":60,"lang":"rust","cc":3},{"id":"d16652cd:12a6:0470:6d51:92d6887d4ce5","label":"test_manually_scanning_files_should_follow_all_rules","type":"Function","slug":"fn-scanner-rs-test-manually-scanning-files-should-follow-all-rules","lc":83,"lang":"rust","cc":3},{"id":"8afbe6eb:2c95:e923:6e68:a74787a71ffb","label":"test_glob_with_symlinks","type":"Function","slug":"fn-scanner-rs-test-glob-with-symlinks","lc":52,"lang":"rust","cc":4},{"id":"247f75c2:5743:cdec:dc7d:17a2c6b5adbf","label":"test_globs_with_recursive_symlinks","type":"Function","slug":"fn-scanner-rs-test-globs-with-recursive-symlinks","lc":27,"lang":"rust","cc":4},{"id":"fe15acf3:99dc:9eae:c004:c56b7485b3a3","label":"test_partial_globs_with_symlinks","type":"Function","slug":"fn-scanner-rs-test-partial-globs-with-symlinks","lc":28,"lang":"rust","cc":4},{"id":"6e12b601:e431:e1cf:994b:096e388fd24d","label":"test_extract_used_css_variables_from_css","type":"Function","slug":"fn-scanner-rs-test-extract-used-css-variables-from-css","lc":33,"lang":"rust","cc":3},{"id":"domain:Oxide","label":"Oxide","type":"Domain","slug":"domain-oxide"},{"id":"subdomain:Oxide:Scanner","label":"Scanner","type":"Subdomain","slug":"subdomain-scanner"}],"edges":[{"source":"b96c0a12:5f59:9c3c:31b1:163179873993","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"63fe804a:a1de:acc5:025d:783455b3dbd6","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"1c77377e:0a80:2185:32f7:2c54c7a2a3c9","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"64a1959d:d6fd:1738:aca0:1ac64474c449","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"ac1fecd0:4574:6f1f:578e:eb37bb80d1f0","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"cada9ff5:6986:c8c6:4f89:e243520a885d","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"ba6f3bda:4e33:fe12:fef5:c704475d3843","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"713795e1:6e01:0a04:4c81:161b6682ca51","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"0393d670:a931:7905:9d31:fb20d49fba1a","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"d16652cd:12a6:0470:6d51:92d6887d4ce5","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"8afbe6eb:2c95:e923:6e68:a74787a71ffb","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"247f75c2:5743:cdec:dc7d:17a2c6b5adbf","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"fe15acf3:99dc:9eae:c004:c56b7485b3a3","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"6e12b601:e431:e1cf:994b:096e388fd24d","target":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","type":"calls"},{"source":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","target":"domain:Oxide","type":"belongsTo"},{"source":"ed66f41e:bc58:39b6:5ca8:294d059ea1e5","target":"subdomain:Oxide:Scanner","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"bf88d489:4727:0de3:f429:2abaafac8839","label":"public_source_entry_from_pattern","type":"Function","slug":"fn-scanner-rs-public-source-entry-from-pattern","lc":19,"lang":"rust","cbc":14},{"id":"162a750f:046d:3958:0a98:a1d218e1e0ca","label":"scan_with_globs","type":"Function","slug":"fn-scanner-rs-scan-with-globs","lc":76,"lang":"rust","cc":3,"cbc":16},{"id":"9808d181:225a:82b8:c821:d9036503ffe4","label":"it_should_pick_up_new_files","type":"Function","slug":"fn-scanner-rs-it-should-pick-up-new-files","lc":129,"lang":"rust","cc":3},{"id":"18f86b6e:602a:ac6e:f518:dee5cbf0a9ce","label":"skips_ignore_files_outside_of_a_repo","type":"Function","slug":"fn-scanner-rs-skips-ignore-files-outside-of-a-repo","lc":162,"lang":"rust","cc":3},{"id":"b9d6e5e1:b9a2:e9a4:0fe5:ad790e72b184","label":"test_explicitly_ignore_explicitly_allowed_files","type":"Function","slug":"fn-scanner-rs-test-explicitly-ignore-explicitly-allowed-files","lc":22,"lang":"rust","cc":3},{"id":"35c6fcaa:d15c:a904:3e67:b7544b50df31","label":"test_works_with_filenames_containing_glob_characters","type":"Function","slug":"fn-scanner-rs-test-works-with-filenames-containing-glob-characters","lc":25,"lang":"rust","cc":3},{"id":"866c81ab:f369:d504:34c9:c96b9a3c990f","label":"test_ignore_files_can_be_included_with_custom_source_rule","type":"Function","slug":"fn-scanner-rs-test-ignore-files-can-be-included-with-custom-source-rule","lc":58,"lang":"rust","cc":3},{"id":"688c819f:7892:ff4b:414b:5b4690d705bd","label":"test_allow_default_ignored_files","type":"Function","slug":"fn-scanner-rs-test-allow-default-ignored-files","lc":26,"lang":"rust","cc":3},{"id":"6cb01935:5fbe:efc7:4c55:fa9ccc5fbc76","label":"test_allow_default_ignored_files_via_gitignore","type":"Function","slug":"fn-scanner-rs-test-allow-default-ignored-files-via-gitignore","lc":29,"lang":"rust","cc":3},{"id":"b096436d:e122:5240:ed09:a04e8c62f245","label":"test_allow_explicit_node_modules_paths","type":"Function","slug":"fn-scanner-rs-test-allow-explicit-node-modules-paths","lc":60,"lang":"rust","cc":3},{"id":"f7444500:c17e:2a44:a75c:1dd5dea9743b","label":"test_manually_scanning_files_should_follow_all_rules","type":"Function","slug":"fn-scanner-rs-test-manually-scanning-files-should-follow-all-rules","lc":83,"lang":"rust","cc":3},{"id":"599e21a7:5cbe:9f80:0ed0:a78bbc8ee8c4","label":"test_glob_with_symlinks","type":"Function","slug":"fn-scanner-rs-test-glob-with-symlinks","lc":52,"lang":"rust","cc":4},{"id":"8a294cd9:75b8:6784:b729:64cd798c33a1","label":"test_globs_with_recursive_symlinks","type":"Function","slug":"fn-scanner-rs-test-globs-with-recursive-symlinks","lc":27,"lang":"rust","cc":4},{"id":"fd0fc328:6bb1:efd3:6e57:165afc9403f9","label":"test_partial_globs_with_symlinks","type":"Function","slug":"fn-scanner-rs-test-partial-globs-with-symlinks","lc":28,"lang":"rust","cc":4},{"id":"185ae4f0:14da:a5fc:c313:da706d2ac6d9","label":"test_extract_used_css_variables_from_css","type":"Function","slug":"fn-scanner-rs-test-extract-used-css-variables-from-css","lc":33,"lang":"rust","cc":3},{"id":"domain:OxideEngine","label":"OxideEngine","type":"Domain","slug":"domain-oxideengine"},{"id":"subdomain:OxideEngine:Scanner","label":"Scanner","type":"Subdomain","slug":"subdomain-scanner"}],"edges":[{"source":"162a750f:046d:3958:0a98:a1d218e1e0ca","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"9808d181:225a:82b8:c821:d9036503ffe4","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"18f86b6e:602a:ac6e:f518:dee5cbf0a9ce","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"b9d6e5e1:b9a2:e9a4:0fe5:ad790e72b184","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"35c6fcaa:d15c:a904:3e67:b7544b50df31","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"866c81ab:f369:d504:34c9:c96b9a3c990f","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"688c819f:7892:ff4b:414b:5b4690d705bd","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"6cb01935:5fbe:efc7:4c55:fa9ccc5fbc76","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"b096436d:e122:5240:ed09:a04e8c62f245","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"f7444500:c17e:2a44:a75c:1dd5dea9743b","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"599e21a7:5cbe:9f80:0ed0:a78bbc8ee8c4","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"8a294cd9:75b8:6784:b729:64cd798c33a1","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"fd0fc328:6bb1:efd3:6e57:165afc9403f9","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"185ae4f0:14da:a5fc:c313:da706d2ac6d9","target":"bf88d489:4727:0de3:f429:2abaafac8839","type":"calls"},{"source":"bf88d489:4727:0de3:f429:2abaafac8839","target":"domain:OxideEngine","type":"belongsTo"},{"source":"bf88d489:4727:0de3:f429:2abaafac8839","target":"subdomain:OxideEngine:Scanner","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -988,7 +988,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-oxide.html">Oxide</a></li></ul>
+      <ul><li><a href="/domain-oxideengine.html">OxideEngine</a></li></ul>
     </div>
     
 

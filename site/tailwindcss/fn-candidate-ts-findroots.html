@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/upgrade.html" class="pill pill-green">Upgrade</a>
-        <a href="/subdomain/templatemigration.html" class="pill pill-orange">TemplateMigration</a>
+        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
+        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Upgrade","slug":"domain-upgrade"},"entity":{"name":"findRoots","slug":"fn-candidate-ts-findroots","type":"Function"},"subdomain":{"name":"TemplateMigration","slug":"subdomain-templatemigration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"findRoots","slug":"fn-candidate-ts-findroots","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/upgrade.html">Upgrade</a><span class="arch-sep">&rarr;</span>
-            <a href="/templatemigration.html">TemplateMigration</a><span class="arch-sep">&rarr;</span>
+            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
+            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
             <span>findRoots() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  e71e57d5_0c41_901d_f7b7_65de08f4f653["findRoots()"]
-  218d6e9d_d581_e0f5_331d_ca1e058db8e0["parseCandidate()"]
-  218d6e9d_d581_e0f5_331d_ca1e058db8e0 -->|calls| e71e57d5_0c41_901d_f7b7_65de08f4f653
-  3d2e2ffa_536d_c8af_bf80_2c50e35a9cab["parseVariant()"]
-  3d2e2ffa_536d_c8af_bf80_2c50e35a9cab -->|calls| e71e57d5_0c41_901d_f7b7_65de08f4f653
-  style e71e57d5_0c41_901d_f7b7_65de08f4f653 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  9afbcbb3_7eb0_3dc0_a267_09287398eb0c["findRoots()"]
+  3ed46569_da25_d279_d8d8_af7f0f5e7782["parseCandidate()"]
+  3ed46569_da25_d279_d8d8_af7f0f5e7782 -->|calls| 9afbcbb3_7eb0_3dc0_a267_09287398eb0c
+  ab50212a_b8db_0b53_4a35_ec1b11b767ca["parseVariant()"]
+  ab50212a_b8db_0b53_4a35_ec1b11b767ca -->|calls| 9afbcbb3_7eb0_3dc0_a267_09287398eb0c
+  style 9afbcbb3_7eb0_3dc0_a267_09287398eb0c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-candidate-ts-findroots"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"e71e57d5:0c41:901d:f7b7:65de08f4f653","label":"findRoots","type":"Function","slug":"fn-candidate-ts-findroots","lc":45,"lang":"typescript","cbc":2},{"id":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","label":"parseCandidate","type":"Function","slug":"fn-candidate-ts-parsecandidate","lc":297,"lang":"typescript","cc":6,"cbc":11},{"id":"3d2e2ffa:536d:c8af:bf80:2c50e35a9cab","label":"parseVariant","type":"Function","slug":"fn-candidate-ts-parsevariant","lc":189,"lang":"typescript","cc":5,"cbc":7},{"id":"domain:Upgrade","label":"Upgrade","type":"Domain","slug":"domain-upgrade"},{"id":"subdomain:Upgrade:TemplateMigration","label":"TemplateMigration","type":"Subdomain","slug":"subdomain-templatemigration"}],"edges":[{"source":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","target":"e71e57d5:0c41:901d:f7b7:65de08f4f653","type":"calls"},{"source":"3d2e2ffa:536d:c8af:bf80:2c50e35a9cab","target":"e71e57d5:0c41:901d:f7b7:65de08f4f653","type":"calls"},{"source":"e71e57d5:0c41:901d:f7b7:65de08f4f653","target":"domain:Upgrade","type":"belongsTo"},{"source":"e71e57d5:0c41:901d:f7b7:65de08f4f653","target":"subdomain:Upgrade:TemplateMigration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"9afbcbb3:7eb0:3dc0:a267:09287398eb0c","label":"findRoots","type":"Function","slug":"fn-candidate-ts-findroots","lc":45,"lang":"typescript","cbc":2},{"id":"3ed46569:da25:d279:d8d8:af7f0f5e7782","label":"parseCandidate","type":"Function","slug":"fn-candidate-ts-parsecandidate","lc":297,"lang":"typescript","cc":6,"cbc":12},{"id":"ab50212a:b8db:0b53:4a35:ec1b11b767ca","label":"parseVariant","type":"Function","slug":"fn-candidate-ts-parsevariant","lc":189,"lang":"typescript","cc":5,"cbc":7},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"3ed46569:da25:d279:d8d8:af7f0f5e7782","target":"9afbcbb3:7eb0:3dc0:a267:09287398eb0c","type":"calls"},{"source":"ab50212a:b8db:0b53:4a35:ec1b11b767ca","target":"9afbcbb3:7eb0:3dc0:a267:09287398eb0c","type":"calls"},{"source":"9afbcbb3:7eb0:3dc0:a267:09287398eb0c","target":"domain:TailwindNode","type":"belongsTo"},{"source":"9afbcbb3:7eb0:3dc0:a267:09287398eb0c","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -990,14 +990,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-upgrade.html">Upgrade</a></li></ul>
+      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-templatemigration.html">TemplateMigration</a></li></ul>
+      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
     </div>
     
 

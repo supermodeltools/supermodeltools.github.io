@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/oxide.html" class="pill pill-green">Oxide</a>
-        <a href="/subdomain/scanner.html" class="pill pill-orange">Scanner</a>
+        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
+        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Oxide","slug":"domain-oxide"},"entity":{"name":"theme","slug":"fn-css-functions-ts-theme","type":"Function"},"subdomain":{"name":"Scanner","slug":"subdomain-scanner"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"theme","slug":"fn-css-functions-ts-theme","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/oxide.html">Oxide</a><span class="arch-sep">&rarr;</span>
-            <a href="/scanner.html">Scanner</a><span class="arch-sep">&rarr;</span>
+            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
+            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
             <span>theme() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,22 +911,22 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  aeb3c1b0_87d9_8113_28f1_a5b62334afbe["theme()"]
-  f9b2df33_5039_d2fc_3648_b7e185457259["legacyTheme()"]
-  f9b2df33_5039_d2fc_3648_b7e185457259 -->|calls| aeb3c1b0_87d9_8113_28f1_a5b62334afbe
-  33281725_69c5_fe93_dd76_77c64c7893d4["buildDesignSystem()"]
-  33281725_69c5_fe93_dd76_77c64c7893d4 -->|calls| aeb3c1b0_87d9_8113_28f1_a5b62334afbe
-  2efc5608_6ece_d525_d502_ae402d3e7a6b["parseCss()"]
-  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| aeb3c1b0_87d9_8113_28f1_a5b62334afbe
-  72bcf502_1614_63ec_b8d2_2c996b682c33["rule()"]
-  aeb3c1b0_87d9_8113_28f1_a5b62334afbe -->|calls| 72bcf502_1614_63ec_b8d2_2c996b682c33
-  8517f489_1dc1_cfc0_a6c9_3e531a75fc00["parse()"]
-  aeb3c1b0_87d9_8113_28f1_a5b62334afbe -->|calls| 8517f489_1dc1_cfc0_a6c9_3e531a75fc00
-  77f3d854_825b_49be_207b_08e93e390c99["injectFallbackForInitialFallback()"]
-  aeb3c1b0_87d9_8113_28f1_a5b62334afbe -->|calls| 77f3d854_825b_49be_207b_08e93e390c99
-  3827d6b8_9e17_4f4f_0b5d_946f0c3cf42a["toCss()"]
-  aeb3c1b0_87d9_8113_28f1_a5b62334afbe -->|calls| 3827d6b8_9e17_4f4f_0b5d_946f0c3cf42a
-  style aeb3c1b0_87d9_8113_28f1_a5b62334afbe fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  dec3ff16_e76c_2f36_cac4_d70f83ff36e3["theme()"]
+  388e66b5_cad7_aa38_d772_22738fe465e2["legacyTheme()"]
+  388e66b5_cad7_aa38_d772_22738fe465e2 -->|calls| dec3ff16_e76c_2f36_cac4_d70f83ff36e3
+  49cf4ef4_bc58_de77_38ee_861472c10e76["buildDesignSystem()"]
+  49cf4ef4_bc58_de77_38ee_861472c10e76 -->|calls| dec3ff16_e76c_2f36_cac4_d70f83ff36e3
+  dfe4d132_62ee_4dd0_28bc_661f6a358b63["parseCss()"]
+  dfe4d132_62ee_4dd0_28bc_661f6a358b63 -->|calls| dec3ff16_e76c_2f36_cac4_d70f83ff36e3
+  0acfef93_0959_e24d_458f_79c858a83f96["rule()"]
+  dec3ff16_e76c_2f36_cac4_d70f83ff36e3 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
+  dd689f9e_bf18_4dc5_8ad2_481bc54885e4["parse()"]
+  dec3ff16_e76c_2f36_cac4_d70f83ff36e3 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
+  78451a7e_f22a_c30b_94a9_31e4eeb73127["injectFallbackForInitialFallback()"]
+  dec3ff16_e76c_2f36_cac4_d70f83ff36e3 -->|calls| 78451a7e_f22a_c30b_94a9_31e4eeb73127
+  71acd8e2_7565_390e_cd19_55c488d90641["toCss()"]
+  dec3ff16_e76c_2f36_cac4_d70f83ff36e3 -->|calls| 71acd8e2_7565_390e_cd19_55c488d90641
+  style dec3ff16_e76c_2f36_cac4_d70f83ff36e3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -934,7 +934,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-css-functions-ts-theme"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","label":"theme","type":"Function","slug":"fn-css-functions-ts-theme","lc":60,"lang":"typescript","cc":4,"cbc":3},{"id":"72bcf502:1614:63ec:b8d2:2c996b682c33","label":"rule","type":"Function","slug":"fn-ast-ts-rule","lc":7,"lang":"typescript","cc":2,"cbc":14},{"id":"8517f489:1dc1:cfc0:a6c9:3e531a75fc00","label":"parse","type":"Function","slug":"fn-value-parser-ts-parse","lc":207,"lang":"typescript","cc":3,"cbc":19},{"id":"77f3d854:825b:49be:207b:08e93e390c99","label":"injectFallbackForInitialFallback","type":"Function","slug":"fn-css-functions-ts-injectfallbackforinitialfallback","lc":18,"lang":"typescript","cc":1,"cbc":1},{"id":"3827d6b8:9e17:4f4f:0b5d:946f0c3cf42a","label":"toCss","type":"Function","slug":"fn-value-parser-ts-tocss","lc":16,"lang":"typescript","cbc":12},{"id":"f9b2df33:5039:d2fc:3648:b7e185457259","label":"legacyTheme","type":"Function","slug":"fn-css-functions-ts-legacytheme","lc":22,"lang":"typescript","cc":2},{"id":"33281725:69c5:fe93:dd76:77c64c7893d4","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"2efc5608:6ece:d525:d502:ae402d3e7a6b","label":"parseCss","type":"Function","slug":"fn-index-ts-parsecss","lc":567,"lang":"typescript","cc":32,"cbc":2},{"id":"domain:Oxide","label":"Oxide","type":"Domain","slug":"domain-oxide"},{"id":"subdomain:Oxide:Scanner","label":"Scanner","type":"Subdomain","slug":"subdomain-scanner"}],"edges":[{"source":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","target":"72bcf502:1614:63ec:b8d2:2c996b682c33","type":"calls"},{"source":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","target":"8517f489:1dc1:cfc0:a6c9:3e531a75fc00","type":"calls"},{"source":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","target":"77f3d854:825b:49be:207b:08e93e390c99","type":"calls"},{"source":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","target":"3827d6b8:9e17:4f4f:0b5d:946f0c3cf42a","type":"calls"},{"source":"f9b2df33:5039:d2fc:3648:b7e185457259","target":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","type":"calls"},{"source":"33281725:69c5:fe93:dd76:77c64c7893d4","target":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","type":"calls"},{"source":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","target":"domain:Oxide","type":"belongsTo"},{"source":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","target":"subdomain:Oxide:Scanner","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","label":"theme","type":"Function","slug":"fn-css-functions-ts-theme","lc":60,"lang":"typescript","cc":4,"cbc":3},{"id":"0acfef93:0959:e24d:458f:79c858a83f96","label":"rule","type":"Function","slug":"fn-ast-ts-rule","lc":7,"lang":"typescript","cc":2,"cbc":14},{"id":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","label":"parse","type":"Function","slug":"fn-value-parser-ts-parse","lc":207,"lang":"typescript","cc":3,"cbc":21},{"id":"78451a7e:f22a:c30b:94a9:31e4eeb73127","label":"injectFallbackForInitialFallback","type":"Function","slug":"fn-css-functions-ts-injectfallbackforinitialfallback","lc":18,"lang":"typescript","cc":1,"cbc":1},{"id":"71acd8e2:7565:390e:cd19:55c488d90641","label":"toCss","type":"Function","slug":"fn-value-parser-ts-tocss","lc":16,"lang":"typescript","cbc":12},{"id":"388e66b5:cad7:aa38:d772:22738fe465e2","label":"legacyTheme","type":"Function","slug":"fn-css-functions-ts-legacytheme","lc":22,"lang":"typescript","cc":2},{"id":"49cf4ef4:bc58:de77:38ee:861472c10e76","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"dfe4d132:62ee:4dd0:28bc:661f6a358b63","label":"parseCss","type":"Function","slug":"fn-index-ts-parsecss","lc":567,"lang":"typescript","cc":32,"cbc":2},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","target":"78451a7e:f22a:c30b:94a9:31e4eeb73127","type":"calls"},{"source":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","target":"71acd8e2:7565:390e:cd19:55c488d90641","type":"calls"},{"source":"388e66b5:cad7:aa38:d772:22738fe465e2","target":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","type":"calls"},{"source":"49cf4ef4:bc58:de77:38ee:861472c10e76","target":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","type":"calls"},{"source":"dfe4d132:62ee:4dd0:28bc:661f6a358b63","target":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","type":"calls"},{"source":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","target":"domain:TailwindNode","type":"belongsTo"},{"source":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1015,14 +1015,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-oxide.html">Oxide</a></li></ul>
+      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-scanner.html">Scanner</a></li></ul>
+      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
     </div>
     
 

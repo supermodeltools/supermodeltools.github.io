@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/upgrade.html" class="pill pill-green">Upgrade</a>
-        <a href="/subdomain/configmigration.html" class="pill pill-orange">ConfigMigration</a>
+        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
+        <a href="/subdomain/moduleresolver.html" class="pill pill-orange">ModuleResolver</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Upgrade","slug":"domain-upgrade"},"entity":{"name":"printCandidate","slug":"fn-candidate-ts-printcandidate","type":"Function"},"subdomain":{"name":"ConfigMigration","slug":"subdomain-configmigration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"printCandidate","slug":"fn-candidate-ts-printcandidate","type":"Function"},"subdomain":{"name":"ModuleResolver","slug":"subdomain-moduleresolver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/upgrade.html">Upgrade</a><span class="arch-sep">&rarr;</span>
-            <a href="/configmigration.html">ConfigMigration</a><span class="arch-sep">&rarr;</span>
+            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
+            <a href="/moduleresolver.html">ModuleResolver</a><span class="arch-sep">&rarr;</span>
             <span>printCandidate() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  89fb7f77_b4fb_745a_fb52_f6d779fc00f3["printCandidate()"]
-  8c452697_3f21_bb82_4e82_f75385395c7c["printUnprefixedCandidate()"]
-  8c452697_3f21_bb82_4e82_f75385395c7c -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  d971b20f_15cc_8215_537c_02d61a0dc93f["migrateArbitraryVariants()"]
-  d971b20f_15cc_8215_537c_02d61a0dc93f -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  5e82f7dc_0bc5_8f68_5287_de67eb4d2e65["migrateAutomaticVarInjection()"]
-  5e82f7dc_0bc5_8f68_5287_de67eb4d2e65 -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  92af91a8_4384_aae9_e722_d6b1888458a4["migrateCamelcaseInNamedValue()"]
-  92af91a8_4384_aae9_e722_d6b1888458a4 -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  6249b763_1c2a_b4f5_f649_7f194d87e91c["migrateLegacyArbitraryValues()"]
-  6249b763_1c2a_b4f5_f649_7f194d87e91c -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  d817c25d_63ce_d795_988a_bef9df9180be["migrateLegacyClasses()"]
-  d817c25d_63ce_d795_988a_bef9df9180be -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  eaef109f_ff83_30e0_ad53_301229aeff94["migrateModernizeArbitraryValues()"]
-  eaef109f_ff83_30e0_ad53_301229aeff94 -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  04ffd008_66bb_cce1_24fc_6a097a9c714b["migratePrefix()"]
-  04ffd008_66bb_cce1_24fc_6a097a9c714b -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  6c54af52_92cc_10bc_1a95_f43db41d1906["migrateVariantOrder()"]
-  6c54af52_92cc_10bc_1a95_f43db41d1906 -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  82b1cbf8_2e77_57a9_761f_b4a0215bfea6["createCanonicalizeCandidateCache()"]
-  82b1cbf8_2e77_57a9_761f_b4a0215bfea6 -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  a711f4bc_10b7_cdfd_30a2_a99c0d40ad6e["createCanonicalizeUtilityCache()"]
-  a711f4bc_10b7_cdfd_30a2_a99c0d40ad6e -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  ab0f149b_c8f5_f723_9b6b_b39ebeec95de["printUnprefixedCandidate()"]
-  ab0f149b_c8f5_f723_9b6b_b39ebeec95de -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  f39805cf_0b62_cb24_a0a3_937b3ccf6e09["arbitraryUtilities()"]
-  f39805cf_0b62_cb24_a0a3_937b3ccf6e09 -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  3a83af62_cb88_dd96_feb3_e51fa58bb5d6["allVariablesAreUsed()"]
-  3a83af62_cb88_dd96_feb3_e51fa58bb5d6 -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  style 89fb7f77_b4fb_745a_fb52_f6d779fc00f3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  7286cd48_1b44_581e_9734_79adf3546cca["printCandidate()"]
+  72dfac89_9517_837d_e076_6d50e4fc11ba["printUnprefixedCandidate()"]
+  72dfac89_9517_837d_e076_6d50e4fc11ba -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  da6194ca_f19b_d252_9ce7_f0acce424221["migrateArbitraryVariants()"]
+  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  9dde01f0_bd90_a856_16fa_1d0ea9bc2f1e["migrateAutomaticVarInjection()"]
+  9dde01f0_bd90_a856_16fa_1d0ea9bc2f1e -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  840240d3_04e0_9158_c234_ad79b69e149a["migrateCamelcaseInNamedValue()"]
+  840240d3_04e0_9158_c234_ad79b69e149a -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  aca76731_044a_77e8_3078_f4041ffad2e2["migrateLegacyArbitraryValues()"]
+  aca76731_044a_77e8_3078_f4041ffad2e2 -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  419a373a_b246_29c7_d4be_ee1c4de3028a["migrateLegacyClasses()"]
+  419a373a_b246_29c7_d4be_ee1c4de3028a -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  3081c4a5_a681_79c2_c0b4_43cb5a1e32bc["migrateModernizeArbitraryValues()"]
+  3081c4a5_a681_79c2_c0b4_43cb5a1e32bc -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  713a33e5_b942_ae61_a5fe_2fdcd909e75f["migratePrefix()"]
+  713a33e5_b942_ae61_a5fe_2fdcd909e75f -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  0525572e_0122_4d75_010c_f4f5d0f0e692["migrateVariantOrder()"]
+  0525572e_0122_4d75_010c_f4f5d0f0e692 -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  57a64953_1ead_27a1_b289_cd387e5ee6de["createCanonicalizeCandidateCache()"]
+  57a64953_1ead_27a1_b289_cd387e5ee6de -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  146fbbab_d12b_8f49_3d82_8559149b14d5["createCanonicalizeUtilityCache()"]
+  146fbbab_d12b_8f49_3d82_8559149b14d5 -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  1535c605_5dd8_a5dc_8e2a_71a9aa8e20fd["printUnprefixedCandidate()"]
+  1535c605_5dd8_a5dc_8e2a_71a9aa8e20fd -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  50007bc9_67fc_98c3_11cd_9cef749b258b["arbitraryUtilities()"]
+  50007bc9_67fc_98c3_11cd_9cef749b258b -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  b6c1e3e7_a330_be05_4620_429a4c7f787d["allVariablesAreUsed()"]
+  b6c1e3e7_a330_be05_4620_429a4c7f787d -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  style 7286cd48_1b44_581e_9734_79adf3546cca fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-candidate-ts-printcandidate"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","label":"printCandidate","type":"Function","slug":"fn-candidate-ts-printcandidate","lc":61,"lang":"typescript","cc":4,"cbc":19},{"id":"27a43c6b:b205:77c9:a495:053f25fd19ea","label":"printVariant","type":"Function","slug":"fn-candidate-ts-printvariant","lc":46,"lang":"typescript","cc":4,"cbc":6},{"id":"35ee8cd2:d737:9003:1541:8c0ab4b17f2d","label":"isVar","type":"Function","slug":"fn-candidate-ts-isvar","lc":3,"lang":"typescript","cc":1,"cbc":3},{"id":"2af246a0:d588:cad2:0ccc:f0e45e860955","label":"printArbitraryValue","type":"Function","slug":"fn-candidate-ts-printarbitraryvalue","lc":3,"lang":"typescript","cc":1,"cbc":4},{"id":"ca812518:5536:0758:07ce:8a0532bffb3e","label":"printModifier","type":"Function","slug":"fn-candidate-ts-printmodifier","lc":16,"lang":"typescript","cc":2,"cbc":3},{"id":"8c452697:3f21:bb82:4e82:f75385395c7c","label":"printUnprefixedCandidate","type":"Function","slug":"fn-candidates-ts-printunprefixedcandidate","lc":7,"lang":"typescript","cc":1},{"id":"d971b20f:15cc:8215:537c:02d61a0dc93f","label":"migrateArbitraryVariants","type":"Function","slug":"fn-migrate-arbitrary-variants-ts-migratearbitraryvariants","lc":39,"lang":"typescript","cc":8},{"id":"5e82f7dc:0bc5:8f68:5287:de67eb4d2e65","label":"migrateAutomaticVarInjection","type":"Function","slug":"fn-migrate-automatic-var-injection-ts-migrateautomaticvarinjection","lc":67,"lang":"typescript","cc":6},{"id":"92af91a8:4384:aae9:e722:d6b1888458a4","label":"migrateCamelcaseInNamedValue","type":"Function","slug":"fn-migrate-camelcase-in-named-value-ts-migratecamelcaseinnamedvalue","lc":41,"lang":"typescript","cc":5},{"id":"6249b763:1c2a:b4f5:f649:7f194d87e91c","label":"migrateLegacyArbitraryValues","type":"Function","slug":"fn-migrate-legacy-arbitrary-values-ts-migratelegacyarbitraryvalues","lc":24,"lang":"typescript","cc":4},{"id":"d817c25d:63ce:d795:988a:bef9df9180be","label":"migrateLegacyClasses","type":"Function","slug":"fn-migrate-legacy-classes-ts-migratelegacyclasses","lc":75,"lang":"typescript","cc":6},{"id":"eaef109f:ff83:30e0:ad53:301229aeff94","label":"migrateModernizeArbitraryValues","type":"Function","slug":"fn-migrate-modernize-arbitrary-values-ts-migratemodernizearbitraryvalues","lc":66,"lang":"typescript","cc":6},{"id":"04ffd008:66bb:cce1:24fc:6a097a9c714b","label":"migratePrefix","type":"Function","slug":"fn-migrate-prefix-ts-migrateprefix","lc":53,"lang":"typescript","cc":5},{"id":"6c54af52:92cc:10bc:1a95:f43db41d1906","label":"migrateVariantOrder","type":"Function","slug":"fn-migrate-variant-order-ts-migratevariantorder","lc":55,"lang":"typescript","cc":7},{"id":"82b1cbf8:2e77:57a9:761f:b4a0215bfea6","label":"createCanonicalizeCandidateCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createcanonicalizecandidatecache","lc":62,"lang":"typescript","cc":4,"cbc":1},{"id":"a711f4bc:10b7:cdfd:30a2:a99c0d40ad6e","label":"createCanonicalizeUtilityCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createcanonicalizeutilitycache","lc":21,"lang":"typescript","cc":3,"cbc":1},{"id":"ab0f149b:c8f5:f723:9b6b:b39ebeec95de","label":"printUnprefixedCandidate","type":"Function","slug":"fn-canonicalize-candidates-ts-printunprefixedcandidate","lc":7,"lang":"typescript","cc":1,"cbc":1},{"id":"f39805cf:0b62:cb24:a0a3:937b3ccf6e09","label":"arbitraryUtilities","type":"Function","slug":"fn-canonicalize-candidates-ts-arbitraryutilities","lc":177,"lang":"typescript","cc":6},{"id":"3a83af62:cb88:dd96:feb3:e51fa58bb5d6","label":"allVariablesAreUsed","type":"Function","slug":"fn-canonicalize-candidates-ts-allvariablesareused","lc":50,"lang":"typescript","cc":3,"cbc":1},{"id":"f5359a9a:93c6:85d5:9427:0d76f6e56877","label":"bareValueUtilities","type":"Function","slug":"fn-canonicalize-candidates-ts-barevalueutilities","lc":72,"lang":"typescript","cc":3},{"id":"46101d7e:cfca:f100:a02a:85b355bcdb14","label":"dropUnnecessaryDataTypes","type":"Function","slug":"fn-canonicalize-candidates-ts-dropunnecessarydatatypes","lc":24,"lang":"typescript","cc":2},{"id":"ca4d58b3:f755:f1c0:95b6:ed2801988556","label":"arbitraryValueToBareValueUtility","type":"Function","slug":"fn-canonicalize-candidates-ts-arbitraryvaluetobarevalueutility","lc":25,"lang":"typescript","cc":3},{"id":"8587db31:9520:3853:6654:022e839d0335","label":"optimizeModifier","type":"Function","slug":"fn-canonicalize-candidates-ts-optimizemodifier","lc":64,"lang":"typescript","cc":2},{"id":"33281725:69c5:fe93:dd76:77c64c7893d4","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"domain:Upgrade","label":"Upgrade","type":"Domain","slug":"domain-upgrade"},{"id":"subdomain:Upgrade:ConfigMigration","label":"ConfigMigration","type":"Subdomain","slug":"subdomain-configmigration"}],"edges":[{"source":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","target":"27a43c6b:b205:77c9:a495:053f25fd19ea","type":"calls"},{"source":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","target":"35ee8cd2:d737:9003:1541:8c0ab4b17f2d","type":"calls"},{"source":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","target":"2af246a0:d588:cad2:0ccc:f0e45e860955","type":"calls"},{"source":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","target":"ca812518:5536:0758:07ce:8a0532bffb3e","type":"calls"},{"source":"8c452697:3f21:bb82:4e82:f75385395c7c","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"5e82f7dc:0bc5:8f68:5287:de67eb4d2e65","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"92af91a8:4384:aae9:e722:d6b1888458a4","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"6249b763:1c2a:b4f5:f649:7f194d87e91c","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"d817c25d:63ce:d795:988a:bef9df9180be","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"eaef109f:ff83:30e0:ad53:301229aeff94","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"04ffd008:66bb:cce1:24fc:6a097a9c714b","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"6c54af52:92cc:10bc:1a95:f43db41d1906","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"82b1cbf8:2e77:57a9:761f:b4a0215bfea6","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"a711f4bc:10b7:cdfd:30a2:a99c0d40ad6e","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"ab0f149b:c8f5:f723:9b6b:b39ebeec95de","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"f39805cf:0b62:cb24:a0a3:937b3ccf6e09","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"3a83af62:cb88:dd96:feb3:e51fa58bb5d6","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"f5359a9a:93c6:85d5:9427:0d76f6e56877","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"46101d7e:cfca:f100:a02a:85b355bcdb14","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"ca4d58b3:f755:f1c0:95b6:ed2801988556","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"8587db31:9520:3853:6654:022e839d0335","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"33281725:69c5:fe93:dd76:77c64c7893d4","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","target":"domain:Upgrade","type":"belongsTo"},{"source":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","target":"subdomain:Upgrade:ConfigMigration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"7286cd48:1b44:581e:9734:79adf3546cca","label":"printCandidate","type":"Function","slug":"fn-candidate-ts-printcandidate","lc":61,"lang":"typescript","cc":4,"cbc":19},{"id":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","label":"printVariant","type":"Function","slug":"fn-candidate-ts-printvariant","lc":46,"lang":"typescript","cc":4,"cbc":6},{"id":"f4887993:20ca:88e0:3552:96431791d11b","label":"isVar","type":"Function","slug":"fn-candidate-ts-isvar","lc":3,"lang":"typescript","cc":1,"cbc":3},{"id":"f73eea13:ff68:dfe9:8ee2:cf00395d4af0","label":"printArbitraryValue","type":"Function","slug":"fn-candidate-ts-printarbitraryvalue","lc":3,"lang":"typescript","cc":1,"cbc":4},{"id":"bdb3f8dc:91d3:aa49:3f27:90afb925aab0","label":"printModifier","type":"Function","slug":"fn-candidate-ts-printmodifier","lc":16,"lang":"typescript","cc":2,"cbc":3},{"id":"72dfac89:9517:837d:e076:6d50e4fc11ba","label":"printUnprefixedCandidate","type":"Function","slug":"fn-candidates-ts-printunprefixedcandidate","lc":7,"lang":"typescript","cc":1},{"id":"da6194ca:f19b:d252:9ce7:f0acce424221","label":"migrateArbitraryVariants","type":"Function","slug":"fn-migrate-arbitrary-variants-ts-migratearbitraryvariants","lc":39,"lang":"typescript","cc":8},{"id":"9dde01f0:bd90:a856:16fa:1d0ea9bc2f1e","label":"migrateAutomaticVarInjection","type":"Function","slug":"fn-migrate-automatic-var-injection-ts-migrateautomaticvarinjection","lc":67,"lang":"typescript","cc":6},{"id":"840240d3:04e0:9158:c234:ad79b69e149a","label":"migrateCamelcaseInNamedValue","type":"Function","slug":"fn-migrate-camelcase-in-named-value-ts-migratecamelcaseinnamedvalue","lc":41,"lang":"typescript","cc":5},{"id":"aca76731:044a:77e8:3078:f4041ffad2e2","label":"migrateLegacyArbitraryValues","type":"Function","slug":"fn-migrate-legacy-arbitrary-values-ts-migratelegacyarbitraryvalues","lc":24,"lang":"typescript","cc":4},{"id":"419a373a:b246:29c7:d4be:ee1c4de3028a","label":"migrateLegacyClasses","type":"Function","slug":"fn-migrate-legacy-classes-ts-migratelegacyclasses","lc":75,"lang":"typescript","cc":6},{"id":"3081c4a5:a681:79c2:c0b4:43cb5a1e32bc","label":"migrateModernizeArbitraryValues","type":"Function","slug":"fn-migrate-modernize-arbitrary-values-ts-migratemodernizearbitraryvalues","lc":66,"lang":"typescript","cc":6},{"id":"713a33e5:b942:ae61:a5fe:2fdcd909e75f","label":"migratePrefix","type":"Function","slug":"fn-migrate-prefix-ts-migrateprefix","lc":53,"lang":"typescript","cc":5},{"id":"0525572e:0122:4d75:010c:f4f5d0f0e692","label":"migrateVariantOrder","type":"Function","slug":"fn-migrate-variant-order-ts-migratevariantorder","lc":55,"lang":"typescript","cc":7},{"id":"57a64953:1ead:27a1:b289:cd387e5ee6de","label":"createCanonicalizeCandidateCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createcanonicalizecandidatecache","lc":62,"lang":"typescript","cc":4,"cbc":1},{"id":"146fbbab:d12b:8f49:3d82:8559149b14d5","label":"createCanonicalizeUtilityCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createcanonicalizeutilitycache","lc":21,"lang":"typescript","cc":3,"cbc":1},{"id":"1535c605:5dd8:a5dc:8e2a:71a9aa8e20fd","label":"printUnprefixedCandidate","type":"Function","slug":"fn-canonicalize-candidates-ts-printunprefixedcandidate","lc":7,"lang":"typescript","cc":1,"cbc":1},{"id":"50007bc9:67fc:98c3:11cd:9cef749b258b","label":"arbitraryUtilities","type":"Function","slug":"fn-canonicalize-candidates-ts-arbitraryutilities","lc":177,"lang":"typescript","cc":6},{"id":"b6c1e3e7:a330:be05:4620:429a4c7f787d","label":"allVariablesAreUsed","type":"Function","slug":"fn-canonicalize-candidates-ts-allvariablesareused","lc":50,"lang":"typescript","cc":3,"cbc":1},{"id":"d05117f8:ffe2:08f8:2f05:00a096399f9f","label":"bareValueUtilities","type":"Function","slug":"fn-canonicalize-candidates-ts-barevalueutilities","lc":72,"lang":"typescript","cc":3},{"id":"e0442c14:be8f:b96a:3c6a:164c1ed45879","label":"dropUnnecessaryDataTypes","type":"Function","slug":"fn-canonicalize-candidates-ts-dropunnecessarydatatypes","lc":24,"lang":"typescript","cc":2},{"id":"07618d7a:bffa:2c41:f612:90dc3e564469","label":"arbitraryValueToBareValueUtility","type":"Function","slug":"fn-canonicalize-candidates-ts-arbitraryvaluetobarevalueutility","lc":25,"lang":"typescript","cc":3},{"id":"ccadb38a:4fbc:6717:df05:97136f6b4f1d","label":"optimizeModifier","type":"Function","slug":"fn-canonicalize-candidates-ts-optimizemodifier","lc":64,"lang":"typescript","cc":2},{"id":"49cf4ef4:bc58:de77:38ee:861472c10e76","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:ModuleResolver","label":"ModuleResolver","type":"Subdomain","slug":"subdomain-moduleresolver"}],"edges":[{"source":"7286cd48:1b44:581e:9734:79adf3546cca","target":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","type":"calls"},{"source":"7286cd48:1b44:581e:9734:79adf3546cca","target":"f4887993:20ca:88e0:3552:96431791d11b","type":"calls"},{"source":"7286cd48:1b44:581e:9734:79adf3546cca","target":"f73eea13:ff68:dfe9:8ee2:cf00395d4af0","type":"calls"},{"source":"7286cd48:1b44:581e:9734:79adf3546cca","target":"bdb3f8dc:91d3:aa49:3f27:90afb925aab0","type":"calls"},{"source":"72dfac89:9517:837d:e076:6d50e4fc11ba","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"9dde01f0:bd90:a856:16fa:1d0ea9bc2f1e","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"840240d3:04e0:9158:c234:ad79b69e149a","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"aca76731:044a:77e8:3078:f4041ffad2e2","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"419a373a:b246:29c7:d4be:ee1c4de3028a","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"3081c4a5:a681:79c2:c0b4:43cb5a1e32bc","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"713a33e5:b942:ae61:a5fe:2fdcd909e75f","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"0525572e:0122:4d75:010c:f4f5d0f0e692","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"57a64953:1ead:27a1:b289:cd387e5ee6de","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"146fbbab:d12b:8f49:3d82:8559149b14d5","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"1535c605:5dd8:a5dc:8e2a:71a9aa8e20fd","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"50007bc9:67fc:98c3:11cd:9cef749b258b","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"b6c1e3e7:a330:be05:4620:429a4c7f787d","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"d05117f8:ffe2:08f8:2f05:00a096399f9f","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"e0442c14:be8f:b96a:3c6a:164c1ed45879","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"07618d7a:bffa:2c41:f612:90dc3e564469","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"ccadb38a:4fbc:6717:df05:97136f6b4f1d","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"49cf4ef4:bc58:de77:38ee:861472c10e76","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"7286cd48:1b44:581e:9734:79adf3546cca","target":"domain:TailwindNode","type":"belongsTo"},{"source":"7286cd48:1b44:581e:9734:79adf3546cca","target":"subdomain:TailwindNode:ModuleResolver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1030,14 +1030,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-upgrade.html">Upgrade</a></li></ul>
+      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-configmigration.html">ConfigMigration</a></li></ul>
+      <ul><li><a href="/subdomain-moduleresolver.html">ModuleResolver</a></li></ul>
     </div>
     
 

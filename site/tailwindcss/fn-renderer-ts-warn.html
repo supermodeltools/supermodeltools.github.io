@@ -869,7 +869,7 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/upgrade.html" class="pill pill-green">Upgrade</a>
+        <a href="/domain/upgradetoolchain.html" class="pill pill-green">UpgradeToolchain</a>
         <a href="/subdomain/templatemigration.html" class="pill pill-orange">TemplateMigration</a>
         
         
@@ -894,10 +894,10 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Upgrade","slug":"domain-upgrade"},"entity":{"name":"warn","slug":"fn-renderer-ts-warn","type":"Function"},"subdomain":{"name":"TemplateMigration","slug":"subdomain-templatemigration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"UpgradeToolchain","slug":"domain-upgradetoolchain"},"entity":{"name":"warn","slug":"fn-renderer-ts-warn","type":"Function"},"subdomain":{"name":"TemplateMigration","slug":"subdomain-templatemigration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/upgrade.html">Upgrade</a><span class="arch-sep">&rarr;</span>
+            <a href="/upgradetoolchain.html">UpgradeToolchain</a><span class="arch-sep">&rarr;</span>
             <a href="/templatemigration.html">TemplateMigration</a><span class="arch-sep">&rarr;</span>
             <span>warn() — tailwindcss Function Reference</span>
           </div>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  b66cd566_3ca4_bb49_29ea_a8f5a118aa58["warn()"]
-  661b94af_ebec_1295_c3e8_438511f44009["migratePostCSSJSConfig()"]
-  661b94af_ebec_1295_c3e8_438511f44009 -->|calls| b66cd566_3ca4_bb49_29ea_a8f5a118aa58
-  42e79883_cc45_07b3_0184_41ff19f08bde["packageManagerForBase()"]
-  42e79883_cc45_07b3_0184_41ff19f08bde -->|calls| b66cd566_3ca4_bb49_29ea_a8f5a118aa58
-  c2449812_8e3f_6a97_1760_53cec94c7a18["log()"]
-  b66cd566_3ca4_bb49_29ea_a8f5a118aa58 -->|calls| c2449812_8e3f_6a97_1760_53cec94c7a18
-  style b66cd566_3ca4_bb49_29ea_a8f5a118aa58 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  3e7038da_9b7f_14d0_c573_ef83de5f1581["warn()"]
+  26c26af2_3bd7_20f2_f0a5_b86e3dec2f33["migratePostCSSJSConfig()"]
+  26c26af2_3bd7_20f2_f0a5_b86e3dec2f33 -->|calls| 3e7038da_9b7f_14d0_c573_ef83de5f1581
+  266510ea_e193_d5cf_e6f1_16838b9d968a["packageManagerForBase()"]
+  266510ea_e193_d5cf_e6f1_16838b9d968a -->|calls| 3e7038da_9b7f_14d0_c573_ef83de5f1581
+  c269e7a7_f8fa_6688_eff1_e23ff0ac38b1["log()"]
+  3e7038da_9b7f_14d0_c573_ef83de5f1581 -->|calls| c269e7a7_f8fa_6688_eff1_e23ff0ac38b1
+  style 3e7038da_9b7f_14d0_c573_ef83de5f1581 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-renderer-ts-warn"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"b66cd566:3ca4:bb49:29ea:a8f5a118aa58","label":"warn","type":"Function","slug":"fn-renderer-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":2},{"id":"c2449812:8e3f:6a97:1760:53cec94c7a18","label":"log","type":"Function","slug":"fn-renderer-ts-log","lc":15,"lang":"typescript","cc":1,"cbc":4},{"id":"661b94af:ebec:1295:c3e8:438511f44009","label":"migratePostCSSJSConfig","type":"Function","slug":"fn-migrate-postcss-ts-migratepostcssjsconfig","lc":80,"lang":"typescript","cc":3,"cbc":1},{"id":"42e79883:cc45:07b3:0184:41ff19f08bde","label":"packageManagerForBase","type":"Function","slug":"fn-packages-ts-packagemanagerforbase","lc":62,"lang":"typescript","cc":1},{"id":"domain:Upgrade","label":"Upgrade","type":"Domain","slug":"domain-upgrade"},{"id":"subdomain:Upgrade:TemplateMigration","label":"TemplateMigration","type":"Subdomain","slug":"subdomain-templatemigration"}],"edges":[{"source":"b66cd566:3ca4:bb49:29ea:a8f5a118aa58","target":"c2449812:8e3f:6a97:1760:53cec94c7a18","type":"calls"},{"source":"661b94af:ebec:1295:c3e8:438511f44009","target":"b66cd566:3ca4:bb49:29ea:a8f5a118aa58","type":"calls"},{"source":"42e79883:cc45:07b3:0184:41ff19f08bde","target":"b66cd566:3ca4:bb49:29ea:a8f5a118aa58","type":"calls"},{"source":"b66cd566:3ca4:bb49:29ea:a8f5a118aa58","target":"domain:Upgrade","type":"belongsTo"},{"source":"b66cd566:3ca4:bb49:29ea:a8f5a118aa58","target":"subdomain:Upgrade:TemplateMigration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"3e7038da:9b7f:14d0:c573:ef83de5f1581","label":"warn","type":"Function","slug":"fn-renderer-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":2},{"id":"c269e7a7:f8fa:6688:eff1:e23ff0ac38b1","label":"log","type":"Function","slug":"fn-renderer-ts-log","lc":15,"lang":"typescript","cc":1,"cbc":4},{"id":"26c26af2:3bd7:20f2:f0a5:b86e3dec2f33","label":"migratePostCSSJSConfig","type":"Function","slug":"fn-migrate-postcss-ts-migratepostcssjsconfig","lc":80,"lang":"typescript","cc":3,"cbc":1},{"id":"266510ea:e193:d5cf:e6f1:16838b9d968a","label":"packageManagerForBase","type":"Function","slug":"fn-packages-ts-packagemanagerforbase","lc":62,"lang":"typescript","cc":1},{"id":"domain:UpgradeToolchain","label":"UpgradeToolchain","type":"Domain","slug":"domain-upgradetoolchain"},{"id":"subdomain:UpgradeToolchain:TemplateMigration","label":"TemplateMigration","type":"Subdomain","slug":"subdomain-templatemigration"}],"edges":[{"source":"3e7038da:9b7f:14d0:c573:ef83de5f1581","target":"c269e7a7:f8fa:6688:eff1:e23ff0ac38b1","type":"calls"},{"source":"26c26af2:3bd7:20f2:f0a5:b86e3dec2f33","target":"3e7038da:9b7f:14d0:c573:ef83de5f1581","type":"calls"},{"source":"266510ea:e193:d5cf:e6f1:16838b9d968a","target":"3e7038da:9b7f:14d0:c573:ef83de5f1581","type":"calls"},{"source":"3e7038da:9b7f:14d0:c573:ef83de5f1581","target":"domain:UpgradeToolchain","type":"belongsTo"},{"source":"3e7038da:9b7f:14d0:c573:ef83de5f1581","target":"subdomain:UpgradeToolchain:TemplateMigration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -950,7 +950,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-upgrade.html">Upgrade</a></li></ul>
+      <ul><li><a href="/domain-upgradetoolchain.html">UpgradeToolchain</a></li></ul>
     </div>
     
 

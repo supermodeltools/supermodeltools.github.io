@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/upgrade.html" class="pill pill-green">Upgrade</a>
-        <a href="/subdomain/configmigration.html" class="pill pill-orange">ConfigMigration</a>
+        <a href="/domain/upgradetoolchain.html" class="pill pill-green">UpgradeToolchain</a>
+        <a href="/subdomain/configcodemods.html" class="pill pill-orange">ConfigCodemods</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Upgrade","slug":"domain-upgrade"},"entity":{"name":"substituteFunctionsInValue","slug":"fn-migrate-preflight-ts-substitutefunctionsinvalue","type":"Function"},"subdomain":{"name":"ConfigMigration","slug":"subdomain-configmigration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"UpgradeToolchain","slug":"domain-upgradetoolchain"},"entity":{"name":"substituteFunctionsInValue","slug":"fn-migrate-preflight-ts-substitutefunctionsinvalue","type":"Function"},"subdomain":{"name":"ConfigCodemods","slug":"subdomain-configcodemods"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/upgrade.html">Upgrade</a><span class="arch-sep">&rarr;</span>
-            <a href="/configmigration.html">ConfigMigration</a><span class="arch-sep">&rarr;</span>
+            <a href="/upgradetoolchain.html">UpgradeToolchain</a><span class="arch-sep">&rarr;</span>
+            <a href="/configcodemods.html">ConfigCodemods</a><span class="arch-sep">&rarr;</span>
             <span>substituteFunctionsInValue() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,18 +911,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  d9b1edfc_4f85_6feb_a743_e6cf71391298["substituteFunctionsInValue()"]
-  478dbf14_6391_35ef_a40c_4f273ebf62e5["migratePreflight()"]
-  478dbf14_6391_35ef_a40c_4f273ebf62e5 -->|calls| d9b1edfc_4f85_6feb_a743_e6cf71391298
-  3827d6b8_9e17_4f4f_0b5d_946f0c3cf42a["toCss()"]
-  d9b1edfc_4f85_6feb_a743_e6cf71391298 -->|calls| 3827d6b8_9e17_4f4f_0b5d_946f0c3cf42a
-  212696ab_3413_42fd_3813_cc30e2c25ed0["eventuallyUnquote()"]
-  d9b1edfc_4f85_6feb_a743_e6cf71391298 -->|calls| 212696ab_3413_42fd_3813_cc30e2c25ed0
-  8517f489_1dc1_cfc0_a6c9_3e531a75fc00["parse()"]
-  d9b1edfc_4f85_6feb_a743_e6cf71391298 -->|calls| 8517f489_1dc1_cfc0_a6c9_3e531a75fc00
-  089aa8da_dc18_42e3_92c2_a1d831f00b7a["walk()"]
-  d9b1edfc_4f85_6feb_a743_e6cf71391298 -->|calls| 089aa8da_dc18_42e3_92c2_a1d831f00b7a
-  style d9b1edfc_4f85_6feb_a743_e6cf71391298 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  b4c82a32_6372_11d6_c4e1_a254cd69ab09["substituteFunctionsInValue()"]
+  b980d16d_bce2_2358_6d26_e54f164d9798["migratePreflight()"]
+  b980d16d_bce2_2358_6d26_e54f164d9798 -->|calls| b4c82a32_6372_11d6_c4e1_a254cd69ab09
+  71acd8e2_7565_390e_cd19_55c488d90641["toCss()"]
+  b4c82a32_6372_11d6_c4e1_a254cd69ab09 -->|calls| 71acd8e2_7565_390e_cd19_55c488d90641
+  99205243_028e_5053_b0fc_fe3b65cdd243["eventuallyUnquote()"]
+  b4c82a32_6372_11d6_c4e1_a254cd69ab09 -->|calls| 99205243_028e_5053_b0fc_fe3b65cdd243
+  dd689f9e_bf18_4dc5_8ad2_481bc54885e4["parse()"]
+  b4c82a32_6372_11d6_c4e1_a254cd69ab09 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
+  5099f828_6467_ecb0_6ae3_26c5f07e1976["walk()"]
+  b4c82a32_6372_11d6_c4e1_a254cd69ab09 -->|calls| 5099f828_6467_ecb0_6ae3_26c5f07e1976
+  style b4c82a32_6372_11d6_c4e1_a254cd69ab09 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -930,7 +930,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-migrate-preflight-ts-substitutefunctionsinvalue"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"d9b1edfc:4f85:6feb:a743:e6cf71391298","label":"substituteFunctionsInValue","type":"Function","slug":"fn-migrate-preflight-ts-substitutefunctionsinvalue","lc":48,"lang":"typescript","cc":4,"cbc":1},{"id":"3827d6b8:9e17:4f4f:0b5d:946f0c3cf42a","label":"toCss","type":"Function","slug":"fn-value-parser-ts-tocss","lc":16,"lang":"typescript","cbc":12},{"id":"212696ab:3413:42fd:3813:cc30e2c25ed0","label":"eventuallyUnquote","type":"Function","slug":"fn-migrate-preflight-ts-eventuallyunquote","lc":19,"lang":"typescript","cbc":1},{"id":"8517f489:1dc1:cfc0:a6c9:3e531a75fc00","label":"parse","type":"Function","slug":"fn-value-parser-ts-parse","lc":207,"lang":"typescript","cc":3,"cbc":19},{"id":"089aa8da:dc18:42e3:92c2:a1d831f00b7a","label":"walk","type":"Function","slug":"fn-walk-ts-walk-2","lc":12,"lang":"typescript","cc":1,"cbc":37},{"id":"478dbf14:6391:35ef:a40c:4f273ebf62e5","label":"migratePreflight","type":"Function","slug":"fn-migrate-preflight-ts-migratepreflight","lc":81,"lang":"typescript","cc":5,"cbc":2},{"id":"domain:Upgrade","label":"Upgrade","type":"Domain","slug":"domain-upgrade"},{"id":"subdomain:Upgrade:ConfigMigration","label":"ConfigMigration","type":"Subdomain","slug":"subdomain-configmigration"}],"edges":[{"source":"d9b1edfc:4f85:6feb:a743:e6cf71391298","target":"3827d6b8:9e17:4f4f:0b5d:946f0c3cf42a","type":"calls"},{"source":"d9b1edfc:4f85:6feb:a743:e6cf71391298","target":"212696ab:3413:42fd:3813:cc30e2c25ed0","type":"calls"},{"source":"d9b1edfc:4f85:6feb:a743:e6cf71391298","target":"8517f489:1dc1:cfc0:a6c9:3e531a75fc00","type":"calls"},{"source":"d9b1edfc:4f85:6feb:a743:e6cf71391298","target":"089aa8da:dc18:42e3:92c2:a1d831f00b7a","type":"calls"},{"source":"478dbf14:6391:35ef:a40c:4f273ebf62e5","target":"d9b1edfc:4f85:6feb:a743:e6cf71391298","type":"calls"},{"source":"d9b1edfc:4f85:6feb:a743:e6cf71391298","target":"domain:Upgrade","type":"belongsTo"},{"source":"d9b1edfc:4f85:6feb:a743:e6cf71391298","target":"subdomain:Upgrade:ConfigMigration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"b4c82a32:6372:11d6:c4e1:a254cd69ab09","label":"substituteFunctionsInValue","type":"Function","slug":"fn-migrate-preflight-ts-substitutefunctionsinvalue","lc":48,"lang":"typescript","cc":4,"cbc":1},{"id":"71acd8e2:7565:390e:cd19:55c488d90641","label":"toCss","type":"Function","slug":"fn-value-parser-ts-tocss","lc":16,"lang":"typescript","cbc":12},{"id":"99205243:028e:5053:b0fc:fe3b65cdd243","label":"eventuallyUnquote","type":"Function","slug":"fn-migrate-preflight-ts-eventuallyunquote","lc":19,"lang":"typescript","cbc":1},{"id":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","label":"parse","type":"Function","slug":"fn-value-parser-ts-parse","lc":207,"lang":"typescript","cc":3,"cbc":21},{"id":"5099f828:6467:ecb0:6ae3:26c5f07e1976","label":"walk","type":"Function","slug":"fn-walk-ts-walk-2","lc":12,"lang":"typescript","cc":1,"cbc":40},{"id":"b980d16d:bce2:2358:6d26:e54f164d9798","label":"migratePreflight","type":"Function","slug":"fn-migrate-preflight-ts-migratepreflight","lc":81,"lang":"typescript","cc":5,"cbc":2},{"id":"domain:UpgradeToolchain","label":"UpgradeToolchain","type":"Domain","slug":"domain-upgradetoolchain"},{"id":"subdomain:UpgradeToolchain:ConfigCodemods","label":"ConfigCodemods","type":"Subdomain","slug":"subdomain-configcodemods"}],"edges":[{"source":"b4c82a32:6372:11d6:c4e1:a254cd69ab09","target":"71acd8e2:7565:390e:cd19:55c488d90641","type":"calls"},{"source":"b4c82a32:6372:11d6:c4e1:a254cd69ab09","target":"99205243:028e:5053:b0fc:fe3b65cdd243","type":"calls"},{"source":"b4c82a32:6372:11d6:c4e1:a254cd69ab09","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"b4c82a32:6372:11d6:c4e1:a254cd69ab09","target":"5099f828:6467:ecb0:6ae3:26c5f07e1976","type":"calls"},{"source":"b980d16d:bce2:2358:6d26:e54f164d9798","target":"b4c82a32:6372:11d6:c4e1:a254cd69ab09","type":"calls"},{"source":"b4c82a32:6372:11d6:c4e1:a254cd69ab09","target":"domain:UpgradeToolchain","type":"belongsTo"},{"source":"b4c82a32:6372:11d6:c4e1:a254cd69ab09","target":"subdomain:UpgradeToolchain:ConfigCodemods","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -999,14 +999,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-upgrade.html">Upgrade</a></li></ul>
+      <ul><li><a href="/domain-upgradetoolchain.html">UpgradeToolchain</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-configmigration.html">ConfigMigration</a></li></ul>
+      <ul><li><a href="/subdomain-configcodemods.html">ConfigCodemods</a></li></ul>
     </div>
     
 

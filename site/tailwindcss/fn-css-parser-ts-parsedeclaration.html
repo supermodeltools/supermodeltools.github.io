@@ -869,7 +869,7 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/nodeserver.html" class="pill pill-green">NodeServer</a>
+        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
         <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
         
         
@@ -894,10 +894,10 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"NodeServer","slug":"domain-nodeserver"},"entity":{"name":"parseDeclaration","slug":"fn-css-parser-ts-parsedeclaration","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"parseDeclaration","slug":"fn-css-parser-ts-parsedeclaration","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/nodeserver.html">NodeServer</a><span class="arch-sep">&rarr;</span>
+            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
             <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
             <span>parseDeclaration() — tailwindcss Function Reference</span>
           </div>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  841920de_7f6d_1743_4e43_bac4e6ba894c["parseDeclaration()"]
-  91b1d4d7_f000_b586_fb85_68334e123f0e["parse()"]
-  91b1d4d7_f000_b586_fb85_68334e123f0e -->|calls| 841920de_7f6d_1743_4e43_bac4e6ba894c
-  764527aa_a3c0_1a36_4946_e81dedb3f0eb["decl()"]
-  841920de_7f6d_1743_4e43_bac4e6ba894c -->|calls| 764527aa_a3c0_1a36_4946_e81dedb3f0eb
-  style 841920de_7f6d_1743_4e43_bac4e6ba894c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  3fe8bdb0_38cb_f349_9350_8adcc60439a6["parseDeclaration()"]
+  af29df39_c85d_5105_d880_4d7152405f33["parse()"]
+  af29df39_c85d_5105_d880_4d7152405f33 -->|calls| 3fe8bdb0_38cb_f349_9350_8adcc60439a6
+  a9446f1d_32d8_9bb7_02d6_19b0f0b65aba["decl()"]
+  3fe8bdb0_38cb_f349_9350_8adcc60439a6 -->|calls| a9446f1d_32d8_9bb7_02d6_19b0f0b65aba
+  style 3fe8bdb0_38cb_f349_9350_8adcc60439a6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-css-parser-ts-parsedeclaration"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"841920de:7f6d:1743:4e43:bac4e6ba894c","label":"parseDeclaration","type":"Function","slug":"fn-css-parser-ts-parsedeclaration","lc":12,"lang":"typescript","cc":1,"cbc":1},{"id":"764527aa:a3c0:1a36:4946:e81dedb3f0eb","label":"decl","type":"Function","slug":"fn-ast-ts-decl","lc":8,"lang":"typescript","cbc":15},{"id":"91b1d4d7:f000:b586:fb85:68334e123f0e","label":"parse","type":"Function","slug":"fn-css-parser-ts-parse","lc":531,"lang":"typescript","cc":5,"cbc":9},{"id":"domain:NodeServer","label":"NodeServer","type":"Domain","slug":"domain-nodeserver"},{"id":"subdomain:NodeServer:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"841920de:7f6d:1743:4e43:bac4e6ba894c","target":"764527aa:a3c0:1a36:4946:e81dedb3f0eb","type":"calls"},{"source":"91b1d4d7:f000:b586:fb85:68334e123f0e","target":"841920de:7f6d:1743:4e43:bac4e6ba894c","type":"calls"},{"source":"841920de:7f6d:1743:4e43:bac4e6ba894c","target":"domain:NodeServer","type":"belongsTo"},{"source":"841920de:7f6d:1743:4e43:bac4e6ba894c","target":"subdomain:NodeServer:Compiler","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"3fe8bdb0:38cb:f349:9350:8adcc60439a6","label":"parseDeclaration","type":"Function","slug":"fn-css-parser-ts-parsedeclaration","lc":12,"lang":"typescript","cc":1,"cbc":1},{"id":"a9446f1d:32d8:9bb7:02d6:19b0f0b65aba","label":"decl","type":"Function","slug":"fn-ast-ts-decl","lc":8,"lang":"typescript","cbc":15},{"id":"af29df39:c85d:5105:d880:4d7152405f33","label":"parse","type":"Function","slug":"fn-css-parser-ts-parse","lc":531,"lang":"typescript","cc":5,"cbc":8},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"3fe8bdb0:38cb:f349:9350:8adcc60439a6","target":"a9446f1d:32d8:9bb7:02d6:19b0f0b65aba","type":"calls"},{"source":"af29df39:c85d:5105:d880:4d7152405f33","target":"3fe8bdb0:38cb:f349:9350:8adcc60439a6","type":"calls"},{"source":"3fe8bdb0:38cb:f349:9350:8adcc60439a6","target":"domain:TailwindNode","type":"belongsTo"},{"source":"3fe8bdb0:38cb:f349:9350:8adcc60439a6","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -957,7 +957,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-nodeserver.html">NodeServer</a></li></ul>
+      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
     </div>
     
 

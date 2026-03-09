@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/upgrade.html" class="pill pill-green">Upgrade</a>
-        <a href="/subdomain/templatemigration.html" class="pill pill-orange">TemplateMigration</a>
+        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
+        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Upgrade","slug":"domain-upgrade"},"entity":{"name":"isValidOpacityValue","slug":"fn-infer-data-type-ts-isvalidopacityvalue","type":"Function"},"subdomain":{"name":"TemplateMigration","slug":"subdomain-templatemigration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"isValidOpacityValue","slug":"fn-infer-data-type-ts-isvalidopacityvalue","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/upgrade.html">Upgrade</a><span class="arch-sep">&rarr;</span>
-            <a href="/templatemigration.html">TemplateMigration</a><span class="arch-sep">&rarr;</span>
+            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
+            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
             <span>isValidOpacityValue() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  8ea04884_19b8_cac1_9e65_e26da55fc74b["isValidOpacityValue()"]
-  3304284c_4e88_bf4b_1390_285c4f78f05c["migrateTheme()"]
-  3304284c_4e88_bf4b_1390_285c4f78f05c -->|calls| 8ea04884_19b8_cac1_9e65_e26da55fc74b
-  240a60c1_f016_ade3_58d9_afd640671439["asColor()"]
-  240a60c1_f016_ade3_58d9_afd640671439 -->|calls| 8ea04884_19b8_cac1_9e65_e26da55fc74b
-  c256efb8_2489_f7d6_5e66_2bc600652e25["isMultipleOf()"]
-  8ea04884_19b8_cac1_9e65_e26da55fc74b -->|calls| c256efb8_2489_f7d6_5e66_2bc600652e25
-  style 8ea04884_19b8_cac1_9e65_e26da55fc74b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  7931e844_3a49_7703_e60b_69cba177f753["isValidOpacityValue()"]
+  c74dc271_89cc_9e0b_ff88_8229ce5f39a9["migrateTheme()"]
+  c74dc271_89cc_9e0b_ff88_8229ce5f39a9 -->|calls| 7931e844_3a49_7703_e60b_69cba177f753
+  ba87ed24_84e9_da41_ffa8_50f4c3dc6d27["asColor()"]
+  ba87ed24_84e9_da41_ffa8_50f4c3dc6d27 -->|calls| 7931e844_3a49_7703_e60b_69cba177f753
+  e412ddef_f58d_9118_35dd_ac1b116dd9f8["isMultipleOf()"]
+  7931e844_3a49_7703_e60b_69cba177f753 -->|calls| e412ddef_f58d_9118_35dd_ac1b116dd9f8
+  style 7931e844_3a49_7703_e60b_69cba177f753 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-infer-data-type-ts-isvalidopacityvalue"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"8ea04884:19b8:cac1:9e65:e26da55fc74b","label":"isValidOpacityValue","type":"Function","slug":"fn-infer-data-type-ts-isvalidopacityvalue","lc":3,"lang":"typescript","cc":1,"cbc":2},{"id":"c256efb8:2489:f7d6:5e66:2bc600652e25","label":"isMultipleOf","type":"Function","slug":"fn-infer-data-type-ts-ismultipleof","lc":4,"lang":"typescript","cbc":2},{"id":"3304284c:4e88:bf4b:1390:285c4f78f05c","label":"migrateTheme","type":"Function","slug":"fn-migrate-js-config-ts-migratetheme","lc":194,"lang":"typescript","cc":12,"cbc":1},{"id":"240a60c1:f016:ade3:58d9:afd640671439","label":"asColor","type":"Function","slug":"fn-utilities-ts-ascolor","lc":25,"lang":"typescript","cc":3,"cbc":2},{"id":"domain:Upgrade","label":"Upgrade","type":"Domain","slug":"domain-upgrade"},{"id":"subdomain:Upgrade:TemplateMigration","label":"TemplateMigration","type":"Subdomain","slug":"subdomain-templatemigration"}],"edges":[{"source":"8ea04884:19b8:cac1:9e65:e26da55fc74b","target":"c256efb8:2489:f7d6:5e66:2bc600652e25","type":"calls"},{"source":"3304284c:4e88:bf4b:1390:285c4f78f05c","target":"8ea04884:19b8:cac1:9e65:e26da55fc74b","type":"calls"},{"source":"240a60c1:f016:ade3:58d9:afd640671439","target":"8ea04884:19b8:cac1:9e65:e26da55fc74b","type":"calls"},{"source":"8ea04884:19b8:cac1:9e65:e26da55fc74b","target":"domain:Upgrade","type":"belongsTo"},{"source":"8ea04884:19b8:cac1:9e65:e26da55fc74b","target":"subdomain:Upgrade:TemplateMigration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"7931e844:3a49:7703:e60b:69cba177f753","label":"isValidOpacityValue","type":"Function","slug":"fn-infer-data-type-ts-isvalidopacityvalue","lc":3,"lang":"typescript","cc":1,"cbc":2},{"id":"e412ddef:f58d:9118:35dd:ac1b116dd9f8","label":"isMultipleOf","type":"Function","slug":"fn-infer-data-type-ts-ismultipleof","lc":4,"lang":"typescript","cbc":2},{"id":"c74dc271:89cc:9e0b:ff88:8229ce5f39a9","label":"migrateTheme","type":"Function","slug":"fn-migrate-js-config-ts-migratetheme","lc":194,"lang":"typescript","cc":12,"cbc":1},{"id":"ba87ed24:84e9:da41:ffa8:50f4c3dc6d27","label":"asColor","type":"Function","slug":"fn-utilities-ts-ascolor","lc":25,"lang":"typescript","cc":3,"cbc":2},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"7931e844:3a49:7703:e60b:69cba177f753","target":"e412ddef:f58d:9118:35dd:ac1b116dd9f8","type":"calls"},{"source":"c74dc271:89cc:9e0b:ff88:8229ce5f39a9","target":"7931e844:3a49:7703:e60b:69cba177f753","type":"calls"},{"source":"ba87ed24:84e9:da41:ffa8:50f4c3dc6d27","target":"7931e844:3a49:7703:e60b:69cba177f753","type":"calls"},{"source":"7931e844:3a49:7703:e60b:69cba177f753","target":"domain:TailwindNode","type":"belongsTo"},{"source":"7931e844:3a49:7703:e60b:69cba177f753","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -950,14 +950,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-upgrade.html">Upgrade</a></li></ul>
+      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-templatemigration.html">TemplateMigration</a></li></ul>
+      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
     </div>
     
 

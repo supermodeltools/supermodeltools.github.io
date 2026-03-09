@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/upgrade.html" class="pill pill-green">Upgrade</a>
-        <a href="/subdomain/templatemigration.html" class="pill pill-orange">TemplateMigration</a>
+        <a href="/domain/upgradetoolchain.html" class="pill pill-green">UpgradeToolchain</a>
+        <a href="/subdomain/configcodemods.html" class="pill pill-orange">ConfigCodemods</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Upgrade","slug":"domain-upgrade"},"entity":{"name":"isCombinatorVariant","slug":"fn-migrate-variant-order-ts-iscombinatorvariant","type":"Function"},"subdomain":{"name":"TemplateMigration","slug":"subdomain-templatemigration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"UpgradeToolchain","slug":"domain-upgradetoolchain"},"entity":{"name":"isCombinatorVariant","slug":"fn-migrate-variant-order-ts-iscombinatorvariant","type":"Function"},"subdomain":{"name":"ConfigCodemods","slug":"subdomain-configcodemods"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/upgrade.html">Upgrade</a><span class="arch-sep">&rarr;</span>
-            <a href="/templatemigration.html">TemplateMigration</a><span class="arch-sep">&rarr;</span>
+            <a href="/upgradetoolchain.html">UpgradeToolchain</a><span class="arch-sep">&rarr;</span>
+            <a href="/configcodemods.html">ConfigCodemods</a><span class="arch-sep">&rarr;</span>
             <span>isCombinatorVariant() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  656428a9_eebd_1c4e_6d8a_a1260114e8cc["isCombinatorVariant()"]
-  6c54af52_92cc_10bc_1a95_f43db41d1906["migrateVariantOrder()"]
-  6c54af52_92cc_10bc_1a95_f43db41d1906 -->|calls| 656428a9_eebd_1c4e_6d8a_a1260114e8cc
-  a6ba8d6e_427c_a161_95dc_85c03431f057["getAppliedNodeStack()"]
-  656428a9_eebd_1c4e_6d8a_a1260114e8cc -->|calls| a6ba8d6e_427c_a161_95dc_85c03431f057
-  style 656428a9_eebd_1c4e_6d8a_a1260114e8cc fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  9b592cb9_6eee_6572_af9e_0a6ddd5a59c4["isCombinatorVariant()"]
+  0525572e_0122_4d75_010c_f4f5d0f0e692["migrateVariantOrder()"]
+  0525572e_0122_4d75_010c_f4f5d0f0e692 -->|calls| 9b592cb9_6eee_6572_af9e_0a6ddd5a59c4
+  bdddb685_cdab_5fbb_7198_c16e6fbf3d3d["getAppliedNodeStack()"]
+  9b592cb9_6eee_6572_af9e_0a6ddd5a59c4 -->|calls| bdddb685_cdab_5fbb_7198_c16e6fbf3d3d
+  style 9b592cb9_6eee_6572_af9e_0a6ddd5a59c4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-migrate-variant-order-ts-iscombinatorvariant"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"656428a9:eebd:1c4e:6d8a:a1260114e8cc","label":"isCombinatorVariant","type":"Function","slug":"fn-migrate-variant-order-ts-iscombinatorvariant","lc":12,"lang":"typescript","cc":1,"cbc":1},{"id":"a6ba8d6e:427c:a161:95dc:85c03431f057","label":"getAppliedNodeStack","type":"Function","slug":"fn-migrate-variant-order-ts-getappliednodestack","lc":27,"lang":"typescript","cc":1,"cbc":3},{"id":"6c54af52:92cc:10bc:1a95:f43db41d1906","label":"migrateVariantOrder","type":"Function","slug":"fn-migrate-variant-order-ts-migratevariantorder","lc":55,"lang":"typescript","cc":7},{"id":"domain:Upgrade","label":"Upgrade","type":"Domain","slug":"domain-upgrade"},{"id":"subdomain:Upgrade:TemplateMigration","label":"TemplateMigration","type":"Subdomain","slug":"subdomain-templatemigration"}],"edges":[{"source":"656428a9:eebd:1c4e:6d8a:a1260114e8cc","target":"a6ba8d6e:427c:a161:95dc:85c03431f057","type":"calls"},{"source":"6c54af52:92cc:10bc:1a95:f43db41d1906","target":"656428a9:eebd:1c4e:6d8a:a1260114e8cc","type":"calls"},{"source":"656428a9:eebd:1c4e:6d8a:a1260114e8cc","target":"domain:Upgrade","type":"belongsTo"},{"source":"656428a9:eebd:1c4e:6d8a:a1260114e8cc","target":"subdomain:Upgrade:TemplateMigration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"9b592cb9:6eee:6572:af9e:0a6ddd5a59c4","label":"isCombinatorVariant","type":"Function","slug":"fn-migrate-variant-order-ts-iscombinatorvariant","lc":12,"lang":"typescript","cc":1,"cbc":1},{"id":"bdddb685:cdab:5fbb:7198:c16e6fbf3d3d","label":"getAppliedNodeStack","type":"Function","slug":"fn-migrate-variant-order-ts-getappliednodestack","lc":27,"lang":"typescript","cc":1,"cbc":3},{"id":"0525572e:0122:4d75:010c:f4f5d0f0e692","label":"migrateVariantOrder","type":"Function","slug":"fn-migrate-variant-order-ts-migratevariantorder","lc":55,"lang":"typescript","cc":7},{"id":"domain:UpgradeToolchain","label":"UpgradeToolchain","type":"Domain","slug":"domain-upgradetoolchain"},{"id":"subdomain:UpgradeToolchain:ConfigCodemods","label":"ConfigCodemods","type":"Subdomain","slug":"subdomain-configcodemods"}],"edges":[{"source":"9b592cb9:6eee:6572:af9e:0a6ddd5a59c4","target":"bdddb685:cdab:5fbb:7198:c16e6fbf3d3d","type":"calls"},{"source":"0525572e:0122:4d75:010c:f4f5d0f0e692","target":"9b592cb9:6eee:6572:af9e:0a6ddd5a59c4","type":"calls"},{"source":"9b592cb9:6eee:6572:af9e:0a6ddd5a59c4","target":"domain:UpgradeToolchain","type":"belongsTo"},{"source":"9b592cb9:6eee:6572:af9e:0a6ddd5a59c4","target":"subdomain:UpgradeToolchain:ConfigCodemods","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -957,14 +957,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-upgrade.html">Upgrade</a></li></ul>
+      <ul><li><a href="/domain-upgradetoolchain.html">UpgradeToolchain</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-templatemigration.html">TemplateMigration</a></li></ul>
+      <ul><li><a href="/subdomain-configcodemods.html">ConfigCodemods</a></li></ul>
     </div>
     
 

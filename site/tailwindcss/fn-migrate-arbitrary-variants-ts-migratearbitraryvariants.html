@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/upgrade.html" class="pill pill-green">Upgrade</a>
-        <a href="/subdomain/templatemigration.html" class="pill pill-orange">TemplateMigration</a>
+        <a href="/domain/upgradetoolchain.html" class="pill pill-green">UpgradeToolchain</a>
+        <a href="/subdomain/configcodemods.html" class="pill pill-orange">ConfigCodemods</a>
         
         
         <span class="pill">calls 8</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Upgrade","slug":"domain-upgrade"},"entity":{"name":"migrateArbitraryVariants","slug":"fn-migrate-arbitrary-variants-ts-migratearbitraryvariants","type":"Function"},"subdomain":{"name":"TemplateMigration","slug":"subdomain-templatemigration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"UpgradeToolchain","slug":"domain-upgradetoolchain"},"entity":{"name":"migrateArbitraryVariants","slug":"fn-migrate-arbitrary-variants-ts-migratearbitraryvariants","type":"Function"},"subdomain":{"name":"ConfigCodemods","slug":"subdomain-configcodemods"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/upgrade.html">Upgrade</a><span class="arch-sep">&rarr;</span>
-            <a href="/templatemigration.html">TemplateMigration</a><span class="arch-sep">&rarr;</span>
+            <a href="/upgradetoolchain.html">UpgradeToolchain</a><span class="arch-sep">&rarr;</span>
+            <a href="/configcodemods.html">ConfigCodemods</a><span class="arch-sep">&rarr;</span>
             <span>migrateArbitraryVariants() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,24 +911,24 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  d971b20f_15cc_8215_537c_02d61a0dc93f["migrateArbitraryVariants()"]
-  43b35d02_35eb_6078_cf87_ed781744ff09["prepareDesignSystemStorage()"]
-  d971b20f_15cc_8215_537c_02d61a0dc93f -->|calls| 43b35d02_35eb_6078_cf87_ed781744ff09
-  3a10d819_7e31_a000_7e4e_3b3e008597bf["cloneCandidate()"]
-  d971b20f_15cc_8215_537c_02d61a0dc93f -->|calls| 3a10d819_7e31_a000_7e4e_3b3e008597bf
-  27a43c6b_b205_77c9_a495_053f25fd19ea["printVariant()"]
-  d971b20f_15cc_8215_537c_02d61a0dc93f -->|calls| 27a43c6b_b205_77c9_a495_053f25fd19ea
-  3d2e2ffa_536d_c8af_bf80_2c50e35a9cab["parseVariant()"]
-  d971b20f_15cc_8215_537c_02d61a0dc93f -->|calls| 3d2e2ffa_536d_c8af_bf80_2c50e35a9cab
-  b122ce3d_d196_a79b_0316_d825d166754b["replaceObject()"]
-  d971b20f_15cc_8215_537c_02d61a0dc93f -->|calls| b122ce3d_d196_a79b_0316_d825d166754b
-  89fb7f77_b4fb_745a_fb52_f6d779fc00f3["printCandidate()"]
-  d971b20f_15cc_8215_537c_02d61a0dc93f -->|calls| 89fb7f77_b4fb_745a_fb52_f6d779fc00f3
-  fd1512a5_0de1_48a3_41d2_3d12a3423111["parseCandidate()"]
-  d971b20f_15cc_8215_537c_02d61a0dc93f -->|calls| fd1512a5_0de1_48a3_41d2_3d12a3423111
-  6bf9e9a2_2e37_39de_3e50_0885973c78c2["walkVariants()"]
-  d971b20f_15cc_8215_537c_02d61a0dc93f -->|calls| 6bf9e9a2_2e37_39de_3e50_0885973c78c2
-  style d971b20f_15cc_8215_537c_02d61a0dc93f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  da6194ca_f19b_d252_9ce7_f0acce424221["migrateArbitraryVariants()"]
+  70feb5f7_6816_5a4b_0c21_91a727f585cd["prepareDesignSystemStorage()"]
+  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| 70feb5f7_6816_5a4b_0c21_91a727f585cd
+  bd55c897_759a_c114_ac22_fca542513a67["cloneCandidate()"]
+  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| bd55c897_759a_c114_ac22_fca542513a67
+  3296a15c_7509_05dd_b1b5_9ec2545d1dc3["printVariant()"]
+  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| 3296a15c_7509_05dd_b1b5_9ec2545d1dc3
+  ab50212a_b8db_0b53_4a35_ec1b11b767ca["parseVariant()"]
+  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| ab50212a_b8db_0b53_4a35_ec1b11b767ca
+  df465781_bd89_22b1_4b2b_cb38af5a283d["replaceObject()"]
+  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| df465781_bd89_22b1_4b2b_cb38af5a283d
+  7286cd48_1b44_581e_9734_79adf3546cca["printCandidate()"]
+  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| 7286cd48_1b44_581e_9734_79adf3546cca
+  3ed46569_da25_d279_d8d8_af7f0f5e7782["parseCandidate()"]
+  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  ea1e8526_aa8d_4596_a1a3_3817d226f09d["walkVariants()"]
+  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| ea1e8526_aa8d_4596_a1a3_3817d226f09d
+  style da6194ca_f19b_d252_9ce7_f0acce424221 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -936,7 +936,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-migrate-arbitrary-variants-ts-migratearbitraryvariants"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"d971b20f:15cc:8215:537c:02d61a0dc93f","label":"migrateArbitraryVariants","type":"Function","slug":"fn-migrate-arbitrary-variants-ts-migratearbitraryvariants","lc":39,"lang":"typescript","cc":8},{"id":"43b35d02:35eb:6078:cf87:ed781744ff09","label":"prepareDesignSystemStorage","type":"Function","slug":"fn-canonicalize-candidates-ts-preparedesignsystemstorage","lc":22,"lang":"typescript","cc":13,"cbc":5},{"id":"3a10d819:7e31:a000:7e4e:3b3e008597bf","label":"cloneCandidate","type":"Function","slug":"fn-candidate-ts-clonecandidate","lc":54,"lang":"typescript","cbc":8},{"id":"27a43c6b:b205:77c9:a495:053f25fd19ea","label":"printVariant","type":"Function","slug":"fn-candidate-ts-printvariant","lc":46,"lang":"typescript","cc":4,"cbc":6},{"id":"3d2e2ffa:536d:c8af:bf80:2c50e35a9cab","label":"parseVariant","type":"Function","slug":"fn-candidate-ts-parsevariant","lc":189,"lang":"typescript","cc":5,"cbc":7},{"id":"b122ce3d:d196:a79b:0316:d825d166754b","label":"replaceObject","type":"Function","slug":"fn-replace-object-ts-replaceobject","lc":7,"lang":"typescript","cbc":4},{"id":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","label":"printCandidate","type":"Function","slug":"fn-candidate-ts-printcandidate","lc":61,"lang":"typescript","cc":4,"cbc":19},{"id":"fd1512a5:0de1:48a3:41d2:3d12a3423111","label":"parseCandidate","type":"Function","slug":"fn-canonicalize-candidates-ts-parsecandidate","lc":7,"lang":"typescript","cc":1,"cbc":8},{"id":"6bf9e9a2:2e37:39de:3e50:0885973c78c2","label":"walkVariants","type":"Function","slug":"fn-walk-variants-ts-walkvariants","lc":16,"lang":"typescript","cbc":2},{"id":"domain:Upgrade","label":"Upgrade","type":"Domain","slug":"domain-upgrade"},{"id":"subdomain:Upgrade:TemplateMigration","label":"TemplateMigration","type":"Subdomain","slug":"subdomain-templatemigration"}],"edges":[{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"43b35d02:35eb:6078:cf87:ed781744ff09","type":"calls"},{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"3a10d819:7e31:a000:7e4e:3b3e008597bf","type":"calls"},{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"27a43c6b:b205:77c9:a495:053f25fd19ea","type":"calls"},{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"3d2e2ffa:536d:c8af:bf80:2c50e35a9cab","type":"calls"},{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"b122ce3d:d196:a79b:0316:d825d166754b","type":"calls"},{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"89fb7f77:b4fb:745a:fb52:f6d779fc00f3","type":"calls"},{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"fd1512a5:0de1:48a3:41d2:3d12a3423111","type":"calls"},{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"6bf9e9a2:2e37:39de:3e50:0885973c78c2","type":"calls"},{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"domain:Upgrade","type":"belongsTo"},{"source":"d971b20f:15cc:8215:537c:02d61a0dc93f","target":"subdomain:Upgrade:TemplateMigration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"da6194ca:f19b:d252:9ce7:f0acce424221","label":"migrateArbitraryVariants","type":"Function","slug":"fn-migrate-arbitrary-variants-ts-migratearbitraryvariants","lc":39,"lang":"typescript","cc":8},{"id":"70feb5f7:6816:5a4b:0c21:91a727f585cd","label":"prepareDesignSystemStorage","type":"Function","slug":"fn-canonicalize-candidates-ts-preparedesignsystemstorage","lc":22,"lang":"typescript","cc":13,"cbc":5},{"id":"bd55c897:759a:c114:ac22:fca542513a67","label":"cloneCandidate","type":"Function","slug":"fn-candidate-ts-clonecandidate","lc":54,"lang":"typescript","cbc":8},{"id":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","label":"printVariant","type":"Function","slug":"fn-candidate-ts-printvariant","lc":46,"lang":"typescript","cc":4,"cbc":6},{"id":"ab50212a:b8db:0b53:4a35:ec1b11b767ca","label":"parseVariant","type":"Function","slug":"fn-candidate-ts-parsevariant","lc":189,"lang":"typescript","cc":5,"cbc":7},{"id":"df465781:bd89:22b1:4b2b:cb38af5a283d","label":"replaceObject","type":"Function","slug":"fn-replace-object-ts-replaceobject","lc":7,"lang":"typescript","cbc":4},{"id":"7286cd48:1b44:581e:9734:79adf3546cca","label":"printCandidate","type":"Function","slug":"fn-candidate-ts-printcandidate","lc":61,"lang":"typescript","cc":4,"cbc":19},{"id":"3ed46569:da25:d279:d8d8:af7f0f5e7782","label":"parseCandidate","type":"Function","slug":"fn-candidate-ts-parsecandidate","lc":297,"lang":"typescript","cc":6,"cbc":12},{"id":"ea1e8526:aa8d:4596:a1a3:3817d226f09d","label":"walkVariants","type":"Function","slug":"fn-walk-variants-ts-walkvariants","lc":16,"lang":"typescript","cbc":2},{"id":"domain:UpgradeToolchain","label":"UpgradeToolchain","type":"Domain","slug":"domain-upgradetoolchain"},{"id":"subdomain:UpgradeToolchain:ConfigCodemods","label":"ConfigCodemods","type":"Subdomain","slug":"subdomain-configcodemods"}],"edges":[{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"70feb5f7:6816:5a4b:0c21:91a727f585cd","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"bd55c897:759a:c114:ac22:fca542513a67","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"ab50212a:b8db:0b53:4a35:ec1b11b767ca","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"df465781:bd89:22b1:4b2b:cb38af5a283d","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"7286cd48:1b44:581e:9734:79adf3546cca","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"ea1e8526:aa8d:4596:a1a3:3817d226f09d","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"domain:UpgradeToolchain","type":"belongsTo"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"subdomain:UpgradeToolchain:ConfigCodemods","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -996,14 +996,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-upgrade.html">Upgrade</a></li></ul>
+      <ul><li><a href="/domain-upgradetoolchain.html">UpgradeToolchain</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-templatemigration.html">TemplateMigration</a></li></ul>
+      <ul><li><a href="/subdomain-configcodemods.html">ConfigCodemods</a></li></ul>
     </div>
     
 
@@ -1022,7 +1022,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li><a href="/fn-candidate-ts-clonecandidate.html">cloneCandidate()</a></li><li><a href="/fn-canonicalize-candidates-ts-parsecandidate.html">parseCandidate()</a></li><li><a href="/fn-candidate-ts-parsevariant.html">parseVariant()</a></li><li><a href="/fn-canonicalize-candidates-ts-preparedesignsystemstorage.html">prepareDesignSystemStorage()</a></li><li><a href="/fn-candidate-ts-printcandidate.html">printCandidate()</a></li><li><a href="/fn-candidate-ts-printvariant.html">printVariant()</a></li><li><a href="/fn-replace-object-ts-replaceobject.html">replaceObject()</a></li><li><a href="/fn-walk-variants-ts-walkvariants.html">walkVariants()</a></li></ul>
+      <ul><li><a href="/fn-candidate-ts-clonecandidate.html">cloneCandidate()</a></li><li><a href="/fn-candidate-ts-parsecandidate.html">parseCandidate()</a></li><li><a href="/fn-candidate-ts-parsevariant.html">parseVariant()</a></li><li><a href="/fn-canonicalize-candidates-ts-preparedesignsystemstorage.html">prepareDesignSystemStorage()</a></li><li><a href="/fn-candidate-ts-printcandidate.html">printCandidate()</a></li><li><a href="/fn-candidate-ts-printvariant.html">printVariant()</a></li><li><a href="/fn-replace-object-ts-replaceobject.html">replaceObject()</a></li><li><a href="/fn-walk-variants-ts-walkvariants.html">walkVariants()</a></li></ul>
     </div>
     
 

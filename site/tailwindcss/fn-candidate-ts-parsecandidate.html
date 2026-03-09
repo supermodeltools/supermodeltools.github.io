@@ -811,7 +811,7 @@ a.pill:hover {
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the parseCandidate() function in candidate.ts from the tailwindcss codebase.","image":["https://repos.supermodeltools.com/images/share/fn-candidate-ts-parsecandidate.svg"],"name":"parseCandidate() — tailwindcss Function Reference","url":"https://repos.supermodeltools.com/fn-candidate-ts-parsecandidate.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"parseCandidate() — tailwindcss Function Reference","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"parseCandidate() is a function in the tailwindcss codebase."},"name":"What does parseCandidate() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"parseCandidate() calls 6 function(s): decodeArbitraryValue, findRoots, isValidArbitrary, parseModifier, parseVariant, segment."},"name":"What does parseCandidate() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"parseCandidate() is called by 11 function(s): buildDesignSystem, compileCandidates, isSafeMigration, migrateAutomaticVarInjection, migrateCamelcaseInNamedValue, migrateLegacyArbitraryValues, migrateModernizeArbitraryValues, migratePrefix, and 3 more."},"name":"What calls parseCandidate()?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"parseCandidate() is a function in the tailwindcss codebase."},"name":"What does parseCandidate() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"parseCandidate() calls 6 function(s): decodeArbitraryValue, findRoots, isValidArbitrary, parseModifier, parseVariant, segment."},"name":"What does parseCandidate() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"parseCandidate() is called by 12 function(s): buildDesignSystem, compileCandidates, isSafeMigration, migrateArbitraryVariants, migrateAutomaticVarInjection, migrateCamelcaseInNamedValue, migrateLegacyArbitraryValues, migrateModernizeArbitraryValues, and 4 more."},"name":"What calls parseCandidate()?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -869,12 +869,12 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/upgrade.html" class="pill pill-green">Upgrade</a>
-        <a href="/subdomain/configmigration.html" class="pill pill-orange">ConfigMigration</a>
+        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
+        <a href="/subdomain/moduleresolver.html" class="pill pill-orange">ModuleResolver</a>
         
         
         <span class="pill">calls 6</span>
-        <span class="pill">called by 11</span>
+        <span class="pill">called by 12</span>
         
         
         
@@ -886,7 +886,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"cb":11,"co":6,"el":612,"et":{"calls":17},"lc":297,"sl":316}</script>
+      <script type="application/json" id="entity-profile-data">{"cb":12,"co":6,"el":612,"et":{"calls":18},"lc":297,"sl":316}</script>
     </div>
 
     
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Upgrade","slug":"domain-upgrade"},"entity":{"name":"parseCandidate","slug":"fn-candidate-ts-parsecandidate","type":"Function"},"subdomain":{"name":"ConfigMigration","slug":"subdomain-configmigration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"parseCandidate","slug":"fn-candidate-ts-parsecandidate","type":"Function"},"subdomain":{"name":"ModuleResolver","slug":"subdomain-moduleresolver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/upgrade.html">Upgrade</a><span class="arch-sep">&rarr;</span>
-            <a href="/configmigration.html">ConfigMigration</a><span class="arch-sep">&rarr;</span>
+            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
+            <a href="/moduleresolver.html">ModuleResolver</a><span class="arch-sep">&rarr;</span>
             <span>parseCandidate() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  218d6e9d_d581_e0f5_331d_ca1e058db8e0["parseCandidate()"]
-  1b5a887b_3127_0413_576c_c1f6c26cff71["parseCandidate()"]
-  1b5a887b_3127_0413_576c_c1f6c26cff71 -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  2243e916_1f6b_fbb2_9cd9_0fee4f06d40c["isSafeMigration()"]
-  2243e916_1f6b_fbb2_9cd9_0fee4f06d40c -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  5e82f7dc_0bc5_8f68_5287_de67eb4d2e65["migrateAutomaticVarInjection()"]
-  5e82f7dc_0bc5_8f68_5287_de67eb4d2e65 -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  92af91a8_4384_aae9_e722_d6b1888458a4["migrateCamelcaseInNamedValue()"]
-  92af91a8_4384_aae9_e722_d6b1888458a4 -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  6249b763_1c2a_b4f5_f649_7f194d87e91c["migrateLegacyArbitraryValues()"]
-  6249b763_1c2a_b4f5_f649_7f194d87e91c -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  eaef109f_ff83_30e0_ad53_301229aeff94["migrateModernizeArbitraryValues()"]
-  eaef109f_ff83_30e0_ad53_301229aeff94 -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  04ffd008_66bb_cce1_24fc_6a097a9c714b["migratePrefix()"]
-  04ffd008_66bb_cce1_24fc_6a097a9c714b -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  6c54af52_92cc_10bc_1a95_f43db41d1906["migrateVariantOrder()"]
-  6c54af52_92cc_10bc_1a95_f43db41d1906 -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  fd1512a5_0de1_48a3_41d2_3d12a3423111["parseCandidate()"]
-  fd1512a5_0de1_48a3_41d2_3d12a3423111 -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  90477a8c_9d5a_e0c7_cc3e_99a0c5a7f9e7["compileCandidates()"]
-  90477a8c_9d5a_e0c7_cc3e_99a0c5a7f9e7 -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  33281725_69c5_fe93_dd76_77c64c7893d4["buildDesignSystem()"]
-  33281725_69c5_fe93_dd76_77c64c7893d4 -->|calls| 218d6e9d_d581_e0f5_331d_ca1e058db8e0
-  436e9d88_b972_8d93_42b2_57be4f7f6801["segment()"]
-  218d6e9d_d581_e0f5_331d_ca1e058db8e0 -->|calls| 436e9d88_b972_8d93_42b2_57be4f7f6801
-  3d2e2ffa_536d_c8af_bf80_2c50e35a9cab["parseVariant()"]
-  218d6e9d_d581_e0f5_331d_ca1e058db8e0 -->|calls| 3d2e2ffa_536d_c8af_bf80_2c50e35a9cab
-  2f225626_8ef2_c8c3_f0b4_122ce525a50c["parseModifier()"]
-  218d6e9d_d581_e0f5_331d_ca1e058db8e0 -->|calls| 2f225626_8ef2_c8c3_f0b4_122ce525a50c
-  style 218d6e9d_d581_e0f5_331d_ca1e058db8e0 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  3ed46569_da25_d279_d8d8_af7f0f5e7782["parseCandidate()"]
+  2dae1f0c_9f96_9793_26a4_b559fa33d00b["parseCandidate()"]
+  2dae1f0c_9f96_9793_26a4_b559fa33d00b -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  5a7a9df0_e8ea_fd5b_e6e1_fdab3df64b74["isSafeMigration()"]
+  5a7a9df0_e8ea_fd5b_e6e1_fdab3df64b74 -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  9dde01f0_bd90_a856_16fa_1d0ea9bc2f1e["migrateAutomaticVarInjection()"]
+  9dde01f0_bd90_a856_16fa_1d0ea9bc2f1e -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  840240d3_04e0_9158_c234_ad79b69e149a["migrateCamelcaseInNamedValue()"]
+  840240d3_04e0_9158_c234_ad79b69e149a -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  aca76731_044a_77e8_3078_f4041ffad2e2["migrateLegacyArbitraryValues()"]
+  aca76731_044a_77e8_3078_f4041ffad2e2 -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  3081c4a5_a681_79c2_c0b4_43cb5a1e32bc["migrateModernizeArbitraryValues()"]
+  3081c4a5_a681_79c2_c0b4_43cb5a1e32bc -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  713a33e5_b942_ae61_a5fe_2fdcd909e75f["migratePrefix()"]
+  713a33e5_b942_ae61_a5fe_2fdcd909e75f -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  0525572e_0122_4d75_010c_f4f5d0f0e692["migrateVariantOrder()"]
+  0525572e_0122_4d75_010c_f4f5d0f0e692 -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  827b776d_00d3_87e2_16c8_e40692673896["parseCandidate()"]
+  827b776d_00d3_87e2_16c8_e40692673896 -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  280bf6b7_9b23_32f7_65c7_94b235ecd958["compileCandidates()"]
+  280bf6b7_9b23_32f7_65c7_94b235ecd958 -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  49cf4ef4_bc58_de77_38ee_861472c10e76["buildDesignSystem()"]
+  49cf4ef4_bc58_de77_38ee_861472c10e76 -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  da6194ca_f19b_d252_9ce7_f0acce424221["migrateArbitraryVariants()"]
+  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| 3ed46569_da25_d279_d8d8_af7f0f5e7782
+  78e0bf4b_0065_2bcf_65a2_f46f164d06a9["segment()"]
+  3ed46569_da25_d279_d8d8_af7f0f5e7782 -->|calls| 78e0bf4b_0065_2bcf_65a2_f46f164d06a9
+  ab50212a_b8db_0b53_4a35_ec1b11b767ca["parseVariant()"]
+  3ed46569_da25_d279_d8d8_af7f0f5e7782 -->|calls| ab50212a_b8db_0b53_4a35_ec1b11b767ca
+  style 3ed46569_da25_d279_d8d8_af7f0f5e7782 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-candidate-ts-parsecandidate"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","label":"parseCandidate","type":"Function","slug":"fn-candidate-ts-parsecandidate","lc":297,"lang":"typescript","cc":6,"cbc":11},{"id":"436e9d88:b972:8d93:42b2:57be4f7f6801","label":"segment","type":"Function","slug":"fn-segment-ts-segment","lc":74,"lang":"typescript","cbc":39},{"id":"3d2e2ffa:536d:c8af:bf80:2c50e35a9cab","label":"parseVariant","type":"Function","slug":"fn-candidate-ts-parsevariant","lc":189,"lang":"typescript","cc":5,"cbc":7},{"id":"2f225626:8ef2:c8c3:f0b4:122ce525a50c","label":"parseModifier","type":"Function","slug":"fn-candidate-ts-parsemodifier","lc":46,"lang":"typescript","cc":2,"cbc":2},{"id":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","label":"decodeArbitraryValue","type":"Function","slug":"fn-decode-arbitrary-value-ts-decodearbitraryvalue","lc":14,"lang":"typescript","cc":5,"cbc":3},{"id":"9ac3d4ef:7c3a:fdf4:ec32:b26e77e579b8","label":"isValidArbitrary","type":"Function","slug":"fn-is-valid-arbitrary-ts-isvalidarbitrary","lc":67,"lang":"typescript","cbc":3},{"id":"e71e57d5:0c41:901d:f7b7:65de08f4f653","label":"findRoots","type":"Function","slug":"fn-candidate-ts-findroots","lc":45,"lang":"typescript","cbc":2},{"id":"1b5a887b:3127:0413:576c:c1f6c26cff71","label":"parseCandidate","type":"Function","slug":"fn-candidates-ts-parsecandidate","lc":7,"lang":"typescript","cc":1,"cbc":1},{"id":"2243e916:1f6b:fbb2:9cd9:0fee4f06d40c","label":"isSafeMigration","type":"Function","slug":"fn-is-safe-migration-ts-issafemigration","lc":163,"lang":"typescript","cc":4,"cbc":1},{"id":"5e82f7dc:0bc5:8f68:5287:de67eb4d2e65","label":"migrateAutomaticVarInjection","type":"Function","slug":"fn-migrate-automatic-var-injection-ts-migrateautomaticvarinjection","lc":67,"lang":"typescript","cc":6},{"id":"92af91a8:4384:aae9:e722:d6b1888458a4","label":"migrateCamelcaseInNamedValue","type":"Function","slug":"fn-migrate-camelcase-in-named-value-ts-migratecamelcaseinnamedvalue","lc":41,"lang":"typescript","cc":5},{"id":"6249b763:1c2a:b4f5:f649:7f194d87e91c","label":"migrateLegacyArbitraryValues","type":"Function","slug":"fn-migrate-legacy-arbitrary-values-ts-migratelegacyarbitraryvalues","lc":24,"lang":"typescript","cc":4},{"id":"eaef109f:ff83:30e0:ad53:301229aeff94","label":"migrateModernizeArbitraryValues","type":"Function","slug":"fn-migrate-modernize-arbitrary-values-ts-migratemodernizearbitraryvalues","lc":66,"lang":"typescript","cc":6},{"id":"04ffd008:66bb:cce1:24fc:6a097a9c714b","label":"migratePrefix","type":"Function","slug":"fn-migrate-prefix-ts-migrateprefix","lc":53,"lang":"typescript","cc":5},{"id":"6c54af52:92cc:10bc:1a95:f43db41d1906","label":"migrateVariantOrder","type":"Function","slug":"fn-migrate-variant-order-ts-migratevariantorder","lc":55,"lang":"typescript","cc":7},{"id":"fd1512a5:0de1:48a3:41d2:3d12a3423111","label":"parseCandidate","type":"Function","slug":"fn-canonicalize-candidates-ts-parsecandidate","lc":7,"lang":"typescript","cc":1,"cbc":8},{"id":"90477a8c:9d5a:e0c7:cc3e:99a0c5a7f9e7","label":"compileCandidates","type":"Function","slug":"fn-compile-ts-compilecandidates","lc":111,"lang":"typescript","cc":6,"cbc":4},{"id":"33281725:69c5:fe93:dd76:77c64c7893d4","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"domain:Upgrade","label":"Upgrade","type":"Domain","slug":"domain-upgrade"},{"id":"subdomain:Upgrade:ConfigMigration","label":"ConfigMigration","type":"Subdomain","slug":"subdomain-configmigration"}],"edges":[{"source":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","target":"436e9d88:b972:8d93:42b2:57be4f7f6801","type":"calls"},{"source":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","target":"3d2e2ffa:536d:c8af:bf80:2c50e35a9cab","type":"calls"},{"source":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","target":"2f225626:8ef2:c8c3:f0b4:122ce525a50c","type":"calls"},{"source":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","target":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","type":"calls"},{"source":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","target":"9ac3d4ef:7c3a:fdf4:ec32:b26e77e579b8","type":"calls"},{"source":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","target":"e71e57d5:0c41:901d:f7b7:65de08f4f653","type":"calls"},{"source":"1b5a887b:3127:0413:576c:c1f6c26cff71","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"2243e916:1f6b:fbb2:9cd9:0fee4f06d40c","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"5e82f7dc:0bc5:8f68:5287:de67eb4d2e65","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"92af91a8:4384:aae9:e722:d6b1888458a4","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"6249b763:1c2a:b4f5:f649:7f194d87e91c","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"eaef109f:ff83:30e0:ad53:301229aeff94","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"04ffd008:66bb:cce1:24fc:6a097a9c714b","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"6c54af52:92cc:10bc:1a95:f43db41d1906","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"fd1512a5:0de1:48a3:41d2:3d12a3423111","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"90477a8c:9d5a:e0c7:cc3e:99a0c5a7f9e7","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"33281725:69c5:fe93:dd76:77c64c7893d4","target":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","type":"calls"},{"source":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","target":"domain:Upgrade","type":"belongsTo"},{"source":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","target":"subdomain:Upgrade:ConfigMigration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"3ed46569:da25:d279:d8d8:af7f0f5e7782","label":"parseCandidate","type":"Function","slug":"fn-candidate-ts-parsecandidate","lc":297,"lang":"typescript","cc":6,"cbc":12},{"id":"78e0bf4b:0065:2bcf:65a2:f46f164d06a9","label":"segment","type":"Function","slug":"fn-segment-ts-segment","lc":74,"lang":"typescript","cbc":39},{"id":"ab50212a:b8db:0b53:4a35:ec1b11b767ca","label":"parseVariant","type":"Function","slug":"fn-candidate-ts-parsevariant","lc":189,"lang":"typescript","cc":5,"cbc":7},{"id":"17797be0:9e9f:f45a:6318:82bd15f3e083","label":"parseModifier","type":"Function","slug":"fn-candidate-ts-parsemodifier","lc":46,"lang":"typescript","cc":2,"cbc":2},{"id":"38085355:e592:a2bd:84ec:04f95b7b5680","label":"decodeArbitraryValue","type":"Function","slug":"fn-decode-arbitrary-value-ts-decodearbitraryvalue","lc":14,"lang":"typescript","cc":5,"cbc":3},{"id":"54ccc96e:fe30:7d59:4dc9:92f937309fc1","label":"isValidArbitrary","type":"Function","slug":"fn-is-valid-arbitrary-ts-isvalidarbitrary","lc":67,"lang":"typescript","cbc":3},{"id":"9afbcbb3:7eb0:3dc0:a267:09287398eb0c","label":"findRoots","type":"Function","slug":"fn-candidate-ts-findroots","lc":45,"lang":"typescript","cbc":2},{"id":"2dae1f0c:9f96:9793:26a4:b559fa33d00b","label":"parseCandidate","type":"Function","slug":"fn-candidates-ts-parsecandidate","lc":7,"lang":"typescript","cc":1,"cbc":1},{"id":"5a7a9df0:e8ea:fd5b:e6e1:fdab3df64b74","label":"isSafeMigration","type":"Function","slug":"fn-is-safe-migration-ts-issafemigration","lc":163,"lang":"typescript","cc":4,"cbc":1},{"id":"9dde01f0:bd90:a856:16fa:1d0ea9bc2f1e","label":"migrateAutomaticVarInjection","type":"Function","slug":"fn-migrate-automatic-var-injection-ts-migrateautomaticvarinjection","lc":67,"lang":"typescript","cc":6},{"id":"840240d3:04e0:9158:c234:ad79b69e149a","label":"migrateCamelcaseInNamedValue","type":"Function","slug":"fn-migrate-camelcase-in-named-value-ts-migratecamelcaseinnamedvalue","lc":41,"lang":"typescript","cc":5},{"id":"aca76731:044a:77e8:3078:f4041ffad2e2","label":"migrateLegacyArbitraryValues","type":"Function","slug":"fn-migrate-legacy-arbitrary-values-ts-migratelegacyarbitraryvalues","lc":24,"lang":"typescript","cc":4},{"id":"3081c4a5:a681:79c2:c0b4:43cb5a1e32bc","label":"migrateModernizeArbitraryValues","type":"Function","slug":"fn-migrate-modernize-arbitrary-values-ts-migratemodernizearbitraryvalues","lc":66,"lang":"typescript","cc":6},{"id":"713a33e5:b942:ae61:a5fe:2fdcd909e75f","label":"migratePrefix","type":"Function","slug":"fn-migrate-prefix-ts-migrateprefix","lc":53,"lang":"typescript","cc":5},{"id":"0525572e:0122:4d75:010c:f4f5d0f0e692","label":"migrateVariantOrder","type":"Function","slug":"fn-migrate-variant-order-ts-migratevariantorder","lc":55,"lang":"typescript","cc":7},{"id":"827b776d:00d3:87e2:16c8:e40692673896","label":"parseCandidate","type":"Function","slug":"fn-canonicalize-candidates-ts-parsecandidate","lc":7,"lang":"typescript","cc":1,"cbc":7},{"id":"280bf6b7:9b23:32f7:65c7:94b235ecd958","label":"compileCandidates","type":"Function","slug":"fn-compile-ts-compilecandidates","lc":111,"lang":"typescript","cc":6,"cbc":4},{"id":"49cf4ef4:bc58:de77:38ee:861472c10e76","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"da6194ca:f19b:d252:9ce7:f0acce424221","label":"migrateArbitraryVariants","type":"Function","slug":"fn-migrate-arbitrary-variants-ts-migratearbitraryvariants","lc":39,"lang":"typescript","cc":8},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:ModuleResolver","label":"ModuleResolver","type":"Subdomain","slug":"subdomain-moduleresolver"}],"edges":[{"source":"3ed46569:da25:d279:d8d8:af7f0f5e7782","target":"78e0bf4b:0065:2bcf:65a2:f46f164d06a9","type":"calls"},{"source":"3ed46569:da25:d279:d8d8:af7f0f5e7782","target":"ab50212a:b8db:0b53:4a35:ec1b11b767ca","type":"calls"},{"source":"3ed46569:da25:d279:d8d8:af7f0f5e7782","target":"17797be0:9e9f:f45a:6318:82bd15f3e083","type":"calls"},{"source":"3ed46569:da25:d279:d8d8:af7f0f5e7782","target":"38085355:e592:a2bd:84ec:04f95b7b5680","type":"calls"},{"source":"3ed46569:da25:d279:d8d8:af7f0f5e7782","target":"54ccc96e:fe30:7d59:4dc9:92f937309fc1","type":"calls"},{"source":"3ed46569:da25:d279:d8d8:af7f0f5e7782","target":"9afbcbb3:7eb0:3dc0:a267:09287398eb0c","type":"calls"},{"source":"2dae1f0c:9f96:9793:26a4:b559fa33d00b","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"5a7a9df0:e8ea:fd5b:e6e1:fdab3df64b74","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"9dde01f0:bd90:a856:16fa:1d0ea9bc2f1e","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"840240d3:04e0:9158:c234:ad79b69e149a","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"aca76731:044a:77e8:3078:f4041ffad2e2","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"3081c4a5:a681:79c2:c0b4:43cb5a1e32bc","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"713a33e5:b942:ae61:a5fe:2fdcd909e75f","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"0525572e:0122:4d75:010c:f4f5d0f0e692","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"827b776d:00d3:87e2:16c8:e40692673896","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"280bf6b7:9b23:32f7:65c7:94b235ecd958","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"49cf4ef4:bc58:de77:38ee:861472c10e76","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"3ed46569:da25:d279:d8d8:af7f0f5e7782","type":"calls"},{"source":"3ed46569:da25:d279:d8d8:af7f0f5e7782","target":"domain:TailwindNode","type":"belongsTo"},{"source":"3ed46569:da25:d279:d8d8:af7f0f5e7782","target":"subdomain:TailwindNode:ModuleResolver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1266,14 +1266,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-upgrade.html">Upgrade</a></li></ul>
+      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-configmigration.html">ConfigMigration</a></li></ul>
+      <ul><li><a href="/subdomain-moduleresolver.html">ModuleResolver</a></li></ul>
     </div>
     
 
@@ -1299,7 +1299,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Called By</h2>
-      <ul><li><a href="/fn-design-system-ts-builddesignsystem.html">buildDesignSystem()</a></li><li><a href="/fn-compile-ts-compilecandidates.html">compileCandidates()</a></li><li><a href="/fn-is-safe-migration-ts-issafemigration.html">isSafeMigration()</a></li><li><a href="/fn-migrate-automatic-var-injection-ts-migrateautomaticvarinjection.html">migrateAutomaticVarInjection()</a></li><li><a href="/fn-migrate-camelcase-in-named-value-ts-migratecamelcaseinnamedvalue.html">migrateCamelcaseInNamedValue()</a></li><li><a href="/fn-migrate-legacy-arbitrary-values-ts-migratelegacyarbitraryvalues.html">migrateLegacyArbitraryValues()</a></li><li><a href="/fn-migrate-modernize-arbitrary-values-ts-migratemodernizearbitraryvalues.html">migrateModernizeArbitraryValues()</a></li><li><a href="/fn-migrate-prefix-ts-migrateprefix.html">migratePrefix()</a></li><li><a href="/fn-migrate-variant-order-ts-migratevariantorder.html">migrateVariantOrder()</a></li><li><a href="/fn-candidates-ts-parsecandidate.html">parseCandidate()</a></li><li><a href="/fn-canonicalize-candidates-ts-parsecandidate.html">parseCandidate()</a></li></ul>
+      <ul><li><a href="/fn-design-system-ts-builddesignsystem.html">buildDesignSystem()</a></li><li><a href="/fn-compile-ts-compilecandidates.html">compileCandidates()</a></li><li><a href="/fn-is-safe-migration-ts-issafemigration.html">isSafeMigration()</a></li><li><a href="/fn-migrate-arbitrary-variants-ts-migratearbitraryvariants.html">migrateArbitraryVariants()</a></li><li><a href="/fn-migrate-automatic-var-injection-ts-migrateautomaticvarinjection.html">migrateAutomaticVarInjection()</a></li><li><a href="/fn-migrate-camelcase-in-named-value-ts-migratecamelcaseinnamedvalue.html">migrateCamelcaseInNamedValue()</a></li><li><a href="/fn-migrate-legacy-arbitrary-values-ts-migratelegacyarbitraryvalues.html">migrateLegacyArbitraryValues()</a></li><li><a href="/fn-migrate-modernize-arbitrary-values-ts-migratemodernizearbitraryvalues.html">migrateModernizeArbitraryValues()</a></li><li><a href="/fn-migrate-prefix-ts-migrateprefix.html">migratePrefix()</a></li><li><a href="/fn-migrate-variant-order-ts-migratevariantorder.html">migrateVariantOrder()</a></li><li><a href="/fn-candidates-ts-parsecandidate.html">parseCandidate()</a></li><li><a href="/fn-canonicalize-candidates-ts-parsecandidate.html">parseCandidate()</a></li></ul>
     </div>
     
 
@@ -1334,7 +1334,7 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What calls parseCandidate()?</summary>
-        <div class="faq-answer">parseCandidate() is called by 11 function(s): buildDesignSystem, compileCandidates, isSafeMigration, migrateAutomaticVarInjection, migrateCamelcaseInNamedValue, migrateLegacyArbitraryValues, migrateModernizeArbitraryValues, migratePrefix, and 3 more.</div>
+        <div class="faq-answer">parseCandidate() is called by 12 function(s): buildDesignSystem, compileCandidates, isSafeMigration, migrateArbitraryVariants, migrateAutomaticVarInjection, migrateCamelcaseInNamedValue, migrateLegacyArbitraryValues, migrateModernizeArbitraryValues, and 4 more.</div>
       </details>
       
     </div>

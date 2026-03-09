@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/oxide.html" class="pill pill-green">Oxide</a>
-        <a href="/subdomain/extractor.html" class="pill pill-orange">Extractor</a>
+        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
+        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
         
         
         <span class="pill">calls 5</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Oxide","slug":"domain-oxide"},"entity":{"name":"decodeArbitraryValue","slug":"fn-decode-arbitrary-value-ts-decodearbitraryvalue","type":"Function"},"subdomain":{"name":"Extractor","slug":"subdomain-extractor"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"decodeArbitraryValue","slug":"fn-decode-arbitrary-value-ts-decodearbitraryvalue","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/oxide.html">Oxide</a><span class="arch-sep">&rarr;</span>
-            <a href="/extractor.html">Extractor</a><span class="arch-sep">&rarr;</span>
+            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
+            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
             <span>decodeArbitraryValue() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,24 +911,24 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  b32b16de_1d0a_c634_0b3a_9c71e740f5f9["decodeArbitraryValue()"]
-  218d6e9d_d581_e0f5_331d_ca1e058db8e0["parseCandidate()"]
-  218d6e9d_d581_e0f5_331d_ca1e058db8e0 -->|calls| b32b16de_1d0a_c634_0b3a_9c71e740f5f9
-  2f225626_8ef2_c8c3_f0b4_122ce525a50c["parseModifier()"]
-  2f225626_8ef2_c8c3_f0b4_122ce525a50c -->|calls| b32b16de_1d0a_c634_0b3a_9c71e740f5f9
-  3d2e2ffa_536d_c8af_bf80_2c50e35a9cab["parseVariant()"]
-  3d2e2ffa_536d_c8af_bf80_2c50e35a9cab -->|calls| b32b16de_1d0a_c634_0b3a_9c71e740f5f9
-  2e089718_53ec_9110_ae20_3753d624e3c3["convertUnderscoresToWhitespace()"]
-  b32b16de_1d0a_c634_0b3a_9c71e740f5f9 -->|calls| 2e089718_53ec_9110_ae20_3753d624e3c3
-  8517f489_1dc1_cfc0_a6c9_3e531a75fc00["parse()"]
-  b32b16de_1d0a_c634_0b3a_9c71e740f5f9 -->|calls| 8517f489_1dc1_cfc0_a6c9_3e531a75fc00
-  9b822777_eead_c104_8894_64f56bdc1179["recursivelyDecodeArbitraryValues()"]
-  b32b16de_1d0a_c634_0b3a_9c71e740f5f9 -->|calls| 9b822777_eead_c104_8894_64f56bdc1179
-  3827d6b8_9e17_4f4f_0b5d_946f0c3cf42a["toCss()"]
-  b32b16de_1d0a_c634_0b3a_9c71e740f5f9 -->|calls| 3827d6b8_9e17_4f4f_0b5d_946f0c3cf42a
-  b4779100_6e9d_d306_8e88_4e99272bc66c["addWhitespaceAroundMathOperators()"]
-  b32b16de_1d0a_c634_0b3a_9c71e740f5f9 -->|calls| b4779100_6e9d_d306_8e88_4e99272bc66c
-  style b32b16de_1d0a_c634_0b3a_9c71e740f5f9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  38085355_e592_a2bd_84ec_04f95b7b5680["decodeArbitraryValue()"]
+  3ed46569_da25_d279_d8d8_af7f0f5e7782["parseCandidate()"]
+  3ed46569_da25_d279_d8d8_af7f0f5e7782 -->|calls| 38085355_e592_a2bd_84ec_04f95b7b5680
+  17797be0_9e9f_f45a_6318_82bd15f3e083["parseModifier()"]
+  17797be0_9e9f_f45a_6318_82bd15f3e083 -->|calls| 38085355_e592_a2bd_84ec_04f95b7b5680
+  ab50212a_b8db_0b53_4a35_ec1b11b767ca["parseVariant()"]
+  ab50212a_b8db_0b53_4a35_ec1b11b767ca -->|calls| 38085355_e592_a2bd_84ec_04f95b7b5680
+  59d89ec6_86b9_d4eb_e57c_cb5e70243f78["convertUnderscoresToWhitespace()"]
+  38085355_e592_a2bd_84ec_04f95b7b5680 -->|calls| 59d89ec6_86b9_d4eb_e57c_cb5e70243f78
+  dd689f9e_bf18_4dc5_8ad2_481bc54885e4["parse()"]
+  38085355_e592_a2bd_84ec_04f95b7b5680 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
+  0cbec0ca_2bc7_a8f4_5f8b_2e908a061dc9["recursivelyDecodeArbitraryValues()"]
+  38085355_e592_a2bd_84ec_04f95b7b5680 -->|calls| 0cbec0ca_2bc7_a8f4_5f8b_2e908a061dc9
+  71acd8e2_7565_390e_cd19_55c488d90641["toCss()"]
+  38085355_e592_a2bd_84ec_04f95b7b5680 -->|calls| 71acd8e2_7565_390e_cd19_55c488d90641
+  6102a99f_e2e6_5901_acc1_bfc89877547c["addWhitespaceAroundMathOperators()"]
+  38085355_e592_a2bd_84ec_04f95b7b5680 -->|calls| 6102a99f_e2e6_5901_acc1_bfc89877547c
+  style 38085355_e592_a2bd_84ec_04f95b7b5680 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -936,7 +936,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-decode-arbitrary-value-ts-decodearbitraryvalue"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","label":"decodeArbitraryValue","type":"Function","slug":"fn-decode-arbitrary-value-ts-decodearbitraryvalue","lc":14,"lang":"typescript","cc":5,"cbc":3},{"id":"2e089718:53ec:9110:ae20:3753d624e3c3","label":"convertUnderscoresToWhitespace","type":"Function","slug":"fn-decode-arbitrary-value-ts-convertunderscorestowhitespace","lc":24,"lang":"typescript","cbc":2},{"id":"8517f489:1dc1:cfc0:a6c9:3e531a75fc00","label":"parse","type":"Function","slug":"fn-value-parser-ts-parse","lc":207,"lang":"typescript","cc":3,"cbc":19},{"id":"9b822777:eead:c104:8894:64f56bdc1179","label":"recursivelyDecodeArbitraryValues","type":"Function","slug":"fn-decode-arbitrary-value-ts-recursivelydecodearbitraryvalues","lc":42,"lang":"typescript","cc":2,"cbc":1},{"id":"3827d6b8:9e17:4f4f:0b5d:946f0c3cf42a","label":"toCss","type":"Function","slug":"fn-value-parser-ts-tocss","lc":16,"lang":"typescript","cbc":12},{"id":"b4779100:6e9d:d306:8e88:4e99272bc66c","label":"addWhitespaceAroundMathOperators","type":"Function","slug":"fn-math-operators-ts-addwhitespacearoundmathoperators","lc":161,"lang":"typescript","cbc":1},{"id":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","label":"parseCandidate","type":"Function","slug":"fn-candidate-ts-parsecandidate","lc":297,"lang":"typescript","cc":6,"cbc":11},{"id":"2f225626:8ef2:c8c3:f0b4:122ce525a50c","label":"parseModifier","type":"Function","slug":"fn-candidate-ts-parsemodifier","lc":46,"lang":"typescript","cc":2,"cbc":2},{"id":"3d2e2ffa:536d:c8af:bf80:2c50e35a9cab","label":"parseVariant","type":"Function","slug":"fn-candidate-ts-parsevariant","lc":189,"lang":"typescript","cc":5,"cbc":7},{"id":"domain:Oxide","label":"Oxide","type":"Domain","slug":"domain-oxide"},{"id":"subdomain:Oxide:Extractor","label":"Extractor","type":"Subdomain","slug":"subdomain-extractor"}],"edges":[{"source":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","target":"2e089718:53ec:9110:ae20:3753d624e3c3","type":"calls"},{"source":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","target":"8517f489:1dc1:cfc0:a6c9:3e531a75fc00","type":"calls"},{"source":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","target":"9b822777:eead:c104:8894:64f56bdc1179","type":"calls"},{"source":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","target":"3827d6b8:9e17:4f4f:0b5d:946f0c3cf42a","type":"calls"},{"source":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","target":"b4779100:6e9d:d306:8e88:4e99272bc66c","type":"calls"},{"source":"218d6e9d:d581:e0f5:331d:ca1e058db8e0","target":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","type":"calls"},{"source":"2f225626:8ef2:c8c3:f0b4:122ce525a50c","target":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","type":"calls"},{"source":"3d2e2ffa:536d:c8af:bf80:2c50e35a9cab","target":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","type":"calls"},{"source":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","target":"domain:Oxide","type":"belongsTo"},{"source":"b32b16de:1d0a:c634:0b3a:9c71e740f5f9","target":"subdomain:Oxide:Extractor","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"38085355:e592:a2bd:84ec:04f95b7b5680","label":"decodeArbitraryValue","type":"Function","slug":"fn-decode-arbitrary-value-ts-decodearbitraryvalue","lc":14,"lang":"typescript","cc":5,"cbc":3},{"id":"59d89ec6:86b9:d4eb:e57c:cb5e70243f78","label":"convertUnderscoresToWhitespace","type":"Function","slug":"fn-decode-arbitrary-value-ts-convertunderscorestowhitespace","lc":24,"lang":"typescript","cbc":2},{"id":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","label":"parse","type":"Function","slug":"fn-value-parser-ts-parse","lc":207,"lang":"typescript","cc":3,"cbc":21},{"id":"0cbec0ca:2bc7:a8f4:5f8b:2e908a061dc9","label":"recursivelyDecodeArbitraryValues","type":"Function","slug":"fn-decode-arbitrary-value-ts-recursivelydecodearbitraryvalues","lc":42,"lang":"typescript","cc":2,"cbc":1},{"id":"71acd8e2:7565:390e:cd19:55c488d90641","label":"toCss","type":"Function","slug":"fn-value-parser-ts-tocss","lc":16,"lang":"typescript","cbc":12},{"id":"6102a99f:e2e6:5901:acc1:bfc89877547c","label":"addWhitespaceAroundMathOperators","type":"Function","slug":"fn-math-operators-ts-addwhitespacearoundmathoperators","lc":161,"lang":"typescript","cbc":1},{"id":"3ed46569:da25:d279:d8d8:af7f0f5e7782","label":"parseCandidate","type":"Function","slug":"fn-candidate-ts-parsecandidate","lc":297,"lang":"typescript","cc":6,"cbc":12},{"id":"17797be0:9e9f:f45a:6318:82bd15f3e083","label":"parseModifier","type":"Function","slug":"fn-candidate-ts-parsemodifier","lc":46,"lang":"typescript","cc":2,"cbc":2},{"id":"ab50212a:b8db:0b53:4a35:ec1b11b767ca","label":"parseVariant","type":"Function","slug":"fn-candidate-ts-parsevariant","lc":189,"lang":"typescript","cc":5,"cbc":7},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"38085355:e592:a2bd:84ec:04f95b7b5680","target":"59d89ec6:86b9:d4eb:e57c:cb5e70243f78","type":"calls"},{"source":"38085355:e592:a2bd:84ec:04f95b7b5680","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"38085355:e592:a2bd:84ec:04f95b7b5680","target":"0cbec0ca:2bc7:a8f4:5f8b:2e908a061dc9","type":"calls"},{"source":"38085355:e592:a2bd:84ec:04f95b7b5680","target":"71acd8e2:7565:390e:cd19:55c488d90641","type":"calls"},{"source":"38085355:e592:a2bd:84ec:04f95b7b5680","target":"6102a99f:e2e6:5901:acc1:bfc89877547c","type":"calls"},{"source":"3ed46569:da25:d279:d8d8:af7f0f5e7782","target":"38085355:e592:a2bd:84ec:04f95b7b5680","type":"calls"},{"source":"17797be0:9e9f:f45a:6318:82bd15f3e083","target":"38085355:e592:a2bd:84ec:04f95b7b5680","type":"calls"},{"source":"ab50212a:b8db:0b53:4a35:ec1b11b767ca","target":"38085355:e592:a2bd:84ec:04f95b7b5680","type":"calls"},{"source":"38085355:e592:a2bd:84ec:04f95b7b5680","target":"domain:TailwindNode","type":"belongsTo"},{"source":"38085355:e592:a2bd:84ec:04f95b7b5680","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -971,14 +971,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-oxide.html">Oxide</a></li></ul>
+      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-extractor.html">Extractor</a></li></ul>
+      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
     </div>
     
 
