@@ -59,6 +59,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	if err := generateRepoPages(cfg); err != nil {
+		fmt.Fprintf(os.Stderr, "Error generating repo pages: %v\n", err)
+		os.Exit(1)
+	}
+
 	// Copy CNAME and static root files to site directory
 	if cname, err := os.ReadFile("CNAME"); err == nil {
 		os.WriteFile("site/CNAME", cname, 0644)
@@ -71,7 +76,7 @@ func main() {
 	for _, cat := range cfg.Categories {
 		totalRepos += len(cat.Repos)
 	}
-	fmt.Printf("Generated index.html and sitemap.xml (%d repos)\n", totalRepos)
+	fmt.Printf("Generated index.html, sitemap.xml, and %d repo pages\n", totalRepos)
 }
 
 func generateSitemap(cfg Config) error {
@@ -85,6 +90,50 @@ func generateSitemap(cfg Config) error {
 	}
 	b.WriteString("</sitemapindex>\n")
 	return os.WriteFile("site/sitemap.xml", []byte(b.String()), 0644)
+}
+
+func generateRepoPages(cfg Config) error {
+	tmpl, err := template.New("repo").Funcs(template.FuncMap{
+		"escape":     html.EscapeString,
+		"pathEscape": url.PathEscape,
+		"pillClass": func(s string) string {
+			if s == "" {
+				return "pill"
+			}
+			return "pill " + s
+		},
+		"shieldsURL": func(upstream string) string {
+			if upstream == "" {
+				return ""
+			}
+			return fmt.Sprintf("https://img.shields.io/github/stars/%s?style=flat&logo=github&color=818cf8&labelColor=1a1d27", upstream)
+		},
+		"archDocsURL": func(name string) string {
+			return fmt.Sprintf("https://supermodeltools.github.io/%s/", url.PathEscape(name))
+		},
+	}).Parse(repoTemplate)
+	if err != nil {
+		return fmt.Errorf("parsing repo template: %w", err)
+	}
+
+	for _, cat := range cfg.Categories {
+		for _, repo := range cat.Repos {
+			dir := fmt.Sprintf("site/%s", url.PathEscape(repo.Name))
+			if err := os.MkdirAll(dir, 0755); err != nil {
+				return fmt.Errorf("creating dir %s: %w", dir, err)
+			}
+			f, err := os.Create(fmt.Sprintf("%s/index.html", dir))
+			if err != nil {
+				return fmt.Errorf("creating %s/index.html: %w", dir, err)
+			}
+			err = tmpl.Execute(f, repo)
+			f.Close()
+			if err != nil {
+				return fmt.Errorf("executing repo template for %s: %w", repo.Name, err)
+			}
+		}
+	}
+	return nil
 }
 
 func generateIndex(cfg Config) error {
@@ -123,6 +172,118 @@ func generateIndex(cfg Config) error {
 
 	return tmpl.Execute(f, cfg)
 }
+
+const repoTemplate = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{escape .Name}} — Supermodel Tools</title>
+  <meta name="description" content="Architecture documentation for {{escape .Name}}. {{escape .Desc}}">
+  <link rel="canonical" href="https://repos.supermodeltools.com/{{pathEscape .Name}}/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{escape .Name}} — Architecture Docs">
+  <meta property="og:description" content="{{escape .Desc}}">
+  <meta property="og:url" content="https://repos.supermodeltools.com/{{pathEscape .Name}}/">
+  <meta property="og:site_name" content="Supermodel Tools">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{escape .Name}} — Architecture Docs">
+  <meta name="twitter:description" content="{{escape .Desc}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.site-header { border-bottom: 1px solid var(--border); padding: 16px 0; position: sticky; top: 0; background: var(--bg); z-index: 100; }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-brand { font-size: 18px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; }
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.breadcrumb { padding: 24px 0 0; font-size: 14px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+.breadcrumb span { color: var(--border); }
+.entity-header { padding: 32px 0 48px; }
+.entity-header h1 { font-size: 32px; font-weight: 700; margin-bottom: 12px; font-family: 'JetBrains Mono', monospace; }
+.entity-header p { color: var(--text-muted); font-size: 16px; max-width: 600px; margin-bottom: 20px; }
+.card-meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 24px; }
+.pill { display: inline-flex; align-items: center; padding: 4px 10px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; font-size: 12px; color: var(--text-muted); font-weight: 500; }
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.star-badge { height: 20px; vertical-align: middle; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: var(--radius); font-size: 14px; font-weight: 600; transition: opacity 0.2s; }
+.btn:hover { opacity: 0.85; text-decoration: none; }
+.btn-primary { background: var(--accent); color: #fff; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 0; margin-top: 64px; color: var(--text-muted); font-size: 13px; text-align: center; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-brand">
+        <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+        </svg>
+        Supermodel Tools
+      </a>
+      <nav class="site-nav">
+        <a href="https://supermodeltools.com">Website</a>
+        <a href="https://github.com/supermodeltools">GitHub</a>
+        <a href="https://x.com/supermodeltools">X</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>/</span>{{escape .Name}}
+      </nav>
+      <div class="entity-header">
+        <h1>{{escape .Name}}</h1>
+        <p>{{escape .Desc}}</p>
+        <div class="card-meta">
+          {{if .Pill}}<span class="{{pillClass .PillClass}}">{{escape .Pill}}</span>{{end}}
+          {{if .Upstream}}<img class="star-badge" src="{{shieldsURL .Upstream}}" alt="GitHub Stars" loading="lazy">{{end}}
+        </div>
+        <a href="{{archDocsURL .Name}}" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/></svg>
+          View Architecture Docs
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+`
 
 const indexTemplate = `<!DOCTYPE html>
 <html lang="en">
