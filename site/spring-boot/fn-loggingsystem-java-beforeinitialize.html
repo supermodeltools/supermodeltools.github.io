@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>beforeInitialize() — spring-boot Function Reference | spring-boot Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the beforeInitialize() function in LoggingSystem.java from the spring-boot codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/fn-loggingsystem-java-beforeinitialize/">
+<meta property="og:title" content="beforeInitialize() — spring-boot Function Reference — spring-boot Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the beforeInitialize() function in LoggingSystem.java from the spring-boot codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/fn-loggingsystem-java-beforeinitialize.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/fn-loggingsystem-java-beforeinitialize.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="spring-boot Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="beforeInitialize() — spring-boot Function Reference — spring-boot Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the beforeInitialize() function in LoggingSystem.java from the spring-boot codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-loggingsystem-java-beforeinitialize.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the beforeInitialize() function in LoggingSystem.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-loggingsystem-java-beforeinitialize.svg"],"name":"beforeInitialize() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-loggingsystem-java-beforeinitialize.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"beforeInitialize() — spring-boot Function Reference","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"beforeInitialize() is a function in the spring-boot codebase."},"name":"What does beforeInitialize() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"beforeInitialize() calls 1 function(s): beforeInitialize."},"name":"What does beforeInitialize() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"beforeInitialize() is called by 100 function(s): applicationGroupLoggingToConsoleWhenDisabled, applicationGroupLoggingToConsoleWhenHasApplicationGroup, applicationGroupLoggingToConsoleWhenHasApplicationGroupWithParenthesis, applicationGroupLoggingToFileWhenDisabled, applicationGroupLoggingToFileWhenHasApplicationGroup, applicationGroupLoggingToFileWhenHasApplicationGroupWithParenthesis, applicationNameLoggingToConsoleWhenDisabled, applicationNameLoggingToConsoleWhenHasApplicationName, and 92 more."},"name":"What calls beforeInitialize()?"}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      spring-boot Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/function.html">Function</a><span class="sep">/</span>
+        <span>beforeInitialize() — spring-boot Function Reference</span>
+      </div>
+      <h1 class="entity-title">beforeInitialize() — spring-boot Function Reference</h1>
+      <p class="entity-desc">Architecture documentation for the beforeInitialize() function in LoggingSystem.java from the spring-boot codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/function.html" class="pill pill-accent">Function</a>
+        <a href="/language/java.html" class="pill pill-blue">java</a>
+        <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
+        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        
+        
+        <span class="pill">calls 1</span>
+        <span class="pill">called by 100</span>
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"cb":100,"co":1,"el":86,"et":{"calls":101},"lc":1,"sl":86}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+      <div class="visuals-archmap" id="arch-map-container">
+        <div class="arch-map-svg"></div>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"beforeInitialize","slug":"fn-loggingsystem-java-beforeinitialize","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <noscript>
+          <div class="arch-map-fallback">
+            <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
+            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <span>beforeInitialize() — spring-boot Function Reference</span>
+          </div>
+        </noscript>
+      </div>
+      
+
+      
+      <div class="visuals-row">
+        
+        <div class="visuals-cell mermaid-container">
+          <h3>Dependency Diagram</h3>
+          <pre class="mermaid">graph TD
+  65860c34_08c5_1d7b_5ecb_4bec140992b4["beforeInitialize()"]
+  35932d49_49b0_b6b5_df11_402fccc52e5f["beforeInitialize()"]
+  35932d49_49b0_b6b5_df11_402fccc52e5f -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  02df2ef5_99ef_5d9f_f2b5_e2eca2768235["onApplicationStartingEvent()"]
+  02df2ef5_99ef_5d9f_f2b5_e2eca2768235 -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  359aae6a_179d_48c3_7528_036daed9235a["noFile()"]
+  359aae6a_179d_48c3_7528_036daed9235a -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  0ecf52a8_7a69_d509_9311_39ef344eb61b["withFile()"]
+  0ecf52a8_7a69_d509_9311_39ef344eb61b -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  3ec598cc_545c_9328_0c31_6d970c1585e1["testCustomFormatter()"]
+  3ec598cc_545c_9328_0c31_6d970c1585e1 -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  6ceb851f_d19b_36d9_dcfb_6ad4378c3e05["testSystemPropertyInitializesFormat()"]
+  6ceb851f_d19b_36d9_dcfb_6ad4378c3e05 -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  c29b04d5_1664_d2aa_43ae_1a85c4428c09["testNonDefaultConfigLocation()"]
+  c29b04d5_1664_d2aa_43ae_1a85c4428c09 -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  ba81b913_ef1b_8704_1ab9_32c26e83f01e["testNonexistentConfigLocation()"]
+  ba81b913_ef1b_8704_1ab9_32c26e83f01e -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  b8cbdfce_72db_d4da_698e_154ace7f4308["setLevel()"]
+  b8cbdfce_72db_d4da_698e_154ace7f4308 -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  5389d446_d7cf_58a7_bf1b_6932da37d35f["setLevelToNull()"]
+  5389d446_d7cf_58a7_bf1b_6932da37d35f -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  2a9ec8c4_e809_fbdb_6c3b_f86de82bce28["getLoggerConfigurations()"]
+  2a9ec8c4_e809_fbdb_6c3b_f86de82bce28 -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  6a8afac2_b536_3de2_7184_7b9c4870809d["getLoggerConfiguration()"]
+  6a8afac2_b536_3de2_7184_7b9c4870809d -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  a18f3b86_b4a5_442a_3c0a_814f766da495["shouldNotContainAnsiEscapeCodes()"]
+  a18f3b86_b4a5_442a_3c0a_814f766da495 -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  6fd37a4f_dd40_8758_e5cd_f4eb60cd71fc["noFile()"]
+  6fd37a4f_dd40_8758_e5cd_f4eb60cd71fc -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
+  style 65860c34_08c5_1d7b_5ecb_4bec140992b4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+        </div>
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="fn-loggingsystem-java-beforeinitialize"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"65860c34:08c5:1d7b:5ecb:4bec140992b4","label":"beforeInitialize","type":"Function","slug":"fn-loggingsystem-java-beforeinitialize","lc":1,"lang":"java","cc":1,"cbc":100},{"id":"35932d49:49b0:b6b5:df11:402fccc52e5f","label":"beforeInitialize","type":"Function","slug":"fn-loggingsystem-java-beforeinitialize-2","lc":4,"lang":"java","cc":1,"cbc":2},{"id":"02df2ef5:99ef:5d9f:f2b5:e2eca2768235","label":"onApplicationStartingEvent","type":"Function","slug":"fn-loggingapplicationlistener-java-onapplicationstartingevent","lc":4,"lang":"java","cc":3,"cbc":1},{"id":"359aae6a:179d:48c3:7528:036daed9235a","label":"noFile","type":"Function","slug":"fn-javaloggingsystemtests-java-nofile","lc":9,"lang":"java","cc":4},{"id":"0ecf52a8:7a69:d509:9311:39ef344eb61b","label":"withFile","type":"Function","slug":"fn-javaloggingsystemtests-java-withfile","lc":14,"lang":"java","cc":5},{"id":"3ec598cc:545c:9328:0c31:6d970c1585e1","label":"testCustomFormatter","type":"Function","slug":"fn-javaloggingsystemtests-java-testcustomformatter","lc":7,"lang":"java","cc":3},{"id":"6ceb851f:d19b:36d9:dcfb:6ad4378c3e05","label":"testSystemPropertyInitializesFormat","type":"Function","slug":"fn-javaloggingsystemtests-java-testsystempropertyinitializesformat","lc":10,"lang":"java","cc":3},{"id":"c29b04d5:1664:d2aa:43ae:1a85c4428c09","label":"testNonDefaultConfigLocation","type":"Function","slug":"fn-javaloggingsystemtests-java-testnondefaultconfiglocation","lc":11,"lang":"java","cc":3},{"id":"ba81b913:ef1b:8704:1ab9:32c26e83f01e","label":"testNonexistentConfigLocation","type":"Function","slug":"fn-javaloggingsystemtests-java-testnonexistentconfiglocation","lc":6,"lang":"java","cc":3},{"id":"b8cbdfce:72db:d4da:698e:154ace7f4308","label":"setLevel","type":"Function","slug":"fn-javaloggingsystemtests-java-setlevel","lc":9,"lang":"java","cc":5,"cbc":1},{"id":"5389d446:d7cf:58a7:bf1b:6932da37d35f","label":"setLevelToNull","type":"Function","slug":"fn-javaloggingsystemtests-java-setleveltonull","lc":11,"lang":"java","cc":5},{"id":"2a9ec8c4:e809:fbdb:6c3b:f86de82bce28","label":"getLoggerConfigurations","type":"Function","slug":"fn-javaloggingsystemtests-java-getloggerconfigurations","lc":9,"lang":"java","cc":7},{"id":"6a8afac2:b536:3de2:7184:7b9c4870809d","label":"getLoggerConfiguration","type":"Function","slug":"fn-javaloggingsystemtests-java-getloggerconfiguration","lc":9,"lang":"java","cc":7},{"id":"a18f3b86:b4a5:442a:3c0a:814f766da495","label":"shouldNotContainAnsiEscapeCodes","type":"Function","slug":"fn-javaloggingsystemtests-java-shouldnotcontainansiescapecodes","lc":7,"lang":"java","cc":3},{"id":"6fd37a4f:dd40:8758:e5cd:f4eb60cd71fc","label":"noFile","type":"Function","slug":"fn-log4j2loggingsystemtests-java-nofile","lc":11,"lang":"java","cc":3},{"id":"ab87d115:efb0:cfc8:3efa:6bfcdc3b823f","label":"withFile","type":"Function","slug":"fn-log4j2loggingsystemtests-java-withfile","lc":12,"lang":"java","cc":5},{"id":"579629d9:9c54:c720:d827:19408dd11cc2","label":"testNonDefaultConfigLocation","type":"Function","slug":"fn-log4j2loggingsystemtests-java-testnondefaultconfiglocation","lc":13,"lang":"java","cc":4},{"id":"1ea4831b:d516:c04d:de5a:149d04466bf5","label":"testNonexistentConfigLocation","type":"Function","slug":"","lc":6,"lang":"java","cc":2},{"id":"1ad0c157:08d7:663f:7122:01110c039f8e","label":"testSpringBootConfigLocation","type":"Function","slug":"fn-log4j2loggingsystemtests-java-testspringbootconfiglocation","lc":10,"lang":"java","cc":3},{"id":"2f10e793:77d7:3cdb:a7ed:55ebd872dc08","label":"setLevel","type":"Function","slug":"fn-log4j2loggingsystemtests-java-setlevel","lc":9,"lang":"java","cc":4,"cbc":1},{"id":"a03c0352:e7b1:df38:d5c6:9df428fb4ecb","label":"setLevelToNull","type":"Function","slug":"fn-log4j2loggingsystemtests-java-setleveltonull","lc":11,"lang":"java","cc":4},{"id":"37e1e34c:31a5:c23d:4009:ea47fd41cc94","label":"getLoggerConfigurations","type":"Function","slug":"fn-log4j2loggingsystemtests-java-getloggerconfigurations","lc":9,"lang":"java","cc":6,"cbc":1},{"id":"03cca9c7:b97c:4aa9:8ccf:846ade5e3e53","label":"getLoggerConfigurationsShouldReturnAllLoggers","type":"Function","slug":"fn-log4j2loggingsystemtests-java-getloggerconfigurationsshouldreturnallloggers","lc":17,"lang":"java","cc":9},{"id":"43f6fc80:5e22:7ce7:53ea:facd7e7f32c8","label":"getLoggerConfigurationWhenHasCustomLevel","type":"Function","slug":"fn-log4j2loggingsystemtests-java-getloggerconfigurationwhenhascustomlevel","lc":12,"lang":"java","cc":5},{"id":"f96c30df:c195:421f:631b:978310d7b791","label":"getLoggerConfiguration","type":"Function","slug":"fn-log4j2loggingsystemtests-java-getloggerconfiguration","lc":9,"lang":"java","cc":6,"cbc":5},{"id":"4c0250ee:a25d:1f2e:487e:39fcf8911f0e","label":"getLoggerConfigurationShouldReturnLoggerWithNullConfiguredLevel","type":"Function","slug":"fn-log4j2loggingsystemtests-java-getloggerconfigurationshouldreturnloggerwithnullconfiguredlevel","lc":8,"lang":"java","cc":6},{"id":"c00dbef1:5ab1:c3ea:c0c8:9f8b3a494702","label":"getLoggerConfigurationForNonExistentLoggerShouldReturnNull","type":"Function","slug":"fn-log4j2loggingsystemtests-java-getloggerconfigurationfornonexistentloggershouldreturnnull","lc":8,"lang":"java","cc":5},{"id":"61966dd5:5575:78a0:c10d:f1ff29cf6a2d","label":"setLevelOfUnconfiguredLoggerDoesNotAffectRootConfiguration","type":"Function","slug":"fn-log4j2loggingsystemtests-java-setlevelofunconfiguredloggerdoesnotaffectrootconfiguration","lc":9,"lang":"java","cc":4},{"id":"0c747847:afae:2055:21b2:c6a3f6df6a8d","label":"loggingThatUsesJulIsCaptured","type":"Function","slug":"fn-log4j2loggingsystemtests-java-loggingthatusesjuliscaptured","lc":11,"lang":"java","cc":5},{"id":"5d027b3e:0053:3f24:eef3:554cb88255ef","label":"exceptionsIncludeClassPackaging","type":"Function","slug":"fn-log4j2loggingsystemtests-java-exceptionsincludeclasspackaging","lc":10,"lang":"java","cc":5},{"id":"69a41600:a968:a24f:ee58:d9a35162d4ff","label":"beforeInitializeFilterDisablesErrorLogging","type":"Function","slug":"fn-log4j2loggingsystemtests-java-beforeinitializefilterdisableserrorlogging","lc":6,"lang":"java","cc":4}],"edges":[{"source":"65860c34:08c5:1d7b:5ecb:4bec140992b4","target":"35932d49:49b0:b6b5:df11:402fccc52e5f","type":"calls"},{"source":"35932d49:49b0:b6b5:df11:402fccc52e5f","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"02df2ef5:99ef:5d9f:f2b5:e2eca2768235","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"359aae6a:179d:48c3:7528:036daed9235a","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"0ecf52a8:7a69:d509:9311:39ef344eb61b","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"3ec598cc:545c:9328:0c31:6d970c1585e1","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"6ceb851f:d19b:36d9:dcfb:6ad4378c3e05","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"c29b04d5:1664:d2aa:43ae:1a85c4428c09","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"ba81b913:ef1b:8704:1ab9:32c26e83f01e","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"b8cbdfce:72db:d4da:698e:154ace7f4308","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"5389d446:d7cf:58a7:bf1b:6932da37d35f","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"2a9ec8c4:e809:fbdb:6c3b:f86de82bce28","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"6a8afac2:b536:3de2:7184:7b9c4870809d","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"a18f3b86:b4a5:442a:3c0a:814f766da495","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"6fd37a4f:dd40:8758:e5cd:f4eb60cd71fc","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"ab87d115:efb0:cfc8:3efa:6bfcdc3b823f","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"579629d9:9c54:c720:d827:19408dd11cc2","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"1ea4831b:d516:c04d:de5a:149d04466bf5","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"1ad0c157:08d7:663f:7122:01110c039f8e","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"2f10e793:77d7:3cdb:a7ed:55ebd872dc08","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"a03c0352:e7b1:df38:d5c6:9df428fb4ecb","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"37e1e34c:31a5:c23d:4009:ea47fd41cc94","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"03cca9c7:b97c:4aa9:8ccf:846ade5e3e53","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"43f6fc80:5e22:7ce7:53ea:facd7e7f32c8","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"f96c30df:c195:421f:631b:978310d7b791","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"4c0250ee:a25d:1f2e:487e:39fcf8911f0e","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"c00dbef1:5ab1:c3ea:c0c8:9f8b3a494702","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"61966dd5:5575:78a0:c10d:f1ff29cf6a2d","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"0c747847:afae:2055:21b2:c6a3f6df6a8d","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"5d027b3e:0053:3f24:eef3:554cb88255ef","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"69a41600:a968:a24f:ee58:d9a35162d4ff","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">core/spring-boot/src/main/java/org/springframework/boot/logging/LoggingSystem.java lines 86–86</p>
+      <pre class="source-code"><code class="language-java">	public abstract void beforeInitialize();</code></pre>
+    </div>
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-gradleplugin.html">GradlePlugin</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Subdomains</h2>
+      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Calls</h2>
+      <ul><li><a href="/fn-loggingsystem-java-beforeinitialize-2.html">beforeInitialize()</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Called By</h2>
+      <ul><li><a href="/fn-log4j2loggingsystemtests-java-applicationgrouploggingtoconsolewhendisabled.html">applicationGroupLoggingToConsoleWhenDisabled()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationgrouploggingtoconsolewhenhasapplicationgroup.html">applicationGroupLoggingToConsoleWhenHasApplicationGroup()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationgrouploggingtoconsolewhenhasapplicationgroupwithparenthesis.html">applicationGroupLoggingToConsoleWhenHasApplicationGroupWithParenthesis()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationgrouploggingtofilewhendisabled.html">applicationGroupLoggingToFileWhenDisabled()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationgrouploggingtofilewhenhasapplicationgroup.html">applicationGroupLoggingToFileWhenHasApplicationGroup()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationgrouploggingtofilewhenhasapplicationgroupwithparenthesis.html">applicationGroupLoggingToFileWhenHasApplicationGroupWithParenthesis()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationnameloggingtoconsolewhendisabled.html">applicationNameLoggingToConsoleWhenDisabled()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationnameloggingtoconsolewhenhasapplicationname.html">applicationNameLoggingToConsoleWhenHasApplicationName()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationnameloggingtoconsolewhenhasapplicationnamewithparenthesis.html">applicationNameLoggingToConsoleWhenHasApplicationNameWithParenthesis()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationnameloggingtofilewhendisabled.html">applicationNameLoggingToFileWhenDisabled()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationnameloggingtofilewhenhasapplicationname.html">applicationNameLoggingToFileWhenHasApplicationName()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-applicationnameloggingtofilewhenhasapplicationnamewithparenthesis.html">applicationNameLoggingToFileWhenHasApplicationNameWithParenthesis()</a></li><li><a href="/fn-logbackloggingsystemtests-java-applyingsystempropertiesdoesnotcauseunwantedstatuswarnings.html">applyingSystemPropertiesDoesNotCauseUnwantedStatusWarnings()</a></li><li><a href="/fn-loggingsystem-java-beforeinitialize-2.html">beforeInitialize()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-beforeinitializefilterdisableserrorlogging.html">beforeInitializeFilterDisablesErrorLogging()</a></li><li><a href="/fn-logbackloggingsystemtests-java-bridgehandlerlifecycle.html">bridgeHandlerLifecycle()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-correlationloggingtoconsolewhenexpectcorrelationidfalseandmdccontent.html">correlationLoggingToConsoleWhenExpectCorrelationIdFalseAndMdcContent()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-correlationloggingtoconsolewhenexpectcorrelationidtrueandmdccontent.html">correlationLoggingToConsoleWhenExpectCorrelationIdTrueAndMdcContent()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-correlationloggingtoconsolewhenexpectcorrelationidtrueandnomdccontent.html">correlationLoggingToConsoleWhenExpectCorrelationIdTrueAndNoMdcContent()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-correlationloggingtoconsolewhenhascorrelationpattern.html">correlationLoggingToConsoleWhenHasCorrelationPattern()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-correlationloggingtofilewhenexpectcorrelationidtrueandmdccontent.html">correlationLoggingToFileWhenExpectCorrelationIdTrueAndMdcContent()</a></li><li><a href="/fn-logbackloggingsystemtests-java-customexceptionconversionword.html">customExceptionConversionWord()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-customexceptionconversionword.html">customExceptionConversionWord()</a></li><li><a href="/fn-logbackloggingsystemtests-java-defaultconfigconfiguresaconsoleappender.html">defaultConfigConfiguresAConsoleAppender()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-environmentisupdateduponreinitialization.html">environmentIsUpdatedUponReinitialization()</a></li><li><a href="/fn-logbackloggingsystemtests-java-exceptionsincludeclasspackaging.html">exceptionsIncludeClassPackaging()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-exceptionsincludeclasspackaging.html">exceptionsIncludeClassPackaging()</a></li><li><a href="/fn-logbackloggingsystemtests-java-getenvironment.html">getEnvironment()</a></li><li><a href="/fn-logbackloggingsystemtests-java-getenvironmentwhenusingfile.html">getEnvironmentWhenUsingFile()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-getloggerconfiguration.html">getLoggerConfiguration()</a></li><li><a href="/fn-javaloggingsystemtests-java-getloggerconfiguration.html">getLoggerConfiguration()</a></li><li><a href="/fn-logbackloggingsystemtests-java-getloggerconfiguration.html">getLoggerConfiguration()</a></li><li><a href="/fn-logbackloggingsystemtests-java-getloggerconfigurationforloggerthatdoesnotexistshouldreturnnull.html">getLoggerConfigurationForLoggerThatDoesNotExistShouldReturnNull()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-getloggerconfigurationfornonexistentloggershouldreturnnull.html">getLoggerConfigurationForNonExistentLoggerShouldReturnNull()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-getloggerconfigurationshouldreturnloggerwithnullconfiguredlevel.html">getLoggerConfigurationShouldReturnLoggerWithNullConfiguredLevel()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-getloggerconfigurationwhenhascustomlevel.html">getLoggerConfigurationWhenHasCustomLevel()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-getloggerconfigurationwithresetlevelreturnsnull.html">getLoggerConfigurationWithResetLevelReturnsNull()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-getloggerconfigurationwithresetlevelwhenalreadyconfiguredreturnsparentconfiguredlevel.html">getLoggerConfigurationWithResetLevelWhenAlreadyConfiguredReturnsParentConfiguredLevel()</a></li><li><a href="/fn-logbackloggingsystemtests-java-getloggerconfigurations.html">getLoggerConfigurations()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-getloggerconfigurations.html">getLoggerConfigurations()</a></li><li><a href="/fn-javaloggingsystemtests-java-getloggerconfigurations.html">getLoggerConfigurations()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-getloggerconfigurationsshouldreturnallloggers.html">getLoggerConfigurationsShouldReturnAllLoggers()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-initializationisonlyperformedonceuntilcleanedup.html">initializationIsOnlyPerformedOnceUntilCleanedUp()</a></li><li><a href="/fn-logbackloggingsystemtests-java-initializationisonlyperformedonceuntilcleanedup.html">initializationIsOnlyPerformedOnceUntilCleanedUp()</a></li><li><a href="/fn-logbackloggingsystemtests-java-initialize.html">initialize()</a></li><li>initializeAddsSpringEnvironmentPropertySource()</li><li><a href="/fn-log4j2loggingsystemtests-java-initializeattachesenvironmenttologgercontext.html">initializeAttachesEnvironmentToLoggerContext()</a></li><li>initializeRegisterStatusListenerAndAttachToLoggerContext()</li><li><a href="/fn-logbackloggingsystemtests-java-initializeshouldapplylogbacksystempropertiestothecontext.html">initializeShouldApplyLogbackSystemPropertiesToTheContext()</a></li><li><a href="/fn-logbackloggingsystemtests-java-initializeshouldsetsystemproperty.html">initializeShouldSetSystemProperty()</a></li><li><a href="/fn-logbackloggingsystemtests-java-jbossloggingroutesthroughslf4jwhenloggingsystemisinitialized.html">jbossLoggingRoutesThroughSlf4jWhenLoggingSystemIsInitialized()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-loadoptionaloverrideconfigurationuponreinitialization.html">loadOptionalOverrideConfigurationUponReinitialization()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-loadoptionaloverrideconfigurationwhendoesnotexistuponreinitialization.html">loadOptionalOverrideConfigurationWhenDoesNotExistUponReinitialization()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-log4jlevelsarepropagatedtojul.html">log4jLevelsArePropagatedToJul()</a></li><li><a href="/fn-logbackloggingsystemtests-java-logbackdebugpropertyishonored.html">logbackDebugPropertyIsHonored()</a></li><li><a href="/fn-logbackloggingsystemtests-java-logbacksystemstatuslistenershouldberegistered.html">logbackSystemStatusListenerShouldBeRegistered()</a></li><li><a href="/fn-logbackloggingsystemtests-java-logbacksystemstatuslistenershouldberegisteredandfilterstatusbylevelifdebugdisabled.html">logbackSystemStatusListenerShouldBeRegisteredAndFilterStatusByLevelIfDebugDisabled()</a></li><li><a href="/fn-logbackloggingsystemtests-java-logbacksystemstatuslistenershouldberegisteredonlyonce.html">logbackSystemStatusListenerShouldBeRegisteredOnlyOnce()</a></li><li>logbackSystemStatusListenerShouldBeRegisteredWhenCustomLogbackXmlHasStatusListener()</li><li>logbackSystemStatusListenerShouldBeRegisteredWhenUsingCustomLogbackXml()</li><li><a href="/fn-logbackloggingsystemtests-java-logginglevelispropagatedtojul.html">loggingLevelIsPropagatedToJul()</a></li><li><a href="/fn-logbackloggingsystemtests-java-loggingthatusesjuliscaptured.html">loggingThatUsesJulIsCaptured()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-loggingthatusesjuliscaptured.html">loggingThatUsesJulIsCaptured()</a></li><li><a href="/fn-logbackloggingsystemtests-java-nodebugoutputisproducedbydefault.html">noDebugOutputIsProducedByDefault()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-nofile.html">noFile()</a></li><li><a href="/fn-javaloggingsystemtests-java-nofile.html">noFile()</a></li><li><a href="/fn-logbackloggingsystemtests-java-nofile.html">noFile()</a></li><li><a href="/fn-loggingapplicationlistener-java-onapplicationstartingevent.html">onApplicationStartingEvent()</a></li><li><a href="/fn-logbackloggingsystemtests-java-setlevel.html">setLevel()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-setlevel.html">setLevel()</a></li><li><a href="/fn-javaloggingsystemtests-java-setlevel.html">setLevel()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-setlevelofunconfiguredloggerdoesnotaffectrootconfiguration.html">setLevelOfUnconfiguredLoggerDoesNotAffectRootConfiguration()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-setleveltonull.html">setLevelToNull()</a></li><li><a href="/fn-javaloggingsystemtests-java-setleveltonull.html">setLevelToNull()</a></li><li><a href="/fn-logbackloggingsystemtests-java-setleveltonull.html">setLevelToNull()</a></li><li>shouldNotContainAnsiEscapeCodes()</li><li>shouldNotContainAnsiEscapeCodes()</li><li><a href="/fn-javaloggingsystemtests-java-shouldnotcontainansiescapecodes.html">shouldNotContainAnsiEscapeCodes()</a></li><li>shouldRespectConsoleThreshold()</li><li><a href="/fn-logbackloggingsystemtests-java-shouldrespectfilethreshold.html">shouldRespectFileThreshold()</a></li><li>springProfileIfNestedWithinSecondPhaseElementSanityChecker()</li><li><a href="/fn-log4j2loggingsystemtests-java-statuslistenerisupdateduponreinitialization.html">statusListenerIsUpdatedUponReinitialization()</a></li><li><a href="/fn-logbackloggingsystemtests-java-systemleveltraceshouldreturnnativeleveltracenotall.html">systemLevelTraceShouldReturnNativeLevelTraceNotAll()</a></li><li><a href="/fn-javaloggingsystemtests-java-testcustomformatter.html">testCustomFormatter()</a></li><li>testLogbackSpecificSystemProperty()</li><li><a href="/fn-javaloggingsystemtests-java-testnondefaultconfiglocation.html">testNonDefaultConfigLocation()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-testnondefaultconfiglocation.html">testNonDefaultConfigLocation()</a></li><li><a href="/fn-logbackloggingsystemtests-java-testnondefaultconfiglocation.html">testNonDefaultConfigLocation()</a></li><li><a href="/fn-javaloggingsystemtests-java-testnonexistentconfiglocation.html">testNonexistentConfigLocation()</a></li><li>testNonexistentConfigLocation()</li><li>testNonexistentConfigLocation()</li><li><a href="/fn-log4j2loggingsystemtests-java-testspringbootconfiglocation.html">testSpringBootConfigLocation()</a></li><li><a href="/fn-javaloggingsystemtests-java-testsystempropertyinitializesformat.html">testSystemPropertyInitializesFormat()</a></li><li><a href="/fn-logbackloggingsystemtests-java-whenconfiglocationisnotxmlthenillegalargumentexceptionshouldbethrown.html">whenConfigLocationIsNotXmlThenIllegalArgumentExceptionShouldBeThrown()</a></li><li><a href="/fn-logbackloggingsystemtests-java-whenconfiglocationisxmlandhasqueryparametersthenillegalargumentexceptionshouldnotbethrown.html">whenConfigLocationIsXmlAndHasQueryParametersThenIllegalArgumentExceptionShouldNotBeThrown()</a></li><li><a href="/fn-logbackloggingsystemtests-java-whenconfiglocationisxmlfilewithoutextensionshouldwork.html">whenConfigLocationIsXmlFileWithoutExtensionShouldWork()</a></li><li><a href="/fn-logbackloggingsystemtests-java-whenconfigurationerrorisdetectedunderlyingcausesareincludedassuppressedexceptions.html">whenConfigurationErrorIsDetectedUnderlyingCausesAreIncludedAsSuppressedExceptions()</a></li><li><a href="/fn-javaloggingsystemtests-java-withfile.html">withFile()</a></li><li><a href="/fn-logbackloggingsystemtests-java-withfile.html">withFile()</a></li><li><a href="/fn-log4j2loggingsystemtests-java-withfile.html">withFile()</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/spring-boot/blob/main/core/spring-boot/src/main/java/org/springframework/boot/logging/LoggingSystem.java#L86">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does beforeInitialize() do?</summary>
+        <div class="faq-answer">beforeInitialize() is a function in the spring-boot codebase.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does beforeInitialize() call?</summary>
+        <div class="faq-answer">beforeInitialize() calls 1 function(s): beforeInitialize.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What calls beforeInitialize()?</summary>
+        <div class="faq-answer">beforeInitialize() is called by 100 function(s): applicationGroupLoggingToConsoleWhenDisabled, applicationGroupLoggingToConsoleWhenHasApplicationGroup, applicationGroupLoggingToConsoleWhenHasApplicationGroupWithParenthesis, applicationGroupLoggingToFileWhenDisabled, applicationGroupLoggingToFileWhenHasApplicationGroup, applicationGroupLoggingToFileWhenHasApplicationGroupWithParenthesis, applicationNameLoggingToConsoleWhenDisabled, applicationNameLoggingToConsoleWhenHasApplicationName, and 92 more.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

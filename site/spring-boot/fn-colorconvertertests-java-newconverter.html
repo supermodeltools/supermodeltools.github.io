@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>newConverter() — spring-boot Function Reference | spring-boot Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the newConverter() function in ColorConverterTests.java from the spring-boot codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/fn-colorconvertertests-java-newconverter/">
+<meta property="og:title" content="newConverter() — spring-boot Function Reference — spring-boot Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the newConverter() function in ColorConverterTests.java from the spring-boot codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/fn-colorconvertertests-java-newconverter.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/fn-colorconvertertests-java-newconverter.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="spring-boot Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="newConverter() — spring-boot Function Reference — spring-boot Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the newConverter() function in ColorConverterTests.java from the spring-boot codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-colorconvertertests-java-newconverter.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the newConverter() function in ColorConverterTests.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-colorconvertertests-java-newconverter.svg"],"name":"newConverter() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-colorconvertertests-java-newconverter.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"newConverter() — spring-boot Function Reference","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"newConverter() is a function in the spring-boot codebase."},"name":"What does newConverter() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"newConverter() is called by 22 function(s): black, blue, brightBlack, brightBlue, brightCyan, brightGreen, brightMagenta, brightRed, and 14 more."},"name":"What calls newConverter()?"}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      spring-boot Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/function.html">Function</a><span class="sep">/</span>
+        <span>newConverter() — spring-boot Function Reference</span>
+      </div>
+      <h1 class="entity-title">newConverter() — spring-boot Function Reference</h1>
+      <p class="entity-desc">Architecture documentation for the newConverter() function in ColorConverterTests.java from the spring-boot codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/function.html" class="pill pill-accent">Function</a>
+        <a href="/language/java.html" class="pill pill-blue">java</a>
+        <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
+        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        
+        
+        
+        <span class="pill">called by 22</span>
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"cb":22,"el":220,"et":{"calls":22},"lc":5,"sl":216}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+      <div class="visuals-archmap" id="arch-map-container">
+        <div class="arch-map-svg"></div>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"newConverter","slug":"fn-colorconvertertests-java-newconverter","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <noscript>
+          <div class="arch-map-fallback">
+            <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
+            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <span>newConverter() — spring-boot Function Reference</span>
+          </div>
+        </noscript>
+      </div>
+      
+
+      
+      <div class="visuals-row">
+        
+        <div class="visuals-cell mermaid-container">
+          <h3>Dependency Diagram</h3>
+          <pre class="mermaid">graph TD
+  42cc3260_11e4_2d12_542c_da48b6ae6576["newConverter()"]
+  65652b66_40b1_38b0_ad28_4c58f72b2056["black()"]
+  65652b66_40b1_38b0_ad28_4c58f72b2056 -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  3046322a_7cd4_4e34_001d_c25e97463a1d["white()"]
+  3046322a_7cd4_4e34_001d_c25e97463a1d -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  b7d7c2a5_2c7b_cfaf_3297_fdccf948e089["faint()"]
+  b7d7c2a5_2c7b_cfaf_3297_fdccf948e089 -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  19589893_deec_bb63_9d23_8bf4cdf53033["red()"]
+  19589893_deec_bb63_9d23_8bf4cdf53033 -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  e3d0b88b_d308_3456_a80c_fd6968acc889["green()"]
+  e3d0b88b_d308_3456_a80c_fd6968acc889 -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  c86898e5_415a_083e_0aab_7de271c451ce["yellow()"]
+  c86898e5_415a_083e_0aab_7de271c451ce -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  2b3c5d2e_f85d_6c59_c7fa_55830de8ffad["blue()"]
+  2b3c5d2e_f85d_6c59_c7fa_55830de8ffad -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  a13b22ac_3395_53f2_a394_124c34c9c845["magenta()"]
+  a13b22ac_3395_53f2_a394_124c34c9c845 -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  4d7398b1_1447_6e22_f68d_22bfd4dca911["cyan()"]
+  4d7398b1_1447_6e22_f68d_22bfd4dca911 -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  e1c6c25f_ea6c_4fe6_6486_3fcd20a7ec98["brightBlack()"]
+  e1c6c25f_ea6c_4fe6_6486_3fcd20a7ec98 -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  c0e713ed_b4ef_250f_492c_7c1b6a1e8ec8["brightWhite()"]
+  c0e713ed_b4ef_250f_492c_7c1b6a1e8ec8 -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  3bad24d3_1f5a_64fd_ca13_b36cb8a2945a["brightRed()"]
+  3bad24d3_1f5a_64fd_ca13_b36cb8a2945a -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  b6ddb867_fc50_0cbc_99a3_448b32194071["brightGreen()"]
+  b6ddb867_fc50_0cbc_99a3_448b32194071 -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  ca337bdb_c954_9772_815e_cc88753ca3eb["brightYellow()"]
+  ca337bdb_c954_9772_815e_cc88753ca3eb -->|calls| 42cc3260_11e4_2d12_542c_da48b6ae6576
+  style 42cc3260_11e4_2d12_542c_da48b6ae6576 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+        </div>
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="fn-colorconvertertests-java-newconverter"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"42cc3260:11e4:2d12:542c:da48b6ae6576","label":"newConverter","type":"Function","slug":"fn-colorconvertertests-java-newconverter","lc":5,"lang":"java","cbc":22},{"id":"65652b66:40b1:38b0:ad28:4c58f72b2056","label":"black","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"3046322a:7cd4:4e34:001d:c25e97463a1d","label":"white","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"b7d7c2a5:2c7b:cfaf:3297:fdccf948e089","label":"faint","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"19589893:deec:bb63:9d23:8bf4cdf53033","label":"red","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"e3d0b88b:d308:3456:a80c:fd6968acc889","label":"green","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"c86898e5:415a:083e:0aab:7de271c451ce","label":"yellow","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"2b3c5d2e:f85d:6c59:c7fa:55830de8ffad","label":"blue","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"a13b22ac:3395:53f2:a394:124c34c9c845","label":"magenta","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"4d7398b1:1447:6e22:f68d:22bfd4dca911","label":"cyan","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"e1c6c25f:ea6c:4fe6:6486:3fcd20a7ec98","label":"brightBlack","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"c0e713ed:b4ef:250f:492c:7c1b6a1e8ec8","label":"brightWhite","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"3bad24d3:1f5a:64fd:ca13:b36cb8a2945a","label":"brightRed","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"b6ddb867:fc50:0cbc:99a3:448b32194071","label":"brightGreen","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"ca337bdb:c954:9772:815e:cc88753ca3eb","label":"brightYellow","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"75fc1a09:cb1f:a636:b4ea:0609ad7bf870","label":"brightBlue","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"ff4f7eb9:84e8:ba29:4f8c:c5a465b64756","label":"brightMagenta","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"cf653b3b:485a:3ba3:29bf:f52dc2e9cd4b","label":"brightCyan","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"bac53fbe:cdca:86cd:629a:5e10ebb96700","label":"highlightFatal","type":"Function","slug":"","lc":7,"lang":"java","cc":2},{"id":"376cbdf6:dced:4a0a:4fa5:3b5de09bbf4d","label":"highlightError","type":"Function","slug":"","lc":7,"lang":"java","cc":2},{"id":"71685895:468a:e209:2f5d:11eeed3dcc59","label":"highlightWarn","type":"Function","slug":"","lc":7,"lang":"java","cc":2},{"id":"35a0c609:790c:2ae0:36f1:e79dde922cba","label":"highlightDebug","type":"Function","slug":"","lc":7,"lang":"java","cc":2},{"id":"6bab53ef:088e:6845:e2a7:e01865c32b45","label":"highlightTrace","type":"Function","slug":"","lc":7,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"65652b66:40b1:38b0:ad28:4c58f72b2056","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"3046322a:7cd4:4e34:001d:c25e97463a1d","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"b7d7c2a5:2c7b:cfaf:3297:fdccf948e089","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"19589893:deec:bb63:9d23:8bf4cdf53033","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"e3d0b88b:d308:3456:a80c:fd6968acc889","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"c86898e5:415a:083e:0aab:7de271c451ce","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"2b3c5d2e:f85d:6c59:c7fa:55830de8ffad","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"a13b22ac:3395:53f2:a394:124c34c9c845","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"4d7398b1:1447:6e22:f68d:22bfd4dca911","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"e1c6c25f:ea6c:4fe6:6486:3fcd20a7ec98","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"c0e713ed:b4ef:250f:492c:7c1b6a1e8ec8","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"3bad24d3:1f5a:64fd:ca13:b36cb8a2945a","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"b6ddb867:fc50:0cbc:99a3:448b32194071","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"ca337bdb:c954:9772:815e:cc88753ca3eb","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"75fc1a09:cb1f:a636:b4ea:0609ad7bf870","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"ff4f7eb9:84e8:ba29:4f8c:c5a465b64756","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"cf653b3b:485a:3ba3:29bf:f52dc2e9cd4b","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"bac53fbe:cdca:86cd:629a:5e10ebb96700","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"376cbdf6:dced:4a0a:4fa5:3b5de09bbf4d","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"71685895:468a:e209:2f5d:11eeed3dcc59","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"35a0c609:790c:2ae0:36f1:e79dde922cba","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"6bab53ef:088e:6845:e2a7:e01865c32b45","target":"42cc3260:11e4:2d12:542c:da48b6ae6576","type":"calls"},{"source":"42cc3260:11e4:2d12:542c:da48b6ae6576","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"42cc3260:11e4:2d12:542c:da48b6ae6576","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">core/spring-boot/src/test/java/org/springframework/boot/logging/log4j2/ColorConverterTests.java lines 216–220</p>
+      <pre class="source-code"><code class="language-java">	private ColorConverter newConverter(@Nullable String styling) {
+		ColorConverter converter = ColorConverter.newInstance(null, new String[] { this.in, styling });
+		assertThat(converter).isNotNull();
+		return converter;
+	}</code></pre>
+    </div>
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-gradleplugin.html">GradlePlugin</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Subdomains</h2>
+      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Called By</h2>
+      <ul><li>black()</li><li>blue()</li><li>brightBlack()</li><li>brightBlue()</li><li>brightCyan()</li><li>brightGreen()</li><li>brightMagenta()</li><li>brightRed()</li><li>brightWhite()</li><li>brightYellow()</li><li>cyan()</li><li>faint()</li><li>green()</li><li>highlightDebug()</li><li>highlightError()</li><li>highlightFatal()</li><li>highlightTrace()</li><li>highlightWarn()</li><li>magenta()</li><li>red()</li><li>white()</li><li>yellow()</li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/spring-boot/blob/main/core/spring-boot/src/test/java/org/springframework/boot/logging/log4j2/ColorConverterTests.java#L216">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does newConverter() do?</summary>
+        <div class="faq-answer">newConverter() is a function in the spring-boot codebase.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What calls newConverter()?</summary>
+        <div class="faq-answer">newConverter() is called by 22 function(s): black, blue, brightBlack, brightBlue, brightCyan, brightGreen, brightMagenta, brightRed, and 14 more.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>DockerApi Class — spring-boot Architecture | spring-boot Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the DockerApi class in DockerApi.java from the spring-boot codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/class-dockerapi-java-dockerapi/">
+<meta property="og:title" content="DockerApi Class — spring-boot Architecture — spring-boot Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the DockerApi class in DockerApi.java from the spring-boot codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/class-dockerapi-java-dockerapi.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/class-dockerapi-java-dockerapi.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="spring-boot Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DockerApi Class — spring-boot Architecture — spring-boot Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the DockerApi class in DockerApi.java from the spring-boot codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/class-dockerapi-java-dockerapi.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the DockerApi class in DockerApi.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/class-dockerapi-java-dockerapi.svg"],"name":"DockerApi Class — spring-boot Architecture","url":"https://repos.supermodeltools.com/class-dockerapi-java-dockerapi.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"DockerApi Class — spring-boot Architecture","position":2}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      spring-boot Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/class.html">Class</a><span class="sep">/</span>
+        <span>DockerApi Class — spring-boot Architecture</span>
+      </div>
+      <h1 class="entity-title">DockerApi Class — spring-boot Architecture</h1>
+      <p class="entity-desc">Architecture documentation for the DockerApi class in DockerApi.java from the spring-boot codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/class.html" class="pill pill-accent">Class</a>
+        <a href="/language/java.html" class="pill pill-blue">java</a>
+        <a href="/domain/buildpackplatform.html" class="pill pill-green">BuildpackPlatform</a>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"el":662,"lc":602,"sl":61}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+      <div class="visuals-archmap" id="arch-map-container">
+        <div class="arch-map-svg"></div>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildpackPlatform","slug":"domain-buildpackplatform"},"entity":{"name":"DockerApi","slug":"class-dockerapi-java-dockerapi","type":"Class"}}</script>
+        <noscript>
+          <div class="arch-map-fallback">
+            <a href="/buildpackplatform.html">BuildpackPlatform</a><span class="arch-sep">&rarr;</span>
+            
+            <span>DockerApi Class — spring-boot Architecture</span>
+          </div>
+        </noscript>
+      </div>
+      
+
+      
+      <div class="visuals-row">
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="class-dockerapi-java-dockerapi"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"c25e4bf3:7f9f:e015:e3e8:e8da82ec2a42","label":"DockerApi","type":"Class","slug":"class-dockerapi-java-dockerapi","lc":602,"lang":"java"},{"id":"domain:BuildpackPlatform","label":"BuildpackPlatform","type":"Domain","slug":"domain-buildpackplatform"}],"edges":[{"source":"c25e4bf3:7f9f:e015:e3e8:e8da82ec2a42","target":"domain:BuildpackPlatform","type":"belongsTo"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">buildpack/spring-boot-buildpack-platform/src/main/java/org/springframework/boot/buildpack/platform/docker/DockerApi.java lines 61–662</p>
+      <pre class="source-code"><code class="language-java">public class DockerApi {
+
+	private static final List&lt;String&gt; FORCE_PARAMS = Collections.unmodifiableList(Arrays.asList(&#34;force&#34;, &#34;1&#34;));
+
+	static final ApiVersion UNKNOWN_API_VERSION = ApiVersion.of(0, 0);
+
+	static final ApiVersion PREFERRED_API_VERSION = ApiVersion.of(1, 50);
+
+	static final String API_VERSION_HEADER_NAME = &#34;API-Version&#34;;
+
+	private final HttpTransport http;
+
+	private final JsonStream jsonStream;
+
+	private final ImageApi image;
+
+	private final ContainerApi container;
+
+	private final VolumeApi volume;
+
+	private final SystemApi system;
+
+	private volatile @Nullable ApiVersion apiVersion;
+
+	/**
+	 * Create a new {@link DockerApi} instance.
+	 */
+	public DockerApi() {
+		this(HttpTransport.create((DockerConnectionConfiguration) null), DockerLog.toSystemOut());
+	}
+
+	/**
+	 * Create a new {@link DockerApi} instance.
+	 * @param connectionConfiguration the connection configuration to use
+	 * @param log a logger used to record output
+	 * @since 3.5.0
+	 */
+	public DockerApi(@Nullable DockerConnectionConfiguration connectionConfiguration, DockerLog log) {
+		this(HttpTransport.create(connectionConfiguration), log);
+	}
+
+	/**
+	 * Create a new {@link DockerApi} instance backed by a specific {@link HttpTransport}
+	 * implementation.
+	 * @param http the http implementation
+	 * @param log a logger used to record output
+	 */
+	DockerApi(HttpTransport http, DockerLog log) {
+		Assert.notNull(http, &#34;&#39;http&#39; must not be null&#34;);
+		Assert.notNull(log, &#34;&#39;log&#39; must not be null&#34;);
+		this.http = http;
+		this.jsonStream = new JsonStream(SharedJsonMapper.get());
+		this.image = new ImageApi();
+		this.container = new ContainerApi();
+		this.volume = new VolumeApi();
+		this.system = new SystemApi(log);
+	}
+
+	private HttpTransport http() {
+		return this.http;
+	}
+
+	private JsonStream jsonStream() {
+		return this.jsonStream;
+	}
+
+	URI buildPlatformJsonUrl(Feature feature, @Nullable ImagePlatform platform, String path) {
+		if (platform != null &amp;&amp; getApiVersion().supports(feature.minimumVersion())) {
+			return buildUrl(feature, path, &#34;platform&#34;, platform.toJson());
+		}
+		return buildUrl(path);
+	}
+
+	private URI buildUrl(String path, @Nullable Collection&lt;?&gt; params) {
+		return buildUrl(Feature.BASELINE, path, (params != null) ? params.toArray() : null);
+	}
+
+	private URI buildUrl(String path, Object... params) {
+		return buildUrl(Feature.BASELINE, path, params);
+	}
+
+	URI buildUrl(Feature feature, String path, Object @Nullable ... params) {
+		ApiVersion version = getApiVersion();
+		if (version.equals(UNKNOWN_API_VERSION) || (version.compareTo(PREFERRED_API_VERSION) &gt;= 0
+				&amp;&amp; version.compareTo(feature.minimumVersion()) &gt;= 0)) {
+			return buildVersionedUrl(PREFERRED_API_VERSION, path, params);
+		}
+		if (version.compareTo(feature.minimumVersion()) &gt;= 0) {
+			return buildVersionedUrl(version, path, params);
+		}
+		throw new IllegalStateException(
+				&#34;Docker API version must be at least %s to support this feature, but current API version is %s&#34;
+					.formatted(feature.minimumVersion(), version));
+	}
+
+	private URI buildVersionedUrl(ApiVersion version, String path, Object @Nullable ... params) {
+		try {
+			URIBuilder builder = new URIBuilder(&#34;/v&#34; &#43; version &#43; path);
+			if (params != null) {
+				int param = 0;
+				while (param &lt; params.length) {
+					builder.addParameter(Objects.toString(params[param&#43;&#43;]), Objects.toString(params[param&#43;&#43;]));
+				}
+			}
+			return builder.build();
+		}
+		catch (URISyntaxException ex) {
+			throw new IllegalStateException(ex);
+		}
+	}
+
+	private ApiVersion getApiVersion() {
+		ApiVersion apiVersion = this.apiVersion;
+		if (apiVersion == null) {
+			apiVersion = this.system.getApiVersion();
+			this.apiVersion = apiVersion;
+		}
+		return apiVersion;
+	}
+
+	/**
+	 * Return the Docker API for image operations.
+	 * @return the image API
+	 */
+	public ImageApi image() {
+		return this.image;
+	}
+
+	/**
+	 * Return the Docker API for container operations.
+	 * @return the container API
+	 */
+	public ContainerApi container() {
+		return this.container;
+	}
+
+	public VolumeApi volume() {
+		return this.volume;
+	}
+
+	SystemApi system() {
+		return this.system;
+	}
+
+	/**
+	 * Docker API for image operations.
+	 */
+	public class ImageApi {
+
+		ImageApi() {
+		}
+
+		/**
+		 * Pull an image from a registry.
+		 * @param reference the image reference to pull
+		 * @param platform the platform (os/architecture/variant) of the image to pull
+		 * @param listener a pull listener to receive update events
+		 * @return the {@link ImageApi pulled image} instance
+		 * @throws IOException on IO error
+		 */
+		public Image pull(ImageReference reference, @Nullable ImagePlatform platform,
+				UpdateListener&lt;PullImageUpdateEvent&gt; listener) throws IOException {
+			return pull(reference, platform, listener, null);
+		}
+
+		/**
+		 * Pull an image from a registry.
+		 * @param reference the image reference to pull
+		 * @param platform the platform (os/architecture/variant) of the image to pull
+		 * @param listener a pull listener to receive update events
+		 * @param registryAuth registry authentication credentials
+		 * @return the {@link ImageApi pulled image} instance
+		 * @throws IOException on IO error
+		 */
+		public Image pull(ImageReference reference, @Nullable ImagePlatform platform,
+				UpdateListener&lt;PullImageUpdateEvent&gt; listener, @Nullable String registryAuth) throws IOException {
+			Assert.notNull(reference, &#34;&#39;reference&#39; must not be null&#34;);
+			Assert.notNull(listener, &#34;&#39;listener&#39; must not be null&#34;);
+			URI createUri = (platform != null) ? buildUrl(Feature.PLATFORM_IMAGE_PULL, &#34;/images/create&#34;, &#34;fromImage&#34;,
+					reference, &#34;platform&#34;, platform) : buildUrl(&#34;/images/create&#34;, &#34;fromImage&#34;, reference);
+			DigestCaptureUpdateListener digestCapture = new DigestCaptureUpdateListener();
+			listener.onStart();
+			try {
+				try (Response response = http().post(createUri, registryAuth)) {
+					jsonStream().get(response.getContent(), PullImageUpdateEvent.class, (event) -&gt; {
+						digestCapture.onUpdate(event);
+						listener.onUpdate(event);
+					});
+				}
+				return inspect(reference, platform);
+			}
+			finally {
+				listener.onFinish();
+			}
+		}
+
+		/**
+		 * Push an image to a registry.
+		 * @param reference the image reference to push
+		 * @param listener a push listener to receive update events
+		 * @param registryAuth registry authentication credentials
+		 * @throws IOException on IO error
+		 */
+		public void push(ImageReference reference, UpdateListener&lt;PushImageUpdateEvent&gt; listener,
+				@Nullable String registryAuth) throws IOException {
+			Assert.notNull(reference, &#34;&#39;reference&#39; must not be null&#34;);
+			Assert.notNull(listener, &#34;&#39;listener&#39; must not be null&#34;);
+			URI pushUri = buildUrl(&#34;/images/&#34; &#43; reference &#43; &#34;/push&#34;);
+			ErrorCaptureUpdateListener errorListener = new ErrorCaptureUpdateListener();
+			listener.onStart();
+			try {
+				try (Response response = http().post(pushUri, registryAuth)) {
+					jsonStream().get(response.getContent(), PushImageUpdateEvent.class, (event) -&gt; {
+						errorListener.onUpdate(event);
+						listener.onUpdate(event);
+					});
+				}
+			}
+			finally {
+				listener.onFinish();
+			}
+		}
+
+		/**
+		 * Load an {@link ImageArchive} into Docker.
+		 * @param archive the archive to load
+		 * @param listener a pull listener to receive update events
+		 * @throws IOException on IO error
+		 */
+		public void load(ImageArchive archive, UpdateListener&lt;LoadImageUpdateEvent&gt; listener) throws IOException {
+			Assert.notNull(archive, &#34;&#39;archive&#39; must not be null&#34;);
+			Assert.notNull(listener, &#34;&#39;listener&#39; must not be null&#34;);
+			URI loadUri = buildUrl(&#34;/images/load&#34;);
+			LoadImageUpdateListener streamListener = new LoadImageUpdateListener(archive);
+			listener.onStart();
+			try {
+				try (Response response = http().post(loadUri, &#34;application/x-tar&#34;, archive::writeTo)) {
+					InputStream content = response.getContent();
+					if (content != null) {
+						jsonStream().get(content, LoadImageUpdateEvent.class, (event) -&gt; {
+							streamListener.onUpdate(event);
+							listener.onUpdate(event);
+						});
+					}
+				}
+				streamListener.assertValidResponseReceived();
+			}
+			finally {
+				listener.onFinish();
+			}
+		}
+
+		/**
+		 * Export the layers of an image as {@link TarArchive TarArchives}.
+		 * @param reference the reference to export
+		 * @param exports a consumer to receive the layers (contents can only be accessed
+		 * during the callback)
+		 * @throws IOException on IO error
+		 */
+		public void exportLayers(ImageReference reference, IOBiConsumer&lt;String, TarArchive&gt; exports)
+				throws IOException {
+			exportLayers(reference, null, exports);
+		}
+
+		/**
+		 * Export the layers of an image as {@link TarArchive TarArchives}.
+		 * @param reference the reference to export
+		 * @param platform the platform (os/architecture/variant) of the image to export.
+		 * Ignored on older versions of Docker.
+		 * @param exports a consumer to receive the layers (contents can only be accessed
+		 * during the callback)
+		 * @throws IOException on IO error
+		 * @since 3.4.12
+		 */
+		public void exportLayers(ImageReference reference, @Nullable ImagePlatform platform,
+				IOBiConsumer&lt;String, TarArchive&gt; exports) throws IOException {
+			Assert.notNull(reference, &#34;&#39;reference&#39; must not be null&#34;);
+			Assert.notNull(exports, &#34;&#39;exports&#39; must not be null&#34;);
+			URI uri = buildPlatformJsonUrl(Feature.PLATFORM_IMAGE_EXPORT, platform, &#34;/images/&#34; &#43; reference &#43; &#34;/get&#34;);
+			try (Response response = http().get(uri)) {
+				try (ExportedImageTar exportedImageTar = new ExportedImageTar(reference, response.getContent())) {
+					exportedImageTar.exportLayers(exports);
+				}
+			}
+		}
+
+		/**
+		 * Remove a specific image.
+		 * @param reference the reference the remove
+		 * @param force if removal should be forced
+		 * @throws IOException on IO error
+		 */
+		public void remove(ImageReference reference, boolean force) throws IOException {
+			Assert.notNull(reference, &#34;&#39;reference&#39; must not be null&#34;);
+			Collection&lt;String&gt; params = force ? FORCE_PARAMS : Collections.emptySet();
+			URI uri = buildUrl(&#34;/images/&#34; &#43; reference, params);
+			http().delete(uri).close();
+		}
+
+		/**
+		 * Inspect an image.
+		 * @param reference the image reference
+		 * @return the image from the local repository
+		 * @throws IOException on IO error
+		 */
+		public Image inspect(ImageReference reference) throws IOException {
+			return inspect(reference, null);
+		}
+
+		/**
+		 * Inspect an image.
+		 * @param reference the image reference
+		 * @param platform the platform (os/architecture/variant) of the image to inspect.
+		 * Ignored on older versions of Docker.
+		 * @return the image from the local repository
+		 * @throws IOException on IO error
+		 * @since 3.4.12
+		 */
+		public Image inspect(ImageReference reference, @Nullable ImagePlatform platform) throws IOException {
+			// The Docker documentation is incomplete but platform parameters
+			// are supported since 1.49 (see https://github.com/moby/moby/pull/49586)
+			Assert.notNull(reference, &#34;&#39;reference&#39; must not be null&#34;);
+			URI inspectUrl = buildPlatformJsonUrl(Feature.PLATFORM_IMAGE_INSPECT, platform,
+					&#34;/images/&#34; &#43; reference &#43; &#34;/json&#34;);
+			try (Response response = http().get(inspectUrl)) {
+				return Image.of(response.getContent());
+			}
+		}
+
+		public void tag(ImageReference sourceReference, ImageReference targetReference) throws IOException {
+			Assert.notNull(sourceReference, &#34;&#39;sourceReference&#39; must not be null&#34;);
+			Assert.notNull(targetReference, &#34;&#39;targetReference&#39; must not be null&#34;);
+			String tag = targetReference.getTag();
+			String path = &#34;/images/&#34; &#43; sourceReference &#43; &#34;/tag&#34;;
+			URI uri = (tag != null) ? buildUrl(path, &#34;repo&#34;, targetReference.inTaglessForm(), &#34;tag&#34;, tag)
+					: buildUrl(path, &#34;repo&#34;, targetReference);
+			http().post(uri).close();
+		}
+
+	}
+
+	/**
+	 * Docker API for container operations.
+	 */
+	public class ContainerApi {
+
+		ContainerApi() {
+		}
+
+		/**
+		 * Create a new container a {@link ContainerConfig}.
+		 * @param config the container config
+		 * @param platform the platform (os/architecture/variant) of the image the
+		 * container should be created from
+		 * @param contents additional contents to include
+		 * @return a {@link ContainerReference} for the newly created container
+		 * @throws IOException on IO error
+		 */
+		public ContainerReference create(ContainerConfig config, @Nullable ImagePlatform platform,
+				ContainerContent... contents) throws IOException {
+			Assert.notNull(config, &#34;&#39;config&#39; must not be null&#34;);
+			Assert.noNullElements(contents, &#34;&#39;contents&#39; must not contain null elements&#34;);
+			ContainerReference containerReference = createContainer(config, platform);
+			for (ContainerContent content : contents) {
+				uploadContainerContent(containerReference, content);
+			}
+			return containerReference;
+		}
+
+		private ContainerReference createContainer(ContainerConfig config, @Nullable ImagePlatform platform)
+				throws IOException {
+			URI createUri = (platform != null)
+					? buildUrl(Feature.PLATFORM_CONTAINER_CREATE, &#34;/containers/create&#34;, &#34;platform&#34;, platform)
+					: buildUrl(&#34;/containers/create&#34;);
+			try (Response response = http().post(createUri, &#34;application/json&#34;, config::writeTo)) {
+				return ContainerReference
+					.of(SharedJsonMapper.get().readTree(response.getContent()).at(&#34;/Id&#34;).asString());
+			}
+		}
+
+		private void uploadContainerContent(ContainerReference reference, ContainerContent content) throws IOException {
+			URI uri = buildUrl(&#34;/containers/&#34; &#43; reference &#43; &#34;/archive&#34;, &#34;path&#34;, content.getDestinationPath());
+			http().put(uri, &#34;application/x-tar&#34;, content.getArchive()::writeTo).close();
+		}
+
+		/**
+		 * Start a specific container.
+		 * @param reference the container reference to start
+		 * @throws IOException on IO error
+		 */
+		public void start(ContainerReference reference) throws IOException {
+			Assert.notNull(reference, &#34;&#39;reference&#39; must not be null&#34;);
+			URI uri = buildUrl(&#34;/containers/&#34; &#43; reference &#43; &#34;/start&#34;);
+			http().post(uri).close();
+		}
+
+		/**
+		 * Return and follow logs for a specific container.
+		 * @param reference the container reference
+		 * @param listener a listener to receive log update events
+		 * @throws IOException on IO error
+		 */
+		public void logs(ContainerReference reference, UpdateListener&lt;LogUpdateEvent&gt; listener) throws IOException {
+			Assert.notNull(reference, &#34;&#39;reference&#39; must not be null&#34;);
+			Assert.notNull(listener, &#34;&#39;listener&#39; must not be null&#34;);
+			Object[] params = { &#34;stdout&#34;, &#34;1&#34;, &#34;stderr&#34;, &#34;1&#34;, &#34;follow&#34;, &#34;1&#34; };
+			URI uri = buildUrl(&#34;/containers/&#34; &#43; reference &#43; &#34;/logs&#34;, params);
+			listener.onStart();
+			try {
+				try (Response response = http().get(uri)) {
+					LogUpdateEvent.readAll(response.getContent(), listener::onUpdate);
+				}
+			}
+			finally {
+				listener.onFinish();
+			}
+		}
+
+		/**
+		 * Wait for a container to stop and retrieve the status.
+		 * @param reference the container reference
+		 * @return a {@link ContainerStatus} indicating the exit status of the container
+		 * @throws IOException on IO error
+		 */
+		public ContainerStatus wait(ContainerReference reference) throws IOException {
+			Assert.notNull(reference, &#34;&#39;reference&#39; must not be null&#34;);
+			URI uri = buildUrl(&#34;/containers/&#34; &#43; reference &#43; &#34;/wait&#34;);
+			try (Response response = http().post(uri)) {
+				return ContainerStatus.of(response.getContent());
+			}
+		}
+
+		/**
+		 * Remove a specific container.
+		 * @param reference the container to remove
+		 * @param force if removal should be forced
+		 * @throws IOException on IO error
+		 */
+		public void remove(ContainerReference reference, boolean force) throws IOException {
+			Assert.notNull(reference, &#34;&#39;reference&#39; must not be null&#34;);
+			Collection&lt;String&gt; params = force ? FORCE_PARAMS : Collections.emptySet();
+			URI uri = buildUrl(&#34;/containers/&#34; &#43; reference, params);
+			http().delete(uri).close();
+		}
+
+	}
+
+	/**
+	 * Docker API for volume operations.
+	 */
+	public class VolumeApi {
+
+		VolumeApi() {
+		}
+
+		/**
+		 * Delete a volume.
+		 * @param name the name of the volume to delete
+		 * @param force if the deletion should be forced
+		 * @throws IOException on IO error
+		 */
+		public void delete(VolumeName name, boolean force) throws IOException {
+			Assert.notNull(name, &#34;&#39;name&#39; must not be null&#34;);
+			Collection&lt;String&gt; params = force ? FORCE_PARAMS : Collections.emptySet();
+			URI uri = buildUrl(&#34;/volumes/&#34; &#43; name, params);
+			http().delete(uri).close();
+		}
+
+	}
+
+	/**
+	 * Docker API for system operations.
+	 */
+	class SystemApi {
+
+		private final DockerLog log;
+
+		SystemApi(DockerLog log) {
+			this.log = log;
+		}
+
+		/**
+		 * Get the API version supported by the Docker daemon.
+		 * @return the Docker daemon API version
+		 */
+		ApiVersion getApiVersion() {
+			try {
+				URI uri = new URIBuilder(&#34;/_ping&#34;).build();
+				try (Response response = http().head(uri)) {
+					Header apiVersionHeader = response.getHeader(API_VERSION_HEADER_NAME);
+					if (apiVersionHeader != null) {
+						return ApiVersion.parse(apiVersionHeader.getValue());
+					}
+				}
+				catch (Exception ex) {
+					this.log.log(&#34;Warning: Failed to determine Docker API version: &#34; &#43; ex.getMessage());
+					// fall through to return default value
+				}
+				return UNKNOWN_API_VERSION;
+			}
+			catch (URISyntaxException ex) {
+				throw new IllegalStateException(ex);
+			}
+		}
+
+	}
+
+	/**
+	 * {@link UpdateListener} used to capture the image digest.
+	 */
+	private static final class DigestCaptureUpdateListener implements UpdateListener&lt;ProgressUpdateEvent&gt; {
+
+		private static final String PREFIX = &#34;Digest:&#34;;
+
+		private @Nullable String digest;
+
+		@Override
+		public void onUpdate(ProgressUpdateEvent event) {
+			String status = event.getStatus();
+			if (status != null &amp;&amp; status.startsWith(PREFIX)) {
+				String digest = status.substring(PREFIX.length()).trim();
+				Assert.state(this.digest == null || this.digest.equals(digest), &#34;Different digests IDs provided&#34;);
+				this.digest = digest;
+			}
+		}
+
+	}
+
+	/**
+	 * {@link UpdateListener} for an image load response stream.
+	 */
+	private static final class LoadImageUpdateListener implements UpdateListener&lt;LoadImageUpdateEvent&gt; {
+
+		private final ImageArchive archive;
+
+		private @Nullable String stream;
+
+		private LoadImageUpdateListener(ImageArchive archive) {
+			this.archive = archive;
+		}
+
+		@Override
+		public void onUpdate(LoadImageUpdateEvent event) {
+			Assert.state(event.getErrorDetail() == null,
+					() -&gt; &#34;Error response received when loading image&#34; &#43; image() &#43; &#34;: &#34; &#43; event.getErrorDetail());
+			this.stream = event.getStream();
+		}
+
+		private String image() {
+			ImageReference tag = this.archive.getTag();
+			return (tag != null) ? &#34; \&#34;&#34; &#43; tag &#43; &#34;\&#34;&#34; : &#34;&#34;;
+		}
+
+		private void assertValidResponseReceived() {
+			Assert.state(StringUtils.hasText(this.stream),
+					() -&gt; &#34;Invalid response received when loading image&#34; &#43; image());
+		}
+
+	}
+
+	/**
+	 * {@link UpdateListener} used to capture the details of an error in a response
+	 * stream.
+	 */
+	private static final class ErrorCaptureUpdateListener implements UpdateListener&lt;PushImageUpdateEvent&gt; {
+
+		@Override
+		public void onUpdate(PushImageUpdateEvent event) {
+			ErrorDetail errorDetail = event.getErrorDetail();
+			if (errorDetail != null) {
+				throw new IllegalStateException(
+						&#34;Error response received when pushing image: &#34; &#43; errorDetail.getMessage());
+			}
+		}
+
+	}
+
+	enum Feature {
+
+		BASELINE(ApiVersion.of(1, 24)),
+
+		PLATFORM_IMAGE_PULL(ApiVersion.of(1, 41)),
+
+		PLATFORM_CONTAINER_CREATE(ApiVersion.of(1, 41)),
+
+		PLATFORM_IMAGE_INSPECT(ApiVersion.of(1, 49)),
+
+		PLATFORM_IMAGE_EXPORT(ApiVersion.of(1, 48));
+
+		private final ApiVersion minimumVersion;
+
+		Feature(ApiVersion minimumVersion) {
+			this.minimumVersion = minimumVersion;
+		}
+
+		ApiVersion minimumVersion() {
+			return this.minimumVersion;
+		}
+
+	}
+
+}</code></pre>
+    </div>
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-buildpackplatform.html">BuildpackPlatform</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/spring-boot/blob/main/buildpack/spring-boot-buildpack-platform/src/main/java/org/springframework/boot/buildpack/platform/docker/DockerApi.java#L61">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

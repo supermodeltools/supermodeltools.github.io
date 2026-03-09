@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>assertThat() — spring-boot Function Reference | spring-boot Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the assertThat() function in DefaultBootstrapContextTests.java from the spring-boot codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/fn-defaultbootstrapcontexttests-java-assertthat/">
+<meta property="og:title" content="assertThat() — spring-boot Function Reference — spring-boot Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the assertThat() function in DefaultBootstrapContextTests.java from the spring-boot codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/fn-defaultbootstrapcontexttests-java-assertthat.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/fn-defaultbootstrapcontexttests-java-assertthat.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="spring-boot Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="assertThat() — spring-boot Function Reference — spring-boot Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the assertThat() function in DefaultBootstrapContextTests.java from the spring-boot codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-defaultbootstrapcontexttests-java-assertthat.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the assertThat() function in DefaultBootstrapContextTests.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-defaultbootstrapcontexttests-java-assertthat.svg"],"name":"assertThat() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-defaultbootstrapcontexttests-java-assertthat.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"assertThat() — spring-boot Function Reference","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"assertThat() is a function in the spring-boot codebase."},"name":"What does assertThat() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"assertThat() calls 1 function(s): CloseListenerAssert."},"name":"What does assertThat() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"assertThat() is called by 29 function(s): addCloseListenerIgnoresMultipleCallsWithSameListener, closeMulticastsEventToListeners, getOrElseCreatesReturnsOnlyOneInstance, getOrElseSupplyCreatesOnlyOneInstance, getOrElseSupplyWhenNoRegistrationReturnsSupplied, getOrElseSupplyWhenRegisteredAsNullReturnsNull, getOrElseThrowCreatesOnlyOneInstance, getOrElseThrowWhenRegisteredAsNullReturnsNull, and 21 more."},"name":"What calls assertThat()?"}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      spring-boot Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/function.html">Function</a><span class="sep">/</span>
+        <span>assertThat() — spring-boot Function Reference</span>
+      </div>
+      <h1 class="entity-title">assertThat() — spring-boot Function Reference</h1>
+      <p class="entity-desc">Architecture documentation for the assertThat() function in DefaultBootstrapContextTests.java from the spring-boot codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/function.html" class="pill pill-accent">Function</a>
+        <a href="/language/java.html" class="pill pill-blue">java</a>
+        <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
+        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        
+        
+        <span class="pill">calls 1</span>
+        <span class="pill">called by 29</span>
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"cb":29,"co":1,"el":305,"et":{"calls":30},"lc":4,"sl":302}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+      <div class="visuals-archmap" id="arch-map-container">
+        <div class="arch-map-svg"></div>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"assertThat","slug":"fn-defaultbootstrapcontexttests-java-assertthat","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <noscript>
+          <div class="arch-map-fallback">
+            <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
+            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <span>assertThat() — spring-boot Function Reference</span>
+          </div>
+        </noscript>
+      </div>
+      
+
+      
+      <div class="visuals-row">
+        
+        <div class="visuals-cell mermaid-container">
+          <h3>Dependency Diagram</h3>
+          <pre class="mermaid">graph TD
+  a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e["assertThat()"]
+  cddbe752_8746_6397_41bd_3f26abfd6bba["registerWhenNotAlreadyRegisteredRegistersInstance()"]
+  cddbe752_8746_6397_41bd_3f26abfd6bba -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  e49c8e7f_0750_5876_5a06_51217e2000f6["registerWhenAlreadyRegisteredRegistersReplacedInstance()"]
+  e49c8e7f_0750_5876_5a06_51217e2000f6 -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  e15ae7ff_a1ef_9179_bc15_08b3c2ed2f2e["registerWhenPrototypeAlreadyCreatedReplacesInstance()"]
+  e15ae7ff_a1ef_9179_bc15_08b3c2ed2f2e -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  7616eff0_41b0_ccce_cd82_c24b19f5f58b["registerWithDependencyRegistersInstance()"]
+  7616eff0_41b0_ccce_cd82_c24b19f5f58b -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  4712b3d8_9271_216b_2b93_5e4381bc6d1a["registerIfAbsentWhenAbsentRegisters()"]
+  4712b3d8_9271_216b_2b93_5e4381bc6d1a -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  42bd9194_30a4_91c4_d98d_c22dd2e8845d["registerIfAbsentWhenPresentDoesNotRegister()"]
+  42bd9194_30a4_91c4_d98d_c22dd2e8845d -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  f887c076_71dd_a421_030a_0d2b3e4eec68["isRegisteredWhenNotRegisteredReturnsFalse()"]
+  f887c076_71dd_a421_030a_0d2b3e4eec68 -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  cee5bc03_d94a_75a8_61b4_dbb89674142b["isRegisteredWhenRegisteredReturnsTrue()"]
+  cee5bc03_d94a_75a8_61b4_dbb89674142b -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  e301623e_357a_17aa_50a8_ac01dec29b78["getRegisteredInstanceSupplierWhenNotRegisteredReturnsNull()"]
+  e301623e_357a_17aa_50a8_ac01dec29b78 -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  75560be6_0485_74e0_1e72_62bfef312685["getRegisteredInstanceSupplierWhenRegisteredReturnsRegistration()"]
+  75560be6_0485_74e0_1e72_62bfef312685 -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  c53749e7_8300_c875_82ea_db6f97ecbc98["getWhenRegisteredAsNullReturnsNull()"]
+  c53749e7_8300_c875_82ea_db6f97ecbc98 -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  1dfe1906_aabb_5d0d_3a27_7b8202afa113["getWhenSingletonCreatesOnlyOneInstance()"]
+  1dfe1906_aabb_5d0d_3a27_7b8202afa113 -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  9a2db416_f9f0_5f4d_ed49_dbe8bb1a3009["getWhenPrototypeCreatesOnlyNewInstances()"]
+  9a2db416_f9f0_5f4d_ed49_dbe8bb1a3009 -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  a1cb6bc9_0a20_0139_d0b1_fffd609ba8ee["getOrElseWhenNoRegistrationReturnsOther()"]
+  a1cb6bc9_0a20_0139_d0b1_fffd609ba8ee -->|calls| a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e
+  style a5f9e2f7_fa76_0b9e_4bd1_d99c3aa7ec8e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+        </div>
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="fn-defaultbootstrapcontexttests-java-assertthat"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","label":"assertThat","type":"Function","slug":"fn-defaultbootstrapcontexttests-java-assertthat","lc":4,"lang":"java","cc":1,"cbc":29},{"id":"d56fd12c:dcb5:d0f0:c7db:7c9ca6c2c2f3","label":"CloseListenerAssert","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"cddbe752:8746:6397:41bd:3f26abfd6bba","label":"registerWhenNotAlreadyRegisteredRegistersInstance","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"e49c8e7f:0750:5876:5a06:51217e2000f6","label":"registerWhenAlreadyRegisteredRegistersReplacedInstance","type":"Function","slug":"","lc":7,"lang":"java","cc":1},{"id":"e15ae7ff:a1ef:9179:bc15:08b3c2ed2f2e","label":"registerWhenPrototypeAlreadyCreatedReplacesInstance","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"7616eff0:41b0:ccce:cd82:c24b19f5f58b","label":"registerWithDependencyRegistersInstance","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"4712b3d8:9271:216b:2b93:5e4381bc6d1a","label":"registerIfAbsentWhenAbsentRegisters","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"42bd9194:30a4:91c4:d98d:c22dd2e8845d","label":"registerIfAbsentWhenPresentDoesNotRegister","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"f887c076:71dd:a421:030a:0d2b3e4eec68","label":"isRegisteredWhenNotRegisteredReturnsFalse","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"cee5bc03:d94a:75a8:61b4:dbb89674142b","label":"isRegisteredWhenRegisteredReturnsTrue","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"e301623e:357a:17aa:50a8:ac01dec29b78","label":"getRegisteredInstanceSupplierWhenNotRegisteredReturnsNull","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"75560be6:0485:74e0:1e72:62bfef312685","label":"getRegisteredInstanceSupplierWhenRegisteredReturnsRegistration","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"c53749e7:8300:c875:82ea:db6f97ecbc98","label":"getWhenRegisteredAsNullReturnsNull","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"1dfe1906:aabb:5d0d:3a27:7b8202afa113","label":"getWhenSingletonCreatesOnlyOneInstance","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"9a2db416:f9f0:5f4d:ed49:dbe8bb1a3009","label":"getWhenPrototypeCreatesOnlyNewInstances","type":"Function","slug":"","lc":7,"lang":"java","cc":1},{"id":"a1cb6bc9:0a20:0139:d0b1:fffd609ba8ee","label":"getOrElseWhenNoRegistrationReturnsOther","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"829cee79:4a08:f484:8570:78a53b435cc6","label":"getOrElseWhenRegisteredAsNullReturnsNull","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"71f43bcf:babd:4c04:f161:3ba345f987b7","label":"getOrElseCreatesReturnsOnlyOneInstance","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"655b284f:56e5:8e57:1bc8:f526306ce9de","label":"getOrElseSupplyWhenNoRegistrationReturnsSupplied","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"b948c135:0cf4:1b6a:c1e4:de61731d64f1","label":"getOrElseSupplyWhenRegisteredAsNullReturnsNull","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"a04525d6:f0a4:f5f3:4391:c2a095c24c72","label":"getOrElseSupplyCreatesOnlyOneInstance","type":"Function","slug":"","lc":7,"lang":"java","cc":1},{"id":"3e40f124:f9e8:72ae:a444:291980983563","label":"getOrElseThrowWhenRegisteredAsNullReturnsNull","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"ea954380:f33c:f6ab:9c79:80dcbdaa0a66","label":"getOrElseThrowCreatesOnlyOneInstance","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"be3e8fe4:7c8d:b436:ef7f:dbf0c23ef855","label":"closeMulticastsEventToListeners","type":"Function","slug":"fn-defaultbootstrapcontexttests-java-closemulticastseventtolisteners","lc":10,"lang":"java","cc":5},{"id":"1c0669d3:e6b5:3c02:3c0b:ff401df5f2a6","label":"addCloseListenerIgnoresMultipleCallsWithSameListener","type":"Function","slug":"","lc":8,"lang":"java","cc":2},{"id":"bf3b0603:8047:213a:82f6:a1446ad72b18","label":"instanceSupplierGetScopeWhenNotConfiguredReturnsSingleton","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"4774525b:1c47:0efc:f503:013b95eff52c","label":"instanceSupplierWithScopeChangesScope","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"815e7c5a:c94a:0b12:c481:1215c004963e","label":"wasCalledOnlyOnce","type":"Function","slug":"fn-defaultbootstrapcontexttests-java-wascalledonlyonce","lc":4,"lang":"java","cc":1,"cbc":2},{"id":"05707db5:5fe6:58ed:3c91:fdd588669463","label":"wasNotCalled","type":"Function","slug":"","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"ec0b1678:ce4f:133c:6205:4d5a16778bfe","label":"hasBootstrapContextSameAs","type":"Function","slug":"","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"263fcd6d:ad2a:8691:2714:e271c8df124b","label":"hasApplicationContextSameAs","type":"Function","slug":"","lc":4,"lang":"java","cc":1,"cbc":1}],"edges":[{"source":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","target":"d56fd12c:dcb5:d0f0:c7db:7c9ca6c2c2f3","type":"calls"},{"source":"cddbe752:8746:6397:41bd:3f26abfd6bba","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"e49c8e7f:0750:5876:5a06:51217e2000f6","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"e15ae7ff:a1ef:9179:bc15:08b3c2ed2f2e","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"7616eff0:41b0:ccce:cd82:c24b19f5f58b","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"4712b3d8:9271:216b:2b93:5e4381bc6d1a","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"42bd9194:30a4:91c4:d98d:c22dd2e8845d","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"f887c076:71dd:a421:030a:0d2b3e4eec68","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"cee5bc03:d94a:75a8:61b4:dbb89674142b","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"e301623e:357a:17aa:50a8:ac01dec29b78","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"75560be6:0485:74e0:1e72:62bfef312685","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"c53749e7:8300:c875:82ea:db6f97ecbc98","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"1dfe1906:aabb:5d0d:3a27:7b8202afa113","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"9a2db416:f9f0:5f4d:ed49:dbe8bb1a3009","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"a1cb6bc9:0a20:0139:d0b1:fffd609ba8ee","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"829cee79:4a08:f484:8570:78a53b435cc6","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"71f43bcf:babd:4c04:f161:3ba345f987b7","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"655b284f:56e5:8e57:1bc8:f526306ce9de","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"b948c135:0cf4:1b6a:c1e4:de61731d64f1","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"a04525d6:f0a4:f5f3:4391:c2a095c24c72","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"3e40f124:f9e8:72ae:a444:291980983563","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"ea954380:f33c:f6ab:9c79:80dcbdaa0a66","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"be3e8fe4:7c8d:b436:ef7f:dbf0c23ef855","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"1c0669d3:e6b5:3c02:3c0b:ff401df5f2a6","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"bf3b0603:8047:213a:82f6:a1446ad72b18","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"4774525b:1c47:0efc:f503:013b95eff52c","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"815e7c5a:c94a:0b12:c481:1215c004963e","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"05707db5:5fe6:58ed:3c91:fdd588669463","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"ec0b1678:ce4f:133c:6205:4d5a16778bfe","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"},{"source":"263fcd6d:ad2a:8691:2714:e271c8df124b","target":"a5f9e2f7:fa76:0b9e:4bd1:d99c3aa7ec8e","type":"calls"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">core/spring-boot/src/test/java/org/springframework/boot/bootstrap/DefaultBootstrapContextTests.java lines 302–305</p>
+      <pre class="source-code"><code class="language-java">		@Override
+		public CloseListenerAssert assertThat() {
+			return new CloseListenerAssert(this);
+		}</code></pre>
+    </div>
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-gradleplugin.html">GradlePlugin</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Subdomains</h2>
+      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Calls</h2>
+      <ul><li>CloseListenerAssert()</li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Called By</h2>
+      <ul><li>addCloseListenerIgnoresMultipleCallsWithSameListener()</li><li><a href="/fn-defaultbootstrapcontexttests-java-closemulticastseventtolisteners.html">closeMulticastsEventToListeners()</a></li><li>getOrElseCreatesReturnsOnlyOneInstance()</li><li>getOrElseSupplyCreatesOnlyOneInstance()</li><li>getOrElseSupplyWhenNoRegistrationReturnsSupplied()</li><li>getOrElseSupplyWhenRegisteredAsNullReturnsNull()</li><li>getOrElseThrowCreatesOnlyOneInstance()</li><li>getOrElseThrowWhenRegisteredAsNullReturnsNull()</li><li>getOrElseWhenNoRegistrationReturnsOther()</li><li>getOrElseWhenRegisteredAsNullReturnsNull()</li><li>getRegisteredInstanceSupplierWhenNotRegisteredReturnsNull()</li><li>getRegisteredInstanceSupplierWhenRegisteredReturnsRegistration()</li><li>getWhenPrototypeCreatesOnlyNewInstances()</li><li>getWhenRegisteredAsNullReturnsNull()</li><li>getWhenSingletonCreatesOnlyOneInstance()</li><li>hasApplicationContextSameAs()</li><li>hasBootstrapContextSameAs()</li><li>instanceSupplierGetScopeWhenNotConfiguredReturnsSingleton()</li><li>instanceSupplierWithScopeChangesScope()</li><li>isRegisteredWhenNotRegisteredReturnsFalse()</li><li>isRegisteredWhenRegisteredReturnsTrue()</li><li>registerIfAbsentWhenAbsentRegisters()</li><li>registerIfAbsentWhenPresentDoesNotRegister()</li><li>registerWhenAlreadyRegisteredRegistersReplacedInstance()</li><li>registerWhenNotAlreadyRegisteredRegistersInstance()</li><li>registerWhenPrototypeAlreadyCreatedReplacesInstance()</li><li>registerWithDependencyRegistersInstance()</li><li><a href="/fn-defaultbootstrapcontexttests-java-wascalledonlyonce.html">wasCalledOnlyOnce()</a></li><li>wasNotCalled()</li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/spring-boot/blob/main/core/spring-boot/src/test/java/org/springframework/boot/bootstrap/DefaultBootstrapContextTests.java#L302">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does assertThat() do?</summary>
+        <div class="faq-answer">assertThat() is a function in the spring-boot codebase.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does assertThat() call?</summary>
+        <div class="faq-answer">assertThat() calls 1 function(s): CloseListenerAssert.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What calls assertThat()?</summary>
+        <div class="faq-answer">assertThat() is called by 29 function(s): addCloseListenerIgnoresMultipleCallsWithSameListener, closeMulticastsEventToListeners, getOrElseCreatesReturnsOnlyOneInstance, getOrElseSupplyCreatesOnlyOneInstance, getOrElseSupplyWhenNoRegistrationReturnsSupplied, getOrElseSupplyWhenRegisteredAsNullReturnsNull, getOrElseThrowCreatesOnlyOneInstance, getOrElseThrowWhenRegisteredAsNullReturnsNull, and 21 more.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

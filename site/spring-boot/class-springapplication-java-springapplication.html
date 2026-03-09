@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>SpringApplication Class — spring-boot Architecture | spring-boot Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the SpringApplication class in SpringApplication.java from the spring-boot codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/class-springapplication-java-springapplication/">
+<meta property="og:title" content="SpringApplication Class — spring-boot Architecture — spring-boot Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the SpringApplication class in SpringApplication.java from the spring-boot codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/class-springapplication-java-springapplication.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/class-springapplication-java-springapplication.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="spring-boot Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SpringApplication Class — spring-boot Architecture — spring-boot Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the SpringApplication class in SpringApplication.java from the spring-boot codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/class-springapplication-java-springapplication.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the SpringApplication class in SpringApplication.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/class-springapplication-java-springapplication.svg"],"name":"SpringApplication Class — spring-boot Architecture","url":"https://repos.supermodeltools.com/class-springapplication-java-springapplication.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"SpringApplication Class — spring-boot Architecture","position":2}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      spring-boot Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/class.html">Class</a><span class="sep">/</span>
+        <span>SpringApplication Class — spring-boot Architecture</span>
+      </div>
+      <h1 class="entity-title">SpringApplication Class — spring-boot Architecture</h1>
+      <p class="entity-desc">Architecture documentation for the SpringApplication class in SpringApplication.java from the spring-boot codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/class.html" class="pill pill-accent">Class</a>
+        <a href="/language/java.html" class="pill pill-blue">java</a>
+        <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"el":1876,"lc":1686,"sl":191}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+      <div class="visuals-archmap" id="arch-map-container">
+        <div class="arch-map-svg"></div>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"SpringApplication","slug":"class-springapplication-java-springapplication","type":"Class"}}</script>
+        <noscript>
+          <div class="arch-map-fallback">
+            <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
+            
+            <span>SpringApplication Class — spring-boot Architecture</span>
+          </div>
+        </noscript>
+      </div>
+      
+
+      
+      <div class="visuals-row">
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="class-springapplication-java-springapplication"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"de1da6f3:22b8:29c4:a79d:08d79d7fac68","label":"SpringApplication","type":"Class","slug":"class-springapplication-java-springapplication","lc":1686,"lang":"java"},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"}],"edges":[{"source":"de1da6f3:22b8:29c4:a79d:08d79d7fac68","target":"domain:GradlePlugin","type":"belongsTo"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">core/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java lines 191–1876</p>
+      <pre class="source-code"><code class="language-java">public class SpringApplication {
+
+	/**
+	 * Default banner location.
+	 */
+	public static final String BANNER_LOCATION_PROPERTY_VALUE = SpringApplicationBannerPrinter.DEFAULT_BANNER_LOCATION;
+
+	/**
+	 * Banner location property key.
+	 */
+	public static final String BANNER_LOCATION_PROPERTY = SpringApplicationBannerPrinter.BANNER_LOCATION_PROPERTY;
+
+	private static final String SYSTEM_PROPERTY_JAVA_AWT_HEADLESS = &#34;java.awt.headless&#34;;
+
+	private static final Log logger = LogFactory.getLog(SpringApplication.class);
+
+	static final SpringApplicationShutdownHook shutdownHook = new SpringApplicationShutdownHook();
+
+	private static final ThreadLocal&lt;SpringApplicationHook&gt; applicationHook = new ThreadLocal&lt;&gt;();
+
+	private final Set&lt;Class&lt;?&gt;&gt; primarySources;
+
+	private @Nullable Class&lt;?&gt; mainApplicationClass;
+
+	private boolean addCommandLineProperties = true;
+
+	private boolean addConversionService = true;
+
+	private @Nullable Banner banner;
+
+	private @Nullable ResourceLoader resourceLoader;
+
+	private @Nullable BeanNameGenerator beanNameGenerator;
+
+	private @Nullable ConfigurableEnvironment environment;
+
+	private boolean headless = true;
+
+	private List&lt;ApplicationContextInitializer&lt;?&gt;&gt; initializers = new ArrayList&lt;&gt;();
+
+	private List&lt;ApplicationListener&lt;?&gt;&gt; listeners = new ArrayList&lt;&gt;();
+
+	private @Nullable Map&lt;String, Object&gt; defaultProperties;
+
+	private final List&lt;BootstrapRegistryInitializer&gt; bootstrapRegistryInitializers;
+
+	private Set&lt;String&gt; additionalProfiles = Collections.emptySet();
+
+	private boolean isCustomEnvironment;
+
+	private @Nullable String environmentPrefix;
+
+	private ApplicationContextFactory applicationContextFactory = ApplicationContextFactory.DEFAULT;
+
+	private ApplicationStartup applicationStartup = ApplicationStartup.DEFAULT;
+
+	final ApplicationProperties properties = new ApplicationProperties();
+
+	/**
+	 * Create a new {@link SpringApplication} instance. The application context will load
+	 * beans from the specified primary sources (see {@link SpringApplication class-level}
+	 * documentation for details). The instance can be customized before calling
+	 * {@link #run(String...)}.
+	 * @param primarySources the primary bean sources
+	 * @see #run(Class, String[])
+	 * @see #SpringApplication(ResourceLoader, Class...)
+	 * @see #setSources(Set)
+	 */
+	public SpringApplication(Class&lt;?&gt;... primarySources) {
+		this(null, primarySources);
+	}
+
+	/**
+	 * Create a new {@link SpringApplication} instance. The application context will load
+	 * beans from the specified primary sources (see {@link SpringApplication class-level}
+	 * documentation for details). The instance can be customized before calling
+	 * {@link #run(String...)}.
+	 * @param resourceLoader the resource loader to use
+	 * @param primarySources the primary bean sources
+	 * @see #run(Class, String[])
+	 * @see #setSources(Set)
+	 */
+	@SuppressWarnings({ &#34;unchecked&#34;, &#34;rawtypes&#34; })
+	public SpringApplication(@Nullable ResourceLoader resourceLoader, Class&lt;?&gt;... primarySources) {
+		this.resourceLoader = resourceLoader;
+		Assert.notNull(primarySources, &#34;&#39;primarySources&#39; must not be null&#34;);
+		this.primarySources = new LinkedHashSet&lt;&gt;(Arrays.asList(primarySources));
+		this.properties.setWebApplicationType(WebApplicationType.deduce());
+		this.bootstrapRegistryInitializers = new ArrayList&lt;&gt;(
+				getSpringFactoriesInstances(BootstrapRegistryInitializer.class));
+		setInitializers((Collection) getSpringFactoriesInstances(ApplicationContextInitializer.class));
+		setListeners((Collection) getSpringFactoriesInstances(ApplicationListener.class));
+		this.mainApplicationClass = deduceMainApplicationClass();
+	}
+
+	private @Nullable Class&lt;?&gt; deduceMainApplicationClass() {
+		return StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE)
+			.walk(this::findMainClass)
+			.orElse(null);
+	}
+
+	private Optional&lt;Class&lt;?&gt;&gt; findMainClass(Stream&lt;StackFrame&gt; stack) {
+		return stack.filter((frame) -&gt; Objects.equals(frame.getMethodName(), &#34;main&#34;))
+			.findFirst()
+			.map(StackWalker.StackFrame::getDeclaringClass);
+	}
+
+	/**
+	 * Run the Spring application, creating and refreshing a new
+	 * {@link ApplicationContext}.
+	 * @param args the application arguments (usually passed from a Java main method)
+	 * @return a running {@link ApplicationContext}
+	 */
+	public ConfigurableApplicationContext run(String... args) {
+		Startup startup = Startup.create();
+		if (this.properties.isRegisterShutdownHook()) {
+			SpringApplication.shutdownHook.enableShutdownHookAddition();
+		}
+		DefaultBootstrapContext bootstrapContext = createBootstrapContext();
+		ConfigurableApplicationContext context = null;
+		configureHeadlessProperty();
+		SpringApplicationRunListeners listeners = getRunListeners(args);
+		listeners.starting(bootstrapContext, this.mainApplicationClass);
+		try {
+			ApplicationArguments applicationArguments = new DefaultApplicationArguments(args);
+			ConfigurableEnvironment environment = prepareEnvironment(listeners, bootstrapContext, applicationArguments);
+			Banner printedBanner = printBanner(environment);
+			context = createApplicationContext();
+			context.setApplicationStartup(this.applicationStartup);
+			prepareContext(bootstrapContext, context, environment, listeners, applicationArguments, printedBanner);
+			refreshContext(context);
+			afterRefresh(context, applicationArguments);
+			Duration timeTakenToStarted = startup.started();
+			if (this.properties.isLogStartupInfo()) {
+				new StartupInfoLogger(this.mainApplicationClass, environment).logStarted(getApplicationLog(), startup);
+			}
+			listeners.started(context, timeTakenToStarted);
+			callRunners(context, applicationArguments);
+		}
+		catch (Throwable ex) {
+			throw handleRunFailure(context, ex, listeners);
+		}
+		try {
+			if (context.isRunning()) {
+				listeners.ready(context, startup.ready());
+			}
+		}
+		catch (Throwable ex) {
+			throw handleRunFailure(context, ex, null);
+		}
+		return context;
+	}
+
+	private DefaultBootstrapContext createBootstrapContext() {
+		DefaultBootstrapContext bootstrapContext = new DefaultBootstrapContext();
+		this.bootstrapRegistryInitializers.forEach((initializer) -&gt; initializer.initialize(bootstrapContext));
+		return bootstrapContext;
+	}
+
+	private ConfigurableEnvironment prepareEnvironment(SpringApplicationRunListeners listeners,
+			DefaultBootstrapContext bootstrapContext, ApplicationArguments applicationArguments) {
+		// Create and configure the environment
+		ConfigurableEnvironment environment = getOrCreateEnvironment();
+		configureEnvironment(environment, applicationArguments.getSourceArgs());
+		ConfigurationPropertySources.attach(environment);
+		listeners.environmentPrepared(bootstrapContext, environment);
+		ApplicationInfoPropertySource.moveToEnd(environment);
+		DefaultPropertiesPropertySource.moveToEnd(environment);
+		Assert.state(!environment.containsProperty(&#34;spring.main.environment-prefix&#34;),
+				&#34;Environment prefix cannot be set via properties.&#34;);
+		bindToSpringApplication(environment);
+		if (!this.isCustomEnvironment) {
+			EnvironmentConverter environmentConverter = new EnvironmentConverter(getClassLoader());
+			environment = environmentConverter.convertEnvironmentIfNecessary(environment, deduceEnvironmentClass());
+		}
+		ConfigurationPropertySources.attach(environment);
+		return environment;
+	}
+
+	private Class&lt;? extends ConfigurableEnvironment&gt; deduceEnvironmentClass() {
+		WebApplicationType webApplicationType = this.properties.getWebApplicationType();
+		Class&lt;? extends ConfigurableEnvironment&gt; environmentType = this.applicationContextFactory
+			.getEnvironmentType(webApplicationType);
+		if (environmentType == null &amp;&amp; this.applicationContextFactory != ApplicationContextFactory.DEFAULT) {
+			environmentType = ApplicationContextFactory.DEFAULT.getEnvironmentType(webApplicationType);
+		}
+		return (environmentType != null) ? environmentType : ApplicationEnvironment.class;
+	}
+
+	private void prepareContext(DefaultBootstrapContext bootstrapContext, ConfigurableApplicationContext context,
+			ConfigurableEnvironment environment, SpringApplicationRunListeners listeners,
+			ApplicationArguments applicationArguments, @Nullable Banner printedBanner) {
+		context.setEnvironment(environment);
+		postProcessApplicationContext(context);
+		addAotGeneratedInitializerIfNecessary(this.initializers);
+		applyInitializers(context);
+		listeners.contextPrepared(context);
+		bootstrapContext.close(context);
+		if (this.properties.isLogStartupInfo()) {
+			logStartupInfo(context);
+			logStartupProfileInfo(context);
+		}
+		// Add boot specific singleton beans
+		ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+		beanFactory.registerSingleton(&#34;springApplicationArguments&#34;, applicationArguments);
+		if (printedBanner != null) {
+			beanFactory.registerSingleton(&#34;springBootBanner&#34;, printedBanner);
+		}
+		if (beanFactory instanceof AbstractAutowireCapableBeanFactory autowireCapableBeanFactory) {
+			autowireCapableBeanFactory.setAllowCircularReferences(this.properties.isAllowCircularReferences());
+			if (beanFactory instanceof DefaultListableBeanFactory listableBeanFactory) {
+				listableBeanFactory.setAllowBeanDefinitionOverriding(this.properties.isAllowBeanDefinitionOverriding());
+			}
+		}
+		if (this.properties.isLazyInitialization()) {
+			context.addBeanFactoryPostProcessor(new LazyInitializationBeanFactoryPostProcessor());
+		}
+		if (this.properties.isKeepAlive()) {
+			context.addApplicationListener(new KeepAlive());
+		}
+		context.addBeanFactoryPostProcessor(new PropertySourceOrderingBeanFactoryPostProcessor(context));
+		if (!AotDetector.useGeneratedArtifacts()) {
+			// Load the sources
+			Set&lt;Object&gt; sources = getAllSources();
+			Assert.state(!ObjectUtils.isEmpty(sources), &#34;No sources defined&#34;);
+			load(context, sources.toArray(new Object[0]));
+		}
+		listeners.contextLoaded(context);
+	}
+
+	private void addAotGeneratedInitializerIfNecessary(List&lt;ApplicationContextInitializer&lt;?&gt;&gt; initializers) {
+		if (AotDetector.useGeneratedArtifacts()) {
+			List&lt;ApplicationContextInitializer&lt;?&gt;&gt; aotInitializers = new ArrayList&lt;&gt;(
+					initializers.stream().filter(AotApplicationContextInitializer.class::isInstance).toList());
+			if (aotInitializers.isEmpty()) {
+				Assert.state(this.mainApplicationClass != null, &#34;No application main class found&#34;);
+				String initializerClassName = this.mainApplicationClass.getName() &#43; &#34;__ApplicationContextInitializer&#34;;
+				if (!ClassUtils.isPresent(initializerClassName, getClassLoader())) {
+					throw new AotInitializerNotFoundException(this.mainApplicationClass, initializerClassName);
+				}
+				aotInitializers.add(AotApplicationContextInitializer.forInitializerClasses(initializerClassName));
+			}
+			initializers.removeAll(aotInitializers);
+			initializers.addAll(0, aotInitializers);
+		}
+		if (NativeDetector.inNativeImage()) {
+			NativeImageRequirementsException.throwIfNotMet();
+		}
+	}
+
+	private void refreshContext(ConfigurableApplicationContext context) {
+		if (this.properties.isRegisterShutdownHook()) {
+			shutdownHook.registerApplicationContext(context);
+		}
+		refresh(context);
+	}
+
+	private void configureHeadlessProperty() {
+		System.setProperty(SYSTEM_PROPERTY_JAVA_AWT_HEADLESS,
+				System.getProperty(SYSTEM_PROPERTY_JAVA_AWT_HEADLESS, Boolean.toString(this.headless)));
+	}
+
+	private SpringApplicationRunListeners getRunListeners(String[] args) {
+		ArgumentResolver argumentResolver = ArgumentResolver.of(SpringApplication.class, this);
+		argumentResolver = argumentResolver.and(String[].class, args);
+		List&lt;SpringApplicationRunListener&gt; listeners = getSpringFactoriesInstances(SpringApplicationRunListener.class,
+				argumentResolver);
+		SpringApplicationHook hook = applicationHook.get();
+		SpringApplicationRunListener hookListener = (hook != null) ? hook.getRunListener(this) : null;
+		if (hookListener != null) {
+			listeners = new ArrayList&lt;&gt;(listeners);
+			listeners.add(hookListener);
+		}
+		return new SpringApplicationRunListeners(logger, listeners, this.applicationStartup);
+	}
+
+	private &lt;T&gt; List&lt;T&gt; getSpringFactoriesInstances(Class&lt;T&gt; type) {
+		return getSpringFactoriesInstances(type, null);
+	}
+
+	private &lt;T&gt; List&lt;T&gt; getSpringFactoriesInstances(Class&lt;T&gt; type, @Nullable ArgumentResolver argumentResolver) {
+		return SpringFactoriesLoader.forDefaultResourceLocation(getClassLoader()).load(type, argumentResolver);
+	}
+
+	private ConfigurableEnvironment getOrCreateEnvironment() {
+		if (this.environment != null) {
+			return this.environment;
+		}
+		WebApplicationType webApplicationType = this.properties.getWebApplicationType();
+		ConfigurableEnvironment environment = this.applicationContextFactory.createEnvironment(webApplicationType);
+		if (environment == null &amp;&amp; this.applicationContextFactory != ApplicationContextFactory.DEFAULT) {
+			environment = ApplicationContextFactory.DEFAULT.createEnvironment(webApplicationType);
+		}
+		return (environment != null) ? environment : new ApplicationEnvironment();
+	}
+
+	/**
+	 * Template method delegating to
+	 * {@link #configurePropertySources(ConfigurableEnvironment, String[])} and
+	 * {@link #configureProfiles(ConfigurableEnvironment, String[])} in that order.
+	 * Override this method for complete control over Environment customization, or one of
+	 * the above for fine-grained control over property sources or profiles, respectively.
+	 * @param environment this application&#39;s environment
+	 * @param args arguments passed to the {@code run} method
+	 * @see #configureProfiles(ConfigurableEnvironment, String[])
+	 * @see #configurePropertySources(ConfigurableEnvironment, String[])
+	 */
+	protected void configureEnvironment(ConfigurableEnvironment environment, String[] args) {
+		if (this.addConversionService) {
+			environment.setConversionService(new ApplicationConversionService());
+		}
+		configurePropertySources(environment, args);
+		configureProfiles(environment, args);
+	}
+
+	/**
+	 * Add, remove or re-order any {@link PropertySource}s in this application&#39;s
+	 * environment.
+	 * @param environment this application&#39;s environment
+	 * @param args arguments passed to the {@code run} method
+	 * @see #configureEnvironment(ConfigurableEnvironment, String[])
+	 */
+	protected void configurePropertySources(ConfigurableEnvironment environment, String[] args) {
+		MutablePropertySources sources = environment.getPropertySources();
+		if (!CollectionUtils.isEmpty(this.defaultProperties)) {
+			DefaultPropertiesPropertySource.addOrMerge(this.defaultProperties, sources);
+		}
+		if (this.addCommandLineProperties &amp;&amp; args.length &gt; 0) {
+			String name = CommandLinePropertySource.COMMAND_LINE_PROPERTY_SOURCE_NAME;
+			PropertySource&lt;?&gt; source = sources.get(name);
+			if (source != null) {
+				CompositePropertySource composite = new CompositePropertySource(name);
+				composite
+					.addPropertySource(new SimpleCommandLinePropertySource(&#34;springApplicationCommandLineArgs&#34;, args));
+				composite.addPropertySource(source);
+				sources.replace(name, composite);
+			}
+			else {
+				sources.addFirst(new SimpleCommandLinePropertySource(args));
+			}
+		}
+		environment.getPropertySources().addLast(new ApplicationInfoPropertySource(this.mainApplicationClass));
+	}
+
+	/**
+	 * Configure which profiles are active (or active by default) for this application
+	 * environment. Additional profiles may be activated during configuration file
+	 * processing through the {@code spring.profiles.active} property.
+	 * @param environment this application&#39;s environment
+	 * @param args arguments passed to the {@code run} method
+	 * @see #configureEnvironment(ConfigurableEnvironment, String[])
+	 */
+	protected void configureProfiles(ConfigurableEnvironment environment, String[] args) {
+	}
+
+	/**
+	 * Bind the environment to the {@link ApplicationProperties}.
+	 * @param environment the environment to bind
+	 */
+	protected void bindToSpringApplication(ConfigurableEnvironment environment) {
+		try {
+			Binder.get(environment).bind(&#34;spring.main&#34;, Bindable.ofInstance(this.properties));
+		}
+		catch (Exception ex) {
+			throw new IllegalStateException(&#34;Cannot bind to SpringApplication&#34;, ex);
+		}
+	}
+
+	private @Nullable Banner printBanner(ConfigurableEnvironment environment) {
+		if (this.properties.getBannerMode(environment) == Banner.Mode.OFF) {
+			return null;
+		}
+		ResourceLoader resourceLoader = (this.resourceLoader != null) ? this.resourceLoader
+				: new DefaultResourceLoader(null);
+		SpringApplicationBannerPrinter bannerPrinter = new SpringApplicationBannerPrinter(resourceLoader, this.banner);
+		if (this.properties.getBannerMode(environment) == Mode.LOG) {
+			return bannerPrinter.print(environment, this.mainApplicationClass, logger);
+		}
+		return bannerPrinter.print(environment, this.mainApplicationClass, System.out);
+	}
+
+	/**
+	 * Strategy method used to create the {@link ApplicationContext}. By default this
+	 * method will respect any explicitly set application context class or factory before
+	 * falling back to a suitable default.
+	 * @return the application context (not yet refreshed)
+	 * @see #setApplicationContextFactory(ApplicationContextFactory)
+	 */
+	protected ConfigurableApplicationContext createApplicationContext() {
+		ConfigurableApplicationContext context = this.applicationContextFactory
+			.create(this.properties.getWebApplicationType());
+		Assert.state(context != null, &#34;ApplicationContextFactory created null context&#34;);
+		return context;
+	}
+
+	/**
+	 * Apply any relevant post-processing to the {@link ApplicationContext}. Subclasses
+	 * can apply additional processing as required.
+	 * @param context the application context
+	 */
+	protected void postProcessApplicationContext(ConfigurableApplicationContext context) {
+		if (this.beanNameGenerator != null) {
+			context.getBeanFactory()
+				.registerSingleton(AnnotationConfigUtils.CONFIGURATION_BEAN_NAME_GENERATOR, this.beanNameGenerator);
+		}
+		if (this.resourceLoader != null) {
+			if (context instanceof GenericApplicationContext genericApplicationContext) {
+				genericApplicationContext.setResourceLoader(this.resourceLoader);
+			}
+			if (context instanceof DefaultResourceLoader defaultResourceLoader) {
+				defaultResourceLoader.setClassLoader(this.resourceLoader.getClassLoader());
+			}
+		}
+		if (this.addConversionService) {
+			context.getBeanFactory().setConversionService(context.getEnvironment().getConversionService());
+		}
+	}
+
+	/**
+	 * Apply any {@link ApplicationContextInitializer}s to the context before it is
+	 * refreshed.
+	 * @param context the configured ApplicationContext (not refreshed yet)
+	 * @see ConfigurableApplicationContext#refresh()
+	 */
+	@SuppressWarnings({ &#34;rawtypes&#34;, &#34;unchecked&#34; })
+	protected void applyInitializers(ConfigurableApplicationContext context) {
+		for (ApplicationContextInitializer initializer : getInitializers()) {
+			Class&lt;?&gt; requiredType = GenericTypeResolver.resolveTypeArgument(initializer.getClass(),
+					ApplicationContextInitializer.class);
+			Assert.state(requiredType != null,
+					() -&gt; &#34;No generic type found for initializr of type &#34; &#43; initializer.getClass());
+			Assert.state(requiredType.isInstance(context), &#34;Unable to call initializer&#34;);
+			initializer.initialize(context);
+		}
+	}
+
+	/**
+	 * Called to log startup information, subclasses may override to add additional
+	 * logging.
+	 * @param context the application context
+	 * @since 3.4.0
+	 */
+	protected void logStartupInfo(ConfigurableApplicationContext context) {
+		boolean isRoot = context.getParent() == null;
+		if (isRoot) {
+			new StartupInfoLogger(this.mainApplicationClass, context.getEnvironment()).logStarting(getApplicationLog());
+		}
+	}
+
+	/**
+	 * Called to log active profile information.
+	 * @param context the application context
+	 */
+	protected void logStartupProfileInfo(ConfigurableApplicationContext context) {
+		Log log = getApplicationLog();
+		if (log.isInfoEnabled()) {
+			List&lt;String&gt; activeProfiles = quoteProfiles(context.getEnvironment().getActiveProfiles());
+			if (ObjectUtils.isEmpty(activeProfiles)) {
+				List&lt;String&gt; defaultProfiles = quoteProfiles(context.getEnvironment().getDefaultProfiles());
+				String message = String.format(&#34;%s default %s: &#34;, defaultProfiles.size(),
+						(defaultProfiles.size() &lt;= 1) ? &#34;profile&#34; : &#34;profiles&#34;);
+				log.info(&#34;No active profile set, falling back to &#34; &#43; message
+						&#43; StringUtils.collectionToDelimitedString(defaultProfiles, &#34;, &#34;));
+			}
+			else {
+				String message = (activeProfiles.size() == 1) ? &#34;1 profile is active: &#34;
+						: activeProfiles.size() &#43; &#34; profiles are active: &#34;;
+				log.info(&#34;The following &#34; &#43; message &#43; StringUtils.collectionToDelimitedString(activeProfiles, &#34;, &#34;));
+			}
+		}
+	}
+
+	private List&lt;String&gt; quoteProfiles(String[] profiles) {
+		return Arrays.stream(profiles).map((profile) -&gt; &#34;\&#34;&#34; &#43; profile &#43; &#34;\&#34;&#34;).toList();
+	}
+
+	/**
+	 * Returns the {@link Log} for the application. By default will be deduced.
+	 * @return the application log
+	 */
+	protected Log getApplicationLog() {
+		if (this.mainApplicationClass == null) {
+			return logger;
+		}
+		return LogFactory.getLog(this.mainApplicationClass);
+	}
+
+	/**
+	 * Load beans into the application context.
+	 * @param context the context to load beans into
+	 * @param sources the sources to load
+	 */
+	protected void load(ApplicationContext context, Object[] sources) {
+		if (logger.isDebugEnabled()) {
+			logger.debug(&#34;Loading source &#34; &#43; StringUtils.arrayToCommaDelimitedString(sources));
+		}
+		BeanDefinitionLoader loader = createBeanDefinitionLoader(getBeanDefinitionRegistry(context), sources);
+		if (this.beanNameGenerator != null) {
+			loader.setBeanNameGenerator(this.beanNameGenerator);
+		}
+		if (this.resourceLoader != null) {
+			loader.setResourceLoader(this.resourceLoader);
+		}
+		if (this.environment != null) {
+			loader.setEnvironment(this.environment);
+		}
+		loader.load();
+	}
+
+	/**
+	 * The ResourceLoader that will be used in the ApplicationContext.
+	 * @return the resourceLoader the resource loader that will be used in the
+	 * ApplicationContext (or {@code null} if the default)
+	 */
+	public @Nullable ResourceLoader getResourceLoader() {
+		return this.resourceLoader;
+	}
+
+	/**
+	 * Either the ClassLoader that will be used in the ApplicationContext (if
+	 * {@link #setResourceLoader(ResourceLoader) resourceLoader} is set), or the context
+	 * class loader (if not null), or the loader of the Spring {@link ClassUtils} class.
+	 * @return a ClassLoader (never null)
+	 */
+	public ClassLoader getClassLoader() {
+		if (this.resourceLoader != null) {
+			ClassLoader classLoader = this.resourceLoader.getClassLoader();
+			Assert.state(classLoader != null, &#34;No classloader found&#34;);
+			return classLoader;
+		}
+		ClassLoader classLoader = ClassUtils.getDefaultClassLoader();
+		Assert.state(classLoader != null, &#34;No classloader found&#34;);
+		return classLoader;
+	}
+
+	/**
+	 * Get the bean definition registry.
+	 * @param context the application context
+	 * @return the BeanDefinitionRegistry if it can be determined
+	 */
+	private BeanDefinitionRegistry getBeanDefinitionRegistry(ApplicationContext context) {
+		if (context instanceof BeanDefinitionRegistry registry) {
+			return registry;
+		}
+		if (context instanceof AbstractApplicationContext abstractApplicationContext) {
+			return (BeanDefinitionRegistry) abstractApplicationContext.getBeanFactory();
+		}
+		throw new IllegalStateException(&#34;Could not locate BeanDefinitionRegistry&#34;);
+	}
+
+	/**
+	 * Factory method used to create the {@link BeanDefinitionLoader}.
+	 * @param registry the bean definition registry
+	 * @param sources the sources to load
+	 * @return the {@link BeanDefinitionLoader} that will be used to load beans
+	 */
+	protected BeanDefinitionLoader createBeanDefinitionLoader(BeanDefinitionRegistry registry, Object[] sources) {
+		return new BeanDefinitionLoader(registry, sources);
+	}
+
+	/**
+	 * Refresh the underlying {@link ApplicationContext}.
+	 * @param applicationContext the application context to refresh
+	 */
+	protected void refresh(ConfigurableApplicationContext applicationContext) {
+		applicationContext.refresh();
+	}
+
+	/**
+	 * Called after the context has been refreshed.
+	 * @param context the application context
+	 * @param args the application arguments
+	 */
+	protected void afterRefresh(ConfigurableApplicationContext context, ApplicationArguments args) {
+	}
+
+	private void callRunners(ConfigurableApplicationContext context, ApplicationArguments args) {
+		ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+		String[] beanNames = beanFactory.getBeanNamesForType(Runner.class);
+		Map&lt;Runner, String&gt; instancesToBeanNames = new IdentityHashMap&lt;&gt;();
+		for (String beanName : beanNames) {
+			instancesToBeanNames.put(beanFactory.getBean(beanName, Runner.class), beanName);
+		}
+		Comparator&lt;Object&gt; comparator = getOrderComparator(beanFactory)
+			.withSourceProvider(new FactoryAwareOrderSourceProvider(beanFactory, instancesToBeanNames));
+		instancesToBeanNames.keySet().stream().sorted(comparator).forEach((runner) -&gt; callRunner(runner, args));
+	}
+
+	private OrderComparator getOrderComparator(ConfigurableListableBeanFactory beanFactory) {
+		Comparator&lt;?&gt; dependencyComparator = (beanFactory instanceof DefaultListableBeanFactory defaultListableBeanFactory)
+				? defaultListableBeanFactory.getDependencyComparator() : null;
+		return (dependencyComparator instanceof OrderComparator orderComparator) ? orderComparator
+				: AnnotationAwareOrderComparator.INSTANCE;
+	}
+
+	private void callRunner(Runner runner, ApplicationArguments args) {
+		if (runner instanceof ApplicationRunner) {
+			callRunner(ApplicationRunner.class, runner, (applicationRunner) -&gt; applicationRunner.run(args));
+		}
+		if (runner instanceof CommandLineRunner) {
+			callRunner(CommandLineRunner.class, runner,
+					(commandLineRunner) -&gt; commandLineRunner.run(args.getSourceArgs()));
+		}
+	}
+
+	@SuppressWarnings(&#34;unchecked&#34;)
+	private &lt;R extends Runner&gt; void callRunner(Class&lt;R&gt; type, Runner runner, ThrowingConsumer&lt;R&gt; call) {
+		call.throwing(
+				(message, ex) -&gt; new IllegalStateException(&#34;Failed to execute &#34; &#43; ClassUtils.getShortName(type), ex))
+			.accept((R) runner);
+	}
+
+	private RuntimeException handleRunFailure(@Nullable ConfigurableApplicationContext context, Throwable exception,
+			@Nullable SpringApplicationRunListeners listeners) {
+		if (exception instanceof AbandonedRunException abandonedRunException) {
+			return abandonedRunException;
+		}
+		try {
+			try {
+				handleExitCode(context, exception);
+				if (listeners != null) {
+					listeners.failed(context, exception);
+				}
+			}
+			finally {
+				reportFailure(getExceptionReporters(context), exception);
+				if (context != null) {
+					context.close();
+					shutdownHook.deregisterFailedApplicationContext(context);
+				}
+			}
+		}
+		catch (Exception ex) {
+			logger.warn(&#34;Unable to close ApplicationContext&#34;, ex);
+		}
+		return (exception instanceof RuntimeException runtimeException) ? runtimeException
+				: new IllegalStateException(exception);
+	}
+
+	private Collection&lt;SpringBootExceptionReporter&gt; getExceptionReporters(
+			@Nullable ConfigurableApplicationContext context) {
+		try {
+			ArgumentResolver argumentResolver = (context != null)
+					? ArgumentResolver.of(ConfigurableApplicationContext.class, context) : ArgumentResolver.none();
+			return getSpringFactoriesInstances(SpringBootExceptionReporter.class, argumentResolver);
+		}
+		catch (Throwable ex) {
+			return Collections.emptyList();
+		}
+	}
+
+	private void reportFailure(Collection&lt;SpringBootExceptionReporter&gt; exceptionReporters, Throwable failure) {
+		try {
+			for (SpringBootExceptionReporter reporter : exceptionReporters) {
+				if (reporter.reportException(failure)) {
+					registerLoggedException(failure);
+					return;
+				}
+			}
+		}
+		catch (Throwable ex) {
+			// Continue with normal handling of the original failure
+		}
+		if (logger.isErrorEnabled()) {
+			if (NativeDetector.inNativeImage()) {
+				// Depending on how early the failure was, logging may not work in a
+				// native image so we output the stack trace directly to System.out
+				// instead.
+				System.out.println(&#34;Application run failed&#34;);
+				failure.printStackTrace(System.out);
+			}
+			else {
+				logger.error(&#34;Application run failed&#34;, failure);
+			}
+			registerLoggedException(failure);
+		}
+	}
+
+	/**
+	 * Register that the given exception has been logged. By default, if the running in
+	 * the main thread, this method will suppress additional printing of the stacktrace.
+	 * @param exception the exception that was logged
+	 */
+	protected void registerLoggedException(Throwable exception) {
+		SpringBootExceptionHandler handler = getSpringBootExceptionHandler();
+		if (handler != null) {
+			handler.registerLoggedException(exception);
+		}
+	}
+
+	private void handleExitCode(@Nullable ConfigurableApplicationContext context, Throwable exception) {
+		int exitCode = getExitCodeFromException(context, exception);
+		if (exitCode != 0) {
+			if (context != null) {
+				context.publishEvent(new ExitCodeEvent(context, exitCode));
+			}
+			SpringBootExceptionHandler handler = getSpringBootExceptionHandler();
+			if (handler != null) {
+				handler.registerExitCode(exitCode);
+			}
+		}
+	}
+
+	private int getExitCodeFromException(@Nullable ConfigurableApplicationContext context, Throwable exception) {
+		int exitCode = getExitCodeFromMappedException(context, exception);
+		if (exitCode == 0) {
+			exitCode = getExitCodeFromExitCodeGeneratorException(exception);
+		}
+		return exitCode;
+	}
+
+	private int getExitCodeFromMappedException(@Nullable ConfigurableApplicationContext context, Throwable exception) {
+		if (context == null || !context.isActive()) {
+			return 0;
+		}
+		ExitCodeGenerators generators = new ExitCodeGenerators();
+		Collection&lt;ExitCodeExceptionMapper&gt; beans = context.getBeansOfType(ExitCodeExceptionMapper.class).values();
+		generators.addAll(exception, beans);
+		return generators.getExitCode();
+	}
+
+	private int getExitCodeFromExitCodeGeneratorException(@Nullable Throwable exception) {
+		if (exception == null) {
+			return 0;
+		}
+		if (exception instanceof ExitCodeGenerator generator) {
+			return generator.getExitCode();
+		}
+		return getExitCodeFromExitCodeGeneratorException(exception.getCause());
+	}
+
+	@Nullable SpringBootExceptionHandler getSpringBootExceptionHandler() {
+		if (isMainThread(Thread.currentThread())) {
+			return SpringBootExceptionHandler.forCurrentThread();
+		}
+		return null;
+	}
+
+	private boolean isMainThread(Thread currentThread) {
+		return (&#34;main&#34;.equals(currentThread.getName()) || &#34;restartedMain&#34;.equals(currentThread.getName()))
+				&amp;&amp; &#34;main&#34;.equals(currentThread.getThreadGroup().getName());
+	}
+
+	/**
+	 * Returns the main application class that has been deduced or explicitly configured.
+	 * @return the main application class or {@code null}
+	 */
+	public @Nullable Class&lt;?&gt; getMainApplicationClass() {
+		return this.mainApplicationClass;
+	}
+
+	/**
+	 * Set a specific main application class that will be used as a log source and to
+	 * obtain version information. By default the main application class will be deduced.
+	 * Can be set to {@code null} if there is no explicit application class.
+	 * @param mainApplicationClass the mainApplicationClass to set or {@code null}
+	 */
+	public void setMainApplicationClass(@Nullable Class&lt;?&gt; mainApplicationClass) {
+		this.mainApplicationClass = mainApplicationClass;
+	}
+
+	/**
+	 * Returns the type of web application that is being run.
+	 * @return the type of web application
+	 * @since 2.0.0
+	 */
+	public @Nullable WebApplicationType getWebApplicationType() {
+		return this.properties.getWebApplicationType();
+	}
+
+	/**
+	 * Sets the type of web application to be run. If not explicitly set the type of web
+	 * application will be deduced based on the classpath.
+	 * @param webApplicationType the web application type
+	 * @since 2.0.0
+	 */
+	public void setWebApplicationType(WebApplicationType webApplicationType) {
+		Assert.notNull(webApplicationType, &#34;&#39;webApplicationType&#39; must not be null&#34;);
+		this.properties.setWebApplicationType(webApplicationType);
+	}
+
+	/**
+	 * Sets if bean definition overriding, by registering a definition with the same name
+	 * as an existing definition, should be allowed. Defaults to {@code false}.
+	 * @param allowBeanDefinitionOverriding if overriding is allowed
+	 * @since 2.1.0
+	 * @see DefaultListableBeanFactory#setAllowBeanDefinitionOverriding(boolean)
+	 */
+	public void setAllowBeanDefinitionOverriding(boolean allowBeanDefinitionOverriding) {
+		this.properties.setAllowBeanDefinitionOverriding(allowBeanDefinitionOverriding);
+	}
+
+	/**
+	 * Sets whether to allow circular references between beans and automatically try to
+	 * resolve them. Defaults to {@code false}.
+	 * @param allowCircularReferences if circular references are allowed
+	 * @since 2.6.0
+	 * @see AbstractAutowireCapableBeanFactory#setAllowCircularReferences(boolean)
+	 */
+	public void setAllowCircularReferences(boolean allowCircularReferences) {
+		this.properties.setAllowCircularReferences(allowCircularReferences);
+	}
+
+	/**
+	 * Sets if beans should be initialized lazily. Defaults to {@code false}.
+	 * @param lazyInitialization if initialization should be lazy
+	 * @since 2.2
+	 * @see BeanDefinition#setLazyInit(boolean)
+	 */
+	public void setLazyInitialization(boolean lazyInitialization) {
+		this.properties.setLazyInitialization(lazyInitialization);
+	}
+
+	/**
+	 * Sets if the application is headless and should not instantiate AWT. Defaults to
+	 * {@code true} to prevent java icons appearing.
+	 * @param headless if the application is headless
+	 */
+	public void setHeadless(boolean headless) {
+		this.headless = headless;
+	}
+
+	/**
+	 * Sets if the created {@link ApplicationContext} should have a shutdown hook
+	 * registered. Defaults to {@code true} to ensure that JVM shutdowns are handled
+	 * gracefully.
+	 * @param registerShutdownHook if the shutdown hook should be registered
+	 * @see #getShutdownHandlers()
+	 */
+	public void setRegisterShutdownHook(boolean registerShutdownHook) {
+		this.properties.setRegisterShutdownHook(registerShutdownHook);
+	}
+
+	/**
+	 * Sets the {@link Banner} instance which will be used to print the banner when no
+	 * static banner file is provided.
+	 * @param banner the Banner instance to use
+	 */
+	public void setBanner(Banner banner) {
+		this.banner = banner;
+	}
+
+	/**
+	 * Sets the mode used to display the banner when the application runs. Defaults to
+	 * {@code Banner.Mode.CONSOLE}.
+	 * @param bannerMode the mode used to display the banner
+	 */
+	public void setBannerMode(Banner.Mode bannerMode) {
+		this.properties.setBannerMode(bannerMode);
+	}
+
+	/**
+	 * Sets if the application information should be logged when the application starts.
+	 * Defaults to {@code true}.
+	 * @param logStartupInfo if startup info should be logged.
+	 */
+	public void setLogStartupInfo(boolean logStartupInfo) {
+		this.properties.setLogStartupInfo(logStartupInfo);
+	}
+
+	/**
+	 * Sets if a {@link CommandLinePropertySource} should be added to the application
+	 * context in order to expose arguments. Defaults to {@code true}.
+	 * @param addCommandLineProperties if command line arguments should be exposed
+	 */
+	public void setAddCommandLineProperties(boolean addCommandLineProperties) {
+		this.addCommandLineProperties = addCommandLineProperties;
+	}
+
+	/**
+	 * Sets if the {@link ApplicationConversionService} should be added to the application
+	 * context&#39;s {@link Environment}.
+	 * @param addConversionService if the application conversion service should be added
+	 * @since 2.1.0
+	 */
+	public void setAddConversionService(boolean addConversionService) {
+		this.addConversionService = addConversionService;
+	}
+
+	/**
+	 * Adds {@link BootstrapRegistryInitializer} instances that can be used to initialize
+	 * the {@link BootstrapRegistry}.
+	 * @param bootstrapRegistryInitializer the bootstrap registry initializer to add
+	 * @since 2.4.5
+	 */
+	public void addBootstrapRegistryInitializer(BootstrapRegistryInitializer bootstrapRegistryInitializer) {
+		Assert.notNull(bootstrapRegistryInitializer, &#34;&#39;bootstrapRegistryInitializer&#39; must not be null&#34;);
+		this.bootstrapRegistryInitializers.addAll(Arrays.asList(bootstrapRegistryInitializer));
+	}
+
+	/**
+	 * Set default environment properties which will be used in addition to those in the
+	 * existing {@link Environment}.
+	 * @param defaultProperties the additional properties to set
+	 */
+	public void setDefaultProperties(Map&lt;String, Object&gt; defaultProperties) {
+		this.defaultProperties = defaultProperties;
+	}
+
+	/**
+	 * Convenient alternative to {@link #setDefaultProperties(Map)}.
+	 * @param defaultProperties some {@link Properties}
+	 */
+	public void setDefaultProperties(Properties defaultProperties) {
+		this.defaultProperties = new HashMap&lt;&gt;();
+		for (Object key : Collections.list(defaultProperties.propertyNames())) {
+			this.defaultProperties.put((String) key, defaultProperties.get(key));
+		}
+	}
+
+	/**
+	 * Set additional profile values to use (on top of those set in system or command line
+	 * properties).
+	 * @param profiles the additional profiles to set
+	 */
+	public void setAdditionalProfiles(String... profiles) {
+		this.additionalProfiles = Collections.unmodifiableSet(new LinkedHashSet&lt;&gt;(Arrays.asList(profiles)));
+	}
+
+	/**
+	 * Return an immutable set of any additional profiles in use.
+	 * @return the additional profiles
+	 */
+	public Set&lt;String&gt; getAdditionalProfiles() {
+		return this.additionalProfiles;
+	}
+
+	/**
+	 * Sets the bean name generator that should be used when generating bean names.
+	 * @param beanNameGenerator the bean name generator
+	 */
+	public void setBeanNameGenerator(BeanNameGenerator beanNameGenerator) {
+		this.beanNameGenerator = beanNameGenerator;
+	}
+
+	/**
+	 * Sets the underlying environment that should be used with the created application
+	 * context.
+	 * @param environment the environment
+	 */
+	public void setEnvironment(@Nullable ConfigurableEnvironment environment) {
+		this.isCustomEnvironment = true;
+		this.environment = environment;
+	}
+
+	/**
+	 * Add additional items to the primary sources that will be added to an
+	 * ApplicationContext when {@link #run(String...)} is called.
+	 * &lt;p&gt;
+	 * The sources here are added to those that were set in the constructor. Most users
+	 * should consider using {@link #getSources()}/{@link #setSources(Set)} rather than
+	 * calling this method.
+	 * @param additionalPrimarySources the additional primary sources to add
+	 * @see #SpringApplication(Class...)
+	 * @see #getSources()
+	 * @see #setSources(Set)
+	 * @see #getAllSources()
+	 */
+	public void addPrimarySources(Collection&lt;Class&lt;?&gt;&gt; additionalPrimarySources) {
+		this.primarySources.addAll(additionalPrimarySources);
+	}
+
+	/**
+	 * Returns a mutable set of the sources that will be added to an ApplicationContext
+	 * when {@link #run(String...)} is called.
+	 * &lt;p&gt;
+	 * Sources set here will be used in addition to any primary sources set in the
+	 * constructor.
+	 * @return the application sources.
+	 * @see #SpringApplication(Class...)
+	 * @see #getAllSources()
+	 */
+	public Set&lt;String&gt; getSources() {
+		return this.properties.getSources();
+	}
+
+	/**
+	 * Set additional sources that will be used to create an ApplicationContext. A source
+	 * can be: a class name, package name, or an XML resource location.
+	 * &lt;p&gt;
+	 * Sources set here will be used in addition to any primary sources set in the
+	 * constructor.
+	 * @param sources the application sources to set
+	 * @see #SpringApplication(Class...)
+	 * @see #getAllSources()
+	 */
+	public void setSources(Set&lt;String&gt; sources) {
+		Assert.notNull(sources, &#34;&#39;sources&#39; must not be null&#34;);
+		this.properties.setSources(sources);
+	}
+
+	/**
+	 * Return an immutable set of all the sources that will be added to an
+	 * ApplicationContext when {@link #run(String...)} is called. This method combines any
+	 * primary sources specified in the constructor with any additional ones that have
+	 * been {@link #setSources(Set) explicitly set}.
+	 * @return an immutable set of all sources
+	 */
+	public Set&lt;Object&gt; getAllSources() {
+		Set&lt;Object&gt; allSources = new LinkedHashSet&lt;&gt;();
+		if (!CollectionUtils.isEmpty(this.primarySources)) {
+			allSources.addAll(this.primarySources);
+		}
+		if (!CollectionUtils.isEmpty(this.properties.getSources())) {
+			allSources.addAll(this.properties.getSources());
+		}
+		return Collections.unmodifiableSet(allSources);
+	}
+
+	/**
+	 * Sets the {@link ResourceLoader} that should be used when loading resources.
+	 * @param resourceLoader the resource loader
+	 */
+	public void setResourceLoader(ResourceLoader resourceLoader) {
+		Assert.notNull(resourceLoader, &#34;&#39;resourceLoader&#39; must not be null&#34;);
+		this.resourceLoader = resourceLoader;
+	}
+
+	/**
+	 * Return a prefix that should be applied when obtaining configuration properties from
+	 * the system environment.
+	 * @return the environment property prefix
+	 * @since 2.5.0
+	 */
+	public @Nullable String getEnvironmentPrefix() {
+		return this.environmentPrefix;
+	}
+
+	/**
+	 * Set the prefix that should be applied when obtaining configuration properties from
+	 * the system environment.
+	 * @param environmentPrefix the environment property prefix to set
+	 * @since 2.5.0
+	 */
+	public void setEnvironmentPrefix(String environmentPrefix) {
+		this.environmentPrefix = environmentPrefix;
+	}
+
+	/**
+	 * Sets the factory that will be called to create the application context. If not set,
+	 * defaults to a factory that will create a context that is appropriate for the
+	 * application&#39;s type (a reactive web application, a servlet web application, or a
+	 * non-web application).
+	 * @param applicationContextFactory the factory for the context
+	 * @since 2.4.0
+	 */
+	public void setApplicationContextFactory(@Nullable ApplicationContextFactory applicationContextFactory) {
+		this.applicationContextFactory = (applicationContextFactory != null) ? applicationContextFactory
+				: ApplicationContextFactory.DEFAULT;
+	}
+
+	/**
+	 * Sets the {@link ApplicationContextInitializer} that will be applied to the Spring
+	 * {@link ApplicationContext}.
+	 * @param initializers the initializers to set
+	 */
+	public void setInitializers(Collection&lt;? extends ApplicationContextInitializer&lt;?&gt;&gt; initializers) {
+		this.initializers = new ArrayList&lt;&gt;(initializers);
+	}
+
+	/**
+	 * Add {@link ApplicationContextInitializer}s to be applied to the Spring
+	 * {@link ApplicationContext}.
+	 * @param initializers the initializers to add
+	 */
+	public void addInitializers(ApplicationContextInitializer&lt;?&gt;... initializers) {
+		this.initializers.addAll(Arrays.asList(initializers));
+	}
+
+	/**
+	 * Returns read-only ordered Set of the {@link ApplicationContextInitializer}s that
+	 * will be applied to the Spring {@link ApplicationContext}.
+	 * @return the initializers
+	 */
+	public Set&lt;ApplicationContextInitializer&lt;?&gt;&gt; getInitializers() {
+		return asUnmodifiableOrderedSet(this.initializers);
+	}
+
+	/**
+	 * Sets the {@link ApplicationListener}s that will be applied to the SpringApplication
+	 * and registered with the {@link ApplicationContext}.
+	 * @param listeners the listeners to set
+	 */
+	public void setListeners(Collection&lt;? extends ApplicationListener&lt;?&gt;&gt; listeners) {
+		this.listeners = new ArrayList&lt;&gt;(listeners);
+	}
+
+	/**
+	 * Add {@link ApplicationListener}s to be applied to the SpringApplication and
+	 * registered with the {@link ApplicationContext}.
+	 * @param listeners the listeners to add
+	 */
+	public void addListeners(ApplicationListener&lt;?&gt;... listeners) {
+		this.listeners.addAll(Arrays.asList(listeners));
+	}
+
+	/**
+	 * Returns read-only ordered Set of the {@link ApplicationListener}s that will be
+	 * applied to the SpringApplication and registered with the {@link ApplicationContext}
+	 * .
+	 * @return the listeners
+	 */
+	public Set&lt;ApplicationListener&lt;?&gt;&gt; getListeners() {
+		return asUnmodifiableOrderedSet(this.listeners);
+	}
+
+	/**
+	 * Set the {@link ApplicationStartup} to use for collecting startup metrics.
+	 * @param applicationStartup the application startup to use
+	 * @since 2.4.0
+	 */
+	public void setApplicationStartup(ApplicationStartup applicationStartup) {
+		this.applicationStartup = (applicationStartup != null) ? applicationStartup : ApplicationStartup.DEFAULT;
+	}
+
+	/**
+	 * Returns the {@link ApplicationStartup} used for collecting startup metrics.
+	 * @return the application startup
+	 * @since 2.4.0
+	 */
+	public ApplicationStartup getApplicationStartup() {
+		return this.applicationStartup;
+	}
+
+	/**
+	 * Whether to keep the application alive even if there are no more non-daemon threads.
+	 * @return whether to keep the application alive even if there are no more non-daemon
+	 * threads
+	 * @since 3.2.0
+	 */
+	public boolean isKeepAlive() {
+		return this.properties.isKeepAlive();
+	}
+
+	/**
+	 * Set whether to keep the application alive even if there are no more non-daemon
+	 * threads.
+	 * @param keepAlive whether to keep the application alive even if there are no more
+	 * non-daemon threads
+	 * @since 3.2.0
+	 */
+	public void setKeepAlive(boolean keepAlive) {
+		this.properties.setKeepAlive(keepAlive);
+	}
+
+	/**
+	 * Return a {@link SpringApplicationShutdownHandlers} instance that can be used to add
+	 * or remove handlers that perform actions before the JVM is shutdown.
+	 * @return a {@link SpringApplicationShutdownHandlers} instance
+	 * @since 2.5.1
+	 */
+	public static SpringApplicationShutdownHandlers getShutdownHandlers() {
+		return shutdownHook.getHandlers();
+	}
+
+	/**
+	 * Static helper that can be used to run a {@link SpringApplication} from the
+	 * specified source using default settings.
+	 * @param primarySource the primary source to load
+	 * @param args the application arguments (usually passed from a Java main method)
+	 * @return the running {@link ApplicationContext}
+	 */
+	public static ConfigurableApplicationContext run(Class&lt;?&gt; primarySource, String... args) {
+		return run(new Class&lt;?&gt;[] { primarySource }, args);
+	}
+
+	/**
+	 * Static helper that can be used to run a {@link SpringApplication} from the
+	 * specified sources using default settings and user supplied arguments.
+	 * @param primarySources the primary sources to load
+	 * @param args the application arguments (usually passed from a Java main method)
+	 * @return the running {@link ApplicationContext}
+	 */
+	public static ConfigurableApplicationContext run(Class&lt;?&gt;[] primarySources, String[] args) {
+		return new SpringApplication(primarySources).run(args);
+	}
+
+	/**
+	 * A basic main that can be used to launch an application. This method is useful when
+	 * application sources are defined through a {@literal --spring.main.sources} command
+	 * line argument.
+	 * &lt;p&gt;
+	 * Most developers will want to define their own main method and call the
+	 * {@link #run(Class, String...) run} method instead.
+	 * @param args command line arguments
+	 * @throws Exception if the application cannot be started
+	 * @see SpringApplication#run(Class[], String[])
+	 * @see SpringApplication#run(Class, String...)
+	 */
+	public static void main(String[] args) throws Exception {
+		SpringApplication.run(new Class&lt;?&gt;[0], args);
+	}
+
+	/**
+	 * Static helper that can be used to exit a {@link SpringApplication} and obtain a
+	 * code indicating success (0) or otherwise. Does not throw exceptions but should
+	 * print stack traces of any encountered. Applies the specified
+	 * {@link ExitCodeGenerator ExitCodeGenerators} in addition to any Spring beans that
+	 * implement {@link ExitCodeGenerator}. When multiple generators are available, the
+	 * first non-zero exit code is used. Generators are ordered based on their
+	 * {@link Ordered} implementation and {@link Order @Order} annotation.
+	 * @param context the context to close if possible
+	 * @param exitCodeGenerators exit code generators
+	 * @return the outcome (0 if successful)
+	 */
+	public static int exit(ApplicationContext context, ExitCodeGenerator... exitCodeGenerators) {
+		Assert.notNull(context, &#34;&#39;context&#39; must not be null&#34;);
+		int exitCode = 0;
+		try {
+			try {
+				ExitCodeGenerators generators = new ExitCodeGenerators();
+				Collection&lt;ExitCodeGenerator&gt; beans = context.getBeansOfType(ExitCodeGenerator.class).values();
+				generators.addAll(exitCodeGenerators);
+				generators.addAll(beans);
+				exitCode = generators.getExitCode();
+				if (exitCode != 0) {
+					context.publishEvent(new ExitCodeEvent(context, exitCode));
+				}
+			}
+			finally {
+				close(context);
+			}
+		}
+		catch (Exception ex) {
+			ex.printStackTrace();
+			exitCode = (exitCode != 0) ? exitCode : 1;
+		}
+		return exitCode;
+	}
+
+	/**
+	 * Create an application from an existing {@code main} method that can run with
+	 * additional {@code @Configuration} or bean classes. This method can be helpful when
+	 * writing a test harness that needs to start an application with additional
+	 * configuration.
+	 * @param main the main method entry point that runs the {@link SpringApplication}
+	 * @return a {@link SpringApplication.Augmented} instance that can be used to add
+	 * configuration and run the application
+	 * @since 3.1.0
+	 * @see #withHook(SpringApplicationHook, Runnable)
+	 */
+	public static SpringApplication.Augmented from(ThrowingConsumer&lt;String[]&gt; main) {
+		Assert.notNull(main, &#34;&#39;main&#39; must not be null&#34;);
+		return new Augmented(main, Collections.emptySet(), Collections.emptySet());
+	}
+
+	/**
+	 * Perform the given action with the given {@link SpringApplicationHook} attached if
+	 * the action triggers an {@link SpringApplication#run(String...) application run}.
+	 * @param hook the hook to apply
+	 * @param action the action to run
+	 * @since 3.0.0
+	 * @see #withHook(SpringApplicationHook, ThrowingSupplier)
+	 */
+	public static void withHook(SpringApplicationHook hook, Runnable action) {
+		withHook(hook, () -&gt; {
+			action.run();
+			return Void.class;
+		});
+	}
+
+	/**
+	 * Perform the given action with the given {@link SpringApplicationHook} attached if
+	 * the action triggers an {@link SpringApplication#run(String...) application run}.
+	 * @param &lt;T&gt; the result type
+	 * @param hook the hook to apply
+	 * @param action the action to run
+	 * @return the result of the action
+	 * @since 3.0.0
+	 * @see #withHook(SpringApplicationHook, Runnable)
+	 */
+	public static &lt;T&gt; T withHook(SpringApplicationHook hook, ThrowingSupplier&lt;T&gt; action) {
+		applicationHook.set(hook);
+		try {
+			return action.get();
+		}
+		finally {
+			applicationHook.remove();
+		}
+	}
+
+	private static void close(ApplicationContext context) {
+		if (context instanceof ConfigurableApplicationContext closable) {
+			closable.close();
+		}
+	}
+
+	private static &lt;E&gt; Set&lt;E&gt; asUnmodifiableOrderedSet(Collection&lt;E&gt; elements) {
+		List&lt;E&gt; list = new ArrayList&lt;&gt;(elements);
+		list.sort(AnnotationAwareOrderComparator.INSTANCE);
+		return new LinkedHashSet&lt;&gt;(list);
+	}
+
+	/**
+	 * Used to configure and run an augmented {@link SpringApplication} where additional
+	 * configuration should be applied.
+	 *
+	 * @since 3.1.0
+	 */
+	public static class Augmented {
+
+		private final ThrowingConsumer&lt;String[]&gt; main;
+
+		private final Set&lt;Class&lt;?&gt;&gt; sources;
+
+		private final Set&lt;String&gt; additionalProfiles;
+
+		Augmented(ThrowingConsumer&lt;String[]&gt; main, Set&lt;Class&lt;?&gt;&gt; sources, Set&lt;String&gt; additionalProfiles) {
+			this.main = main;
+			this.sources = Set.copyOf(sources);
+			this.additionalProfiles = additionalProfiles;
+		}
+
+		/**
+		 * Return a new {@link SpringApplication.Augmented} instance with additional
+		 * sources that should be applied when the application runs.
+		 * @param sources the sources that should be applied
+		 * @return a new {@link SpringApplication.Augmented} instance
+		 */
+		public Augmented with(Class&lt;?&gt;... sources) {
+			LinkedHashSet&lt;Class&lt;?&gt;&gt; merged = new LinkedHashSet&lt;&gt;(this.sources);
+			merged.addAll(Arrays.asList(sources));
+			return new Augmented(this.main, merged, this.additionalProfiles);
+		}
+
+		/**
+		 * Return a new {@link SpringApplication.Augmented} instance with additional
+		 * profiles that should be applied when the application runs.
+		 * @param profiles the profiles that should be applied
+		 * @return a new {@link SpringApplication.Augmented} instance
+		 * @since 3.4.0
+		 */
+		public Augmented withAdditionalProfiles(String... profiles) {
+			Set&lt;String&gt; merged = new LinkedHashSet&lt;&gt;(this.additionalProfiles);
+			merged.addAll(Arrays.asList(profiles));
+			return new Augmented(this.main, this.sources, merged);
+		}
+
+		/**
+		 * Run the application using the given args.
+		 * @param args the main method args
+		 * @return the running {@link ApplicationContext}
+		 */
+		public SpringApplication.Running run(String... args) {
+			RunListener runListener = new RunListener();
+			SpringApplicationHook hook = new SingleUseSpringApplicationHook((springApplication) -&gt; {
+				springApplication.addPrimarySources(this.sources);
+				springApplication.setAdditionalProfiles(this.additionalProfiles.toArray(String[]::new));
+				return runListener;
+			});
+			withHook(hook, () -&gt; this.main.accept(args));
+			return runListener;
+		}
+
+		/**
+		 * {@link SpringApplicationRunListener} to capture {@link Running} application
+		 * details.
+		 */
+		private static final class RunListener implements SpringApplicationRunListener, Running {
+
+			private final List&lt;ConfigurableApplicationContext&gt; contexts = Collections
+				.synchronizedList(new ArrayList&lt;&gt;());
+
+			@Override
+			public void contextLoaded(ConfigurableApplicationContext context) {
+				this.contexts.add(context);
+			}
+
+			@Override
+			public ConfigurableApplicationContext getApplicationContext() {
+				List&lt;ConfigurableApplicationContext&gt; rootContexts = this.contexts.stream()
+					.filter((context) -&gt; context.getParent() == null)
+					.toList();
+				Assert.state(!rootContexts.isEmpty(), &#34;No root application context located&#34;);
+				Assert.state(rootContexts.size() == 1, &#34;No unique root application context located&#34;);
+				return rootContexts.get(0);
+			}
+
+		}
+
+	}
+
+	/**
+	 * Provides access to details of a {@link SpringApplication} run using
+	 * {@link Augmented#run(String...)}.
+	 *
+	 * @since 3.1.0
+	 */
+	public interface Running {
+
+		/**
+		 * Return the root {@link ConfigurableApplicationContext} of the running
+		 * application.
+		 * @return the root application context
+		 */
+		ConfigurableApplicationContext getApplicationContext();
+
+	}
+
+	/**
+	 * {@link BeanFactoryPostProcessor} to re-order our property sources below any
+	 * {@code @PropertySource} items added by the {@link ConfigurationClassPostProcessor}.
+	 */
+	private static class PropertySourceOrderingBeanFactoryPostProcessor implements BeanFactoryPostProcessor, Ordered {
+
+		private final ConfigurableApplicationContext context;
+
+		PropertySourceOrderingBeanFactoryPostProcessor(ConfigurableApplicationContext context) {
+			this.context = context;
+		}
+
+		@Override
+		public int getOrder() {
+			return Ordered.HIGHEST_PRECEDENCE;
+		}
+
+		@Override
+		public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+			DefaultPropertiesPropertySource.moveToEnd(this.context.getEnvironment());
+		}
+
+	}
+
+	/**
+	 * Exception that can be thrown to silently exit a running {@link SpringApplication}
+	 * without handling run failures.
+	 *
+	 * @since 3.0.0
+	 */
+	public static class AbandonedRunException extends RuntimeException {
+
+		private final @Nullable ConfigurableApplicationContext applicationContext;
+
+		/**
+		 * Create a new {@link AbandonedRunException} instance.
+		 */
+		public AbandonedRunException() {
+			this(null);
+		}
+
+		/**
+		 * Create a new {@link AbandonedRunException} instance with the given application
+		 * context.
+		 * @param applicationContext the application context that was available when the
+		 * run was abandoned
+		 */
+		public AbandonedRunException(@Nullable ConfigurableApplicationContext applicationContext) {
+			this.applicationContext = applicationContext;
+		}
+
+		/**
+		 * Return the application context that was available when the run was abandoned or
+		 * {@code null} if no context was available.
+		 * @return the application context
+		 */
+		public @Nullable ConfigurableApplicationContext getApplicationContext() {
+			return this.applicationContext;
+		}
+
+	}
+
+	/**
+	 * Exception which is thrown if GraalVM&#39;s native-image requirements aren&#39;t met.
+	 */
+	static final class NativeImageRequirementsException extends RuntimeException {
+
+		private static final JavaVersion MINIMUM_REQUIRED_JAVA_VERSION = JavaVersion.TWENTY_FIVE;
+
+		private static final JavaVersion CURRENT_JAVA_VERSION = JavaVersion.getJavaVersion();
+
+		NativeImageRequirementsException(String message) {
+			super(message);
+		}
+
+		static void throwIfNotMet() {
+			if (CURRENT_JAVA_VERSION.isOlderThan(MINIMUM_REQUIRED_JAVA_VERSION)) {
+				throw new NativeImageRequirementsException(&#34;Native Image requirements not met. &#34;
+						&#43; &#34;Native Image must support at least Java %s but Java %s was detected&#34;
+							.formatted(MINIMUM_REQUIRED_JAVA_VERSION, CURRENT_JAVA_VERSION));
+			}
+		}
+
+	}
+
+	/**
+	 * {@link SpringApplicationHook} decorator that ensures the hook is only used once.
+	 */
+	private static final class SingleUseSpringApplicationHook implements SpringApplicationHook {
+
+		private final AtomicBoolean used = new AtomicBoolean();
+
+		private final SpringApplicationHook delegate;
+
+		private SingleUseSpringApplicationHook(SpringApplicationHook delegate) {
+			this.delegate = delegate;
+		}
+
+		@Override
+		public @Nullable SpringApplicationRunListener getRunListener(SpringApplication springApplication) {
+			return this.used.compareAndSet(false, true) ? this.delegate.getRunListener(springApplication) : null;
+		}
+
+	}
+
+	/**
+	 * Starts a non-daemon thread to keep the JVM alive on {@link ContextRefreshedEvent}.
+	 * Stops the thread on {@link ContextClosedEvent}.
+	 */
+	private static final class KeepAlive implements ApplicationListener&lt;ApplicationContextEvent&gt; {
+
+		private final AtomicReference&lt;@Nullable Thread&gt; thread = new AtomicReference&lt;&gt;();
+
+		@Override
+		public void onApplicationEvent(ApplicationContextEvent event) {
+			if (event instanceof ContextRefreshedEvent) {
+				startKeepAliveThread();
+			}
+			else if (event instanceof ContextClosedEvent) {
+				stopKeepAliveThread();
+			}
+		}
+
+		private void startKeepAliveThread() {
+			Thread thread = new Thread(() -&gt; {
+				while (true) {
+					try {
+						Thread.sleep(Long.MAX_VALUE);
+					}
+					catch (InterruptedException ex) {
+						break;
+					}
+				}
+			});
+			if (this.thread.compareAndSet(null, thread)) {
+				thread.setDaemon(false);
+				thread.setName(&#34;keep-alive&#34;);
+				thread.start();
+			}
+		}
+
+		private void stopKeepAliveThread() {
+			Thread thread = this.thread.getAndSet(null);
+			if (thread == null) {
+				return;
+			}
+			thread.interrupt();
+		}
+
+	}
+
+	/**
+	 * Strategy used to handle startup concerns.
+	 */
+	abstract static class Startup {
+
+		private @Nullable Duration timeTakenToStarted;
+
+		protected abstract long startTime();
+
+		protected abstract @Nullable Long processUptime();
+
+		protected abstract String action();
+
+		final Duration started() {
+			long now = System.currentTimeMillis();
+			this.timeTakenToStarted = Duration.ofMillis(now - startTime());
+			return this.timeTakenToStarted;
+		}
+
+		Duration timeTakenToStarted() {
+			Assert.state(this.timeTakenToStarted != null,
+					&#34;timeTakenToStarted is not set. Make sure to call started() before this method&#34;);
+			return this.timeTakenToStarted;
+		}
+
+		private Duration ready() {
+			long now = System.currentTimeMillis();
+			return Duration.ofMillis(now - startTime());
+		}
+
+		static Startup create() {
+			ClassLoader classLoader = Startup.class.getClassLoader();
+			return (ClassUtils.isPresent(&#34;jdk.crac.management.CRaCMXBean&#34;, classLoader)
+					&amp;&amp; ClassUtils.isPresent(&#34;org.crac.management.CRaCMXBean&#34;, classLoader))
+							? new CoordinatedRestoreAtCheckpointStartup() : new StandardStartup();
+		}
+
+	}
+
+	/**
+	 * Standard {@link Startup} implementation.
+	 */
+	private static final class StandardStartup extends Startup {
+
+		private final Long startTime = System.currentTimeMillis();
+
+		@Override
+		protected long startTime() {
+			return this.startTime;
+		}
+
+		@Override
+		protected @Nullable Long processUptime() {
+			try {
+				return ManagementFactory.getRuntimeMXBean().getUptime();
+			}
+			catch (Throwable ex) {
+				return null;
+			}
+		}
+
+		@Override
+		protected String action() {
+			return &#34;Started&#34;;
+		}
+
+	}
+
+	/**
+	 * Coordinated-Restore-At-Checkpoint {@link Startup} implementation.
+	 */
+	private static final class CoordinatedRestoreAtCheckpointStartup extends Startup {
+
+		private final StandardStartup fallback = new StandardStartup();
+
+		@Override
+		protected @Nullable Long processUptime() {
+			Long uptime = CRaCMXBean.getCRaCMXBean().getUptimeSinceRestore();
+			return (uptime &gt;= 0) ? uptime : this.fallback.processUptime();
+		}
+
+		@Override
+		protected String action() {
+			return (restoreTime() &gt;= 0) ? &#34;Restored&#34; : this.fallback.action();
+		}
+
+		private long restoreTime() {
+			return CRaCMXBean.getCRaCMXBean().getRestoreTime();
+		}
+
+		@Override
+		protected long startTime() {
+			long restoreTime = restoreTime();
+			return (restoreTime &gt;= 0) ? restoreTime : this.fallback.startTime();
+		}
+
+	}
+
+	/**
+	 * {@link OrderSourceProvider} used to obtain factory method and target type order
+	 * sources. Based on internal {@link DefaultListableBeanFactory} code.
+	 */
+	private static class FactoryAwareOrderSourceProvider implements OrderSourceProvider {
+
+		private final ConfigurableBeanFactory beanFactory;
+
+		private final Map&lt;?, String&gt; instancesToBeanNames;
+
+		FactoryAwareOrderSourceProvider(ConfigurableBeanFactory beanFactory, Map&lt;?, String&gt; instancesToBeanNames) {
+			this.beanFactory = beanFactory;
+			this.instancesToBeanNames = instancesToBeanNames;
+		}
+
+		@Override
+		public @Nullable Object getOrderSource(Object obj) {
+			String beanName = this.instancesToBeanNames.get(obj);
+			return (beanName != null) ? getOrderSource(beanName, obj.getClass()) : null;
+		}
+
+		private @Nullable Object getOrderSource(String beanName, Class&lt;?&gt; instanceType) {
+			try {
+				RootBeanDefinition beanDefinition = (RootBeanDefinition) this.beanFactory
+					.getMergedBeanDefinition(beanName);
+				Method factoryMethod = beanDefinition.getResolvedFactoryMethod();
+				Class&lt;?&gt; targetType = beanDefinition.getTargetType();
+				targetType = (targetType != instanceType) ? targetType : null;
+				return Stream.of(factoryMethod, targetType).filter(Objects::nonNull).toArray();
+			}
+			catch (NoSuchBeanDefinitionException ex) {
+				return null;
+			}
+		}
+
+	}
+
+}</code></pre>
+    </div>
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-gradleplugin.html">GradlePlugin</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/spring-boot/blob/main/core/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java#L191">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>
