@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
         <a href="/domain/binding.html" class="pill pill-green">Binding</a>
-        <a href="/subdomain/multipart.html" class="pill pill-orange">Multipart</a>
+        <a href="/subdomain/formatmapping.html" class="pill pill-orange">FormatMapping</a>
         
         
         <span class="pill">calls 8</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"setWithProperType","slug":"fn-form-mapping-go-setwithpropertype","type":"Function"},"subdomain":{"name":"Multipart","slug":"subdomain-multipart"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"setWithProperType","slug":"fn-form-mapping-go-setwithpropertype","type":"Function"},"subdomain":{"name":"FormatMapping","slug":"subdomain-formatmapping"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/binding.html">Binding</a><span class="arch-sep">&rarr;</span>
-            <a href="/multipart.html">Multipart</a><span class="arch-sep">&rarr;</span>
+            <a href="/formatmapping.html">FormatMapping</a><span class="arch-sep">&rarr;</span>
             <span>setWithProperType() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,28 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  77b4cb90_5b3e_eb94_b4af_f96abbf5851b["setWithProperType()"]
-  c46bacba_b11e_e670_c074_323b2ba8d2b1["setByForm()"]
-  c46bacba_b11e_e670_c074_323b2ba8d2b1 -->|calls| 77b4cb90_5b3e_eb94_b4af_f96abbf5851b
-  3a7f68b8_9815_b801_4783_fa8c97eec2bb["setArray()"]
-  3a7f68b8_9815_b801_4783_fa8c97eec2bb -->|calls| 77b4cb90_5b3e_eb94_b4af_f96abbf5851b
-  93962e75_8ba9_3a1d_ed6d_c16a9e146b70["trySetUsingParser()"]
-  77b4cb90_5b3e_eb94_b4af_f96abbf5851b -->|calls| 93962e75_8ba9_3a1d_ed6d_c16a9e146b70
-  cd0abb7f_b2bf_4b8f_0dd5_65026461ccb9["trySetCustom()"]
-  77b4cb90_5b3e_eb94_b4af_f96abbf5851b -->|calls| cd0abb7f_b2bf_4b8f_0dd5_65026461ccb9
-  bb63737c_bfb2_1430_c8f7_5ebee7db95eb["setIntField()"]
-  77b4cb90_5b3e_eb94_b4af_f96abbf5851b -->|calls| bb63737c_bfb2_1430_c8f7_5ebee7db95eb
-  f5b0a199_546e_27c4_4c97_a84706dc690f["setTimeDuration()"]
-  77b4cb90_5b3e_eb94_b4af_f96abbf5851b -->|calls| f5b0a199_546e_27c4_4c97_a84706dc690f
-  4b526064_035c_9b6e_36d4_1a8c68048a4b["setUintField()"]
-  77b4cb90_5b3e_eb94_b4af_f96abbf5851b -->|calls| 4b526064_035c_9b6e_36d4_1a8c68048a4b
-  465d4351_65a5_c969_df06_5a91241994d6["setBoolField()"]
-  77b4cb90_5b3e_eb94_b4af_f96abbf5851b -->|calls| 465d4351_65a5_c969_df06_5a91241994d6
-  22c64ed3_ded5_0f20_cbdf_add5693da542["setFloatField()"]
-  77b4cb90_5b3e_eb94_b4af_f96abbf5851b -->|calls| 22c64ed3_ded5_0f20_cbdf_add5693da542
-  3e3158c8_4752_6bfb_675b_d09105f53040["setTimeField()"]
-  77b4cb90_5b3e_eb94_b4af_f96abbf5851b -->|calls| 3e3158c8_4752_6bfb_675b_d09105f53040
-  style 77b4cb90_5b3e_eb94_b4af_f96abbf5851b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a98fe09d_ff3c_15ef_bfa5_85297459817a["setWithProperType()"]
+  5ef5885a_b370_2f77_9745_4810e4fa3ca9["setByForm()"]
+  5ef5885a_b370_2f77_9745_4810e4fa3ca9 -->|calls| a98fe09d_ff3c_15ef_bfa5_85297459817a
+  cf066963_34b9_eea2_8242_ddea3bd5f882["setArray()"]
+  cf066963_34b9_eea2_8242_ddea3bd5f882 -->|calls| a98fe09d_ff3c_15ef_bfa5_85297459817a
+  634afbc3_dd49_49f4_0cc7_252dc3b5d2c3["trySetUsingParser()"]
+  a98fe09d_ff3c_15ef_bfa5_85297459817a -->|calls| 634afbc3_dd49_49f4_0cc7_252dc3b5d2c3
+  121faa0e_1991_b668_67ba_fcce81a19d76["trySetCustom()"]
+  a98fe09d_ff3c_15ef_bfa5_85297459817a -->|calls| 121faa0e_1991_b668_67ba_fcce81a19d76
+  47a142b1_747a_a5ba_4aa1_c8ef16b0e7d9["setIntField()"]
+  a98fe09d_ff3c_15ef_bfa5_85297459817a -->|calls| 47a142b1_747a_a5ba_4aa1_c8ef16b0e7d9
+  6efb1b37_cb3f_ef44_d8f0_ff0eb9961b67["setTimeDuration()"]
+  a98fe09d_ff3c_15ef_bfa5_85297459817a -->|calls| 6efb1b37_cb3f_ef44_d8f0_ff0eb9961b67
+  a7ff7c0c_ad8f_e546_69ea_0686b329766a["setUintField()"]
+  a98fe09d_ff3c_15ef_bfa5_85297459817a -->|calls| a7ff7c0c_ad8f_e546_69ea_0686b329766a
+  b6c456f3_d489_9f0e_caef_ce74dc79f98f["setBoolField()"]
+  a98fe09d_ff3c_15ef_bfa5_85297459817a -->|calls| b6c456f3_d489_9f0e_caef_ce74dc79f98f
+  6ef05bf9_ddfc_b2dc_bf0b_575f68449dd9["setFloatField()"]
+  a98fe09d_ff3c_15ef_bfa5_85297459817a -->|calls| 6ef05bf9_ddfc_b2dc_bf0b_575f68449dd9
+  d01e76ef_09dc_08c3_0b77_5c559bf0f707["setTimeField()"]
+  a98fe09d_ff3c_15ef_bfa5_85297459817a -->|calls| d01e76ef_09dc_08c3_0b77_5c559bf0f707
+  style a98fe09d_ff3c_15ef_bfa5_85297459817a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -940,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-form-mapping-go-setwithpropertype"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","label":"setWithProperType","type":"Function","slug":"fn-form-mapping-go-setwithpropertype","lc":66,"lang":"go","cc":8,"cbc":2},{"id":"93962e75:8ba9:3a1d:ed6d:c16a9e146b70","label":"trySetUsingParser","type":"Function","slug":"fn-form-mapping-go-trysetusingparser","lc":11,"lang":"go","cbc":2},{"id":"cd0abb7f:b2bf:4b8f:0dd5:65026461ccb9","label":"trySetCustom","type":"Function","slug":"fn-form-mapping-go-trysetcustom","lc":7,"lang":"go","cbc":2},{"id":"bb63737c:bfb2:1430:c8f7:5ebee7db95eb","label":"setIntField","type":"Function","slug":"fn-form-mapping-go-setintfield","lc":10,"lang":"go","cbc":1},{"id":"f5b0a199:546e:27c4:4c97:a84706dc690f","label":"setTimeDuration","type":"Function","slug":"fn-form-mapping-go-settimeduration","lc":12,"lang":"go","cbc":1},{"id":"4b526064:035c:9b6e:36d4:1a8c68048a4b","label":"setUintField","type":"Function","slug":"fn-form-mapping-go-setuintfield","lc":10,"lang":"go","cbc":1},{"id":"465d4351:65a5:c969:df06:5a91241994d6","label":"setBoolField","type":"Function","slug":"fn-form-mapping-go-setboolfield","lc":10,"lang":"go","cbc":1},{"id":"22c64ed3:ded5:0f20:cbdf:add5693da542","label":"setFloatField","type":"Function","slug":"fn-form-mapping-go-setfloatfield","lc":10,"lang":"go","cbc":1},{"id":"3e3158c8:4752:6bfb:675b:d09105f53040","label":"setTimeField","type":"Function","slug":"fn-form-mapping-go-settimefield","lc":55,"lang":"go","cbc":1},{"id":"c46bacba:b11e:e670:c074:323b2ba8d2b1","label":"setByForm","type":"Function","slug":"fn-form-mapping-go-setbyform","lc":77,"lang":"go","cc":6,"cbc":1},{"id":"3a7f68b8:9815:b801:4783:fa8c97eec2bb","label":"setArray","type":"Function","slug":"fn-form-mapping-go-setarray","lc":9,"lang":"go","cc":1,"cbc":2},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:Multipart","label":"Multipart","type":"Subdomain","slug":"subdomain-multipart"}],"edges":[{"source":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","target":"93962e75:8ba9:3a1d:ed6d:c16a9e146b70","type":"calls"},{"source":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","target":"cd0abb7f:b2bf:4b8f:0dd5:65026461ccb9","type":"calls"},{"source":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","target":"bb63737c:bfb2:1430:c8f7:5ebee7db95eb","type":"calls"},{"source":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","target":"f5b0a199:546e:27c4:4c97:a84706dc690f","type":"calls"},{"source":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","target":"4b526064:035c:9b6e:36d4:1a8c68048a4b","type":"calls"},{"source":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","target":"465d4351:65a5:c969:df06:5a91241994d6","type":"calls"},{"source":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","target":"22c64ed3:ded5:0f20:cbdf:add5693da542","type":"calls"},{"source":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","target":"3e3158c8:4752:6bfb:675b:d09105f53040","type":"calls"},{"source":"c46bacba:b11e:e670:c074:323b2ba8d2b1","target":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","type":"calls"},{"source":"3a7f68b8:9815:b801:4783:fa8c97eec2bb","target":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","type":"calls"},{"source":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","target":"domain:Binding","type":"belongsTo"},{"source":"77b4cb90:5b3e:eb94:b4af:f96abbf5851b","target":"subdomain:Binding:Multipart","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a98fe09d:ff3c:15ef:bfa5:85297459817a","label":"setWithProperType","type":"Function","slug":"fn-form-mapping-go-setwithpropertype","lc":66,"lang":"go","cc":8,"cbc":2},{"id":"634afbc3:dd49:49f4:0cc7:252dc3b5d2c3","label":"trySetUsingParser","type":"Function","slug":"fn-form-mapping-go-trysetusingparser","lc":11,"lang":"go","cbc":2},{"id":"121faa0e:1991:b668:67ba:fcce81a19d76","label":"trySetCustom","type":"Function","slug":"fn-form-mapping-go-trysetcustom","lc":7,"lang":"go","cbc":2},{"id":"47a142b1:747a:a5ba:4aa1:c8ef16b0e7d9","label":"setIntField","type":"Function","slug":"fn-form-mapping-go-setintfield","lc":10,"lang":"go","cbc":1},{"id":"6efb1b37:cb3f:ef44:d8f0:ff0eb9961b67","label":"setTimeDuration","type":"Function","slug":"fn-form-mapping-go-settimeduration","lc":12,"lang":"go","cbc":1},{"id":"a7ff7c0c:ad8f:e546:69ea:0686b329766a","label":"setUintField","type":"Function","slug":"fn-form-mapping-go-setuintfield","lc":10,"lang":"go","cbc":1},{"id":"b6c456f3:d489:9f0e:caef:ce74dc79f98f","label":"setBoolField","type":"Function","slug":"fn-form-mapping-go-setboolfield","lc":10,"lang":"go","cbc":1},{"id":"6ef05bf9:ddfc:b2dc:bf0b:575f68449dd9","label":"setFloatField","type":"Function","slug":"fn-form-mapping-go-setfloatfield","lc":10,"lang":"go","cbc":1},{"id":"d01e76ef:09dc:08c3:0b77:5c559bf0f707","label":"setTimeField","type":"Function","slug":"fn-form-mapping-go-settimefield","lc":55,"lang":"go","cbc":1},{"id":"5ef5885a:b370:2f77:9745:4810e4fa3ca9","label":"setByForm","type":"Function","slug":"fn-form-mapping-go-setbyform","lc":77,"lang":"go","cc":6,"cbc":1},{"id":"cf066963:34b9:eea2:8242:ddea3bd5f882","label":"setArray","type":"Function","slug":"fn-form-mapping-go-setarray","lc":9,"lang":"go","cc":1,"cbc":2},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:FormatMapping","label":"FormatMapping","type":"Subdomain","slug":"subdomain-formatmapping"}],"edges":[{"source":"a98fe09d:ff3c:15ef:bfa5:85297459817a","target":"634afbc3:dd49:49f4:0cc7:252dc3b5d2c3","type":"calls"},{"source":"a98fe09d:ff3c:15ef:bfa5:85297459817a","target":"121faa0e:1991:b668:67ba:fcce81a19d76","type":"calls"},{"source":"a98fe09d:ff3c:15ef:bfa5:85297459817a","target":"47a142b1:747a:a5ba:4aa1:c8ef16b0e7d9","type":"calls"},{"source":"a98fe09d:ff3c:15ef:bfa5:85297459817a","target":"6efb1b37:cb3f:ef44:d8f0:ff0eb9961b67","type":"calls"},{"source":"a98fe09d:ff3c:15ef:bfa5:85297459817a","target":"a7ff7c0c:ad8f:e546:69ea:0686b329766a","type":"calls"},{"source":"a98fe09d:ff3c:15ef:bfa5:85297459817a","target":"b6c456f3:d489:9f0e:caef:ce74dc79f98f","type":"calls"},{"source":"a98fe09d:ff3c:15ef:bfa5:85297459817a","target":"6ef05bf9:ddfc:b2dc:bf0b:575f68449dd9","type":"calls"},{"source":"a98fe09d:ff3c:15ef:bfa5:85297459817a","target":"d01e76ef:09dc:08c3:0b77:5c559bf0f707","type":"calls"},{"source":"5ef5885a:b370:2f77:9745:4810e4fa3ca9","target":"a98fe09d:ff3c:15ef:bfa5:85297459817a","type":"calls"},{"source":"cf066963:34b9:eea2:8242:ddea3bd5f882","target":"a98fe09d:ff3c:15ef:bfa5:85297459817a","type":"calls"},{"source":"a98fe09d:ff3c:15ef:bfa5:85297459817a","target":"domain:Binding","type":"belongsTo"},{"source":"a98fe09d:ff3c:15ef:bfa5:85297459817a","target":"subdomain:Binding:FormatMapping","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1034,7 +1034,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-multipart.html">Multipart</a></li></ul>
+      <ul><li><a href="/subdomain-formatmapping.html">FormatMapping</a></li></ul>
     </div>
     
 

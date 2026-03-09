@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
-        <a href="/subdomain/router.html" class="pill pill-orange">Router</a>
+        <a href="/domain/routing.html" class="pill pill-green">Routing</a>
+        <a href="/subdomain/group.html" class="pill pill-orange">Group</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"TestRouterGroupPipeline","slug":"fn-routergroup-test-go-testroutergrouppipeline","type":"Function"},"subdomain":{"name":"Router","slug":"subdomain-router"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Routing","slug":"domain-routing"},"entity":{"name":"TestRouterGroupPipeline","slug":"fn-routergroup-test-go-testroutergrouppipeline","type":"Function"},"subdomain":{"name":"Group","slug":"subdomain-group"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
-            <a href="/router.html">Router</a><span class="arch-sep">&rarr;</span>
+            <a href="/routing.html">Routing</a><span class="arch-sep">&rarr;</span>
+            <a href="/group.html">Group</a><span class="arch-sep">&rarr;</span>
             <span>TestRouterGroupPipeline() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  03b20cdb_8c3c_2344_c79f_09fa1606a275["TestRouterGroupPipeline()"]
-  c165afa0_8ee0_6276_2a89_6fe338ae4e52["testRoutesInterface()"]
-  03b20cdb_8c3c_2344_c79f_09fa1606a275 -->|calls| c165afa0_8ee0_6276_2a89_6fe338ae4e52
-  style 03b20cdb_8c3c_2344_c79f_09fa1606a275 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  6a65a319_4918_54b1_24be_d6d0888b227a["TestRouterGroupPipeline()"]
+  9fef6515_875d_e88c_b55d_a0ecf3ebd38b["testRoutesInterface()"]
+  6a65a319_4918_54b1_24be_d6d0888b227a -->|calls| 9fef6515_875d_e88c_b55d_a0ecf3ebd38b
+  style 6a65a319_4918_54b1_24be_d6d0888b227a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-routergroup-test-go-testroutergrouppipeline"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"03b20cdb:8c3c:2344:c79f:09fa1606a275","label":"TestRouterGroupPipeline","type":"Function","slug":"fn-routergroup-test-go-testroutergrouppipeline","lc":7,"lang":"go","cc":1},{"id":"c165afa0:8ee0:6276:2a89:6fe338ae4e52","label":"testRoutesInterface","type":"Function","slug":"fn-routergroup-test-go-testroutesinterface","lc":20,"lang":"go","cbc":1},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Router","label":"Router","type":"Subdomain","slug":"subdomain-router"}],"edges":[{"source":"03b20cdb:8c3c:2344:c79f:09fa1606a275","target":"c165afa0:8ee0:6276:2a89:6fe338ae4e52","type":"calls"},{"source":"03b20cdb:8c3c:2344:c79f:09fa1606a275","target":"domain:GinCore","type":"belongsTo"},{"source":"03b20cdb:8c3c:2344:c79f:09fa1606a275","target":"subdomain:GinCore:Router","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"6a65a319:4918:54b1:24be:d6d0888b227a","label":"TestRouterGroupPipeline","type":"Function","slug":"fn-routergroup-test-go-testroutergrouppipeline","lc":7,"lang":"go","cc":1},{"id":"9fef6515:875d:e88c:b55d:a0ecf3ebd38b","label":"testRoutesInterface","type":"Function","slug":"fn-routergroup-test-go-testroutesinterface","lc":20,"lang":"go","cbc":1},{"id":"domain:Routing","label":"Routing","type":"Domain","slug":"domain-routing"},{"id":"subdomain:Routing:Group","label":"Group","type":"Subdomain","slug":"subdomain-group"}],"edges":[{"source":"6a65a319:4918:54b1:24be:d6d0888b227a","target":"9fef6515:875d:e88c:b55d:a0ecf3ebd38b","type":"calls"},{"source":"6a65a319:4918:54b1:24be:d6d0888b227a","target":"domain:Routing","type":"belongsTo"},{"source":"6a65a319:4918:54b1:24be:d6d0888b227a","target":"subdomain:Routing:Group","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -950,14 +950,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
+      <ul><li><a href="/domain-routing.html">Routing</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-router.html">Router</a></li></ul>
+      <ul><li><a href="/subdomain-group.html">Group</a></li></ul>
     </div>
     
 

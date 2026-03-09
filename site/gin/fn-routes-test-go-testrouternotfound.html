@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
-        <a href="/subdomain/router.html" class="pill pill-orange">Router</a>
+        <a href="/domain/routing.html" class="pill pill-green">Routing</a>
+        <a href="/subdomain/group.html" class="pill pill-orange">Group</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"TestRouterNotFound","slug":"fn-routes-test-go-testrouternotfound","type":"Function"},"subdomain":{"name":"Router","slug":"subdomain-router"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Routing","slug":"domain-routing"},"entity":{"name":"TestRouterNotFound","slug":"fn-routes-test-go-testrouternotfound","type":"Function"},"subdomain":{"name":"Group","slug":"subdomain-group"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
-            <a href="/router.html">Router</a><span class="arch-sep">&rarr;</span>
+            <a href="/routing.html">Routing</a><span class="arch-sep">&rarr;</span>
+            <a href="/group.html">Group</a><span class="arch-sep">&rarr;</span>
             <span>TestRouterNotFound() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  14402f89_62d8_7db1_93da_d62403e02570["TestRouterNotFound()"]
-  21dedf36_4f6c_8494_b6e0_d1ed3d6a98d7["PerformRequest()"]
-  14402f89_62d8_7db1_93da_d62403e02570 -->|calls| 21dedf36_4f6c_8494_b6e0_d1ed3d6a98d7
-  style 14402f89_62d8_7db1_93da_d62403e02570 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  0d8fe1de_59ba_6871_f762_bc3a4b50cb9c["TestRouterNotFound()"]
+  f090bf4f_33eb_a307_7611_d21af27533b5["PerformRequest()"]
+  0d8fe1de_59ba_6871_f762_bc3a4b50cb9c -->|calls| f090bf4f_33eb_a307_7611_d21af27533b5
+  style 0d8fe1de_59ba_6871_f762_bc3a4b50cb9c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-routes-test-go-testrouternotfound"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"14402f89:62d8:7db1:93da:d62403e02570","label":"TestRouterNotFound","type":"Function","slug":"fn-routes-test-go-testrouternotfound","lc":66,"lang":"go","cc":1},{"id":"21dedf36:4f6c:8494:b6e0:d1ed3d6a98d7","label":"PerformRequest","type":"Function","slug":"fn-routes-test-go-performrequest","lc":9,"lang":"go","cbc":28},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Router","label":"Router","type":"Subdomain","slug":"subdomain-router"}],"edges":[{"source":"14402f89:62d8:7db1:93da:d62403e02570","target":"21dedf36:4f6c:8494:b6e0:d1ed3d6a98d7","type":"calls"},{"source":"14402f89:62d8:7db1:93da:d62403e02570","target":"domain:GinCore","type":"belongsTo"},{"source":"14402f89:62d8:7db1:93da:d62403e02570","target":"subdomain:GinCore:Router","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"0d8fe1de:59ba:6871:f762:bc3a4b50cb9c","label":"TestRouterNotFound","type":"Function","slug":"fn-routes-test-go-testrouternotfound","lc":66,"lang":"go","cc":1},{"id":"f090bf4f:33eb:a307:7611:d21af27533b5","label":"PerformRequest","type":"Function","slug":"fn-routes-test-go-performrequest","lc":9,"lang":"go","cbc":28},{"id":"domain:Routing","label":"Routing","type":"Domain","slug":"domain-routing"},{"id":"subdomain:Routing:Group","label":"Group","type":"Subdomain","slug":"subdomain-group"}],"edges":[{"source":"0d8fe1de:59ba:6871:f762:bc3a4b50cb9c","target":"f090bf4f:33eb:a307:7611:d21af27533b5","type":"calls"},{"source":"0d8fe1de:59ba:6871:f762:bc3a4b50cb9c","target":"domain:Routing","type":"belongsTo"},{"source":"0d8fe1de:59ba:6871:f762:bc3a4b50cb9c","target":"subdomain:Routing:Group","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1009,14 +1009,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
+      <ul><li><a href="/domain-routing.html">Routing</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-router.html">Router</a></li></ul>
+      <ul><li><a href="/subdomain-group.html">Group</a></li></ul>
     </div>
     
 

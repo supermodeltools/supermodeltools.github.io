@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
         <a href="/domain/binding.html" class="pill pill-green">Binding</a>
-        <a href="/subdomain/contentnegotiation.html" class="pill pill-orange">ContentNegotiation</a>
+        <a href="/subdomain/validation.html" class="pill pill-orange">Validation</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"lazyinit","slug":"fn-default-validator-go-lazyinit","type":"Function"},"subdomain":{"name":"ContentNegotiation","slug":"subdomain-contentnegotiation"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"lazyinit","slug":"fn-default-validator-go-lazyinit","type":"Function"},"subdomain":{"name":"Validation","slug":"subdomain-validation"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/binding.html">Binding</a><span class="arch-sep">&rarr;</span>
-            <a href="/contentnegotiation.html">ContentNegotiation</a><span class="arch-sep">&rarr;</span>
+            <a href="/validation.html">Validation</a><span class="arch-sep">&rarr;</span>
             <span>lazyinit() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ca6842ff_b3fe_f600_239b_b4df14e25cfe["lazyinit()"]
-  a905e6ab_5855_851f_438a_f5edd5288cfc["validateStruct()"]
-  a905e6ab_5855_851f_438a_f5edd5288cfc -->|calls| ca6842ff_b3fe_f600_239b_b4df14e25cfe
-  8abab063_92ee_fd71_6c88_1fc67c77e765["Engine()"]
-  8abab063_92ee_fd71_6c88_1fc67c77e765 -->|calls| ca6842ff_b3fe_f600_239b_b4df14e25cfe
-  style ca6842ff_b3fe_f600_239b_b4df14e25cfe fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a13e0b78_a84c_941e_1ea8_8d6b1d314fc6["lazyinit()"]
+  c8b6894a_0101_d679_85cf_b1d2643d9839["validateStruct()"]
+  c8b6894a_0101_d679_85cf_b1d2643d9839 -->|calls| a13e0b78_a84c_941e_1ea8_8d6b1d314fc6
+  1753292f_e924_0be8_29f6_7527360cd50d["Engine()"]
+  1753292f_e924_0be8_29f6_7527360cd50d -->|calls| a13e0b78_a84c_941e_1ea8_8d6b1d314fc6
+  style a13e0b78_a84c_941e_1ea8_8d6b1d314fc6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-default-validator-go-lazyinit"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ca6842ff:b3fe:f600:239b:b4df14e25cfe","label":"lazyinit","type":"Function","slug":"fn-default-validator-go-lazyinit","lc":6,"lang":"go","cbc":2},{"id":"a905e6ab:5855:851f:438a:f5edd5288cfc","label":"validateStruct","type":"Function","slug":"fn-default-validator-go-validatestruct-2","lc":4,"lang":"go","cc":1,"cbc":1},{"id":"8abab063:92ee:fd71:6c88:1fc67c77e765","label":"Engine","type":"Function","slug":"fn-default-validator-go-engine","lc":4,"lang":"go","cc":1},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:ContentNegotiation","label":"ContentNegotiation","type":"Subdomain","slug":"subdomain-contentnegotiation"}],"edges":[{"source":"a905e6ab:5855:851f:438a:f5edd5288cfc","target":"ca6842ff:b3fe:f600:239b:b4df14e25cfe","type":"calls"},{"source":"8abab063:92ee:fd71:6c88:1fc67c77e765","target":"ca6842ff:b3fe:f600:239b:b4df14e25cfe","type":"calls"},{"source":"ca6842ff:b3fe:f600:239b:b4df14e25cfe","target":"domain:Binding","type":"belongsTo"},{"source":"ca6842ff:b3fe:f600:239b:b4df14e25cfe","target":"subdomain:Binding:ContentNegotiation","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a13e0b78:a84c:941e:1ea8:8d6b1d314fc6","label":"lazyinit","type":"Function","slug":"fn-default-validator-go-lazyinit","lc":6,"lang":"go","cbc":2},{"id":"c8b6894a:0101:d679:85cf:b1d2643d9839","label":"validateStruct","type":"Function","slug":"fn-default-validator-go-validatestruct-2","lc":4,"lang":"go","cc":1,"cbc":1},{"id":"1753292f:e924:0be8:29f6:7527360cd50d","label":"Engine","type":"Function","slug":"fn-default-validator-go-engine","lc":4,"lang":"go","cc":1},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:Validation","label":"Validation","type":"Subdomain","slug":"subdomain-validation"}],"edges":[{"source":"c8b6894a:0101:d679:85cf:b1d2643d9839","target":"a13e0b78:a84c:941e:1ea8:8d6b1d314fc6","type":"calls"},{"source":"1753292f:e924:0be8:29f6:7527360cd50d","target":"a13e0b78:a84c:941e:1ea8:8d6b1d314fc6","type":"calls"},{"source":"a13e0b78:a84c:941e:1ea8:8d6b1d314fc6","target":"domain:Binding","type":"belongsTo"},{"source":"a13e0b78:a84c:941e:1ea8:8d6b1d314fc6","target":"subdomain:Binding:Validation","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -958,7 +958,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-contentnegotiation.html">ContentNegotiation</a></li></ul>
+      <ul><li><a href="/subdomain-validation.html">Validation</a></li></ul>
     </div>
     
 

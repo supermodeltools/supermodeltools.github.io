@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
         <a href="/domain/binding.html" class="pill pill-green">Binding</a>
-        <a href="/subdomain/contentnegotiation.html" class="pill pill-orange">ContentNegotiation</a>
+        <a href="/subdomain/validation.html" class="pill pill-orange">Validation</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"decodeXML","slug":"fn-xml-go-decodexml","type":"Function"},"subdomain":{"name":"ContentNegotiation","slug":"subdomain-contentnegotiation"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"decodeXML","slug":"fn-xml-go-decodexml","type":"Function"},"subdomain":{"name":"Validation","slug":"subdomain-validation"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/binding.html">Binding</a><span class="arch-sep">&rarr;</span>
-            <a href="/contentnegotiation.html">ContentNegotiation</a><span class="arch-sep">&rarr;</span>
+            <a href="/validation.html">Validation</a><span class="arch-sep">&rarr;</span>
             <span>decodeXML() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  403f2930_1cf9_04ae_6f62_871a280b71ae["decodeXML()"]
-  81ec5359_2cb5_e2c6_056b_ba6b8a8f2ac4["Bind()"]
-  81ec5359_2cb5_e2c6_056b_ba6b8a8f2ac4 -->|calls| 403f2930_1cf9_04ae_6f62_871a280b71ae
-  f9b11137_a78f_e2e5_eff1_bacf92e9f81a["BindBody()"]
-  f9b11137_a78f_e2e5_eff1_bacf92e9f81a -->|calls| 403f2930_1cf9_04ae_6f62_871a280b71ae
-  style 403f2930_1cf9_04ae_6f62_871a280b71ae fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  429d9ad5_4911_7d25_556a_ce29aeddeee4["decodeXML()"]
+  fb283e2b_ceed_ae2a_8635_22a6694ed3e3["Bind()"]
+  fb283e2b_ceed_ae2a_8635_22a6694ed3e3 -->|calls| 429d9ad5_4911_7d25_556a_ce29aeddeee4
+  286a8683_0f9a_0c08_16f2_b7ac4ac443cd["BindBody()"]
+  286a8683_0f9a_0c08_16f2_b7ac4ac443cd -->|calls| 429d9ad5_4911_7d25_556a_ce29aeddeee4
+  style 429d9ad5_4911_7d25_556a_ce29aeddeee4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-xml-go-decodexml"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"403f2930:1cf9:04ae:6f62:871a280b71ae","label":"decodeXML","type":"Function","slug":"fn-xml-go-decodexml","lc":7,"lang":"go","cbc":2},{"id":"81ec5359:2cb5:e2c6:056b:ba6b8a8f2ac4","label":"Bind","type":"Function","slug":"fn-xml-go-bind","lc":3,"lang":"go","cc":1},{"id":"f9b11137:a78f:e2e5:eff1:bacf92e9f81a","label":"BindBody","type":"Function","slug":"fn-xml-go-bindbody","lc":3,"lang":"go","cc":1},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:ContentNegotiation","label":"ContentNegotiation","type":"Subdomain","slug":"subdomain-contentnegotiation"}],"edges":[{"source":"81ec5359:2cb5:e2c6:056b:ba6b8a8f2ac4","target":"403f2930:1cf9:04ae:6f62:871a280b71ae","type":"calls"},{"source":"f9b11137:a78f:e2e5:eff1:bacf92e9f81a","target":"403f2930:1cf9:04ae:6f62:871a280b71ae","type":"calls"},{"source":"403f2930:1cf9:04ae:6f62:871a280b71ae","target":"domain:Binding","type":"belongsTo"},{"source":"403f2930:1cf9:04ae:6f62:871a280b71ae","target":"subdomain:Binding:ContentNegotiation","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"429d9ad5:4911:7d25:556a:ce29aeddeee4","label":"decodeXML","type":"Function","slug":"fn-xml-go-decodexml","lc":7,"lang":"go","cbc":2},{"id":"fb283e2b:ceed:ae2a:8635:22a6694ed3e3","label":"Bind","type":"Function","slug":"fn-xml-go-bind","lc":3,"lang":"go","cc":1},{"id":"286a8683:0f9a:0c08:16f2:b7ac4ac443cd","label":"BindBody","type":"Function","slug":"fn-xml-go-bindbody","lc":3,"lang":"go","cc":1},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:Validation","label":"Validation","type":"Subdomain","slug":"subdomain-validation"}],"edges":[{"source":"fb283e2b:ceed:ae2a:8635:22a6694ed3e3","target":"429d9ad5:4911:7d25:556a:ce29aeddeee4","type":"calls"},{"source":"286a8683:0f9a:0c08:16f2:b7ac4ac443cd","target":"429d9ad5:4911:7d25:556a:ce29aeddeee4","type":"calls"},{"source":"429d9ad5:4911:7d25:556a:ce29aeddeee4","target":"domain:Binding","type":"belongsTo"},{"source":"429d9ad5:4911:7d25:556a:ce29aeddeee4","target":"subdomain:Binding:Validation","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -959,7 +959,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-contentnegotiation.html">ContentNegotiation</a></li></ul>
+      <ul><li><a href="/subdomain-validation.html">Validation</a></li></ul>
     </div>
     
 

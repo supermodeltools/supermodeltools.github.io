@@ -11,17 +11,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <title>Binding Domain — gin Architecture | gin Architecture Docs</title>
-<meta name="description" content="Handles the deserialization and validation of incoming request data from various formats into Go structs. Architectural overview of the Binding domain in the gin codebase. Contains 0 source files.">
+<meta name="description" content="Handles the mapping and validation of request data into Go structs from various formats like JSON, XML, and Forms. Architectural overview of the Binding domain in the gin codebase. Contains 0 source files.">
 <link rel="canonical" href="https://repos.supermodeltools.com/domain-binding/">
 <meta property="og:title" content="Binding Domain — gin Architecture — gin Architecture Docs">
-<meta property="og:description" content="Handles the deserialization and validation of incoming request data from various formats into Go structs. Architectural overview of the Binding domain in the gin codebase. Contains 0 source files.">
+<meta property="og:description" content="Handles the mapping and validation of request data into Go structs from various formats like JSON, XML, and Forms. Architectural overview of the Binding domain in the gin codebase. Contains 0 source files.">
 <meta property="og:url" content="https://repos.supermodeltools.com/domain-binding.html">
 <meta property="og:image" content="https://repos.supermodeltools.com/images/share/domain-binding.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="gin Architecture Docs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Binding Domain — gin Architecture — gin Architecture Docs">
-<meta name="twitter:description" content="Handles the deserialization and validation of incoming request data from various formats into Go structs. Architectural overview of the Binding domain in the gin codebase. Contains 0 source files.">
+<meta name="twitter:description" content="Handles the mapping and validation of request data into Go structs from various formats like JSON, XML, and Forms. Architectural overview of the Binding domain in the gin codebase. Contains 0 source files.">
 <meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/domain-binding.svg">
 
 <style>:root {
@@ -809,9 +809,9 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Handles the deserialization and validation of incoming request data from various formats into Go structs. Architectural overview of the Binding domain in the gin codebase. Contains 0 source files.","image":["https://repos.supermodeltools.com/images/share/domain-binding.svg"],"name":"Binding Domain — gin Architecture","url":"https://repos.supermodeltools.com/domain-binding.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Handles the mapping and validation of request data into Go structs from various formats like JSON, XML, and Forms. Architectural overview of the Binding domain in the gin codebase. Contains 0 source files.","image":["https://repos.supermodeltools.com/images/share/domain-binding.svg"],"name":"Binding Domain — gin Architecture","url":"https://repos.supermodeltools.com/domain-binding.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"Binding Domain — gin Architecture","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The Binding domain is an architectural grouping in the gin codebase. Handles the deserialization and validation of incoming request data from various formats into Go structs. It contains 0 source files."},"name":"What is the Binding domain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The Binding domain contains 3 subdomain(s): ContentNegotiation, Multipart, Validation."},"name":"What subdomains are in Binding?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The Binding domain contains 0 source files."},"name":"How many files are in Binding?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The Binding domain is an architectural grouping in the gin codebase. Handles the mapping and validation of request data into Go structs from various formats like JSON, XML, and Forms. It contains 0 source files."},"name":"What is the Binding domain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The Binding domain contains 2 subdomain(s): FormatMapping, Validation."},"name":"What subdomains are in Binding?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The Binding domain contains 0 source files."},"name":"How many files are in Binding?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -882,7 +882,7 @@ a.pill:hover {
 
       
       <div class="entity-summary">
-        <p>Handles the deserialization and validation of incoming request data from various formats into Go structs.</p>
+        <p>Handles the mapping and validation of request data into Go structs from various formats like JSON, XML, and Forms.</p>
       </div>
       
     </div>
@@ -904,12 +904,10 @@ a.pill:hover {
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
   domain_Binding["Binding"]
-  subdomain_Binding_ContentNegotiation["ContentNegotiation"]
-  domain_Binding --> subdomain_Binding_ContentNegotiation
+  subdomain_Binding_FormatMapping["FormatMapping"]
+  domain_Binding --> subdomain_Binding_FormatMapping
   subdomain_Binding_Validation["Validation"]
   domain_Binding --> subdomain_Binding_Validation
-  subdomain_Binding_Multipart["Multipart"]
-  domain_Binding --> subdomain_Binding_Multipart
   style domain_Binding fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
@@ -918,7 +916,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="domain-binding"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:ContentNegotiation","label":"ContentNegotiation","type":"Subdomain","slug":"subdomain-contentnegotiation"},{"id":"subdomain:Binding:Validation","label":"Validation","type":"Subdomain","slug":"subdomain-validation"},{"id":"subdomain:Binding:Multipart","label":"Multipart","type":"Subdomain","slug":"subdomain-multipart"}],"edges":[{"source":"domain:Binding","target":"subdomain:Binding:ContentNegotiation","type":"contains"},{"source":"domain:Binding","target":"subdomain:Binding:Validation","type":"contains"},{"source":"domain:Binding","target":"subdomain:Binding:Multipart","type":"contains"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:FormatMapping","label":"FormatMapping","type":"Subdomain","slug":"subdomain-formatmapping"},{"id":"subdomain:Binding:Validation","label":"Validation","type":"Subdomain","slug":"subdomain-validation"}],"edges":[{"source":"domain:Binding","target":"subdomain:Binding:FormatMapping","type":"contains"},{"source":"domain:Binding","target":"subdomain:Binding:Validation","type":"contains"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -936,7 +934,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-contentnegotiation.html">ContentNegotiation</a></li><li><a href="/subdomain-multipart.html">Multipart</a></li><li><a href="/subdomain-validation.html">Validation</a></li></ul>
+      <ul><li><a href="/subdomain-formatmapping.html">FormatMapping</a></li><li><a href="/subdomain-validation.html">Validation</a></li></ul>
     </div>
     
 
@@ -972,12 +970,12 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What is the Binding domain?</summary>
-        <div class="faq-answer">The Binding domain is an architectural grouping in the gin codebase. Handles the deserialization and validation of incoming request data from various formats into Go structs. It contains 0 source files.</div>
+        <div class="faq-answer">The Binding domain is an architectural grouping in the gin codebase. Handles the mapping and validation of request data into Go structs from various formats like JSON, XML, and Forms. It contains 0 source files.</div>
       </details>
       
       <details class="faq-item">
         <summary class="faq-question">What subdomains are in Binding?</summary>
-        <div class="faq-answer">The Binding domain contains 3 subdomain(s): ContentNegotiation, Multipart, Validation.</div>
+        <div class="faq-answer">The Binding domain contains 2 subdomain(s): FormatMapping, Validation.</div>
       </details>
       
       <details class="faq-item">

@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
-        <a href="/subdomain/router.html" class="pill pill-orange">Router</a>
+        <a href="/domain/routing.html" class="pill pill-green">Routing</a>
+        <a href="/subdomain/tree.html" class="pill pill-orange">Tree</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"fakeHandler","slug":"fn-tree-test-go-fakehandler","type":"Function"},"subdomain":{"name":"Router","slug":"subdomain-router"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Routing","slug":"domain-routing"},"entity":{"name":"fakeHandler","slug":"fn-tree-test-go-fakehandler","type":"Function"},"subdomain":{"name":"Tree","slug":"subdomain-tree"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
-            <a href="/router.html">Router</a><span class="arch-sep">&rarr;</span>
+            <a href="/routing.html">Routing</a><span class="arch-sep">&rarr;</span>
+            <a href="/tree.html">Tree</a><span class="arch-sep">&rarr;</span>
             <span>fakeHandler() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  905757d9_92f2_d189_b22e_1715b631394b["fakeHandler()"]
-  374e6eff_8c2e_ee66_7b56_f040f806947d["TestTreeAddAndGet()"]
-  374e6eff_8c2e_ee66_7b56_f040f806947d -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  7d67a777_2714_4bd3_e3d6_fc7c98437000["TestTreeWildcard()"]
-  7d67a777_2714_4bd3_e3d6_fc7c98437000 -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  0c4761cb_df81_ccbf_cf8b_9a3dc3ae09da["TestUnescapeParameters()"]
-  0c4761cb_df81_ccbf_cf8b_9a3dc3ae09da -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  1c34c88d_1f12_9745_5c58_0e0d1f30bba1["TestTreeDuplicatePath()"]
-  1c34c88d_1f12_9745_5c58_0e0d1f30bba1 -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  373321d7_228b_f1a4_35c5_5cfd144b0a45["TestTreeCatchMaxParams()"]
-  373321d7_228b_f1a4_35c5_5cfd144b0a45 -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  000658fa_433d_2d7c_cce6_1356d674f62a["TestTreeTrailingSlashRedirect()"]
-  000658fa_433d_2d7c_cce6_1356d674f62a -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  6c2d3e1b_0136_e736_563b_3221faefa15d["TestTreeRootTrailingSlashRedirect()"]
-  6c2d3e1b_0136_e736_563b_3221faefa15d -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  aad0c212_69aa_fc8b_1018_4e43ad11fde6["TestRedirectTrailingSlash()"]
-  aad0c212_69aa_fc8b_1018_4e43ad11fde6 -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  41eec121_68c9_dc7f_ad6d_6eadb4dbd815["TestTreeFindCaseInsensitivePath()"]
-  41eec121_68c9_dc7f_ad6d_6eadb4dbd815 -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  6c2c8dd3_3044_8402_2a9a_166604484f2d["TestTreeInvalidNodeType()"]
-  6c2c8dd3_3044_8402_2a9a_166604484f2d -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  99abbbbf_b39c_07cb_1941_8c51db7b20ca["TestTreeInvalidParamsType()"]
-  99abbbbf_b39c_07cb_1941_8c51db7b20ca -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  84136f03_6814_1e8b_c399_3ec406984fdd["TestTreeExpandParamsCapacity()"]
-  84136f03_6814_1e8b_c399_3ec406984fdd -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  dd6fd3a3_1dd2_4677_a387_242394b5d6eb["TestTreeWildcardConflictEx()"]
-  dd6fd3a3_1dd2_4677_a387_242394b5d6eb -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  62e0fcd0_e967_668a_068a_1e76aa301f90["TestTreeInvalidEscape()"]
-  62e0fcd0_e967_668a_068a_1e76aa301f90 -->|calls| 905757d9_92f2_d189_b22e_1715b631394b
-  style 905757d9_92f2_d189_b22e_1715b631394b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a0ce9fd1_495e_3523_6ace_5a6d37284ceb["fakeHandler()"]
+  966d8690_f72c_8cb3_b7bb_9806b21c0528["TestTreeAddAndGet()"]
+  966d8690_f72c_8cb3_b7bb_9806b21c0528 -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  ec5bd1b1_8ee5_368f_6490_d3ffe88be4c6["TestTreeWildcard()"]
+  ec5bd1b1_8ee5_368f_6490_d3ffe88be4c6 -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  1b8e4f38_79a0_daf7_4b33_8e86ba93c4e2["TestUnescapeParameters()"]
+  1b8e4f38_79a0_daf7_4b33_8e86ba93c4e2 -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  61251d4c_05cd_ee99_83fe_644aef075396["TestTreeDuplicatePath()"]
+  61251d4c_05cd_ee99_83fe_644aef075396 -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  226a6740_9f60_f6f2_9f7d_40ea2d6ede60["TestTreeCatchMaxParams()"]
+  226a6740_9f60_f6f2_9f7d_40ea2d6ede60 -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  e7e056e9_1191_acab_0d12_ac9220fd460f["TestTreeTrailingSlashRedirect()"]
+  e7e056e9_1191_acab_0d12_ac9220fd460f -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  0ad34a9d_fd79_315e_17e2_4b8b3a8b005d["TestTreeRootTrailingSlashRedirect()"]
+  0ad34a9d_fd79_315e_17e2_4b8b3a8b005d -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  d067ddd6_d20a_dbf4_b2dc_28843aa798b8["TestRedirectTrailingSlash()"]
+  d067ddd6_d20a_dbf4_b2dc_28843aa798b8 -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  c7b1e4f5_7538_11a9_bea7_7de85fe33aee["TestTreeFindCaseInsensitivePath()"]
+  c7b1e4f5_7538_11a9_bea7_7de85fe33aee -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  546babbb_82d6_a404_3c95_c7d1414687b2["TestTreeInvalidNodeType()"]
+  546babbb_82d6_a404_3c95_c7d1414687b2 -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  008aed39_d131_354e_d7a5_c45749b263bd["TestTreeInvalidParamsType()"]
+  008aed39_d131_354e_d7a5_c45749b263bd -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  43e176a7_e073_dd76_2ebe_8a55f582e5cf["TestTreeExpandParamsCapacity()"]
+  43e176a7_e073_dd76_2ebe_8a55f582e5cf -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  b484e4b0_4668_2c05_6b41_720e5976d379["TestTreeWildcardConflictEx()"]
+  b484e4b0_4668_2c05_6b41_720e5976d379 -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  a2c6865a_067e_89d4_7694_e766be57c43d["TestTreeInvalidEscape()"]
+  a2c6865a_067e_89d4_7694_e766be57c43d -->|calls| a0ce9fd1_495e_3523_6ace_5a6d37284ceb
+  style a0ce9fd1_495e_3523_6ace_5a6d37284ceb fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-tree-test-go-fakehandler"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"905757d9:92f2:d189:b22e:1715b631394b","label":"fakeHandler","type":"Function","slug":"fn-tree-test-go-fakehandler","lc":5,"lang":"go","cbc":14},{"id":"374e6eff:8c2e:ee66:7b56:f040f806947d","label":"TestTreeAddAndGet","type":"Function","slug":"fn-tree-test-go-testtreeaddandget","lc":36,"lang":"go","cc":3},{"id":"7d67a777:2714:4bd3:e3d6:fc7c98437000","label":"TestTreeWildcard","type":"Function","slug":"fn-tree-test-go-testtreewildcard","lc":186,"lang":"go","cc":3},{"id":"0c4761cb:df81:ccbf:cf8b:9a3dc3ae09da","label":"TestUnescapeParameters","type":"Function","slug":"fn-tree-test-go-testunescapeparameters","lc":36,"lang":"go","cc":3},{"id":"1c34c88d:1f12:9745:5c58:0e0d1f30bba1","label":"TestTreeDuplicatePath","type":"Function","slug":"fn-tree-test-go-testtreeduplicatepath","lc":37,"lang":"go","cc":3},{"id":"373321d7:228b:f1a4:35c5:5cfd144b0a45","label":"TestTreeCatchMaxParams","type":"Function","slug":"fn-tree-test-go-testtreecatchmaxparams","lc":5,"lang":"go","cc":1},{"id":"000658fa:433d:2d7c:cce6:1356d674f62a","label":"TestTreeTrailingSlashRedirect","type":"Function","slug":"fn-tree-test-go-testtreetrailingslashredirect","lc":105,"lang":"go","cc":3},{"id":"6c2d3e1b:0136:e736:563b:3221faefa15d","label":"TestTreeRootTrailingSlashRedirect","type":"Function","slug":"fn-tree-test-go-testtreeroottrailingslashredirect","lc":17,"lang":"go","cc":3},{"id":"aad0c212:69aa:fc8b:1018:4e43ad11fde6","label":"TestRedirectTrailingSlash","type":"Function","slug":"fn-tree-test-go-testredirecttrailingslash","lc":19,"lang":"go","cc":2},{"id":"41eec121:68c9:dc7f:ad6d:6eadb4dbd815","label":"TestTreeFindCaseInsensitivePath","type":"Function","slug":"fn-tree-test-go-testtreefindcaseinsensitivepath","lc":159,"lang":"go","cc":2},{"id":"6c2c8dd3:3044:8402:2a9a:166604484f2d","label":"TestTreeInvalidNodeType","type":"Function","slug":"fn-tree-test-go-testtreeinvalidnodetype","lc":26,"lang":"go","cc":3},{"id":"99abbbbf:b39c:07cb:1941:8c51db7b20ca","label":"TestTreeInvalidParamsType","type":"Function","slug":"fn-tree-test-go-testtreeinvalidparamstype","lc":12,"lang":"go","cc":2},{"id":"84136f03:6814:1e8b:c399:3ec406984fdd","label":"TestTreeExpandParamsCapacity","type":"Function","slug":"fn-tree-test-go-testtreeexpandparamscapacity","lc":27,"lang":"go","cc":2},{"id":"dd6fd3a3:1dd2:4677:a387:242394b5d6eb","label":"TestTreeWildcardConflictEx","type":"Function","slug":"fn-tree-test-go-testtreewildcardconflictex","lc":37,"lang":"go","cc":2},{"id":"62e0fcd0:e967:668a:068a:1e76aa301f90","label":"TestTreeInvalidEscape","type":"Function","slug":"fn-tree-test-go-testtreeinvalidescape","lc":16,"lang":"go","cc":2},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Router","label":"Router","type":"Subdomain","slug":"subdomain-router"}],"edges":[{"source":"374e6eff:8c2e:ee66:7b56:f040f806947d","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"7d67a777:2714:4bd3:e3d6:fc7c98437000","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"0c4761cb:df81:ccbf:cf8b:9a3dc3ae09da","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"1c34c88d:1f12:9745:5c58:0e0d1f30bba1","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"373321d7:228b:f1a4:35c5:5cfd144b0a45","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"000658fa:433d:2d7c:cce6:1356d674f62a","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"6c2d3e1b:0136:e736:563b:3221faefa15d","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"aad0c212:69aa:fc8b:1018:4e43ad11fde6","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"41eec121:68c9:dc7f:ad6d:6eadb4dbd815","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"6c2c8dd3:3044:8402:2a9a:166604484f2d","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"99abbbbf:b39c:07cb:1941:8c51db7b20ca","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"84136f03:6814:1e8b:c399:3ec406984fdd","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"dd6fd3a3:1dd2:4677:a387:242394b5d6eb","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"62e0fcd0:e967:668a:068a:1e76aa301f90","target":"905757d9:92f2:d189:b22e:1715b631394b","type":"calls"},{"source":"905757d9:92f2:d189:b22e:1715b631394b","target":"domain:GinCore","type":"belongsTo"},{"source":"905757d9:92f2:d189:b22e:1715b631394b","target":"subdomain:GinCore:Router","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","label":"fakeHandler","type":"Function","slug":"fn-tree-test-go-fakehandler","lc":5,"lang":"go","cbc":14},{"id":"966d8690:f72c:8cb3:b7bb:9806b21c0528","label":"TestTreeAddAndGet","type":"Function","slug":"fn-tree-test-go-testtreeaddandget","lc":36,"lang":"go","cc":3},{"id":"ec5bd1b1:8ee5:368f:6490:d3ffe88be4c6","label":"TestTreeWildcard","type":"Function","slug":"fn-tree-test-go-testtreewildcard","lc":186,"lang":"go","cc":3},{"id":"1b8e4f38:79a0:daf7:4b33:8e86ba93c4e2","label":"TestUnescapeParameters","type":"Function","slug":"fn-tree-test-go-testunescapeparameters","lc":36,"lang":"go","cc":3},{"id":"61251d4c:05cd:ee99:83fe:644aef075396","label":"TestTreeDuplicatePath","type":"Function","slug":"fn-tree-test-go-testtreeduplicatepath","lc":37,"lang":"go","cc":3},{"id":"226a6740:9f60:f6f2:9f7d:40ea2d6ede60","label":"TestTreeCatchMaxParams","type":"Function","slug":"fn-tree-test-go-testtreecatchmaxparams","lc":5,"lang":"go","cc":1},{"id":"e7e056e9:1191:acab:0d12:ac9220fd460f","label":"TestTreeTrailingSlashRedirect","type":"Function","slug":"fn-tree-test-go-testtreetrailingslashredirect","lc":105,"lang":"go","cc":3},{"id":"0ad34a9d:fd79:315e:17e2:4b8b3a8b005d","label":"TestTreeRootTrailingSlashRedirect","type":"Function","slug":"fn-tree-test-go-testtreeroottrailingslashredirect","lc":17,"lang":"go","cc":3},{"id":"d067ddd6:d20a:dbf4:b2dc:28843aa798b8","label":"TestRedirectTrailingSlash","type":"Function","slug":"fn-tree-test-go-testredirecttrailingslash","lc":19,"lang":"go","cc":2},{"id":"c7b1e4f5:7538:11a9:bea7:7de85fe33aee","label":"TestTreeFindCaseInsensitivePath","type":"Function","slug":"fn-tree-test-go-testtreefindcaseinsensitivepath","lc":159,"lang":"go","cc":2},{"id":"546babbb:82d6:a404:3c95:c7d1414687b2","label":"TestTreeInvalidNodeType","type":"Function","slug":"fn-tree-test-go-testtreeinvalidnodetype","lc":26,"lang":"go","cc":3},{"id":"008aed39:d131:354e:d7a5:c45749b263bd","label":"TestTreeInvalidParamsType","type":"Function","slug":"fn-tree-test-go-testtreeinvalidparamstype","lc":12,"lang":"go","cc":2},{"id":"43e176a7:e073:dd76:2ebe:8a55f582e5cf","label":"TestTreeExpandParamsCapacity","type":"Function","slug":"fn-tree-test-go-testtreeexpandparamscapacity","lc":27,"lang":"go","cc":2},{"id":"b484e4b0:4668:2c05:6b41:720e5976d379","label":"TestTreeWildcardConflictEx","type":"Function","slug":"fn-tree-test-go-testtreewildcardconflictex","lc":37,"lang":"go","cc":2},{"id":"a2c6865a:067e:89d4:7694:e766be57c43d","label":"TestTreeInvalidEscape","type":"Function","slug":"fn-tree-test-go-testtreeinvalidescape","lc":16,"lang":"go","cc":2},{"id":"domain:Routing","label":"Routing","type":"Domain","slug":"domain-routing"},{"id":"subdomain:Routing:Tree","label":"Tree","type":"Subdomain","slug":"subdomain-tree"}],"edges":[{"source":"966d8690:f72c:8cb3:b7bb:9806b21c0528","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"ec5bd1b1:8ee5:368f:6490:d3ffe88be4c6","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"1b8e4f38:79a0:daf7:4b33:8e86ba93c4e2","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"61251d4c:05cd:ee99:83fe:644aef075396","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"226a6740:9f60:f6f2:9f7d:40ea2d6ede60","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"e7e056e9:1191:acab:0d12:ac9220fd460f","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"0ad34a9d:fd79:315e:17e2:4b8b3a8b005d","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"d067ddd6:d20a:dbf4:b2dc:28843aa798b8","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"c7b1e4f5:7538:11a9:bea7:7de85fe33aee","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"546babbb:82d6:a404:3c95:c7d1414687b2","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"008aed39:d131:354e:d7a5:c45749b263bd","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"43e176a7:e073:dd76:2ebe:8a55f582e5cf","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"b484e4b0:4668:2c05:6b41:720e5976d379","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"a2c6865a:067e:89d4:7694:e766be57c43d","target":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","type":"calls"},{"source":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","target":"domain:Routing","type":"belongsTo"},{"source":"a0ce9fd1:495e:3523:6ace:5a6d37284ceb","target":"subdomain:Routing:Tree","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -974,14 +974,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
+      <ul><li><a href="/domain-routing.html">Routing</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-router.html">Router</a></li></ul>
+      <ul><li><a href="/subdomain-tree.html">Tree</a></li></ul>
     </div>
     
 

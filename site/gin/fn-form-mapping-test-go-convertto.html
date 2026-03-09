@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
         <a href="/domain/binding.html" class="pill pill-green">Binding</a>
-        <a href="/subdomain/multipart.html" class="pill pill-orange">Multipart</a>
+        <a href="/subdomain/formatmapping.html" class="pill pill-orange">FormatMapping</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"convertTo","slug":"fn-form-mapping-test-go-convertto","type":"Function"},"subdomain":{"name":"Multipart","slug":"subdomain-multipart"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"convertTo","slug":"fn-form-mapping-test-go-convertto","type":"Function"},"subdomain":{"name":"FormatMapping","slug":"subdomain-formatmapping"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/binding.html">Binding</a><span class="arch-sep">&rarr;</span>
-            <a href="/multipart.html">Multipart</a><span class="arch-sep">&rarr;</span>
+            <a href="/formatmapping.html">FormatMapping</a><span class="arch-sep">&rarr;</span>
             <span>convertTo() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,20 +911,20 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  d7c76054_eb87_cbb3_4cb6_1780479294c2["convertTo()"]
-  842b20af_0a29_d8d7_db21_535f32c354ba["UnmarshalParam()"]
-  842b20af_0a29_d8d7_db21_535f32c354ba -->|calls| d7c76054_eb87_cbb3_4cb6_1780479294c2
-  ab931fbf_0436_b8f7_58d8_2959f2699c90["TestMappingCustomArrayUri()"]
-  ab931fbf_0436_b8f7_58d8_2959f2699c90 -->|calls| d7c76054_eb87_cbb3_4cb6_1780479294c2
-  eed51a3d_43d0_32f8_3bf3_51b0c6ab0c2a["TestMappingCustomArrayForm()"]
-  eed51a3d_43d0_32f8_3bf3_51b0c6ab0c2a -->|calls| d7c76054_eb87_cbb3_4cb6_1780479294c2
-  8148968e_9f4c_b3da_84d5_527898af4575["TestMappingCustomArrayOfArrayUri()"]
-  8148968e_9f4c_b3da_84d5_527898af4575 -->|calls| d7c76054_eb87_cbb3_4cb6_1780479294c2
-  65da9854_583d_2c7f_9681_7ff14c1e8f1a["TestMappingCustomArrayOfArrayForm()"]
-  65da9854_583d_2c7f_9681_7ff14c1e8f1a -->|calls| d7c76054_eb87_cbb3_4cb6_1780479294c2
-  219913a4_3d38_e902_ef58_f448150059bf["convertToOidUnmarshalText()"]
-  219913a4_3d38_e902_ef58_f448150059bf -->|calls| d7c76054_eb87_cbb3_4cb6_1780479294c2
-  style d7c76054_eb87_cbb3_4cb6_1780479294c2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  46a856dc_04ee_f0e2_f745_1e3142aaeb89["convertTo()"]
+  acf17293_d1de_4cc7_c712_297e600231ed["UnmarshalParam()"]
+  acf17293_d1de_4cc7_c712_297e600231ed -->|calls| 46a856dc_04ee_f0e2_f745_1e3142aaeb89
+  ed321161_e43d_fb5c_cf09_cc2da920d6ce["TestMappingCustomArrayUri()"]
+  ed321161_e43d_fb5c_cf09_cc2da920d6ce -->|calls| 46a856dc_04ee_f0e2_f745_1e3142aaeb89
+  8b4c9f8d_623f_a16c_6299_2f2fe7c6621b["TestMappingCustomArrayForm()"]
+  8b4c9f8d_623f_a16c_6299_2f2fe7c6621b -->|calls| 46a856dc_04ee_f0e2_f745_1e3142aaeb89
+  019b1000_57d1_21dc_18d0_200bf2dfeae7["TestMappingCustomArrayOfArrayUri()"]
+  019b1000_57d1_21dc_18d0_200bf2dfeae7 -->|calls| 46a856dc_04ee_f0e2_f745_1e3142aaeb89
+  7c95b7d5_df54_9cef_405b_10486267a500["TestMappingCustomArrayOfArrayForm()"]
+  7c95b7d5_df54_9cef_405b_10486267a500 -->|calls| 46a856dc_04ee_f0e2_f745_1e3142aaeb89
+  7d180aac_c7ed_8689_76b5_e570949a2350["convertToOidUnmarshalText()"]
+  7d180aac_c7ed_8689_76b5_e570949a2350 -->|calls| 46a856dc_04ee_f0e2_f745_1e3142aaeb89
+  style 46a856dc_04ee_f0e2_f745_1e3142aaeb89 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -932,7 +932,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-form-mapping-test-go-convertto"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"d7c76054:eb87:cbb3:4cb6:1780479294c2","label":"convertTo","type":"Function","slug":"fn-form-mapping-test-go-convertto","lc":14,"lang":"go","cbc":6},{"id":"842b20af:0a29:d8d7:db21:535f32c354ba","label":"UnmarshalParam","type":"Function","slug":"fn-form-mapping-test-go-unmarshalparam-4","lc":9,"lang":"go","cc":2},{"id":"ab931fbf:0436:b8f7:58d8:2959f2699c90","label":"TestMappingCustomArrayUri","type":"Function","slug":"fn-form-mapping-test-go-testmappingcustomarrayuri","lc":11,"lang":"go","cc":1},{"id":"eed51a3d:43d0:32f8:3bf3:51b0c6ab0c2a","label":"TestMappingCustomArrayForm","type":"Function","slug":"fn-form-mapping-test-go-testmappingcustomarrayform","lc":11,"lang":"go","cc":1},{"id":"8148968e:9f4c:b3da:84d5:527898af4575","label":"TestMappingCustomArrayOfArrayUri","type":"Function","slug":"fn-form-mapping-test-go-testmappingcustomarrayofarrayuri","lc":11,"lang":"go","cc":1},{"id":"65da9854:583d:2c7f:9681:7ff14c1e8f1a","label":"TestMappingCustomArrayOfArrayForm","type":"Function","slug":"fn-form-mapping-test-go-testmappingcustomarrayofarrayform","lc":11,"lang":"go","cc":1},{"id":"219913a4:3d38:e902:ef58:f448150059bf","label":"convertToOidUnmarshalText","type":"Function","slug":"fn-form-mapping-test-go-converttooidunmarshaltext","lc":4,"lang":"go","cc":1,"cbc":6},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:Multipart","label":"Multipart","type":"Subdomain","slug":"subdomain-multipart"}],"edges":[{"source":"842b20af:0a29:d8d7:db21:535f32c354ba","target":"d7c76054:eb87:cbb3:4cb6:1780479294c2","type":"calls"},{"source":"ab931fbf:0436:b8f7:58d8:2959f2699c90","target":"d7c76054:eb87:cbb3:4cb6:1780479294c2","type":"calls"},{"source":"eed51a3d:43d0:32f8:3bf3:51b0c6ab0c2a","target":"d7c76054:eb87:cbb3:4cb6:1780479294c2","type":"calls"},{"source":"8148968e:9f4c:b3da:84d5:527898af4575","target":"d7c76054:eb87:cbb3:4cb6:1780479294c2","type":"calls"},{"source":"65da9854:583d:2c7f:9681:7ff14c1e8f1a","target":"d7c76054:eb87:cbb3:4cb6:1780479294c2","type":"calls"},{"source":"219913a4:3d38:e902:ef58:f448150059bf","target":"d7c76054:eb87:cbb3:4cb6:1780479294c2","type":"calls"},{"source":"d7c76054:eb87:cbb3:4cb6:1780479294c2","target":"domain:Binding","type":"belongsTo"},{"source":"d7c76054:eb87:cbb3:4cb6:1780479294c2","target":"subdomain:Binding:Multipart","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"46a856dc:04ee:f0e2:f745:1e3142aaeb89","label":"convertTo","type":"Function","slug":"fn-form-mapping-test-go-convertto","lc":14,"lang":"go","cbc":6},{"id":"acf17293:d1de:4cc7:c712:297e600231ed","label":"UnmarshalParam","type":"Function","slug":"fn-form-mapping-test-go-unmarshalparam-4","lc":9,"lang":"go","cc":2},{"id":"ed321161:e43d:fb5c:cf09:cc2da920d6ce","label":"TestMappingCustomArrayUri","type":"Function","slug":"fn-form-mapping-test-go-testmappingcustomarrayuri","lc":11,"lang":"go","cc":1},{"id":"8b4c9f8d:623f:a16c:6299:2f2fe7c6621b","label":"TestMappingCustomArrayForm","type":"Function","slug":"fn-form-mapping-test-go-testmappingcustomarrayform","lc":11,"lang":"go","cc":1},{"id":"019b1000:57d1:21dc:18d0:200bf2dfeae7","label":"TestMappingCustomArrayOfArrayUri","type":"Function","slug":"fn-form-mapping-test-go-testmappingcustomarrayofarrayuri","lc":11,"lang":"go","cc":1},{"id":"7c95b7d5:df54:9cef:405b:10486267a500","label":"TestMappingCustomArrayOfArrayForm","type":"Function","slug":"fn-form-mapping-test-go-testmappingcustomarrayofarrayform","lc":11,"lang":"go","cc":1},{"id":"7d180aac:c7ed:8689:76b5:e570949a2350","label":"convertToOidUnmarshalText","type":"Function","slug":"fn-form-mapping-test-go-converttooidunmarshaltext","lc":4,"lang":"go","cc":1,"cbc":6},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:FormatMapping","label":"FormatMapping","type":"Subdomain","slug":"subdomain-formatmapping"}],"edges":[{"source":"acf17293:d1de:4cc7:c712:297e600231ed","target":"46a856dc:04ee:f0e2:f745:1e3142aaeb89","type":"calls"},{"source":"ed321161:e43d:fb5c:cf09:cc2da920d6ce","target":"46a856dc:04ee:f0e2:f745:1e3142aaeb89","type":"calls"},{"source":"8b4c9f8d:623f:a16c:6299:2f2fe7c6621b","target":"46a856dc:04ee:f0e2:f745:1e3142aaeb89","type":"calls"},{"source":"019b1000:57d1:21dc:18d0:200bf2dfeae7","target":"46a856dc:04ee:f0e2:f745:1e3142aaeb89","type":"calls"},{"source":"7c95b7d5:df54:9cef:405b:10486267a500","target":"46a856dc:04ee:f0e2:f745:1e3142aaeb89","type":"calls"},{"source":"7d180aac:c7ed:8689:76b5:e570949a2350","target":"46a856dc:04ee:f0e2:f745:1e3142aaeb89","type":"calls"},{"source":"46a856dc:04ee:f0e2:f745:1e3142aaeb89","target":"domain:Binding","type":"belongsTo"},{"source":"46a856dc:04ee:f0e2:f745:1e3142aaeb89","target":"subdomain:Binding:FormatMapping","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -974,7 +974,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-multipart.html">Multipart</a></li></ul>
+      <ul><li><a href="/subdomain-formatmapping.html">FormatMapping</a></li></ul>
     </div>
     
 

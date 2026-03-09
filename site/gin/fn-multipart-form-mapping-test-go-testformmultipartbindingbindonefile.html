@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
         <a href="/domain/binding.html" class="pill pill-green">Binding</a>
-        <a href="/subdomain/multipart.html" class="pill pill-orange">Multipart</a>
+        <a href="/subdomain/formatmapping.html" class="pill pill-orange">FormatMapping</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"TestFormMultipartBindingBindOneFile","slug":"fn-multipart-form-mapping-test-go-testformmultipartbindingbindonefile","type":"Function"},"subdomain":{"name":"Multipart","slug":"subdomain-multipart"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"TestFormMultipartBindingBindOneFile","slug":"fn-multipart-form-mapping-test-go-testformmultipartbindingbindonefile","type":"Function"},"subdomain":{"name":"FormatMapping","slug":"subdomain-formatmapping"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/binding.html">Binding</a><span class="arch-sep">&rarr;</span>
-            <a href="/multipart.html">Multipart</a><span class="arch-sep">&rarr;</span>
+            <a href="/formatmapping.html">FormatMapping</a><span class="arch-sep">&rarr;</span>
             <span>TestFormMultipartBindingBindOneFile() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  848ef751_dbee_f97e_c57f_aca936c13fc9["TestFormMultipartBindingBindOneFile()"]
-  d59b265d_e548_ab9a_2acc_5029f1ff9c8a["createRequestMultipartFiles()"]
-  848ef751_dbee_f97e_c57f_aca936c13fc9 -->|calls| d59b265d_e548_ab9a_2acc_5029f1ff9c8a
-  df6a8219_52ac_c513_40da_ebcc9d3da01d["assertMultipartFileHeader()"]
-  848ef751_dbee_f97e_c57f_aca936c13fc9 -->|calls| df6a8219_52ac_c513_40da_ebcc9d3da01d
-  style 848ef751_dbee_f97e_c57f_aca936c13fc9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  cbafbedf_6827_3148_4bb0_c850fca6ddc5["TestFormMultipartBindingBindOneFile()"]
+  b4b9a14a_1a75_88da_795b_ccc88ee2d0ef["createRequestMultipartFiles()"]
+  cbafbedf_6827_3148_4bb0_c850fca6ddc5 -->|calls| b4b9a14a_1a75_88da_795b_ccc88ee2d0ef
+  0da1ec9d_f9ec_d240_876e_66e16cca61ef["assertMultipartFileHeader()"]
+  cbafbedf_6827_3148_4bb0_c850fca6ddc5 -->|calls| 0da1ec9d_f9ec_d240_876e_66e16cca61ef
+  style cbafbedf_6827_3148_4bb0_c850fca6ddc5 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-multipart-form-mapping-test-go-testformmultipartbindingbindonefile"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"848ef751:dbee:f97e:c57f:aca936c13fc9","label":"TestFormMultipartBindingBindOneFile","type":"Function","slug":"fn-multipart-form-mapping-test-go-testformmultipartbindingbindonefile","lc":24,"lang":"go","cc":2},{"id":"d59b265d:e548:ab9a:2acc:5029f1ff9c8a","label":"createRequestMultipartFiles","type":"Function","slug":"fn-multipart-form-mapping-test-go-createrequestmultipartfiles","lc":21,"lang":"go","cbc":3},{"id":"df6a8219:52ac:c513:40da:ebcc9d3da01d","label":"assertMultipartFileHeader","type":"Function","slug":"fn-multipart-form-mapping-test-go-assertmultipartfileheader","lc":14,"lang":"go","cbc":2},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:Multipart","label":"Multipart","type":"Subdomain","slug":"subdomain-multipart"}],"edges":[{"source":"848ef751:dbee:f97e:c57f:aca936c13fc9","target":"d59b265d:e548:ab9a:2acc:5029f1ff9c8a","type":"calls"},{"source":"848ef751:dbee:f97e:c57f:aca936c13fc9","target":"df6a8219:52ac:c513:40da:ebcc9d3da01d","type":"calls"},{"source":"848ef751:dbee:f97e:c57f:aca936c13fc9","target":"domain:Binding","type":"belongsTo"},{"source":"848ef751:dbee:f97e:c57f:aca936c13fc9","target":"subdomain:Binding:Multipart","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"cbafbedf:6827:3148:4bb0:c850fca6ddc5","label":"TestFormMultipartBindingBindOneFile","type":"Function","slug":"fn-multipart-form-mapping-test-go-testformmultipartbindingbindonefile","lc":24,"lang":"go","cc":2},{"id":"b4b9a14a:1a75:88da:795b:ccc88ee2d0ef","label":"createRequestMultipartFiles","type":"Function","slug":"fn-multipart-form-mapping-test-go-createrequestmultipartfiles","lc":21,"lang":"go","cbc":3},{"id":"0da1ec9d:f9ec:d240:876e:66e16cca61ef","label":"assertMultipartFileHeader","type":"Function","slug":"fn-multipart-form-mapping-test-go-assertmultipartfileheader","lc":14,"lang":"go","cbc":2},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:FormatMapping","label":"FormatMapping","type":"Subdomain","slug":"subdomain-formatmapping"}],"edges":[{"source":"cbafbedf:6827:3148:4bb0:c850fca6ddc5","target":"b4b9a14a:1a75:88da:795b:ccc88ee2d0ef","type":"calls"},{"source":"cbafbedf:6827:3148:4bb0:c850fca6ddc5","target":"0da1ec9d:f9ec:d240:876e:66e16cca61ef","type":"calls"},{"source":"cbafbedf:6827:3148:4bb0:c850fca6ddc5","target":"domain:Binding","type":"belongsTo"},{"source":"cbafbedf:6827:3148:4bb0:c850fca6ddc5","target":"subdomain:Binding:FormatMapping","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -976,7 +976,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-multipart.html">Multipart</a></li></ul>
+      <ul><li><a href="/subdomain-formatmapping.html">FormatMapping</a></li></ul>
     </div>
     
 

@@ -869,7 +869,7 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
+        <a href="/domain/routing.html" class="pill pill-green">Routing</a>
         <a href="/subdomain/context.html" class="pill pill-orange">Context</a>
         
         
@@ -894,10 +894,10 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"Render","slug":"fn-context-go-render","type":"Function"},"subdomain":{"name":"Context","slug":"subdomain-context"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Routing","slug":"domain-routing"},"entity":{"name":"Render","slug":"fn-context-go-render","type":"Function"},"subdomain":{"name":"Context","slug":"subdomain-context"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/routing.html">Routing</a><span class="arch-sep">&rarr;</span>
             <a href="/context.html">Context</a><span class="arch-sep">&rarr;</span>
             <span>Render() — gin Function Reference</span>
           </div>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43["Render()"]
-  980274a1_5776_28e0_9bf1_91a952b30d48["HTML()"]
-  980274a1_5776_28e0_9bf1_91a952b30d48 -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  6b25b2a1_3d71_1182_dd77_c0124b910cd7["IndentedJSON()"]
-  6b25b2a1_3d71_1182_dd77_c0124b910cd7 -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  4a16920c_fd9e_f5c5_5a94_24b4a587b643["SecureJSON()"]
-  4a16920c_fd9e_f5c5_5a94_24b4a587b643 -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  2ba14cb4_71fd_6f90_d6fb_a625ab31420b["JSONP()"]
-  2ba14cb4_71fd_6f90_d6fb_a625ab31420b -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  fa6a8670_9144_b7c6_8702_54ee19b48d7a["JSON()"]
-  fa6a8670_9144_b7c6_8702_54ee19b48d7a -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  ff2f7729_012c_d25d_1d31_58db90049b7d["AsciiJSON()"]
-  ff2f7729_012c_d25d_1d31_58db90049b7d -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  90b24a02_11ff_6b3a_2a6d_2efbb7b00a7f["PureJSON()"]
-  90b24a02_11ff_6b3a_2a6d_2efbb7b00a7f -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  f0e1840b_8f9a_3183_36c8_c6dfceb86b97["XML()"]
-  f0e1840b_8f9a_3183_36c8_c6dfceb86b97 -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  25070bbc_d491_37f7_83e4_c532b4108081["YAML()"]
-  25070bbc_d491_37f7_83e4_c532b4108081 -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  5a15f34f_792d_8efa_6e85_a8408ce6b4a5["TOML()"]
-  5a15f34f_792d_8efa_6e85_a8408ce6b4a5 -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  12e50379_d517_0633_0afb_3b67dd7d4103["ProtoBuf()"]
-  12e50379_d517_0633_0afb_3b67dd7d4103 -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  251a6631_f80c_b832_2b79_c1c4c877feb0["BSON()"]
-  251a6631_f80c_b832_2b79_c1c4c877feb0 -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  c80396c7_1e15_bb89_77a3_71a81e22a8fc["String()"]
-  c80396c7_1e15_bb89_77a3_71a81e22a8fc -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  6012a694_0bd2_f26c_265f_9358e9c0f1c5["Redirect()"]
-  6012a694_0bd2_f26c_265f_9358e9c0f1c5 -->|calls| 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43
-  style 90aa0fe1_91ab_7e4f_7b51_945a8fbc7f43 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  8b3e75a0_6fd2_248d_ad38_cf589361f259["Render()"]
+  e600ed2b_012d_8093_1cc6_3401075f8034["HTML()"]
+  e600ed2b_012d_8093_1cc6_3401075f8034 -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  46fab408_6815_be0d_4f81_ef8fb5e72e20["IndentedJSON()"]
+  46fab408_6815_be0d_4f81_ef8fb5e72e20 -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  e4a572ae_adc8_ba74_b03b_32d76607b51c["SecureJSON()"]
+  e4a572ae_adc8_ba74_b03b_32d76607b51c -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  894503b4_1542_e069_8af1_2eafff3e6675["JSONP()"]
+  894503b4_1542_e069_8af1_2eafff3e6675 -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  20a16f67_cb06_1202_03cd_fac26bae8ba0["JSON()"]
+  20a16f67_cb06_1202_03cd_fac26bae8ba0 -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  b4cc415b_fa7d_1752_2a27_6a9ba1f6a047["AsciiJSON()"]
+  b4cc415b_fa7d_1752_2a27_6a9ba1f6a047 -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  b7f37ce3_0c1d_9b94_9a92_f1afb2429be9["PureJSON()"]
+  b7f37ce3_0c1d_9b94_9a92_f1afb2429be9 -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  e49fa054_cbb6_99d2_813d_1ce7084b314a["XML()"]
+  e49fa054_cbb6_99d2_813d_1ce7084b314a -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  d3dbf1f2_6d61_dad6_aca6_8e7f2048ef46["YAML()"]
+  d3dbf1f2_6d61_dad6_aca6_8e7f2048ef46 -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  a61331a3_d381_483a_d211_96a4a70799ef["TOML()"]
+  a61331a3_d381_483a_d211_96a4a70799ef -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  2171607f_3871_14b8_911d_332bcf9c9908["ProtoBuf()"]
+  2171607f_3871_14b8_911d_332bcf9c9908 -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  e521dfa4_6e83_9b95_9c7c_6df742f389cd["BSON()"]
+  e521dfa4_6e83_9b95_9c7c_6df742f389cd -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  576e1844_45e0_5827_db91_9669c9844476["String()"]
+  576e1844_45e0_5827_db91_9669c9844476 -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  bbcd5c98_7215_9a0b_0bc9_7dbba7d37411["Redirect()"]
+  bbcd5c98_7215_9a0b_0bc9_7dbba7d37411 -->|calls| 8b3e75a0_6fd2_248d_ad38_cf589361f259
+  style 8b3e75a0_6fd2_248d_ad38_cf589361f259 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-context-go-render"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","label":"Render","type":"Function","slug":"fn-context-go-render","lc":15,"lang":"go","cc":4,"cbc":17},{"id":"a212fe71:d649:eca6:b59e:bf503f659ba1","label":"Status","type":"Function","slug":"fn-context-go-status","lc":3,"lang":"go","cbc":2},{"id":"665ade6f:b70c:06bd:629f:22539d838318","label":"bodyAllowedForStatus","type":"Function","slug":"fn-context-go-bodyallowedforstatus","lc":11,"lang":"go","cbc":1},{"id":"e6ad0d9f:70f4:0b9c:d42b:909e5d00481f","label":"Error","type":"Function","slug":"fn-context-go-error","lc":17,"lang":"go","cbc":2},{"id":"2b0f3275:b46b:723f:3325:0c4755f70421","label":"Abort","type":"Function","slug":"fn-context-go-abort","lc":3,"lang":"go","cbc":4},{"id":"980274a1:5776:28e0:9bf1:91a952b30d48","label":"HTML","type":"Function","slug":"fn-context-go-html","lc":4,"lang":"go","cc":1,"cbc":1},{"id":"6b25b2a1:3d71:1182:dd77:c0124b910cd7","label":"IndentedJSON","type":"Function","slug":"fn-context-go-indentedjson","lc":3,"lang":"go","cc":1},{"id":"4a16920c:fd9e:f5c5:5a94:24b4a587b643","label":"SecureJSON","type":"Function","slug":"fn-context-go-securejson","lc":3,"lang":"go","cc":1},{"id":"2ba14cb4:71fd:6f90:d6fb:a625ab31420b","label":"JSONP","type":"Function","slug":"fn-context-go-jsonp","lc":8,"lang":"go","cc":2},{"id":"fa6a8670:9144:b7c6:8702:54ee19b48d7a","label":"JSON","type":"Function","slug":"fn-context-go-json","lc":3,"lang":"go","cc":1,"cbc":2},{"id":"ff2f7729:012c:d25d:1d31:58db90049b7d","label":"AsciiJSON","type":"Function","slug":"fn-context-go-asciijson","lc":3,"lang":"go","cc":1},{"id":"90b24a02:11ff:6b3a:2a6d:2efbb7b00a7f","label":"PureJSON","type":"Function","slug":"fn-context-go-purejson","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"f0e1840b:8f9a:3183:36c8:c6dfceb86b97","label":"XML","type":"Function","slug":"fn-context-go-xml","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"25070bbc:d491:37f7:83e4:c532b4108081","label":"YAML","type":"Function","slug":"fn-context-go-yaml","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"5a15f34f:792d:8efa:6e85:a8408ce6b4a5","label":"TOML","type":"Function","slug":"fn-context-go-toml","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"12e50379:d517:0633:0afb:3b67dd7d4103","label":"ProtoBuf","type":"Function","slug":"fn-context-go-protobuf","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"251a6631:f80c:b832:2b79:c1c4c877feb0","label":"BSON","type":"Function","slug":"fn-context-go-bson","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"c80396c7:1e15:bb89:77a3:71a81e22a8fc","label":"String","type":"Function","slug":"fn-context-go-string","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"6012a694:0bd2:f26c:265f:9358e9c0f1c5","label":"Redirect","type":"Function","slug":"fn-context-go-redirect","lc":7,"lang":"go","cc":1},{"id":"38a09aeb:5f00:6acf:5c75:01eef1d687cf","label":"Data","type":"Function","slug":"fn-context-go-data","lc":6,"lang":"go","cc":1},{"id":"364a4d49:fe47:11d4:5af6:fe44875afe7b","label":"DataFromReader","type":"Function","slug":"fn-context-go-datafromreader","lc":8,"lang":"go","cc":1},{"id":"179a205c:a459:b8c7:3d57:35d9045da815","label":"SSEvent","type":"Function","slug":"fn-context-go-ssevent","lc":6,"lang":"go","cc":1},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Context","label":"Context","type":"Subdomain","slug":"subdomain-context"}],"edges":[{"source":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","target":"a212fe71:d649:eca6:b59e:bf503f659ba1","type":"calls"},{"source":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","target":"665ade6f:b70c:06bd:629f:22539d838318","type":"calls"},{"source":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","target":"e6ad0d9f:70f4:0b9c:d42b:909e5d00481f","type":"calls"},{"source":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","target":"2b0f3275:b46b:723f:3325:0c4755f70421","type":"calls"},{"source":"980274a1:5776:28e0:9bf1:91a952b30d48","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"6b25b2a1:3d71:1182:dd77:c0124b910cd7","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"4a16920c:fd9e:f5c5:5a94:24b4a587b643","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"2ba14cb4:71fd:6f90:d6fb:a625ab31420b","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"fa6a8670:9144:b7c6:8702:54ee19b48d7a","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"ff2f7729:012c:d25d:1d31:58db90049b7d","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"90b24a02:11ff:6b3a:2a6d:2efbb7b00a7f","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"f0e1840b:8f9a:3183:36c8:c6dfceb86b97","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"25070bbc:d491:37f7:83e4:c532b4108081","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"5a15f34f:792d:8efa:6e85:a8408ce6b4a5","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"12e50379:d517:0633:0afb:3b67dd7d4103","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"251a6631:f80c:b832:2b79:c1c4c877feb0","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"c80396c7:1e15:bb89:77a3:71a81e22a8fc","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"6012a694:0bd2:f26c:265f:9358e9c0f1c5","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"38a09aeb:5f00:6acf:5c75:01eef1d687cf","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"364a4d49:fe47:11d4:5af6:fe44875afe7b","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"179a205c:a459:b8c7:3d57:35d9045da815","target":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","type":"calls"},{"source":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","target":"domain:GinCore","type":"belongsTo"},{"source":"90aa0fe1:91ab:7e4f:7b51:945a8fbc7f43","target":"subdomain:GinCore:Context","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"8b3e75a0:6fd2:248d:ad38:cf589361f259","label":"Render","type":"Function","slug":"fn-context-go-render","lc":15,"lang":"go","cc":4,"cbc":17},{"id":"ee6d4206:d359:f3e7:1807:0728ccc5257f","label":"Status","type":"Function","slug":"fn-context-go-status","lc":3,"lang":"go","cbc":2},{"id":"b81f3caf:f542:0c5a:4474:720660b52b58","label":"bodyAllowedForStatus","type":"Function","slug":"fn-context-go-bodyallowedforstatus","lc":11,"lang":"go","cbc":1},{"id":"5febd7a9:f6cf:94eb:6964:7de12e7f8929","label":"Error","type":"Function","slug":"fn-context-go-error","lc":17,"lang":"go","cbc":2},{"id":"5940a855:8979:580e:2dc7:1fa28a29a259","label":"Abort","type":"Function","slug":"fn-context-go-abort","lc":3,"lang":"go","cbc":4},{"id":"e600ed2b:012d:8093:1cc6:3401075f8034","label":"HTML","type":"Function","slug":"fn-context-go-html","lc":4,"lang":"go","cc":1,"cbc":1},{"id":"46fab408:6815:be0d:4f81:ef8fb5e72e20","label":"IndentedJSON","type":"Function","slug":"fn-context-go-indentedjson","lc":3,"lang":"go","cc":1},{"id":"e4a572ae:adc8:ba74:b03b:32d76607b51c","label":"SecureJSON","type":"Function","slug":"fn-context-go-securejson","lc":3,"lang":"go","cc":1},{"id":"894503b4:1542:e069:8af1:2eafff3e6675","label":"JSONP","type":"Function","slug":"fn-context-go-jsonp","lc":8,"lang":"go","cc":2},{"id":"20a16f67:cb06:1202:03cd:fac26bae8ba0","label":"JSON","type":"Function","slug":"fn-context-go-json","lc":3,"lang":"go","cc":1,"cbc":2},{"id":"b4cc415b:fa7d:1752:2a27:6a9ba1f6a047","label":"AsciiJSON","type":"Function","slug":"fn-context-go-asciijson","lc":3,"lang":"go","cc":1},{"id":"b7f37ce3:0c1d:9b94:9a92:f1afb2429be9","label":"PureJSON","type":"Function","slug":"fn-context-go-purejson","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"e49fa054:cbb6:99d2:813d:1ce7084b314a","label":"XML","type":"Function","slug":"fn-context-go-xml","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"d3dbf1f2:6d61:dad6:aca6:8e7f2048ef46","label":"YAML","type":"Function","slug":"fn-context-go-yaml","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"a61331a3:d381:483a:d211:96a4a70799ef","label":"TOML","type":"Function","slug":"fn-context-go-toml","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"2171607f:3871:14b8:911d:332bcf9c9908","label":"ProtoBuf","type":"Function","slug":"fn-context-go-protobuf","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"e521dfa4:6e83:9b95:9c7c:6df742f389cd","label":"BSON","type":"Function","slug":"fn-context-go-bson","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"576e1844:45e0:5827:db91:9669c9844476","label":"String","type":"Function","slug":"fn-context-go-string","lc":3,"lang":"go","cc":1,"cbc":1},{"id":"bbcd5c98:7215:9a0b:0bc9:7dbba7d37411","label":"Redirect","type":"Function","slug":"fn-context-go-redirect","lc":7,"lang":"go","cc":1},{"id":"a14149b9:afc9:fa2e:0c9a:943c52dc41da","label":"Data","type":"Function","slug":"fn-context-go-data","lc":6,"lang":"go","cc":1},{"id":"93392bae:6726:9969:bae6:98c6f56bb38d","label":"DataFromReader","type":"Function","slug":"fn-context-go-datafromreader","lc":8,"lang":"go","cc":1},{"id":"ac6ee5ff:2487:93f1:4d1d:24b96249fda7","label":"SSEvent","type":"Function","slug":"fn-context-go-ssevent","lc":6,"lang":"go","cc":1},{"id":"domain:Routing","label":"Routing","type":"Domain","slug":"domain-routing"},{"id":"subdomain:Routing:Context","label":"Context","type":"Subdomain","slug":"subdomain-context"}],"edges":[{"source":"8b3e75a0:6fd2:248d:ad38:cf589361f259","target":"ee6d4206:d359:f3e7:1807:0728ccc5257f","type":"calls"},{"source":"8b3e75a0:6fd2:248d:ad38:cf589361f259","target":"b81f3caf:f542:0c5a:4474:720660b52b58","type":"calls"},{"source":"8b3e75a0:6fd2:248d:ad38:cf589361f259","target":"5febd7a9:f6cf:94eb:6964:7de12e7f8929","type":"calls"},{"source":"8b3e75a0:6fd2:248d:ad38:cf589361f259","target":"5940a855:8979:580e:2dc7:1fa28a29a259","type":"calls"},{"source":"e600ed2b:012d:8093:1cc6:3401075f8034","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"46fab408:6815:be0d:4f81:ef8fb5e72e20","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"e4a572ae:adc8:ba74:b03b:32d76607b51c","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"894503b4:1542:e069:8af1:2eafff3e6675","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"20a16f67:cb06:1202:03cd:fac26bae8ba0","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"b4cc415b:fa7d:1752:2a27:6a9ba1f6a047","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"b7f37ce3:0c1d:9b94:9a92:f1afb2429be9","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"e49fa054:cbb6:99d2:813d:1ce7084b314a","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"d3dbf1f2:6d61:dad6:aca6:8e7f2048ef46","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"a61331a3:d381:483a:d211:96a4a70799ef","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"2171607f:3871:14b8:911d:332bcf9c9908","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"e521dfa4:6e83:9b95:9c7c:6df742f389cd","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"576e1844:45e0:5827:db91:9669c9844476","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"bbcd5c98:7215:9a0b:0bc9:7dbba7d37411","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"a14149b9:afc9:fa2e:0c9a:943c52dc41da","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"93392bae:6726:9969:bae6:98c6f56bb38d","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"ac6ee5ff:2487:93f1:4d1d:24b96249fda7","target":"8b3e75a0:6fd2:248d:ad38:cf589361f259","type":"calls"},{"source":"8b3e75a0:6fd2:248d:ad38:cf589361f259","target":"domain:Routing","type":"belongsTo"},{"source":"8b3e75a0:6fd2:248d:ad38:cf589361f259","target":"subdomain:Routing:Context","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -984,7 +984,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
+      <ul><li><a href="/domain-routing.html">Routing</a></li></ul>
     </div>
     
 
