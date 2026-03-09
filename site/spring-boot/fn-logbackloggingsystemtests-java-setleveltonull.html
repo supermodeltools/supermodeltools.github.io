@@ -811,7 +811,7 @@ a.pill:hover {
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the setLevelToNull() function in LogbackLoggingSystemTests.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-logbackloggingsystemtests-java-setleveltonull.svg"],"name":"setLevelToNull() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-logbackloggingsystemtests-java-setleveltonull.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"setLevelToNull() — spring-boot Function Reference","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"setLevelToNull() is a function in the spring-boot codebase."},"name":"What does setLevelToNull() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"setLevelToNull() calls 3 function(s): beforeInitialize, initialize, setLogLevel."},"name":"What does setLevelToNull() call?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"setLevelToNull() is a function in the spring-boot codebase."},"name":"What does setLevelToNull() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"setLevelToNull() calls 4 function(s): beforeInitialize, initialize, setLogLevel, toString."},"name":"What does setLevelToNull() call?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -870,10 +870,10 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
-        <span class="pill">calls 3</span>
+        <span class="pill">calls 4</span>
         
         
         
@@ -886,7 +886,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"co":3,"el":276,"et":{"calls":3},"lc":11,"sl":266}</script>
+      <script type="application/json" id="entity-profile-data">{"co":4,"el":276,"et":{"calls":4},"lc":11,"sl":266}</script>
     </div>
 
     
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"setLevelToNull","slug":"fn-logbackloggingsystemtests-java-setleveltonull","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"setLevelToNull","slug":"fn-logbackloggingsystemtests-java-setleveltonull","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>setLevelToNull() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  cd43190c_2525_e608_f3e8_dd27405489f4["setLevelToNull()"]
-  d7d18d50_783e_82d2_ba30_aee85df0dc01["initialize()"]
-  cd43190c_2525_e608_f3e8_dd27405489f4 -->|calls| d7d18d50_783e_82d2_ba30_aee85df0dc01
-  65860c34_08c5_1d7b_5ecb_4bec140992b4["beforeInitialize()"]
-  cd43190c_2525_e608_f3e8_dd27405489f4 -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
-  c49fdf33_c358_041a_9de1_126b15239f1d["setLogLevel()"]
-  cd43190c_2525_e608_f3e8_dd27405489f4 -->|calls| c49fdf33_c358_041a_9de1_126b15239f1d
-  style cd43190c_2525_e608_f3e8_dd27405489f4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  081260ba_2054_a59b_3406_86439893a5d1["setLevelToNull()"]
+  19bf788f_a6fb_741b_0208_42b37efdaecf["initialize()"]
+  081260ba_2054_a59b_3406_86439893a5d1 -->|calls| 19bf788f_a6fb_741b_0208_42b37efdaecf
+  d6f05402_1b42_ecc6_a8e0_ab163c86a65a["beforeInitialize()"]
+  081260ba_2054_a59b_3406_86439893a5d1 -->|calls| d6f05402_1b42_ecc6_a8e0_ab163c86a65a
+  9cb9a065_2b68_537d_68c7_48d7dc7247f7["setLogLevel()"]
+  081260ba_2054_a59b_3406_86439893a5d1 -->|calls| 9cb9a065_2b68_537d_68c7_48d7dc7247f7
+  3bfdb756_c954_5135_61dc_69a77d73d4e7["toString()"]
+  081260ba_2054_a59b_3406_86439893a5d1 -->|calls| 3bfdb756_c954_5135_61dc_69a77d73d4e7
+  style 081260ba_2054_a59b_3406_86439893a5d1 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-logbackloggingsystemtests-java-setleveltonull"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"cd43190c:2525:e608:f3e8:dd27405489f4","label":"setLevelToNull","type":"Function","slug":"fn-logbackloggingsystemtests-java-setleveltonull","lc":11,"lang":"java","cc":3},{"id":"d7d18d50:783e:82d2:ba30:aee85df0dc01","label":"initialize","type":"Function","slug":"fn-logbackloggingsystemtests-java-initialize","lc":8,"lang":"java","cc":5,"cbc":75},{"id":"65860c34:08c5:1d7b:5ecb:4bec140992b4","label":"beforeInitialize","type":"Function","slug":"fn-loggingsystem-java-beforeinitialize","lc":1,"lang":"java","cc":1,"cbc":100},{"id":"c49fdf33:c358:041a:9de1:126b15239f1d","label":"setLogLevel","type":"Function","slug":"fn-loggingsystem-java-setloglevel","lc":3,"lang":"java","cc":1,"cbc":26},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"cd43190c:2525:e608:f3e8:dd27405489f4","target":"d7d18d50:783e:82d2:ba30:aee85df0dc01","type":"calls"},{"source":"cd43190c:2525:e608:f3e8:dd27405489f4","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"cd43190c:2525:e608:f3e8:dd27405489f4","target":"c49fdf33:c358:041a:9de1:126b15239f1d","type":"calls"},{"source":"cd43190c:2525:e608:f3e8:dd27405489f4","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"cd43190c:2525:e608:f3e8:dd27405489f4","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"081260ba:2054:a59b:3406:86439893a5d1","label":"setLevelToNull","type":"Function","slug":"fn-logbackloggingsystemtests-java-setleveltonull","lc":11,"lang":"java","cc":4},{"id":"19bf788f:a6fb:741b:0208:42b37efdaecf","label":"initialize","type":"Function","slug":"fn-logbackloggingsystemtests-java-initialize","lc":8,"lang":"java","cc":5,"cbc":75},{"id":"d6f05402:1b42:ecc6:a8e0:ab163c86a65a","label":"beforeInitialize","type":"Function","slug":"fn-loggingsystem-java-beforeinitialize","lc":1,"lang":"java","cc":1,"cbc":100},{"id":"9cb9a065:2b68:537d:68c7:48d7dc7247f7","label":"setLogLevel","type":"Function","slug":"fn-loggingsystem-java-setloglevel","lc":3,"lang":"java","cc":1,"cbc":26},{"id":"3bfdb756:c954:5135:61dc:69a77d73d4e7","label":"toString","type":"Function","slug":"fn-loggerconfiguration-java-tostring","lc":5,"lang":"java","cc":1,"cbc":6},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"081260ba:2054:a59b:3406:86439893a5d1","target":"19bf788f:a6fb:741b:0208:42b37efdaecf","type":"calls"},{"source":"081260ba:2054:a59b:3406:86439893a5d1","target":"d6f05402:1b42:ecc6:a8e0:ab163c86a65a","type":"calls"},{"source":"081260ba:2054:a59b:3406:86439893a5d1","target":"9cb9a065:2b68:537d:68c7:48d7dc7247f7","type":"calls"},{"source":"081260ba:2054:a59b:3406:86439893a5d1","target":"3bfdb756:c954:5135:61dc:69a77d73d4e7","type":"calls"},{"source":"081260ba:2054:a59b:3406:86439893a5d1","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"081260ba:2054:a59b:3406:86439893a5d1","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -965,7 +967,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 
@@ -984,7 +986,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li><a href="/fn-loggingsystem-java-beforeinitialize.html">beforeInitialize()</a></li><li><a href="/fn-logbackloggingsystemtests-java-initialize.html">initialize()</a></li><li><a href="/fn-loggingsystem-java-setloglevel.html">setLogLevel()</a></li></ul>
+      <ul><li><a href="/fn-loggingsystem-java-beforeinitialize.html">beforeInitialize()</a></li><li><a href="/fn-logbackloggingsystemtests-java-initialize.html">initialize()</a></li><li><a href="/fn-loggingsystem-java-setloglevel.html">setLogLevel()</a></li><li><a href="/fn-loggerconfiguration-java-tostring.html">toString()</a></li></ul>
     </div>
     
 
@@ -1016,7 +1018,7 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What does setLevelToNull() call?</summary>
-        <div class="faq-answer">setLevelToNull() calls 3 function(s): beforeInitialize, initialize, setLogLevel.</div>
+        <div class="faq-answer">setLevelToNull() calls 4 function(s): beforeInitialize, initialize, setLogLevel, toString.</div>
       </details>
       
     </div>

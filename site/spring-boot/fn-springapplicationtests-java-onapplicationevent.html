@@ -811,7 +811,7 @@ a.pill:hover {
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the onApplicationEvent() function in SpringApplicationTests.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-springapplicationtests-java-onapplicationevent.svg"],"name":"onApplicationEvent() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-springapplicationtests-java-onapplicationevent.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"onApplicationEvent() — spring-boot Function Reference","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"onApplicationEvent() is a function in the spring-boot codebase."},"name":"What does onApplicationEvent() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"onApplicationEvent() calls 1 function(s): onApplicationEvent."},"name":"What does onApplicationEvent() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"onApplicationEvent() is called by 14 function(s): applicationListenerFromContextIsCalledWhenContextFailsRefreshAfterListenerRegistration, applicationListenerFromContextIsCalledWhenContextFailsRefreshBeforeListenerRegistration, applicationRunnerFailureCausesApplicationFailedEventToBePublished, commandLineRunnerFailureCausesApplicationFailedEventToBePublished, eventsArePublishedInExpectedOrder, failureInANativeImageWritesFailureToSystemOut, failureInReadyEventListenerCloseApplicationContext, failureInReadyEventListenerDoesNotCausePublicationOfFailedEvent, and 6 more."},"name":"What calls onApplicationEvent()?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"onApplicationEvent() is a function in the spring-boot codebase."},"name":"What does onApplicationEvent() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"onApplicationEvent() calls 1 function(s): onApplicationEvent."},"name":"What does onApplicationEvent() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"onApplicationEvent() is called by 9 function(s): applicationListenerFromContextIsCalledWhenContextFailsRefreshAfterListenerRegistration, applicationListenerFromContextIsCalledWhenContextFailsRefreshBeforeListenerRegistration, eventsArePublishedInExpectedOrder, main, onApplicationEvent, onApplicationEvent, verifyRegisteredListenerFailedFromApplicationEvents, verifyRegisteredListenerSuccessEvents, and 1 more."},"name":"What calls onApplicationEvent()?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -870,11 +870,11 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 1</span>
-        <span class="pill">called by 14</span>
+        <span class="pill">called by 9</span>
         
         
         
@@ -886,7 +886,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"cb":14,"co":1,"el":1564,"et":{"calls":15},"lc":5,"sl":1560}</script>
+      <script type="application/json" id="entity-profile-data">{"cb":9,"co":1,"el":1564,"et":{"calls":10},"lc":5,"sl":1560}</script>
     </div>
 
     
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"onApplicationEvent","slug":"fn-springapplicationtests-java-onapplicationevent","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"onApplicationEvent","slug":"fn-springapplicationtests-java-onapplicationevent","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>onApplicationEvent() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  04119ca7_104e_bc13_b98d_abeb388dd8de["onApplicationEvent()"]
-  27e53fa6_87b0_5b3d_be98_db3491ae5f7e["eventsArePublishedInExpectedOrder()"]
-  27e53fa6_87b0_5b3d_be98_db3491ae5f7e -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  82ef35f1_516a_2087_0dac_14b3852eade4["runnersAreCalledAfterStartedIsLoggedAndBeforeApplicationReadyEventIsPublished()"]
-  82ef35f1_516a_2087_0dac_14b3852eade4 -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  352128ce_286e_f820_f24c_4cadc89dde9f["applicationRunnerFailureCausesApplicationFailedEventToBePublished()"]
-  352128ce_286e_f820_f24c_4cadc89dde9f -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  34f7160f_847b_6295_ccb5_679202d9f2af["commandLineRunnerFailureCausesApplicationFailedEventToBePublished()"]
-  34f7160f_847b_6295_ccb5_679202d9f2af -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  58d3eb27_9611_bd5d_cd3e_a7cbf62f8ef8["failureInReadyEventListenerDoesNotCausePublicationOfFailedEvent()"]
-  58d3eb27_9611_bd5d_cd3e_a7cbf62f8ef8 -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  0667a0a9_0d18_7cc7_4c93_c0496ae9089b["failureInReadyEventListenerCloseApplicationContext()"]
-  0667a0a9_0d18_7cc7_4c93_c0496ae9089b -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  ad0793ce_2db3_fd88_fa24_2f4f498db4d5["failureOnTheJvmLogsApplicationRunFailed()"]
-  ad0793ce_2db3_fd88_fa24_2f4f498db4d5 -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  06f6a1f8_bb58_cb55_645a_565b14ec239e["failureInANativeImageWritesFailureToSystemOut()"]
-  06f6a1f8_bb58_cb55_645a_565b14ec239e -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  8e7d3be4_af6b_8471_4fe5_95279b2ce7d1["verifyRegisteredListenerSuccessEvents()"]
-  8e7d3be4_af6b_8471_4fe5_95279b2ce7d1 -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  9ce60087_3e8e_bc73_13d4_b59c8618327f["verifyRegisteredListenerFailedFromApplicationEvents()"]
-  9ce60087_3e8e_bc73_13d4_b59c8618327f -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  21b215a3_6480_fc90_76d9_ba1bb04a5111["applicationListenerFromContextIsCalledWhenContextFailsRefreshBeforeListenerRegistration()"]
-  21b215a3_6480_fc90_76d9_ba1bb04a5111 -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  c3ae7a2a_314e_0517_97cb_fad31edac5f4["applicationListenerFromContextIsCalledWhenContextFailsRefreshAfterListenerRegistration()"]
-  c3ae7a2a_314e_0517_97cb_fad31edac5f4 -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  feffefe9_2fbd_c1dd_e43c_5a0281633b47["withHookWhenHookThrowsAbandonedRunExceptionAbandonsRun()"]
-  feffefe9_2fbd_c1dd_e43c_5a0281633b47 -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  7236b4a6_a596_76b9_7ace_480f720f53ab["main()"]
-  7236b4a6_a596_76b9_7ace_480f720f53ab -->|calls| 04119ca7_104e_bc13_b98d_abeb388dd8de
-  style 04119ca7_104e_bc13_b98d_abeb388dd8de fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d2674bd6_6878_b4b1_91f7_a10836e33ea1["onApplicationEvent()"]
+  97b9ef0f_31dd_00dd_c9ef_0616693ec9da["onApplicationEvent()"]
+  97b9ef0f_31dd_00dd_c9ef_0616693ec9da -->|calls| d2674bd6_6878_b4b1_91f7_a10836e33ea1
+  6ada2be2_13a3_547a_ce60_6015b22d580d["onApplicationEvent()"]
+  6ada2be2_13a3_547a_ce60_6015b22d580d -->|calls| d2674bd6_6878_b4b1_91f7_a10836e33ea1
+  42b7e589_8a45_3489_76f2_28203bc71d91["eventsArePublishedInExpectedOrder()"]
+  42b7e589_8a45_3489_76f2_28203bc71d91 -->|calls| d2674bd6_6878_b4b1_91f7_a10836e33ea1
+  9e064f27_1214_2057_a2e9_10c8dad507de["verifyRegisteredListenerSuccessEvents()"]
+  9e064f27_1214_2057_a2e9_10c8dad507de -->|calls| d2674bd6_6878_b4b1_91f7_a10836e33ea1
+  68d36c43_5f8a_b7da_3dd5_301b505c8bff["verifyRegisteredListenerFailedFromApplicationEvents()"]
+  68d36c43_5f8a_b7da_3dd5_301b505c8bff -->|calls| d2674bd6_6878_b4b1_91f7_a10836e33ea1
+  30be2b88_2665_fa60_cb41_5a5d3d6d793d["applicationListenerFromContextIsCalledWhenContextFailsRefreshBeforeListenerRegistration()"]
+  30be2b88_2665_fa60_cb41_5a5d3d6d793d -->|calls| d2674bd6_6878_b4b1_91f7_a10836e33ea1
+  584f9607_3053_99d3_e858_8c3492c95a14["applicationListenerFromContextIsCalledWhenContextFailsRefreshAfterListenerRegistration()"]
+  584f9607_3053_99d3_e858_8c3492c95a14 -->|calls| d2674bd6_6878_b4b1_91f7_a10836e33ea1
+  e9bf2deb_5c32_bd93_996a_c15a27f5f32e["withHookWhenHookThrowsAbandonedRunExceptionAbandonsRun()"]
+  e9bf2deb_5c32_bd93_996a_c15a27f5f32e -->|calls| d2674bd6_6878_b4b1_91f7_a10836e33ea1
+  ec56b454_8337_605b_1f83_10dbb8f42ab1["main()"]
+  ec56b454_8337_605b_1f83_10dbb8f42ab1 -->|calls| d2674bd6_6878_b4b1_91f7_a10836e33ea1
+  6ada2be2_13a3_547a_ce60_6015b22d580d["onApplicationEvent()"]
+  d2674bd6_6878_b4b1_91f7_a10836e33ea1 -->|calls| 6ada2be2_13a3_547a_ce60_6015b22d580d
+  style d2674bd6_6878_b4b1_91f7_a10836e33ea1 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-springapplicationtests-java-onapplicationevent"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"04119ca7:104e:bc13:b98d:abeb388dd8de","label":"onApplicationEvent","type":"Function","slug":"fn-springapplicationtests-java-onapplicationevent","lc":5,"lang":"java","cc":1,"cbc":14},{"id":"fe84b76c:47a1:82e0:3e0b:31f62d98aa34","label":"onApplicationEvent","type":"Function","slug":"","lc":4,"lang":"java","cbc":2},{"id":"27e53fa6:87b0:5b3d:be98:db3491ae5f7e","label":"eventsArePublishedInExpectedOrder","type":"Function","slug":"fn-springapplicationtests-java-eventsarepublishedinexpectedorder","lc":22,"lang":"java","cc":3},{"id":"82ef35f1:516a:2087:0dac:14b3852eade4","label":"runnersAreCalledAfterStartedIsLoggedAndBeforeApplicationReadyEventIsPublished","type":"Function","slug":"","lc":29,"lang":"java","cc":2},{"id":"352128ce:286e:f820:f24c:4cadc89dde9f","label":"applicationRunnerFailureCausesApplicationFailedEventToBePublished","type":"Function","slug":"","lc":16,"lang":"java","cc":2},{"id":"34f7160f:847b:6295:ccb5:679202d9f2af","label":"commandLineRunnerFailureCausesApplicationFailedEventToBePublished","type":"Function","slug":"","lc":16,"lang":"java","cc":2},{"id":"58d3eb27:9611:bd5d:cd3e:a7cbf62f8ef8","label":"failureInReadyEventListenerDoesNotCausePublicationOfFailedEvent","type":"Function","slug":"","lc":13,"lang":"java","cc":1},{"id":"0667a0a9:0d18:7cc7:4c93:c0496ae9089b","label":"failureInReadyEventListenerCloseApplicationContext","type":"Function","slug":"","lc":17,"lang":"java","cc":2},{"id":"ad0793ce:2db3:fd88:fa24:2f4f498db4d5","label":"failureOnTheJvmLogsApplicationRunFailed","type":"Function","slug":"","lc":18,"lang":"java","cc":2},{"id":"06f6a1f8:bb58:cb55:645a:565b14ec239e","label":"failureInANativeImageWritesFailureToSystemOut","type":"Function","slug":"","lc":28,"lang":"java","cc":2},{"id":"8e7d3be4:af6b:8471:4fe5:95279b2ce7d1","label":"verifyRegisteredListenerSuccessEvents","type":"Function","slug":"fn-springapplicationtests-java-verifyregisteredlistenersuccessevents","lc":14,"lang":"java","cc":2,"cbc":2},{"id":"9ce60087:3e8e:bc73:13d4:b59c8618327f","label":"verifyRegisteredListenerFailedFromApplicationEvents","type":"Function","slug":"fn-springapplicationtests-java-verifyregisteredlistenerfailedfromapplicationevents","lc":9,"lang":"java","cc":1,"cbc":2},{"id":"21b215a3:6480:fc90:76d9:ba1bb04a5111","label":"applicationListenerFromContextIsCalledWhenContextFailsRefreshBeforeListenerRegistration","type":"Function","slug":"","lc":10,"lang":"java","cc":1},{"id":"c3ae7a2a:314e:0517:97cb:fad31edac5f4","label":"applicationListenerFromContextIsCalledWhenContextFailsRefreshAfterListenerRegistration","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"feffefe9:2fbd:c1dd:e43c:5a0281633b47","label":"withHookWhenHookThrowsAbandonedRunExceptionAbandonsRun","type":"Function","slug":"fn-springapplicationtests-java-withhookwhenhookthrowsabandonedrunexceptionabandonsrun","lc":33,"lang":"java","cc":3},{"id":"7236b4a6:a596:76b9:7ace:480f720f53ab","label":"main","type":"Function","slug":"fn-springapplicationtests-java-main-2","lc":16,"lang":"java","cc":6,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"04119ca7:104e:bc13:b98d:abeb388dd8de","target":"fe84b76c:47a1:82e0:3e0b:31f62d98aa34","type":"calls"},{"source":"27e53fa6:87b0:5b3d:be98:db3491ae5f7e","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"82ef35f1:516a:2087:0dac:14b3852eade4","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"352128ce:286e:f820:f24c:4cadc89dde9f","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"34f7160f:847b:6295:ccb5:679202d9f2af","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"58d3eb27:9611:bd5d:cd3e:a7cbf62f8ef8","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"0667a0a9:0d18:7cc7:4c93:c0496ae9089b","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"ad0793ce:2db3:fd88:fa24:2f4f498db4d5","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"06f6a1f8:bb58:cb55:645a:565b14ec239e","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"8e7d3be4:af6b:8471:4fe5:95279b2ce7d1","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"9ce60087:3e8e:bc73:13d4:b59c8618327f","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"21b215a3:6480:fc90:76d9:ba1bb04a5111","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"c3ae7a2a:314e:0517:97cb:fad31edac5f4","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"feffefe9:2fbd:c1dd:e43c:5a0281633b47","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"7236b4a6:a596:76b9:7ace:480f720f53ab","target":"04119ca7:104e:bc13:b98d:abeb388dd8de","type":"calls"},{"source":"04119ca7:104e:bc13:b98d:abeb388dd8de","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"04119ca7:104e:bc13:b98d:abeb388dd8de","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","label":"onApplicationEvent","type":"Function","slug":"fn-springapplicationtests-java-onapplicationevent","lc":5,"lang":"java","cc":1,"cbc":9},{"id":"6ada2be2:13a3:547a:ce60:6015b22d580d","label":"onApplicationEvent","type":"Function","slug":"fn-springapplicationtests-java-onapplicationevent-3","lc":4,"lang":"java","cc":1,"cbc":8},{"id":"97b9ef0f:31dd:00dd:c9ef:0616693ec9da","label":"onApplicationEvent","type":"Function","slug":"","lc":4,"lang":"java","cc":2},{"id":"42b7e589:8a45:3489:76f2:28203bc71d91","label":"eventsArePublishedInExpectedOrder","type":"Function","slug":"fn-springapplicationtests-java-eventsarepublishedinexpectedorder","lc":22,"lang":"java","cc":3},{"id":"9e064f27:1214:2057:a2e9:10c8dad507de","label":"verifyRegisteredListenerSuccessEvents","type":"Function","slug":"fn-springapplicationtests-java-verifyregisteredlistenersuccessevents","lc":14,"lang":"java","cc":2,"cbc":2},{"id":"68d36c43:5f8a:b7da:3dd5:301b505c8bff","label":"verifyRegisteredListenerFailedFromApplicationEvents","type":"Function","slug":"fn-springapplicationtests-java-verifyregisteredlistenerfailedfromapplicationevents","lc":9,"lang":"java","cc":1,"cbc":2},{"id":"30be2b88:2665:fa60:cb41:5a5d3d6d793d","label":"applicationListenerFromContextIsCalledWhenContextFailsRefreshBeforeListenerRegistration","type":"Function","slug":"","lc":10,"lang":"java","cc":1},{"id":"584f9607:3053:99d3:e858:8c3492c95a14","label":"applicationListenerFromContextIsCalledWhenContextFailsRefreshAfterListenerRegistration","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"e9bf2deb:5c32:bd93:996a:c15a27f5f32e","label":"withHookWhenHookThrowsAbandonedRunExceptionAbandonsRun","type":"Function","slug":"fn-springapplicationtests-java-withhookwhenhookthrowsabandonedrunexceptionabandonsrun","lc":33,"lang":"java","cc":3},{"id":"ec56b454:8337:605b:1f83:10dbb8f42ab1","label":"main","type":"Function","slug":"fn-springapplicationtests-java-main-2","lc":16,"lang":"java","cc":6,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","target":"6ada2be2:13a3:547a:ce60:6015b22d580d","type":"calls"},{"source":"97b9ef0f:31dd:00dd:c9ef:0616693ec9da","target":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","type":"calls"},{"source":"6ada2be2:13a3:547a:ce60:6015b22d580d","target":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","type":"calls"},{"source":"42b7e589:8a45:3489:76f2:28203bc71d91","target":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","type":"calls"},{"source":"9e064f27:1214:2057:a2e9:10c8dad507de","target":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","type":"calls"},{"source":"68d36c43:5f8a:b7da:3dd5:301b505c8bff","target":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","type":"calls"},{"source":"30be2b88:2665:fa60:cb41:5a5d3d6d793d","target":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","type":"calls"},{"source":"584f9607:3053:99d3:e858:8c3492c95a14","target":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","type":"calls"},{"source":"e9bf2deb:5c32:bd93:996a:c15a27f5f32e","target":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","type":"calls"},{"source":"ec56b454:8337:605b:1f83:10dbb8f42ab1","target":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","type":"calls"},{"source":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"d2674bd6:6878:b4b1:91f7:a10836e33ea1","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -981,7 +973,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 
@@ -1000,14 +992,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li>onApplicationEvent()</li></ul>
+      <ul><li><a href="/fn-springapplicationtests-java-onapplicationevent-3.html">onApplicationEvent()</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Called By</h2>
-      <ul><li>applicationListenerFromContextIsCalledWhenContextFailsRefreshAfterListenerRegistration()</li><li>applicationListenerFromContextIsCalledWhenContextFailsRefreshBeforeListenerRegistration()</li><li>applicationRunnerFailureCausesApplicationFailedEventToBePublished()</li><li>commandLineRunnerFailureCausesApplicationFailedEventToBePublished()</li><li><a href="/fn-springapplicationtests-java-eventsarepublishedinexpectedorder.html">eventsArePublishedInExpectedOrder()</a></li><li>failureInANativeImageWritesFailureToSystemOut()</li><li>failureInReadyEventListenerCloseApplicationContext()</li><li>failureInReadyEventListenerDoesNotCausePublicationOfFailedEvent()</li><li>failureOnTheJvmLogsApplicationRunFailed()</li><li><a href="/fn-springapplicationtests-java-main-2.html">main()</a></li><li>runnersAreCalledAfterStartedIsLoggedAndBeforeApplicationReadyEventIsPublished()</li><li><a href="/fn-springapplicationtests-java-verifyregisteredlistenerfailedfromapplicationevents.html">verifyRegisteredListenerFailedFromApplicationEvents()</a></li><li><a href="/fn-springapplicationtests-java-verifyregisteredlistenersuccessevents.html">verifyRegisteredListenerSuccessEvents()</a></li><li><a href="/fn-springapplicationtests-java-withhookwhenhookthrowsabandonedrunexceptionabandonsrun.html">withHookWhenHookThrowsAbandonedRunExceptionAbandonsRun()</a></li></ul>
+      <ul><li>applicationListenerFromContextIsCalledWhenContextFailsRefreshAfterListenerRegistration()</li><li>applicationListenerFromContextIsCalledWhenContextFailsRefreshBeforeListenerRegistration()</li><li><a href="/fn-springapplicationtests-java-eventsarepublishedinexpectedorder.html">eventsArePublishedInExpectedOrder()</a></li><li><a href="/fn-springapplicationtests-java-main-2.html">main()</a></li><li>onApplicationEvent()</li><li><a href="/fn-springapplicationtests-java-onapplicationevent-3.html">onApplicationEvent()</a></li><li><a href="/fn-springapplicationtests-java-verifyregisteredlistenerfailedfromapplicationevents.html">verifyRegisteredListenerFailedFromApplicationEvents()</a></li><li><a href="/fn-springapplicationtests-java-verifyregisteredlistenersuccessevents.html">verifyRegisteredListenerSuccessEvents()</a></li><li><a href="/fn-springapplicationtests-java-withhookwhenhookthrowsabandonedrunexceptionabandonsrun.html">withHookWhenHookThrowsAbandonedRunExceptionAbandonsRun()</a></li></ul>
     </div>
     
 
@@ -1042,7 +1034,7 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What calls onApplicationEvent()?</summary>
-        <div class="faq-answer">onApplicationEvent() is called by 14 function(s): applicationListenerFromContextIsCalledWhenContextFailsRefreshAfterListenerRegistration, applicationListenerFromContextIsCalledWhenContextFailsRefreshBeforeListenerRegistration, applicationRunnerFailureCausesApplicationFailedEventToBePublished, commandLineRunnerFailureCausesApplicationFailedEventToBePublished, eventsArePublishedInExpectedOrder, failureInANativeImageWritesFailureToSystemOut, failureInReadyEventListenerCloseApplicationContext, failureInReadyEventListenerDoesNotCausePublicationOfFailedEvent, and 6 more.</div>
+        <div class="faq-answer">onApplicationEvent() is called by 9 function(s): applicationListenerFromContextIsCalledWhenContextFailsRefreshAfterListenerRegistration, applicationListenerFromContextIsCalledWhenContextFailsRefreshBeforeListenerRegistration, eventsArePublishedInExpectedOrder, main, onApplicationEvent, onApplicationEvent, verifyRegisteredListenerFailedFromApplicationEvents, verifyRegisteredListenerSuccessEvents, and 1 more.</div>
       </details>
       
     </div>

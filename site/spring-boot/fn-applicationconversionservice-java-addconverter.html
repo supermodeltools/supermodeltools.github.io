@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"addConverter","slug":"fn-applicationconversionservice-java-addconverter","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"addConverter","slug":"fn-applicationconversionservice-java-addconverter","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>addConverter() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,34 +911,34 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ef80b656_6a05_ac7e_9c61_8b60931b8d9d["addConverter()"]
-  a14dcd28_f6de_0bef_c6f7_3d3cc6b13826["addBeans()"]
-  a14dcd28_f6de_0bef_c6f7_3d3cc6b13826 -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  017ee87d_eee6_4e3e_9b12_8e269a9c8151["TypeConverterConversionService()"]
-  017ee87d_eee6_4e3e_9b12_8e269a9c8151 -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  d31701c5_ae8c_440d_45aa_26c32ee41f13["addApplicationConverters()"]
-  d31701c5_ae8c_440d_45aa_26c32ee41f13 -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  da60291a_c470_9221_89c9_ae8f94d6eeab["addDelimitedStringConverters()"]
-  da60291a_c470_9221_89c9_ae8f94d6eeab -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  ba0659b3_0044_8b93_428e_a56df2e289f7["addBean()"]
-  ba0659b3_0044_8b93_428e_a56df2e289f7 -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  be8c3736_ea90_033b_9a4e_d5224e107950["addBeanWithType()"]
-  be8c3736_ea90_033b_9a4e_d5224e107950 -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  988e5191_fcf0_1e7c_9362_f26c60aae1d8["convertWhenTargetIsListAndNotUsingApplicationConversionService()"]
-  988e5191_fcf0_1e7c_9362_f26c60aae1d8 -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  a45c0d6b_aa2b_bbc3_5744_56f26678ba75["conversionServices()"]
-  a45c0d6b_aa2b_bbc3_5744_56f26678ba75 -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  12c99a2e_a296_59e8_66b7_658965fe95b0["loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseBeanFactoryConverter()"]
-  12c99a2e_a296_59e8_66b7_658965fe95b0 -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  5d7c0129_0bb8_02e7_3a0e_622fb727b5fb["loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseConverterBean()"]
-  5d7c0129_0bb8_02e7_3a0e_622fb727b5fb -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  635ae770_5fdb_4bed_5a91_dc6d4124f28d["loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseConverterBeanWithCollections()"]
-  635ae770_5fdb_4bed_5a91_dc6d4124f28d -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  a6a6f11e_df23_0ce4_6847_afc057235d23["bindWhenHasBridgeMethods()"]
-  a6a6f11e_df23_0ce4_6847_afc057235d23 -->|calls| ef80b656_6a05_ac7e_9c61_8b60931b8d9d
-  2f840eb5_cfa0_1ab6_daae_8bf291467b23["assertModifiable()"]
-  ef80b656_6a05_ac7e_9c61_8b60931b8d9d -->|calls| 2f840eb5_cfa0_1ab6_daae_8bf291467b23
-  style ef80b656_6a05_ac7e_9c61_8b60931b8d9d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  1a80cceb_716b_cecb_7e21_9e378fc983b6["addConverter()"]
+  83758178_1b5a_798a_568c_cfcb2c8981a0["addBeans()"]
+  83758178_1b5a_798a_568c_cfcb2c8981a0 -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  1c297545_52f4_026c_5ed8_c2effbd379cd["TypeConverterConversionService()"]
+  1c297545_52f4_026c_5ed8_c2effbd379cd -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  68a04bfb_9f91_ec3d_c5d3_b5257142cc65["addApplicationConverters()"]
+  68a04bfb_9f91_ec3d_c5d3_b5257142cc65 -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  4771313f_a742_a2cc_9993_9e3c880c73c8["addDelimitedStringConverters()"]
+  4771313f_a742_a2cc_9993_9e3c880c73c8 -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  b28de75a_8dc6_8862_93a4_c2fa44ca5ccd["addBean()"]
+  b28de75a_8dc6_8862_93a4_c2fa44ca5ccd -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  fe5c5c3c_e135_59f8_c52e_40526530a54e["addBeanWithType()"]
+  fe5c5c3c_e135_59f8_c52e_40526530a54e -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  cf62de89_f47a_ee84_7285_ea9f98e0ab66["convertWhenTargetIsListAndNotUsingApplicationConversionService()"]
+  cf62de89_f47a_ee84_7285_ea9f98e0ab66 -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  e31691f5_b9a5_5358_188a_1d5830e0cc9a["conversionServices()"]
+  e31691f5_b9a5_5358_188a_1d5830e0cc9a -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  b0a71c40_955a_1638_380a_91ca0570f0ea["loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseBeanFactoryConverter()"]
+  b0a71c40_955a_1638_380a_91ca0570f0ea -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  2f349a40_8770_e8a4_5bf5_f237c8f105b6["loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseConverterBean()"]
+  2f349a40_8770_e8a4_5bf5_f237c8f105b6 -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  2dcd3c8e_144a_9dc1_f72d_f3c4bcfe1fd2["loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseConverterBeanWithCollections()"]
+  2dcd3c8e_144a_9dc1_f72d_f3c4bcfe1fd2 -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  86a3cbc7_74fd_2715_be72_a585b5d7dfd1["bindWhenHasBridgeMethods()"]
+  86a3cbc7_74fd_2715_be72_a585b5d7dfd1 -->|calls| 1a80cceb_716b_cecb_7e21_9e378fc983b6
+  143019b6_fe60_f2ec_64a1_9d82ad8fe39b["assertModifiable()"]
+  1a80cceb_716b_cecb_7e21_9e378fc983b6 -->|calls| 143019b6_fe60_f2ec_64a1_9d82ad8fe39b
+  style 1a80cceb_716b_cecb_7e21_9e378fc983b6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -946,7 +946,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-applicationconversionservice-java-addconverter"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","label":"addConverter","type":"Function","slug":"fn-applicationconversionservice-java-addconverter","lc":5,"lang":"java","cc":1,"cbc":12},{"id":"2f840eb5:cfa0:1ab6:daae:8bf291467b23","label":"assertModifiable","type":"Function","slug":"fn-applicationconversionservice-java-assertmodifiable","lc":5,"lang":"java","cbc":8},{"id":"a14dcd28:f6de:0bef:c6f7:3d3cc6b13826","label":"addBeans","type":"Function","slug":"fn-conversionservicededucer-java-addbeans","lc":7,"lang":"java","cc":2,"cbc":1},{"id":"017ee87d:eee6:4e3e:9b12:8e269a9c8151","label":"TypeConverterConversionService","type":"Function","slug":"fn-bindconverter-java-typeconverterconversionservice","lc":4,"lang":"java","cc":3,"cbc":1},{"id":"d31701c5:ae8c:440d:45aa:26c32ee41f13","label":"addApplicationConverters","type":"Function","slug":"fn-applicationconversionservice-java-addapplicationconverters","lc":19,"lang":"java","cc":3,"cbc":1},{"id":"da60291a:c470:9221:89c9:ae8f94d6eeab","label":"addDelimitedStringConverters","type":"Function","slug":"fn-applicationconversionservice-java-adddelimitedstringconverters","lc":7,"lang":"java","cc":1,"cbc":2},{"id":"ba0659b3:0044:8b93:428e:a56df2e289f7","label":"addBean","type":"Function","slug":"fn-applicationconversionservice-java-addbean","lc":31,"lang":"java","cc":4,"cbc":2},{"id":"be8c3736:ea90:033b:9a4e:d5224e107950","label":"addBeanWithType","type":"Function","slug":"fn-applicationconversionservice-java-addbeanwithtype","lc":6,"lang":"java","cc":2,"cbc":1},{"id":"988e5191:fcf0:1e7c:9362:f26c60aae1d8","label":"convertWhenTargetIsListAndNotUsingApplicationConversionService","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"a45c0d6b:aa2b:bbc3:5744:56f26678ba75","label":"conversionServices","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"12c99a2e:a296:59e8:66b7:658965fe95b0","label":"loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseBeanFactoryConverter","type":"Function","slug":"fn-configurationpropertiestests-java-loadwhenbeanfactoryconversionserviceandconverterbeancanusebeanfactoryconverter","lc":16,"lang":"java","cc":4},{"id":"5d7c0129:0bb8:02e7:3a0e:622fb727b5fb","label":"loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseConverterBean","type":"Function","slug":"fn-configurationpropertiestests-java-loadwhenbeanfactoryconversionserviceandconverterbeancanuseconverterbean","lc":16,"lang":"java","cc":4},{"id":"635ae770:5fdb:4bed:5a91:dc6d4124f28d","label":"loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseConverterBeanWithCollections","type":"Function","slug":"fn-configurationpropertiestests-java-loadwhenbeanfactoryconversionserviceandconverterbeancanuseconverterbeanwithcollections","lc":17,"lang":"java","cc":5},{"id":"a6a6f11e:df23:0ce4:6847:afc057235d23","label":"bindWhenHasBridgeMethods","type":"Function","slug":"fn-javabeanbindertests-java-bindwhenhasbridgemethods","lc":11,"lang":"java","cc":7},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","target":"2f840eb5:cfa0:1ab6:daae:8bf291467b23","type":"calls"},{"source":"a14dcd28:f6de:0bef:c6f7:3d3cc6b13826","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"017ee87d:eee6:4e3e:9b12:8e269a9c8151","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"d31701c5:ae8c:440d:45aa:26c32ee41f13","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"da60291a:c470:9221:89c9:ae8f94d6eeab","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"ba0659b3:0044:8b93:428e:a56df2e289f7","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"be8c3736:ea90:033b:9a4e:d5224e107950","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"988e5191:fcf0:1e7c:9362:f26c60aae1d8","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"a45c0d6b:aa2b:bbc3:5744:56f26678ba75","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"12c99a2e:a296:59e8:66b7:658965fe95b0","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"5d7c0129:0bb8:02e7:3a0e:622fb727b5fb","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"635ae770:5fdb:4bed:5a91:dc6d4124f28d","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"a6a6f11e:df23:0ce4:6847:afc057235d23","target":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","type":"calls"},{"source":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"ef80b656:6a05:ac7e:9c61:8b60931b8d9d","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"1a80cceb:716b:cecb:7e21:9e378fc983b6","label":"addConverter","type":"Function","slug":"fn-applicationconversionservice-java-addconverter","lc":5,"lang":"java","cc":1,"cbc":12},{"id":"143019b6:fe60:f2ec:64a1:9d82ad8fe39b","label":"assertModifiable","type":"Function","slug":"fn-applicationconversionservice-java-assertmodifiable","lc":5,"lang":"java","cbc":8},{"id":"83758178:1b5a:798a:568c:cfcb2c8981a0","label":"addBeans","type":"Function","slug":"fn-conversionservicededucer-java-addbeans","lc":7,"lang":"java","cc":2,"cbc":1},{"id":"1c297545:52f4:026c:5ed8:c2effbd379cd","label":"TypeConverterConversionService","type":"Function","slug":"fn-bindconverter-java-typeconverterconversionservice","lc":4,"lang":"java","cc":3,"cbc":1},{"id":"68a04bfb:9f91:ec3d:c5d3:b5257142cc65","label":"addApplicationConverters","type":"Function","slug":"fn-applicationconversionservice-java-addapplicationconverters","lc":19,"lang":"java","cc":3,"cbc":1},{"id":"4771313f:a742:a2cc:9993:9e3c880c73c8","label":"addDelimitedStringConverters","type":"Function","slug":"fn-applicationconversionservice-java-adddelimitedstringconverters","lc":7,"lang":"java","cc":1,"cbc":2},{"id":"b28de75a:8dc6:8862:93a4:c2fa44ca5ccd","label":"addBean","type":"Function","slug":"fn-applicationconversionservice-java-addbean","lc":31,"lang":"java","cc":4,"cbc":2},{"id":"fe5c5c3c:e135:59f8:c52e:40526530a54e","label":"addBeanWithType","type":"Function","slug":"fn-applicationconversionservice-java-addbeanwithtype","lc":6,"lang":"java","cc":2,"cbc":1},{"id":"cf62de89:f47a:ee84:7285:ea9f98e0ab66","label":"convertWhenTargetIsListAndNotUsingApplicationConversionService","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"e31691f5:b9a5:5358:188a:1d5830e0cc9a","label":"conversionServices","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"b0a71c40:955a:1638:380a:91ca0570f0ea","label":"loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseBeanFactoryConverter","type":"Function","slug":"fn-configurationpropertiestests-java-loadwhenbeanfactoryconversionserviceandconverterbeancanusebeanfactoryconverter","lc":16,"lang":"java","cc":4},{"id":"2f349a40:8770:e8a4:5bf5:f237c8f105b6","label":"loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseConverterBean","type":"Function","slug":"fn-configurationpropertiestests-java-loadwhenbeanfactoryconversionserviceandconverterbeancanuseconverterbean","lc":16,"lang":"java","cc":4},{"id":"2dcd3c8e:144a:9dc1:f72d:f3c4bcfe1fd2","label":"loadWhenBeanFactoryConversionServiceAndConverterBeanCanUseConverterBeanWithCollections","type":"Function","slug":"fn-configurationpropertiestests-java-loadwhenbeanfactoryconversionserviceandconverterbeancanuseconverterbeanwithcollections","lc":17,"lang":"java","cc":5},{"id":"86a3cbc7:74fd:2715:be72:a585b5d7dfd1","label":"bindWhenHasBridgeMethods","type":"Function","slug":"fn-javabeanbindertests-java-bindwhenhasbridgemethods","lc":11,"lang":"java","cc":7},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"1a80cceb:716b:cecb:7e21:9e378fc983b6","target":"143019b6:fe60:f2ec:64a1:9d82ad8fe39b","type":"calls"},{"source":"83758178:1b5a:798a:568c:cfcb2c8981a0","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"1c297545:52f4:026c:5ed8:c2effbd379cd","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"68a04bfb:9f91:ec3d:c5d3:b5257142cc65","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"4771313f:a742:a2cc:9993:9e3c880c73c8","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"b28de75a:8dc6:8862:93a4:c2fa44ca5ccd","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"fe5c5c3c:e135:59f8:c52e:40526530a54e","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"cf62de89:f47a:ee84:7285:ea9f98e0ab66","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"e31691f5:b9a5:5358:188a:1d5830e0cc9a","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"b0a71c40:955a:1638:380a:91ca0570f0ea","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"2f349a40:8770:e8a4:5bf5:f237c8f105b6","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"2dcd3c8e:144a:9dc1:f72d:f3c4bcfe1fd2","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"86a3cbc7:74fd:2715:be72:a585b5d7dfd1","target":"1a80cceb:716b:cecb:7e21:9e378fc983b6","type":"calls"},{"source":"1a80cceb:716b:cecb:7e21:9e378fc983b6","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"1a80cceb:716b:cecb:7e21:9e378fc983b6","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -979,7 +979,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

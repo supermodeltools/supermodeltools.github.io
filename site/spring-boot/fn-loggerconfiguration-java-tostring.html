@@ -811,7 +811,7 @@ a.pill:hover {
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the toString() function in LoggerConfiguration.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-loggerconfiguration-java-tostring.svg"],"name":"toString() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-loggerconfiguration-java-tostring.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"toString() — spring-boot Function Reference","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() is a function in the spring-boot codebase."},"name":"What does toString() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() calls 1 function(s): toString."},"name":"What does toString() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() is called by 3 function(s): setLevel, setLevelToNull, toString."},"name":"What calls toString()?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() is a function in the spring-boot codebase."},"name":"What does toString() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() calls 1 function(s): toString."},"name":"What does toString() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() is called by 6 function(s): logbackBaseConfigurationDoesNotTriggerDeprecation, setLevel, setLevelToNull, setLevelToNull, toString, whenConfigLocationIsXmlFileWithoutExtensionShouldWork."},"name":"What calls toString()?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -870,11 +870,11 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 1</span>
-        <span class="pill">called by 3</span>
+        <span class="pill">called by 6</span>
         
         
         
@@ -886,7 +886,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"cb":3,"co":1,"el":144,"et":{"calls":4},"lc":5,"sl":140}</script>
+      <script type="application/json" id="entity-profile-data">{"cb":6,"co":1,"el":144,"et":{"calls":7},"lc":5,"sl":140}</script>
     </div>
 
     
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"toString","slug":"fn-loggerconfiguration-java-tostring","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"toString","slug":"fn-loggerconfiguration-java-tostring","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>toString() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,22 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  734f9d1d_2b83_2c18_2d59_04314e50f954["toString()"]
-  66ebe8b3_144f_1d61_75ac_5032d45b0814["toString()"]
-  66ebe8b3_144f_1d61_75ac_5032d45b0814 -->|calls| 734f9d1d_2b83_2c18_2d59_04314e50f954
-  b8cbdfce_72db_d4da_698e_154ace7f4308["setLevel()"]
-  b8cbdfce_72db_d4da_698e_154ace7f4308 -->|calls| 734f9d1d_2b83_2c18_2d59_04314e50f954
-  5389d446_d7cf_58a7_bf1b_6932da37d35f["setLevelToNull()"]
-  5389d446_d7cf_58a7_bf1b_6932da37d35f -->|calls| 734f9d1d_2b83_2c18_2d59_04314e50f954
-  66ebe8b3_144f_1d61_75ac_5032d45b0814["toString()"]
-  734f9d1d_2b83_2c18_2d59_04314e50f954 -->|calls| 66ebe8b3_144f_1d61_75ac_5032d45b0814
-  style 734f9d1d_2b83_2c18_2d59_04314e50f954 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  3bfdb756_c954_5135_61dc_69a77d73d4e7["toString()"]
+  5b1e65b2_5062_f780_3d77_6886451a05d7["toString()"]
+  5b1e65b2_5062_f780_3d77_6886451a05d7 -->|calls| 3bfdb756_c954_5135_61dc_69a77d73d4e7
+  be54b320_df3d_339d_690c_f06375f113a1["setLevelToNull()"]
+  be54b320_df3d_339d_690c_f06375f113a1 -->|calls| 3bfdb756_c954_5135_61dc_69a77d73d4e7
+  6ddfc935_cf6f_cd7a_0e5d_9c87935fe96a["logbackBaseConfigurationDoesNotTriggerDeprecation()"]
+  6ddfc935_cf6f_cd7a_0e5d_9c87935fe96a -->|calls| 3bfdb756_c954_5135_61dc_69a77d73d4e7
+  b39276df_eb81_e446_600f_6e2bd790180f["setLevel()"]
+  b39276df_eb81_e446_600f_6e2bd790180f -->|calls| 3bfdb756_c954_5135_61dc_69a77d73d4e7
+  081260ba_2054_a59b_3406_86439893a5d1["setLevelToNull()"]
+  081260ba_2054_a59b_3406_86439893a5d1 -->|calls| 3bfdb756_c954_5135_61dc_69a77d73d4e7
+  dc784959_e534_bcfa_6399_a30d67ee0f4c["whenConfigLocationIsXmlFileWithoutExtensionShouldWork()"]
+  dc784959_e534_bcfa_6399_a30d67ee0f4c -->|calls| 3bfdb756_c954_5135_61dc_69a77d73d4e7
+  5b1e65b2_5062_f780_3d77_6886451a05d7["toString()"]
+  3bfdb756_c954_5135_61dc_69a77d73d4e7 -->|calls| 5b1e65b2_5062_f780_3d77_6886451a05d7
+  style 3bfdb756_c954_5135_61dc_69a77d73d4e7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +934,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-loggerconfiguration-java-tostring"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"734f9d1d:2b83:2c18:2d59:04314e50f954","label":"toString","type":"Function","slug":"fn-loggerconfiguration-java-tostring","lc":5,"lang":"java","cc":1,"cbc":3},{"id":"66ebe8b3:144f:1d61:75ac:5032d45b0814","label":"toString","type":"Function","slug":"","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"b8cbdfce:72db:d4da:698e:154ace7f4308","label":"setLevel","type":"Function","slug":"fn-javaloggingsystemtests-java-setlevel","lc":9,"lang":"java","cc":5,"cbc":1},{"id":"5389d446:d7cf:58a7:bf1b:6932da37d35f","label":"setLevelToNull","type":"Function","slug":"fn-javaloggingsystemtests-java-setleveltonull","lc":11,"lang":"java","cc":5},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"734f9d1d:2b83:2c18:2d59:04314e50f954","target":"66ebe8b3:144f:1d61:75ac:5032d45b0814","type":"calls"},{"source":"66ebe8b3:144f:1d61:75ac:5032d45b0814","target":"734f9d1d:2b83:2c18:2d59:04314e50f954","type":"calls"},{"source":"b8cbdfce:72db:d4da:698e:154ace7f4308","target":"734f9d1d:2b83:2c18:2d59:04314e50f954","type":"calls"},{"source":"5389d446:d7cf:58a7:bf1b:6932da37d35f","target":"734f9d1d:2b83:2c18:2d59:04314e50f954","type":"calls"},{"source":"734f9d1d:2b83:2c18:2d59:04314e50f954","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"734f9d1d:2b83:2c18:2d59:04314e50f954","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"3bfdb756:c954:5135:61dc:69a77d73d4e7","label":"toString","type":"Function","slug":"fn-loggerconfiguration-java-tostring","lc":5,"lang":"java","cc":1,"cbc":6},{"id":"5b1e65b2:5062:f780:3d77:6886451a05d7","label":"toString","type":"Function","slug":"fn-loggerconfiguration-java-tostring-2","lc":4,"lang":"java","cc":1,"cbc":2},{"id":"be54b320:df3d:339d:690c:f06375f113a1","label":"setLevelToNull","type":"Function","slug":"fn-javaloggingsystemtests-java-setleveltonull","lc":11,"lang":"java","cc":5},{"id":"6ddfc935:cf6f:cd7a:0e5d:9c87935fe96a","label":"logbackBaseConfigurationDoesNotTriggerDeprecation","type":"Function","slug":"fn-logbackloggingsystemtests-java-logbackbaseconfigurationdoesnottriggerdeprecation","lc":8,"lang":"java","cc":3},{"id":"b39276df:eb81:e446:600f:6e2bd790180f","label":"setLevel","type":"Function","slug":"fn-logbackloggingsystemtests-java-setlevel","lc":9,"lang":"java","cc":4},{"id":"081260ba:2054:a59b:3406:86439893a5d1","label":"setLevelToNull","type":"Function","slug":"fn-logbackloggingsystemtests-java-setleveltonull","lc":11,"lang":"java","cc":4},{"id":"dc784959:e534:bcfa:6399:a30d67ee0f4c","label":"whenConfigLocationIsXmlFileWithoutExtensionShouldWork","type":"Function","slug":"fn-logbackloggingsystemtests-java-whenconfiglocationisxmlfilewithoutextensionshouldwork","lc":19,"lang":"java","cc":5},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"3bfdb756:c954:5135:61dc:69a77d73d4e7","target":"5b1e65b2:5062:f780:3d77:6886451a05d7","type":"calls"},{"source":"5b1e65b2:5062:f780:3d77:6886451a05d7","target":"3bfdb756:c954:5135:61dc:69a77d73d4e7","type":"calls"},{"source":"be54b320:df3d:339d:690c:f06375f113a1","target":"3bfdb756:c954:5135:61dc:69a77d73d4e7","type":"calls"},{"source":"6ddfc935:cf6f:cd7a:0e5d:9c87935fe96a","target":"3bfdb756:c954:5135:61dc:69a77d73d4e7","type":"calls"},{"source":"b39276df:eb81:e446:600f:6e2bd790180f","target":"3bfdb756:c954:5135:61dc:69a77d73d4e7","type":"calls"},{"source":"081260ba:2054:a59b:3406:86439893a5d1","target":"3bfdb756:c954:5135:61dc:69a77d73d4e7","type":"calls"},{"source":"dc784959:e534:bcfa:6399:a30d67ee0f4c","target":"3bfdb756:c954:5135:61dc:69a77d73d4e7","type":"calls"},{"source":"3bfdb756:c954:5135:61dc:69a77d73d4e7","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"3bfdb756:c954:5135:61dc:69a77d73d4e7","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -961,7 +967,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 
@@ -980,14 +986,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li>toString()</li></ul>
+      <ul><li><a href="/fn-loggerconfiguration-java-tostring-2.html">toString()</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Called By</h2>
-      <ul><li><a href="/fn-javaloggingsystemtests-java-setlevel.html">setLevel()</a></li><li><a href="/fn-javaloggingsystemtests-java-setleveltonull.html">setLevelToNull()</a></li><li>toString()</li></ul>
+      <ul><li><a href="/fn-logbackloggingsystemtests-java-logbackbaseconfigurationdoesnottriggerdeprecation.html">logbackBaseConfigurationDoesNotTriggerDeprecation()</a></li><li><a href="/fn-logbackloggingsystemtests-java-setlevel.html">setLevel()</a></li><li><a href="/fn-javaloggingsystemtests-java-setleveltonull.html">setLevelToNull()</a></li><li><a href="/fn-logbackloggingsystemtests-java-setleveltonull.html">setLevelToNull()</a></li><li><a href="/fn-loggerconfiguration-java-tostring-2.html">toString()</a></li><li><a href="/fn-logbackloggingsystemtests-java-whenconfiglocationisxmlfilewithoutextensionshouldwork.html">whenConfigLocationIsXmlFileWithoutExtensionShouldWork()</a></li></ul>
     </div>
     
 
@@ -1022,7 +1028,7 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What calls toString()?</summary>
-        <div class="faq-answer">toString() is called by 3 function(s): setLevel, setLevelToNull, toString.</div>
+        <div class="faq-answer">toString() is called by 6 function(s): logbackBaseConfigurationDoesNotTriggerDeprecation, setLevel, setLevelToNull, setLevelToNull, toString, whenConfigLocationIsXmlFileWithoutExtensionShouldWork.</div>
       </details>
       
     </div>

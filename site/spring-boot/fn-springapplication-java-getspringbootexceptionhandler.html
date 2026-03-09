@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"getSpringBootExceptionHandler","slug":"fn-springapplication-java-getspringbootexceptionhandler","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"getSpringBootExceptionHandler","slug":"fn-springapplication-java-getspringbootexceptionhandler","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>getSpringBootExceptionHandler() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  00ef86dd_801c_ec12_ee2f_989493bf015f["getSpringBootExceptionHandler()"]
-  602d3240_b1b1_3429_3f95_a6e38530486b["registerLoggedException()"]
-  602d3240_b1b1_3429_3f95_a6e38530486b -->|calls| 00ef86dd_801c_ec12_ee2f_989493bf015f
-  702db1e1_65ad_d3b1_3381_880e46970616["handleExitCode()"]
-  702db1e1_65ad_d3b1_3381_880e46970616 -->|calls| 00ef86dd_801c_ec12_ee2f_989493bf015f
-  536de301_890d_027c_8a5e_8a9b81a3ef24["isMainThread()"]
-  00ef86dd_801c_ec12_ee2f_989493bf015f -->|calls| 536de301_890d_027c_8a5e_8a9b81a3ef24
-  style 00ef86dd_801c_ec12_ee2f_989493bf015f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  0ee36165_b034_c3ad_bb47_5a8df679090e["getSpringBootExceptionHandler()"]
+  12ce04ed_3ff5_8fde_ee1a_71c7515a0505["registerLoggedException()"]
+  12ce04ed_3ff5_8fde_ee1a_71c7515a0505 -->|calls| 0ee36165_b034_c3ad_bb47_5a8df679090e
+  14147a4c_db77_420d_bbeb_5f02ae64133e["handleExitCode()"]
+  14147a4c_db77_420d_bbeb_5f02ae64133e -->|calls| 0ee36165_b034_c3ad_bb47_5a8df679090e
+  a3fc1838_3566_12f1_c2e1_02aea737db63["isMainThread()"]
+  0ee36165_b034_c3ad_bb47_5a8df679090e -->|calls| a3fc1838_3566_12f1_c2e1_02aea737db63
+  style 0ee36165_b034_c3ad_bb47_5a8df679090e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-springapplication-java-getspringbootexceptionhandler"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"00ef86dd:801c:ec12:ee2f:989493bf015f","label":"getSpringBootExceptionHandler","type":"Function","slug":"fn-springapplication-java-getspringbootexceptionhandler","lc":6,"lang":"java","cc":1,"cbc":2},{"id":"536de301:890d:027c:8a5e:8a9b81a3ef24","label":"isMainThread","type":"Function","slug":"","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"602d3240:b1b1:3429:3f95:a6e38530486b","label":"registerLoggedException","type":"Function","slug":"","lc":6,"lang":"java","cc":1,"cbc":1},{"id":"702db1e1:65ad:d3b1:3381:880e46970616","label":"handleExitCode","type":"Function","slug":"fn-springapplication-java-handleexitcode","lc":12,"lang":"java","cc":2,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"00ef86dd:801c:ec12:ee2f:989493bf015f","target":"536de301:890d:027c:8a5e:8a9b81a3ef24","type":"calls"},{"source":"602d3240:b1b1:3429:3f95:a6e38530486b","target":"00ef86dd:801c:ec12:ee2f:989493bf015f","type":"calls"},{"source":"702db1e1:65ad:d3b1:3381:880e46970616","target":"00ef86dd:801c:ec12:ee2f:989493bf015f","type":"calls"},{"source":"00ef86dd:801c:ec12:ee2f:989493bf015f","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"00ef86dd:801c:ec12:ee2f:989493bf015f","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"0ee36165:b034:c3ad:bb47:5a8df679090e","label":"getSpringBootExceptionHandler","type":"Function","slug":"fn-springapplication-java-getspringbootexceptionhandler","lc":6,"lang":"java","cc":1,"cbc":2},{"id":"a3fc1838:3566:12f1:c2e1:02aea737db63","label":"isMainThread","type":"Function","slug":"","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"12ce04ed:3ff5:8fde:ee1a:71c7515a0505","label":"registerLoggedException","type":"Function","slug":"","lc":6,"lang":"java","cc":1,"cbc":1},{"id":"14147a4c:db77:420d:bbeb:5f02ae64133e","label":"handleExitCode","type":"Function","slug":"fn-springapplication-java-handleexitcode","lc":12,"lang":"java","cc":2,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"0ee36165:b034:c3ad:bb47:5a8df679090e","target":"a3fc1838:3566:12f1:c2e1:02aea737db63","type":"calls"},{"source":"12ce04ed:3ff5:8fde:ee1a:71c7515a0505","target":"0ee36165:b034:c3ad:bb47:5a8df679090e","type":"calls"},{"source":"14147a4c:db77:420d:bbeb:5f02ae64133e","target":"0ee36165:b034:c3ad:bb47:5a8df679090e","type":"calls"},{"source":"0ee36165:b034:c3ad:bb47:5a8df679090e","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"0ee36165:b034:c3ad:bb47:5a8df679090e","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -960,7 +960,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

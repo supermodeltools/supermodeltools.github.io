@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"configureBootRunTask","slug":"fn-javapluginaction-java-configurebootruntask","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"configureBootRunTask","slug":"fn-javapluginaction-java-configurebootruntask","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>configureBootRunTask() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,18 +911,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  2f12bb0b_bfba_1a71_dedc_540e967fce1a["configureBootRunTask()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226["execute()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 2f12bb0b_bfba_1a71_dedc_540e967fce1a
-  8a75f5f4_432e_a742_c9dd_350ce2aa9442["javaPluginExtension()"]
-  2f12bb0b_bfba_1a71_dedc_540e967fce1a -->|calls| 8a75f5f4_432e_a742_c9dd_350ce2aa9442
-  f6f76f32_5453_560f_a28f_1dd9aa5eac1c["classpath()"]
-  2f12bb0b_bfba_1a71_dedc_540e967fce1a -->|calls| f6f76f32_5453_560f_a28f_1dd9aa5eac1c
-  dbe74c19_3cd0_b571_f465_e8dc81fec349["getMainClass()"]
-  2f12bb0b_bfba_1a71_dedc_540e967fce1a -->|calls| dbe74c19_3cd0_b571_f465_e8dc81fec349
-  bead2e3b_1a30_8db9_7d96_a013f9d4848b["configureToolchainConvention()"]
-  2f12bb0b_bfba_1a71_dedc_540e967fce1a -->|calls| bead2e3b_1a30_8db9_7d96_a013f9d4848b
-  style 2f12bb0b_bfba_1a71_dedc_540e967fce1a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  13333df4_436d_9e5a_a224_19dd49a40e85["configureBootRunTask()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8["execute()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| 13333df4_436d_9e5a_a224_19dd49a40e85
+  26f64bcf_5780_0164_2954_be02a575ba8d["javaPluginExtension()"]
+  13333df4_436d_9e5a_a224_19dd49a40e85 -->|calls| 26f64bcf_5780_0164_2954_be02a575ba8d
+  61b64378_b240_d249_53a8_993dfbdf2f89["classpath()"]
+  13333df4_436d_9e5a_a224_19dd49a40e85 -->|calls| 61b64378_b240_d249_53a8_993dfbdf2f89
+  981435a5_534e_9573_52a4_266c1337df71["getMainClass()"]
+  13333df4_436d_9e5a_a224_19dd49a40e85 -->|calls| 981435a5_534e_9573_52a4_266c1337df71
+  f04d5039_0b20_5a54_9fd9_d19522feec3a["configureToolchainConvention()"]
+  13333df4_436d_9e5a_a224_19dd49a40e85 -->|calls| f04d5039_0b20_5a54_9fd9_d19522feec3a
+  style 13333df4_436d_9e5a_a224_19dd49a40e85 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -930,7 +930,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-javapluginaction-java-configurebootruntask"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"2f12bb0b:bfba:1a71:dedc:540e967fce1a","label":"configureBootRunTask","type":"Function","slug":"fn-javapluginaction-java-configurebootruntask","lc":15,"lang":"java","cc":4,"cbc":1},{"id":"8a75f5f4:432e:a742:c9dd:350ce2aa9442","label":"javaPluginExtension","type":"Function","slug":"fn-javapluginaction-java-javapluginextension","lc":3,"lang":"java","cbc":3},{"id":"f6f76f32:5453:560f:a28f:1dd9aa5eac1c","label":"classpath","type":"Function","slug":"fn-bootjar-java-classpath","lc":6,"lang":"java","cbc":5},{"id":"dbe74c19:3cd0:b571:f465:e8dc81fec349","label":"getMainClass","type":"Function","slug":"fn-springbootextension-java-getmainclass","lc":3,"lang":"java","cbc":5},{"id":"bead2e3b:1a30:8db9:7d96:a013f9d4848b","label":"configureToolchainConvention","type":"Function","slug":"fn-javapluginaction-java-configuretoolchainconvention","lc":5,"lang":"java","cbc":2},{"id":"8fe8fa63:0e81:f495:ad11:d5973f38d226","label":"execute","type":"Function","slug":"fn-javapluginaction-java-execute","lc":19,"lang":"java","cc":16,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"2f12bb0b:bfba:1a71:dedc:540e967fce1a","target":"8a75f5f4:432e:a742:c9dd:350ce2aa9442","type":"calls"},{"source":"2f12bb0b:bfba:1a71:dedc:540e967fce1a","target":"f6f76f32:5453:560f:a28f:1dd9aa5eac1c","type":"calls"},{"source":"2f12bb0b:bfba:1a71:dedc:540e967fce1a","target":"dbe74c19:3cd0:b571:f465:e8dc81fec349","type":"calls"},{"source":"2f12bb0b:bfba:1a71:dedc:540e967fce1a","target":"bead2e3b:1a30:8db9:7d96:a013f9d4848b","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"2f12bb0b:bfba:1a71:dedc:540e967fce1a","type":"calls"},{"source":"2f12bb0b:bfba:1a71:dedc:540e967fce1a","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"2f12bb0b:bfba:1a71:dedc:540e967fce1a","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"13333df4:436d:9e5a:a224:19dd49a40e85","label":"configureBootRunTask","type":"Function","slug":"fn-javapluginaction-java-configurebootruntask","lc":15,"lang":"java","cc":4,"cbc":1},{"id":"26f64bcf:5780:0164:2954:be02a575ba8d","label":"javaPluginExtension","type":"Function","slug":"fn-javapluginaction-java-javapluginextension","lc":3,"lang":"java","cbc":3},{"id":"61b64378:b240:d249:53a8:993dfbdf2f89","label":"classpath","type":"Function","slug":"fn-bootjar-java-classpath","lc":6,"lang":"java","cbc":5},{"id":"981435a5:534e:9573:52a4:266c1337df71","label":"getMainClass","type":"Function","slug":"fn-springbootextension-java-getmainclass","lc":3,"lang":"java","cbc":5},{"id":"f04d5039:0b20:5a54:9fd9:d19522feec3a","label":"configureToolchainConvention","type":"Function","slug":"fn-javapluginaction-java-configuretoolchainconvention","lc":5,"lang":"java","cbc":2},{"id":"a194bff2:c419:ac45:4cec:b7a84a7457d8","label":"execute","type":"Function","slug":"fn-javapluginaction-java-execute","lc":19,"lang":"java","cc":16,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"13333df4:436d:9e5a:a224:19dd49a40e85","target":"26f64bcf:5780:0164:2954:be02a575ba8d","type":"calls"},{"source":"13333df4:436d:9e5a:a224:19dd49a40e85","target":"61b64378:b240:d249:53a8:993dfbdf2f89","type":"calls"},{"source":"13333df4:436d:9e5a:a224:19dd49a40e85","target":"981435a5:534e:9573:52a4:266c1337df71","type":"calls"},{"source":"13333df4:436d:9e5a:a224:19dd49a40e85","target":"f04d5039:0b20:5a54:9fd9:d19522feec3a","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"13333df4:436d:9e5a:a224:19dd49a40e85","type":"calls"},{"source":"13333df4:436d:9e5a:a224:19dd49a40e85","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"13333df4:436d:9e5a:a224:19dd49a40e85","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -973,7 +973,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 

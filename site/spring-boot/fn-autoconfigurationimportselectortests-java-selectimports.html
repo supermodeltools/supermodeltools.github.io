@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"selectImports","slug":"fn-autoconfigurationimportselectortests-java-selectimports","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"selectImports","slug":"fn-autoconfigurationimportselectortests-java-selectimports","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>selectImports() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  e51d8c1e_60cc_2bc1_db21_04a0e211cccf["selectImports()"]
-  590f837e_b478_1a4a_2065_c4d9803de672["importsAreSelectedWhenUsingEnableAutoConfiguration()"]
-  590f837e_b478_1a4a_2065_c4d9803de672 -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  519db2bf_9818_0cb3_6f99_71fe84a4286e["classExclusionsAreApplied()"]
-  519db2bf_9818_0cb3_6f99_71fe84a4286e -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  5650aea2_ac78_7680_8ee1_d67beaf331d5["classExclusionsAreAppliedWhenUsingSpringBootApplication()"]
-  5650aea2_ac78_7680_8ee1_d67beaf331d5 -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  2050473f_604a_cc26_7266_4d8230dc447b["classNamesExclusionsAreApplied()"]
-  2050473f_604a_cc26_7266_4d8230dc447b -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  8ae4e326_a91d_91e9_8a6f_1de3ab71f6f6["classNamesExclusionsAreAppliedWhenUsingSpringBootApplication()"]
-  8ae4e326_a91d_91e9_8a6f_1de3ab71f6f6 -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  6218730a_66be_c066_0d30_913cb167ced5["propertyExclusionsAreApplied()"]
-  6218730a_66be_c066_0d30_913cb167ced5 -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  70cf4d31_7742_458f_1ecf_e015ceabb361["testSeveralPropertyExclusionsAreApplied()"]
-  70cf4d31_7742_458f_1ecf_e015ceabb361 -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  a80e70a3_d81a_b2ac_dc2c_f93249184f78["combinedExclusionsAreApplied()"]
-  a80e70a3_d81a_b2ac_dc2c_f93249184f78 -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  177cfd5d_715c_cc97_a853_7a5f71f5ff73["removedExclusionsAreApplied()"]
-  177cfd5d_715c_cc97_a853_7a5f71f5ff73 -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  378e821e_0018_57c2_0690_71db44b0043b["nonAutoConfigurationClassExclusionsShouldThrowException()"]
-  378e821e_0018_57c2_0690_71db44b0043b -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  35d4dfdd_15e9_0780_62b0_6a32efe10124["nonAutoConfigurationClassNameExclusionsWhenPresentOnClassPathShouldThrowException()"]
-  35d4dfdd_15e9_0780_62b0_6a32efe10124 -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  aebffe0d_d295_f0c0_4fdc_d979131033e6["nonAutoConfigurationPropertyExclusionsWhenPresentOnClassPathShouldThrowException()"]
-  aebffe0d_d295_f0c0_4fdc_d979131033e6 -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  2ff97b85_87b5_e070_d5b0_4ca92bfa22c6["nameAndPropertyExclusionsWhenNotPresentOnClasspathShouldNotThrowException()"]
-  2ff97b85_87b5_e070_d5b0_4ca92bfa22c6 -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  78e1c768_b750_afd7_f731_650a5b056afc["filterShouldFilterImports()"]
-  78e1c768_b750_afd7_f731_650a5b056afc -->|calls| e51d8c1e_60cc_2bc1_db21_04a0e211cccf
-  style e51d8c1e_60cc_2bc1_db21_04a0e211cccf fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  9c7aeaba_3925_b099_053f_2449d9c195a4["selectImports()"]
+  b8f76ee9_b7aa_88e6_df51_2fa24c097687["importsAreSelectedWhenUsingEnableAutoConfiguration()"]
+  b8f76ee9_b7aa_88e6_df51_2fa24c097687 -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  3f98694b_9963_6c4f_85c9_492e195c0a9f["classExclusionsAreApplied()"]
+  3f98694b_9963_6c4f_85c9_492e195c0a9f -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  ef263907_2d81_8b47_3ce5_e40c08711427["classExclusionsAreAppliedWhenUsingSpringBootApplication()"]
+  ef263907_2d81_8b47_3ce5_e40c08711427 -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  687c3725_a47d_9698_b2f7_f16e9b954088["classNamesExclusionsAreApplied()"]
+  687c3725_a47d_9698_b2f7_f16e9b954088 -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  9956dd80_5da1_e109_a719_064bbb23254c["classNamesExclusionsAreAppliedWhenUsingSpringBootApplication()"]
+  9956dd80_5da1_e109_a719_064bbb23254c -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  21f8cf57_c4a7_0557_ec66_5b5bb229cf55["propertyExclusionsAreApplied()"]
+  21f8cf57_c4a7_0557_ec66_5b5bb229cf55 -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  e573e502_521f_2dff_ae5b_64aa64151beb["testSeveralPropertyExclusionsAreApplied()"]
+  e573e502_521f_2dff_ae5b_64aa64151beb -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  80f64355_c580_c10a_acb8_58d7af214cfc["combinedExclusionsAreApplied()"]
+  80f64355_c580_c10a_acb8_58d7af214cfc -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  acc36843_a29b_a192_43d6_8927f01c6525["removedExclusionsAreApplied()"]
+  acc36843_a29b_a192_43d6_8927f01c6525 -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  40adf1d9_24f8_99c0_0df5_50909876b5ca["nonAutoConfigurationClassExclusionsShouldThrowException()"]
+  40adf1d9_24f8_99c0_0df5_50909876b5ca -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  b2abbfdb_368f_b3f7_1ab8_7f710ad0373c["nonAutoConfigurationClassNameExclusionsWhenPresentOnClassPathShouldThrowException()"]
+  b2abbfdb_368f_b3f7_1ab8_7f710ad0373c -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  871a0f62_c330_e8d0_8090_17c6fe393344["nonAutoConfigurationPropertyExclusionsWhenPresentOnClassPathShouldThrowException()"]
+  871a0f62_c330_e8d0_8090_17c6fe393344 -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  89021fc0_6788_ad5c_03b4_2340454ece2b["nameAndPropertyExclusionsWhenNotPresentOnClasspathShouldNotThrowException()"]
+  89021fc0_6788_ad5c_03b4_2340454ece2b -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  1851569b_319c_bc16_7e59_2ed844119400["filterShouldFilterImports()"]
+  1851569b_319c_bc16_7e59_2ed844119400 -->|calls| 9c7aeaba_3925_b099_053f_2449d9c195a4
+  style 9c7aeaba_3925_b099_053f_2449d9c195a4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-autoconfigurationimportselectortests-java-selectimports"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","label":"selectImports","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-selectimports","lc":3,"lang":"java","cbc":16},{"id":"590f837e:b478:1a4a:2065:c4d9803de672","label":"importsAreSelectedWhenUsingEnableAutoConfiguration","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-importsareselectedwhenusingenableautoconfiguration","lc":6,"lang":"java","cc":3},{"id":"519db2bf:9818:0cb3:6f99:71fe84a4286e","label":"classExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classexclusionsareapplied","lc":6,"lang":"java","cc":3},{"id":"5650aea2:ac78:7680:8ee1:d67beaf331d5","label":"classExclusionsAreAppliedWhenUsingSpringBootApplication","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classexclusionsareappliedwhenusingspringbootapplication","lc":6,"lang":"java","cc":3},{"id":"2050473f:604a:cc26:7266:4d8230dc447b","label":"classNamesExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classnamesexclusionsareapplied","lc":6,"lang":"java","cc":3},{"id":"8ae4e326:a91d:91e9:8a6f:1de3ab71f6f6","label":"classNamesExclusionsAreAppliedWhenUsingSpringBootApplication","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classnamesexclusionsareappliedwhenusingspringbootapplication","lc":6,"lang":"java","cc":3},{"id":"6218730a:66be:c066:0d30:913cb167ced5","label":"propertyExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-propertyexclusionsareapplied","lc":7,"lang":"java","cc":3},{"id":"70cf4d31:7742:458f:1ecf:e015ceabb361","label":"testSeveralPropertyExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-testseveralpropertyexclusionsareapplied","lc":6,"lang":"java","cc":3,"cbc":3},{"id":"a80e70a3:d81a:b2ac:dc2c:f93249184f78","label":"combinedExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-combinedexclusionsareapplied","lc":8,"lang":"java","cc":3},{"id":"177cfd5d:715c:cc97:a853:7a5f71f5ff73","label":"removedExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-removedexclusionsareapplied","lc":12,"lang":"java","cc":3},{"id":"378e821e:0018:57c2:0690:71db44b0043b","label":"nonAutoConfigurationClassExclusionsShouldThrowException","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"35d4dfdd:15e9:0780:62b0:6a32efe10124","label":"nonAutoConfigurationClassNameExclusionsWhenPresentOnClassPathShouldThrowException","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"aebffe0d:d295:f0c0:4fdc:d979131033e6","label":"nonAutoConfigurationPropertyExclusionsWhenPresentOnClassPathShouldThrowException","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"2ff97b85:87b5:e070:d5b0:4ca92bfa22c6","label":"nameAndPropertyExclusionsWhenNotPresentOnClasspathShouldNotThrowException","type":"Function","slug":"","lc":9,"lang":"java","cc":2},{"id":"78e1c768:b750:afd7:f731:650a5b056afc","label":"filterShouldFilterImports","type":"Function","slug":"","lc":9,"lang":"java","cc":2},{"id":"7c658ef5:3cb2:201e:78e6:7a3eb2510eda","label":"filterShouldSupportAware","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-filtershouldsupportaware","lc":7,"lang":"java","cc":3},{"id":"89db99cd:5dda:8f9a:f188:a86ccd8cc2cd","label":"sortingConsidersReplacements","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-sortingconsidersreplacements","lc":17,"lang":"java","cc":4},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"590f837e:b478:1a4a:2065:c4d9803de672","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"519db2bf:9818:0cb3:6f99:71fe84a4286e","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"5650aea2:ac78:7680:8ee1:d67beaf331d5","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"2050473f:604a:cc26:7266:4d8230dc447b","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"8ae4e326:a91d:91e9:8a6f:1de3ab71f6f6","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"6218730a:66be:c066:0d30:913cb167ced5","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"70cf4d31:7742:458f:1ecf:e015ceabb361","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"a80e70a3:d81a:b2ac:dc2c:f93249184f78","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"177cfd5d:715c:cc97:a853:7a5f71f5ff73","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"378e821e:0018:57c2:0690:71db44b0043b","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"35d4dfdd:15e9:0780:62b0:6a32efe10124","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"aebffe0d:d295:f0c0:4fdc:d979131033e6","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"2ff97b85:87b5:e070:d5b0:4ca92bfa22c6","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"78e1c768:b750:afd7:f731:650a5b056afc","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"7c658ef5:3cb2:201e:78e6:7a3eb2510eda","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"89db99cd:5dda:8f9a:f188:a86ccd8cc2cd","target":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","type":"calls"},{"source":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"e51d8c1e:60cc:2bc1:db21:04a0e211cccf","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"9c7aeaba:3925:b099:053f:2449d9c195a4","label":"selectImports","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-selectimports","lc":3,"lang":"java","cbc":16},{"id":"b8f76ee9:b7aa:88e6:df51:2fa24c097687","label":"importsAreSelectedWhenUsingEnableAutoConfiguration","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-importsareselectedwhenusingenableautoconfiguration","lc":6,"lang":"java","cc":3},{"id":"3f98694b:9963:6c4f:85c9:492e195c0a9f","label":"classExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classexclusionsareapplied","lc":6,"lang":"java","cc":3},{"id":"ef263907:2d81:8b47:3ce5:e40c08711427","label":"classExclusionsAreAppliedWhenUsingSpringBootApplication","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classexclusionsareappliedwhenusingspringbootapplication","lc":6,"lang":"java","cc":3},{"id":"687c3725:a47d:9698:b2f7:f16e9b954088","label":"classNamesExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classnamesexclusionsareapplied","lc":6,"lang":"java","cc":3},{"id":"9956dd80:5da1:e109:a719:064bbb23254c","label":"classNamesExclusionsAreAppliedWhenUsingSpringBootApplication","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classnamesexclusionsareappliedwhenusingspringbootapplication","lc":6,"lang":"java","cc":3},{"id":"21f8cf57:c4a7:0557:ec66:5b5bb229cf55","label":"propertyExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-propertyexclusionsareapplied","lc":7,"lang":"java","cc":3},{"id":"e573e502:521f:2dff:ae5b:64aa64151beb","label":"testSeveralPropertyExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-testseveralpropertyexclusionsareapplied","lc":6,"lang":"java","cc":3,"cbc":3},{"id":"80f64355:c580:c10a:acb8:58d7af214cfc","label":"combinedExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-combinedexclusionsareapplied","lc":8,"lang":"java","cc":3},{"id":"acc36843:a29b:a192:43d6:8927f01c6525","label":"removedExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-removedexclusionsareapplied","lc":12,"lang":"java","cc":3},{"id":"40adf1d9:24f8:99c0:0df5:50909876b5ca","label":"nonAutoConfigurationClassExclusionsShouldThrowException","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"b2abbfdb:368f:b3f7:1ab8:7f710ad0373c","label":"nonAutoConfigurationClassNameExclusionsWhenPresentOnClassPathShouldThrowException","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"871a0f62:c330:e8d0:8090:17c6fe393344","label":"nonAutoConfigurationPropertyExclusionsWhenPresentOnClassPathShouldThrowException","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"89021fc0:6788:ad5c:03b4:2340454ece2b","label":"nameAndPropertyExclusionsWhenNotPresentOnClasspathShouldNotThrowException","type":"Function","slug":"","lc":9,"lang":"java","cc":2},{"id":"1851569b:319c:bc16:7e59:2ed844119400","label":"filterShouldFilterImports","type":"Function","slug":"","lc":9,"lang":"java","cc":2},{"id":"2b8fcbe3:72cc:26d3:53d6:f66da8282e5a","label":"filterShouldSupportAware","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-filtershouldsupportaware","lc":7,"lang":"java","cc":3},{"id":"9c0f2d80:cc32:3e74:b717:697dd409770b","label":"sortingConsidersReplacements","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-sortingconsidersreplacements","lc":17,"lang":"java","cc":4},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"b8f76ee9:b7aa:88e6:df51:2fa24c097687","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"3f98694b:9963:6c4f:85c9:492e195c0a9f","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"ef263907:2d81:8b47:3ce5:e40c08711427","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"687c3725:a47d:9698:b2f7:f16e9b954088","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"9956dd80:5da1:e109:a719:064bbb23254c","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"21f8cf57:c4a7:0557:ec66:5b5bb229cf55","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"e573e502:521f:2dff:ae5b:64aa64151beb","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"80f64355:c580:c10a:acb8:58d7af214cfc","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"acc36843:a29b:a192:43d6:8927f01c6525","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"40adf1d9:24f8:99c0:0df5:50909876b5ca","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"b2abbfdb:368f:b3f7:1ab8:7f710ad0373c","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"871a0f62:c330:e8d0:8090:17c6fe393344","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"89021fc0:6788:ad5c:03b4:2340454ece2b","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"1851569b:319c:bc16:7e59:2ed844119400","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"2b8fcbe3:72cc:26d3:53d6:f66da8282e5a","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"9c0f2d80:cc32:3e74:b717:697dd409770b","target":"9c7aeaba:3925:b099:053f:2449d9c195a4","type":"calls"},{"source":"9c7aeaba:3925:b099:053f:2449d9c195a4","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"9c7aeaba:3925:b099:053f:2449d9c195a4","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -979,7 +979,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

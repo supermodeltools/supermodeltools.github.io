@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"createPerformanceTestEnvironment","slug":"fn-configurationpropertysourcestests-java-createperformancetestenvironment","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"createPerformanceTestEnvironment","slug":"fn-configurationpropertysourcestests-java-createperformancetestenvironment","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>createPerformanceTestEnvironment() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  35b48a9c_6bee_c3e9_801e_70041741cf21["createPerformanceTestEnvironment()"]
-  0a18a39a_04c6_e874_8c5d_04965dd60da2["environmentPropertyAccessWhenMutableWithCacheShouldBePerformant()"]
-  0a18a39a_04c6_e874_8c5d_04965dd60da2 -->|calls| 35b48a9c_6bee_c3e9_801e_70041741cf21
-  82081f6f_cc3d_6938_853d_11ddba63cd51["descendantOfPropertyAccessWhenMutableWithCacheShouldBePerformant()"]
-  82081f6f_cc3d_6938_853d_11ddba63cd51 -->|calls| 35b48a9c_6bee_c3e9_801e_70041741cf21
-  f7ab8b60_8133_e2fa_134b_4a91607af9fb["testPropertySourcePerformance()"]
-  f7ab8b60_8133_e2fa_134b_4a91607af9fb -->|calls| 35b48a9c_6bee_c3e9_801e_70041741cf21
-  610d81a6_2c0a_859c_dea4_4485c362cece["TestPropertySource()"]
-  35b48a9c_6bee_c3e9_801e_70041741cf21 -->|calls| 610d81a6_2c0a_859c_dea4_4485c362cece
-  style 35b48a9c_6bee_c3e9_801e_70041741cf21 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  cc0e4e16_a6b6_a355_5a91_2a2461d6dc70["createPerformanceTestEnvironment()"]
+  55486c6b_a81d_a990_8d4d_cbc866a0ba5a["environmentPropertyAccessWhenMutableWithCacheShouldBePerformant()"]
+  55486c6b_a81d_a990_8d4d_cbc866a0ba5a -->|calls| cc0e4e16_a6b6_a355_5a91_2a2461d6dc70
+  0ab184c8_b25f_60c0_22f7_33496d27dcaa["descendantOfPropertyAccessWhenMutableWithCacheShouldBePerformant()"]
+  0ab184c8_b25f_60c0_22f7_33496d27dcaa -->|calls| cc0e4e16_a6b6_a355_5a91_2a2461d6dc70
+  a906c2a5_efee_436b_ca7b_c7a8678b4d4e["testPropertySourcePerformance()"]
+  a906c2a5_efee_436b_ca7b_c7a8678b4d4e -->|calls| cc0e4e16_a6b6_a355_5a91_2a2461d6dc70
+  f0fde083_aca9_c952_eab6_e7f5b67814f9["TestPropertySource()"]
+  cc0e4e16_a6b6_a355_5a91_2a2461d6dc70 -->|calls| f0fde083_aca9_c952_eab6_e7f5b67814f9
+  style cc0e4e16_a6b6_a355_5a91_2a2461d6dc70 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-configurationpropertysourcestests-java-createperformancetestenvironment"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"35b48a9c:6bee:c3e9:801e:70041741cf21","label":"createPerformanceTestEnvironment","type":"Function","slug":"fn-configurationpropertysourcestests-java-createperformancetestenvironment","lc":9,"lang":"java","cc":1,"cbc":3},{"id":"610d81a6:2c0a:859c:dea4:4485c362cece","label":"TestPropertySource","type":"Function","slug":"","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"0a18a39a:04c6:e874:8c5d:04965dd60da2","label":"environmentPropertyAccessWhenMutableWithCacheShouldBePerformant","type":"Function","slug":"","lc":8,"lang":"java","cc":2},{"id":"82081f6f:cc3d:6938:853d:11ddba63cd51","label":"descendantOfPropertyAccessWhenMutableWithCacheShouldBePerformant","type":"Function","slug":"","lc":19,"lang":"java","cc":1},{"id":"f7ab8b60:8133:e2fa:134b:4a91607af9fb","label":"testPropertySourcePerformance","type":"Function","slug":"fn-configurationpropertysourcestests-java-testpropertysourceperformance","lc":4,"lang":"java","cc":1,"cbc":3},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"35b48a9c:6bee:c3e9:801e:70041741cf21","target":"610d81a6:2c0a:859c:dea4:4485c362cece","type":"calls"},{"source":"0a18a39a:04c6:e874:8c5d:04965dd60da2","target":"35b48a9c:6bee:c3e9:801e:70041741cf21","type":"calls"},{"source":"82081f6f:cc3d:6938:853d:11ddba63cd51","target":"35b48a9c:6bee:c3e9:801e:70041741cf21","type":"calls"},{"source":"f7ab8b60:8133:e2fa:134b:4a91607af9fb","target":"35b48a9c:6bee:c3e9:801e:70041741cf21","type":"calls"},{"source":"35b48a9c:6bee:c3e9:801e:70041741cf21","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"35b48a9c:6bee:c3e9:801e:70041741cf21","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"cc0e4e16:a6b6:a355:5a91:2a2461d6dc70","label":"createPerformanceTestEnvironment","type":"Function","slug":"fn-configurationpropertysourcestests-java-createperformancetestenvironment","lc":9,"lang":"java","cc":1,"cbc":3},{"id":"f0fde083:aca9:c952:eab6:e7f5b67814f9","label":"TestPropertySource","type":"Function","slug":"","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"55486c6b:a81d:a990:8d4d:cbc866a0ba5a","label":"environmentPropertyAccessWhenMutableWithCacheShouldBePerformant","type":"Function","slug":"","lc":8,"lang":"java","cc":2},{"id":"0ab184c8:b25f:60c0:22f7:33496d27dcaa","label":"descendantOfPropertyAccessWhenMutableWithCacheShouldBePerformant","type":"Function","slug":"","lc":19,"lang":"java","cc":1},{"id":"a906c2a5:efee:436b:ca7b:c7a8678b4d4e","label":"testPropertySourcePerformance","type":"Function","slug":"fn-configurationpropertysourcestests-java-testpropertysourceperformance","lc":4,"lang":"java","cc":1,"cbc":3},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"cc0e4e16:a6b6:a355:5a91:2a2461d6dc70","target":"f0fde083:aca9:c952:eab6:e7f5b67814f9","type":"calls"},{"source":"55486c6b:a81d:a990:8d4d:cbc866a0ba5a","target":"cc0e4e16:a6b6:a355:5a91:2a2461d6dc70","type":"calls"},{"source":"0ab184c8:b25f:60c0:22f7:33496d27dcaa","target":"cc0e4e16:a6b6:a355:5a91:2a2461d6dc70","type":"calls"},{"source":"a906c2a5:efee:436b:ca7b:c7a8678b4d4e","target":"cc0e4e16:a6b6:a355:5a91:2a2461d6dc70","type":"calls"},{"source":"cc0e4e16:a6b6:a355:5a91:2a2461d6dc70","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"cc0e4e16:a6b6:a355:5a91:2a2461d6dc70","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -965,7 +965,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 

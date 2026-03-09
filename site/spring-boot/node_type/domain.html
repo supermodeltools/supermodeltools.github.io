@@ -810,7 +810,7 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","description":"Domain Node Type recipes","image":"https://repos.supermodeltools.com/images/share/node_type-domain.svg","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","name":"AntLibrary Domain — spring-boot Architecture","position":1,"url":"https://repos.supermodeltools.com/domain-antlibrary.html"},{"@type":"ListItem","name":"AotTooling Domain — spring-boot Architecture","position":2,"url":"https://repos.supermodeltools.com/domain-aottooling.html"},{"@type":"ListItem","name":"BuildpackPlatform Domain — spring-boot Architecture","position":3,"url":"https://repos.supermodeltools.com/domain-buildpackplatform.html"},{"@type":"ListItem","name":"Documentation Domain — spring-boot Architecture","position":4,"url":"https://repos.supermodeltools.com/domain-documentation.html"},{"@type":"ListItem","name":"GradlePlugin Domain — spring-boot Architecture","position":5,"url":"https://repos.supermodeltools.com/domain-gradleplugin.html"},{"@type":"ListItem","name":"MavenPlugin Domain — spring-boot Architecture","position":6,"url":"https://repos.supermodeltools.com/domain-mavenplugin.html"},{"@type":"ListItem","name":"Packaging Domain — spring-boot Architecture","position":7,"url":"https://repos.supermodeltools.com/domain-packaging.html"}],"numberOfItems":7},"name":"Domain","url":"https://repos.supermodeltools.com/node_type/domain.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","description":"Domain Node Type recipes","image":"https://repos.supermodeltools.com/images/share/node_type-domain.svg","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","name":"AotProcessing Domain — spring-boot Architecture","position":1,"url":"https://repos.supermodeltools.com/domain-aotprocessing.html"},{"@type":"ListItem","name":"BuildpackPlatform Domain — spring-boot Architecture","position":2,"url":"https://repos.supermodeltools.com/domain-buildpackplatform.html"},{"@type":"ListItem","name":"Execution Domain — spring-boot Architecture","position":3,"url":"https://repos.supermodeltools.com/domain-execution.html"},{"@type":"ListItem","name":"GradlePlugin Domain — spring-boot Architecture","position":4,"url":"https://repos.supermodeltools.com/domain-gradleplugin.html"},{"@type":"ListItem","name":"LoggingDocumentation Domain — spring-boot Architecture","position":5,"url":"https://repos.supermodeltools.com/domain-loggingdocumentation.html"},{"@type":"ListItem","name":"MavenPlugin Domain — spring-boot Architecture","position":6,"url":"https://repos.supermodeltools.com/domain-mavenplugin.html"},{"@type":"ListItem","name":"Packaging Domain — spring-boot Architecture","position":7,"url":"https://repos.supermodeltools.com/domain-packaging.html"}],"numberOfItems":7},"name":"Domain","url":"https://repos.supermodeltools.com/node_type/domain.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://repos.supermodeltools.com/node_type/","name":"Node Types","position":2},{"@type":"ListItem","name":"Domain","position":3}]}</script>
 </head>
 <body>
@@ -876,18 +876,9 @@ a.pill:hover {
 
     <div class="card-grid">
       
-      <a href="/domain-antlibrary.html" class="card">
-        <div class="card-title">AntLibrary Domain — spring-boot Architecture</div>
-        <div class="card-desc">The legacy build support layer providing Ant tasks for class finding and archive manipulation. Architectural overview of the AntLibrary domain in the spring-boot codebase. Contains 0 source files.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Domain</span>
-          
-        </div>
-      </a>
-      
-      <a href="/domain-aottooling.html" class="card">
-        <div class="card-title">AotTooling Domain — spring-boot Architecture</div>
-        <div class="card-desc">Handles ahead-of-time processing for native image compatibility. Architectural overview of the AotTooling domain in the spring-boot codebase. Contains 3 source files.</div>
+      <a href="/domain-aotprocessing.html" class="card">
+        <div class="card-title">AotProcessing Domain — spring-boot Architecture</div>
+        <div class="card-desc">Manages Ahead-Of-Time (AOT) transformation of Spring Boot applications for GraalVM native image compatibility. Architectural overview of the AotProcessing domain in the spring-boot codebase. Contains 3 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Domain</span>
           
@@ -896,16 +887,16 @@ a.pill:hover {
       
       <a href="/domain-buildpackplatform.html" class="card">
         <div class="card-title">BuildpackPlatform Domain — spring-boot Architecture</div>
-        <div class="card-desc">A library-level abstraction layer facilitating communication with the Docker daemon and Cloud Native Buildpack orchestration. Architectural overview of the BuildpackPlatform domain in the spring-boot codebase. Contains 51 source files.</div>
+        <div class="card-desc">An abstraction layer over Docker and Cloud Native Buildpacks used to build OCI images platform-independently. Architectural overview of the BuildpackPlatform domain in the spring-boot codebase. Contains 51 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Domain</span>
           
         </div>
       </a>
       
-      <a href="/domain-documentation.html" class="card">
-        <div class="card-title">Documentation Domain — spring-boot Architecture</div>
-        <div class="card-desc">Manages documentation generation using Antora and Asciidoctor. Architectural overview of the Documentation domain in the spring-boot codebase. Contains 0 source files.</div>
+      <a href="/domain-execution.html" class="card">
+        <div class="card-title">Execution Domain — spring-boot Architecture</div>
+        <div class="card-desc">Handles local application lifecycle management, allowing users to run Spring Boot applications directly from build tools. Architectural overview of the Execution domain in the spring-boot codebase. Contains 1 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Domain</span>
           
@@ -914,7 +905,16 @@ a.pill:hover {
       
       <a href="/domain-gradleplugin.html" class="card">
         <div class="card-title">GradlePlugin Domain — spring-boot Architecture</div>
-        <div class="card-desc">The primary build automation interface for Gradle, providing tasks for lifecycle management, packaging, and execution. Architectural overview of the GradlePlugin domain in the spring-boot codebase. Contains 1064 source files.</div>
+        <div class="card-desc">Core domain handling the integration of Spring Boot workflows into the Gradle build system, including custom task definitions and DSL extensions. Architectural overview of the GradlePlugin domain in the spring-boot codebase. Contains 1054 source files.</div>
+        <div class="card-meta">
+          <span class="pill pill-accent">Domain</span>
+          
+        </div>
+      </a>
+      
+      <a href="/domain-loggingdocumentation.html" class="card">
+        <div class="card-title">LoggingDocumentation Domain — spring-boot Architecture</div>
+        <div class="card-desc">Manages the Antora-based documentation generation and metadata management for the project. Architectural overview of the LoggingDocumentation domain in the spring-boot codebase. Contains 6 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Domain</span>
           
@@ -923,7 +923,7 @@ a.pill:hover {
       
       <a href="/domain-mavenplugin.html" class="card">
         <div class="card-title">MavenPlugin Domain — spring-boot Architecture</div>
-        <div class="card-desc">Provides Maven goals for packaging executable archives and building OCI images similar to the Gradle plugin. Architectural overview of the MavenPlugin domain in the spring-boot codebase. Contains 4 source files.</div>
+        <div class="card-desc">Provides the Apache Maven counterpart to the build tools, focusing on goal execution and project lifecycle integration. Architectural overview of the MavenPlugin domain in the spring-boot codebase. Contains 3 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Domain</span>
           
@@ -932,7 +932,7 @@ a.pill:hover {
       
       <a href="/domain-packaging.html" class="card">
         <div class="card-title">Packaging Domain — spring-boot Architecture</div>
-        <div class="card-desc">The core archive manipulation logic shared across different build systems. Architectural overview of the Packaging domain in the spring-boot codebase. Contains 0 source files.</div>
+        <div class="card-desc">Handles the creation of &#39;fat&#39; executable JAR and WAR archives specific to the Spring Boot loader format. Architectural overview of the Packaging domain in the spring-boot codebase. Contains 4 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Domain</span>
           

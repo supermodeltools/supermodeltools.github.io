@@ -811,7 +811,7 @@ a.pill:hover {
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the apply() function in BootJar.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-bootjar-java-apply.svg"],"name":"apply() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-bootjar-java-apply.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"apply() — spring-boot Function Reference","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"apply() is a function in the spring-boot codebase."},"name":"What does apply() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"apply() calls 1 function(s): resolveZipCompression."},"name":"What does apply() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"apply() is called by 1 function(s): execute."},"name":"What calls apply()?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"apply() is a function in the spring-boot codebase."},"name":"What does apply() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"apply() calls 1 function(s): resolveZipCompression."},"name":"What does apply() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"apply() is called by 2 function(s): apply, execute."},"name":"What calls apply()?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -869,12 +869,12 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
-        <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/domain/packaging.html" class="pill pill-green">Packaging</a>
+        <a href="/subdomain/layers.html" class="pill pill-orange">Layers</a>
         
         
         <span class="pill">calls 1</span>
-        <span class="pill">called by 1</span>
+        <span class="pill">called by 2</span>
         
         
         
@@ -886,7 +886,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"cb":1,"co":1,"el":294,"et":{"calls":2},"lc":4,"sl":291}</script>
+      <script type="application/json" id="entity-profile-data">{"cb":2,"co":1,"el":294,"et":{"calls":3},"lc":4,"sl":291}</script>
     </div>
 
     
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"apply","slug":"fn-bootjar-java-apply","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Packaging","slug":"domain-packaging"},"entity":{"name":"apply","slug":"fn-bootjar-java-apply","type":"Function"},"subdomain":{"name":"Layers","slug":"subdomain-layers"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/packaging.html">Packaging</a><span class="arch-sep">&rarr;</span>
+            <a href="/layers.html">Layers</a><span class="arch-sep">&rarr;</span>
             <span>apply() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  f91bb3b2_3c6c_1f76_00f3_bbb8804873a2["apply()"]
-  7722e37a_6e3b_1b27_44cd_7cbdf083f934["execute()"]
-  7722e37a_6e3b_1b27_44cd_7cbdf083f934 -->|calls| f91bb3b2_3c6c_1f76_00f3_bbb8804873a2
-  9386ddb7_8622_66e1_b349_45279583c671["resolveZipCompression()"]
-  f91bb3b2_3c6c_1f76_00f3_bbb8804873a2 -->|calls| 9386ddb7_8622_66e1_b349_45279583c671
-  style f91bb3b2_3c6c_1f76_00f3_bbb8804873a2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  4ed67fe0_a939_7e7e_3660_c03b261069ab["apply()"]
+  804c2993_1c16_91e7_8703_8d7c8e686711["execute()"]
+  804c2993_1c16_91e7_8703_8d7c8e686711 -->|calls| 4ed67fe0_a939_7e7e_3660_c03b261069ab
+  3914524b_307a_2256_59fb_1e9078fa6181["apply()"]
+  3914524b_307a_2256_59fb_1e9078fa6181 -->|calls| 4ed67fe0_a939_7e7e_3660_c03b261069ab
+  7780b0d6_b197_5e43_b6ff_50fa69d44336["resolveZipCompression()"]
+  4ed67fe0_a939_7e7e_3660_c03b261069ab -->|calls| 7780b0d6_b197_5e43_b6ff_50fa69d44336
+  style 4ed67fe0_a939_7e7e_3660_c03b261069ab fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-bootjar-java-apply"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"f91bb3b2:3c6c:1f76:00f3:bbb8804873a2","label":"apply","type":"Function","slug":"fn-bootjar-java-apply","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"9386ddb7:8622:66e1:b349:45279583c671","label":"resolveZipCompression","type":"Function","slug":"fn-bootjar-java-resolvezipcompression","lc":3,"lang":"java","cc":1,"cbc":1},{"id":"7722e37a:6e3b:1b27:44cd:7cbdf083f934","label":"execute","type":"Function","slug":"fn-nativeimagepluginaction-java-execute","lc":13,"lang":"java","cc":6},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"f91bb3b2:3c6c:1f76:00f3:bbb8804873a2","target":"9386ddb7:8622:66e1:b349:45279583c671","type":"calls"},{"source":"7722e37a:6e3b:1b27:44cd:7cbdf083f934","target":"f91bb3b2:3c6c:1f76:00f3:bbb8804873a2","type":"calls"},{"source":"f91bb3b2:3c6c:1f76:00f3:bbb8804873a2","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"f91bb3b2:3c6c:1f76:00f3:bbb8804873a2","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"4ed67fe0:a939:7e7e:3660:c03b261069ab","label":"apply","type":"Function","slug":"fn-bootjar-java-apply","lc":4,"lang":"java","cc":1,"cbc":2},{"id":"7780b0d6:b197:5e43:b6ff:50fa69d44336","label":"resolveZipCompression","type":"Function","slug":"fn-bootjar-java-resolvezipcompression","lc":3,"lang":"java","cc":1,"cbc":1},{"id":"804c2993:1c16:91e7:8703:8d7c8e686711","label":"execute","type":"Function","slug":"fn-nativeimagepluginaction-java-execute","lc":13,"lang":"java","cc":6},{"id":"3914524b:307a:2256:59fb:1e9078fa6181","label":"apply","type":"Function","slug":"fn-springbootplugin-java-apply","lc":7,"lang":"java","cc":5},{"id":"domain:Packaging","label":"Packaging","type":"Domain","slug":"domain-packaging"},{"id":"subdomain:Packaging:Layers","label":"Layers","type":"Subdomain","slug":"subdomain-layers"}],"edges":[{"source":"4ed67fe0:a939:7e7e:3660:c03b261069ab","target":"7780b0d6:b197:5e43:b6ff:50fa69d44336","type":"calls"},{"source":"804c2993:1c16:91e7:8703:8d7c8e686711","target":"4ed67fe0:a939:7e7e:3660:c03b261069ab","type":"calls"},{"source":"3914524b:307a:2256:59fb:1e9078fa6181","target":"4ed67fe0:a939:7e7e:3660:c03b261069ab","type":"calls"},{"source":"4ed67fe0:a939:7e7e:3660:c03b261069ab","target":"domain:Packaging","type":"belongsTo"},{"source":"4ed67fe0:a939:7e7e:3660:c03b261069ab","target":"subdomain:Packaging:Layers","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -949,14 +951,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-gradleplugin.html">GradlePlugin</a></li></ul>
+      <ul><li><a href="/domain-packaging.html">Packaging</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-layers.html">Layers</a></li></ul>
     </div>
     
 
@@ -982,7 +984,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Called By</h2>
-      <ul><li><a href="/fn-nativeimagepluginaction-java-execute.html">execute()</a></li></ul>
+      <ul><li><a href="/fn-springbootplugin-java-apply.html">apply()</a></li><li><a href="/fn-nativeimagepluginaction-java-execute.html">execute()</a></li></ul>
     </div>
     
 
@@ -1017,7 +1019,7 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What calls apply()?</summary>
-        <div class="faq-answer">apply() is called by 1 function(s): execute.</div>
+        <div class="faq-answer">apply() is called by 2 function(s): apply, execute.</div>
       </details>
       
     </div>

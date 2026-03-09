@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 8</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"shutdownHookRegistrationCanBeDisabled","slug":"fn-loggingapplicationlistenertests-java-shutdownhookregistrationcanbedisabled","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"shutdownHookRegistrationCanBeDisabled","slug":"fn-loggingapplicationlistenertests-java-shutdownhookregistrationcanbedisabled","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>shutdownHookRegistrationCanBeDisabled() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,24 +911,24 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  22befd4b_46eb_3651_9a0c_f5b39c33f129["shutdownHookRegistrationCanBeDisabled()"]
-  9dd85471_4156_92c3_d945_c30b44bdfbbd["addPropertiesToEnvironment()"]
-  22befd4b_46eb_3651_9a0c_f5b39c33f129 -->|calls| 9dd85471_4156_92c3_d945_c30b44bdfbbd
-  dab98809_eaca_7426_25dd_e00970d7394d["multicastEvent()"]
-  22befd4b_46eb_3651_9a0c_f5b39c33f129 -->|calls| dab98809_eaca_7426_25dd_e00970d7394d
-  77615936_ce75_3216_5458_9cb2442e9b94["ApplicationStartingEvent()"]
-  22befd4b_46eb_3651_9a0c_f5b39c33f129 -->|calls| 77615936_ce75_3216_5458_9cb2442e9b94
-  15d6deb8_0c37_648d_c586_3b89e58076af["SpringApplication()"]
-  22befd4b_46eb_3651_9a0c_f5b39c33f129 -->|calls| 15d6deb8_0c37_648d_c586_3b89e58076af
-  03b1ac71_20e7_e60f_a0d7_0caf4f64fa17["initialize()"]
-  22befd4b_46eb_3651_9a0c_f5b39c33f129 -->|calls| 03b1ac71_20e7_e60f_a0d7_0caf4f64fa17
-  99be27b3_e03d_a032_bae8_7ae6e7d7c460["getEnvironment()"]
-  22befd4b_46eb_3651_9a0c_f5b39c33f129 -->|calls| 99be27b3_e03d_a032_bae8_7ae6e7d7c460
-  b42c3c07_3ea6_ed5b_dd70_5acaf108f731["getClassLoader()"]
-  22befd4b_46eb_3651_9a0c_f5b39c33f129 -->|calls| b42c3c07_3ea6_ed5b_dd70_5acaf108f731
-  4289d463_1951_6917_242a_94fa63e7b1a1["getName()"]
-  22befd4b_46eb_3651_9a0c_f5b39c33f129 -->|calls| 4289d463_1951_6917_242a_94fa63e7b1a1
-  style 22befd4b_46eb_3651_9a0c_f5b39c33f129 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a2e417d5_223f_011a_f068_5094186aff10["shutdownHookRegistrationCanBeDisabled()"]
+  ff2edd23_bf82_afbe_9737_9554dc038647["addPropertiesToEnvironment()"]
+  a2e417d5_223f_011a_f068_5094186aff10 -->|calls| ff2edd23_bf82_afbe_9737_9554dc038647
+  3436c77d_0342_6ed3_99cb_62dd92541aef["multicastEvent()"]
+  a2e417d5_223f_011a_f068_5094186aff10 -->|calls| 3436c77d_0342_6ed3_99cb_62dd92541aef
+  686dda93_d412_b282_35a1_e5bf7d9041a3["ApplicationStartingEvent()"]
+  a2e417d5_223f_011a_f068_5094186aff10 -->|calls| 686dda93_d412_b282_35a1_e5bf7d9041a3
+  6f239299_766f_babe_71b2_9f14d10b5080["SpringApplication()"]
+  a2e417d5_223f_011a_f068_5094186aff10 -->|calls| 6f239299_766f_babe_71b2_9f14d10b5080
+  353158a0_d089_72f1_fba4_c71ded5dfd59["initialize()"]
+  a2e417d5_223f_011a_f068_5094186aff10 -->|calls| 353158a0_d089_72f1_fba4_c71ded5dfd59
+  5caff41e_e3cc_cc00_4372_6b272b5a5eeb["getEnvironment()"]
+  a2e417d5_223f_011a_f068_5094186aff10 -->|calls| 5caff41e_e3cc_cc00_4372_6b272b5a5eeb
+  c3a889f4_76f2_c266_5e08_056ac46eaa89["getClassLoader()"]
+  a2e417d5_223f_011a_f068_5094186aff10 -->|calls| c3a889f4_76f2_c266_5e08_056ac46eaa89
+  f0a750cf_19ac_4afe_0a91_d775cdc2dd7b["getName()"]
+  a2e417d5_223f_011a_f068_5094186aff10 -->|calls| f0a750cf_19ac_4afe_0a91_d775cdc2dd7b
+  style a2e417d5_223f_011a_f068_5094186aff10 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -936,7 +936,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-loggingapplicationlistenertests-java-shutdownhookregistrationcanbedisabled"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"22befd4b:46eb:3651:9a0c:f5b39c33f129","label":"shutdownHookRegistrationCanBeDisabled","type":"Function","slug":"fn-loggingapplicationlistenertests-java-shutdownhookregistrationcanbedisabled","lc":13,"lang":"java","cc":8},{"id":"9dd85471:4156:92c3:d945:c30b44bdfbbd","label":"addPropertiesToEnvironment","type":"Function","slug":"fn-loggingapplicationlistenertests-java-addpropertiestoenvironment","lc":10,"lang":"java","cc":2,"cbc":29},{"id":"dab98809:eaca:7426:25dd:e00970d7394d","label":"multicastEvent","type":"Function","slug":"fn-loggingapplicationlistenertests-java-multicastevent","lc":3,"lang":"java","cbc":9},{"id":"77615936:ce75:3216:5458:9cb2442e9b94","label":"ApplicationStartingEvent","type":"Function","slug":"fn-applicationstartingevent-java-applicationstartingevent","lc":5,"lang":"java","cbc":9},{"id":"15d6deb8:0c37:648d:c586:3b89e58076af","label":"SpringApplication","type":"Function","slug":"fn-springapplication-java-springapplication","lc":3,"lang":"java","cc":5,"cbc":35},{"id":"03b1ac71:20e7:e60f:a0d7:0caf4f64fa17","label":"initialize","type":"Function","slug":"fn-loggingapplicationlistenertests-java-initialize","lc":5,"lang":"java","cc":1,"cbc":35},{"id":"99be27b3:e03d:a032:bae8:7ae6e7d7c460","label":"getEnvironment","type":"Function","slug":"fn-logginginitializationcontext-java-getenvironment","lc":3,"lang":"java","cbc":45},{"id":"b42c3c07:3ea6:ed5b:dd70:5acaf108f731","label":"getClassLoader","type":"Function","slug":"fn-loggingapplicationlistenertests-java-getclassloader","lc":5,"lang":"java","cc":1,"cbc":36},{"id":"4289d463:1951:6917:242a:94fa63e7b1a1","label":"getName","type":"Function","slug":"fn-loggergroup-java-getname","lc":3,"lang":"java","cbc":6},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"22befd4b:46eb:3651:9a0c:f5b39c33f129","target":"9dd85471:4156:92c3:d945:c30b44bdfbbd","type":"calls"},{"source":"22befd4b:46eb:3651:9a0c:f5b39c33f129","target":"dab98809:eaca:7426:25dd:e00970d7394d","type":"calls"},{"source":"22befd4b:46eb:3651:9a0c:f5b39c33f129","target":"77615936:ce75:3216:5458:9cb2442e9b94","type":"calls"},{"source":"22befd4b:46eb:3651:9a0c:f5b39c33f129","target":"15d6deb8:0c37:648d:c586:3b89e58076af","type":"calls"},{"source":"22befd4b:46eb:3651:9a0c:f5b39c33f129","target":"03b1ac71:20e7:e60f:a0d7:0caf4f64fa17","type":"calls"},{"source":"22befd4b:46eb:3651:9a0c:f5b39c33f129","target":"99be27b3:e03d:a032:bae8:7ae6e7d7c460","type":"calls"},{"source":"22befd4b:46eb:3651:9a0c:f5b39c33f129","target":"b42c3c07:3ea6:ed5b:dd70:5acaf108f731","type":"calls"},{"source":"22befd4b:46eb:3651:9a0c:f5b39c33f129","target":"4289d463:1951:6917:242a:94fa63e7b1a1","type":"calls"},{"source":"22befd4b:46eb:3651:9a0c:f5b39c33f129","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"22befd4b:46eb:3651:9a0c:f5b39c33f129","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a2e417d5:223f:011a:f068:5094186aff10","label":"shutdownHookRegistrationCanBeDisabled","type":"Function","slug":"fn-loggingapplicationlistenertests-java-shutdownhookregistrationcanbedisabled","lc":13,"lang":"java","cc":8},{"id":"ff2edd23:bf82:afbe:9737:9554dc038647","label":"addPropertiesToEnvironment","type":"Function","slug":"fn-loggingapplicationlistenertests-java-addpropertiestoenvironment","lc":10,"lang":"java","cc":2,"cbc":29},{"id":"3436c77d:0342:6ed3:99cb:62dd92541aef","label":"multicastEvent","type":"Function","slug":"fn-loggingapplicationlistenertests-java-multicastevent","lc":3,"lang":"java","cbc":9},{"id":"686dda93:d412:b282:35a1:e5bf7d9041a3","label":"ApplicationStartingEvent","type":"Function","slug":"fn-applicationstartingevent-java-applicationstartingevent","lc":5,"lang":"java","cbc":9},{"id":"6f239299:766f:babe:71b2:9f14d10b5080","label":"SpringApplication","type":"Function","slug":"fn-springapplication-java-springapplication","lc":3,"lang":"java","cc":5,"cbc":35},{"id":"353158a0:d089:72f1:fba4:c71ded5dfd59","label":"initialize","type":"Function","slug":"fn-loggingapplicationlistenertests-java-initialize","lc":5,"lang":"java","cc":1,"cbc":35},{"id":"5caff41e:e3cc:cc00:4372:6b272b5a5eeb","label":"getEnvironment","type":"Function","slug":"fn-logginginitializationcontext-java-getenvironment","lc":3,"lang":"java","cbc":45},{"id":"c3a889f4:76f2:c266:5e08:056ac46eaa89","label":"getClassLoader","type":"Function","slug":"fn-loggingapplicationlistenertests-java-getclassloader","lc":5,"lang":"java","cc":1,"cbc":36},{"id":"f0a750cf:19ac:4afe:0a91:d775cdc2dd7b","label":"getName","type":"Function","slug":"fn-loggerconfiguration-java-getname","lc":3,"lang":"java","cc":1,"cbc":42},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"a2e417d5:223f:011a:f068:5094186aff10","target":"ff2edd23:bf82:afbe:9737:9554dc038647","type":"calls"},{"source":"a2e417d5:223f:011a:f068:5094186aff10","target":"3436c77d:0342:6ed3:99cb:62dd92541aef","type":"calls"},{"source":"a2e417d5:223f:011a:f068:5094186aff10","target":"686dda93:d412:b282:35a1:e5bf7d9041a3","type":"calls"},{"source":"a2e417d5:223f:011a:f068:5094186aff10","target":"6f239299:766f:babe:71b2:9f14d10b5080","type":"calls"},{"source":"a2e417d5:223f:011a:f068:5094186aff10","target":"353158a0:d089:72f1:fba4:c71ded5dfd59","type":"calls"},{"source":"a2e417d5:223f:011a:f068:5094186aff10","target":"5caff41e:e3cc:cc00:4372:6b272b5a5eeb","type":"calls"},{"source":"a2e417d5:223f:011a:f068:5094186aff10","target":"c3a889f4:76f2:c266:5e08:056ac46eaa89","type":"calls"},{"source":"a2e417d5:223f:011a:f068:5094186aff10","target":"f0a750cf:19ac:4afe:0a91:d775cdc2dd7b","type":"calls"},{"source":"a2e417d5:223f:011a:f068:5094186aff10","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"a2e417d5:223f:011a:f068:5094186aff10","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -977,7 +977,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 
@@ -996,7 +996,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li><a href="/fn-applicationstartingevent-java-applicationstartingevent.html">ApplicationStartingEvent()</a></li><li><a href="/fn-springapplication-java-springapplication.html">SpringApplication()</a></li><li><a href="/fn-loggingapplicationlistenertests-java-addpropertiestoenvironment.html">addPropertiesToEnvironment()</a></li><li><a href="/fn-loggingapplicationlistenertests-java-getclassloader.html">getClassLoader()</a></li><li><a href="/fn-logginginitializationcontext-java-getenvironment.html">getEnvironment()</a></li><li><a href="/fn-loggergroup-java-getname.html">getName()</a></li><li><a href="/fn-loggingapplicationlistenertests-java-initialize.html">initialize()</a></li><li><a href="/fn-loggingapplicationlistenertests-java-multicastevent.html">multicastEvent()</a></li></ul>
+      <ul><li><a href="/fn-applicationstartingevent-java-applicationstartingevent.html">ApplicationStartingEvent()</a></li><li><a href="/fn-springapplication-java-springapplication.html">SpringApplication()</a></li><li><a href="/fn-loggingapplicationlistenertests-java-addpropertiestoenvironment.html">addPropertiesToEnvironment()</a></li><li><a href="/fn-loggingapplicationlistenertests-java-getclassloader.html">getClassLoader()</a></li><li><a href="/fn-logginginitializationcontext-java-getenvironment.html">getEnvironment()</a></li><li><a href="/fn-loggerconfiguration-java-getname.html">getName()</a></li><li><a href="/fn-loggingapplicationlistenertests-java-initialize.html">initialize()</a></li><li><a href="/fn-loggingapplicationlistenertests-java-multicastevent.html">multicastEvent()</a></li></ul>
     </div>
     
 

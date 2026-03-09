@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"hasBuildGroup","slug":"fn-buildinfointegrationtests-java-hasbuildgroup","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"hasBuildGroup","slug":"fn-buildinfointegrationtests-java-hasbuildgroup","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>hasBuildGroup() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,24 +911,24 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  812ed20a_67db_33eb_7290_0ca0ce5e78f4["hasBuildGroup()"]
-  67c7824c_2840_e91f_8a61_aeea08e934e3["buildInfoPropertiesAreGenerated()"]
-  67c7824c_2840_e91f_8a61_aeea08e934e3 -->|calls| 812ed20a_67db_33eb_7290_0ca0ce5e78f4
-  67eb7dea_457a_35f0_8dc6_2544cb49960e["generatedBuildInfoIncludesAdditionalProperties()"]
-  67eb7dea_457a_35f0_8dc6_2544cb49960e -->|calls| 812ed20a_67db_33eb_7290_0ca0ce5e78f4
-  79c65e3b_43c2_a64b_b5d7_8cf54cd67b36["generatedBuildInfoUsesCustomBuildTime()"]
-  79c65e3b_43c2_a64b_b5d7_8cf54cd67b36 -->|calls| 812ed20a_67db_33eb_7290_0ca0ce5e78f4
-  89e478cf_21b1_0d3c_cdb2_69b93046ab6e["generatedBuildInfoReproducible()"]
-  89e478cf_21b1_0d3c_cdb2_69b93046ab6e -->|calls| 812ed20a_67db_33eb_7290_0ca0ce5e78f4
-  b163daf7_2dd6_3c7e_20cd_aa841a5136f3["generatedBuildInfoReproducibleEpochSeconds()"]
-  b163daf7_2dd6_3c7e_20cd_aa841a5136f3 -->|calls| 812ed20a_67db_33eb_7290_0ca0ce5e78f4
-  b71bcb9c_006e_e876_8af8_df3b36378165["buildInfoPropertiesAreGeneratedToCustomOutputLocation()"]
-  b71bcb9c_006e_e876_8af8_df3b36378165 -->|calls| 812ed20a_67db_33eb_7290_0ca0ce5e78f4
-  6b52b4bd_9ba8_bf33_d2c1_a26d08b3eda2["whenBuildTimeIsDisabledIfDoesNotAppearInGeneratedBuildInfo()"]
-  6b52b4bd_9ba8_bf33_d2c1_a26d08b3eda2 -->|calls| 812ed20a_67db_33eb_7290_0ca0ce5e78f4
-  61358a35_2094_7931_9c44_fa8873562153["whenBuildTimeIsExcludedIfDoesNotAppearInGeneratedBuildInfo()"]
-  61358a35_2094_7931_9c44_fa8873562153 -->|calls| 812ed20a_67db_33eb_7290_0ca0ce5e78f4
-  style 812ed20a_67db_33eb_7290_0ca0ce5e78f4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  1087a02c_9e29_e467_e421_e8748b6a4ca3["hasBuildGroup()"]
+  a5d28001_76bd_461f_cc30_156697ccd8c7["buildInfoPropertiesAreGenerated()"]
+  a5d28001_76bd_461f_cc30_156697ccd8c7 -->|calls| 1087a02c_9e29_e467_e421_e8748b6a4ca3
+  327635fe_b3a5_5ca8_b601_073ba532b8c8["generatedBuildInfoIncludesAdditionalProperties()"]
+  327635fe_b3a5_5ca8_b601_073ba532b8c8 -->|calls| 1087a02c_9e29_e467_e421_e8748b6a4ca3
+  62ea985a_8cda_079a_67a1_e41f0ea76719["generatedBuildInfoUsesCustomBuildTime()"]
+  62ea985a_8cda_079a_67a1_e41f0ea76719 -->|calls| 1087a02c_9e29_e467_e421_e8748b6a4ca3
+  f08e2554_75ee_0ce4_3186_f407ae78199c["generatedBuildInfoReproducible()"]
+  f08e2554_75ee_0ce4_3186_f407ae78199c -->|calls| 1087a02c_9e29_e467_e421_e8748b6a4ca3
+  2727fc0e_3e00_12b5_5f6d_390b7d2e14b4["generatedBuildInfoReproducibleEpochSeconds()"]
+  2727fc0e_3e00_12b5_5f6d_390b7d2e14b4 -->|calls| 1087a02c_9e29_e467_e421_e8748b6a4ca3
+  efc7baed_a4fb_7f81_3186_6419406c64fc["buildInfoPropertiesAreGeneratedToCustomOutputLocation()"]
+  efc7baed_a4fb_7f81_3186_6419406c64fc -->|calls| 1087a02c_9e29_e467_e421_e8748b6a4ca3
+  80a0890a_8bba_6399_d339_a52f7b4a8f21["whenBuildTimeIsDisabledIfDoesNotAppearInGeneratedBuildInfo()"]
+  80a0890a_8bba_6399_d339_a52f7b4a8f21 -->|calls| 1087a02c_9e29_e467_e421_e8748b6a4ca3
+  c09f8a65_a26a_c10b_7f2b_e5238d11877a["whenBuildTimeIsExcludedIfDoesNotAppearInGeneratedBuildInfo()"]
+  c09f8a65_a26a_c10b_7f2b_e5238d11877a -->|calls| 1087a02c_9e29_e467_e421_e8748b6a4ca3
+  style 1087a02c_9e29_e467_e421_e8748b6a4ca3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -936,7 +936,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-buildinfointegrationtests-java-hasbuildgroup"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","label":"hasBuildGroup","type":"Function","slug":"fn-buildinfointegrationtests-java-hasbuildgroup","lc":3,"lang":"java","cbc":8},{"id":"67c7824c:2840:e91f:8a61:aeea08e934e3","label":"buildInfoPropertiesAreGenerated","type":"Function","slug":"fn-buildinfointegrationtests-java-buildinfopropertiesaregenerated","lc":9,"lang":"java","cc":6},{"id":"67eb7dea:457a:35f0:8dc6:2544cb49960e","label":"generatedBuildInfoIncludesAdditionalProperties","type":"Function","slug":"fn-buildinfointegrationtests-java-generatedbuildinfoincludesadditionalproperties","lc":12,"lang":"java","cc":6},{"id":"79c65e3b:43c2:a64b:b5d7:8cf54cd67b36","label":"generatedBuildInfoUsesCustomBuildTime","type":"Function","slug":"fn-buildinfointegrationtests-java-generatedbuildinfousescustombuildtime","lc":9,"lang":"java","cc":6},{"id":"89e478cf:21b1:0d3c:cdb2:69b93046ab6e","label":"generatedBuildInfoReproducible","type":"Function","slug":"fn-buildinfointegrationtests-java-generatedbuildinforeproducible","lc":9,"lang":"java","cc":6},{"id":"b163daf7:2dd6:3c7e:20cd:aa841a5136f3","label":"generatedBuildInfoReproducibleEpochSeconds","type":"Function","slug":"fn-buildinfointegrationtests-java-generatedbuildinforeproducibleepochseconds","lc":9,"lang":"java","cc":6},{"id":"b71bcb9c:006e:e876:8af8:df3b36378165","label":"buildInfoPropertiesAreGeneratedToCustomOutputLocation","type":"Function","slug":"fn-buildinfointegrationtests-java-buildinfopropertiesaregeneratedtocustomoutputlocation","lc":10,"lang":"java","cc":6},{"id":"6b52b4bd:9ba8:bf33:d2c1:a26d08b3eda2","label":"whenBuildTimeIsDisabledIfDoesNotAppearInGeneratedBuildInfo","type":"Function","slug":"fn-buildinfointegrationtests-java-whenbuildtimeisdisabledifdoesnotappearingeneratedbuildinfo","lc":9,"lang":"java","cc":6},{"id":"61358a35:2094:7931:9c44:fa8873562153","label":"whenBuildTimeIsExcludedIfDoesNotAppearInGeneratedBuildInfo","type":"Function","slug":"fn-buildinfointegrationtests-java-whenbuildtimeisexcludedifdoesnotappearingeneratedbuildinfo","lc":9,"lang":"java","cc":6},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"67c7824c:2840:e91f:8a61:aeea08e934e3","target":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","type":"calls"},{"source":"67eb7dea:457a:35f0:8dc6:2544cb49960e","target":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","type":"calls"},{"source":"79c65e3b:43c2:a64b:b5d7:8cf54cd67b36","target":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","type":"calls"},{"source":"89e478cf:21b1:0d3c:cdb2:69b93046ab6e","target":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","type":"calls"},{"source":"b163daf7:2dd6:3c7e:20cd:aa841a5136f3","target":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","type":"calls"},{"source":"b71bcb9c:006e:e876:8af8:df3b36378165","target":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","type":"calls"},{"source":"6b52b4bd:9ba8:bf33:d2c1:a26d08b3eda2","target":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","type":"calls"},{"source":"61358a35:2094:7931:9c44:fa8873562153","target":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","type":"calls"},{"source":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"812ed20a:67db:33eb:7290:0ca0ce5e78f4","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"1087a02c:9e29:e467:e421:e8748b6a4ca3","label":"hasBuildGroup","type":"Function","slug":"fn-buildinfointegrationtests-java-hasbuildgroup","lc":3,"lang":"java","cbc":8},{"id":"a5d28001:76bd:461f:cc30:156697ccd8c7","label":"buildInfoPropertiesAreGenerated","type":"Function","slug":"fn-buildinfointegrationtests-java-buildinfopropertiesaregenerated","lc":9,"lang":"java","cc":6},{"id":"327635fe:b3a5:5ca8:b601:073ba532b8c8","label":"generatedBuildInfoIncludesAdditionalProperties","type":"Function","slug":"fn-buildinfointegrationtests-java-generatedbuildinfoincludesadditionalproperties","lc":12,"lang":"java","cc":6},{"id":"62ea985a:8cda:079a:67a1:e41f0ea76719","label":"generatedBuildInfoUsesCustomBuildTime","type":"Function","slug":"fn-buildinfointegrationtests-java-generatedbuildinfousescustombuildtime","lc":9,"lang":"java","cc":6},{"id":"f08e2554:75ee:0ce4:3186:f407ae78199c","label":"generatedBuildInfoReproducible","type":"Function","slug":"fn-buildinfointegrationtests-java-generatedbuildinforeproducible","lc":9,"lang":"java","cc":6},{"id":"2727fc0e:3e00:12b5:5f6d:390b7d2e14b4","label":"generatedBuildInfoReproducibleEpochSeconds","type":"Function","slug":"fn-buildinfointegrationtests-java-generatedbuildinforeproducibleepochseconds","lc":9,"lang":"java","cc":6},{"id":"efc7baed:a4fb:7f81:3186:6419406c64fc","label":"buildInfoPropertiesAreGeneratedToCustomOutputLocation","type":"Function","slug":"fn-buildinfointegrationtests-java-buildinfopropertiesaregeneratedtocustomoutputlocation","lc":10,"lang":"java","cc":6},{"id":"80a0890a:8bba:6399:d339:a52f7b4a8f21","label":"whenBuildTimeIsDisabledIfDoesNotAppearInGeneratedBuildInfo","type":"Function","slug":"fn-buildinfointegrationtests-java-whenbuildtimeisdisabledifdoesnotappearingeneratedbuildinfo","lc":9,"lang":"java","cc":6},{"id":"c09f8a65:a26a:c10b:7f2b:e5238d11877a","label":"whenBuildTimeIsExcludedIfDoesNotAppearInGeneratedBuildInfo","type":"Function","slug":"fn-buildinfointegrationtests-java-whenbuildtimeisexcludedifdoesnotappearingeneratedbuildinfo","lc":9,"lang":"java","cc":6},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"a5d28001:76bd:461f:cc30:156697ccd8c7","target":"1087a02c:9e29:e467:e421:e8748b6a4ca3","type":"calls"},{"source":"327635fe:b3a5:5ca8:b601:073ba532b8c8","target":"1087a02c:9e29:e467:e421:e8748b6a4ca3","type":"calls"},{"source":"62ea985a:8cda:079a:67a1:e41f0ea76719","target":"1087a02c:9e29:e467:e421:e8748b6a4ca3","type":"calls"},{"source":"f08e2554:75ee:0ce4:3186:f407ae78199c","target":"1087a02c:9e29:e467:e421:e8748b6a4ca3","type":"calls"},{"source":"2727fc0e:3e00:12b5:5f6d:390b7d2e14b4","target":"1087a02c:9e29:e467:e421:e8748b6a4ca3","type":"calls"},{"source":"efc7baed:a4fb:7f81:3186:6419406c64fc","target":"1087a02c:9e29:e467:e421:e8748b6a4ca3","type":"calls"},{"source":"80a0890a:8bba:6399:d339:a52f7b4a8f21","target":"1087a02c:9e29:e467:e421:e8748b6a4ca3","type":"calls"},{"source":"c09f8a65:a26a:c10b:7f2b:e5238d11877a","target":"1087a02c:9e29:e467:e421:e8748b6a4ca3","type":"calls"},{"source":"1087a02c:9e29:e467:e421:e8748b6a4ca3","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"1087a02c:9e29:e467:e421:e8748b6a4ca3","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -967,7 +967,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 

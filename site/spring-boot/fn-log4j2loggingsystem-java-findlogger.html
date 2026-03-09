@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"findLogger","slug":"fn-log4j2loggingsystem-java-findlogger","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"findLogger","slug":"fn-log4j2loggingsystem-java-findlogger","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>findLogger() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  23137198_6c57_cd07_d95b_8e0aa9067634["findLogger()"]
-  690d94c0_cf6c_ea71_936a_508437e6b4db["getLogger()"]
-  690d94c0_cf6c_ea71_936a_508437e6b4db -->|calls| 23137198_6c57_cd07_d95b_8e0aa9067634
-  fc43cb61_7619_49a4_e392_1a1cdd84fdc0["getLoggerContext()"]
-  23137198_6c57_cd07_d95b_8e0aa9067634 -->|calls| fc43cb61_7619_49a4_e392_1a1cdd84fdc0
-  690d94c0_cf6c_ea71_936a_508437e6b4db["getLogger()"]
-  23137198_6c57_cd07_d95b_8e0aa9067634 -->|calls| 690d94c0_cf6c_ea71_936a_508437e6b4db
-  style 23137198_6c57_cd07_d95b_8e0aa9067634 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  44df971a_d52b_6d03_4e23_db3fda01821b["findLogger()"]
+  31259089_7cda_3a39_a9c9_41b8fbf641c6["getLogger()"]
+  31259089_7cda_3a39_a9c9_41b8fbf641c6 -->|calls| 44df971a_d52b_6d03_4e23_db3fda01821b
+  f91a5f10_6108_afd5_489a_6c70915df0d0["getLoggerContext()"]
+  44df971a_d52b_6d03_4e23_db3fda01821b -->|calls| f91a5f10_6108_afd5_489a_6c70915df0d0
+  31259089_7cda_3a39_a9c9_41b8fbf641c6["getLogger()"]
+  44df971a_d52b_6d03_4e23_db3fda01821b -->|calls| 31259089_7cda_3a39_a9c9_41b8fbf641c6
+  style 44df971a_d52b_6d03_4e23_db3fda01821b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-log4j2loggingsystem-java-findlogger"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"23137198:6c57:cd07:d95b:8e0aa9067634","label":"findLogger","type":"Function","slug":"fn-log4j2loggingsystem-java-findlogger","lc":7,"lang":"java","cc":2,"cbc":1},{"id":"fc43cb61:7619:49a4:e392:1a1cdd84fdc0","label":"getLoggerContext","type":"Function","slug":"fn-log4j2loggingsystem-java-getloggercontext","lc":3,"lang":"java","cbc":12},{"id":"690d94c0:cf6c:ea71:936a:508437e6b4db","label":"getLogger","type":"Function","slug":"fn-log4j2loggingsystem-java-getlogger","lc":6,"lang":"java","cc":1,"cbc":7},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"23137198:6c57:cd07:d95b:8e0aa9067634","target":"fc43cb61:7619:49a4:e392:1a1cdd84fdc0","type":"calls"},{"source":"23137198:6c57:cd07:d95b:8e0aa9067634","target":"690d94c0:cf6c:ea71:936a:508437e6b4db","type":"calls"},{"source":"690d94c0:cf6c:ea71:936a:508437e6b4db","target":"23137198:6c57:cd07:d95b:8e0aa9067634","type":"calls"},{"source":"23137198:6c57:cd07:d95b:8e0aa9067634","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"23137198:6c57:cd07:d95b:8e0aa9067634","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"44df971a:d52b:6d03:4e23:db3fda01821b","label":"findLogger","type":"Function","slug":"fn-log4j2loggingsystem-java-findlogger","lc":7,"lang":"java","cc":2,"cbc":1},{"id":"f91a5f10:6108:afd5:489a:6c70915df0d0","label":"getLoggerContext","type":"Function","slug":"fn-log4j2loggingsystem-java-getloggercontext","lc":3,"lang":"java","cbc":12},{"id":"31259089:7cda:3a39:a9c9:41b8fbf641c6","label":"getLogger","type":"Function","slug":"fn-log4j2loggingsystem-java-getlogger","lc":6,"lang":"java","cc":2,"cbc":7},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"44df971a:d52b:6d03:4e23:db3fda01821b","target":"f91a5f10:6108:afd5:489a:6c70915df0d0","type":"calls"},{"source":"44df971a:d52b:6d03:4e23:db3fda01821b","target":"31259089:7cda:3a39:a9c9:41b8fbf641c6","type":"calls"},{"source":"31259089:7cda:3a39:a9c9:41b8fbf641c6","target":"44df971a:d52b:6d03:4e23:db3fda01821b","type":"calls"},{"source":"44df971a:d52b:6d03:4e23:db3fda01821b","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"44df971a:d52b:6d03:4e23:db3fda01821b","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -961,7 +961,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"createPropertyDescriptor","slug":"fn-lombokpropertydescriptortests-java-createpropertydescriptor","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"createPropertyDescriptor","slug":"fn-lombokpropertydescriptortests-java-createpropertydescriptor","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>createPropertyDescriptor() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  69e8b6e0_d6db_49b6_829a_a1c103f1e69f["createPropertyDescriptor()"]
-  0ea0e2a4_edb6_2370_1101_999e6ccb98cb["lombokSimpleProperty()"]
-  0ea0e2a4_edb6_2370_1101_999e6ccb98cb -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  16171d0f_8774_e678_dac5_cc6a8725ead7["lombokCollectionProperty()"]
-  16171d0f_8774_e678_dac5_cc6a8725ead7 -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  4f407345_422b_9e98_a8f8_83f10e331415["lombokNestedPropertySameClass()"]
-  4f407345_422b_9e98_a8f8_83f10e331415 -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  4cb3a578_d40a_ee6c_5617_9f7445a21f9d["lombokNestedPropertyWithAnnotation()"]
-  4cb3a578_d40a_ee6c_5617_9f7445a21f9d -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  e82e39c6_9098_18fe_5929_1899fb1fc552["lombokSimplePropertyWithOnlyGetterOnClassShouldNotBeExposed()"]
-  e82e39c6_9098_18fe_5929_1899fb1fc552 -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  ebb323b8_f2fd_4baa_8300_ac90c674920f["lombokSimplePropertyWithOnlyGetterOnDataClassShouldNotBeExposed()"]
-  ebb323b8_f2fd_4baa_8300_ac90c674920f -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  da3d48a6_fb95_f0d6_0046_9e606d8cd3cf["lombokSimplePropertyWithOnlyGetterOnValueClassShouldNotBeExposed()"]
-  da3d48a6_fb95_f0d6_0046_9e606d8cd3cf -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  09b73aea_5013_8ea4_5b71_3b24709eaad8["lombokSimplePropertyWithOnlyGetterOnFieldShouldNotBeExposed()"]
-  09b73aea_5013_8ea4_5b71_3b24709eaad8 -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  c95c178a_f46f_4de7_a21c_b7ea1e97d03c["lombokSimplePropertyWithOnlySetterOnFieldShouldNotBeExposed()"]
-  c95c178a_f46f_4de7_a21c_b7ea1e97d03c -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  a5cf4b4c_66aa_a28c_ce87_9cc8100bda25["lombokMetadataSimpleProperty()"]
-  a5cf4b4c_66aa_a28c_ce87_9cc8100bda25 -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  7ddae72d_a910_b9a1_e9c0_6b612725e107["lombokMetadataCollectionProperty()"]
-  7ddae72d_a910_b9a1_e9c0_6b612725e107 -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  19ff7083_4d0a_c983_f8a9_eefa6937ee7b["lombokMetadataNestedGroupNoGetter()"]
-  19ff7083_4d0a_c983_f8a9_eefa6937ee7b -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  7a0302b2_22bf_4293_e184_5ee4985e926b["lombokMetadataNotACandidatePropertyShouldReturnNull()"]
-  7a0302b2_22bf_4293_e184_5ee4985e926b -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  63632f44_a3f7_d77d_de2b_5f22b7d06610["lombokDeprecatedPropertyOnClass()"]
-  63632f44_a3f7_d77d_de2b_5f22b7d06610 -->|calls| 69e8b6e0_d6db_49b6_829a_a1c103f1e69f
-  style 69e8b6e0_d6db_49b6_829a_a1c103f1e69f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  4692d9d4_84c1_77d5_b361_773c63f4d74e["createPropertyDescriptor()"]
+  9bf07a80_3d3a_a57c_c561_1f48c4050fc8["lombokSimpleProperty()"]
+  9bf07a80_3d3a_a57c_c561_1f48c4050fc8 -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  de76e1ba_0a45_a870_a1dc_240e96b86913["lombokCollectionProperty()"]
+  de76e1ba_0a45_a870_a1dc_240e96b86913 -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  c0a84bdf_f3b9_7e5f_d055_c3f95b053db3["lombokNestedPropertySameClass()"]
+  c0a84bdf_f3b9_7e5f_d055_c3f95b053db3 -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  2910af1f_8fcb_984d_a7f0_d39ab8f9c77e["lombokNestedPropertyWithAnnotation()"]
+  2910af1f_8fcb_984d_a7f0_d39ab8f9c77e -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  ca8e3af5_f8fa_7718_b8a6_17d60cc3d1e0["lombokSimplePropertyWithOnlyGetterOnClassShouldNotBeExposed()"]
+  ca8e3af5_f8fa_7718_b8a6_17d60cc3d1e0 -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  37bbc5a6_1024_83fe_ac71_6088f33e92ac["lombokSimplePropertyWithOnlyGetterOnDataClassShouldNotBeExposed()"]
+  37bbc5a6_1024_83fe_ac71_6088f33e92ac -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  65675b10_b698_f74a_e0e9_2456afb891ec["lombokSimplePropertyWithOnlyGetterOnValueClassShouldNotBeExposed()"]
+  65675b10_b698_f74a_e0e9_2456afb891ec -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  b8362308_0b57_0fcd_0521_d48464eb85fc["lombokSimplePropertyWithOnlyGetterOnFieldShouldNotBeExposed()"]
+  b8362308_0b57_0fcd_0521_d48464eb85fc -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  73f93221_311a_2df1_b70a_891138501116["lombokSimplePropertyWithOnlySetterOnFieldShouldNotBeExposed()"]
+  73f93221_311a_2df1_b70a_891138501116 -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  316e803b_8b5e_eaf5_88a0_c893d4162f14["lombokMetadataSimpleProperty()"]
+  316e803b_8b5e_eaf5_88a0_c893d4162f14 -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  d06db12a_5189_09b5_d3ca_605ec6e1cced["lombokMetadataCollectionProperty()"]
+  d06db12a_5189_09b5_d3ca_605ec6e1cced -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  e1ec513a_4b0c_1413_5d36_d9e2d8a79e26["lombokMetadataNestedGroupNoGetter()"]
+  e1ec513a_4b0c_1413_5d36_d9e2d8a79e26 -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  46d22d97_d544_cfb9_6ecd_e3a548a43603["lombokMetadataNotACandidatePropertyShouldReturnNull()"]
+  46d22d97_d544_cfb9_6ecd_e3a548a43603 -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  558ca116_69f1_1e2c_57ff_4c3fafbf0507["lombokDeprecatedPropertyOnClass()"]
+  558ca116_69f1_1e2c_57ff_4c3fafbf0507 -->|calls| 4692d9d4_84c1_77d5_b361_773c63f4d74e
+  style 4692d9d4_84c1_77d5_b361_773c63f4d74e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-lombokpropertydescriptortests-java-createpropertydescriptor"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","label":"createPropertyDescriptor","type":"Function","slug":"fn-lombokpropertydescriptortests-java-createpropertydescriptor","lc":6,"lang":"java","cbc":19},{"id":"0ea0e2a4:edb6:2370:1101:999e6ccb98cb","label":"lombokSimpleProperty","type":"Function","slug":"fn-lombokpropertydescriptortests-java-lomboksimpleproperty","lc":11,"lang":"java","cc":2},{"id":"16171d0f:8774:e678:dac5:cc6a8725ead7","label":"lombokCollectionProperty","type":"Function","slug":"fn-lombokpropertydescriptortests-java-lombokcollectionproperty","lc":11,"lang":"java","cc":2},{"id":"4f407345:422b:9e98:a8f8:83f10e331415","label":"lombokNestedPropertySameClass","type":"Function","slug":"fn-lombokpropertydescriptortests-java-lomboknestedpropertysameclass","lc":11,"lang":"java","cc":2},{"id":"4cb3a578:d40a:ee6c:5617:9f7445a21f9d","label":"lombokNestedPropertyWithAnnotation","type":"Function","slug":"","lc":11,"lang":"java","cc":2},{"id":"e82e39c6:9098:18fe:5929:1899fb1fc552","label":"lombokSimplePropertyWithOnlyGetterOnClassShouldNotBeExposed","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"ebb323b8:f2fd:4baa:8300:ac90c674920f","label":"lombokSimplePropertyWithOnlyGetterOnDataClassShouldNotBeExposed","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"da3d48a6:fb95:f0d6:0046:9e606d8cd3cf","label":"lombokSimplePropertyWithOnlyGetterOnValueClassShouldNotBeExposed","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"09b73aea:5013:8ea4:5b71:3b24709eaad8","label":"lombokSimplePropertyWithOnlyGetterOnFieldShouldNotBeExposed","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"c95c178a:f46f:4de7:a21c:b7ea1e97d03c","label":"lombokSimplePropertyWithOnlySetterOnFieldShouldNotBeExposed","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"a5cf4b4c:66aa:a28c:ce87:9cc8100bda25","label":"lombokMetadataSimpleProperty","type":"Function","slug":"","lc":13,"lang":"java","cc":1},{"id":"7ddae72d:a910:b9a1:e9c0:6b612725e107","label":"lombokMetadataCollectionProperty","type":"Function","slug":"","lc":13,"lang":"java","cc":1},{"id":"19ff7083:4d0a:c983:f8a9:eefa6937ee7b","label":"lombokMetadataNestedGroupNoGetter","type":"Function","slug":"","lc":14,"lang":"java","cc":1},{"id":"7a0302b2:22bf:4293:e184:5ee4985e926b","label":"lombokMetadataNotACandidatePropertyShouldReturnNull","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"63632f44:a3f7:d77d:de2b:5f22b7d06610","label":"lombokDeprecatedPropertyOnClass","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"e3a2270e:de3d:21b1:ca10:0f29c9c4c312","label":"lombokDeprecatedPropertyOnField","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"31747a34:f61b:e5e9:21cc:f2301c9ad22f","label":"lombokPropertyWithDescription","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"a4ed0120:8e36:556c:0c36:7514c97e5608","label":"lombokPropertyWithDefaultValue","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"d45bf8e6:f9fb:6e3d:f258:fea2bc9cc310","label":"lombokPropertyNotCandidate","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"a3b10302:1074:e8bf:62ac:8aba79ee6519","label":"lombokNestedPropertyNotCandidate","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"0ea0e2a4:edb6:2370:1101:999e6ccb98cb","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"16171d0f:8774:e678:dac5:cc6a8725ead7","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"4f407345:422b:9e98:a8f8:83f10e331415","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"4cb3a578:d40a:ee6c:5617:9f7445a21f9d","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"e82e39c6:9098:18fe:5929:1899fb1fc552","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"ebb323b8:f2fd:4baa:8300:ac90c674920f","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"da3d48a6:fb95:f0d6:0046:9e606d8cd3cf","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"09b73aea:5013:8ea4:5b71:3b24709eaad8","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"c95c178a:f46f:4de7:a21c:b7ea1e97d03c","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"a5cf4b4c:66aa:a28c:ce87:9cc8100bda25","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"7ddae72d:a910:b9a1:e9c0:6b612725e107","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"19ff7083:4d0a:c983:f8a9:eefa6937ee7b","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"7a0302b2:22bf:4293:e184:5ee4985e926b","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"63632f44:a3f7:d77d:de2b:5f22b7d06610","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"e3a2270e:de3d:21b1:ca10:0f29c9c4c312","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"31747a34:f61b:e5e9:21cc:f2301c9ad22f","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"a4ed0120:8e36:556c:0c36:7514c97e5608","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"d45bf8e6:f9fb:6e3d:f258:fea2bc9cc310","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"a3b10302:1074:e8bf:62ac:8aba79ee6519","target":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","type":"calls"},{"source":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"69e8b6e0:d6db:49b6:829a:a1c103f1e69f","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"4692d9d4:84c1:77d5:b361:773c63f4d74e","label":"createPropertyDescriptor","type":"Function","slug":"fn-lombokpropertydescriptortests-java-createpropertydescriptor","lc":6,"lang":"java","cbc":19},{"id":"9bf07a80:3d3a:a57c:c561:1f48c4050fc8","label":"lombokSimpleProperty","type":"Function","slug":"","lc":11,"lang":"java","cc":2},{"id":"de76e1ba:0a45:a870:a1dc:240e96b86913","label":"lombokCollectionProperty","type":"Function","slug":"","lc":11,"lang":"java","cc":2},{"id":"c0a84bdf:f3b9:7e5f:d055:c3f95b053db3","label":"lombokNestedPropertySameClass","type":"Function","slug":"","lc":11,"lang":"java","cc":2},{"id":"2910af1f:8fcb:984d:a7f0:d39ab8f9c77e","label":"lombokNestedPropertyWithAnnotation","type":"Function","slug":"","lc":11,"lang":"java","cc":2},{"id":"ca8e3af5:f8fa:7718:b8a6:17d60cc3d1e0","label":"lombokSimplePropertyWithOnlyGetterOnClassShouldNotBeExposed","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"37bbc5a6:1024:83fe:ac71:6088f33e92ac","label":"lombokSimplePropertyWithOnlyGetterOnDataClassShouldNotBeExposed","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"65675b10:b698:f74a:e0e9:2456afb891ec","label":"lombokSimplePropertyWithOnlyGetterOnValueClassShouldNotBeExposed","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"b8362308:0b57:0fcd:0521:d48464eb85fc","label":"lombokSimplePropertyWithOnlyGetterOnFieldShouldNotBeExposed","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"73f93221:311a:2df1:b70a:891138501116","label":"lombokSimplePropertyWithOnlySetterOnFieldShouldNotBeExposed","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"316e803b:8b5e:eaf5:88a0:c893d4162f14","label":"lombokMetadataSimpleProperty","type":"Function","slug":"","lc":13,"lang":"java","cc":1},{"id":"d06db12a:5189:09b5:d3ca:605ec6e1cced","label":"lombokMetadataCollectionProperty","type":"Function","slug":"","lc":13,"lang":"java","cc":1},{"id":"e1ec513a:4b0c:1413:5d36:d9e2d8a79e26","label":"lombokMetadataNestedGroupNoGetter","type":"Function","slug":"","lc":14,"lang":"java","cc":1},{"id":"46d22d97:d544:cfb9:6ecd:e3a548a43603","label":"lombokMetadataNotACandidatePropertyShouldReturnNull","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"558ca116:69f1:1e2c:57ff:4c3fafbf0507","label":"lombokDeprecatedPropertyOnClass","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"3a407227:a8bd:870f:86d1:bb890bcc8e71","label":"lombokDeprecatedPropertyOnField","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"771c8db3:b76d:53d9:39b4:70e8996f18d3","label":"lombokPropertyWithDescription","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"4141c85f:97dc:1e06:578b:6fe3a3c6b40a","label":"lombokPropertyWithDefaultValue","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"1fc9f0dc:3597:9c35:4471:e0deb496afb3","label":"lombokPropertyNotCandidate","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"37bb2b78:5a9a:5396:34db:46c38bcbefc1","label":"lombokNestedPropertyNotCandidate","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"9bf07a80:3d3a:a57c:c561:1f48c4050fc8","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"de76e1ba:0a45:a870:a1dc:240e96b86913","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"c0a84bdf:f3b9:7e5f:d055:c3f95b053db3","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"2910af1f:8fcb:984d:a7f0:d39ab8f9c77e","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"ca8e3af5:f8fa:7718:b8a6:17d60cc3d1e0","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"37bbc5a6:1024:83fe:ac71:6088f33e92ac","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"65675b10:b698:f74a:e0e9:2456afb891ec","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"b8362308:0b57:0fcd:0521:d48464eb85fc","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"73f93221:311a:2df1:b70a:891138501116","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"316e803b:8b5e:eaf5:88a0:c893d4162f14","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"d06db12a:5189:09b5:d3ca:605ec6e1cced","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"e1ec513a:4b0c:1413:5d36:d9e2d8a79e26","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"46d22d97:d544:cfb9:6ecd:e3a548a43603","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"558ca116:69f1:1e2c:57ff:4c3fafbf0507","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"3a407227:a8bd:870f:86d1:bb890bcc8e71","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"771c8db3:b76d:53d9:39b4:70e8996f18d3","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"4141c85f:97dc:1e06:578b:6fe3a3c6b40a","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"1fc9f0dc:3597:9c35:4471:e0deb496afb3","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"37bb2b78:5a9a:5396:34db:46c38bcbefc1","target":"4692d9d4:84c1:77d5:b361:773c63f4d74e","type":"calls"},{"source":"4692d9d4:84c1:77d5:b361:773c63f4d74e","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"4692d9d4:84c1:77d5:b361:773c63f4d74e","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -982,7 +982,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 
@@ -1003,7 +1003,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Called By</h2>
-      <ul><li><a href="/fn-lombokpropertydescriptortests-java-lombokcollectionproperty.html">lombokCollectionProperty()</a></li><li>lombokDeprecatedPropertyOnClass()</li><li>lombokDeprecatedPropertyOnField()</li><li>lombokMetadataCollectionProperty()</li><li>lombokMetadataNestedGroupNoGetter()</li><li>lombokMetadataNotACandidatePropertyShouldReturnNull()</li><li>lombokMetadataSimpleProperty()</li><li>lombokNestedPropertyNotCandidate()</li><li><a href="/fn-lombokpropertydescriptortests-java-lomboknestedpropertysameclass.html">lombokNestedPropertySameClass()</a></li><li>lombokNestedPropertyWithAnnotation()</li><li>lombokPropertyNotCandidate()</li><li>lombokPropertyWithDefaultValue()</li><li>lombokPropertyWithDescription()</li><li><a href="/fn-lombokpropertydescriptortests-java-lomboksimpleproperty.html">lombokSimpleProperty()</a></li><li>lombokSimplePropertyWithOnlyGetterOnClassShouldNotBeExposed()</li><li>lombokSimplePropertyWithOnlyGetterOnDataClassShouldNotBeExposed()</li><li>lombokSimplePropertyWithOnlyGetterOnFieldShouldNotBeExposed()</li><li>lombokSimplePropertyWithOnlyGetterOnValueClassShouldNotBeExposed()</li><li>lombokSimplePropertyWithOnlySetterOnFieldShouldNotBeExposed()</li></ul>
+      <ul><li>lombokCollectionProperty()</li><li>lombokDeprecatedPropertyOnClass()</li><li>lombokDeprecatedPropertyOnField()</li><li>lombokMetadataCollectionProperty()</li><li>lombokMetadataNestedGroupNoGetter()</li><li>lombokMetadataNotACandidatePropertyShouldReturnNull()</li><li>lombokMetadataSimpleProperty()</li><li>lombokNestedPropertyNotCandidate()</li><li>lombokNestedPropertySameClass()</li><li>lombokNestedPropertyWithAnnotation()</li><li>lombokPropertyNotCandidate()</li><li>lombokPropertyWithDefaultValue()</li><li>lombokPropertyWithDescription()</li><li>lombokSimpleProperty()</li><li>lombokSimplePropertyWithOnlyGetterOnClassShouldNotBeExposed()</li><li>lombokSimplePropertyWithOnlyGetterOnDataClassShouldNotBeExposed()</li><li>lombokSimplePropertyWithOnlyGetterOnFieldShouldNotBeExposed()</li><li>lombokSimplePropertyWithOnlyGetterOnValueClassShouldNotBeExposed()</li><li>lombokSimplePropertyWithOnlySetterOnFieldShouldNotBeExposed()</li></ul>
     </div>
     
 

@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/mavenplugin.html" class="pill pill-green">MavenPlugin</a>
-        <a href="/subdomain/mojoimplementation.html" class="pill pill-orange">MojoImplementation</a>
+        <a href="/subdomain/mojos.html" class="pill pill-orange">Mojos</a>
         
         
         <span class="pill">calls 3</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"MavenPlugin","slug":"domain-mavenplugin"},"entity":{"name":"repackage","slug":"fn-repackagemojo-java-repackage","type":"Function"},"subdomain":{"name":"MojoImplementation","slug":"subdomain-mojoimplementation"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"MavenPlugin","slug":"domain-mavenplugin"},"entity":{"name":"repackage","slug":"fn-repackagemojo-java-repackage","type":"Function"},"subdomain":{"name":"Mojos","slug":"subdomain-mojos"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mavenplugin.html">MavenPlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/mojoimplementation.html">MojoImplementation</a><span class="arch-sep">&rarr;</span>
+            <a href="/mojos.html">Mojos</a><span class="arch-sep">&rarr;</span>
             <span>repackage() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  6bbeb082_6c46_8f35_55af_7e9a03e871db["repackage()"]
-  5f4940ef_3312_e922_6dda_cb5420c4e399["execute()"]
-  5f4940ef_3312_e922_6dda_cb5420c4e399 -->|calls| 6bbeb082_6c46_8f35_55af_7e9a03e871db
-  c5111232_5a98_8bc8_1a0d_25778479d559["getRepackager()"]
-  6bbeb082_6c46_8f35_55af_7e9a03e871db -->|calls| c5111232_5a98_8bc8_1a0d_25778479d559
-  c1f78c20_dead_b000_6750_f15d631f0ad7["parseOutputTimestamp()"]
-  6bbeb082_6c46_8f35_55af_7e9a03e871db -->|calls| c1f78c20_dead_b000_6750_f15d631f0ad7
-  25241a2a_0dd0_6071_d595_39575fd70cb3["updateArtifact()"]
-  6bbeb082_6c46_8f35_55af_7e9a03e871db -->|calls| 25241a2a_0dd0_6071_d595_39575fd70cb3
-  style 6bbeb082_6c46_8f35_55af_7e9a03e871db fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  fb87591e_f146_0a5e_1bea_9ddba83a57c4["repackage()"]
+  63143341_7c79_cfc0_d163_2b404068cf8b["execute()"]
+  63143341_7c79_cfc0_d163_2b404068cf8b -->|calls| fb87591e_f146_0a5e_1bea_9ddba83a57c4
+  15ed617c_57c8_befb_d393_978cc8850e11["getRepackager()"]
+  fb87591e_f146_0a5e_1bea_9ddba83a57c4 -->|calls| 15ed617c_57c8_befb_d393_978cc8850e11
+  7b843d0b_1137_9207_3a98_62ac95640be2["parseOutputTimestamp()"]
+  fb87591e_f146_0a5e_1bea_9ddba83a57c4 -->|calls| 7b843d0b_1137_9207_3a98_62ac95640be2
+  4e159ce3_eead_12bb_111d_b557bae9dd2a["updateArtifact()"]
+  fb87591e_f146_0a5e_1bea_9ddba83a57c4 -->|calls| 4e159ce3_eead_12bb_111d_b557bae9dd2a
+  style fb87591e_f146_0a5e_1bea_9ddba83a57c4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-repackagemojo-java-repackage"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"6bbeb082:6c46:8f35:55af:7e9a03e871db","label":"repackage","type":"Function","slug":"fn-repackagemojo-java-repackage","lc":17,"lang":"java","cc":3,"cbc":1},{"id":"c5111232:5a98:8bc8:1a0d:25778479d559","label":"getRepackager","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"c1f78c20:dead:b000:6750:f15d631f0ad7","label":"parseOutputTimestamp","type":"Function","slug":"","lc":8,"lang":"java","cbc":1},{"id":"25241a2a:0dd0:6071:d595:39575fd70cb3","label":"updateArtifact","type":"Function","slug":"fn-repackagemojo-java-updateartifact","lc":14,"lang":"java","cc":1,"cbc":1},{"id":"5f4940ef:3312:e922:6dda:cb5420c4e399","label":"execute","type":"Function","slug":"","lc":12,"lang":"java","cc":1},{"id":"domain:MavenPlugin","label":"MavenPlugin","type":"Domain","slug":"domain-mavenplugin"},{"id":"subdomain:MavenPlugin:MojoImplementation","label":"MojoImplementation","type":"Subdomain","slug":"subdomain-mojoimplementation"}],"edges":[{"source":"6bbeb082:6c46:8f35:55af:7e9a03e871db","target":"c5111232:5a98:8bc8:1a0d:25778479d559","type":"calls"},{"source":"6bbeb082:6c46:8f35:55af:7e9a03e871db","target":"c1f78c20:dead:b000:6750:f15d631f0ad7","type":"calls"},{"source":"6bbeb082:6c46:8f35:55af:7e9a03e871db","target":"25241a2a:0dd0:6071:d595:39575fd70cb3","type":"calls"},{"source":"5f4940ef:3312:e922:6dda:cb5420c4e399","target":"6bbeb082:6c46:8f35:55af:7e9a03e871db","type":"calls"},{"source":"6bbeb082:6c46:8f35:55af:7e9a03e871db","target":"domain:MavenPlugin","type":"belongsTo"},{"source":"6bbeb082:6c46:8f35:55af:7e9a03e871db","target":"subdomain:MavenPlugin:MojoImplementation","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"fb87591e:f146:0a5e:1bea:9ddba83a57c4","label":"repackage","type":"Function","slug":"fn-repackagemojo-java-repackage","lc":17,"lang":"java","cc":3,"cbc":1},{"id":"15ed617c:57c8:befb:d393:978cc8850e11","label":"getRepackager","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"7b843d0b:1137:9207:3a98:62ac95640be2","label":"parseOutputTimestamp","type":"Function","slug":"","lc":8,"lang":"java","cbc":1},{"id":"4e159ce3:eead:12bb:111d:b557bae9dd2a","label":"updateArtifact","type":"Function","slug":"fn-repackagemojo-java-updateartifact","lc":14,"lang":"java","cc":1,"cbc":1},{"id":"63143341:7c79:cfc0:d163:2b404068cf8b","label":"execute","type":"Function","slug":"","lc":12,"lang":"java","cc":1},{"id":"domain:MavenPlugin","label":"MavenPlugin","type":"Domain","slug":"domain-mavenplugin"},{"id":"subdomain:MavenPlugin:Mojos","label":"Mojos","type":"Subdomain","slug":"subdomain-mojos"}],"edges":[{"source":"fb87591e:f146:0a5e:1bea:9ddba83a57c4","target":"15ed617c:57c8:befb:d393:978cc8850e11","type":"calls"},{"source":"fb87591e:f146:0a5e:1bea:9ddba83a57c4","target":"7b843d0b:1137:9207:3a98:62ac95640be2","type":"calls"},{"source":"fb87591e:f146:0a5e:1bea:9ddba83a57c4","target":"4e159ce3:eead:12bb:111d:b557bae9dd2a","type":"calls"},{"source":"63143341:7c79:cfc0:d163:2b404068cf8b","target":"fb87591e:f146:0a5e:1bea:9ddba83a57c4","type":"calls"},{"source":"fb87591e:f146:0a5e:1bea:9ddba83a57c4","target":"domain:MavenPlugin","type":"belongsTo"},{"source":"fb87591e:f146:0a5e:1bea:9ddba83a57c4","target":"subdomain:MavenPlugin:Mojos","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -973,7 +973,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-mojoimplementation.html">MojoImplementation</a></li></ul>
+      <ul><li><a href="/subdomain-mojos.html">Mojos</a></li></ul>
     </div>
     
 

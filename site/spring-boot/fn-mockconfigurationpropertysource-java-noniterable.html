@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"nonIterable","slug":"fn-mockconfigurationpropertysource-java-noniterable","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"nonIterable","slug":"fn-mockconfigurationpropertysource-java-noniterable","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>nonIterable() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,28 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  aa1011a3_1af6_13ff_143f_f03e29183936["nonIterable()"]
-  c99ea9c0_d307_37fb_7d56_73018d8479ef["bindToArrayWhenNonIterableShouldReturnPopulatedArray()"]
-  c99ea9c0_d307_37fb_7d56_73018d8479ef -->|calls| aa1011a3_1af6_13ff_143f_f03e29183936
-  a8a4877e_c2fc_0836_e1f4_b1afbf35a758["bindToJavaBeanWhenNonIterableShouldReturnPopulatedBean()"]
-  a8a4877e_c2fc_0836_e1f4_b1afbf35a758 -->|calls| aa1011a3_1af6_13ff_143f_f03e29183936
-  0c11c89b_4e44_cbf0_1873_7febd97fb73a["bindToBeanWithCycle()"]
-  0c11c89b_4e44_cbf0_1873_7febd97fb73a -->|calls| aa1011a3_1af6_13ff_143f_f03e29183936
-  3d3e010b_5f98_4b51_69d3_a8bba9c4a86f["bindToCollectionWhenNonIterableShouldReturnPopulatedCollection()"]
-  3d3e010b_5f98_4b51_69d3_a8bba9c4a86f -->|calls| aa1011a3_1af6_13ff_143f_f03e29183936
-  8313189d_74fa_4c24_0c3f_b89dd9142017["bindToBeanWithNestedCollectionAndNonIterableSourceShouldNotFail()"]
-  8313189d_74fa_4c24_0c3f_b89dd9142017 -->|calls| aa1011a3_1af6_13ff_143f_f03e29183936
-  e76cf39b_2112_3b17_1734_29fde4fce0f7["bindToClassWhenNotIterableShouldNotBindNestedBasedOnInstance()"]
-  e76cf39b_2112_3b17_1734_29fde4fce0f7 -->|calls| aa1011a3_1af6_13ff_143f_f03e29183936
-  c10ea0d6_a457_b4ec_a6c4_159fa579cb40["bindToClassShouldNotInvokeExtraMethods()"]
-  c10ea0d6_a457_b4ec_a6c4_159fa579cb40 -->|calls| aa1011a3_1af6_13ff_143f_f03e29183936
-  7ab20997_3c4a_f191_b5e7_7a1a1944a3dd["bindToClassWhenNoParameterBoundShouldReturnNull()"]
-  7ab20997_3c4a_f191_b5e7_7a1a1944a3dd -->|calls| aa1011a3_1af6_13ff_143f_f03e29183936
-  bae9f786_40ae_c0cd_f5db_47beaa294781["bindWhenNonExtractableParameterNamesOnPropertyAndNonIterablePropertySource()"]
-  bae9f786_40ae_c0cd_f5db_47beaa294781 -->|calls| aa1011a3_1af6_13ff_143f_f03e29183936
-  8ddabb3f_f4de_541e_8ec2_95759c83e186["createWhenNonExtractableParameterNamesOnPropertyAndNonIterablePropertySource()"]
-  8ddabb3f_f4de_541e_8ec2_95759c83e186 -->|calls| aa1011a3_1af6_13ff_143f_f03e29183936
-  style aa1011a3_1af6_13ff_143f_f03e29183936 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  ecbddafa_7819_5883_2aea_1d348403e63a["nonIterable()"]
+  bee6832c_255a_03f5_a828_a1bb90c3e4bc["bindToArrayWhenNonIterableShouldReturnPopulatedArray()"]
+  bee6832c_255a_03f5_a828_a1bb90c3e4bc -->|calls| ecbddafa_7819_5883_2aea_1d348403e63a
+  b5e48587_816d_4ce1_7354_303f4cbbdfe4["bindToJavaBeanWhenNonIterableShouldReturnPopulatedBean()"]
+  b5e48587_816d_4ce1_7354_303f4cbbdfe4 -->|calls| ecbddafa_7819_5883_2aea_1d348403e63a
+  3816108c_7f0a_6289_9c8b_432797132e96["bindToBeanWithCycle()"]
+  3816108c_7f0a_6289_9c8b_432797132e96 -->|calls| ecbddafa_7819_5883_2aea_1d348403e63a
+  9911d195_9d6d_5add_56c9_356af72c3549["bindToCollectionWhenNonIterableShouldReturnPopulatedCollection()"]
+  9911d195_9d6d_5add_56c9_356af72c3549 -->|calls| ecbddafa_7819_5883_2aea_1d348403e63a
+  74c2964e_3fd9_97f9_4aee_5b88b686492c["bindToBeanWithNestedCollectionAndNonIterableSourceShouldNotFail()"]
+  74c2964e_3fd9_97f9_4aee_5b88b686492c -->|calls| ecbddafa_7819_5883_2aea_1d348403e63a
+  deeca64e_4e0a_7220_1232_1dc67ec0a0a9["bindToClassWhenNotIterableShouldNotBindNestedBasedOnInstance()"]
+  deeca64e_4e0a_7220_1232_1dc67ec0a0a9 -->|calls| ecbddafa_7819_5883_2aea_1d348403e63a
+  956f6f29_1cdd_fa78_d30a_b2b19d0e93f6["bindToClassShouldNotInvokeExtraMethods()"]
+  956f6f29_1cdd_fa78_d30a_b2b19d0e93f6 -->|calls| ecbddafa_7819_5883_2aea_1d348403e63a
+  817de5e9_9554_4d0c_28e9_800c3a65124a["bindToClassWhenNoParameterBoundShouldReturnNull()"]
+  817de5e9_9554_4d0c_28e9_800c3a65124a -->|calls| ecbddafa_7819_5883_2aea_1d348403e63a
+  d37069f4_1b5b_115d_e9f4_ee3dab34323c["bindWhenNonExtractableParameterNamesOnPropertyAndNonIterablePropertySource()"]
+  d37069f4_1b5b_115d_e9f4_ee3dab34323c -->|calls| ecbddafa_7819_5883_2aea_1d348403e63a
+  83176199_c22f_2dd2_814f_db6ba59633b1["createWhenNonExtractableParameterNamesOnPropertyAndNonIterablePropertySource()"]
+  83176199_c22f_2dd2_814f_db6ba59633b1 -->|calls| ecbddafa_7819_5883_2aea_1d348403e63a
+  style ecbddafa_7819_5883_2aea_1d348403e63a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -940,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-mockconfigurationpropertysource-java-noniterable"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"aa1011a3:1af6:13ff:143f:f03e29183936","label":"nonIterable","type":"Function","slug":"fn-mockconfigurationpropertysource-java-noniterable","lc":3,"lang":"java","cbc":10},{"id":"c99ea9c0:d307:37fb:7d56:73018d8479ef","label":"bindToArrayWhenNonIterableShouldReturnPopulatedArray","type":"Function","slug":"fn-arraybindertests-java-bindtoarraywhennoniterableshouldreturnpopulatedarray","lc":10,"lang":"java","cc":5},{"id":"a8a4877e:c2fc:0836:e1f4:b1afbf35a758","label":"bindToJavaBeanWhenNonIterableShouldReturnPopulatedBean","type":"Function","slug":"fn-bindertests-java-bindtojavabeanwhennoniterableshouldreturnpopulatedbean","lc":7,"lang":"java","cc":6},{"id":"0c11c89b:4e44:cbf0:1873:7febd97fb73a","label":"bindToBeanWithCycle","type":"Function","slug":"fn-bindertests-java-bindtobeanwithcycle","lc":7,"lang":"java","cc":4},{"id":"3d3e010b:5f98:4b51:69d3:a8bba9c4a86f","label":"bindToCollectionWhenNonIterableShouldReturnPopulatedCollection","type":"Function","slug":"fn-collectionbindertests-java-bindtocollectionwhennoniterableshouldreturnpopulatedcollection","lc":10,"lang":"java","cc":3},{"id":"8313189d:74fa:4c24:0c3f:b89dd9142017","label":"bindToBeanWithNestedCollectionAndNonIterableSourceShouldNotFail","type":"Function","slug":"fn-collectionbindertests-java-bindtobeanwithnestedcollectionandnoniterablesourceshouldnotfail","lc":8,"lang":"java","cc":3},{"id":"e76cf39b:2112:3b17:1734:29fde4fce0f7","label":"bindToClassWhenNotIterableShouldNotBindNestedBasedOnInstance","type":"Function","slug":"fn-javabeanbindertests-java-bindtoclasswhennotiterableshouldnotbindnestedbasedoninstance","lc":12,"lang":"java","cc":5},{"id":"c10ea0d6:a457:b4ec:a6c4:159fa579cb40","label":"bindToClassShouldNotInvokeExtraMethods","type":"Function","slug":"fn-javabeanbindertests-java-bindtoclassshouldnotinvokeextramethods","lc":7,"lang":"java","cc":5},{"id":"7ab20997:3c4a:f191:b5e7:7a1a1944a3dd","label":"bindToClassWhenNoParameterBoundShouldReturnNull","type":"Function","slug":"fn-valueobjectbindertests-java-bindtoclasswhennoparameterboundshouldreturnnull","lc":8,"lang":"java","cc":4},{"id":"bae9f786:40ae:c0cd:f5db:47beaa294781","label":"bindWhenNonExtractableParameterNamesOnPropertyAndNonIterablePropertySource","type":"Function","slug":"fn-valueobjectbindertests-java-bindwhennonextractableparameternamesonpropertyandnoniterablepropertysource","lc":10,"lang":"java","cc":7},{"id":"8ddabb3f:f4de:541e:8ec2:95759c83e186","label":"createWhenNonExtractableParameterNamesOnPropertyAndNonIterablePropertySource","type":"Function","slug":"fn-valueobjectbindertests-java-createwhennonextractableparameternamesonpropertyandnoniterablepropertysource","lc":10,"lang":"java","cc":4},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"c99ea9c0:d307:37fb:7d56:73018d8479ef","target":"aa1011a3:1af6:13ff:143f:f03e29183936","type":"calls"},{"source":"a8a4877e:c2fc:0836:e1f4:b1afbf35a758","target":"aa1011a3:1af6:13ff:143f:f03e29183936","type":"calls"},{"source":"0c11c89b:4e44:cbf0:1873:7febd97fb73a","target":"aa1011a3:1af6:13ff:143f:f03e29183936","type":"calls"},{"source":"3d3e010b:5f98:4b51:69d3:a8bba9c4a86f","target":"aa1011a3:1af6:13ff:143f:f03e29183936","type":"calls"},{"source":"8313189d:74fa:4c24:0c3f:b89dd9142017","target":"aa1011a3:1af6:13ff:143f:f03e29183936","type":"calls"},{"source":"e76cf39b:2112:3b17:1734:29fde4fce0f7","target":"aa1011a3:1af6:13ff:143f:f03e29183936","type":"calls"},{"source":"c10ea0d6:a457:b4ec:a6c4:159fa579cb40","target":"aa1011a3:1af6:13ff:143f:f03e29183936","type":"calls"},{"source":"7ab20997:3c4a:f191:b5e7:7a1a1944a3dd","target":"aa1011a3:1af6:13ff:143f:f03e29183936","type":"calls"},{"source":"bae9f786:40ae:c0cd:f5db:47beaa294781","target":"aa1011a3:1af6:13ff:143f:f03e29183936","type":"calls"},{"source":"8ddabb3f:f4de:541e:8ec2:95759c83e186","target":"aa1011a3:1af6:13ff:143f:f03e29183936","type":"calls"},{"source":"aa1011a3:1af6:13ff:143f:f03e29183936","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"aa1011a3:1af6:13ff:143f:f03e29183936","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"ecbddafa:7819:5883:2aea:1d348403e63a","label":"nonIterable","type":"Function","slug":"fn-mockconfigurationpropertysource-java-noniterable","lc":3,"lang":"java","cbc":10},{"id":"bee6832c:255a:03f5:a828:a1bb90c3e4bc","label":"bindToArrayWhenNonIterableShouldReturnPopulatedArray","type":"Function","slug":"fn-arraybindertests-java-bindtoarraywhennoniterableshouldreturnpopulatedarray","lc":10,"lang":"java","cc":5},{"id":"b5e48587:816d:4ce1:7354:303f4cbbdfe4","label":"bindToJavaBeanWhenNonIterableShouldReturnPopulatedBean","type":"Function","slug":"fn-bindertests-java-bindtojavabeanwhennoniterableshouldreturnpopulatedbean","lc":7,"lang":"java","cc":6},{"id":"3816108c:7f0a:6289:9c8b:432797132e96","label":"bindToBeanWithCycle","type":"Function","slug":"fn-bindertests-java-bindtobeanwithcycle","lc":7,"lang":"java","cc":4},{"id":"9911d195:9d6d:5add:56c9:356af72c3549","label":"bindToCollectionWhenNonIterableShouldReturnPopulatedCollection","type":"Function","slug":"fn-collectionbindertests-java-bindtocollectionwhennoniterableshouldreturnpopulatedcollection","lc":10,"lang":"java","cc":3},{"id":"74c2964e:3fd9:97f9:4aee:5b88b686492c","label":"bindToBeanWithNestedCollectionAndNonIterableSourceShouldNotFail","type":"Function","slug":"fn-collectionbindertests-java-bindtobeanwithnestedcollectionandnoniterablesourceshouldnotfail","lc":8,"lang":"java","cc":3},{"id":"deeca64e:4e0a:7220:1232:1dc67ec0a0a9","label":"bindToClassWhenNotIterableShouldNotBindNestedBasedOnInstance","type":"Function","slug":"fn-javabeanbindertests-java-bindtoclasswhennotiterableshouldnotbindnestedbasedoninstance","lc":12,"lang":"java","cc":5},{"id":"956f6f29:1cdd:fa78:d30a:b2b19d0e93f6","label":"bindToClassShouldNotInvokeExtraMethods","type":"Function","slug":"fn-javabeanbindertests-java-bindtoclassshouldnotinvokeextramethods","lc":7,"lang":"java","cc":5},{"id":"817de5e9:9554:4d0c:28e9:800c3a65124a","label":"bindToClassWhenNoParameterBoundShouldReturnNull","type":"Function","slug":"fn-valueobjectbindertests-java-bindtoclasswhennoparameterboundshouldreturnnull","lc":8,"lang":"java","cc":4},{"id":"d37069f4:1b5b:115d:e9f4:ee3dab34323c","label":"bindWhenNonExtractableParameterNamesOnPropertyAndNonIterablePropertySource","type":"Function","slug":"fn-valueobjectbindertests-java-bindwhennonextractableparameternamesonpropertyandnoniterablepropertysource","lc":10,"lang":"java","cc":7},{"id":"83176199:c22f:2dd2:814f:db6ba59633b1","label":"createWhenNonExtractableParameterNamesOnPropertyAndNonIterablePropertySource","type":"Function","slug":"fn-valueobjectbindertests-java-createwhennonextractableparameternamesonpropertyandnoniterablepropertysource","lc":10,"lang":"java","cc":4},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"bee6832c:255a:03f5:a828:a1bb90c3e4bc","target":"ecbddafa:7819:5883:2aea:1d348403e63a","type":"calls"},{"source":"b5e48587:816d:4ce1:7354:303f4cbbdfe4","target":"ecbddafa:7819:5883:2aea:1d348403e63a","type":"calls"},{"source":"3816108c:7f0a:6289:9c8b:432797132e96","target":"ecbddafa:7819:5883:2aea:1d348403e63a","type":"calls"},{"source":"9911d195:9d6d:5add:56c9:356af72c3549","target":"ecbddafa:7819:5883:2aea:1d348403e63a","type":"calls"},{"source":"74c2964e:3fd9:97f9:4aee:5b88b686492c","target":"ecbddafa:7819:5883:2aea:1d348403e63a","type":"calls"},{"source":"deeca64e:4e0a:7220:1232:1dc67ec0a0a9","target":"ecbddafa:7819:5883:2aea:1d348403e63a","type":"calls"},{"source":"956f6f29:1cdd:fa78:d30a:b2b19d0e93f6","target":"ecbddafa:7819:5883:2aea:1d348403e63a","type":"calls"},{"source":"817de5e9:9554:4d0c:28e9:800c3a65124a","target":"ecbddafa:7819:5883:2aea:1d348403e63a","type":"calls"},{"source":"d37069f4:1b5b:115d:e9f4:ee3dab34323c","target":"ecbddafa:7819:5883:2aea:1d348403e63a","type":"calls"},{"source":"83176199:c22f:2dd2:814f:db6ba59633b1","target":"ecbddafa:7819:5883:2aea:1d348403e63a","type":"calls"},{"source":"ecbddafa:7819:5883:2aea:1d348403e63a","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"ecbddafa:7819:5883:2aea:1d348403e63a","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -971,7 +971,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 

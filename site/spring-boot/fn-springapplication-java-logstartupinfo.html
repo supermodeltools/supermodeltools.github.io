@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"logStartupInfo","slug":"fn-springapplication-java-logstartupinfo","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"logStartupInfo","slug":"fn-springapplication-java-logstartupinfo","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>logStartupInfo() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  cd5001c5_ecc6_0f01_6885_c0f51b546e40["logStartupInfo()"]
-  1c7abef4_6669_d584_7ed0_33530f80c582["prepareContext()"]
-  1c7abef4_6669_d584_7ed0_33530f80c582 -->|calls| cd5001c5_ecc6_0f01_6885_c0f51b546e40
-  9bb4b5c2_15b6_514c_7835_a447659e3cee["logStartupInfo()"]
-  9bb4b5c2_15b6_514c_7835_a447659e3cee -->|calls| cd5001c5_ecc6_0f01_6885_c0f51b546e40
-  46b08120_fec4_b8b0_6f99_bf72a5929a4a["getApplicationLog()"]
-  cd5001c5_ecc6_0f01_6885_c0f51b546e40 -->|calls| 46b08120_fec4_b8b0_6f99_bf72a5929a4a
-  style cd5001c5_ecc6_0f01_6885_c0f51b546e40 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  89af1c34_85c2_4afd_c37f_3149aa0ee315["logStartupInfo()"]
+  a8771815_91cc_ab64_3065_cffbc0297b2f["prepareContext()"]
+  a8771815_91cc_ab64_3065_cffbc0297b2f -->|calls| 89af1c34_85c2_4afd_c37f_3149aa0ee315
+  e5c965a5_5ac4_904e_abc1_96c1f5e3bbd1["logStartupInfo()"]
+  e5c965a5_5ac4_904e_abc1_96c1f5e3bbd1 -->|calls| 89af1c34_85c2_4afd_c37f_3149aa0ee315
+  141a2fee_d3b7_bc3f_1392_c6a20386c784["getApplicationLog()"]
+  89af1c34_85c2_4afd_c37f_3149aa0ee315 -->|calls| 141a2fee_d3b7_bc3f_1392_c6a20386c784
+  style 89af1c34_85c2_4afd_c37f_3149aa0ee315 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-springapplication-java-logstartupinfo"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"cd5001c5:ecc6:0f01:6885:c0f51b546e40","label":"logStartupInfo","type":"Function","slug":"fn-springapplication-java-logstartupinfo","lc":6,"lang":"java","cc":1,"cbc":2},{"id":"46b08120:fec4:b8b0:6f99:bf72a5929a4a","label":"getApplicationLog","type":"Function","slug":"fn-springapplication-java-getapplicationlog","lc":6,"lang":"java","cbc":3},{"id":"1c7abef4:6669:d584:7ed0:33530f80c582","label":"prepareContext","type":"Function","slug":"fn-springapplication-java-preparecontext","lc":40,"lang":"java","cc":14,"cbc":1},{"id":"9bb4b5c2:15b6:514c:7835:a447659e3cee","label":"logStartupInfo","type":"Function","slug":"","lc":4,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"cd5001c5:ecc6:0f01:6885:c0f51b546e40","target":"46b08120:fec4:b8b0:6f99:bf72a5929a4a","type":"calls"},{"source":"1c7abef4:6669:d584:7ed0:33530f80c582","target":"cd5001c5:ecc6:0f01:6885:c0f51b546e40","type":"calls"},{"source":"9bb4b5c2:15b6:514c:7835:a447659e3cee","target":"cd5001c5:ecc6:0f01:6885:c0f51b546e40","type":"calls"},{"source":"cd5001c5:ecc6:0f01:6885:c0f51b546e40","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"cd5001c5:ecc6:0f01:6885:c0f51b546e40","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"89af1c34:85c2:4afd:c37f:3149aa0ee315","label":"logStartupInfo","type":"Function","slug":"fn-springapplication-java-logstartupinfo","lc":6,"lang":"java","cc":1,"cbc":2},{"id":"141a2fee:d3b7:bc3f:1392:c6a20386c784","label":"getApplicationLog","type":"Function","slug":"fn-springapplication-java-getapplicationlog","lc":6,"lang":"java","cbc":3},{"id":"a8771815:91cc:ab64:3065:cffbc0297b2f","label":"prepareContext","type":"Function","slug":"fn-springapplication-java-preparecontext","lc":40,"lang":"java","cc":14,"cbc":1},{"id":"e5c965a5:5ac4:904e:abc1:96c1f5e3bbd1","label":"logStartupInfo","type":"Function","slug":"","lc":4,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"89af1c34:85c2:4afd:c37f:3149aa0ee315","target":"141a2fee:d3b7:bc3f:1392:c6a20386c784","type":"calls"},{"source":"a8771815:91cc:ab64:3065:cffbc0297b2f","target":"89af1c34:85c2:4afd:c37f:3149aa0ee315","type":"calls"},{"source":"e5c965a5:5ac4:904e:abc1:96c1f5e3bbd1","target":"89af1c34:85c2:4afd:c37f:3149aa0ee315","type":"calls"},{"source":"89af1c34:85c2:4afd:c37f:3149aa0ee315","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"89af1c34:85c2:4afd:c37f:3149aa0ee315","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -960,7 +960,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

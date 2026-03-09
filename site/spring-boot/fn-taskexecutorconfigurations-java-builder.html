@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 9</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"builder","slug":"fn-taskexecutorconfigurations-java-builder","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"builder","slug":"fn-taskexecutorconfigurations-java-builder","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>builder() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,30 +911,30 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  e9f2e624_b7ac_320d_76cc_af695ca72fd7["builder()"]
-  3cca017c_3a78_9ca2_102b_b3d3862d9a2b["simpleAsyncTaskExecutorBuilder()"]
-  3cca017c_3a78_9ca2_102b_b3d3862d9a2b -->|calls| e9f2e624_b7ac_320d_76cc_af695ca72fd7
-  4f8a1894_a709_02cd_1438_80692b2e6e77["simpleAsyncTaskExecutorBuilderVirtualThreads()"]
-  4f8a1894_a709_02cd_1438_80692b2e6e77 -->|calls| e9f2e624_b7ac_320d_76cc_af695ca72fd7
-  597f88b5_0a87_1eca_a210_c0ad3be4d923["SimpleAsyncTaskExecutorBuilder()"]
-  e9f2e624_b7ac_320d_76cc_af695ca72fd7 -->|calls| 597f88b5_0a87_1eca_a210_c0ad3be4d923
-  d70eb8b7_2dfc_be6f_5925_5d259e2e3a90["getTaskDecorator()"]
-  e9f2e624_b7ac_320d_76cc_af695ca72fd7 -->|calls| d70eb8b7_2dfc_be6f_5925_5d259e2e3a90
-  6707c305_0a51_733b_61a5_17936cc96ac6["cancelRemainingTasksOnClose()"]
-  e9f2e624_b7ac_320d_76cc_af695ca72fd7 -->|calls| 6707c305_0a51_733b_61a5_17936cc96ac6
-  3be7ba36_a6e9_4111_417f_99a3a770d403["rejectTasksWhenLimitReached()"]
-  e9f2e624_b7ac_320d_76cc_af695ca72fd7 -->|calls| 3be7ba36_a6e9_4111_417f_99a3a770d403
-  8e2c7d76_2663_82e7_d82e_aff07b69f704["concurrencyLimit()"]
-  e9f2e624_b7ac_320d_76cc_af695ca72fd7 -->|calls| 8e2c7d76_2663_82e7_d82e_aff07b69f704
-  828cdf3b_692b_9b86_3705_76c32f7e885d["taskTerminationTimeout()"]
-  e9f2e624_b7ac_320d_76cc_af695ca72fd7 -->|calls| 828cdf3b_692b_9b86_3705_76c32f7e885d
-  fe854f82_b104_53f2_30c2_e9013e5a3959["threadNamePrefix()"]
-  e9f2e624_b7ac_320d_76cc_af695ca72fd7 -->|calls| fe854f82_b104_53f2_30c2_e9013e5a3959
-  a652f3af_5449_c2b0_5fea_f38af3b170dd["customizers()"]
-  e9f2e624_b7ac_320d_76cc_af695ca72fd7 -->|calls| a652f3af_5449_c2b0_5fea_f38af3b170dd
-  131d522b_bf33_c1de_5a82_c84dfc6c3b93["taskDecorator()"]
-  e9f2e624_b7ac_320d_76cc_af695ca72fd7 -->|calls| 131d522b_bf33_c1de_5a82_c84dfc6c3b93
-  style e9f2e624_b7ac_320d_76cc_af695ca72fd7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  94e1f8d7_2326_86ae_7224_25ee91aee4b7["builder()"]
+  2bf0387b_bb7f_5b8e_402e_bd1b335d47fe["simpleAsyncTaskExecutorBuilder()"]
+  2bf0387b_bb7f_5b8e_402e_bd1b335d47fe -->|calls| 94e1f8d7_2326_86ae_7224_25ee91aee4b7
+  dce35dc0_c2e3_fe25_df4e_b2e07b9a253b["simpleAsyncTaskExecutorBuilderVirtualThreads()"]
+  dce35dc0_c2e3_fe25_df4e_b2e07b9a253b -->|calls| 94e1f8d7_2326_86ae_7224_25ee91aee4b7
+  5dde73ef_272b_f0f5_8e05_2cf058bc3076["SimpleAsyncTaskExecutorBuilder()"]
+  94e1f8d7_2326_86ae_7224_25ee91aee4b7 -->|calls| 5dde73ef_272b_f0f5_8e05_2cf058bc3076
+  59275592_6c74_66a6_651a_b957542cf3c5["getTaskDecorator()"]
+  94e1f8d7_2326_86ae_7224_25ee91aee4b7 -->|calls| 59275592_6c74_66a6_651a_b957542cf3c5
+  7bc98af1_7ca1_e7a1_08b9_cd3a08314688["cancelRemainingTasksOnClose()"]
+  94e1f8d7_2326_86ae_7224_25ee91aee4b7 -->|calls| 7bc98af1_7ca1_e7a1_08b9_cd3a08314688
+  e17f60fb_90e7_7311_2b04_b1597f4dcbf5["rejectTasksWhenLimitReached()"]
+  94e1f8d7_2326_86ae_7224_25ee91aee4b7 -->|calls| e17f60fb_90e7_7311_2b04_b1597f4dcbf5
+  21258835_1360_1760_fea8_40a61ea626cb["concurrencyLimit()"]
+  94e1f8d7_2326_86ae_7224_25ee91aee4b7 -->|calls| 21258835_1360_1760_fea8_40a61ea626cb
+  e5af6768_da08_ad08_23bd_15065f93040a["taskTerminationTimeout()"]
+  94e1f8d7_2326_86ae_7224_25ee91aee4b7 -->|calls| e5af6768_da08_ad08_23bd_15065f93040a
+  6a838cf4_fc6f_4a81_4592_dca6ce015648["threadNamePrefix()"]
+  94e1f8d7_2326_86ae_7224_25ee91aee4b7 -->|calls| 6a838cf4_fc6f_4a81_4592_dca6ce015648
+  fc0962fc_768d_6b6d_d704_d695be393747["customizers()"]
+  94e1f8d7_2326_86ae_7224_25ee91aee4b7 -->|calls| fc0962fc_768d_6b6d_d704_d695be393747
+  3d4b8e89_2682_e712_91cb_40e6a601ddc3["taskDecorator()"]
+  94e1f8d7_2326_86ae_7224_25ee91aee4b7 -->|calls| 3d4b8e89_2682_e712_91cb_40e6a601ddc3
+  style 94e1f8d7_2326_86ae_7224_25ee91aee4b7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -942,7 +942,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-taskexecutorconfigurations-java-builder"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","label":"builder","type":"Function","slug":"fn-taskexecutorconfigurations-java-builder","lc":15,"lang":"java","cc":9,"cbc":2},{"id":"597f88b5:0a87:1eca:a210:c0ad3be4d923","label":"SimpleAsyncTaskExecutorBuilder","type":"Function","slug":"fn-simpleasynctaskexecutorbuilder-java-simpleasynctaskexecutorbuilder","lc":3,"lang":"java","cbc":10},{"id":"d70eb8b7:2dfc:be6f:5925:5d259e2e3a90","label":"getTaskDecorator","type":"Function","slug":"","lc":7,"lang":"java","cbc":2},{"id":"6707c305:0a51:733b:61a5:17936cc96ac6","label":"cancelRemainingTasksOnClose","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"3be7ba36:a6e9:4111:417f:99a3a770d403","label":"rejectTasksWhenLimitReached","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"8e2c7d76:2663:82e7:d82e:aff07b69f704","label":"concurrencyLimit","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"828cdf3b:692b:9b86:3705:76c32f7e885d","label":"taskTerminationTimeout","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"fe854f82:b104:53f2:30c2:e9013e5a3959","label":"threadNamePrefix","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"a652f3af:5449:c2b0:5fea:f38af3b170dd","label":"customizers","type":"Function","slug":"fn-simpleasynctaskexecutorbuilder-java-customizers","lc":4,"lang":"java","cc":2,"cbc":1},{"id":"131d522b:bf33:c1de:5a82:c84dfc6c3b93","label":"taskDecorator","type":"Function","slug":"fn-simpleasynctaskexecutorbuilder-java-taskdecorator","lc":5,"lang":"java","cc":1,"cbc":2},{"id":"3cca017c:3a78:9ca2:102b:b3d3862d9a2b","label":"simpleAsyncTaskExecutorBuilder","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"4f8a1894:a709:02cd:1438:80692b2e6e77","label":"simpleAsyncTaskExecutorBuilderVirtualThreads","type":"Function","slug":"","lc":6,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"597f88b5:0a87:1eca:a210:c0ad3be4d923","type":"calls"},{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"d70eb8b7:2dfc:be6f:5925:5d259e2e3a90","type":"calls"},{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"6707c305:0a51:733b:61a5:17936cc96ac6","type":"calls"},{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"3be7ba36:a6e9:4111:417f:99a3a770d403","type":"calls"},{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"8e2c7d76:2663:82e7:d82e:aff07b69f704","type":"calls"},{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"828cdf3b:692b:9b86:3705:76c32f7e885d","type":"calls"},{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"fe854f82:b104:53f2:30c2:e9013e5a3959","type":"calls"},{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"a652f3af:5449:c2b0:5fea:f38af3b170dd","type":"calls"},{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"131d522b:bf33:c1de:5a82:c84dfc6c3b93","type":"calls"},{"source":"3cca017c:3a78:9ca2:102b:b3d3862d9a2b","target":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","type":"calls"},{"source":"4f8a1894:a709:02cd:1438:80692b2e6e77","target":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","type":"calls"},{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"e9f2e624:b7ac:320d:76cc:af695ca72fd7","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","label":"builder","type":"Function","slug":"fn-taskexecutorconfigurations-java-builder","lc":15,"lang":"java","cc":9,"cbc":2},{"id":"5dde73ef:272b:f0f5:8e05:2cf058bc3076","label":"SimpleAsyncTaskExecutorBuilder","type":"Function","slug":"fn-simpleasynctaskexecutorbuilder-java-simpleasynctaskexecutorbuilder","lc":3,"lang":"java","cbc":10},{"id":"59275592:6c74:66a6:651a:b957542cf3c5","label":"getTaskDecorator","type":"Function","slug":"","lc":7,"lang":"java","cbc":2},{"id":"7bc98af1:7ca1:e7a1:08b9:cd3a08314688","label":"cancelRemainingTasksOnClose","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"e17f60fb:90e7:7311:2b04:b1597f4dcbf5","label":"rejectTasksWhenLimitReached","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"21258835:1360:1760:fea8:40a61ea626cb","label":"concurrencyLimit","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"e5af6768:da08:ad08:23bd:15065f93040a","label":"taskTerminationTimeout","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"6a838cf4:fc6f:4a81:4592:dca6ce015648","label":"threadNamePrefix","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"fc0962fc:768d:6b6d:d704:d695be393747","label":"customizers","type":"Function","slug":"fn-simpleasynctaskexecutorbuilder-java-customizers","lc":4,"lang":"java","cc":2,"cbc":1},{"id":"3d4b8e89:2682:e712:91cb:40e6a601ddc3","label":"taskDecorator","type":"Function","slug":"fn-simpleasynctaskexecutorbuilder-java-taskdecorator","lc":5,"lang":"java","cc":1,"cbc":2},{"id":"2bf0387b:bb7f:5b8e:402e:bd1b335d47fe","label":"simpleAsyncTaskExecutorBuilder","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"dce35dc0:c2e3:fe25:df4e:b2e07b9a253b","label":"simpleAsyncTaskExecutorBuilderVirtualThreads","type":"Function","slug":"","lc":6,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"5dde73ef:272b:f0f5:8e05:2cf058bc3076","type":"calls"},{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"59275592:6c74:66a6:651a:b957542cf3c5","type":"calls"},{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"7bc98af1:7ca1:e7a1:08b9:cd3a08314688","type":"calls"},{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"e17f60fb:90e7:7311:2b04:b1597f4dcbf5","type":"calls"},{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"21258835:1360:1760:fea8:40a61ea626cb","type":"calls"},{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"e5af6768:da08:ad08:23bd:15065f93040a","type":"calls"},{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"6a838cf4:fc6f:4a81:4592:dca6ce015648","type":"calls"},{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"fc0962fc:768d:6b6d:d704:d695be393747","type":"calls"},{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"3d4b8e89:2682:e712:91cb:40e6a601ddc3","type":"calls"},{"source":"2bf0387b:bb7f:5b8e:402e:bd1b335d47fe","target":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","type":"calls"},{"source":"dce35dc0:c2e3:fe25:df4e:b2e07b9a253b","target":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","type":"calls"},{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"94e1f8d7:2326:86ae:7224:25ee91aee4b7","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -985,7 +985,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

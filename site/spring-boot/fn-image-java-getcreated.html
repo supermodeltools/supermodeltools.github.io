@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/buildpackplatform.html" class="pill pill-green">BuildpackPlatform</a>
-        <a href="/subdomain/imagetypemodel.html" class="pill pill-orange">ImageTypeModel</a>
+        <a href="/subdomain/dockertransport.html" class="pill pill-orange">DockerTransport</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildpackPlatform","slug":"domain-buildpackplatform"},"entity":{"name":"getCreated","slug":"fn-image-java-getcreated","type":"Function"},"subdomain":{"name":"ImageTypeModel","slug":"subdomain-imagetypemodel"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildpackPlatform","slug":"domain-buildpackplatform"},"entity":{"name":"getCreated","slug":"fn-image-java-getcreated","type":"Function"},"subdomain":{"name":"DockerTransport","slug":"subdomain-dockertransport"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/buildpackplatform.html">BuildpackPlatform</a><span class="arch-sep">&rarr;</span>
-            <a href="/imagetypemodel.html">ImageTypeModel</a><span class="arch-sep">&rarr;</span>
+            <a href="/dockertransport.html">DockerTransport</a><span class="arch-sep">&rarr;</span>
             <span>getCreated() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,20 +911,20 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ee153e59_914e_670a_2c23_3ffcd91eda22["getCreated()"]
-  95fb4dcd_5fa7_d5b0_abb9_14f253f2db46["buildsImageWithCommandLineOptions()"]
-  95fb4dcd_5fa7_d5b0_abb9_14f253f2db46 -->|calls| ee153e59_914e_670a_2c23_3ffcd91eda22
-  9c3ddcae_d4c1_aa45_7077_67076dee6e24["buildsImageWithCreatedDate()"]
-  9c3ddcae_d4c1_aa45_7077_67076dee6e24 -->|calls| ee153e59_914e_670a_2c23_3ffcd91eda22
-  aa01ea3c_dd0f_c310_3d4b_ac572125c9af["buildsImageWithCurrentCreatedDate()"]
-  aa01ea3c_dd0f_c310_3d4b_ac572125c9af -->|calls| ee153e59_914e_670a_2c23_3ffcd91eda22
-  5fbdbd06_b541_0917_85f4_046f3beaf168["whenBuildImageIsInvokedWithCommandLineParameters()"]
-  5fbdbd06_b541_0917_85f4_046f3beaf168 -->|calls| ee153e59_914e_670a_2c23_3ffcd91eda22
-  faf0685b_2bbd_07c9_0e2b_5ca4aaa25c4c["whenBuildImageIsInvokedWithCreatedDate()"]
-  faf0685b_2bbd_07c9_0e2b_5ca4aaa25c4c -->|calls| ee153e59_914e_670a_2c23_3ffcd91eda22
-  298cb7ad_42d4_ec45_bd79_6c0d7d844f7f["whenBuildImageIsInvokedWithCurrentCreatedDate()"]
-  298cb7ad_42d4_ec45_bd79_6c0d7d844f7f -->|calls| ee153e59_914e_670a_2c23_3ffcd91eda22
-  style ee153e59_914e_670a_2c23_3ffcd91eda22 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  35c64ba5_5c58_2ba2_881f_2c5681323c82["getCreated()"]
+  e6e0adcd_5240_65fc_6962_cb30f1116282["buildsImageWithCommandLineOptions()"]
+  e6e0adcd_5240_65fc_6962_cb30f1116282 -->|calls| 35c64ba5_5c58_2ba2_881f_2c5681323c82
+  71d5de5e_c0dd_8b51_4883_c43c57bba262["buildsImageWithCreatedDate()"]
+  71d5de5e_c0dd_8b51_4883_c43c57bba262 -->|calls| 35c64ba5_5c58_2ba2_881f_2c5681323c82
+  a0015f3a_d47d_ab5f_6d7d_154242b0e4cd["buildsImageWithCurrentCreatedDate()"]
+  a0015f3a_d47d_ab5f_6d7d_154242b0e4cd -->|calls| 35c64ba5_5c58_2ba2_881f_2c5681323c82
+  d3cabe71_62a0_ca80_7fa9_db25ab553c2a["whenBuildImageIsInvokedWithCommandLineParameters()"]
+  d3cabe71_62a0_ca80_7fa9_db25ab553c2a -->|calls| 35c64ba5_5c58_2ba2_881f_2c5681323c82
+  45ca2525_c73d_110b_14b2_822d3f420c2d["whenBuildImageIsInvokedWithCreatedDate()"]
+  45ca2525_c73d_110b_14b2_822d3f420c2d -->|calls| 35c64ba5_5c58_2ba2_881f_2c5681323c82
+  8f2e213b_e36f_c683_b5df_a6997b876e33["whenBuildImageIsInvokedWithCurrentCreatedDate()"]
+  8f2e213b_e36f_c683_b5df_a6997b876e33 -->|calls| 35c64ba5_5c58_2ba2_881f_2c5681323c82
+  style 35c64ba5_5c58_2ba2_881f_2c5681323c82 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -932,7 +932,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-image-java-getcreated"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ee153e59:914e:670a:2c23:3ffcd91eda22","label":"getCreated","type":"Function","slug":"fn-image-java-getcreated","lc":3,"lang":"java","cbc":6},{"id":"95fb4dcd:5fa7:d5b0:abb9:14f253f2db46","label":"buildsImageWithCommandLineOptions","type":"Function","slug":"fn-bootbuildimageintegrationtests-java-buildsimagewithcommandlineoptions","lc":19,"lang":"java","cc":8},{"id":"9c3ddcae:d4c1:aa45:7077:67076dee6e24","label":"buildsImageWithCreatedDate","type":"Function","slug":"fn-bootbuildimageintegrationtests-java-buildsimagewithcreateddate","lc":16,"lang":"java","cc":9},{"id":"aa01ea3c:dd0f:c310:3d4b:ac572125c9af","label":"buildsImageWithCurrentCreatedDate","type":"Function","slug":"fn-bootbuildimageintegrationtests-java-buildsimagewithcurrentcreateddate","lc":20,"lang":"java","cc":9},{"id":"5fbdbd06:b541:0917:85f4:046f3beaf168","label":"whenBuildImageIsInvokedWithCommandLineParameters","type":"Function","slug":"fn-buildimagetests-java-whenbuildimageisinvokedwithcommandlineparameters","lc":24,"lang":"java","cc":6},{"id":"faf0685b:2bbd:07c9:0e2b:5ca4aaa25c4c","label":"whenBuildImageIsInvokedWithCreatedDate","type":"Function","slug":"fn-buildimagetests-java-whenbuildimageisinvokedwithcreateddate","lc":15,"lang":"java","cc":6},{"id":"298cb7ad:42d4:ec45:bd79:6c0d7d844f7f","label":"whenBuildImageIsInvokedWithCurrentCreatedDate","type":"Function","slug":"fn-buildimagetests-java-whenbuildimageisinvokedwithcurrentcreateddate","lc":20,"lang":"java","cc":6},{"id":"domain:BuildpackPlatform","label":"BuildpackPlatform","type":"Domain","slug":"domain-buildpackplatform"},{"id":"subdomain:BuildpackPlatform:ImageTypeModel","label":"ImageTypeModel","type":"Subdomain","slug":"subdomain-imagetypemodel"}],"edges":[{"source":"95fb4dcd:5fa7:d5b0:abb9:14f253f2db46","target":"ee153e59:914e:670a:2c23:3ffcd91eda22","type":"calls"},{"source":"9c3ddcae:d4c1:aa45:7077:67076dee6e24","target":"ee153e59:914e:670a:2c23:3ffcd91eda22","type":"calls"},{"source":"aa01ea3c:dd0f:c310:3d4b:ac572125c9af","target":"ee153e59:914e:670a:2c23:3ffcd91eda22","type":"calls"},{"source":"5fbdbd06:b541:0917:85f4:046f3beaf168","target":"ee153e59:914e:670a:2c23:3ffcd91eda22","type":"calls"},{"source":"faf0685b:2bbd:07c9:0e2b:5ca4aaa25c4c","target":"ee153e59:914e:670a:2c23:3ffcd91eda22","type":"calls"},{"source":"298cb7ad:42d4:ec45:bd79:6c0d7d844f7f","target":"ee153e59:914e:670a:2c23:3ffcd91eda22","type":"calls"},{"source":"ee153e59:914e:670a:2c23:3ffcd91eda22","target":"domain:BuildpackPlatform","type":"belongsTo"},{"source":"ee153e59:914e:670a:2c23:3ffcd91eda22","target":"subdomain:BuildpackPlatform:ImageTypeModel","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"35c64ba5:5c58:2ba2:881f:2c5681323c82","label":"getCreated","type":"Function","slug":"fn-image-java-getcreated","lc":3,"lang":"java","cbc":6},{"id":"e6e0adcd:5240:65fc:6962:cb30f1116282","label":"buildsImageWithCommandLineOptions","type":"Function","slug":"fn-bootbuildimageintegrationtests-java-buildsimagewithcommandlineoptions","lc":19,"lang":"java","cc":8},{"id":"71d5de5e:c0dd:8b51:4883:c43c57bba262","label":"buildsImageWithCreatedDate","type":"Function","slug":"fn-bootbuildimageintegrationtests-java-buildsimagewithcreateddate","lc":16,"lang":"java","cc":9},{"id":"a0015f3a:d47d:ab5f:6d7d:154242b0e4cd","label":"buildsImageWithCurrentCreatedDate","type":"Function","slug":"fn-bootbuildimageintegrationtests-java-buildsimagewithcurrentcreateddate","lc":20,"lang":"java","cc":9},{"id":"d3cabe71:62a0:ca80:7fa9:db25ab553c2a","label":"whenBuildImageIsInvokedWithCommandLineParameters","type":"Function","slug":"fn-buildimagetests-java-whenbuildimageisinvokedwithcommandlineparameters","lc":24,"lang":"java","cc":6},{"id":"45ca2525:c73d:110b:14b2:822d3f420c2d","label":"whenBuildImageIsInvokedWithCreatedDate","type":"Function","slug":"fn-buildimagetests-java-whenbuildimageisinvokedwithcreateddate","lc":15,"lang":"java","cc":6},{"id":"8f2e213b:e36f:c683:b5df:a6997b876e33","label":"whenBuildImageIsInvokedWithCurrentCreatedDate","type":"Function","slug":"fn-buildimagetests-java-whenbuildimageisinvokedwithcurrentcreateddate","lc":20,"lang":"java","cc":6},{"id":"domain:BuildpackPlatform","label":"BuildpackPlatform","type":"Domain","slug":"domain-buildpackplatform"},{"id":"subdomain:BuildpackPlatform:DockerTransport","label":"DockerTransport","type":"Subdomain","slug":"subdomain-dockertransport"}],"edges":[{"source":"e6e0adcd:5240:65fc:6962:cb30f1116282","target":"35c64ba5:5c58:2ba2:881f:2c5681323c82","type":"calls"},{"source":"71d5de5e:c0dd:8b51:4883:c43c57bba262","target":"35c64ba5:5c58:2ba2:881f:2c5681323c82","type":"calls"},{"source":"a0015f3a:d47d:ab5f:6d7d:154242b0e4cd","target":"35c64ba5:5c58:2ba2:881f:2c5681323c82","type":"calls"},{"source":"d3cabe71:62a0:ca80:7fa9:db25ab553c2a","target":"35c64ba5:5c58:2ba2:881f:2c5681323c82","type":"calls"},{"source":"45ca2525:c73d:110b:14b2:822d3f420c2d","target":"35c64ba5:5c58:2ba2:881f:2c5681323c82","type":"calls"},{"source":"8f2e213b:e36f:c683:b5df:a6997b876e33","target":"35c64ba5:5c58:2ba2:881f:2c5681323c82","type":"calls"},{"source":"35c64ba5:5c58:2ba2:881f:2c5681323c82","target":"domain:BuildpackPlatform","type":"belongsTo"},{"source":"35c64ba5:5c58:2ba2:881f:2c5681323c82","target":"subdomain:BuildpackPlatform:DockerTransport","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -963,7 +963,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-imagetypemodel.html">ImageTypeModel</a></li></ul>
+      <ul><li><a href="/subdomain-dockertransport.html">DockerTransport</a></li></ul>
     </div>
     
 

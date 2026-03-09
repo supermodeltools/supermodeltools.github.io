@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"createPropertyDescriptor","slug":"fn-javabeanpropertydescriptortests-java-createpropertydescriptor","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"createPropertyDescriptor","slug":"fn-javabeanpropertydescriptortests-java-createpropertydescriptor","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>createPropertyDescriptor() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,34 +911,34 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  eb73d456_5cf8_9c6c_2ba1_88bb1d911fab["createPropertyDescriptor()"]
-  5cc879f9_653b_b828_beaf_7db0c7150da0["javaBeanSimpleProperty()"]
-  5cc879f9_653b_b828_beaf_7db0c7150da0 -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  f3573e81_2e5c_ccba_2eee_0c56e8d85e4c["javaBeanCollectionProperty()"]
-  f3573e81_2e5c_ccba_2eee_0c56e8d85e4c -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  04673b0c_87d6_10f4_2bb7_e6ebb6ebad61["javaBeanNestedPropertySameClass()"]
-  04673b0c_87d6_10f4_2bb7_e6ebb6ebad61 -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  33768302_6131_bce8_1587_e7de00484752["javaBeanNestedPropertyWithAnnotation()"]
-  33768302_6131_bce8_1587_e7de00484752 -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  efcf3c73_7e34_b5b9_2c19_09760e460390["javaBeanMetadataSimpleProperty()"]
-  efcf3c73_7e34_b5b9_2c19_09760e460390 -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  2d5fbc92_eead_fd5e_f16a_982bb57f76b1["javaBeanMetadataCollectionProperty()"]
-  2d5fbc92_eead_fd5e_f16a_982bb57f76b1 -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  d10807ab_183d_0b54_6c7a_bd45eb36baad["javaBeanMetadataNestedGroup()"]
-  d10807ab_183d_0b54_6c7a_bd45eb36baad -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  8f937c7f_fdbc_fbc5_27fc_f56f703008bd["javaBeanDeprecatedPropertyOnClass()"]
-  8f937c7f_fdbc_fbc5_27fc_f56f703008bd -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  dfad52fc_5d4e_97bc_cfb8_bec3d13950fb["javaBeanMetadataDeprecatedPropertyWithAnnotation()"]
-  dfad52fc_5d4e_97bc_cfb8_bec3d13950fb -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  76cb138c_34ce_45b4_c4ee_0e747cb5ac9d["javaBeanDeprecatedPropertyOnGetter()"]
-  76cb138c_34ce_45b4_c4ee_0e747cb5ac9d -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  f5ce69e5_9343_03c4_ffd8_c8af6d5b595e["javaBeanDeprecatedPropertyOnSetter()"]
-  f5ce69e5_9343_03c4_ffd8_c8af6d5b595e -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  a39b8fae_83e6_6b84_ee9e_b42db55aaac2["javaBeanPropertyWithDescription()"]
-  a39b8fae_83e6_6b84_ee9e_b42db55aaac2 -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  8e6a6889_1b4e_d6c0_bfb7_f0e8391e9060["javaBeanPropertyWithDefaultValue()"]
-  8e6a6889_1b4e_d6c0_bfb7_f0e8391e9060 -->|calls| eb73d456_5cf8_9c6c_2ba1_88bb1d911fab
-  style eb73d456_5cf8_9c6c_2ba1_88bb1d911fab fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  94c4d7b7_3d10_81f6_2e7a_2da757af50f4["createPropertyDescriptor()"]
+  83f7740a_b3a1_cd6e_deba_6d69cd582406["javaBeanSimpleProperty()"]
+  83f7740a_b3a1_cd6e_deba_6d69cd582406 -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  f92f5214_03f2_a6e9_fd8a_67634c4db91a["javaBeanCollectionProperty()"]
+  f92f5214_03f2_a6e9_fd8a_67634c4db91a -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  98a30cc5_d1be_d9e6_223d_6652d20bd14e["javaBeanNestedPropertySameClass()"]
+  98a30cc5_d1be_d9e6_223d_6652d20bd14e -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  bd916301_9b5e_5dd8_5a0b_b5018793da3c["javaBeanNestedPropertyWithAnnotation()"]
+  bd916301_9b5e_5dd8_5a0b_b5018793da3c -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  88b8b7a7_816a_4681_dfa8_c0d059773ffc["javaBeanMetadataSimpleProperty()"]
+  88b8b7a7_816a_4681_dfa8_c0d059773ffc -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  e75fd937_71a2_c2aa_59d5_398cfa1f8140["javaBeanMetadataCollectionProperty()"]
+  e75fd937_71a2_c2aa_59d5_398cfa1f8140 -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  aa24f165_afbc_3628_625c_289e086deb01["javaBeanMetadataNestedGroup()"]
+  aa24f165_afbc_3628_625c_289e086deb01 -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  6763bdaf_f8c2_0c1f_b4f1_382b337e82d0["javaBeanDeprecatedPropertyOnClass()"]
+  6763bdaf_f8c2_0c1f_b4f1_382b337e82d0 -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  11b65cc5_9e9c_9de3_5a38_b73f6f41a8a3["javaBeanMetadataDeprecatedPropertyWithAnnotation()"]
+  11b65cc5_9e9c_9de3_5a38_b73f6f41a8a3 -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  2fc18073_23ec_5abe_9d13_2884237ed6a4["javaBeanDeprecatedPropertyOnGetter()"]
+  2fc18073_23ec_5abe_9d13_2884237ed6a4 -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  a31058aa_9b04_2863_6791_2de5fce3849c["javaBeanDeprecatedPropertyOnSetter()"]
+  a31058aa_9b04_2863_6791_2de5fce3849c -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  d27ab0b6_5277_94bf_236d_e9b4de6cc0f9["javaBeanPropertyWithDescription()"]
+  d27ab0b6_5277_94bf_236d_e9b4de6cc0f9 -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  b0f292ce_7c5b_4fa7_bf47_065711228b59["javaBeanPropertyWithDefaultValue()"]
+  b0f292ce_7c5b_4fa7_bf47_065711228b59 -->|calls| 94c4d7b7_3d10_81f6_2e7a_2da757af50f4
+  style 94c4d7b7_3d10_81f6_2e7a_2da757af50f4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -946,7 +946,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-javabeanpropertydescriptortests-java-createpropertydescriptor"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","label":"createPropertyDescriptor","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-createpropertydescriptor","lc":4,"lang":"java","cbc":13},{"id":"5cc879f9:653b:b828:beaf:7db0c7150da0","label":"javaBeanSimpleProperty","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-javabeansimpleproperty","lc":12,"lang":"java","cc":2},{"id":"f3573e81:2e5c:ccba:2eee:0c56e8d85e4c","label":"javaBeanCollectionProperty","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-javabeancollectionproperty","lc":12,"lang":"java","cc":2},{"id":"04673b0c:87d6:10f4:2bb7:e6ebb6ebad61","label":"javaBeanNestedPropertySameClass","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-javabeannestedpropertysameclass","lc":12,"lang":"java","cc":2},{"id":"33768302:6131:bce8:1587:e7de00484752","label":"javaBeanNestedPropertyWithAnnotation","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-javabeannestedpropertywithannotation","lc":12,"lang":"java","cc":2},{"id":"efcf3c73:7e34:b5b9:2c19:09760e460390","label":"javaBeanMetadataSimpleProperty","type":"Function","slug":"","lc":13,"lang":"java","cc":1},{"id":"2d5fbc92:eead:fd5e:f16a:982bb57f76b1","label":"javaBeanMetadataCollectionProperty","type":"Function","slug":"","lc":13,"lang":"java","cc":1},{"id":"d10807ab:183d:0b54:6c7a:bd45eb36baad","label":"javaBeanMetadataNestedGroup","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-javabeanmetadatanestedgroup","lc":14,"lang":"java","cc":2},{"id":"8f937c7f:fdbc:fbc5:27fc:f56f703008bd","label":"javaBeanDeprecatedPropertyOnClass","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"dfad52fc:5d4e:97bc:cfb8:bec3d13950fb","label":"javaBeanMetadataDeprecatedPropertyWithAnnotation","type":"Function","slug":"","lc":10,"lang":"java","cc":1},{"id":"76cb138c:34ce:45b4:c4ee:0e747cb5ac9d","label":"javaBeanDeprecatedPropertyOnGetter","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"f5ce69e5:9343:03c4:ffd8:c8af6d5b595e","label":"javaBeanDeprecatedPropertyOnSetter","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"a39b8fae:83e6:6b84:ee9e:b42db55aaac2","label":"javaBeanPropertyWithDescription","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"8e6a6889:1b4e:d6c0:bfb7:f0e8391e9060","label":"javaBeanPropertyWithDefaultValue","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"5cc879f9:653b:b828:beaf:7db0c7150da0","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"f3573e81:2e5c:ccba:2eee:0c56e8d85e4c","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"04673b0c:87d6:10f4:2bb7:e6ebb6ebad61","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"33768302:6131:bce8:1587:e7de00484752","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"efcf3c73:7e34:b5b9:2c19:09760e460390","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"2d5fbc92:eead:fd5e:f16a:982bb57f76b1","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"d10807ab:183d:0b54:6c7a:bd45eb36baad","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"8f937c7f:fdbc:fbc5:27fc:f56f703008bd","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"dfad52fc:5d4e:97bc:cfb8:bec3d13950fb","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"76cb138c:34ce:45b4:c4ee:0e747cb5ac9d","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"f5ce69e5:9343:03c4:ffd8:c8af6d5b595e","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"a39b8fae:83e6:6b84:ee9e:b42db55aaac2","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"8e6a6889:1b4e:d6c0:bfb7:f0e8391e9060","target":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","type":"calls"},{"source":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"eb73d456:5cf8:9c6c:2ba1:88bb1d911fab","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","label":"createPropertyDescriptor","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-createpropertydescriptor","lc":4,"lang":"java","cbc":13},{"id":"83f7740a:b3a1:cd6e:deba:6d69cd582406","label":"javaBeanSimpleProperty","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-javabeansimpleproperty","lc":12,"lang":"java","cc":2},{"id":"f92f5214:03f2:a6e9:fd8a:67634c4db91a","label":"javaBeanCollectionProperty","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-javabeancollectionproperty","lc":12,"lang":"java","cc":2},{"id":"98a30cc5:d1be:d9e6:223d:6652d20bd14e","label":"javaBeanNestedPropertySameClass","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-javabeannestedpropertysameclass","lc":12,"lang":"java","cc":2},{"id":"bd916301:9b5e:5dd8:5a0b:b5018793da3c","label":"javaBeanNestedPropertyWithAnnotation","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-javabeannestedpropertywithannotation","lc":12,"lang":"java","cc":2},{"id":"88b8b7a7:816a:4681:dfa8:c0d059773ffc","label":"javaBeanMetadataSimpleProperty","type":"Function","slug":"","lc":13,"lang":"java","cc":1},{"id":"e75fd937:71a2:c2aa:59d5:398cfa1f8140","label":"javaBeanMetadataCollectionProperty","type":"Function","slug":"","lc":13,"lang":"java","cc":1},{"id":"aa24f165:afbc:3628:625c:289e086deb01","label":"javaBeanMetadataNestedGroup","type":"Function","slug":"fn-javabeanpropertydescriptortests-java-javabeanmetadatanestedgroup","lc":14,"lang":"java","cc":2},{"id":"6763bdaf:f8c2:0c1f:b4f1:382b337e82d0","label":"javaBeanDeprecatedPropertyOnClass","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"11b65cc5:9e9c:9de3:5a38:b73f6f41a8a3","label":"javaBeanMetadataDeprecatedPropertyWithAnnotation","type":"Function","slug":"","lc":10,"lang":"java","cc":1},{"id":"2fc18073:23ec:5abe:9d13:2884237ed6a4","label":"javaBeanDeprecatedPropertyOnGetter","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"a31058aa:9b04:2863:6791:2de5fce3849c","label":"javaBeanDeprecatedPropertyOnSetter","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"d27ab0b6:5277:94bf:236d:e9b4de6cc0f9","label":"javaBeanPropertyWithDescription","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"b0f292ce:7c5b:4fa7:bf47:065711228b59","label":"javaBeanPropertyWithDefaultValue","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"83f7740a:b3a1:cd6e:deba:6d69cd582406","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"f92f5214:03f2:a6e9:fd8a:67634c4db91a","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"98a30cc5:d1be:d9e6:223d:6652d20bd14e","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"bd916301:9b5e:5dd8:5a0b:b5018793da3c","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"88b8b7a7:816a:4681:dfa8:c0d059773ffc","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"e75fd937:71a2:c2aa:59d5:398cfa1f8140","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"aa24f165:afbc:3628:625c:289e086deb01","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"6763bdaf:f8c2:0c1f:b4f1:382b337e82d0","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"11b65cc5:9e9c:9de3:5a38:b73f6f41a8a3","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"2fc18073:23ec:5abe:9d13:2884237ed6a4","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"a31058aa:9b04:2863:6791:2de5fce3849c","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"d27ab0b6:5277:94bf:236d:e9b4de6cc0f9","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"b0f292ce:7c5b:4fa7:bf47:065711228b59","target":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","type":"calls"},{"source":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"94c4d7b7:3d10:81f6:2e7a:2da757af50f4","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -978,7 +978,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 

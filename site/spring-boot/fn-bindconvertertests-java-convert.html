@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"convert","slug":"fn-bindconvertertests-java-convert","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"convert","slug":"fn-bindconvertertests-java-convert","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>convert() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,26 +911,26 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  c9cca74e_c2fe_234c_db56_e76386f1d1d4["convert()"]
-  121bf4d0_889c_d652_8896_238bd60e7191["convert()"]
-  121bf4d0_889c_d652_8896_238bd60e7191 -->|calls| c9cca74e_c2fe_234c_db56_e76386f1d1d4
-  84fe1e57_50c9_23eb_f68d_1a999f0d52f8["convertWhenHasEditorForArrayElementShouldConvert()"]
-  84fe1e57_50c9_23eb_f68d_1a999f0d52f8 -->|calls| c9cca74e_c2fe_234c_db56_e76386f1d1d4
-  611d83f1_0428_19d2_ed0c_ce54da0a569a["convertWhenConversionServiceCanConvertShouldConvert()"]
-  611d83f1_0428_19d2_ed0c_ce54da0a569a -->|calls| c9cca74e_c2fe_234c_db56_e76386f1d1d4
-  5ad7761b_7aa2_4f0d_6d85_c3df52467206["convertWhenNotPropertyEditorAndConversionServiceCannotConvertShouldThrowException()"]
-  5ad7761b_7aa2_4f0d_6d85_c3df52467206 -->|calls| c9cca74e_c2fe_234c_db56_e76386f1d1d4
-  7d537733_8d09_8d93_118e_d8afb530d70f["convertWhenConvertingToFileShouldExcludeFileEditor()"]
-  7d537733_8d09_8d93_118e_d8afb530d70f -->|calls| c9cca74e_c2fe_234c_db56_e76386f1d1d4
-  196330ad_797d_4811_c307_d0e15924d309["fallsBackToApplicationConversionService()"]
-  196330ad_797d_4811_c307_d0e15924d309 -->|calls| c9cca74e_c2fe_234c_db56_e76386f1d1d4
-  c7cb6633_006f_5c21_1651_0419b1277625["convertWhenConversionFailsThrowsConversionFailedExceptionRatherThanConverterNotFoundException()"]
-  c7cb6633_006f_5c21_1651_0419b1277625 -->|calls| c9cca74e_c2fe_234c_db56_e76386f1d1d4
-  58c1f9f3_a5c5_baee_c8db_834cb45a504f["convertWhenUsingTypeConverterConversionServiceFromMultipleThreads()"]
-  58c1f9f3_a5c5_baee_c8db_834cb45a504f -->|calls| c9cca74e_c2fe_234c_db56_e76386f1d1d4
-  121bf4d0_889c_d652_8896_238bd60e7191["convert()"]
-  c9cca74e_c2fe_234c_db56_e76386f1d1d4 -->|calls| 121bf4d0_889c_d652_8896_238bd60e7191
-  style c9cca74e_c2fe_234c_db56_e76386f1d1d4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  f25190bc_8512_1c6e_7b03_edeeb30e37a5["convert()"]
+  2e6de8cb_75b3_d73b_ae68_6261d9c11438["convert()"]
+  2e6de8cb_75b3_d73b_ae68_6261d9c11438 -->|calls| f25190bc_8512_1c6e_7b03_edeeb30e37a5
+  1b287b1b_264a_0efc_d4db_57464420251f["convertWhenHasEditorForArrayElementShouldConvert()"]
+  1b287b1b_264a_0efc_d4db_57464420251f -->|calls| f25190bc_8512_1c6e_7b03_edeeb30e37a5
+  a528154a_2c45_c117_8b68_db87125388eb["convertWhenConversionServiceCanConvertShouldConvert()"]
+  a528154a_2c45_c117_8b68_db87125388eb -->|calls| f25190bc_8512_1c6e_7b03_edeeb30e37a5
+  a32a0217_3884_738a_78f3_a6b5054f2565["convertWhenNotPropertyEditorAndConversionServiceCannotConvertShouldThrowException()"]
+  a32a0217_3884_738a_78f3_a6b5054f2565 -->|calls| f25190bc_8512_1c6e_7b03_edeeb30e37a5
+  15bda3d0_a56c_f64b_81fd_646000ec01df["convertWhenConvertingToFileShouldExcludeFileEditor()"]
+  15bda3d0_a56c_f64b_81fd_646000ec01df -->|calls| f25190bc_8512_1c6e_7b03_edeeb30e37a5
+  51f0205b_14ba_6ea2_50d2_08e02df95874["fallsBackToApplicationConversionService()"]
+  51f0205b_14ba_6ea2_50d2_08e02df95874 -->|calls| f25190bc_8512_1c6e_7b03_edeeb30e37a5
+  ffe1a3b2_8125_ca30_23ac_3b15d5415d29["convertWhenConversionFailsThrowsConversionFailedExceptionRatherThanConverterNotFoundException()"]
+  ffe1a3b2_8125_ca30_23ac_3b15d5415d29 -->|calls| f25190bc_8512_1c6e_7b03_edeeb30e37a5
+  3857ead4_1e8c_6e8c_c98b_768632999bfa["convertWhenUsingTypeConverterConversionServiceFromMultipleThreads()"]
+  3857ead4_1e8c_6e8c_c98b_768632999bfa -->|calls| f25190bc_8512_1c6e_7b03_edeeb30e37a5
+  2e6de8cb_75b3_d73b_ae68_6261d9c11438["convert()"]
+  f25190bc_8512_1c6e_7b03_edeeb30e37a5 -->|calls| 2e6de8cb_75b3_d73b_ae68_6261d9c11438
+  style f25190bc_8512_1c6e_7b03_edeeb30e37a5 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -938,7 +938,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-bindconvertertests-java-convert"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","label":"convert","type":"Function","slug":"fn-bindconvertertests-java-convert","lc":6,"lang":"java","cc":1,"cbc":8},{"id":"121bf4d0:889c:d652:8896:238bd60e7191","label":"convert","type":"Function","slug":"fn-bindconvertertests-java-convert-2","lc":4,"lang":"java","cc":1,"cbc":5},{"id":"84fe1e57:50c9:23eb:f68d:1a999f0d52f8","label":"convertWhenHasEditorForArrayElementShouldConvert","type":"Function","slug":"fn-bindconvertertests-java-convertwhenhaseditorforarrayelementshouldconvert","lc":8,"lang":"java","cc":3},{"id":"611d83f1:0428:19d2:ed0c:ce54da0a569a","label":"convertWhenConversionServiceCanConvertShouldConvert","type":"Function","slug":"fn-bindconvertertests-java-convertwhenconversionservicecanconvertshouldconvert","lc":7,"lang":"java","cc":3},{"id":"5ad7761b:7aa2:4f0d:6d85:c3df52467206","label":"convertWhenNotPropertyEditorAndConversionServiceCannotConvertShouldThrowException","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"7d537733:8d09:8d93:118e:d8afb530d70f","label":"convertWhenConvertingToFileShouldExcludeFileEditor","type":"Function","slug":"","lc":10,"lang":"java","cc":1},{"id":"196330ad:797d:4811:c307:d0e15924d309","label":"fallsBackToApplicationConversionService","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"c7cb6633:006f:5c21:1651:0419b1277625","label":"convertWhenConversionFailsThrowsConversionFailedExceptionRatherThanConverterNotFoundException","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"58c1f9f3:a5c5:baee:c8db:834cb45a504f","label":"convertWhenUsingTypeConverterConversionServiceFromMultipleThreads","type":"Function","slug":"","lc":24,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","target":"121bf4d0:889c:d652:8896:238bd60e7191","type":"calls"},{"source":"121bf4d0:889c:d652:8896:238bd60e7191","target":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","type":"calls"},{"source":"84fe1e57:50c9:23eb:f68d:1a999f0d52f8","target":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","type":"calls"},{"source":"611d83f1:0428:19d2:ed0c:ce54da0a569a","target":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","type":"calls"},{"source":"5ad7761b:7aa2:4f0d:6d85:c3df52467206","target":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","type":"calls"},{"source":"7d537733:8d09:8d93:118e:d8afb530d70f","target":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","type":"calls"},{"source":"196330ad:797d:4811:c307:d0e15924d309","target":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","type":"calls"},{"source":"c7cb6633:006f:5c21:1651:0419b1277625","target":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","type":"calls"},{"source":"58c1f9f3:a5c5:baee:c8db:834cb45a504f","target":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","type":"calls"},{"source":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"c9cca74e:c2fe:234c:db56:e76386f1d1d4","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","label":"convert","type":"Function","slug":"fn-bindconvertertests-java-convert","lc":6,"lang":"java","cc":1,"cbc":8},{"id":"2e6de8cb:75b3:d73b:ae68:6261d9c11438","label":"convert","type":"Function","slug":"","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"1b287b1b:264a:0efc:d4db:57464420251f","label":"convertWhenHasEditorForArrayElementShouldConvert","type":"Function","slug":"fn-bindconvertertests-java-convertwhenhaseditorforarrayelementshouldconvert","lc":8,"lang":"java","cc":3},{"id":"a528154a:2c45:c117:8b68:db87125388eb","label":"convertWhenConversionServiceCanConvertShouldConvert","type":"Function","slug":"fn-bindconvertertests-java-convertwhenconversionservicecanconvertshouldconvert","lc":7,"lang":"java","cc":3},{"id":"a32a0217:3884:738a:78f3:a6b5054f2565","label":"convertWhenNotPropertyEditorAndConversionServiceCannotConvertShouldThrowException","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"15bda3d0:a56c:f64b:81fd:646000ec01df","label":"convertWhenConvertingToFileShouldExcludeFileEditor","type":"Function","slug":"","lc":10,"lang":"java","cc":1},{"id":"51f0205b:14ba:6ea2:50d2:08e02df95874","label":"fallsBackToApplicationConversionService","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"ffe1a3b2:8125:ca30:23ac:3b15d5415d29","label":"convertWhenConversionFailsThrowsConversionFailedExceptionRatherThanConverterNotFoundException","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"3857ead4:1e8c:6e8c:c98b:768632999bfa","label":"convertWhenUsingTypeConverterConversionServiceFromMultipleThreads","type":"Function","slug":"","lc":24,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","target":"2e6de8cb:75b3:d73b:ae68:6261d9c11438","type":"calls"},{"source":"2e6de8cb:75b3:d73b:ae68:6261d9c11438","target":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","type":"calls"},{"source":"1b287b1b:264a:0efc:d4db:57464420251f","target":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","type":"calls"},{"source":"a528154a:2c45:c117:8b68:db87125388eb","target":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","type":"calls"},{"source":"a32a0217:3884:738a:78f3:a6b5054f2565","target":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","type":"calls"},{"source":"15bda3d0:a56c:f64b:81fd:646000ec01df","target":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","type":"calls"},{"source":"51f0205b:14ba:6ea2:50d2:08e02df95874","target":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","type":"calls"},{"source":"ffe1a3b2:8125:ca30:23ac:3b15d5415d29","target":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","type":"calls"},{"source":"3857ead4:1e8c:6e8c:c98b:768632999bfa","target":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","type":"calls"},{"source":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"f25190bc:8512:1c6e:7b03:edeeb30e37a5","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -972,7 +972,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 
@@ -991,14 +991,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li><a href="/fn-bindconvertertests-java-convert-2.html">convert()</a></li></ul>
+      <ul><li>convert()</li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Called By</h2>
-      <ul><li><a href="/fn-bindconvertertests-java-convert-2.html">convert()</a></li><li>convertWhenConversionFailsThrowsConversionFailedExceptionRatherThanConverterNotFoundException()</li><li><a href="/fn-bindconvertertests-java-convertwhenconversionservicecanconvertshouldconvert.html">convertWhenConversionServiceCanConvertShouldConvert()</a></li><li>convertWhenConvertingToFileShouldExcludeFileEditor()</li><li><a href="/fn-bindconvertertests-java-convertwhenhaseditorforarrayelementshouldconvert.html">convertWhenHasEditorForArrayElementShouldConvert()</a></li><li>convertWhenNotPropertyEditorAndConversionServiceCannotConvertShouldThrowException()</li><li>convertWhenUsingTypeConverterConversionServiceFromMultipleThreads()</li><li>fallsBackToApplicationConversionService()</li></ul>
+      <ul><li>convert()</li><li>convertWhenConversionFailsThrowsConversionFailedExceptionRatherThanConverterNotFoundException()</li><li><a href="/fn-bindconvertertests-java-convertwhenconversionservicecanconvertshouldconvert.html">convertWhenConversionServiceCanConvertShouldConvert()</a></li><li>convertWhenConvertingToFileShouldExcludeFileEditor()</li><li><a href="/fn-bindconvertertests-java-convertwhenhaseditorforarrayelementshouldconvert.html">convertWhenHasEditorForArrayElementShouldConvert()</a></li><li>convertWhenNotPropertyEditorAndConversionServiceCannotConvertShouldThrowException()</li><li>convertWhenUsingTypeConverterConversionServiceFromMultipleThreads()</li><li>fallsBackToApplicationConversionService()</li></ul>
     </div>
     
 

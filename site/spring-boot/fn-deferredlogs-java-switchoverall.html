@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"switchOverAll","slug":"fn-deferredlogs-java-switchoverall","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"switchOverAll","slug":"fn-deferredlogs-java-switchoverall","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>switchOverAll() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  0772a37e_c31f_54cb_8369_feab021399d4["switchOverAll()"]
-  2c10cc26_5b52_3fbd_9499_6f007c5401a7["finish()"]
-  2c10cc26_5b52_3fbd_9499_6f007c5401a7 -->|calls| 0772a37e_c31f_54cb_8369_feab021399d4
-  1a95351d_365f_6790_6a52_d0478afc7cdd["onApplicationEventWhenApplicationPreparedEventSwitchesLogs()"]
-  1a95351d_365f_6790_6a52_d0478afc7cdd -->|calls| 0772a37e_c31f_54cb_8369_feab021399d4
-  4685f143_7106_c7df_14ed_13e8ce8bcf4e["onApplicationEventWhenApplicationFailedEventSwitchesLogs()"]
-  4685f143_7106_c7df_14ed_13e8ce8bcf4e -->|calls| 0772a37e_c31f_54cb_8369_feab021399d4
-  style 0772a37e_c31f_54cb_8369_feab021399d4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  f37f220c_7f05_6029_44b6_fd8383b40be2["switchOverAll()"]
+  2f8b3da3_2c96_8a26_0ed4_6d60b30f2838["finish()"]
+  2f8b3da3_2c96_8a26_0ed4_6d60b30f2838 -->|calls| f37f220c_7f05_6029_44b6_fd8383b40be2
+  7281d737_7800_d077_a7af_cbf4852c3195["onApplicationEventWhenApplicationPreparedEventSwitchesLogs()"]
+  7281d737_7800_d077_a7af_cbf4852c3195 -->|calls| f37f220c_7f05_6029_44b6_fd8383b40be2
+  9713d73f_74f8_4f1e_80e4_2621d4c4993b["onApplicationEventWhenApplicationFailedEventSwitchesLogs()"]
+  9713d73f_74f8_4f1e_80e4_2621d4c4993b -->|calls| f37f220c_7f05_6029_44b6_fd8383b40be2
+  style f37f220c_7f05_6029_44b6_fd8383b40be2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-deferredlogs-java-switchoverall"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"0772a37e:c31f:54cb:8369:feab021399d4","label":"switchOverAll","type":"Function","slug":"fn-deferredlogs-java-switchoverall","lc":12,"lang":"java","cbc":3},{"id":"2c10cc26:5b52:3fbd:9499:6f007c5401a7","label":"finish","type":"Function","slug":"fn-environmentpostprocessorapplicationlistener-java-finish","lc":3,"lang":"java","cc":1,"cbc":2},{"id":"1a95351d:365f:6790:6a52:d0478afc7cdd","label":"onApplicationEventWhenApplicationPreparedEventSwitchesLogs","type":"Function","slug":"fn-environmentpostprocessorapplicationlistenertests-java-onapplicationeventwhenapplicationpreparedeventswitcheslogs","lc":8,"lang":"java","cc":3},{"id":"4685f143:7106:c7df:14ed:13e8ce8bcf4e","label":"onApplicationEventWhenApplicationFailedEventSwitchesLogs","type":"Function","slug":"fn-environmentpostprocessorapplicationlistenertests-java-onapplicationeventwhenapplicationfailedeventswitcheslogs","lc":9,"lang":"java","cc":3},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"2c10cc26:5b52:3fbd:9499:6f007c5401a7","target":"0772a37e:c31f:54cb:8369:feab021399d4","type":"calls"},{"source":"1a95351d:365f:6790:6a52:d0478afc7cdd","target":"0772a37e:c31f:54cb:8369:feab021399d4","type":"calls"},{"source":"4685f143:7106:c7df:14ed:13e8ce8bcf4e","target":"0772a37e:c31f:54cb:8369:feab021399d4","type":"calls"},{"source":"0772a37e:c31f:54cb:8369:feab021399d4","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"0772a37e:c31f:54cb:8369:feab021399d4","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"f37f220c:7f05:6029:44b6:fd8383b40be2","label":"switchOverAll","type":"Function","slug":"fn-deferredlogs-java-switchoverall","lc":12,"lang":"java","cbc":3},{"id":"2f8b3da3:2c96:8a26:0ed4:6d60b30f2838","label":"finish","type":"Function","slug":"fn-environmentpostprocessorapplicationlistener-java-finish","lc":3,"lang":"java","cc":1,"cbc":2},{"id":"7281d737:7800:d077:a7af:cbf4852c3195","label":"onApplicationEventWhenApplicationPreparedEventSwitchesLogs","type":"Function","slug":"fn-environmentpostprocessorapplicationlistenertests-java-onapplicationeventwhenapplicationpreparedeventswitcheslogs","lc":8,"lang":"java","cc":3},{"id":"9713d73f:74f8:4f1e:80e4:2621d4c4993b","label":"onApplicationEventWhenApplicationFailedEventSwitchesLogs","type":"Function","slug":"fn-environmentpostprocessorapplicationlistenertests-java-onapplicationeventwhenapplicationfailedeventswitcheslogs","lc":9,"lang":"java","cc":3},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"2f8b3da3:2c96:8a26:0ed4:6d60b30f2838","target":"f37f220c:7f05:6029:44b6:fd8383b40be2","type":"calls"},{"source":"7281d737:7800:d077:a7af:cbf4852c3195","target":"f37f220c:7f05:6029:44b6:fd8383b40be2","type":"calls"},{"source":"9713d73f:74f8:4f1e:80e4:2621d4c4993b","target":"f37f220c:7f05:6029:44b6:fd8383b40be2","type":"calls"},{"source":"f37f220c:7f05:6029:44b6:fd8383b40be2","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"f37f220c:7f05:6029:44b6:fd8383b40be2","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -966,7 +966,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

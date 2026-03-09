@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
-        <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/domain/packaging.html" class="pill pill-green">Packaging</a>
+        <a href="/subdomain/indexing.html" class="pill pill-orange">Indexing</a>
         
         
         <span class="pill">calls 8</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"getRegistryAuthentication","slug":"fn-dockerspec-java-getregistryauthentication","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Packaging","slug":"domain-packaging"},"entity":{"name":"getRegistryAuthentication","slug":"fn-dockerspec-java-getregistryauthentication","type":"Function"},"subdomain":{"name":"Indexing","slug":"subdomain-indexing"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/packaging.html">Packaging</a><span class="arch-sep">&rarr;</span>
+            <a href="/indexing.html">Indexing</a><span class="arch-sep">&rarr;</span>
             <span>getRegistryAuthentication() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,28 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  948b1910_9586_2cf1_b028_30c323907bd5["getRegistryAuthentication()"]
-  edf6e9f2_3ae1_b837_cec8_a8fccacaa355["customizeBuilderAuthentication()"]
-  edf6e9f2_3ae1_b837_cec8_a8fccacaa355 -->|calls| 948b1910_9586_2cf1_b028_30c323907bd5
-  df02497f_5be9_5e41_5235_5b046807c7fd["customizePublishAuthentication()"]
-  df02497f_5be9_5e41_5235_5b046807c7fd -->|calls| 948b1910_9586_2cf1_b028_30c323907bd5
-  b11c3d04_2482_a5bd_4742_95b796a2449d["hasEmptyAuth()"]
-  948b1910_9586_2cf1_b028_30c323907bd5 -->|calls| b11c3d04_2482_a5bd_4742_95b796a2449d
-  f023fc3d_06ce_5c20_9564_bab5e4571b57["hasTokenAuth()"]
-  948b1910_9586_2cf1_b028_30c323907bd5 -->|calls| f023fc3d_06ce_5c20_9564_bab5e4571b57
-  cf6fbe22_d42e_ffb1_ff9b_578092420ac0["hasUserAuth()"]
-  948b1910_9586_2cf1_b028_30c323907bd5 -->|calls| cf6fbe22_d42e_ffb1_ff9b_578092420ac0
-  4732331f_70c6_6ef0_6afc_b926087b9983["getToken()"]
-  948b1910_9586_2cf1_b028_30c323907bd5 -->|calls| 4732331f_70c6_6ef0_6afc_b926087b9983
-  dc43c7a9_bcd4_b5df_5eb4_26f132a837c5["getUsername()"]
-  948b1910_9586_2cf1_b028_30c323907bd5 -->|calls| dc43c7a9_bcd4_b5df_5eb4_26f132a837c5
-  2f26efd3_4290_39d3_1e0c_06abc52bb18f["getPassword()"]
-  948b1910_9586_2cf1_b028_30c323907bd5 -->|calls| 2f26efd3_4290_39d3_1e0c_06abc52bb18f
-  ab471da2_1ea8_57fe_88ff_e28f9c8b5359["getUrl()"]
-  948b1910_9586_2cf1_b028_30c323907bd5 -->|calls| ab471da2_1ea8_57fe_88ff_e28f9c8b5359
-  1776cfbc_e249_9988_c770_053a53fa794d["getEmail()"]
-  948b1910_9586_2cf1_b028_30c323907bd5 -->|calls| 1776cfbc_e249_9988_c770_053a53fa794d
-  style 948b1910_9586_2cf1_b028_30c323907bd5 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  2aa780c6_af4f_9162_7f21_5747f2fd93e4["getRegistryAuthentication()"]
+  fcaac87f_851c_d13a_fa1e_cb37fba0315a["customizeBuilderAuthentication()"]
+  fcaac87f_851c_d13a_fa1e_cb37fba0315a -->|calls| 2aa780c6_af4f_9162_7f21_5747f2fd93e4
+  e48723a7_42dc_55b6_50b0_810418a77a4d["customizePublishAuthentication()"]
+  e48723a7_42dc_55b6_50b0_810418a77a4d -->|calls| 2aa780c6_af4f_9162_7f21_5747f2fd93e4
+  f6d7d69b_5b3b_910d_74ee_742ebd9461b7["hasEmptyAuth()"]
+  2aa780c6_af4f_9162_7f21_5747f2fd93e4 -->|calls| f6d7d69b_5b3b_910d_74ee_742ebd9461b7
+  c6214f18_8ca4_864d_8cf7_8b73d9f535ba["hasTokenAuth()"]
+  2aa780c6_af4f_9162_7f21_5747f2fd93e4 -->|calls| c6214f18_8ca4_864d_8cf7_8b73d9f535ba
+  98ac1beb_9a09_883f_abac_aadf50623d11["hasUserAuth()"]
+  2aa780c6_af4f_9162_7f21_5747f2fd93e4 -->|calls| 98ac1beb_9a09_883f_abac_aadf50623d11
+  0aa0c743_f74a_de09_b21f_383d644d7246["getToken()"]
+  2aa780c6_af4f_9162_7f21_5747f2fd93e4 -->|calls| 0aa0c743_f74a_de09_b21f_383d644d7246
+  8804c6e0_6fe1_c34f_fd94_ffe464f9b8bc["getUsername()"]
+  2aa780c6_af4f_9162_7f21_5747f2fd93e4 -->|calls| 8804c6e0_6fe1_c34f_fd94_ffe464f9b8bc
+  80e946ba_4c1d_6281_91b6_16ecf5a5a35c["getPassword()"]
+  2aa780c6_af4f_9162_7f21_5747f2fd93e4 -->|calls| 80e946ba_4c1d_6281_91b6_16ecf5a5a35c
+  8a4cdc78_1bf1_d9d7_4d5b_b02323b266bb["getUrl()"]
+  2aa780c6_af4f_9162_7f21_5747f2fd93e4 -->|calls| 8a4cdc78_1bf1_d9d7_4d5b_b02323b266bb
+  92a046b3_7c3a_fa13_cc69_13d01dc553b7["getEmail()"]
+  2aa780c6_af4f_9162_7f21_5747f2fd93e4 -->|calls| 92a046b3_7c3a_fa13_cc69_13d01dc553b7
+  style 2aa780c6_af4f_9162_7f21_5747f2fd93e4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -940,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-dockerspec-java-getregistryauthentication"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"948b1910:9586:2cf1:b028:30c323907bd5","label":"getRegistryAuthentication","type":"Function","slug":"fn-dockerspec-java-getregistryauthentication","lc":15,"lang":"java","cc":8,"cbc":2},{"id":"b11c3d04:2482:a5bd:4742:95b796a2449d","label":"hasEmptyAuth","type":"Function","slug":"fn-dockerspec-java-hasemptyauth","lc":3,"lang":"java","cc":6,"cbc":1},{"id":"f023fc3d:06ce:5c20:9564:bab5e4571b57","label":"hasTokenAuth","type":"Function","slug":"fn-dockerspec-java-hastokenauth","lc":3,"lang":"java","cc":1,"cbc":1},{"id":"cf6fbe22:d42e:ffb1:ff9b:578092420ac0","label":"hasUserAuth","type":"Function","slug":"fn-dockerspec-java-hasuserauth","lc":3,"lang":"java","cc":3,"cbc":1},{"id":"4732331f:70c6:6ef0:6afc:b926087b9983","label":"getToken","type":"Function","slug":"fn-dockerspec-java-gettoken","lc":3,"lang":"java","cbc":3},{"id":"dc43c7a9:bcd4:b5df:5eb4:26f132a837c5","label":"getUsername","type":"Function","slug":"fn-dockerspec-java-getusername","lc":3,"lang":"java","cbc":3},{"id":"2f26efd3:4290:39d3:1e0c:06abc52bb18f","label":"getPassword","type":"Function","slug":"fn-dockerspec-java-getpassword","lc":3,"lang":"java","cbc":3},{"id":"ab471da2:1ea8:57fe:88ff:e28f9c8b5359","label":"getUrl","type":"Function","slug":"fn-dockerspec-java-geturl","lc":3,"lang":"java","cbc":2},{"id":"1776cfbc:e249:9988:c770:053a53fa794d","label":"getEmail","type":"Function","slug":"fn-dockerspec-java-getemail","lc":3,"lang":"java","cbc":2},{"id":"edf6e9f2:3ae1:b837:cec8:a8fccacaa355","label":"customizeBuilderAuthentication","type":"Function","slug":"fn-dockerspec-java-customizebuilderauthentication","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"df02497f:5be9:5e41:5235:5b046807c7fd","label":"customizePublishAuthentication","type":"Function","slug":"fn-dockerspec-java-customizepublishauthentication","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"948b1910:9586:2cf1:b028:30c323907bd5","target":"b11c3d04:2482:a5bd:4742:95b796a2449d","type":"calls"},{"source":"948b1910:9586:2cf1:b028:30c323907bd5","target":"f023fc3d:06ce:5c20:9564:bab5e4571b57","type":"calls"},{"source":"948b1910:9586:2cf1:b028:30c323907bd5","target":"cf6fbe22:d42e:ffb1:ff9b:578092420ac0","type":"calls"},{"source":"948b1910:9586:2cf1:b028:30c323907bd5","target":"4732331f:70c6:6ef0:6afc:b926087b9983","type":"calls"},{"source":"948b1910:9586:2cf1:b028:30c323907bd5","target":"dc43c7a9:bcd4:b5df:5eb4:26f132a837c5","type":"calls"},{"source":"948b1910:9586:2cf1:b028:30c323907bd5","target":"2f26efd3:4290:39d3:1e0c:06abc52bb18f","type":"calls"},{"source":"948b1910:9586:2cf1:b028:30c323907bd5","target":"ab471da2:1ea8:57fe:88ff:e28f9c8b5359","type":"calls"},{"source":"948b1910:9586:2cf1:b028:30c323907bd5","target":"1776cfbc:e249:9988:c770:053a53fa794d","type":"calls"},{"source":"edf6e9f2:3ae1:b837:cec8:a8fccacaa355","target":"948b1910:9586:2cf1:b028:30c323907bd5","type":"calls"},{"source":"df02497f:5be9:5e41:5235:5b046807c7fd","target":"948b1910:9586:2cf1:b028:30c323907bd5","type":"calls"},{"source":"948b1910:9586:2cf1:b028:30c323907bd5","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"948b1910:9586:2cf1:b028:30c323907bd5","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","label":"getRegistryAuthentication","type":"Function","slug":"fn-dockerspec-java-getregistryauthentication","lc":15,"lang":"java","cc":8,"cbc":2},{"id":"f6d7d69b:5b3b:910d:74ee:742ebd9461b7","label":"hasEmptyAuth","type":"Function","slug":"fn-dockerspec-java-hasemptyauth","lc":3,"lang":"java","cc":6,"cbc":1},{"id":"c6214f18:8ca4:864d:8cf7:8b73d9f535ba","label":"hasTokenAuth","type":"Function","slug":"fn-dockerspec-java-hastokenauth","lc":3,"lang":"java","cc":1,"cbc":1},{"id":"98ac1beb:9a09:883f:abac:aadf50623d11","label":"hasUserAuth","type":"Function","slug":"fn-dockerspec-java-hasuserauth","lc":3,"lang":"java","cc":3,"cbc":1},{"id":"0aa0c743:f74a:de09:b21f:383d644d7246","label":"getToken","type":"Function","slug":"fn-dockerspec-java-gettoken","lc":3,"lang":"java","cbc":3},{"id":"8804c6e0:6fe1:c34f:fd94:ffe464f9b8bc","label":"getUsername","type":"Function","slug":"fn-dockerspec-java-getusername","lc":3,"lang":"java","cbc":3},{"id":"80e946ba:4c1d:6281:91b6:16ecf5a5a35c","label":"getPassword","type":"Function","slug":"fn-dockerspec-java-getpassword","lc":3,"lang":"java","cbc":3},{"id":"8a4cdc78:1bf1:d9d7:4d5b:b02323b266bb","label":"getUrl","type":"Function","slug":"fn-dockerspec-java-geturl","lc":3,"lang":"java","cbc":2},{"id":"92a046b3:7c3a:fa13:cc69:13d01dc553b7","label":"getEmail","type":"Function","slug":"fn-dockerspec-java-getemail","lc":3,"lang":"java","cbc":2},{"id":"fcaac87f:851c:d13a:fa1e:cb37fba0315a","label":"customizeBuilderAuthentication","type":"Function","slug":"fn-dockerspec-java-customizebuilderauthentication","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"e48723a7:42dc:55b6:50b0:810418a77a4d","label":"customizePublishAuthentication","type":"Function","slug":"fn-dockerspec-java-customizepublishauthentication","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"domain:Packaging","label":"Packaging","type":"Domain","slug":"domain-packaging"},{"id":"subdomain:Packaging:Indexing","label":"Indexing","type":"Subdomain","slug":"subdomain-indexing"}],"edges":[{"source":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","target":"f6d7d69b:5b3b:910d:74ee:742ebd9461b7","type":"calls"},{"source":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","target":"c6214f18:8ca4:864d:8cf7:8b73d9f535ba","type":"calls"},{"source":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","target":"98ac1beb:9a09:883f:abac:aadf50623d11","type":"calls"},{"source":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","target":"0aa0c743:f74a:de09:b21f:383d644d7246","type":"calls"},{"source":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","target":"8804c6e0:6fe1:c34f:fd94:ffe464f9b8bc","type":"calls"},{"source":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","target":"80e946ba:4c1d:6281:91b6:16ecf5a5a35c","type":"calls"},{"source":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","target":"8a4cdc78:1bf1:d9d7:4d5b:b02323b266bb","type":"calls"},{"source":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","target":"92a046b3:7c3a:fa13:cc69:13d01dc553b7","type":"calls"},{"source":"fcaac87f:851c:d13a:fa1e:cb37fba0315a","target":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","type":"calls"},{"source":"e48723a7:42dc:55b6:50b0:810418a77a4d","target":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","type":"calls"},{"source":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","target":"domain:Packaging","type":"belongsTo"},{"source":"2aa780c6:af4f:9162:7f21:5747f2fd93e4","target":"subdomain:Packaging:Indexing","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -976,14 +976,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-gradleplugin.html">GradlePlugin</a></li></ul>
+      <ul><li><a href="/domain-packaging.html">Packaging</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-indexing.html">Indexing</a></li></ul>
     </div>
     
 

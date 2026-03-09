@@ -811,7 +811,7 @@ a.pill:hover {
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the toString() function in TextResourceOrigin.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-textresourceorigin-java-tostring.svg"],"name":"toString() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-textresourceorigin-java-tostring.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"toString() — spring-boot Function Reference","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() is a function in the spring-boot codebase."},"name":"What does toString() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() calls 2 function(s): getResourceDescription, toString."},"name":"What does toString() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() is called by 4 function(s): getPropertyFromFlatWhenFileDeletedThrowsException, loadKey, loadValue, toString."},"name":"What calls toString()?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() is a function in the spring-boot codebase."},"name":"What does toString() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() calls 2 function(s): getResourceDescription, toString."},"name":"What does toString() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"toString() is called by 8 function(s): canLoadFilesBiggerThan3Mb, getLocation, getLocation, getPropertyFromFlatWhenFileDeletedThrowsException, loadKey, loadValue, loadWhenLargeNumberOfNodesLoadsYaml, toString."},"name":"What calls toString()?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -870,11 +870,11 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 2</span>
-        <span class="pill">called by 4</span>
+        <span class="pill">called by 8</span>
         
         
         
@@ -886,7 +886,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"cb":4,"co":2,"el":103,"et":{"calls":6},"lc":9,"sl":95}</script>
+      <script type="application/json" id="entity-profile-data">{"cb":8,"co":2,"el":103,"et":{"calls":10},"lc":9,"sl":95}</script>
     </div>
 
     
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"toString","slug":"fn-textresourceorigin-java-tostring","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"toString","slug":"fn-textresourceorigin-java-tostring","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>toString() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,20 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  9a6ae558_4981_4f89_9db0_84625f522320["toString()"]
-  153df9a8_e8dd_fd85_77d8_5d2c59fe257b["toString()"]
-  153df9a8_e8dd_fd85_77d8_5d2c59fe257b -->|calls| 9a6ae558_4981_4f89_9db0_84625f522320
-  7e26dcfb_ff66_21bf_2648_01251d0bb302["loadKey()"]
-  7e26dcfb_ff66_21bf_2648_01251d0bb302 -->|calls| 9a6ae558_4981_4f89_9db0_84625f522320
-  22b83352_ce44_f9b9_5360_fc2ff73decc4["loadValue()"]
-  22b83352_ce44_f9b9_5360_fc2ff73decc4 -->|calls| 9a6ae558_4981_4f89_9db0_84625f522320
-  5be0e77e_ce6a_739e_57c2_6a32beb3aef9["getPropertyFromFlatWhenFileDeletedThrowsException()"]
-  5be0e77e_ce6a_739e_57c2_6a32beb3aef9 -->|calls| 9a6ae558_4981_4f89_9db0_84625f522320
-  153df9a8_e8dd_fd85_77d8_5d2c59fe257b["toString()"]
-  9a6ae558_4981_4f89_9db0_84625f522320 -->|calls| 153df9a8_e8dd_fd85_77d8_5d2c59fe257b
-  6e7a471d_f150_d742_9c18_023d35d5652c["getResourceDescription()"]
-  9a6ae558_4981_4f89_9db0_84625f522320 -->|calls| 6e7a471d_f150_d742_9c18_023d35d5652c
-  style 9a6ae558_4981_4f89_9db0_84625f522320 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  fb9128fd_70da_87f2_d7f7_b7fa418c6c10["toString()"]
+  7577821e_9f10_088e_11a7_3131b69fe469["toString()"]
+  7577821e_9f10_088e_11a7_3131b69fe469 -->|calls| fb9128fd_70da_87f2_d7f7_b7fa418c6c10
+  3e9e35b3_1f15_1e27_434b_3c2d982a2c3f["loadKey()"]
+  3e9e35b3_1f15_1e27_434b_3c2d982a2c3f -->|calls| fb9128fd_70da_87f2_d7f7_b7fa418c6c10
+  6b393b3e_6169_db19_03af_818bf60594df["loadValue()"]
+  6b393b3e_6169_db19_03af_818bf60594df -->|calls| fb9128fd_70da_87f2_d7f7_b7fa418c6c10
+  20eb6f5b_0348_6164_5bb0_4202de06733c["getLocation()"]
+  20eb6f5b_0348_6164_5bb0_4202de06733c -->|calls| fb9128fd_70da_87f2_d7f7_b7fa418c6c10
+  005e69f8_05d4_39a8_e7d5_35607a9ce028["loadWhenLargeNumberOfNodesLoadsYaml()"]
+  005e69f8_05d4_39a8_e7d5_35607a9ce028 -->|calls| fb9128fd_70da_87f2_d7f7_b7fa418c6c10
+  d87c8002_baf4_19ec_0f8b_07db4c1e9c6e["canLoadFilesBiggerThan3Mb()"]
+  d87c8002_baf4_19ec_0f8b_07db4c1e9c6e -->|calls| fb9128fd_70da_87f2_d7f7_b7fa418c6c10
+  59cc664d_4f4b_b2d9_6d49_adbf0c532669["getLocation()"]
+  59cc664d_4f4b_b2d9_6d49_adbf0c532669 -->|calls| fb9128fd_70da_87f2_d7f7_b7fa418c6c10
+  7e0c0da6_78dc_30bc_11f5_6a7ef0285d5c["getPropertyFromFlatWhenFileDeletedThrowsException()"]
+  7e0c0da6_78dc_30bc_11f5_6a7ef0285d5c -->|calls| fb9128fd_70da_87f2_d7f7_b7fa418c6c10
+  7577821e_9f10_088e_11a7_3131b69fe469["toString()"]
+  fb9128fd_70da_87f2_d7f7_b7fa418c6c10 -->|calls| 7577821e_9f10_088e_11a7_3131b69fe469
+  8d8c6bb1_4acf_7e7d_1f94_ced04f6e4163["getResourceDescription()"]
+  fb9128fd_70da_87f2_d7f7_b7fa418c6c10 -->|calls| 8d8c6bb1_4acf_7e7d_1f94_ced04f6e4163
+  style fb9128fd_70da_87f2_d7f7_b7fa418c6c10 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -932,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-textresourceorigin-java-tostring"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"9a6ae558:4981:4f89:9db0:84625f522320","label":"toString","type":"Function","slug":"fn-textresourceorigin-java-tostring","lc":9,"lang":"java","cc":2,"cbc":4},{"id":"153df9a8:e8dd:fd85:77d8:5d2c59fe257b","label":"toString","type":"Function","slug":"fn-textresourceorigin-java-tostring-2","lc":4,"lang":"java","cc":1,"cbc":5},{"id":"6e7a471d:f150:d742:9c18:023d35d5652c","label":"getResourceDescription","type":"Function","slug":"","lc":12,"lang":"java","cc":1,"cbc":1},{"id":"7e26dcfb:ff66:21bf:2648:01251d0bb302","label":"loadKey","type":"Function","slug":"fn-origintrackedpropertiesloader-java-loadkey","lc":17,"lang":"java","cc":6,"cbc":1},{"id":"22b83352:ce44:f9b9:5360:fc2ff73decc4","label":"loadValue","type":"Function","slug":"fn-origintrackedpropertiesloader-java-loadvalue","lc":14,"lang":"java","cc":9,"cbc":1},{"id":"5be0e77e:ce6a:739e:57c2:6a32beb3aef9","label":"getPropertyFromFlatWhenFileDeletedThrowsException","type":"Function","slug":"","lc":11,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"9a6ae558:4981:4f89:9db0:84625f522320","target":"153df9a8:e8dd:fd85:77d8:5d2c59fe257b","type":"calls"},{"source":"9a6ae558:4981:4f89:9db0:84625f522320","target":"6e7a471d:f150:d742:9c18:023d35d5652c","type":"calls"},{"source":"153df9a8:e8dd:fd85:77d8:5d2c59fe257b","target":"9a6ae558:4981:4f89:9db0:84625f522320","type":"calls"},{"source":"7e26dcfb:ff66:21bf:2648:01251d0bb302","target":"9a6ae558:4981:4f89:9db0:84625f522320","type":"calls"},{"source":"22b83352:ce44:f9b9:5360:fc2ff73decc4","target":"9a6ae558:4981:4f89:9db0:84625f522320","type":"calls"},{"source":"5be0e77e:ce6a:739e:57c2:6a32beb3aef9","target":"9a6ae558:4981:4f89:9db0:84625f522320","type":"calls"},{"source":"9a6ae558:4981:4f89:9db0:84625f522320","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"9a6ae558:4981:4f89:9db0:84625f522320","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","label":"toString","type":"Function","slug":"fn-textresourceorigin-java-tostring","lc":9,"lang":"java","cc":2,"cbc":8},{"id":"7577821e:9f10:088e:11a7:3131b69fe469","label":"toString","type":"Function","slug":"","lc":4,"lang":"java","cc":1,"cbc":1},{"id":"8d8c6bb1:4acf:7e7d:1f94:ced04f6e4163","label":"getResourceDescription","type":"Function","slug":"","lc":12,"lang":"java","cc":1,"cbc":1},{"id":"3e9e35b3:1f15:1e27:434b:3c2d982a2c3f","label":"loadKey","type":"Function","slug":"fn-origintrackedpropertiesloader-java-loadkey","lc":17,"lang":"java","cc":6,"cbc":1},{"id":"6b393b3e:6169:db19:03af:818bf60594df","label":"loadValue","type":"Function","slug":"fn-origintrackedpropertiesloader-java-loadvalue","lc":14,"lang":"java","cc":9,"cbc":1},{"id":"20eb6f5b:0348:6164:5bb0:4202de06733c","label":"getLocation","type":"Function","slug":"fn-origintrackedpropertiesloadertests-java-getlocation","lc":10,"lang":"java","cc":3,"cbc":22},{"id":"005e69f8:05d4:39a8:e7d5:35607a9ce028","label":"loadWhenLargeNumberOfNodesLoadsYaml","type":"Function","slug":"","lc":19,"lang":"java","cc":1},{"id":"d87c8002:baf4:19ec:0f8b:07db4c1e9c6e","label":"canLoadFilesBiggerThan3Mb","type":"Function","slug":"","lc":11,"lang":"java","cc":2},{"id":"59cc664d:4f4b:b2d9:6d49:adbf0c532669","label":"getLocation","type":"Function","slug":"fn-origintrackedyamlloadertests-java-getlocation","lc":7,"lang":"java","cc":3,"cbc":6},{"id":"7e0c0da6:78dc:30bc:11f5:6a7ef0285d5c","label":"getPropertyFromFlatWhenFileDeletedThrowsException","type":"Function","slug":"","lc":11,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","target":"7577821e:9f10:088e:11a7:3131b69fe469","type":"calls"},{"source":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","target":"8d8c6bb1:4acf:7e7d:1f94:ced04f6e4163","type":"calls"},{"source":"7577821e:9f10:088e:11a7:3131b69fe469","target":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","type":"calls"},{"source":"3e9e35b3:1f15:1e27:434b:3c2d982a2c3f","target":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","type":"calls"},{"source":"6b393b3e:6169:db19:03af:818bf60594df","target":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","type":"calls"},{"source":"20eb6f5b:0348:6164:5bb0:4202de06733c","target":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","type":"calls"},{"source":"005e69f8:05d4:39a8:e7d5:35607a9ce028","target":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","type":"calls"},{"source":"d87c8002:baf4:19ec:0f8b:07db4c1e9c6e","target":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","type":"calls"},{"source":"59cc664d:4f4b:b2d9:6d49:adbf0c532669","target":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","type":"calls"},{"source":"7e0c0da6:78dc:30bc:11f5:6a7ef0285d5c","target":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","type":"calls"},{"source":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"fb9128fd:70da:87f2:d7f7:b7fa418c6c10","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -969,7 +977,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 
@@ -988,14 +996,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li>getResourceDescription()</li><li><a href="/fn-textresourceorigin-java-tostring-2.html">toString()</a></li></ul>
+      <ul><li>getResourceDescription()</li><li>toString()</li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Called By</h2>
-      <ul><li>getPropertyFromFlatWhenFileDeletedThrowsException()</li><li><a href="/fn-origintrackedpropertiesloader-java-loadkey.html">loadKey()</a></li><li><a href="/fn-origintrackedpropertiesloader-java-loadvalue.html">loadValue()</a></li><li><a href="/fn-textresourceorigin-java-tostring-2.html">toString()</a></li></ul>
+      <ul><li>canLoadFilesBiggerThan3Mb()</li><li><a href="/fn-origintrackedpropertiesloadertests-java-getlocation.html">getLocation()</a></li><li><a href="/fn-origintrackedyamlloadertests-java-getlocation.html">getLocation()</a></li><li>getPropertyFromFlatWhenFileDeletedThrowsException()</li><li><a href="/fn-origintrackedpropertiesloader-java-loadkey.html">loadKey()</a></li><li><a href="/fn-origintrackedpropertiesloader-java-loadvalue.html">loadValue()</a></li><li>loadWhenLargeNumberOfNodesLoadsYaml()</li><li>toString()</li></ul>
     </div>
     
 
@@ -1030,7 +1038,7 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What calls toString()?</summary>
-        <div class="faq-answer">toString() is called by 4 function(s): getPropertyFromFlatWhenFileDeletedThrowsException, loadKey, loadValue, toString.</div>
+        <div class="faq-answer">toString() is called by 8 function(s): canLoadFilesBiggerThan3Mb, getLocation, getLocation, getPropertyFromFlatWhenFileDeletedThrowsException, loadKey, loadValue, loadWhenLargeNumberOfNodesLoadsYaml, toString.</div>
       </details>
       
     </div>

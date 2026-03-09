@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"TestHandlerAction","slug":"fn-springapplicationshutdownhooktests-java-testhandleraction","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"TestHandlerAction","slug":"fn-springapplicationshutdownhooktests-java-testhandleraction","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>TestHandlerAction() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,18 +911,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  27023cbc_c5be_cfb2_b430_f2d059d708c7["TestHandlerAction()"]
-  d5b22577_5c26_d745_28f9_6821e51f0f63["runClosesContextsBeforeRunningHandlerActions()"]
-  d5b22577_5c26_d745_28f9_6821e51f0f63 -->|calls| 27023cbc_c5be_cfb2_b430_f2d059d708c7
-  5136d2ea_9328_64e9_a358_9f8da5406e7f["runWhenContextIsBeingClosedInAnotherThreadWaitsUntilContextIsInactive()"]
-  5136d2ea_9328_64e9_a358_9f8da5406e7f -->|calls| 27023cbc_c5be_cfb2_b430_f2d059d708c7
-  b5c4e1b0_c4bc_ecf3_4d69_382d0f7e7069["runWhenContextIsClosedDirectlyRunsHandlerActions()"]
-  b5c4e1b0_c4bc_ecf3_4d69_382d0f7e7069 -->|calls| 27023cbc_c5be_cfb2_b430_f2d059d708c7
-  f2713c5c_1cfb_7812_7f13_71c713bc59e6["addHandlerActionWhenShuttingDownThrowsException()"]
-  f2713c5c_1cfb_7812_7f13_71c713bc59e6 -->|calls| 27023cbc_c5be_cfb2_b430_f2d059d708c7
-  9b5074ea_c1b9_27bd_290b_21cff2527629["removeHandlerActionWhenShuttingDownThrowsException()"]
-  9b5074ea_c1b9_27bd_290b_21cff2527629 -->|calls| 27023cbc_c5be_cfb2_b430_f2d059d708c7
-  style 27023cbc_c5be_cfb2_b430_f2d059d708c7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  0f3ef906_be2c_552f_9820_9966174425f9["TestHandlerAction()"]
+  cb574026_5f86_398f_83c7_f022fe3a975c["runClosesContextsBeforeRunningHandlerActions()"]
+  cb574026_5f86_398f_83c7_f022fe3a975c -->|calls| 0f3ef906_be2c_552f_9820_9966174425f9
+  937fbf3f_505c_8fb6_5621_802fab6ecc4d["runWhenContextIsBeingClosedInAnotherThreadWaitsUntilContextIsInactive()"]
+  937fbf3f_505c_8fb6_5621_802fab6ecc4d -->|calls| 0f3ef906_be2c_552f_9820_9966174425f9
+  e91fdc07_6034_0337_9961_6195e649707d["runWhenContextIsClosedDirectlyRunsHandlerActions()"]
+  e91fdc07_6034_0337_9961_6195e649707d -->|calls| 0f3ef906_be2c_552f_9820_9966174425f9
+  0216c714_8f52_4da6_39d0_b7ec15b8d2aa["addHandlerActionWhenShuttingDownThrowsException()"]
+  0216c714_8f52_4da6_39d0_b7ec15b8d2aa -->|calls| 0f3ef906_be2c_552f_9820_9966174425f9
+  25a8dd20_bb1e_3738_0603_d75384aae036["removeHandlerActionWhenShuttingDownThrowsException()"]
+  25a8dd20_bb1e_3738_0603_d75384aae036 -->|calls| 0f3ef906_be2c_552f_9820_9966174425f9
+  style 0f3ef906_be2c_552f_9820_9966174425f9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -930,7 +930,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-springapplicationshutdownhooktests-java-testhandleraction"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"27023cbc:c5be:cfb2:b430:f2d059d708c7","label":"TestHandlerAction","type":"Function","slug":"fn-springapplicationshutdownhooktests-java-testhandleraction","lc":3,"lang":"java","cbc":5},{"id":"d5b22577:5c26:d745:28f9:6821e51f0f63","label":"runClosesContextsBeforeRunningHandlerActions","type":"Function","slug":"fn-springapplicationshutdownhooktests-java-runclosescontextsbeforerunninghandleractions","lc":12,"lang":"java","cc":3},{"id":"5136d2ea:9328:64e9:a358:9f8da5406e7f","label":"runWhenContextIsBeingClosedInAnotherThreadWaitsUntilContextIsInactive","type":"Function","slug":"","lc":28,"lang":"java","cc":2},{"id":"b5c4e1b0:c4bc:ecf3:4d69:382d0f7e7069","label":"runWhenContextIsClosedDirectlyRunsHandlerActions","type":"Function","slug":"fn-springapplicationshutdownhooktests-java-runwhencontextiscloseddirectlyrunshandleractions","lc":15,"lang":"java","cc":3},{"id":"f2713c5c:1cfb:7812:7f13:71c713bc59e6","label":"addHandlerActionWhenShuttingDownThrowsException","type":"Function","slug":"","lc":8,"lang":"java","cc":2},{"id":"9b5074ea:c1b9:27bd:290b:21cff2527629","label":"removeHandlerActionWhenShuttingDownThrowsException","type":"Function","slug":"","lc":9,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"d5b22577:5c26:d745:28f9:6821e51f0f63","target":"27023cbc:c5be:cfb2:b430:f2d059d708c7","type":"calls"},{"source":"5136d2ea:9328:64e9:a358:9f8da5406e7f","target":"27023cbc:c5be:cfb2:b430:f2d059d708c7","type":"calls"},{"source":"b5c4e1b0:c4bc:ecf3:4d69:382d0f7e7069","target":"27023cbc:c5be:cfb2:b430:f2d059d708c7","type":"calls"},{"source":"f2713c5c:1cfb:7812:7f13:71c713bc59e6","target":"27023cbc:c5be:cfb2:b430:f2d059d708c7","type":"calls"},{"source":"9b5074ea:c1b9:27bd:290b:21cff2527629","target":"27023cbc:c5be:cfb2:b430:f2d059d708c7","type":"calls"},{"source":"27023cbc:c5be:cfb2:b430:f2d059d708c7","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"27023cbc:c5be:cfb2:b430:f2d059d708c7","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"0f3ef906:be2c:552f:9820:9966174425f9","label":"TestHandlerAction","type":"Function","slug":"fn-springapplicationshutdownhooktests-java-testhandleraction","lc":3,"lang":"java","cbc":5},{"id":"cb574026:5f86:398f:83c7:f022fe3a975c","label":"runClosesContextsBeforeRunningHandlerActions","type":"Function","slug":"fn-springapplicationshutdownhooktests-java-runclosescontextsbeforerunninghandleractions","lc":12,"lang":"java","cc":3},{"id":"937fbf3f:505c:8fb6:5621:802fab6ecc4d","label":"runWhenContextIsBeingClosedInAnotherThreadWaitsUntilContextIsInactive","type":"Function","slug":"","lc":28,"lang":"java","cc":2},{"id":"e91fdc07:6034:0337:9961:6195e649707d","label":"runWhenContextIsClosedDirectlyRunsHandlerActions","type":"Function","slug":"fn-springapplicationshutdownhooktests-java-runwhencontextiscloseddirectlyrunshandleractions","lc":15,"lang":"java","cc":3},{"id":"0216c714:8f52:4da6:39d0:b7ec15b8d2aa","label":"addHandlerActionWhenShuttingDownThrowsException","type":"Function","slug":"","lc":8,"lang":"java","cc":2},{"id":"25a8dd20:bb1e:3738:0603:d75384aae036","label":"removeHandlerActionWhenShuttingDownThrowsException","type":"Function","slug":"","lc":9,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"cb574026:5f86:398f:83c7:f022fe3a975c","target":"0f3ef906:be2c:552f:9820:9966174425f9","type":"calls"},{"source":"937fbf3f:505c:8fb6:5621:802fab6ecc4d","target":"0f3ef906:be2c:552f:9820:9966174425f9","type":"calls"},{"source":"e91fdc07:6034:0337:9961:6195e649707d","target":"0f3ef906:be2c:552f:9820:9966174425f9","type":"calls"},{"source":"0216c714:8f52:4da6:39d0:b7ec15b8d2aa","target":"0f3ef906:be2c:552f:9820:9966174425f9","type":"calls"},{"source":"25a8dd20:bb1e:3738:0603:d75384aae036","target":"0f3ef906:be2c:552f:9820:9966174425f9","type":"calls"},{"source":"0f3ef906:be2c:552f:9820:9966174425f9","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"0f3ef906:be2c:552f:9820:9966174425f9","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -961,7 +961,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

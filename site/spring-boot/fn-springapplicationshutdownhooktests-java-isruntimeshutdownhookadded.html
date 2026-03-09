@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"isRuntimeShutdownHookAdded","slug":"fn-springapplicationshutdownhooktests-java-isruntimeshutdownhookadded","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"isRuntimeShutdownHookAdded","slug":"fn-springapplicationshutdownhooktests-java-isruntimeshutdownhookadded","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>isRuntimeShutdownHookAdded() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  1d6c0ceb_8274_409f_1ed2_2dac0418a1a4["isRuntimeShutdownHookAdded()"]
-  97a50068_339c_ca53_65e5_9dc446791caa["shutdownHookIsNotAddedUntilContextIsRegistered()"]
-  97a50068_339c_ca53_65e5_9dc446791caa -->|calls| 1d6c0ceb_8274_409f_1ed2_2dac0418a1a4
-  c454e274_96bf_7fc9_ee33_a6936f5937f3["shutdownHookIsNotAddedUntilHandlerIsRegistered()"]
-  c454e274_96bf_7fc9_ee33_a6936f5937f3 -->|calls| 1d6c0ceb_8274_409f_1ed2_2dac0418a1a4
-  bbcda95d_9b81_097f_bd68_51c983f5b0e5["shutdownHookIsNotAddedUntilAdditionIsEnabled()"]
-  bbcda95d_9b81_097f_bd68_51c983f5b0e5 -->|calls| 1d6c0ceb_8274_409f_1ed2_2dac0418a1a4
-  style 1d6c0ceb_8274_409f_1ed2_2dac0418a1a4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  ef91ac17_d2b5_19cf_6277_cee73b28ba83["isRuntimeShutdownHookAdded()"]
+  0c4c202a_2159_7c46_8a1f_23ae54cb4b1e["shutdownHookIsNotAddedUntilContextIsRegistered()"]
+  0c4c202a_2159_7c46_8a1f_23ae54cb4b1e -->|calls| ef91ac17_d2b5_19cf_6277_cee73b28ba83
+  91469308_d839_5108_6d33_13240a2a917f["shutdownHookIsNotAddedUntilHandlerIsRegistered()"]
+  91469308_d839_5108_6d33_13240a2a917f -->|calls| ef91ac17_d2b5_19cf_6277_cee73b28ba83
+  ae3149e8_1c38_8eda_ce5e_62f22c0c751f["shutdownHookIsNotAddedUntilAdditionIsEnabled()"]
+  ae3149e8_1c38_8eda_ce5e_62f22c0c751f -->|calls| ef91ac17_d2b5_19cf_6277_cee73b28ba83
+  style ef91ac17_d2b5_19cf_6277_cee73b28ba83 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-springapplicationshutdownhooktests-java-isruntimeshutdownhookadded"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"1d6c0ceb:8274:409f:1ed2:2dac0418a1a4","label":"isRuntimeShutdownHookAdded","type":"Function","slug":"fn-springapplicationshutdownhooktests-java-isruntimeshutdownhookadded","lc":3,"lang":"java","cbc":3},{"id":"97a50068:339c:ca53:65e5:9dc446791caa","label":"shutdownHookIsNotAddedUntilContextIsRegistered","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"c454e274:96bf:7fc9:ee33:a6936f5937f3","label":"shutdownHookIsNotAddedUntilHandlerIsRegistered","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"bbcda95d:9b81:097f:bd68:51c983f5b0e5","label":"shutdownHookIsNotAddedUntilAdditionIsEnabled","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"97a50068:339c:ca53:65e5:9dc446791caa","target":"1d6c0ceb:8274:409f:1ed2:2dac0418a1a4","type":"calls"},{"source":"c454e274:96bf:7fc9:ee33:a6936f5937f3","target":"1d6c0ceb:8274:409f:1ed2:2dac0418a1a4","type":"calls"},{"source":"bbcda95d:9b81:097f:bd68:51c983f5b0e5","target":"1d6c0ceb:8274:409f:1ed2:2dac0418a1a4","type":"calls"},{"source":"1d6c0ceb:8274:409f:1ed2:2dac0418a1a4","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"1d6c0ceb:8274:409f:1ed2:2dac0418a1a4","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"ef91ac17:d2b5:19cf:6277:cee73b28ba83","label":"isRuntimeShutdownHookAdded","type":"Function","slug":"fn-springapplicationshutdownhooktests-java-isruntimeshutdownhookadded","lc":3,"lang":"java","cbc":3},{"id":"0c4c202a:2159:7c46:8a1f:23ae54cb4b1e","label":"shutdownHookIsNotAddedUntilContextIsRegistered","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"91469308:d839:5108:6d33:13240a2a917f","label":"shutdownHookIsNotAddedUntilHandlerIsRegistered","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"ae3149e8:1c38:8eda:ce5e:62f22c0c751f","label":"shutdownHookIsNotAddedUntilAdditionIsEnabled","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"0c4c202a:2159:7c46:8a1f:23ae54cb4b1e","target":"ef91ac17:d2b5:19cf:6277:cee73b28ba83","type":"calls"},{"source":"91469308:d839:5108:6d33:13240a2a917f","target":"ef91ac17:d2b5:19cf:6277:cee73b28ba83","type":"calls"},{"source":"ae3149e8:1c38:8eda:ce5e:62f22c0c751f","target":"ef91ac17:d2b5:19cf:6277:cee73b28ba83","type":"calls"},{"source":"ef91ac17:d2b5:19cf:6277:cee73b28ba83","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"ef91ac17:d2b5:19cf:6277:cee73b28ba83","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -957,7 +957,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

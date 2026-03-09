@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/mavenplugin.html" class="pill pill-green">MavenPlugin</a>
-        <a href="/subdomain/mojoimplementation.html" class="pill pill-orange">MojoImplementation</a>
+        <a href="/subdomain/mojos.html" class="pill pill-orange">Mojos</a>
         
         
         <span class="pill">calls 8</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"MavenPlugin","slug":"domain-mavenplugin"},"entity":{"name":"getRegistryAuthentication","slug":"fn-docker-java-getregistryauthentication","type":"Function"},"subdomain":{"name":"MojoImplementation","slug":"subdomain-mojoimplementation"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"MavenPlugin","slug":"domain-mavenplugin"},"entity":{"name":"getRegistryAuthentication","slug":"fn-docker-java-getregistryauthentication","type":"Function"},"subdomain":{"name":"Mojos","slug":"subdomain-mojos"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mavenplugin.html">MavenPlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/mojoimplementation.html">MojoImplementation</a><span class="arch-sep">&rarr;</span>
+            <a href="/mojos.html">Mojos</a><span class="arch-sep">&rarr;</span>
             <span>getRegistryAuthentication() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,28 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d["getRegistryAuthentication()"]
-  508aa5c3_c000_74a8_2a08_0ba041793fb6["customizeBuilderAuthentication()"]
-  508aa5c3_c000_74a8_2a08_0ba041793fb6 -->|calls| 1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d
-  9da0eb1e_3440_27fa_ac48_b68786b757b7["customizePublishAuthentication()"]
-  9da0eb1e_3440_27fa_ac48_b68786b757b7 -->|calls| 1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d
-  f6dcc3e5_bc91_8119_04ae_a577a9901da9["isEmpty()"]
-  1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d -->|calls| f6dcc3e5_bc91_8119_04ae_a577a9901da9
-  bca9a044_6e1b_625c_7175_b9de55493ed6["hasTokenAuth()"]
-  1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d -->|calls| bca9a044_6e1b_625c_7175_b9de55493ed6
-  48905d02_32e3_4e66_6734_b3d0e8caafe9["hasUserAuth()"]
-  1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d -->|calls| 48905d02_32e3_4e66_6734_b3d0e8caafe9
-  c5ae5673_164e_8ce3_5c1f_f9c14fc7f712["getToken()"]
-  1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d -->|calls| c5ae5673_164e_8ce3_5c1f_f9c14fc7f712
-  1035c1ee_3edc_42b5_6c31_bef6a4cca237["getUsername()"]
-  1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d -->|calls| 1035c1ee_3edc_42b5_6c31_bef6a4cca237
-  5233e85f_618b_8f12_1d3e_a140ec169efe["getPassword()"]
-  1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d -->|calls| 5233e85f_618b_8f12_1d3e_a140ec169efe
-  a2b1f04d_ed82_ffe6_0225_dcfdab7a77ed["getUrl()"]
-  1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d -->|calls| a2b1f04d_ed82_ffe6_0225_dcfdab7a77ed
-  182c775f_30ad_2a00_b58c_30e2a035d01a["getEmail()"]
-  1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d -->|calls| 182c775f_30ad_2a00_b58c_30e2a035d01a
-  style 1fdc8b5f_cb94_ed99_54c0_75a6ed51f05d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a25d1f0f_2e93_edd8_8678_f877ba1d1385["getRegistryAuthentication()"]
+  9c291c96_d3c2_372a_df70_70d028aec972["customizeBuilderAuthentication()"]
+  9c291c96_d3c2_372a_df70_70d028aec972 -->|calls| a25d1f0f_2e93_edd8_8678_f877ba1d1385
+  51eb9e39_e676_fe41_48f8_1d4e2d556f23["customizePublishAuthentication()"]
+  51eb9e39_e676_fe41_48f8_1d4e2d556f23 -->|calls| a25d1f0f_2e93_edd8_8678_f877ba1d1385
+  8209f5d8_3443_1e8e_38f7_d730b2a9013e["isEmpty()"]
+  a25d1f0f_2e93_edd8_8678_f877ba1d1385 -->|calls| 8209f5d8_3443_1e8e_38f7_d730b2a9013e
+  56ffff75_c712_c493_52e1_e5fa8a64d3af["hasTokenAuth()"]
+  a25d1f0f_2e93_edd8_8678_f877ba1d1385 -->|calls| 56ffff75_c712_c493_52e1_e5fa8a64d3af
+  209824ec_6994_87cf_7d0d_fde09a5f8734["hasUserAuth()"]
+  a25d1f0f_2e93_edd8_8678_f877ba1d1385 -->|calls| 209824ec_6994_87cf_7d0d_fde09a5f8734
+  4334b562_a160_6a9f_24db_f40a180a8c3d["getToken()"]
+  a25d1f0f_2e93_edd8_8678_f877ba1d1385 -->|calls| 4334b562_a160_6a9f_24db_f40a180a8c3d
+  fb16a69b_17e7_37fa_ff36_e3f4402efbb1["getUsername()"]
+  a25d1f0f_2e93_edd8_8678_f877ba1d1385 -->|calls| fb16a69b_17e7_37fa_ff36_e3f4402efbb1
+  4cfeb406_8317_4647_87f4_3dd2731a8308["getPassword()"]
+  a25d1f0f_2e93_edd8_8678_f877ba1d1385 -->|calls| 4cfeb406_8317_4647_87f4_3dd2731a8308
+  78d1cfff_964d_c91b_7eb8_f0f129b1f401["getUrl()"]
+  a25d1f0f_2e93_edd8_8678_f877ba1d1385 -->|calls| 78d1cfff_964d_c91b_7eb8_f0f129b1f401
+  33448647_dd8d_179b_75fa_8b243ef304db["getEmail()"]
+  a25d1f0f_2e93_edd8_8678_f877ba1d1385 -->|calls| 33448647_dd8d_179b_75fa_8b243ef304db
+  style a25d1f0f_2e93_edd8_8678_f877ba1d1385 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -940,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-docker-java-getregistryauthentication"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","label":"getRegistryAuthentication","type":"Function","slug":"fn-docker-java-getregistryauthentication","lc":20,"lang":"java","cc":8,"cbc":2},{"id":"f6dcc3e5:bc91:8119:04ae:a577a9901da9","label":"isEmpty","type":"Function","slug":"","lc":4,"lang":"java","cbc":1},{"id":"bca9a044:6e1b:625c:7175:b9de55493ed6","label":"hasTokenAuth","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"48905d02:32e3:4e66:6734:b3d0e8caafe9","label":"hasUserAuth","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"c5ae5673:164e:8ce3:5c1f:f9c14fc7f712","label":"getToken","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"1035c1ee:3edc:42b5:6c31:bef6a4cca237","label":"getUsername","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"5233e85f:618b:8f12:1d3e:a140ec169efe","label":"getPassword","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"a2b1f04d:ed82:ffe6:0225:dcfdab7a77ed","label":"getUrl","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"182c775f:30ad:2a00:b58c:30e2a035d01a","label":"getEmail","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"508aa5c3:c000:74a8:2a08:0ba041793fb6","label":"customizeBuilderAuthentication","type":"Function","slug":"fn-docker-java-customizebuilderauthentication","lc":7,"lang":"java","cc":1,"cbc":1},{"id":"9da0eb1e:3440:27fa:ac48:b68786b757b7","label":"customizePublishAuthentication","type":"Function","slug":"fn-docker-java-customizepublishauthentication","lc":10,"lang":"java","cc":1,"cbc":1},{"id":"domain:MavenPlugin","label":"MavenPlugin","type":"Domain","slug":"domain-mavenplugin"},{"id":"subdomain:MavenPlugin:MojoImplementation","label":"MojoImplementation","type":"Subdomain","slug":"subdomain-mojoimplementation"}],"edges":[{"source":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","target":"f6dcc3e5:bc91:8119:04ae:a577a9901da9","type":"calls"},{"source":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","target":"bca9a044:6e1b:625c:7175:b9de55493ed6","type":"calls"},{"source":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","target":"48905d02:32e3:4e66:6734:b3d0e8caafe9","type":"calls"},{"source":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","target":"c5ae5673:164e:8ce3:5c1f:f9c14fc7f712","type":"calls"},{"source":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","target":"1035c1ee:3edc:42b5:6c31:bef6a4cca237","type":"calls"},{"source":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","target":"5233e85f:618b:8f12:1d3e:a140ec169efe","type":"calls"},{"source":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","target":"a2b1f04d:ed82:ffe6:0225:dcfdab7a77ed","type":"calls"},{"source":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","target":"182c775f:30ad:2a00:b58c:30e2a035d01a","type":"calls"},{"source":"508aa5c3:c000:74a8:2a08:0ba041793fb6","target":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","type":"calls"},{"source":"9da0eb1e:3440:27fa:ac48:b68786b757b7","target":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","type":"calls"},{"source":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","target":"domain:MavenPlugin","type":"belongsTo"},{"source":"1fdc8b5f:cb94:ed99:54c0:75a6ed51f05d","target":"subdomain:MavenPlugin:MojoImplementation","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","label":"getRegistryAuthentication","type":"Function","slug":"fn-docker-java-getregistryauthentication","lc":20,"lang":"java","cc":8,"cbc":2},{"id":"8209f5d8:3443:1e8e:38f7:d730b2a9013e","label":"isEmpty","type":"Function","slug":"","lc":4,"lang":"java","cbc":1},{"id":"56ffff75:c712:c493:52e1:e5fa8a64d3af","label":"hasTokenAuth","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"209824ec:6994:87cf:7d0d:fde09a5f8734","label":"hasUserAuth","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"4334b562:a160:6a9f:24db:f40a180a8c3d","label":"getToken","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"fb16a69b:17e7:37fa:ff36:e3f4402efbb1","label":"getUsername","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"4cfeb406:8317:4647:87f4:3dd2731a8308","label":"getPassword","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"78d1cfff:964d:c91b:7eb8:f0f129b1f401","label":"getUrl","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"33448647:dd8d:179b:75fa:8b243ef304db","label":"getEmail","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"9c291c96:d3c2:372a:df70:70d028aec972","label":"customizeBuilderAuthentication","type":"Function","slug":"fn-docker-java-customizebuilderauthentication","lc":7,"lang":"java","cc":1,"cbc":1},{"id":"51eb9e39:e676:fe41:48f8:1d4e2d556f23","label":"customizePublishAuthentication","type":"Function","slug":"fn-docker-java-customizepublishauthentication","lc":10,"lang":"java","cc":1,"cbc":1},{"id":"domain:MavenPlugin","label":"MavenPlugin","type":"Domain","slug":"domain-mavenplugin"},{"id":"subdomain:MavenPlugin:Mojos","label":"Mojos","type":"Subdomain","slug":"subdomain-mojos"}],"edges":[{"source":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","target":"8209f5d8:3443:1e8e:38f7:d730b2a9013e","type":"calls"},{"source":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","target":"56ffff75:c712:c493:52e1:e5fa8a64d3af","type":"calls"},{"source":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","target":"209824ec:6994:87cf:7d0d:fde09a5f8734","type":"calls"},{"source":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","target":"4334b562:a160:6a9f:24db:f40a180a8c3d","type":"calls"},{"source":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","target":"fb16a69b:17e7:37fa:ff36:e3f4402efbb1","type":"calls"},{"source":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","target":"4cfeb406:8317:4647:87f4:3dd2731a8308","type":"calls"},{"source":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","target":"78d1cfff:964d:c91b:7eb8:f0f129b1f401","type":"calls"},{"source":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","target":"33448647:dd8d:179b:75fa:8b243ef304db","type":"calls"},{"source":"9c291c96:d3c2:372a:df70:70d028aec972","target":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","type":"calls"},{"source":"51eb9e39:e676:fe41:48f8:1d4e2d556f23","target":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","type":"calls"},{"source":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","target":"domain:MavenPlugin","type":"belongsTo"},{"source":"a25d1f0f:2e93:edd8:8678:f877ba1d1385","target":"subdomain:MavenPlugin:Mojos","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -988,7 +988,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-mojoimplementation.html">MojoImplementation</a></li></ul>
+      <ul><li><a href="/subdomain-mojos.html">Mojos</a></li></ul>
     </div>
     
 

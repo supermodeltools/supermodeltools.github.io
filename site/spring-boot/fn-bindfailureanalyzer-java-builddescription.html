@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 3</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"buildDescription","slug":"fn-bindfailureanalyzer-java-builddescription","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"buildDescription","slug":"fn-bindfailureanalyzer-java-builddescription","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>buildDescription() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ee9c82fe_bf2e_ce3e_8d88_2366d3bd0918["buildDescription()"]
-  9238d3fa_2989_765f_f494_8bb9aaa5a40f["analyzeGenericBindException()"]
-  9238d3fa_2989_765f_f494_8bb9aaa5a40f -->|calls| ee9c82fe_bf2e_ce3e_8d88_2366d3bd0918
-  750cd007_bdb8_311c_bbe7_77b9c2a02d5d["getValue()"]
-  ee9c82fe_bf2e_ce3e_8d88_2366d3bd0918 -->|calls| 750cd007_bdb8_311c_bbe7_77b9c2a02d5d
-  3a59ebe3_af02_47e1_0737_e9b3afe20c8a["getName()"]
-  ee9c82fe_bf2e_ce3e_8d88_2366d3bd0918 -->|calls| 3a59ebe3_af02_47e1_0737_e9b3afe20c8a
-  e087924c_0945_6b09_7f01_412d8ec35b4b["getOrigin()"]
-  ee9c82fe_bf2e_ce3e_8d88_2366d3bd0918 -->|calls| e087924c_0945_6b09_7f01_412d8ec35b4b
-  style ee9c82fe_bf2e_ce3e_8d88_2366d3bd0918 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  2522f3ab_b7d7_c381_28fd_0838bd6243df["buildDescription()"]
+  b77f2f50_ee19_3487_d93c_0c8c35af1fe3["analyzeGenericBindException()"]
+  b77f2f50_ee19_3487_d93c_0c8c35af1fe3 -->|calls| 2522f3ab_b7d7_c381_28fd_0838bd6243df
+  fd16ceab_92b9_0b25_ac86_22d4749d5629["getValue()"]
+  2522f3ab_b7d7_c381_28fd_0838bd6243df -->|calls| fd16ceab_92b9_0b25_ac86_22d4749d5629
+  fc867cde_2d5c_7b6c_439a_beca175aff14["getName()"]
+  2522f3ab_b7d7_c381_28fd_0838bd6243df -->|calls| fc867cde_2d5c_7b6c_439a_beca175aff14
+  318f34b0_d24d_1185_d7c7_7fcc469913de["getOrigin()"]
+  2522f3ab_b7d7_c381_28fd_0838bd6243df -->|calls| 318f34b0_d24d_1185_d7c7_7fcc469913de
+  style 2522f3ab_b7d7_c381_28fd_0838bd6243df fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-bindfailureanalyzer-java-builddescription"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ee9c82fe:bf2e:ce3e:8d88:2366d3bd0918","label":"buildDescription","type":"Function","slug":"fn-bindfailureanalyzer-java-builddescription","lc":7,"lang":"java","cc":3,"cbc":1},{"id":"750cd007:bdb8:311c:bbe7:77b9c2a02d5d","label":"getValue","type":"Function","slug":"fn-configurationproperty-java-getvalue","lc":3,"lang":"java","cc":1,"cbc":12},{"id":"3a59ebe3:af02:47e1:0737:e9b3afe20c8a","label":"getName","type":"Function","slug":"fn-bindexception-java-getname","lc":3,"lang":"java","cc":1,"cbc":6},{"id":"e087924c:0945:6b09:7f01:412d8ec35b4b","label":"getOrigin","type":"Function","slug":"fn-configurationproperty-java-getorigin","lc":4,"lang":"java","cc":1,"cbc":7},{"id":"9238d3fa:2989:765f:f494:8bb9aaa5a40f","label":"analyzeGenericBindException","type":"Function","slug":"fn-bindfailureanalyzer-java-analyzegenericbindexception","lc":12,"lang":"java","cc":5,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"ee9c82fe:bf2e:ce3e:8d88:2366d3bd0918","target":"750cd007:bdb8:311c:bbe7:77b9c2a02d5d","type":"calls"},{"source":"ee9c82fe:bf2e:ce3e:8d88:2366d3bd0918","target":"3a59ebe3:af02:47e1:0737:e9b3afe20c8a","type":"calls"},{"source":"ee9c82fe:bf2e:ce3e:8d88:2366d3bd0918","target":"e087924c:0945:6b09:7f01:412d8ec35b4b","type":"calls"},{"source":"9238d3fa:2989:765f:f494:8bb9aaa5a40f","target":"ee9c82fe:bf2e:ce3e:8d88:2366d3bd0918","type":"calls"},{"source":"ee9c82fe:bf2e:ce3e:8d88:2366d3bd0918","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"ee9c82fe:bf2e:ce3e:8d88:2366d3bd0918","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"2522f3ab:b7d7:c381:28fd:0838bd6243df","label":"buildDescription","type":"Function","slug":"fn-bindfailureanalyzer-java-builddescription","lc":7,"lang":"java","cc":3,"cbc":1},{"id":"fd16ceab:92b9:0b25:ac86:22d4749d5629","label":"getValue","type":"Function","slug":"fn-configurationproperty-java-getvalue","lc":3,"lang":"java","cc":1,"cbc":12},{"id":"fc867cde:2d5c:7b6c:439a:beca175aff14","label":"getName","type":"Function","slug":"fn-configurationproperty-java-getname","lc":3,"lang":"java","cbc":18},{"id":"318f34b0:d24d:1185:d7c7:7fcc469913de","label":"getOrigin","type":"Function","slug":"fn-configurationproperty-java-getorigin","lc":4,"lang":"java","cc":1,"cbc":7},{"id":"b77f2f50:ee19:3487:d93c:0c8c35af1fe3","label":"analyzeGenericBindException","type":"Function","slug":"fn-bindfailureanalyzer-java-analyzegenericbindexception","lc":12,"lang":"java","cc":5,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"2522f3ab:b7d7:c381:28fd:0838bd6243df","target":"fd16ceab:92b9:0b25:ac86:22d4749d5629","type":"calls"},{"source":"2522f3ab:b7d7:c381:28fd:0838bd6243df","target":"fc867cde:2d5c:7b6c:439a:beca175aff14","type":"calls"},{"source":"2522f3ab:b7d7:c381:28fd:0838bd6243df","target":"318f34b0:d24d:1185:d7c7:7fcc469913de","type":"calls"},{"source":"b77f2f50:ee19:3487:d93c:0c8c35af1fe3","target":"2522f3ab:b7d7:c381:28fd:0838bd6243df","type":"calls"},{"source":"2522f3ab:b7d7:c381:28fd:0838bd6243df","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"2522f3ab:b7d7:c381:28fd:0838bd6243df","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -963,7 +963,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 
@@ -982,7 +982,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li><a href="/fn-bindexception-java-getname.html">getName()</a></li><li><a href="/fn-configurationproperty-java-getorigin.html">getOrigin()</a></li><li><a href="/fn-configurationproperty-java-getvalue.html">getValue()</a></li></ul>
+      <ul><li><a href="/fn-configurationproperty-java-getname.html">getName()</a></li><li><a href="/fn-configurationproperty-java-getorigin.html">getOrigin()</a></li><li><a href="/fn-configurationproperty-java-getvalue.html">getValue()</a></li></ul>
     </div>
     
 

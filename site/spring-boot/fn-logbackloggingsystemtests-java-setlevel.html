@@ -811,7 +811,7 @@ a.pill:hover {
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the setLevel() function in LogbackLoggingSystemTests.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-logbackloggingsystemtests-java-setlevel.svg"],"name":"setLevel() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-logbackloggingsystemtests-java-setlevel.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"setLevel() — spring-boot Function Reference","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"setLevel() is a function in the spring-boot codebase."},"name":"What does setLevel() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"setLevel() calls 3 function(s): beforeInitialize, initialize, setLogLevel."},"name":"What does setLevel() call?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"setLevel() is a function in the spring-boot codebase."},"name":"What does setLevel() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"setLevel() calls 4 function(s): beforeInitialize, initialize, setLogLevel, toString."},"name":"What does setLevel() call?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -870,10 +870,10 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
-        <span class="pill">calls 3</span>
+        <span class="pill">calls 4</span>
         
         
         
@@ -886,7 +886,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"co":3,"el":264,"et":{"calls":3},"lc":9,"sl":256}</script>
+      <script type="application/json" id="entity-profile-data">{"co":4,"el":264,"et":{"calls":4},"lc":9,"sl":256}</script>
     </div>
 
     
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"setLevel","slug":"fn-logbackloggingsystemtests-java-setlevel","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"setLevel","slug":"fn-logbackloggingsystemtests-java-setlevel","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>setLevel() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  0ab21b16_6aef_c663_3ab1_e006a604da93["setLevel()"]
-  d7d18d50_783e_82d2_ba30_aee85df0dc01["initialize()"]
-  0ab21b16_6aef_c663_3ab1_e006a604da93 -->|calls| d7d18d50_783e_82d2_ba30_aee85df0dc01
-  65860c34_08c5_1d7b_5ecb_4bec140992b4["beforeInitialize()"]
-  0ab21b16_6aef_c663_3ab1_e006a604da93 -->|calls| 65860c34_08c5_1d7b_5ecb_4bec140992b4
-  c49fdf33_c358_041a_9de1_126b15239f1d["setLogLevel()"]
-  0ab21b16_6aef_c663_3ab1_e006a604da93 -->|calls| c49fdf33_c358_041a_9de1_126b15239f1d
-  style 0ab21b16_6aef_c663_3ab1_e006a604da93 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  b39276df_eb81_e446_600f_6e2bd790180f["setLevel()"]
+  19bf788f_a6fb_741b_0208_42b37efdaecf["initialize()"]
+  b39276df_eb81_e446_600f_6e2bd790180f -->|calls| 19bf788f_a6fb_741b_0208_42b37efdaecf
+  d6f05402_1b42_ecc6_a8e0_ab163c86a65a["beforeInitialize()"]
+  b39276df_eb81_e446_600f_6e2bd790180f -->|calls| d6f05402_1b42_ecc6_a8e0_ab163c86a65a
+  9cb9a065_2b68_537d_68c7_48d7dc7247f7["setLogLevel()"]
+  b39276df_eb81_e446_600f_6e2bd790180f -->|calls| 9cb9a065_2b68_537d_68c7_48d7dc7247f7
+  3bfdb756_c954_5135_61dc_69a77d73d4e7["toString()"]
+  b39276df_eb81_e446_600f_6e2bd790180f -->|calls| 3bfdb756_c954_5135_61dc_69a77d73d4e7
+  style b39276df_eb81_e446_600f_6e2bd790180f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-logbackloggingsystemtests-java-setlevel"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"0ab21b16:6aef:c663:3ab1:e006a604da93","label":"setLevel","type":"Function","slug":"fn-logbackloggingsystemtests-java-setlevel","lc":9,"lang":"java","cc":3},{"id":"d7d18d50:783e:82d2:ba30:aee85df0dc01","label":"initialize","type":"Function","slug":"fn-logbackloggingsystemtests-java-initialize","lc":8,"lang":"java","cc":5,"cbc":75},{"id":"65860c34:08c5:1d7b:5ecb:4bec140992b4","label":"beforeInitialize","type":"Function","slug":"fn-loggingsystem-java-beforeinitialize","lc":1,"lang":"java","cc":1,"cbc":100},{"id":"c49fdf33:c358:041a:9de1:126b15239f1d","label":"setLogLevel","type":"Function","slug":"fn-loggingsystem-java-setloglevel","lc":3,"lang":"java","cc":1,"cbc":26},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"0ab21b16:6aef:c663:3ab1:e006a604da93","target":"d7d18d50:783e:82d2:ba30:aee85df0dc01","type":"calls"},{"source":"0ab21b16:6aef:c663:3ab1:e006a604da93","target":"65860c34:08c5:1d7b:5ecb:4bec140992b4","type":"calls"},{"source":"0ab21b16:6aef:c663:3ab1:e006a604da93","target":"c49fdf33:c358:041a:9de1:126b15239f1d","type":"calls"},{"source":"0ab21b16:6aef:c663:3ab1:e006a604da93","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"0ab21b16:6aef:c663:3ab1:e006a604da93","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"b39276df:eb81:e446:600f:6e2bd790180f","label":"setLevel","type":"Function","slug":"fn-logbackloggingsystemtests-java-setlevel","lc":9,"lang":"java","cc":4},{"id":"19bf788f:a6fb:741b:0208:42b37efdaecf","label":"initialize","type":"Function","slug":"fn-logbackloggingsystemtests-java-initialize","lc":8,"lang":"java","cc":5,"cbc":75},{"id":"d6f05402:1b42:ecc6:a8e0:ab163c86a65a","label":"beforeInitialize","type":"Function","slug":"fn-loggingsystem-java-beforeinitialize","lc":1,"lang":"java","cc":1,"cbc":100},{"id":"9cb9a065:2b68:537d:68c7:48d7dc7247f7","label":"setLogLevel","type":"Function","slug":"fn-loggingsystem-java-setloglevel","lc":3,"lang":"java","cc":1,"cbc":26},{"id":"3bfdb756:c954:5135:61dc:69a77d73d4e7","label":"toString","type":"Function","slug":"fn-loggerconfiguration-java-tostring","lc":5,"lang":"java","cc":1,"cbc":6},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"b39276df:eb81:e446:600f:6e2bd790180f","target":"19bf788f:a6fb:741b:0208:42b37efdaecf","type":"calls"},{"source":"b39276df:eb81:e446:600f:6e2bd790180f","target":"d6f05402:1b42:ecc6:a8e0:ab163c86a65a","type":"calls"},{"source":"b39276df:eb81:e446:600f:6e2bd790180f","target":"9cb9a065:2b68:537d:68c7:48d7dc7247f7","type":"calls"},{"source":"b39276df:eb81:e446:600f:6e2bd790180f","target":"3bfdb756:c954:5135:61dc:69a77d73d4e7","type":"calls"},{"source":"b39276df:eb81:e446:600f:6e2bd790180f","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"b39276df:eb81:e446:600f:6e2bd790180f","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -963,7 +965,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 
@@ -982,7 +984,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li><a href="/fn-loggingsystem-java-beforeinitialize.html">beforeInitialize()</a></li><li><a href="/fn-logbackloggingsystemtests-java-initialize.html">initialize()</a></li><li><a href="/fn-loggingsystem-java-setloglevel.html">setLogLevel()</a></li></ul>
+      <ul><li><a href="/fn-loggingsystem-java-beforeinitialize.html">beforeInitialize()</a></li><li><a href="/fn-logbackloggingsystemtests-java-initialize.html">initialize()</a></li><li><a href="/fn-loggingsystem-java-setloglevel.html">setLogLevel()</a></li><li><a href="/fn-loggerconfiguration-java-tostring.html">toString()</a></li></ul>
     </div>
     
 
@@ -1014,7 +1016,7 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What does setLevel() call?</summary>
-        <div class="faq-answer">setLevel() calls 3 function(s): beforeInitialize, initialize, setLogLevel.</div>
+        <div class="faq-answer">setLevel() calls 4 function(s): beforeInitialize, initialize, setLogLevel, toString.</div>
       </details>
       
     </div>

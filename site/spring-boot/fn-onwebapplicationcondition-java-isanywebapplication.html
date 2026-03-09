@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"isAnyWebApplication","slug":"fn-onwebapplicationcondition-java-isanywebapplication","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"isAnyWebApplication","slug":"fn-onwebapplicationcondition-java-isanywebapplication","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>isAnyWebApplication() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ae61cc9b_f5f1_24dc_b573_e34bbb8728b7["isAnyWebApplication()"]
-  b063764e_f70d_6233_5faa_35f623722ad5["isWebApplication()"]
-  b063764e_f70d_6233_5faa_35f623722ad5 -->|calls| ae61cc9b_f5f1_24dc_b573_e34bbb8728b7
-  047bd63d_1030_c5d3_480f_199a0996abb4["isServletWebApplication()"]
-  ae61cc9b_f5f1_24dc_b573_e34bbb8728b7 -->|calls| 047bd63d_1030_c5d3_480f_199a0996abb4
-  095a5dfa_28c3_36f7_aca6_ab8663d411e2["isReactiveWebApplication()"]
-  ae61cc9b_f5f1_24dc_b573_e34bbb8728b7 -->|calls| 095a5dfa_28c3_36f7_aca6_ab8663d411e2
-  style ae61cc9b_f5f1_24dc_b573_e34bbb8728b7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  3de42211_d9b7_801b_6874_643a1ee85552["isAnyWebApplication()"]
+  eef9dd5d_0037_9e56_472d_1b22a7dd1e15["isWebApplication()"]
+  eef9dd5d_0037_9e56_472d_1b22a7dd1e15 -->|calls| 3de42211_d9b7_801b_6874_643a1ee85552
+  ad78b974_c4e3_9712_8e2a_7a2740441d64["isServletWebApplication()"]
+  3de42211_d9b7_801b_6874_643a1ee85552 -->|calls| ad78b974_c4e3_9712_8e2a_7a2740441d64
+  23402dc1_7584_8610_f595_a21f4f60a488["isReactiveWebApplication()"]
+  3de42211_d9b7_801b_6874_643a1ee85552 -->|calls| 23402dc1_7584_8610_f595_a21f4f60a488
+  style 3de42211_d9b7_801b_6874_643a1ee85552 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-onwebapplicationcondition-java-isanywebapplication"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ae61cc9b:f5f1:24dc:b573:e34bbb8728b7","label":"isAnyWebApplication","type":"Function","slug":"fn-onwebapplicationcondition-java-isanywebapplication","lc":14,"lang":"java","cc":2,"cbc":1},{"id":"047bd63d:1030:c5d3:480f:199a0996abb4","label":"isServletWebApplication","type":"Function","slug":"","lc":19,"lang":"java","cbc":2},{"id":"095a5dfa:28c3:36f7:aca6:ab8663d411e2","label":"isReactiveWebApplication","type":"Function","slug":"","lc":13,"lang":"java","cbc":2},{"id":"b063764e:f70d:6233:5faa:35f623722ad5","label":"isWebApplication","type":"Function","slug":"fn-onwebapplicationcondition-java-iswebapplication","lc":8,"lang":"java","cc":4,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"ae61cc9b:f5f1:24dc:b573:e34bbb8728b7","target":"047bd63d:1030:c5d3:480f:199a0996abb4","type":"calls"},{"source":"ae61cc9b:f5f1:24dc:b573:e34bbb8728b7","target":"095a5dfa:28c3:36f7:aca6:ab8663d411e2","type":"calls"},{"source":"b063764e:f70d:6233:5faa:35f623722ad5","target":"ae61cc9b:f5f1:24dc:b573:e34bbb8728b7","type":"calls"},{"source":"ae61cc9b:f5f1:24dc:b573:e34bbb8728b7","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"ae61cc9b:f5f1:24dc:b573:e34bbb8728b7","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"3de42211:d9b7:801b:6874:643a1ee85552","label":"isAnyWebApplication","type":"Function","slug":"fn-onwebapplicationcondition-java-isanywebapplication","lc":14,"lang":"java","cc":2,"cbc":1},{"id":"ad78b974:c4e3:9712:8e2a:7a2740441d64","label":"isServletWebApplication","type":"Function","slug":"","lc":19,"lang":"java","cbc":2},{"id":"23402dc1:7584:8610:f595:a21f4f60a488","label":"isReactiveWebApplication","type":"Function","slug":"","lc":13,"lang":"java","cbc":2},{"id":"eef9dd5d:0037:9e56:472d:1b22a7dd1e15","label":"isWebApplication","type":"Function","slug":"fn-onwebapplicationcondition-java-iswebapplication","lc":8,"lang":"java","cc":4,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"3de42211:d9b7:801b:6874:643a1ee85552","target":"ad78b974:c4e3:9712:8e2a:7a2740441d64","type":"calls"},{"source":"3de42211:d9b7:801b:6874:643a1ee85552","target":"23402dc1:7584:8610:f595:a21f4f60a488","type":"calls"},{"source":"eef9dd5d:0037:9e56:472d:1b22a7dd1e15","target":"3de42211:d9b7:801b:6874:643a1ee85552","type":"calls"},{"source":"3de42211:d9b7:801b:6874:643a1ee85552","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"3de42211:d9b7:801b:6874:643a1ee85552","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -968,7 +968,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

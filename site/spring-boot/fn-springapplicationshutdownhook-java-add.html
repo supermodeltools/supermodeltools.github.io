@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"add","slug":"fn-springapplicationshutdownhook-java-add","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"add","slug":"fn-springapplicationshutdownhook-java-add","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>add() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  1aacd23b_0702_4a32_8218_5e3ed3a6da71["add()"]
-  bfa3629d_d3b3_e185_05f1_4c10c5bb2067["registerApplicationContext()"]
-  bfa3629d_d3b3_e185_05f1_4c10c5bb2067 -->|calls| 1aacd23b_0702_4a32_8218_5e3ed3a6da71
-  635464d6_967a_832e_b01e_1d7ba7ec7445["onApplicationEvent()"]
-  635464d6_967a_832e_b01e_1d7ba7ec7445 -->|calls| 1aacd23b_0702_4a32_8218_5e3ed3a6da71
-  8344167f_04da_0c29_3c99_a5402f470e60["addRuntimeShutdownHookIfNecessary()"]
-  1aacd23b_0702_4a32_8218_5e3ed3a6da71 -->|calls| 8344167f_04da_0c29_3c99_a5402f470e60
-  47f0939b_0cb0_9bcb_1ddb_a04969303413["assertNotInProgress()"]
-  1aacd23b_0702_4a32_8218_5e3ed3a6da71 -->|calls| 47f0939b_0cb0_9bcb_1ddb_a04969303413
-  style 1aacd23b_0702_4a32_8218_5e3ed3a6da71 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  11325d87_483c_0ae0_a356_281abe44af14["add()"]
+  8d58d0ee_c8d5_30eb_7b1c_8bdcb075ed5a["registerApplicationContext()"]
+  8d58d0ee_c8d5_30eb_7b1c_8bdcb075ed5a -->|calls| 11325d87_483c_0ae0_a356_281abe44af14
+  210ecff0_0e28_8c4c_df3d_cc3362402768["onApplicationEvent()"]
+  210ecff0_0e28_8c4c_df3d_cc3362402768 -->|calls| 11325d87_483c_0ae0_a356_281abe44af14
+  f0dd3316_e68d_e864_45f1_8bd900a3223e["addRuntimeShutdownHookIfNecessary()"]
+  11325d87_483c_0ae0_a356_281abe44af14 -->|calls| f0dd3316_e68d_e864_45f1_8bd900a3223e
+  e5ce403b_4ced_004a_d1a6_e74ace10709a["assertNotInProgress()"]
+  11325d87_483c_0ae0_a356_281abe44af14 -->|calls| e5ce403b_4ced_004a_d1a6_e74ace10709a
+  style 11325d87_483c_0ae0_a356_281abe44af14 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-springapplicationshutdownhook-java-add"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"1aacd23b:0702:4a32:8218:5e3ed3a6da71","label":"add","type":"Function","slug":"fn-springapplicationshutdownhook-java-add","lc":9,"lang":"java","cc":2,"cbc":2},{"id":"8344167f:04da:0c29:3c99:a5402f470e60","label":"addRuntimeShutdownHookIfNecessary","type":"Function","slug":"fn-springapplicationshutdownhook-java-addruntimeshutdownhookifnecessary","lc":5,"lang":"java","cc":1,"cbc":2},{"id":"47f0939b:0cb0:9bcb:1ddb:a04969303413","label":"assertNotInProgress","type":"Function","slug":"fn-springapplicationshutdownhook-java-assertnotinprogress","lc":3,"lang":"java","cbc":3},{"id":"bfa3629d:d3b3:e185:05f1:4c10c5bb2067","label":"registerApplicationContext","type":"Function","slug":"fn-springapplicationshutdownhook-java-registerapplicationcontext","lc":8,"lang":"java","cc":3},{"id":"635464d6:967a:832e:b01e:1d7ba7ec7445","label":"onApplicationEvent","type":"Function","slug":"","lc":14,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"1aacd23b:0702:4a32:8218:5e3ed3a6da71","target":"8344167f:04da:0c29:3c99:a5402f470e60","type":"calls"},{"source":"1aacd23b:0702:4a32:8218:5e3ed3a6da71","target":"47f0939b:0cb0:9bcb:1ddb:a04969303413","type":"calls"},{"source":"bfa3629d:d3b3:e185:05f1:4c10c5bb2067","target":"1aacd23b:0702:4a32:8218:5e3ed3a6da71","type":"calls"},{"source":"635464d6:967a:832e:b01e:1d7ba7ec7445","target":"1aacd23b:0702:4a32:8218:5e3ed3a6da71","type":"calls"},{"source":"1aacd23b:0702:4a32:8218:5e3ed3a6da71","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"1aacd23b:0702:4a32:8218:5e3ed3a6da71","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"11325d87:483c:0ae0:a356:281abe44af14","label":"add","type":"Function","slug":"fn-springapplicationshutdownhook-java-add","lc":9,"lang":"java","cc":2,"cbc":2},{"id":"f0dd3316:e68d:e864:45f1:8bd900a3223e","label":"addRuntimeShutdownHookIfNecessary","type":"Function","slug":"fn-springapplicationshutdownhook-java-addruntimeshutdownhookifnecessary","lc":5,"lang":"java","cc":1,"cbc":2},{"id":"e5ce403b:4ced:004a:d1a6:e74ace10709a","label":"assertNotInProgress","type":"Function","slug":"fn-springapplicationshutdownhook-java-assertnotinprogress","lc":3,"lang":"java","cbc":3},{"id":"8d58d0ee:c8d5:30eb:7b1c:8bdcb075ed5a","label":"registerApplicationContext","type":"Function","slug":"fn-springapplicationshutdownhook-java-registerapplicationcontext","lc":8,"lang":"java","cc":3},{"id":"210ecff0:0e28:8c4c:df3d:cc3362402768","label":"onApplicationEvent","type":"Function","slug":"","lc":14,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"11325d87:483c:0ae0:a356:281abe44af14","target":"f0dd3316:e68d:e864:45f1:8bd900a3223e","type":"calls"},{"source":"11325d87:483c:0ae0:a356:281abe44af14","target":"e5ce403b:4ced:004a:d1a6:e74ace10709a","type":"calls"},{"source":"8d58d0ee:c8d5:30eb:7b1c:8bdcb075ed5a","target":"11325d87:483c:0ae0:a356:281abe44af14","type":"calls"},{"source":"210ecff0:0e28:8c4c:df3d:cc3362402768","target":"11325d87:483c:0ae0:a356:281abe44af14","type":"calls"},{"source":"11325d87:483c:0ae0:a356:281abe44af14","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"11325d87:483c:0ae0:a356:281abe44af14","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -965,7 +965,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"addStatus","slug":"fn-systemstatuslistenertests-java-addstatus","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"addStatus","slug":"fn-systemstatuslistenertests-java-addstatus","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>addStatus() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,26 +911,26 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  28b2759a_0203_3e5a_f0a2_dd83f1e23744["addStatus()"]
-  6430073a_fb17_68b1_9990_7eed235caae0["addStatusWithInfoLevelWhenNoDebugDoesNotPrint()"]
-  6430073a_fb17_68b1_9990_7eed235caae0 -->|calls| 28b2759a_0203_3e5a_f0a2_dd83f1e23744
-  dd71ca01_586a_6b26_66bd_41c1ac2a29fa["addStatusWithWarningLevelWhenNoDebugPrintsToSystemErr()"]
-  dd71ca01_586a_6b26_66bd_41c1ac2a29fa -->|calls| 28b2759a_0203_3e5a_f0a2_dd83f1e23744
-  e4054cd7_7b02_b658_7d1c_e561d37f840e["addStatusWithErrorLevelWhenNoDebugPrintsToSystemErr()"]
-  e4054cd7_7b02_b658_7d1c_e561d37f840e -->|calls| 28b2759a_0203_3e5a_f0a2_dd83f1e23744
-  8e304cfc_abd5_ab9f_9d32_821450ebc057["addStatusWithInfoLevelWhenDebugPrintsToSystemOut()"]
-  8e304cfc_abd5_ab9f_9d32_821450ebc057 -->|calls| 28b2759a_0203_3e5a_f0a2_dd83f1e23744
-  6c1fc6a7_6e29_eca0_e11c_6323b846c3c4["addStatusWithWarningLevelWhenDebugPrintsToSystemOut()"]
-  6c1fc6a7_6e29_eca0_e11c_6323b846c3c4 -->|calls| 28b2759a_0203_3e5a_f0a2_dd83f1e23744
-  ad6bedb5_df14_100d_cefe_41491c9d5427["addStatusWithErrorLevelWhenDebugPrintsToSystemOut()"]
-  ad6bedb5_df14_100d_cefe_41491c9d5427 -->|calls| 28b2759a_0203_3e5a_f0a2_dd83f1e23744
-  2885b283_b08e_fc78_7526_836215975ed2["shouldRetrospectivePrintStatusOnStartAndDebugIsDisabled()"]
-  2885b283_b08e_fc78_7526_836215975ed2 -->|calls| 28b2759a_0203_3e5a_f0a2_dd83f1e23744
-  8d795a04_c9f7_ed8e_d2c9_f48791a19255["shouldRetrospectivePrintStatusOnStartAndDebugIsEnabled()"]
-  8d795a04_c9f7_ed8e_d2c9_f48791a19255 -->|calls| 28b2759a_0203_3e5a_f0a2_dd83f1e23744
-  81fb1b4f_d99e_608f_a146_fdb459fe2c4e["shouldNotRetrospectivePrintWhenStatusIsOutdated()"]
-  81fb1b4f_d99e_608f_a146_fdb459fe2c4e -->|calls| 28b2759a_0203_3e5a_f0a2_dd83f1e23744
-  style 28b2759a_0203_3e5a_f0a2_dd83f1e23744 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  eda0e1e7_8fc5_8766_dc97_9a9faeb93b32["addStatus()"]
+  3da894b1_a542_285d_e45f_46d9daa5762f["addStatusWithInfoLevelWhenNoDebugDoesNotPrint()"]
+  3da894b1_a542_285d_e45f_46d9daa5762f -->|calls| eda0e1e7_8fc5_8766_dc97_9a9faeb93b32
+  56120498_34f8_34d9_0f02_804070f0408b["addStatusWithWarningLevelWhenNoDebugPrintsToSystemErr()"]
+  56120498_34f8_34d9_0f02_804070f0408b -->|calls| eda0e1e7_8fc5_8766_dc97_9a9faeb93b32
+  aee74c7f_00c3_f1d9_4475_1b9f023eeb84["addStatusWithErrorLevelWhenNoDebugPrintsToSystemErr()"]
+  aee74c7f_00c3_f1d9_4475_1b9f023eeb84 -->|calls| eda0e1e7_8fc5_8766_dc97_9a9faeb93b32
+  80665d8f_f688_8e84_5d51_64f2ddb7dfcc["addStatusWithInfoLevelWhenDebugPrintsToSystemOut()"]
+  80665d8f_f688_8e84_5d51_64f2ddb7dfcc -->|calls| eda0e1e7_8fc5_8766_dc97_9a9faeb93b32
+  d857d7d9_13f1_22cc_54c9_cc45ce29504f["addStatusWithWarningLevelWhenDebugPrintsToSystemOut()"]
+  d857d7d9_13f1_22cc_54c9_cc45ce29504f -->|calls| eda0e1e7_8fc5_8766_dc97_9a9faeb93b32
+  d4258dcf_8293_b50b_1b52_a89a5e08590c["addStatusWithErrorLevelWhenDebugPrintsToSystemOut()"]
+  d4258dcf_8293_b50b_1b52_a89a5e08590c -->|calls| eda0e1e7_8fc5_8766_dc97_9a9faeb93b32
+  636c4044_2a7d_2743_bc62_041a31bb83e6["shouldRetrospectivePrintStatusOnStartAndDebugIsDisabled()"]
+  636c4044_2a7d_2743_bc62_041a31bb83e6 -->|calls| eda0e1e7_8fc5_8766_dc97_9a9faeb93b32
+  2e81c122_eea0_e299_4c21_547ccb0c3913["shouldRetrospectivePrintStatusOnStartAndDebugIsEnabled()"]
+  2e81c122_eea0_e299_4c21_547ccb0c3913 -->|calls| eda0e1e7_8fc5_8766_dc97_9a9faeb93b32
+  25c1c387_b366_fcaf_c376_dec0097dfc93["shouldNotRetrospectivePrintWhenStatusIsOutdated()"]
+  25c1c387_b366_fcaf_c376_dec0097dfc93 -->|calls| eda0e1e7_8fc5_8766_dc97_9a9faeb93b32
+  style eda0e1e7_8fc5_8766_dc97_9a9faeb93b32 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -938,7 +938,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-systemstatuslistenertests-java-addstatus"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","label":"addStatus","type":"Function","slug":"fn-systemstatuslistenertests-java-addstatus","lc":6,"lang":"java","cbc":9},{"id":"6430073a:fb17:68b1:9990:7eed235caae0","label":"addStatusWithInfoLevelWhenNoDebugDoesNotPrint","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"dd71ca01:586a:6b26:66bd:41c1ac2a29fa","label":"addStatusWithWarningLevelWhenNoDebugPrintsToSystemErr","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"e4054cd7:7b02:b658:7d1c:e561d37f840e","label":"addStatusWithErrorLevelWhenNoDebugPrintsToSystemErr","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"8e304cfc:abd5:ab9f:9d32:821450ebc057","label":"addStatusWithInfoLevelWhenDebugPrintsToSystemOut","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"6c1fc6a7:6e29:eca0:e11c:6323b846c3c4","label":"addStatusWithWarningLevelWhenDebugPrintsToSystemOut","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"ad6bedb5:df14:100d:cefe:41491c9d5427","label":"addStatusWithErrorLevelWhenDebugPrintsToSystemOut","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"2885b283:b08e:fc78:7526:836215975ed2","label":"shouldRetrospectivePrintStatusOnStartAndDebugIsDisabled","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"8d795a04:c9f7:ed8e:d2c9:f48791a19255","label":"shouldRetrospectivePrintStatusOnStartAndDebugIsEnabled","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"81fb1b4f:d99e:608f:a146:fdb459fe2c4e","label":"shouldNotRetrospectivePrintWhenStatusIsOutdated","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"6430073a:fb17:68b1:9990:7eed235caae0","target":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","type":"calls"},{"source":"dd71ca01:586a:6b26:66bd:41c1ac2a29fa","target":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","type":"calls"},{"source":"e4054cd7:7b02:b658:7d1c:e561d37f840e","target":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","type":"calls"},{"source":"8e304cfc:abd5:ab9f:9d32:821450ebc057","target":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","type":"calls"},{"source":"6c1fc6a7:6e29:eca0:e11c:6323b846c3c4","target":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","type":"calls"},{"source":"ad6bedb5:df14:100d:cefe:41491c9d5427","target":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","type":"calls"},{"source":"2885b283:b08e:fc78:7526:836215975ed2","target":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","type":"calls"},{"source":"8d795a04:c9f7:ed8e:d2c9:f48791a19255","target":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","type":"calls"},{"source":"81fb1b4f:d99e:608f:a146:fdb459fe2c4e","target":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","type":"calls"},{"source":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"28b2759a:0203:3e5a:f0a2:dd83f1e23744","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","label":"addStatus","type":"Function","slug":"fn-systemstatuslistenertests-java-addstatus","lc":6,"lang":"java","cbc":9},{"id":"3da894b1:a542:285d:e45f:46d9daa5762f","label":"addStatusWithInfoLevelWhenNoDebugDoesNotPrint","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"56120498:34f8:34d9:0f02:804070f0408b","label":"addStatusWithWarningLevelWhenNoDebugPrintsToSystemErr","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"aee74c7f:00c3:f1d9:4475:1b9f023eeb84","label":"addStatusWithErrorLevelWhenNoDebugPrintsToSystemErr","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"80665d8f:f688:8e84:5d51:64f2ddb7dfcc","label":"addStatusWithInfoLevelWhenDebugPrintsToSystemOut","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"d857d7d9:13f1:22cc:54c9:cc45ce29504f","label":"addStatusWithWarningLevelWhenDebugPrintsToSystemOut","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"d4258dcf:8293:b50b:1b52:a89a5e08590c","label":"addStatusWithErrorLevelWhenDebugPrintsToSystemOut","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"636c4044:2a7d:2743:bc62:041a31bb83e6","label":"shouldRetrospectivePrintStatusOnStartAndDebugIsDisabled","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"2e81c122:eea0:e299:4c21:547ccb0c3913","label":"shouldRetrospectivePrintStatusOnStartAndDebugIsEnabled","type":"Function","slug":"","lc":11,"lang":"java","cc":1},{"id":"25c1c387:b366:fcaf:c376:dec0097dfc93","label":"shouldNotRetrospectivePrintWhenStatusIsOutdated","type":"Function","slug":"","lc":9,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"3da894b1:a542:285d:e45f:46d9daa5762f","target":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","type":"calls"},{"source":"56120498:34f8:34d9:0f02:804070f0408b","target":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","type":"calls"},{"source":"aee74c7f:00c3:f1d9:4475:1b9f023eeb84","target":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","type":"calls"},{"source":"80665d8f:f688:8e84:5d51:64f2ddb7dfcc","target":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","type":"calls"},{"source":"d857d7d9:13f1:22cc:54c9:cc45ce29504f","target":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","type":"calls"},{"source":"d4258dcf:8293:b50b:1b52:a89a5e08590c","target":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","type":"calls"},{"source":"636c4044:2a7d:2743:bc62:041a31bb83e6","target":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","type":"calls"},{"source":"2e81c122:eea0:e299:4c21:547ccb0c3913","target":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","type":"calls"},{"source":"25c1c387:b366:fcaf:c376:dec0097dfc93","target":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","type":"calls"},{"source":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"eda0e1e7:8fc5:8766:dc97:9a9faeb93b32","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -972,7 +972,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

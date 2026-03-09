@@ -811,7 +811,7 @@ a.pill:hover {
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the getResource() function in ApplicationResourceLoader.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-applicationresourceloader-java-getresource.svg"],"name":"getResource() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-applicationresourceloader-java-getresource.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"getResource() — spring-boot Function Reference","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getResource() is a function in the spring-boot codebase."},"name":"What does getResource() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getResource() calls 2 function(s): getResource, resolveFile."},"name":"What does getResource() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getResource() is called by 3 function(s): convert, getResource, usesResourceLoader."},"name":"What calls getResource()?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getResource() is a function in the spring-boot codebase."},"name":"What does getResource() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getResource() calls 2 function(s): getResource, resolveFile."},"name":"What does getResource() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getResource() is called by 2 function(s): getResource, usesResourceLoader."},"name":"What calls getResource()?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -870,11 +870,11 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 2</span>
-        <span class="pill">called by 3</span>
+        <span class="pill">called by 2</span>
         
         
         
@@ -886,7 +886,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"cb":3,"co":2,"el":194,"et":{"calls":5},"lc":11,"sl":184}</script>
+      <script type="application/json" id="entity-profile-data">{"cb":2,"co":2,"el":194,"et":{"calls":4},"lc":11,"sl":184}</script>
     </div>
 
     
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"getResource","slug":"fn-applicationresourceloader-java-getresource","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"getResource","slug":"fn-applicationresourceloader-java-getresource","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>getResource() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,18 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  dfbbd802_bd15_e7f3_6d0a_d7d3b2f5828a["getResource()"]
-  10c727cd_e124_98a2_cbb2_741267e9bcbf["getResource()"]
-  10c727cd_e124_98a2_cbb2_741267e9bcbf -->|calls| dfbbd802_bd15_e7f3_6d0a_d7d3b2f5828a
-  2ee05ee1_7700_5cb5_acdf_388c18e0ea1b["convert()"]
-  2ee05ee1_7700_5cb5_acdf_388c18e0ea1b -->|calls| dfbbd802_bd15_e7f3_6d0a_d7d3b2f5828a
-  0b553e3b_27c9_9183_4fb8_a5c19bfd0eb3["usesResourceLoader()"]
-  0b553e3b_27c9_9183_4fb8_a5c19bfd0eb3 -->|calls| dfbbd802_bd15_e7f3_6d0a_d7d3b2f5828a
-  10c727cd_e124_98a2_cbb2_741267e9bcbf["getResource()"]
-  dfbbd802_bd15_e7f3_6d0a_d7d3b2f5828a -->|calls| 10c727cd_e124_98a2_cbb2_741267e9bcbf
-  79d01df3_d3c5_ca80_1645_7b356db1f99b["resolveFile()"]
-  dfbbd802_bd15_e7f3_6d0a_d7d3b2f5828a -->|calls| 79d01df3_d3c5_ca80_1645_7b356db1f99b
-  style dfbbd802_bd15_e7f3_6d0a_d7d3b2f5828a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  b9a4ae4b_37c1_ddef_125d_252536b7afa6["getResource()"]
+  3f85c487_10c5_a5ce_7e40_b44c02e0e904["getResource()"]
+  3f85c487_10c5_a5ce_7e40_b44c02e0e904 -->|calls| b9a4ae4b_37c1_ddef_125d_252536b7afa6
+  7b96ae2f_a6b7_d26b_bd5e_5e81663cfa9b["usesResourceLoader()"]
+  7b96ae2f_a6b7_d26b_bd5e_5e81663cfa9b -->|calls| b9a4ae4b_37c1_ddef_125d_252536b7afa6
+  3f85c487_10c5_a5ce_7e40_b44c02e0e904["getResource()"]
+  b9a4ae4b_37c1_ddef_125d_252536b7afa6 -->|calls| 3f85c487_10c5_a5ce_7e40_b44c02e0e904
+  b03c0023_9ad5_5296_c69f_eee6b9ac3f75["resolveFile()"]
+  b9a4ae4b_37c1_ddef_125d_252536b7afa6 -->|calls| b03c0023_9ad5_5296_c69f_eee6b9ac3f75
+  style b9a4ae4b_37c1_ddef_125d_252536b7afa6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -930,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-applicationresourceloader-java-getresource"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"dfbbd802:bd15:e7f3:6d0a:d7d3b2f5828a","label":"getResource","type":"Function","slug":"fn-applicationresourceloader-java-getresource","lc":11,"lang":"java","cc":2,"cbc":3},{"id":"10c727cd:e124:98a2:cbb2:741267e9bcbf","label":"getResource","type":"Function","slug":"fn-applicationresourceloader-java-getresource-2","lc":14,"lang":"java","cc":3,"cbc":14},{"id":"79d01df3:d3c5:ca80:1645:7b356db1f99b","label":"resolveFile","type":"Function","slug":"","lc":12,"lang":"java","cc":1,"cbc":1},{"id":"2ee05ee1:7700:5cb5:acdf:388c18e0ea1b","label":"convert","type":"Function","slug":"fn-stringtofileconverter-java-convert","lc":4,"lang":"java","cc":3},{"id":"0b553e3b:27c9:9183:4fb8:a5c19bfd0eb3","label":"usesResourceLoader","type":"Function","slug":"","lc":10,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"dfbbd802:bd15:e7f3:6d0a:d7d3b2f5828a","target":"10c727cd:e124:98a2:cbb2:741267e9bcbf","type":"calls"},{"source":"dfbbd802:bd15:e7f3:6d0a:d7d3b2f5828a","target":"79d01df3:d3c5:ca80:1645:7b356db1f99b","type":"calls"},{"source":"10c727cd:e124:98a2:cbb2:741267e9bcbf","target":"dfbbd802:bd15:e7f3:6d0a:d7d3b2f5828a","type":"calls"},{"source":"2ee05ee1:7700:5cb5:acdf:388c18e0ea1b","target":"dfbbd802:bd15:e7f3:6d0a:d7d3b2f5828a","type":"calls"},{"source":"0b553e3b:27c9:9183:4fb8:a5c19bfd0eb3","target":"dfbbd802:bd15:e7f3:6d0a:d7d3b2f5828a","type":"calls"},{"source":"dfbbd802:bd15:e7f3:6d0a:d7d3b2f5828a","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"dfbbd802:bd15:e7f3:6d0a:d7d3b2f5828a","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"b9a4ae4b:37c1:ddef:125d:252536b7afa6","label":"getResource","type":"Function","slug":"fn-applicationresourceloader-java-getresource","lc":11,"lang":"java","cc":2,"cbc":2},{"id":"3f85c487:10c5:a5ce:7e40:b44c02e0e904","label":"getResource","type":"Function","slug":"fn-applicationresourceloader-java-getresource-2","lc":14,"lang":"java","cc":3,"cbc":15},{"id":"b03c0023:9ad5:5296:c69f:eee6b9ac3f75","label":"resolveFile","type":"Function","slug":"","lc":12,"lang":"java","cc":1,"cbc":1},{"id":"7b96ae2f:a6b7:d26b:bd5e:5e81663cfa9b","label":"usesResourceLoader","type":"Function","slug":"","lc":10,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"b9a4ae4b:37c1:ddef:125d:252536b7afa6","target":"3f85c487:10c5:a5ce:7e40:b44c02e0e904","type":"calls"},{"source":"b9a4ae4b:37c1:ddef:125d:252536b7afa6","target":"b03c0023:9ad5:5296:c69f:eee6b9ac3f75","type":"calls"},{"source":"3f85c487:10c5:a5ce:7e40:b44c02e0e904","target":"b9a4ae4b:37c1:ddef:125d:252536b7afa6","type":"calls"},{"source":"7b96ae2f:a6b7:d26b:bd5e:5e81663cfa9b","target":"b9a4ae4b:37c1:ddef:125d:252536b7afa6","type":"calls"},{"source":"b9a4ae4b:37c1:ddef:125d:252536b7afa6","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"b9a4ae4b:37c1:ddef:125d:252536b7afa6","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -969,7 +967,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 
@@ -995,7 +993,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Called By</h2>
-      <ul><li><a href="/fn-stringtofileconverter-java-convert.html">convert()</a></li><li><a href="/fn-applicationresourceloader-java-getresource-2.html">getResource()</a></li><li>usesResourceLoader()</li></ul>
+      <ul><li><a href="/fn-applicationresourceloader-java-getresource-2.html">getResource()</a></li><li>usesResourceLoader()</li></ul>
     </div>
     
 
@@ -1030,7 +1028,7 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What calls getResource()?</summary>
-        <div class="faq-answer">getResource() is called by 3 function(s): convert, getResource, usesResourceLoader.</div>
+        <div class="faq-answer">getResource() is called by 2 function(s): getResource, usesResourceLoader.</div>
       </details>
       
     </div>

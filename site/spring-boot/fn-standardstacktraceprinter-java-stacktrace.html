@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"StackTrace","slug":"fn-standardstacktraceprinter-java-stacktrace","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"StackTrace","slug":"fn-standardstacktraceprinter-java-stacktrace","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>StackTrace() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  6b074e22_7d72_6513_2c01_eb80873356c8["StackTrace()"]
-  44afaf3c_fd1c_2d83_f688_b5bb45616929["printStackTrace()"]
-  44afaf3c_fd1c_2d83_f688_b5bb45616929 -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  2b16fac2_e8e3_4019_f4a1_0155253780e6["cause()"]
-  2b16fac2_e8e3_4019_f4a1_0155253780e6 -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  e45613a2_798d_9c84_f81c_f66369f446bb["getWhenHasStackTracePropertiesBindsFromEnvironment()"]
-  e45613a2_798d_9c84_f81c_f66369f446bb -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  d5516dca_726c_9cb2_47ad_0ba7fb54b1e8["createPrinterWhenEmptyReturnsNull()"]
-  d5516dca_726c_9cb2_47ad_0ba7fb54b1e8 -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  ec00703c_9cd9_434a_787b_67a106560dbf["createPrinterWhenNoPrinterAndNotEmptyReturnsStandard()"]
-  ec00703c_9cd9_434a_787b_67a106560dbf -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  893e2a75_f129_8ff5_8af8_c56da958fc09["createPrinterWhenLoggingSystemReturnsNull()"]
-  893e2a75_f129_8ff5_8af8_c56da958fc09 -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  a32ce4e6_a051_6e6a_e504_81f3580c0711["createPrinterWhenLoggingSystemRelaxedReturnsNull()"]
-  a32ce4e6_a051_6e6a_e504_81f3580c0711 -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  24480de9_e7d9_3b0b_1cb4_6e8d93c6bb5b["createPrinterWhenStandardReturnsStandardPrinter()"]
-  24480de9_e7d9_3b0b_1cb4_6e8d93c6bb5b -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  5145160d_487d_6822_20cf_68a3c95b7064["createPrinterWhenStandardRelaxedReturnsStandardPrinter()"]
-  5145160d_487d_6822_20cf_68a3c95b7064 -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  fec53303_7df9_5b95_d022_b9487ed242bf["createPrinterWhenStandardAppliesCustomizations()"]
-  fec53303_7df9_5b95_d022_b9487ed242bf -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  be8a4b80_a54e_e4bb_86d9_8e641bc7808b["createPrinterWhenStandardWithHashesPrintsHash()"]
-  be8a4b80_a54e_e4bb_86d9_8e641bc7808b -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  023dad7a_0b06_fbc5_2443_8394193f4129["createPrinterWhenClassNameCreatesPrinter()"]
-  023dad7a_0b06_fbc5_2443_8394193f4129 -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  3861f8db_1a0a_dd4a_859a_b5ab928a6057["createPrinterWhenClassNameInjectsConfiguredPrinter()"]
-  3861f8db_1a0a_dd4a_859a_b5ab928a6057 -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  acab14ca_380b_845c_cf7c_1cc3efc514a0["hasCustomPrinterShouldReturnFalseWhenPrinterIsEmpty()"]
-  acab14ca_380b_845c_cf7c_1cc3efc514a0 -->|calls| 6b074e22_7d72_6513_2c01_eb80873356c8
-  style 6b074e22_7d72_6513_2c01_eb80873356c8 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  5ee97c1a_8683_875b_8ec4_ccc55e48c000["StackTrace()"]
+  e07a21c9_9a4f_28bb_12d5_2080120f468c["printStackTrace()"]
+  e07a21c9_9a4f_28bb_12d5_2080120f468c -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  e67c88c0_a89c_9fe5_d042_6ffe52e87267["cause()"]
+  e67c88c0_a89c_9fe5_d042_6ffe52e87267 -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  d34706cf_9b6c_f13b_ce32_ba8aa6d65a6c["getWhenHasStackTracePropertiesBindsFromEnvironment()"]
+  d34706cf_9b6c_f13b_ce32_ba8aa6d65a6c -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  ce5527e3_8699_db28_ace8_5185783db0ec["createPrinterWhenEmptyReturnsNull()"]
+  ce5527e3_8699_db28_ace8_5185783db0ec -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  69bc5e29_70a2_46d0_535e_a78a3baf42de["createPrinterWhenNoPrinterAndNotEmptyReturnsStandard()"]
+  69bc5e29_70a2_46d0_535e_a78a3baf42de -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  5ae86c74_1d78_7185_4c5f_56a9d9280a13["createPrinterWhenLoggingSystemReturnsNull()"]
+  5ae86c74_1d78_7185_4c5f_56a9d9280a13 -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  c7f5e1c6_c2b4_72bb_73ec_28404a7ccd7c["createPrinterWhenLoggingSystemRelaxedReturnsNull()"]
+  c7f5e1c6_c2b4_72bb_73ec_28404a7ccd7c -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  03b8de64_4c3c_b207_5f4c_adcc563f5312["createPrinterWhenStandardReturnsStandardPrinter()"]
+  03b8de64_4c3c_b207_5f4c_adcc563f5312 -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  9c609827_80b8_2ec6_0922_960cba47dca8["createPrinterWhenStandardRelaxedReturnsStandardPrinter()"]
+  9c609827_80b8_2ec6_0922_960cba47dca8 -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  ae3cb0b8_d8ee_1c03_9cb0_4ba743cad9b7["createPrinterWhenStandardAppliesCustomizations()"]
+  ae3cb0b8_d8ee_1c03_9cb0_4ba743cad9b7 -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  5615be1b_0ffb_ea9a_2a14_1923285a730f["createPrinterWhenStandardWithHashesPrintsHash()"]
+  5615be1b_0ffb_ea9a_2a14_1923285a730f -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  1134717f_cca4_74fb_5382_268f5022a391["createPrinterWhenClassNameCreatesPrinter()"]
+  1134717f_cca4_74fb_5382_268f5022a391 -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  61308eb2_4452_741f_4ff3_0377c8e12ff5["createPrinterWhenClassNameInjectsConfiguredPrinter()"]
+  61308eb2_4452_741f_4ff3_0377c8e12ff5 -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  190a5806_a13c_5dda_0a63_40d295b683fd["hasCustomPrinterShouldReturnFalseWhenPrinterIsEmpty()"]
+  190a5806_a13c_5dda_0a63_40d295b683fd -->|calls| 5ee97c1a_8683_875b_8ec4_ccc55e48c000
+  style 5ee97c1a_8683_875b_8ec4_ccc55e48c000 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-standardstacktraceprinter-java-stacktrace"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"6b074e22:7d72:6513:2c01:eb80873356c8","label":"StackTrace","type":"Function","slug":"fn-standardstacktraceprinter-java-stacktrace","lc":4,"lang":"java","cbc":17},{"id":"44afaf3c:fd1c:2d83:f688:b5bb45616929","label":"printStackTrace","type":"Function","slug":"fn-standardstacktraceprinter-java-printstacktrace","lc":9,"lang":"java","cc":3},{"id":"2b16fac2:e8e3:4019:f4a1:0155253780e6","label":"cause","type":"Function","slug":"fn-standardstacktraceprinter-java-cause","lc":7,"lang":"java","cc":1,"cbc":2},{"id":"e45613a2:798d:9c84:f81c:f66369f446bb","label":"getWhenHasStackTracePropertiesBindsFromEnvironment","type":"Function","slug":"","lc":15,"lang":"java","cc":2},{"id":"d5516dca:726c:9cb2:47ad:0ba7fb54b1e8","label":"createPrinterWhenEmptyReturnsNull","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"ec00703c:9cd9:434a:787b:67a106560dbf","label":"createPrinterWhenNoPrinterAndNotEmptyReturnsStandard","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"893e2a75:f129:8ff5:8af8:c56da958fc09","label":"createPrinterWhenLoggingSystemReturnsNull","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"a32ce4e6:a051:6e6a:e504:81f3580c0711","label":"createPrinterWhenLoggingSystemRelaxedReturnsNull","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"24480de9:e7d9:3b0b:1cb4:6e8d93c6bb5b","label":"createPrinterWhenStandardReturnsStandardPrinter","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"5145160d:487d:6822:20cf:68a3c95b7064","label":"createPrinterWhenStandardRelaxedReturnsStandardPrinter","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"fec53303:7df9:5b95:d022:b9487ed242bf","label":"createPrinterWhenStandardAppliesCustomizations","type":"Function","slug":"fn-structuredloggingjsonpropertiestests-java-createprinterwhenstandardappliescustomizations","lc":15,"lang":"java","cc":6},{"id":"be8a4b80:a54e:e4bb:86d9:8e641bc7808b","label":"createPrinterWhenStandardWithHashesPrintsHash","type":"Function","slug":"","lc":9,"lang":"java","cc":2},{"id":"023dad7a:0b06:fbc5:2443:8394193f4129","label":"createPrinterWhenClassNameCreatesPrinter","type":"Function","slug":"","lc":8,"lang":"java","cc":2},{"id":"3861f8db:1a0a:dd4a:859a:b5ab928a6057","label":"createPrinterWhenClassNameInjectsConfiguredPrinter","type":"Function","slug":"fn-structuredloggingjsonpropertiestests-java-createprinterwhenclassnameinjectsconfiguredprinter","lc":10,"lang":"java","cc":3},{"id":"acab14ca:380b:845c:cf7c:1cc3efc514a0","label":"hasCustomPrinterShouldReturnFalseWhenPrinterIsEmpty","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"000caace:f4d5:b184:b9ed:546334f55834","label":"hasCustomPrinterShouldReturnFalseWhenPrinterHasLoggingSystem","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"5ff5fc3c:4569:387a:59f9:b885318abea3","label":"hasCustomPrinterShouldReturnFalseWhenPrinterHasStandard","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"24ff99d4:1a28:b4c2:a070:84c3f08b045b","label":"hasCustomPrinterShouldReturnTrueWhenPrinterHasCustom","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"44afaf3c:fd1c:2d83:f688:b5bb45616929","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"2b16fac2:e8e3:4019:f4a1:0155253780e6","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"e45613a2:798d:9c84:f81c:f66369f446bb","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"d5516dca:726c:9cb2:47ad:0ba7fb54b1e8","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"ec00703c:9cd9:434a:787b:67a106560dbf","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"893e2a75:f129:8ff5:8af8:c56da958fc09","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"a32ce4e6:a051:6e6a:e504:81f3580c0711","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"24480de9:e7d9:3b0b:1cb4:6e8d93c6bb5b","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"5145160d:487d:6822:20cf:68a3c95b7064","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"fec53303:7df9:5b95:d022:b9487ed242bf","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"be8a4b80:a54e:e4bb:86d9:8e641bc7808b","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"023dad7a:0b06:fbc5:2443:8394193f4129","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"3861f8db:1a0a:dd4a:859a:b5ab928a6057","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"acab14ca:380b:845c:cf7c:1cc3efc514a0","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"000caace:f4d5:b184:b9ed:546334f55834","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"5ff5fc3c:4569:387a:59f9:b885318abea3","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"24ff99d4:1a28:b4c2:a070:84c3f08b045b","target":"6b074e22:7d72:6513:2c01:eb80873356c8","type":"calls"},{"source":"6b074e22:7d72:6513:2c01:eb80873356c8","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"6b074e22:7d72:6513:2c01:eb80873356c8","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","label":"StackTrace","type":"Function","slug":"fn-standardstacktraceprinter-java-stacktrace","lc":4,"lang":"java","cbc":17},{"id":"e07a21c9:9a4f:28bb:12d5:2080120f468c","label":"printStackTrace","type":"Function","slug":"fn-standardstacktraceprinter-java-printstacktrace","lc":9,"lang":"java","cc":3},{"id":"e67c88c0:a89c:9fe5:d042:6ffe52e87267","label":"cause","type":"Function","slug":"fn-standardstacktraceprinter-java-cause","lc":7,"lang":"java","cc":1,"cbc":2},{"id":"d34706cf:9b6c:f13b:ce32:ba8aa6d65a6c","label":"getWhenHasStackTracePropertiesBindsFromEnvironment","type":"Function","slug":"","lc":15,"lang":"java","cc":2},{"id":"ce5527e3:8699:db28:ace8:5185783db0ec","label":"createPrinterWhenEmptyReturnsNull","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"69bc5e29:70a2:46d0:535e:a78a3baf42de","label":"createPrinterWhenNoPrinterAndNotEmptyReturnsStandard","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"5ae86c74:1d78:7185:4c5f:56a9d9280a13","label":"createPrinterWhenLoggingSystemReturnsNull","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"c7f5e1c6:c2b4:72bb:73ec:28404a7ccd7c","label":"createPrinterWhenLoggingSystemRelaxedReturnsNull","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"03b8de64:4c3c:b207:5f4c:adcc563f5312","label":"createPrinterWhenStandardReturnsStandardPrinter","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"9c609827:80b8:2ec6:0922:960cba47dca8","label":"createPrinterWhenStandardRelaxedReturnsStandardPrinter","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"ae3cb0b8:d8ee:1c03:9cb0:4ba743cad9b7","label":"createPrinterWhenStandardAppliesCustomizations","type":"Function","slug":"fn-structuredloggingjsonpropertiestests-java-createprinterwhenstandardappliescustomizations","lc":15,"lang":"java","cc":6},{"id":"5615be1b:0ffb:ea9a:2a14:1923285a730f","label":"createPrinterWhenStandardWithHashesPrintsHash","type":"Function","slug":"","lc":9,"lang":"java","cc":2},{"id":"1134717f:cca4:74fb:5382:268f5022a391","label":"createPrinterWhenClassNameCreatesPrinter","type":"Function","slug":"","lc":8,"lang":"java","cc":2},{"id":"61308eb2:4452:741f:4ff3:0377c8e12ff5","label":"createPrinterWhenClassNameInjectsConfiguredPrinter","type":"Function","slug":"fn-structuredloggingjsonpropertiestests-java-createprinterwhenclassnameinjectsconfiguredprinter","lc":10,"lang":"java","cc":3},{"id":"190a5806:a13c:5dda:0a63:40d295b683fd","label":"hasCustomPrinterShouldReturnFalseWhenPrinterIsEmpty","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"f8816035:cf40:a97d:4e6e:3948ba48bafe","label":"hasCustomPrinterShouldReturnFalseWhenPrinterHasLoggingSystem","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"c93ecb7a:a809:8b95:26b4:a3a3658a9536","label":"hasCustomPrinterShouldReturnFalseWhenPrinterHasStandard","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"4450469d:afa3:5626:b126:1b86f02f2565","label":"hasCustomPrinterShouldReturnTrueWhenPrinterHasCustom","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"e07a21c9:9a4f:28bb:12d5:2080120f468c","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"e67c88c0:a89c:9fe5:d042:6ffe52e87267","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"d34706cf:9b6c:f13b:ce32:ba8aa6d65a6c","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"ce5527e3:8699:db28:ace8:5185783db0ec","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"69bc5e29:70a2:46d0:535e:a78a3baf42de","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"5ae86c74:1d78:7185:4c5f:56a9d9280a13","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"c7f5e1c6:c2b4:72bb:73ec:28404a7ccd7c","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"03b8de64:4c3c:b207:5f4c:adcc563f5312","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"9c609827:80b8:2ec6:0922:960cba47dca8","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"ae3cb0b8:d8ee:1c03:9cb0:4ba743cad9b7","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"5615be1b:0ffb:ea9a:2a14:1923285a730f","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"1134717f:cca4:74fb:5382:268f5022a391","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"61308eb2:4452:741f:4ff3:0377c8e12ff5","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"190a5806:a13c:5dda:0a63:40d295b683fd","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"f8816035:cf40:a97d:4e6e:3948ba48bafe","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"c93ecb7a:a809:8b95:26b4:a3a3658a9536","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"4450469d:afa3:5626:b126:1b86f02f2565","target":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","type":"calls"},{"source":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"5ee97c1a:8683:875b:8ec4:ccc55e48c000","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -980,7 +980,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

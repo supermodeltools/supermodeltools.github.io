@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"umaskForPath","slug":"fn-filepermissionstests-java-umaskforpath","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"umaskForPath","slug":"fn-filepermissionstests-java-umaskforpath","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>umaskForPath() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  b4ee9796_ecb3_0954_11b7_cfffb96f1a1f["umaskForPath()"]
-  910491e2_4cb7_15d6_1490_11ba49c94845["umaskForPathWithNonExistentFile()"]
-  910491e2_4cb7_15d6_1490_11ba49c94845 -->|calls| b4ee9796_ecb3_0954_11b7_cfffb96f1a1f
-  013e0e1d_d5da_08d3_2118_2c3bb6e76afc["umaskForPathOnWindowsFails()"]
-  013e0e1d_d5da_08d3_2118_2c3bb6e76afc -->|calls| b4ee9796_ecb3_0954_11b7_cfffb96f1a1f
-  75a9cb54_696b_fc84_a32d_e286b759046d["umaskForPathWithNullPath()"]
-  75a9cb54_696b_fc84_a32d_e286b759046d -->|calls| b4ee9796_ecb3_0954_11b7_cfffb96f1a1f
-  style b4ee9796_ecb3_0954_11b7_cfffb96f1a1f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  0b039832_5f65_7392_787a_924c68b1b42b["umaskForPath()"]
+  61f74dd6_aaac_b791_08c5_db93121218b4["umaskForPathWithNonExistentFile()"]
+  61f74dd6_aaac_b791_08c5_db93121218b4 -->|calls| 0b039832_5f65_7392_787a_924c68b1b42b
+  eaa323a4_837a_22e0_eb88_e715bcafa504["umaskForPathOnWindowsFails()"]
+  eaa323a4_837a_22e0_eb88_e715bcafa504 -->|calls| 0b039832_5f65_7392_787a_924c68b1b42b
+  faea07a8_316b_2978_bf58_54574ec7946e["umaskForPathWithNullPath()"]
+  faea07a8_316b_2978_bf58_54574ec7946e -->|calls| 0b039832_5f65_7392_787a_924c68b1b42b
+  style 0b039832_5f65_7392_787a_924c68b1b42b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-filepermissionstests-java-umaskforpath"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"b4ee9796:ecb3:0954:11b7:cfffb96f1a1f","label":"umaskForPath","type":"Function","slug":"fn-filepermissionstests-java-umaskforpath","lc":8,"lang":"java","cbc":3},{"id":"910491e2:4cb7:15d6:1490:11ba49c94845","label":"umaskForPathWithNonExistentFile","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"013e0e1d:d5da:08d3:2118:2c3bb6e76afc","label":"umaskForPathOnWindowsFails","type":"Function","slug":"","lc":7,"lang":"java","cc":1},{"id":"75a9cb54:696b:fc84:a32d:e286b759046d","label":"umaskForPathWithNullPath","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"910491e2:4cb7:15d6:1490:11ba49c94845","target":"b4ee9796:ecb3:0954:11b7:cfffb96f1a1f","type":"calls"},{"source":"013e0e1d:d5da:08d3:2118:2c3bb6e76afc","target":"b4ee9796:ecb3:0954:11b7:cfffb96f1a1f","type":"calls"},{"source":"75a9cb54:696b:fc84:a32d:e286b759046d","target":"b4ee9796:ecb3:0954:11b7:cfffb96f1a1f","type":"calls"},{"source":"b4ee9796:ecb3:0954:11b7:cfffb96f1a1f","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"b4ee9796:ecb3:0954:11b7:cfffb96f1a1f","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"0b039832:5f65:7392:787a:924c68b1b42b","label":"umaskForPath","type":"Function","slug":"fn-filepermissionstests-java-umaskforpath","lc":8,"lang":"java","cbc":3},{"id":"61f74dd6:aaac:b791:08c5:db93121218b4","label":"umaskForPathWithNonExistentFile","type":"Function","slug":"","lc":6,"lang":"java","cc":1},{"id":"eaa323a4:837a:22e0:eb88:e715bcafa504","label":"umaskForPathOnWindowsFails","type":"Function","slug":"","lc":7,"lang":"java","cc":1},{"id":"faea07a8:316b:2978:bf58:54574ec7946e","label":"umaskForPathWithNullPath","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"61f74dd6:aaac:b791:08c5:db93121218b4","target":"0b039832:5f65:7392:787a:924c68b1b42b","type":"calls"},{"source":"eaa323a4:837a:22e0:eb88:e715bcafa504","target":"0b039832:5f65:7392:787a:924c68b1b42b","type":"calls"},{"source":"faea07a8:316b:2978:bf58:54574ec7946e","target":"0b039832:5f65:7392:787a:924c68b1b42b","type":"calls"},{"source":"0b039832:5f65:7392:787a:924c68b1b42b","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"0b039832:5f65:7392:787a:924c68b1b42b","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -962,7 +962,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

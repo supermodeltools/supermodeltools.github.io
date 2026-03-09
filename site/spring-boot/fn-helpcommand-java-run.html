@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 10</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"run","slug":"fn-helpcommand-java-run","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"run","slug":"fn-helpcommand-java-run","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>run() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  810a23f5_84b3_5ff5_9279_ddb5cb3c2962["run()"]
-  1b824f37_b936_0beb_5db9_cb56d01d4d66["runCommand()"]
-  1b824f37_b936_0beb_5db9_cb56d01d4d66 -->|calls| 810a23f5_84b3_5ff5_9279_ddb5cb3c2962
-  313437c7_4ff2_1557_75dd_d62edfd7c57e["missingCommand()"]
-  313437c7_4ff2_1557_75dd_d62edfd7c57e -->|calls| 810a23f5_84b3_5ff5_9279_ddb5cb3c2962
-  98844ace_0988_bc0f_e4d5_627e50e5c82c["appArguments()"]
-  98844ace_0988_bc0f_e4d5_627e50e5c82c -->|calls| 810a23f5_84b3_5ff5_9279_ddb5cb3c2962
-  600c240e_96ae_9d5c_99a4_93aafde0f840["handlesRegularExceptionWithMessage()"]
-  600c240e_96ae_9d5c_99a4_93aafde0f840 -->|calls| 810a23f5_84b3_5ff5_9279_ddb5cb3c2962
-  e55a3628_aec1_8d03_a1fd_c2abc3d19d09["handlesRegularExceptionWithoutMessage()"]
-  e55a3628_aec1_8d03_a1fd_c2abc3d19d09 -->|calls| 810a23f5_84b3_5ff5_9279_ddb5cb3c2962
-  415f1550_751e_0440_b786_accf37b8378c["handlesExceptionWithDashDashDebug()"]
-  415f1550_751e_0440_b786_accf37b8378c -->|calls| 810a23f5_84b3_5ff5_9279_ddb5cb3c2962
-  69e69839_28dc_8f9d_1d7f_fed708ef2cc5["help()"]
-  69e69839_28dc_8f9d_1d7f_fed708ef2cc5 -->|calls| 810a23f5_84b3_5ff5_9279_ddb5cb3c2962
-  b32b70ff_0c9e_6aec_8164_ccc05b818841["helpNoCommand()"]
-  b32b70ff_0c9e_6aec_8164_ccc05b818841 -->|calls| 810a23f5_84b3_5ff5_9279_ddb5cb3c2962
-  ae2e6c87_6e9a_db6e_33b9_48afaca2ccad["helpUnknownCommand()"]
-  ae2e6c87_6e9a_db6e_33b9_48afaca2ccad -->|calls| 810a23f5_84b3_5ff5_9279_ddb5cb3c2962
-  336e44f2_8260_7879_b91b_728cf9fd59a5["run()"]
-  810a23f5_84b3_5ff5_9279_ddb5cb3c2962 -->|calls| 336e44f2_8260_7879_b91b_728cf9fd59a5
-  64dd8ebf_886b_729c_a831_af2224dd14f3["NoHelpCommandArgumentsException()"]
-  810a23f5_84b3_5ff5_9279_ddb5cb3c2962 -->|calls| 64dd8ebf_886b_729c_a831_af2224dd14f3
-  f8a5e123_65c8_d2ee_5578_a0bdc703661a["info()"]
-  810a23f5_84b3_5ff5_9279_ddb5cb3c2962 -->|calls| f8a5e123_65c8_d2ee_5578_a0bdc703661a
-  9d0b922e_2f8a_a25b_489c_c7ea390a9865["getUsageHelp()"]
-  810a23f5_84b3_5ff5_9279_ddb5cb3c2962 -->|calls| 9d0b922e_2f8a_a25b_489c_c7ea390a9865
-  6e06ca78_2310_27c2_45e4_cbd1fb89abd4["getHelp()"]
-  810a23f5_84b3_5ff5_9279_ddb5cb3c2962 -->|calls| 6e06ca78_2310_27c2_45e4_cbd1fb89abd4
-  style 810a23f5_84b3_5ff5_9279_ddb5cb3c2962 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  56b614c9_bc27_2fef_2dbc_4119b008ced9["run()"]
+  bf119cf0_1638_0dd6_6199_510a22c33b09["runCommand()"]
+  bf119cf0_1638_0dd6_6199_510a22c33b09 -->|calls| 56b614c9_bc27_2fef_2dbc_4119b008ced9
+  9cc0f1a9_cbe9_d7e7_92f6_2035e0b37e7d["missingCommand()"]
+  9cc0f1a9_cbe9_d7e7_92f6_2035e0b37e7d -->|calls| 56b614c9_bc27_2fef_2dbc_4119b008ced9
+  e6196505_06b0_2f49_c5f1_66ef718c4bbc["appArguments()"]
+  e6196505_06b0_2f49_c5f1_66ef718c4bbc -->|calls| 56b614c9_bc27_2fef_2dbc_4119b008ced9
+  4acc1328_63e4_4a6e_f5d3_63f2cf6b4e41["handlesRegularExceptionWithMessage()"]
+  4acc1328_63e4_4a6e_f5d3_63f2cf6b4e41 -->|calls| 56b614c9_bc27_2fef_2dbc_4119b008ced9
+  ab3fd4f5_7b13_cb9a_0c21_53996d6f8d6c["handlesRegularExceptionWithoutMessage()"]
+  ab3fd4f5_7b13_cb9a_0c21_53996d6f8d6c -->|calls| 56b614c9_bc27_2fef_2dbc_4119b008ced9
+  1134ff62_aef2_7767_50d1_03f050e81aae["handlesExceptionWithDashDashDebug()"]
+  1134ff62_aef2_7767_50d1_03f050e81aae -->|calls| 56b614c9_bc27_2fef_2dbc_4119b008ced9
+  ae530c69_d2db_974f_b09f_d573769b5de6["help()"]
+  ae530c69_d2db_974f_b09f_d573769b5de6 -->|calls| 56b614c9_bc27_2fef_2dbc_4119b008ced9
+  00126d57_8b42_5ea1_8b76_3df899a63607["helpNoCommand()"]
+  00126d57_8b42_5ea1_8b76_3df899a63607 -->|calls| 56b614c9_bc27_2fef_2dbc_4119b008ced9
+  6665e0d8_a39e_0b0b_aba7_e85de7a5ef6c["helpUnknownCommand()"]
+  6665e0d8_a39e_0b0b_aba7_e85de7a5ef6c -->|calls| 56b614c9_bc27_2fef_2dbc_4119b008ced9
+  ca727b43_4645_0fd6_0d91_f1b0d3098523["run()"]
+  56b614c9_bc27_2fef_2dbc_4119b008ced9 -->|calls| ca727b43_4645_0fd6_0d91_f1b0d3098523
+  7fdde595_0c9c_e743_4cba_f241e789b760["NoHelpCommandArgumentsException()"]
+  56b614c9_bc27_2fef_2dbc_4119b008ced9 -->|calls| 7fdde595_0c9c_e743_4cba_f241e789b760
+  8e63c606_5a46_8b75_d65c_967ac9a41976["info()"]
+  56b614c9_bc27_2fef_2dbc_4119b008ced9 -->|calls| 8e63c606_5a46_8b75_d65c_967ac9a41976
+  0a5a1dec_1e69_f56f_060e_574f6a3764b1["getUsageHelp()"]
+  56b614c9_bc27_2fef_2dbc_4119b008ced9 -->|calls| 0a5a1dec_1e69_f56f_060e_574f6a3764b1
+  96a6ad76_0c9d_b886_a834_92110845f43a["getHelp()"]
+  56b614c9_bc27_2fef_2dbc_4119b008ced9 -->|calls| 96a6ad76_0c9d_b886_a834_92110845f43a
+  style 56b614c9_bc27_2fef_2dbc_4119b008ced9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-helpcommand-java-run"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","label":"run","type":"Function","slug":"fn-helpcommand-java-run","lc":34,"lang":"java","cc":10,"cbc":9},{"id":"336e44f2:8260:7879:b91b:728cf9fd59a5","label":"run","type":"Function","slug":"fn-commandrunner-java-run","lc":18,"lang":"java","cc":3,"cbc":4},{"id":"64dd8ebf:886b:729c:a831:af2224dd14f3","label":"NoHelpCommandArgumentsException","type":"Function","slug":"fn-nohelpcommandargumentsexception-java-nohelpcommandargumentsexception","lc":3,"lang":"java","cbc":1},{"id":"f8a5e123:65c8:d2ee:5578:a0bdc703661a","label":"info","type":"Function","slug":"fn-log-java-info","lc":6,"lang":"java","cbc":11},{"id":"9d0b922e:2f8a:a25b:489c:c7ea390a9865","label":"getUsageHelp","type":"Function","slug":"fn-helpcommand-java-getusagehelp","lc":4,"lang":"java","cc":1,"cbc":2},{"id":"6e06ca78:2310:27c2:45e4:cbd1fb89abd4","label":"getHelp","type":"Function","slug":"fn-helpcommand-java-gethelp","lc":4,"lang":"java","cc":1,"cbc":2},{"id":"e6568479:cd6e:4e97:8987:70b41a23bb38","label":"getExamples","type":"Function","slug":"","lc":4,"lang":"java","cbc":1},{"id":"559af78b:7028:71de:b510:b6a345f2a59c","label":"getExample","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"9f488145:c3a9:64e3:46e9:f05cdb8565f2","label":"NoSuchCommandException","type":"Function","slug":"fn-nosuchcommandexception-java-nosuchcommandexception","lc":3,"lang":"java","cbc":1},{"id":"0159e7d4:5839:70f8:0165:64df246e146f","label":"getDescription","type":"Function","slug":"fn-abstractcommand-java-getdescription","lc":4,"lang":"java","cbc":3},{"id":"de930905:c4a3:10ff:5fd4:284141418330","label":"getName","type":"Function","slug":"fn-abstractcommand-java-getname","lc":4,"lang":"java","cbc":4},{"id":"1b824f37:b936:0beb:5db9:cb56d01d4d66","label":"runCommand","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"313437c7:4ff2:1557:75dd:d62edfd7c57e","label":"missingCommand","type":"Function","slug":"","lc":4,"lang":"java","cc":1},{"id":"98844ace:0988:bc0f:e4d5:627e50e5c82c","label":"appArguments","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"600c240e:96ae:9d5c:99a4:93aafde0f840","label":"handlesRegularExceptionWithMessage","type":"Function","slug":"","lc":7,"lang":"java","cc":1},{"id":"e55a3628:aec1:8d03:a1fd:c2abc3d19d09","label":"handlesRegularExceptionWithoutMessage","type":"Function","slug":"","lc":7,"lang":"java","cc":1},{"id":"415f1550:751e:0440:b786:accf37b8378c","label":"handlesExceptionWithDashDashDebug","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"69e69839:28dc:8f9d:1d7f:fed708ef2cc5","label":"help","type":"Function","slug":"fn-commandrunnertests-java-help","lc":5,"lang":"java","cc":2},{"id":"b32b70ff:0c9e:6aec:8164:ccc05b818841","label":"helpNoCommand","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"ae2e6c87:6e9a:db6e:33b9:48afaca2ccad","label":"helpUnknownCommand","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"336e44f2:8260:7879:b91b:728cf9fd59a5","type":"calls"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"64dd8ebf:886b:729c:a831:af2224dd14f3","type":"calls"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"f8a5e123:65c8:d2ee:5578:a0bdc703661a","type":"calls"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"9d0b922e:2f8a:a25b:489c:c7ea390a9865","type":"calls"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"6e06ca78:2310:27c2:45e4:cbd1fb89abd4","type":"calls"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"e6568479:cd6e:4e97:8987:70b41a23bb38","type":"calls"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"559af78b:7028:71de:b510:b6a345f2a59c","type":"calls"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"9f488145:c3a9:64e3:46e9:f05cdb8565f2","type":"calls"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"0159e7d4:5839:70f8:0165:64df246e146f","type":"calls"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"de930905:c4a3:10ff:5fd4:284141418330","type":"calls"},{"source":"1b824f37:b936:0beb:5db9:cb56d01d4d66","target":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","type":"calls"},{"source":"313437c7:4ff2:1557:75dd:d62edfd7c57e","target":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","type":"calls"},{"source":"98844ace:0988:bc0f:e4d5:627e50e5c82c","target":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","type":"calls"},{"source":"600c240e:96ae:9d5c:99a4:93aafde0f840","target":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","type":"calls"},{"source":"e55a3628:aec1:8d03:a1fd:c2abc3d19d09","target":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","type":"calls"},{"source":"415f1550:751e:0440:b786:accf37b8378c","target":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","type":"calls"},{"source":"69e69839:28dc:8f9d:1d7f:fed708ef2cc5","target":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","type":"calls"},{"source":"b32b70ff:0c9e:6aec:8164:ccc05b818841","target":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","type":"calls"},{"source":"ae2e6c87:6e9a:db6e:33b9:48afaca2ccad","target":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","type":"calls"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"810a23f5:84b3:5ff5:9279:ddb5cb3c2962","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"56b614c9:bc27:2fef:2dbc:4119b008ced9","label":"run","type":"Function","slug":"fn-helpcommand-java-run","lc":34,"lang":"java","cc":10,"cbc":9},{"id":"ca727b43:4645:0fd6:0d91:f1b0d3098523","label":"run","type":"Function","slug":"fn-commandrunner-java-run","lc":18,"lang":"java","cc":3,"cbc":4},{"id":"7fdde595:0c9c:e743:4cba:f241e789b760","label":"NoHelpCommandArgumentsException","type":"Function","slug":"fn-nohelpcommandargumentsexception-java-nohelpcommandargumentsexception","lc":3,"lang":"java","cbc":1},{"id":"8e63c606:5a46:8b75:d65c:967ac9a41976","label":"info","type":"Function","slug":"fn-log-java-info","lc":6,"lang":"java","cbc":11},{"id":"0a5a1dec:1e69:f56f:060e:574f6a3764b1","label":"getUsageHelp","type":"Function","slug":"fn-helpcommand-java-getusagehelp","lc":4,"lang":"java","cc":1,"cbc":2},{"id":"96a6ad76:0c9d:b886:a834:92110845f43a","label":"getHelp","type":"Function","slug":"fn-helpcommand-java-gethelp","lc":4,"lang":"java","cc":1,"cbc":2},{"id":"e5a5b36e:9409:6116:0bdd:1f88d30f74c1","label":"getExamples","type":"Function","slug":"","lc":4,"lang":"java","cbc":1},{"id":"13d69805:7334:59c7:ac44:6a088fbd4082","label":"getExample","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"52914276:8985:1231:4441:5ac0cad5c3d4","label":"NoSuchCommandException","type":"Function","slug":"fn-nosuchcommandexception-java-nosuchcommandexception","lc":3,"lang":"java","cbc":1},{"id":"39a5eb2e:4c38:ee2b:d460:cb103f1496d4","label":"getDescription","type":"Function","slug":"fn-abstractcommand-java-getdescription","lc":4,"lang":"java","cbc":3},{"id":"134cc83e:f5d5:7ae0:562b:e9f9ff7b0e73","label":"getName","type":"Function","slug":"fn-abstractcommand-java-getname","lc":4,"lang":"java","cbc":4},{"id":"bf119cf0:1638:0dd6:6199:510a22c33b09","label":"runCommand","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"9cc0f1a9:cbe9:d7e7:92f6:2035e0b37e7d","label":"missingCommand","type":"Function","slug":"","lc":4,"lang":"java","cc":1},{"id":"e6196505:06b0:2f49:c5f1:66ef718c4bbc","label":"appArguments","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"4acc1328:63e4:4a6e:f5d3:63f2cf6b4e41","label":"handlesRegularExceptionWithMessage","type":"Function","slug":"","lc":7,"lang":"java","cc":1},{"id":"ab3fd4f5:7b13:cb9a:0c21:53996d6f8d6c","label":"handlesRegularExceptionWithoutMessage","type":"Function","slug":"","lc":7,"lang":"java","cc":1},{"id":"1134ff62:aef2:7767:50d1:03f050e81aae","label":"handlesExceptionWithDashDashDebug","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"ae530c69:d2db:974f:b09f:d573769b5de6","label":"help","type":"Function","slug":"fn-commandrunnertests-java-help","lc":5,"lang":"java","cc":2},{"id":"00126d57:8b42:5ea1:8b76:3df899a63607","label":"helpNoCommand","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"6665e0d8:a39e:0b0b:aba7:e85de7a5ef6c","label":"helpUnknownCommand","type":"Function","slug":"","lc":5,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"ca727b43:4645:0fd6:0d91:f1b0d3098523","type":"calls"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"7fdde595:0c9c:e743:4cba:f241e789b760","type":"calls"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"8e63c606:5a46:8b75:d65c:967ac9a41976","type":"calls"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"0a5a1dec:1e69:f56f:060e:574f6a3764b1","type":"calls"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"96a6ad76:0c9d:b886:a834:92110845f43a","type":"calls"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"e5a5b36e:9409:6116:0bdd:1f88d30f74c1","type":"calls"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"13d69805:7334:59c7:ac44:6a088fbd4082","type":"calls"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"52914276:8985:1231:4441:5ac0cad5c3d4","type":"calls"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"39a5eb2e:4c38:ee2b:d460:cb103f1496d4","type":"calls"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"134cc83e:f5d5:7ae0:562b:e9f9ff7b0e73","type":"calls"},{"source":"bf119cf0:1638:0dd6:6199:510a22c33b09","target":"56b614c9:bc27:2fef:2dbc:4119b008ced9","type":"calls"},{"source":"9cc0f1a9:cbe9:d7e7:92f6:2035e0b37e7d","target":"56b614c9:bc27:2fef:2dbc:4119b008ced9","type":"calls"},{"source":"e6196505:06b0:2f49:c5f1:66ef718c4bbc","target":"56b614c9:bc27:2fef:2dbc:4119b008ced9","type":"calls"},{"source":"4acc1328:63e4:4a6e:f5d3:63f2cf6b4e41","target":"56b614c9:bc27:2fef:2dbc:4119b008ced9","type":"calls"},{"source":"ab3fd4f5:7b13:cb9a:0c21:53996d6f8d6c","target":"56b614c9:bc27:2fef:2dbc:4119b008ced9","type":"calls"},{"source":"1134ff62:aef2:7767:50d1:03f050e81aae","target":"56b614c9:bc27:2fef:2dbc:4119b008ced9","type":"calls"},{"source":"ae530c69:d2db:974f:b09f:d573769b5de6","target":"56b614c9:bc27:2fef:2dbc:4119b008ced9","type":"calls"},{"source":"00126d57:8b42:5ea1:8b76:3df899a63607","target":"56b614c9:bc27:2fef:2dbc:4119b008ced9","type":"calls"},{"source":"6665e0d8:a39e:0b0b:aba7:e85de7a5ef6c","target":"56b614c9:bc27:2fef:2dbc:4119b008ced9","type":"calls"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"56b614c9:bc27:2fef:2dbc:4119b008ced9","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1010,7 +1010,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

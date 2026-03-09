@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 13</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"bind","slug":"fn-javabeanbinder-java-bind","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"bind","slug":"fn-javabeanbinder-java-bind","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>bind() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,34 +911,34 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8["bind()"]
-  97aaf58f_5581_4cd8_a781_e298e3ff63bc["getValue()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| 97aaf58f_5581_4cd8_a781_e298e3ff63bc
-  276346c8_2727_33a3_4ce0_80d869a46d33["hasKnownBindableProperties()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| 276346c8_2727_33a3_4ce0_80d869a46d33
-  360212fc_d052_da48_60e2_4f5d318e66a9["getSupplier()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| 360212fc_d052_da48_60e2_4f5d318e66a9
-  daa7be44_406b_38db_426b_b7c2c38cae6a["getProperties()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| daa7be44_406b_38db_426b_b7c2c38cae6a
-  a80d4b0e_0990_4d79_6f06_65c0fd8e08df["determinePropertyName()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| a80d4b0e_0990_4d79_6f06_65c0fd8e08df
-  091d9a29_e1f2_9def_7237_b856c53b9b3e["getAnnotations()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| 091d9a29_e1f2_9def_7237_b856c53b9b3e
-  d67c3cb3_c7e9_96c8_0a77_2e2c355c8c8f["of()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| d67c3cb3_c7e9_96c8_0a77_2e2c355c8c8f
-  d971de81_ad67_277f_617c_bb8f1c4b98d8["isSettable()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| d971de81_ad67_277f_617c_bb8f1c4b98d8
-  a88074cd_89ee_a56c_ff10_0b47dfe2e751["setValue()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| a88074cd_89ee_a56c_ff10_0b47dfe2e751
-  ec30a190_789f_d122_ede1_0762f2d0ab2c["equals()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| ec30a190_789f_d122_ede1_0762f2d0ab2c
-  14e08680_72f9_c3ed_7199_afd1d6c2d83d["getName()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| 14e08680_72f9_c3ed_7199_afd1d6c2d83d
-  fc1bac55_cedc_abcc_fc60_8ff59b7375f6["get()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| fc1bac55_cedc_abcc_fc60_8ff59b7375f6
-  8e1937d9_4c37_2a08_87b0_a0f86350734b["getType()"]
-  cc3b585f_c3c6_618b_a1df_49442ea28ed8 -->|calls| 8e1937d9_4c37_2a08_87b0_a0f86350734b
-  style cc3b585f_c3c6_618b_a1df_49442ea28ed8 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  dbd86971_3b60_03ac_c3a6_f6b798648845["bind()"]
+  f05b4649_8a50_56ce_e0ba_883a7079b8c0["getValue()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| f05b4649_8a50_56ce_e0ba_883a7079b8c0
+  108c291c_357d_cd3d_e605_b7a248a256d2["hasKnownBindableProperties()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| 108c291c_357d_cd3d_e605_b7a248a256d2
+  974885a0_9297_7318_6cd3_9cf2125ca827["getSupplier()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| 974885a0_9297_7318_6cd3_9cf2125ca827
+  11710ca3_9a2a_b128_9bf1_22d4c58fed58["getProperties()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| 11710ca3_9a2a_b128_9bf1_22d4c58fed58
+  5a4c4e9b_02be_08ac_9917_a434a4dddb8e["determinePropertyName()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| 5a4c4e9b_02be_08ac_9917_a434a4dddb8e
+  ca5db999_67e0_a7f5_8fe5_0d2bc545c272["getAnnotations()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| ca5db999_67e0_a7f5_8fe5_0d2bc545c272
+  7439c39d_c2cd_f631_a6f9_8f58efd16fff["of()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| 7439c39d_c2cd_f631_a6f9_8f58efd16fff
+  58b18573_e9a8_74e7_6f7e_c25ee73d1125["isSettable()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| 58b18573_e9a8_74e7_6f7e_c25ee73d1125
+  bfd3d8b2_be8a_0ced_3291_de69f67fc104["setValue()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| bfd3d8b2_be8a_0ced_3291_de69f67fc104
+  f92161a4_6304_a11f_cb89_12f7f7ca70e8["equals()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| f92161a4_6304_a11f_cb89_12f7f7ca70e8
+  a8651b44_45ce_6e3e_1156_dfb45f6ddce3["getName()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| a8651b44_45ce_6e3e_1156_dfb45f6ddce3
+  6a16b3da_ce08_4233_1ea0_cd5203127f81["get()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| 6a16b3da_ce08_4233_1ea0_cd5203127f81
+  0923d096_bb8e_8d81_f054_a1f48045b834["getType()"]
+  dbd86971_3b60_03ac_c3a6_f6b798648845 -->|calls| 0923d096_bb8e_8d81_f054_a1f48045b834
+  style dbd86971_3b60_03ac_c3a6_f6b798648845 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -946,7 +946,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-javabeanbinder-java-bind"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","label":"bind","type":"Function","slug":"fn-javabeanbinder-java-bind","lc":12,"lang":"java","cc":13},{"id":"97aaf58f:5581:4cd8:a781:e298e3ff63bc","label":"getValue","type":"Function","slug":"fn-javabeanbinder-java-getvalue","lc":18,"lang":"java","cc":2,"cbc":3},{"id":"276346c8:2727:33a3:4ce0:80d869a46d33","label":"hasKnownBindableProperties","type":"Function","slug":"fn-javabeanbinder-java-hasknownbindableproperties","lc":9,"lang":"java","cc":3,"cbc":1},{"id":"360212fc:d052:da48:60e2:4f5d318e66a9","label":"getSupplier","type":"Function","slug":"fn-javabeanbinder-java-getsupplier","lc":13,"lang":"java","cc":3,"cbc":1},{"id":"daa7be44:406b:38db:426b:b7c2c38cae6a","label":"getProperties","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"a80d4b0e:0990:4d79:6f06:65c0fd8e08df","label":"determinePropertyName","type":"Function","slug":"fn-javabeanbinder-java-determinepropertyname","lc":8,"lang":"java","cc":2,"cbc":1},{"id":"091d9a29:e1f2:9def:7237:b856c53b9b3e","label":"getAnnotations","type":"Function","slug":"","lc":8,"lang":"java","cbc":2},{"id":"d67c3cb3:c7e9:96c8:0a77:2e2c355c8c8f","label":"of","type":"Function","slug":"fn-javabeanbinder-java-of","lc":5,"lang":"java","cc":3,"cbc":1},{"id":"d971de81:ad67:277f:617c:bb8f1c4b98d8","label":"isSettable","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"a88074cd:89ee:a56c:ff10:0b47dfe2e751","label":"setValue","type":"Function","slug":"","lc":10,"lang":"java","cc":1,"cbc":1},{"id":"ec30a190:789f:d122:ede1:0762f2d0ab2c","label":"equals","type":"Function","slug":"fn-configurationpropertyname-java-equals","lc":24,"lang":"java","cc":6,"cbc":13},{"id":"14e08680:72f9:c3ed:7199:afd1d6c2d83d","label":"getName","type":"Function","slug":"fn-javabeanbinder-java-getname","lc":3,"lang":"java","cbc":7},{"id":"fc1bac55:cedc:abcc:fc60:8ff59b7375f6","label":"get","type":"Function","slug":"fn-javabeanbinder-java-get","lc":22,"lang":"java","cc":5,"cbc":5},{"id":"8e1937d9:4c37:2a08:87b0:a0f86350734b","label":"getType","type":"Function","slug":"fn-javabeanbinder-java-gettype","lc":3,"lang":"java","cc":1,"cbc":5},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"97aaf58f:5581:4cd8:a781:e298e3ff63bc","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"276346c8:2727:33a3:4ce0:80d869a46d33","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"360212fc:d052:da48:60e2:4f5d318e66a9","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"daa7be44:406b:38db:426b:b7c2c38cae6a","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"a80d4b0e:0990:4d79:6f06:65c0fd8e08df","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"091d9a29:e1f2:9def:7237:b856c53b9b3e","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"d67c3cb3:c7e9:96c8:0a77:2e2c355c8c8f","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"d971de81:ad67:277f:617c:bb8f1c4b98d8","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"a88074cd:89ee:a56c:ff10:0b47dfe2e751","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"ec30a190:789f:d122:ede1:0762f2d0ab2c","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"14e08680:72f9:c3ed:7199:afd1d6c2d83d","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"fc1bac55:cedc:abcc:fc60:8ff59b7375f6","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"8e1937d9:4c37:2a08:87b0:a0f86350734b","type":"calls"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"cc3b585f:c3c6:618b:a1df:49442ea28ed8","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"dbd86971:3b60:03ac:c3a6:f6b798648845","label":"bind","type":"Function","slug":"fn-javabeanbinder-java-bind","lc":12,"lang":"java","cc":13},{"id":"f05b4649:8a50:56ce:e0ba:883a7079b8c0","label":"getValue","type":"Function","slug":"fn-javabeanbinder-java-getvalue","lc":18,"lang":"java","cc":2,"cbc":3},{"id":"108c291c:357d:cd3d:e605:b7a248a256d2","label":"hasKnownBindableProperties","type":"Function","slug":"fn-javabeanbinder-java-hasknownbindableproperties","lc":9,"lang":"java","cc":3,"cbc":1},{"id":"974885a0:9297:7318:6cd3:9cf2125ca827","label":"getSupplier","type":"Function","slug":"fn-javabeanbinder-java-getsupplier","lc":13,"lang":"java","cc":3,"cbc":1},{"id":"11710ca3:9a2a:b128:9bf1:22d4c58fed58","label":"getProperties","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"5a4c4e9b:02be:08ac:9917:a434a4dddb8e","label":"determinePropertyName","type":"Function","slug":"fn-javabeanbinder-java-determinepropertyname","lc":8,"lang":"java","cc":2,"cbc":1},{"id":"ca5db999:67e0:a7f5:8fe5:0d2bc545c272","label":"getAnnotations","type":"Function","slug":"","lc":8,"lang":"java","cbc":2},{"id":"7439c39d:c2cd:f631:a6f9:8f58efd16fff","label":"of","type":"Function","slug":"fn-javabeanbinder-java-of","lc":5,"lang":"java","cc":3,"cbc":1},{"id":"58b18573:e9a8:74e7:6f7e:c25ee73d1125","label":"isSettable","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"bfd3d8b2:be8a:0ced:3291:de69f67fc104","label":"setValue","type":"Function","slug":"","lc":10,"lang":"java","cc":1,"cbc":1},{"id":"f92161a4:6304:a11f:cb89:12f7f7ca70e8","label":"equals","type":"Function","slug":"fn-configurationpropertyname-java-equals","lc":24,"lang":"java","cc":6,"cbc":13},{"id":"a8651b44:45ce:6e3e:1156:dfb45f6ddce3","label":"getName","type":"Function","slug":"fn-javabeanbinder-java-getname","lc":3,"lang":"java","cbc":7},{"id":"6a16b3da:ce08:4233:1ea0:cd5203127f81","label":"get","type":"Function","slug":"fn-javabeanbinder-java-get-2","lc":7,"lang":"java","cc":1,"cbc":5},{"id":"0923d096:bb8e:8d81:f054:a1f48045b834","label":"getType","type":"Function","slug":"fn-javabeanbinder-java-gettype","lc":3,"lang":"java","cc":1,"cbc":5},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"f05b4649:8a50:56ce:e0ba:883a7079b8c0","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"108c291c:357d:cd3d:e605:b7a248a256d2","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"974885a0:9297:7318:6cd3:9cf2125ca827","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"11710ca3:9a2a:b128:9bf1:22d4c58fed58","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"5a4c4e9b:02be:08ac:9917:a434a4dddb8e","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"ca5db999:67e0:a7f5:8fe5:0d2bc545c272","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"7439c39d:c2cd:f631:a6f9:8f58efd16fff","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"58b18573:e9a8:74e7:6f7e:c25ee73d1125","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"bfd3d8b2:be8a:0ced:3291:de69f67fc104","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"f92161a4:6304:a11f:cb89:12f7f7ca70e8","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"a8651b44:45ce:6e3e:1156:dfb45f6ddce3","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"6a16b3da:ce08:4233:1ea0:cd5203127f81","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"0923d096:bb8e:8d81:f054:a1f48045b834","type":"calls"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"dbd86971:3b60:03ac:c3a6:f6b798648845","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -986,7 +986,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 
@@ -1005,7 +1005,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li><a href="/fn-javabeanbinder-java-determinepropertyname.html">determinePropertyName()</a></li><li><a href="/fn-configurationpropertyname-java-equals.html">equals()</a></li><li><a href="/fn-javabeanbinder-java-get.html">get()</a></li><li>getAnnotations()</li><li><a href="/fn-javabeanbinder-java-getname.html">getName()</a></li><li>getProperties()</li><li><a href="/fn-javabeanbinder-java-getsupplier.html">getSupplier()</a></li><li><a href="/fn-javabeanbinder-java-gettype.html">getType()</a></li><li><a href="/fn-javabeanbinder-java-getvalue.html">getValue()</a></li><li><a href="/fn-javabeanbinder-java-hasknownbindableproperties.html">hasKnownBindableProperties()</a></li><li>isSettable()</li><li><a href="/fn-javabeanbinder-java-of.html">of()</a></li><li>setValue()</li></ul>
+      <ul><li><a href="/fn-javabeanbinder-java-determinepropertyname.html">determinePropertyName()</a></li><li><a href="/fn-configurationpropertyname-java-equals.html">equals()</a></li><li><a href="/fn-javabeanbinder-java-get-2.html">get()</a></li><li>getAnnotations()</li><li><a href="/fn-javabeanbinder-java-getname.html">getName()</a></li><li>getProperties()</li><li><a href="/fn-javabeanbinder-java-getsupplier.html">getSupplier()</a></li><li><a href="/fn-javabeanbinder-java-gettype.html">getType()</a></li><li><a href="/fn-javabeanbinder-java-getvalue.html">getValue()</a></li><li><a href="/fn-javabeanbinder-java-hasknownbindableproperties.html">hasKnownBindableProperties()</a></li><li>isSettable()</li><li><a href="/fn-javabeanbinder-java-of.html">of()</a></li><li>setValue()</li></ul>
     </div>
     
 

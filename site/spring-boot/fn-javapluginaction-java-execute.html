@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 16</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"execute","slug":"fn-javapluginaction-java-execute","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"execute","slug":"fn-javapluginaction-java-execute","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>execute() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,38 +911,38 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  8fe8fa63_0e81_f495_ad11_d5973f38d226["execute()"]
-  94b3c95b_bbc2_bab4_a85a_0f3cf6f3bb14["execute()"]
-  94b3c95b_bbc2_bab4_a85a_0f3cf6f3bb14 -->|calls| 8fe8fa63_0e81_f495_ad11_d5973f38d226
-  94b3c95b_bbc2_bab4_a85a_0f3cf6f3bb14["execute()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 94b3c95b_bbc2_bab4_a85a_0f3cf6f3bb14
-  485c2ee6_a47a_10f7_3a16_545301c28bf7["classifyJarTask()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 485c2ee6_a47a_10f7_3a16_545301c28bf7
-  6744fb51_65aa_ec39_4632_ba1dccfaec4f["configureBuildTask()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 6744fb51_65aa_ec39_4632_ba1dccfaec4f
-  32ab8600_6787_e34e_cb97_26abeedef6cd["configureProductionRuntimeClasspathConfiguration()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 32ab8600_6787_e34e_cb97_26abeedef6cd
-  87dafd88_9336_2e0f_27b9_6b8119f3204b["configureDevelopmentOnlyConfiguration()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 87dafd88_9336_2e0f_27b9_6b8119f3204b
-  dfb01570_27a3_d644_c88b_4e7bc127c13d["configureTestAndDevelopmentOnlyConfiguration()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| dfb01570_27a3_d644_c88b_4e7bc127c13d
-  566b251f_5856_4aba_c44d_b6a936c7a794["configureResolveMainClassNameTask()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 566b251f_5856_4aba_c44d_b6a936c7a794
-  5076a36c_6e48_2db2_5f2c_fdf5e02e0b0e["configureBootJarTask()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 5076a36c_6e48_2db2_5f2c_fdf5e02e0b0e
-  3e4edcc5_d123_c692_f36d_8ef50d47a08d["configureBootBuildImageTask()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 3e4edcc5_d123_c692_f36d_8ef50d47a08d
-  623297c4_6da7_397f_a88b_ffaeb3e7f77c["configureArtifactPublication()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 623297c4_6da7_397f_a88b_ffaeb3e7f77c
-  2f12bb0b_bfba_1a71_dedc_540e967fce1a["configureBootRunTask()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 2f12bb0b_bfba_1a71_dedc_540e967fce1a
-  0b3798e1_4321_1178_8d2f_d91aca17317c["configureResolveMainTestClassNameTask()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 0b3798e1_4321_1178_8d2f_d91aca17317c
-  30a6cafb_81fb_700d_767d_02c77697797b["configureBootTestRunTask()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 30a6cafb_81fb_700d_767d_02c77697797b
-  350b4236_8591_db70_8946_f3b2ddd06c3b["configureParametersCompilerArg()"]
-  8fe8fa63_0e81_f495_ad11_d5973f38d226 -->|calls| 350b4236_8591_db70_8946_f3b2ddd06c3b
-  style 8fe8fa63_0e81_f495_ad11_d5973f38d226 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a194bff2_c419_ac45_4cec_b7a84a7457d8["execute()"]
+  ece6d974_ca2a_56e5_3986_acdb379436ec["execute()"]
+  ece6d974_ca2a_56e5_3986_acdb379436ec -->|calls| a194bff2_c419_ac45_4cec_b7a84a7457d8
+  ece6d974_ca2a_56e5_3986_acdb379436ec["execute()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| ece6d974_ca2a_56e5_3986_acdb379436ec
+  6a96631f_aec8_f6e1_e0d7_126bafc30cb3["classifyJarTask()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| 6a96631f_aec8_f6e1_e0d7_126bafc30cb3
+  804bcd49_cdae_d776_0129_30b43293c053["configureBuildTask()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| 804bcd49_cdae_d776_0129_30b43293c053
+  166a6347_ca91_d273_aa5b_a039ab71789a["configureProductionRuntimeClasspathConfiguration()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| 166a6347_ca91_d273_aa5b_a039ab71789a
+  98132aaf_f307_ece2_6eb8_397fa8f2b875["configureDevelopmentOnlyConfiguration()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| 98132aaf_f307_ece2_6eb8_397fa8f2b875
+  ed974134_5fff_e0b0_6fd4_860142c39055["configureTestAndDevelopmentOnlyConfiguration()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| ed974134_5fff_e0b0_6fd4_860142c39055
+  dc82766e_0a70_266e_d434_1d2599511676["configureResolveMainClassNameTask()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| dc82766e_0a70_266e_d434_1d2599511676
+  64aafec6_220c_98bd_52c3_998fe59f5628["configureBootJarTask()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| 64aafec6_220c_98bd_52c3_998fe59f5628
+  68f8b461_f8cf_9e7e_14d7_4d348fe47dd2["configureBootBuildImageTask()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| 68f8b461_f8cf_9e7e_14d7_4d348fe47dd2
+  7d66b5c5_d092_0a66_b86b_4945485b86d8["configureArtifactPublication()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| 7d66b5c5_d092_0a66_b86b_4945485b86d8
+  13333df4_436d_9e5a_a224_19dd49a40e85["configureBootRunTask()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| 13333df4_436d_9e5a_a224_19dd49a40e85
+  80d4776d_9a43_e596_6d6d_53e7e47dfff8["configureResolveMainTestClassNameTask()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| 80d4776d_9a43_e596_6d6d_53e7e47dfff8
+  edd85964_37db_d032_1bda_e9978f083908["configureBootTestRunTask()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| edd85964_37db_d032_1bda_e9978f083908
+  e4e1a746_4c25_bc13_484c_a7b612584c51["configureParametersCompilerArg()"]
+  a194bff2_c419_ac45_4cec_b7a84a7457d8 -->|calls| e4e1a746_4c25_bc13_484c_a7b612584c51
+  style a194bff2_c419_ac45_4cec_b7a84a7457d8 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -950,7 +950,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-javapluginaction-java-execute"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"8fe8fa63:0e81:f495:ad11:d5973f38d226","label":"execute","type":"Function","slug":"fn-javapluginaction-java-execute","lc":19,"lang":"java","cc":16,"cbc":1},{"id":"94b3c95b:bbc2:bab4:a85a:0f3cf6f3bb14","label":"execute","type":"Function","slug":"fn-javapluginaction-java-execute-2","lc":9,"lang":"java","cc":3,"cbc":1},{"id":"485c2ee6:a47a:10f7:3a16:545301c28bf7","label":"classifyJarTask","type":"Function","slug":"","lc":5,"lang":"java","cbc":1},{"id":"6744fb51:65aa:ec39:4632:ba1dccfaec4f","label":"configureBuildTask","type":"Function","slug":"","lc":5,"lang":"java","cbc":1},{"id":"32ab8600:6787:e34e:cb97:26abeedef6cd","label":"configureProductionRuntimeClasspathConfiguration","type":"Function","slug":"","lc":19,"lang":"java","cbc":1},{"id":"87dafd88:9336:2e0f:27b9:6b8119f3204b","label":"configureDevelopmentOnlyConfiguration","type":"Function","slug":"","lc":10,"lang":"java","cbc":1},{"id":"dfb01570:27a3:d644:c88b:4e7bc127c13d","label":"configureTestAndDevelopmentOnlyConfiguration","type":"Function","slug":"","lc":12,"lang":"java","cbc":1},{"id":"566b251f:5856:4aba:c44d:b6a936c7a794","label":"configureResolveMainClassNameTask","type":"Function","slug":"fn-javapluginaction-java-configureresolvemainclassnametask","lc":26,"lang":"java","cc":3,"cbc":1},{"id":"5076a36c:6e48:2db2:5f2c:fdf5e02e0b0e","label":"configureBootJarTask","type":"Function","slug":"fn-javapluginaction-java-configurebootjartask","lc":31,"lang":"java","cc":4,"cbc":1},{"id":"3e4edcc5:d123:c692:f36d:8ef50d47a08d","label":"configureBootBuildImageTask","type":"Function","slug":"fn-javapluginaction-java-configurebootbuildimagetask","lc":7,"lang":"java","cc":1,"cbc":1},{"id":"623297c4:6da7:397f:a88b:ffaeb3e7f77c","label":"configureArtifactPublication","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"2f12bb0b:bfba:1a71:dedc:540e967fce1a","label":"configureBootRunTask","type":"Function","slug":"fn-javapluginaction-java-configurebootruntask","lc":15,"lang":"java","cc":4,"cbc":1},{"id":"0b3798e1:4321:1178:8d2f:d91aca17317c","label":"configureResolveMainTestClassNameTask","type":"Function","slug":"fn-javapluginaction-java-configureresolvemaintestclassnametask","lc":16,"lang":"java","cc":1,"cbc":1},{"id":"30a6cafb:81fb:700d:767d:02c77697797b","label":"configureBootTestRunTask","type":"Function","slug":"fn-javapluginaction-java-configureboottestruntask","lc":15,"lang":"java","cc":4,"cbc":1},{"id":"350b4236:8591:db70:8946:f3b2ddd06c3b","label":"configureParametersCompilerArg","type":"Function","slug":"","lc":8,"lang":"java","cbc":1},{"id":"025dd24c:01e6:bffc:4464:a7822f06632a","label":"configureSpringBootStarterTestToDependOnJUnitPlatformLauncher","type":"Function","slug":"","lc":8,"lang":"java","cbc":1},{"id":"18dcc016:3196:ed94:c56d:cf6f2bf271d0","label":"configureAdditionalMetadataLocations","type":"Function","slug":"fn-javapluginaction-java-configureadditionalmetadatalocations","lc":5,"lang":"java","cc":2,"cbc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"94b3c95b:bbc2:bab4:a85a:0f3cf6f3bb14","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"485c2ee6:a47a:10f7:3a16:545301c28bf7","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"6744fb51:65aa:ec39:4632:ba1dccfaec4f","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"32ab8600:6787:e34e:cb97:26abeedef6cd","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"87dafd88:9336:2e0f:27b9:6b8119f3204b","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"dfb01570:27a3:d644:c88b:4e7bc127c13d","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"566b251f:5856:4aba:c44d:b6a936c7a794","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"5076a36c:6e48:2db2:5f2c:fdf5e02e0b0e","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"3e4edcc5:d123:c692:f36d:8ef50d47a08d","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"623297c4:6da7:397f:a88b:ffaeb3e7f77c","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"2f12bb0b:bfba:1a71:dedc:540e967fce1a","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"0b3798e1:4321:1178:8d2f:d91aca17317c","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"30a6cafb:81fb:700d:767d:02c77697797b","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"350b4236:8591:db70:8946:f3b2ddd06c3b","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"025dd24c:01e6:bffc:4464:a7822f06632a","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"18dcc016:3196:ed94:c56d:cf6f2bf271d0","type":"calls"},{"source":"94b3c95b:bbc2:bab4:a85a:0f3cf6f3bb14","target":"8fe8fa63:0e81:f495:ad11:d5973f38d226","type":"calls"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"8fe8fa63:0e81:f495:ad11:d5973f38d226","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a194bff2:c419:ac45:4cec:b7a84a7457d8","label":"execute","type":"Function","slug":"fn-javapluginaction-java-execute","lc":19,"lang":"java","cc":16,"cbc":1},{"id":"ece6d974:ca2a:56e5:3986:acdb379436ec","label":"execute","type":"Function","slug":"fn-javapluginaction-java-execute-2","lc":9,"lang":"java","cc":3,"cbc":1},{"id":"6a96631f:aec8:f6e1:e0d7:126bafc30cb3","label":"classifyJarTask","type":"Function","slug":"","lc":5,"lang":"java","cbc":1},{"id":"804bcd49:cdae:d776:0129:30b43293c053","label":"configureBuildTask","type":"Function","slug":"","lc":5,"lang":"java","cbc":1},{"id":"166a6347:ca91:d273:aa5b:a039ab71789a","label":"configureProductionRuntimeClasspathConfiguration","type":"Function","slug":"","lc":19,"lang":"java","cbc":1},{"id":"98132aaf:f307:ece2:6eb8:397fa8f2b875","label":"configureDevelopmentOnlyConfiguration","type":"Function","slug":"","lc":10,"lang":"java","cbc":1},{"id":"ed974134:5fff:e0b0:6fd4:860142c39055","label":"configureTestAndDevelopmentOnlyConfiguration","type":"Function","slug":"","lc":12,"lang":"java","cbc":1},{"id":"dc82766e:0a70:266e:d434:1d2599511676","label":"configureResolveMainClassNameTask","type":"Function","slug":"fn-javapluginaction-java-configureresolvemainclassnametask","lc":26,"lang":"java","cc":3,"cbc":1},{"id":"64aafec6:220c:98bd:52c3:998fe59f5628","label":"configureBootJarTask","type":"Function","slug":"fn-javapluginaction-java-configurebootjartask","lc":31,"lang":"java","cc":4,"cbc":1},{"id":"68f8b461:f8cf:9e7e:14d7:4d348fe47dd2","label":"configureBootBuildImageTask","type":"Function","slug":"fn-javapluginaction-java-configurebootbuildimagetask","lc":7,"lang":"java","cc":1,"cbc":1},{"id":"7d66b5c5:d092:0a66:b86b:4945485b86d8","label":"configureArtifactPublication","type":"Function","slug":"","lc":3,"lang":"java","cbc":1},{"id":"13333df4:436d:9e5a:a224:19dd49a40e85","label":"configureBootRunTask","type":"Function","slug":"fn-javapluginaction-java-configurebootruntask","lc":15,"lang":"java","cc":4,"cbc":1},{"id":"80d4776d:9a43:e596:6d6d:53e7e47dfff8","label":"configureResolveMainTestClassNameTask","type":"Function","slug":"fn-javapluginaction-java-configureresolvemaintestclassnametask","lc":16,"lang":"java","cc":1,"cbc":1},{"id":"edd85964:37db:d032:1bda:e9978f083908","label":"configureBootTestRunTask","type":"Function","slug":"fn-javapluginaction-java-configureboottestruntask","lc":15,"lang":"java","cc":4,"cbc":1},{"id":"e4e1a746:4c25:bc13:484c:a7b612584c51","label":"configureParametersCompilerArg","type":"Function","slug":"","lc":8,"lang":"java","cbc":1},{"id":"60373e88:ec98:5d8d:9f32:5fa0c9e4ffe5","label":"configureSpringBootStarterTestToDependOnJUnitPlatformLauncher","type":"Function","slug":"","lc":8,"lang":"java","cbc":1},{"id":"002bc8bd:f9b7:5a0c:32e0:d9e0009c451e","label":"configureAdditionalMetadataLocations","type":"Function","slug":"fn-javapluginaction-java-configureadditionalmetadatalocations","lc":5,"lang":"java","cc":2,"cbc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"ece6d974:ca2a:56e5:3986:acdb379436ec","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"6a96631f:aec8:f6e1:e0d7:126bafc30cb3","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"804bcd49:cdae:d776:0129:30b43293c053","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"166a6347:ca91:d273:aa5b:a039ab71789a","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"98132aaf:f307:ece2:6eb8:397fa8f2b875","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"ed974134:5fff:e0b0:6fd4:860142c39055","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"dc82766e:0a70:266e:d434:1d2599511676","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"64aafec6:220c:98bd:52c3:998fe59f5628","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"68f8b461:f8cf:9e7e:14d7:4d348fe47dd2","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"7d66b5c5:d092:0a66:b86b:4945485b86d8","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"13333df4:436d:9e5a:a224:19dd49a40e85","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"80d4776d:9a43:e596:6d6d:53e7e47dfff8","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"edd85964:37db:d032:1bda:e9978f083908","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"e4e1a746:4c25:bc13:484c:a7b612584c51","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"60373e88:ec98:5d8d:9f32:5fa0c9e4ffe5","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"002bc8bd:f9b7:5a0c:32e0:d9e0009c451e","type":"calls"},{"source":"ece6d974:ca2a:56e5:3986:acdb379436ec","target":"a194bff2:c419:ac45:4cec:b7a84a7457d8","type":"calls"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"a194bff2:c419:ac45:4cec:b7a84a7457d8","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -997,7 +997,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 

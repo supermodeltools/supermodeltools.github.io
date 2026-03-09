@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"createArtifact","slug":"fn-includefiltertests-java-createartifact","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"createArtifact","slug":"fn-includefiltertests-java-createartifact","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>createArtifact() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,22 +911,22 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  a9b9a79a_9684_e030_ea3b_2e9383d3f2f3["createArtifact()"]
-  96149c6f_a157_e24b_6cdb_d55c2c5f251b["includeSimple()"]
-  96149c6f_a157_e24b_6cdb_d55c2c5f251b -->|calls| a9b9a79a_9684_e030_ea3b_2e9383d3f2f3
-  5d1700d5_fc5c_25d8_1c45_7522a1ffecac["includeGroupIdNoMatch()"]
-  5d1700d5_fc5c_25d8_1c45_7522a1ffecac -->|calls| a9b9a79a_9684_e030_ea3b_2e9383d3f2f3
-  aa92b72d_f4fa_a4f9_6747_878dde569167["includeArtifactIdNoMatch()"]
-  aa92b72d_f4fa_a4f9_6747_878dde569167 -->|calls| a9b9a79a_9684_e030_ea3b_2e9383d3f2f3
-  2cde1edc_1496_01ee_fa89_f2966a91612b["includeClassifier()"]
-  2cde1edc_1496_01ee_fa89_f2966a91612b -->|calls| a9b9a79a_9684_e030_ea3b_2e9383d3f2f3
-  056fd947_ac34_d29d_3f77_ebb8f15de716["includeClassifierNoTargetClassifier()"]
-  056fd947_ac34_d29d_3f77_ebb8f15de716 -->|calls| a9b9a79a_9684_e030_ea3b_2e9383d3f2f3
-  3fb4e0a9_3a9b_71c6_2853_201684b02b0f["includeClassifierNoMatch()"]
-  3fb4e0a9_3a9b_71c6_2853_201684b02b0f -->|calls| a9b9a79a_9684_e030_ea3b_2e9383d3f2f3
-  3beb905f_d6b9_ae99_c18c_92e581c40702["includeMulti()"]
-  3beb905f_d6b9_ae99_c18c_92e581c40702 -->|calls| a9b9a79a_9684_e030_ea3b_2e9383d3f2f3
-  style a9b9a79a_9684_e030_ea3b_2e9383d3f2f3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  4cfa15f0_84ec_de14_8656_5e49bd739267["createArtifact()"]
+  a60f09b5_c263_79f3_6e5c_d360545a360e["includeSimple()"]
+  a60f09b5_c263_79f3_6e5c_d360545a360e -->|calls| 4cfa15f0_84ec_de14_8656_5e49bd739267
+  ad665051_43c3_3506_e264_b0aeea562947["includeGroupIdNoMatch()"]
+  ad665051_43c3_3506_e264_b0aeea562947 -->|calls| 4cfa15f0_84ec_de14_8656_5e49bd739267
+  cf21486a_0b47_6373_d68d_93f95178e7a0["includeArtifactIdNoMatch()"]
+  cf21486a_0b47_6373_d68d_93f95178e7a0 -->|calls| 4cfa15f0_84ec_de14_8656_5e49bd739267
+  a0d08115_2658_febc_c1cb_ed14c854cf7b["includeClassifier()"]
+  a0d08115_2658_febc_c1cb_ed14c854cf7b -->|calls| 4cfa15f0_84ec_de14_8656_5e49bd739267
+  fb7e8dee_1893_b22a_4673_3533c5c1d8b6["includeClassifierNoTargetClassifier()"]
+  fb7e8dee_1893_b22a_4673_3533c5c1d8b6 -->|calls| 4cfa15f0_84ec_de14_8656_5e49bd739267
+  70ea460e_1ab8_db3f_75f5_ec857c06ab3e["includeClassifierNoMatch()"]
+  70ea460e_1ab8_db3f_75f5_ec857c06ab3e -->|calls| 4cfa15f0_84ec_de14_8656_5e49bd739267
+  e5f0d073_c6f4_0217_7e51_b0fcc399c60f["includeMulti()"]
+  e5f0d073_c6f4_0217_7e51_b0fcc399c60f -->|calls| 4cfa15f0_84ec_de14_8656_5e49bd739267
+  style 4cfa15f0_84ec_de14_8656_5e49bd739267 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -934,7 +934,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-includefiltertests-java-createartifact"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"a9b9a79a:9684:e030:ea3b:2e9383d3f2f3","label":"createArtifact","type":"Function","slug":"fn-includefiltertests-java-createartifact","lc":7,"lang":"java","cbc":7},{"id":"96149c6f:a157:e24b:6cdb:d55c2c5f251b","label":"includeSimple","type":"Function","slug":"fn-includefiltertests-java-includesimple","lc":8,"lang":"java","cc":2},{"id":"5d1700d5:fc5c:25d8:1c45:7522a1ffecac","label":"includeGroupIdNoMatch","type":"Function","slug":"fn-includefiltertests-java-includegroupidnomatch","lc":7,"lang":"java","cc":2},{"id":"aa92b72d:f4fa:a4f9:6747:878dde569167","label":"includeArtifactIdNoMatch","type":"Function","slug":"fn-includefiltertests-java-includeartifactidnomatch","lc":7,"lang":"java","cc":2},{"id":"2cde1edc:1496:01ee:fa89:f2966a91612b","label":"includeClassifier","type":"Function","slug":"fn-includefiltertests-java-includeclassifier","lc":8,"lang":"java","cc":2},{"id":"056fd947:ac34:d29d:3f77:ebb8f15de716","label":"includeClassifierNoTargetClassifier","type":"Function","slug":"fn-includefiltertests-java-includeclassifiernotargetclassifier","lc":7,"lang":"java","cc":2},{"id":"3fb4e0a9:3a9b:71c6:2853:201684b02b0f","label":"includeClassifierNoMatch","type":"Function","slug":"fn-includefiltertests-java-includeclassifiernomatch","lc":7,"lang":"java","cc":2},{"id":"3beb905f:d6b9:ae99:c18c:92e581c40702","label":"includeMulti","type":"Function","slug":"fn-includefiltertests-java-includemulti","lc":12,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"96149c6f:a157:e24b:6cdb:d55c2c5f251b","target":"a9b9a79a:9684:e030:ea3b:2e9383d3f2f3","type":"calls"},{"source":"5d1700d5:fc5c:25d8:1c45:7522a1ffecac","target":"a9b9a79a:9684:e030:ea3b:2e9383d3f2f3","type":"calls"},{"source":"aa92b72d:f4fa:a4f9:6747:878dde569167","target":"a9b9a79a:9684:e030:ea3b:2e9383d3f2f3","type":"calls"},{"source":"2cde1edc:1496:01ee:fa89:f2966a91612b","target":"a9b9a79a:9684:e030:ea3b:2e9383d3f2f3","type":"calls"},{"source":"056fd947:ac34:d29d:3f77:ebb8f15de716","target":"a9b9a79a:9684:e030:ea3b:2e9383d3f2f3","type":"calls"},{"source":"3fb4e0a9:3a9b:71c6:2853:201684b02b0f","target":"a9b9a79a:9684:e030:ea3b:2e9383d3f2f3","type":"calls"},{"source":"3beb905f:d6b9:ae99:c18c:92e581c40702","target":"a9b9a79a:9684:e030:ea3b:2e9383d3f2f3","type":"calls"},{"source":"a9b9a79a:9684:e030:ea3b:2e9383d3f2f3","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"a9b9a79a:9684:e030:ea3b:2e9383d3f2f3","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"4cfa15f0:84ec:de14:8656:5e49bd739267","label":"createArtifact","type":"Function","slug":"fn-includefiltertests-java-createartifact","lc":7,"lang":"java","cbc":7},{"id":"a60f09b5:c263:79f3:6e5c:d360545a360e","label":"includeSimple","type":"Function","slug":"fn-includefiltertests-java-includesimple","lc":8,"lang":"java","cc":2},{"id":"ad665051:43c3:3506:e264:b0aeea562947","label":"includeGroupIdNoMatch","type":"Function","slug":"fn-includefiltertests-java-includegroupidnomatch","lc":7,"lang":"java","cc":2},{"id":"cf21486a:0b47:6373:d68d:93f95178e7a0","label":"includeArtifactIdNoMatch","type":"Function","slug":"fn-includefiltertests-java-includeartifactidnomatch","lc":7,"lang":"java","cc":2},{"id":"a0d08115:2658:febc:c1cb:ed14c854cf7b","label":"includeClassifier","type":"Function","slug":"fn-includefiltertests-java-includeclassifier","lc":8,"lang":"java","cc":2},{"id":"fb7e8dee:1893:b22a:4673:3533c5c1d8b6","label":"includeClassifierNoTargetClassifier","type":"Function","slug":"fn-includefiltertests-java-includeclassifiernotargetclassifier","lc":7,"lang":"java","cc":2},{"id":"70ea460e:1ab8:db3f:75f5:ec857c06ab3e","label":"includeClassifierNoMatch","type":"Function","slug":"fn-includefiltertests-java-includeclassifiernomatch","lc":7,"lang":"java","cc":2},{"id":"e5f0d073:c6f4:0217:7e51:b0fcc399c60f","label":"includeMulti","type":"Function","slug":"fn-includefiltertests-java-includemulti","lc":12,"lang":"java","cc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"a60f09b5:c263:79f3:6e5c:d360545a360e","target":"4cfa15f0:84ec:de14:8656:5e49bd739267","type":"calls"},{"source":"ad665051:43c3:3506:e264:b0aeea562947","target":"4cfa15f0:84ec:de14:8656:5e49bd739267","type":"calls"},{"source":"cf21486a:0b47:6373:d68d:93f95178e7a0","target":"4cfa15f0:84ec:de14:8656:5e49bd739267","type":"calls"},{"source":"a0d08115:2658:febc:c1cb:ed14c854cf7b","target":"4cfa15f0:84ec:de14:8656:5e49bd739267","type":"calls"},{"source":"fb7e8dee:1893:b22a:4673:3533c5c1d8b6","target":"4cfa15f0:84ec:de14:8656:5e49bd739267","type":"calls"},{"source":"70ea460e:1ab8:db3f:75f5:ec857c06ab3e","target":"4cfa15f0:84ec:de14:8656:5e49bd739267","type":"calls"},{"source":"e5f0d073:c6f4:0217:7e51:b0fcc399c60f","target":"4cfa15f0:84ec:de14:8656:5e49bd739267","type":"calls"},{"source":"4cfa15f0:84ec:de14:8656:5e49bd739267","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"4cfa15f0:84ec:de14:8656:5e49bd739267","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -969,7 +969,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 

@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"getAutoConfigurationClassNames","slug":"fn-autoconfigurationimportselectortests-java-getautoconfigurationclassnames","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"getAutoConfigurationClassNames","slug":"fn-autoconfigurationimportselectortests-java-getautoconfigurationclassnames","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>getAutoConfigurationClassNames() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,28 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  4ad82045_1efc_0887_4792_e534750e2db7["getAutoConfigurationClassNames()"]
-  590f837e_b478_1a4a_2065_c4d9803de672["importsAreSelectedWhenUsingEnableAutoConfiguration()"]
-  590f837e_b478_1a4a_2065_c4d9803de672 -->|calls| 4ad82045_1efc_0887_4792_e534750e2db7
-  519db2bf_9818_0cb3_6f99_71fe84a4286e["classExclusionsAreApplied()"]
-  519db2bf_9818_0cb3_6f99_71fe84a4286e -->|calls| 4ad82045_1efc_0887_4792_e534750e2db7
-  5650aea2_ac78_7680_8ee1_d67beaf331d5["classExclusionsAreAppliedWhenUsingSpringBootApplication()"]
-  5650aea2_ac78_7680_8ee1_d67beaf331d5 -->|calls| 4ad82045_1efc_0887_4792_e534750e2db7
-  2050473f_604a_cc26_7266_4d8230dc447b["classNamesExclusionsAreApplied()"]
-  2050473f_604a_cc26_7266_4d8230dc447b -->|calls| 4ad82045_1efc_0887_4792_e534750e2db7
-  8ae4e326_a91d_91e9_8a6f_1de3ab71f6f6["classNamesExclusionsAreAppliedWhenUsingSpringBootApplication()"]
-  8ae4e326_a91d_91e9_8a6f_1de3ab71f6f6 -->|calls| 4ad82045_1efc_0887_4792_e534750e2db7
-  6218730a_66be_c066_0d30_913cb167ced5["propertyExclusionsAreApplied()"]
-  6218730a_66be_c066_0d30_913cb167ced5 -->|calls| 4ad82045_1efc_0887_4792_e534750e2db7
-  70cf4d31_7742_458f_1ecf_e015ceabb361["testSeveralPropertyExclusionsAreApplied()"]
-  70cf4d31_7742_458f_1ecf_e015ceabb361 -->|calls| 4ad82045_1efc_0887_4792_e534750e2db7
-  a80e70a3_d81a_b2ac_dc2c_f93249184f78["combinedExclusionsAreApplied()"]
-  a80e70a3_d81a_b2ac_dc2c_f93249184f78 -->|calls| 4ad82045_1efc_0887_4792_e534750e2db7
-  b93e41e9_17ce_7b3d_8381_672a4f1e452c["load()"]
-  4ad82045_1efc_0887_4792_e534750e2db7 -->|calls| b93e41e9_17ce_7b3d_8381_672a4f1e452c
-  ac0d3e9a_6b42_78b2_e85c_4eb5ecef5dac["getCandidates()"]
-  4ad82045_1efc_0887_4792_e534750e2db7 -->|calls| ac0d3e9a_6b42_78b2_e85c_4eb5ecef5dac
-  style 4ad82045_1efc_0887_4792_e534750e2db7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  8ac37569_32cc_70a0_2cb9_dcb58359af76["getAutoConfigurationClassNames()"]
+  b8f76ee9_b7aa_88e6_df51_2fa24c097687["importsAreSelectedWhenUsingEnableAutoConfiguration()"]
+  b8f76ee9_b7aa_88e6_df51_2fa24c097687 -->|calls| 8ac37569_32cc_70a0_2cb9_dcb58359af76
+  3f98694b_9963_6c4f_85c9_492e195c0a9f["classExclusionsAreApplied()"]
+  3f98694b_9963_6c4f_85c9_492e195c0a9f -->|calls| 8ac37569_32cc_70a0_2cb9_dcb58359af76
+  ef263907_2d81_8b47_3ce5_e40c08711427["classExclusionsAreAppliedWhenUsingSpringBootApplication()"]
+  ef263907_2d81_8b47_3ce5_e40c08711427 -->|calls| 8ac37569_32cc_70a0_2cb9_dcb58359af76
+  687c3725_a47d_9698_b2f7_f16e9b954088["classNamesExclusionsAreApplied()"]
+  687c3725_a47d_9698_b2f7_f16e9b954088 -->|calls| 8ac37569_32cc_70a0_2cb9_dcb58359af76
+  9956dd80_5da1_e109_a719_064bbb23254c["classNamesExclusionsAreAppliedWhenUsingSpringBootApplication()"]
+  9956dd80_5da1_e109_a719_064bbb23254c -->|calls| 8ac37569_32cc_70a0_2cb9_dcb58359af76
+  21f8cf57_c4a7_0557_ec66_5b5bb229cf55["propertyExclusionsAreApplied()"]
+  21f8cf57_c4a7_0557_ec66_5b5bb229cf55 -->|calls| 8ac37569_32cc_70a0_2cb9_dcb58359af76
+  e573e502_521f_2dff_ae5b_64aa64151beb["testSeveralPropertyExclusionsAreApplied()"]
+  e573e502_521f_2dff_ae5b_64aa64151beb -->|calls| 8ac37569_32cc_70a0_2cb9_dcb58359af76
+  80f64355_c580_c10a_acb8_58d7af214cfc["combinedExclusionsAreApplied()"]
+  80f64355_c580_c10a_acb8_58d7af214cfc -->|calls| 8ac37569_32cc_70a0_2cb9_dcb58359af76
+  dd31c10e_a731_6782_af02_896bd9746bf1["load()"]
+  8ac37569_32cc_70a0_2cb9_dcb58359af76 -->|calls| dd31c10e_a731_6782_af02_896bd9746bf1
+  8caab29d_9532_92c4_ff27_6de81673f7c5["getCandidates()"]
+  8ac37569_32cc_70a0_2cb9_dcb58359af76 -->|calls| 8caab29d_9532_92c4_ff27_6de81673f7c5
+  style 8ac37569_32cc_70a0_2cb9_dcb58359af76 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -940,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-autoconfigurationimportselectortests-java-getautoconfigurationclassnames"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"4ad82045:1efc:0887:4792:e534750e2db7","label":"getAutoConfigurationClassNames","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-getautoconfigurationclassnames","lc":4,"lang":"java","cc":2,"cbc":8},{"id":"b93e41e9:17ce:7b3d:8381:672a4f1e452c","label":"load","type":"Function","slug":"fn-importcandidates-java-load","lc":12,"lang":"java","cc":4,"cbc":6},{"id":"ac0d3e9a:6b42:78b2:e85c:4eb5ecef5dac","label":"getCandidates","type":"Function","slug":"fn-importcandidates-java-getcandidates","lc":3,"lang":"java","cbc":4},{"id":"590f837e:b478:1a4a:2065:c4d9803de672","label":"importsAreSelectedWhenUsingEnableAutoConfiguration","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-importsareselectedwhenusingenableautoconfiguration","lc":6,"lang":"java","cc":3},{"id":"519db2bf:9818:0cb3:6f99:71fe84a4286e","label":"classExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classexclusionsareapplied","lc":6,"lang":"java","cc":3},{"id":"5650aea2:ac78:7680:8ee1:d67beaf331d5","label":"classExclusionsAreAppliedWhenUsingSpringBootApplication","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classexclusionsareappliedwhenusingspringbootapplication","lc":6,"lang":"java","cc":3},{"id":"2050473f:604a:cc26:7266:4d8230dc447b","label":"classNamesExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classnamesexclusionsareapplied","lc":6,"lang":"java","cc":3},{"id":"8ae4e326:a91d:91e9:8a6f:1de3ab71f6f6","label":"classNamesExclusionsAreAppliedWhenUsingSpringBootApplication","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classnamesexclusionsareappliedwhenusingspringbootapplication","lc":6,"lang":"java","cc":3},{"id":"6218730a:66be:c066:0d30:913cb167ced5","label":"propertyExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-propertyexclusionsareapplied","lc":7,"lang":"java","cc":3},{"id":"70cf4d31:7742:458f:1ecf:e015ceabb361","label":"testSeveralPropertyExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-testseveralpropertyexclusionsareapplied","lc":6,"lang":"java","cc":3,"cbc":3},{"id":"a80e70a3:d81a:b2ac:dc2c:f93249184f78","label":"combinedExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-combinedexclusionsareapplied","lc":8,"lang":"java","cc":3},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"4ad82045:1efc:0887:4792:e534750e2db7","target":"b93e41e9:17ce:7b3d:8381:672a4f1e452c","type":"calls"},{"source":"4ad82045:1efc:0887:4792:e534750e2db7","target":"ac0d3e9a:6b42:78b2:e85c:4eb5ecef5dac","type":"calls"},{"source":"590f837e:b478:1a4a:2065:c4d9803de672","target":"4ad82045:1efc:0887:4792:e534750e2db7","type":"calls"},{"source":"519db2bf:9818:0cb3:6f99:71fe84a4286e","target":"4ad82045:1efc:0887:4792:e534750e2db7","type":"calls"},{"source":"5650aea2:ac78:7680:8ee1:d67beaf331d5","target":"4ad82045:1efc:0887:4792:e534750e2db7","type":"calls"},{"source":"2050473f:604a:cc26:7266:4d8230dc447b","target":"4ad82045:1efc:0887:4792:e534750e2db7","type":"calls"},{"source":"8ae4e326:a91d:91e9:8a6f:1de3ab71f6f6","target":"4ad82045:1efc:0887:4792:e534750e2db7","type":"calls"},{"source":"6218730a:66be:c066:0d30:913cb167ced5","target":"4ad82045:1efc:0887:4792:e534750e2db7","type":"calls"},{"source":"70cf4d31:7742:458f:1ecf:e015ceabb361","target":"4ad82045:1efc:0887:4792:e534750e2db7","type":"calls"},{"source":"a80e70a3:d81a:b2ac:dc2c:f93249184f78","target":"4ad82045:1efc:0887:4792:e534750e2db7","type":"calls"},{"source":"4ad82045:1efc:0887:4792:e534750e2db7","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"4ad82045:1efc:0887:4792:e534750e2db7","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"8ac37569:32cc:70a0:2cb9:dcb58359af76","label":"getAutoConfigurationClassNames","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-getautoconfigurationclassnames","lc":4,"lang":"java","cc":2,"cbc":8},{"id":"dd31c10e:a731:6782:af02:896bd9746bf1","label":"load","type":"Function","slug":"fn-importcandidates-java-load","lc":12,"lang":"java","cc":4,"cbc":6},{"id":"8caab29d:9532:92c4:ff27:6de81673f7c5","label":"getCandidates","type":"Function","slug":"fn-importcandidates-java-getcandidates","lc":3,"lang":"java","cbc":4},{"id":"b8f76ee9:b7aa:88e6:df51:2fa24c097687","label":"importsAreSelectedWhenUsingEnableAutoConfiguration","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-importsareselectedwhenusingenableautoconfiguration","lc":6,"lang":"java","cc":3},{"id":"3f98694b:9963:6c4f:85c9:492e195c0a9f","label":"classExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classexclusionsareapplied","lc":6,"lang":"java","cc":3},{"id":"ef263907:2d81:8b47:3ce5:e40c08711427","label":"classExclusionsAreAppliedWhenUsingSpringBootApplication","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classexclusionsareappliedwhenusingspringbootapplication","lc":6,"lang":"java","cc":3},{"id":"687c3725:a47d:9698:b2f7:f16e9b954088","label":"classNamesExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classnamesexclusionsareapplied","lc":6,"lang":"java","cc":3},{"id":"9956dd80:5da1:e109:a719:064bbb23254c","label":"classNamesExclusionsAreAppliedWhenUsingSpringBootApplication","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-classnamesexclusionsareappliedwhenusingspringbootapplication","lc":6,"lang":"java","cc":3},{"id":"21f8cf57:c4a7:0557:ec66:5b5bb229cf55","label":"propertyExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-propertyexclusionsareapplied","lc":7,"lang":"java","cc":3},{"id":"e573e502:521f:2dff:ae5b:64aa64151beb","label":"testSeveralPropertyExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-testseveralpropertyexclusionsareapplied","lc":6,"lang":"java","cc":3,"cbc":3},{"id":"80f64355:c580:c10a:acb8:58d7af214cfc","label":"combinedExclusionsAreApplied","type":"Function","slug":"fn-autoconfigurationimportselectortests-java-combinedexclusionsareapplied","lc":8,"lang":"java","cc":3},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"8ac37569:32cc:70a0:2cb9:dcb58359af76","target":"dd31c10e:a731:6782:af02:896bd9746bf1","type":"calls"},{"source":"8ac37569:32cc:70a0:2cb9:dcb58359af76","target":"8caab29d:9532:92c4:ff27:6de81673f7c5","type":"calls"},{"source":"b8f76ee9:b7aa:88e6:df51:2fa24c097687","target":"8ac37569:32cc:70a0:2cb9:dcb58359af76","type":"calls"},{"source":"3f98694b:9963:6c4f:85c9:492e195c0a9f","target":"8ac37569:32cc:70a0:2cb9:dcb58359af76","type":"calls"},{"source":"ef263907:2d81:8b47:3ce5:e40c08711427","target":"8ac37569:32cc:70a0:2cb9:dcb58359af76","type":"calls"},{"source":"687c3725:a47d:9698:b2f7:f16e9b954088","target":"8ac37569:32cc:70a0:2cb9:dcb58359af76","type":"calls"},{"source":"9956dd80:5da1:e109:a719:064bbb23254c","target":"8ac37569:32cc:70a0:2cb9:dcb58359af76","type":"calls"},{"source":"21f8cf57:c4a7:0557:ec66:5b5bb229cf55","target":"8ac37569:32cc:70a0:2cb9:dcb58359af76","type":"calls"},{"source":"e573e502:521f:2dff:ae5b:64aa64151beb","target":"8ac37569:32cc:70a0:2cb9:dcb58359af76","type":"calls"},{"source":"80f64355:c580:c10a:acb8:58d7af214cfc","target":"8ac37569:32cc:70a0:2cb9:dcb58359af76","type":"calls"},{"source":"8ac37569:32cc:70a0:2cb9:dcb58359af76","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"8ac37569:32cc:70a0:2cb9:dcb58359af76","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -972,7 +972,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 

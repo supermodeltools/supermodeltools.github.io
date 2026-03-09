@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/taskexecution.html" class="pill pill-orange">TaskExecution</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"createCustomAsyncExecutor","slug":"fn-taskexecutionautoconfigurationtests-java-createcustomasyncexecutor","type":"Function"},"subdomain":{"name":"TaskExecution","slug":"subdomain-taskexecution"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"createCustomAsyncExecutor","slug":"fn-taskexecutionautoconfigurationtests-java-createcustomasyncexecutor","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/taskexecution.html">TaskExecution</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>createCustomAsyncExecutor() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,28 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  810c4be8_ec7e_19e8_9ed5_2abaa0203291["createCustomAsyncExecutor()"]
-  0b42e719_d521_3ca2_a7b0_8dde8f0b1872["enableAsyncUsesCustomExecutorIfPresent()"]
-  0b42e719_d521_3ca2_a7b0_8dde8f0b1872 -->|calls| 810c4be8_ec7e_19e8_9ed5_2abaa0203291
-  cd0ce62f_ffbe_c920_1298_519e297e3fc1["enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasCustomTaskExecutor()"]
-  cd0ce62f_ffbe_c920_1298_519e297e3fc1 -->|calls| 810c4be8_ec7e_19e8_9ed5_2abaa0203291
-  68010ed4_e92e_987a_211b_6efe25d904b3["enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasCustomTaskExecutorWithReservedName()"]
-  68010ed4_e92e_987a_211b_6efe25d904b3 -->|calls| 810c4be8_ec7e_19e8_9ed5_2abaa0203291
-  995c213c_1f63_1437_74ba_5d579e787ddd["enableAsyncUsesAsyncConfigurerWhenModeIsForce()"]
-  995c213c_1f63_1437_74ba_5d579e787ddd -->|calls| 810c4be8_ec7e_19e8_9ed5_2abaa0203291
-  5489830d_7851_a846_e138_0015cf322224["enableAsyncLinksToCustomTaskExecutorWhenAsyncConfigurerOverridesIt()"]
-  5489830d_7851_a846_e138_0015cf322224 -->|calls| 810c4be8_ec7e_19e8_9ed5_2abaa0203291
-  421ff881_f4e6_f73c_1c56_aa4292fd0c1b["enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasPrimaryCustomTaskExecutor()"]
-  421ff881_f4e6_f73c_1c56_aa4292fd0c1b -->|calls| 810c4be8_ec7e_19e8_9ed5_2abaa0203291
-  0714da5c_c2ea_1ea1_16ec_d4fd4f0a2544["shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorIsDefined()"]
-  0714da5c_c2ea_1ea1_16ec_d4fd4f0a2544 -->|calls| 810c4be8_ec7e_19e8_9ed5_2abaa0203291
-  e8d926ef_f731_21bb_36f0_8f42d975bcad["shouldNotAliasApplicationTaskExecutorWhenApplicationTaskExecutorIsMissing()"]
-  e8d926ef_f731_21bb_36f0_8f42d975bcad -->|calls| 810c4be8_ec7e_19e8_9ed5_2abaa0203291
-  4065f302_e212_8ee6_1bce_a7991ecd78a6["shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorRegisteredAsSingleton()"]
-  4065f302_e212_8ee6_1bce_a7991ecd78a6 -->|calls| 810c4be8_ec7e_19e8_9ed5_2abaa0203291
-  2eb3a92f_ba91_a253_8262_24a31a4f9e58["shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorAliasIsDefined()"]
-  2eb3a92f_ba91_a253_8262_24a31a4f9e58 -->|calls| 810c4be8_ec7e_19e8_9ed5_2abaa0203291
-  style 810c4be8_ec7e_19e8_9ed5_2abaa0203291 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  cf7a25d0_7b28_41bf_80b3_da08bcd781f9["createCustomAsyncExecutor()"]
+  4a348387_58ee_fc4a_e8f1_a18b3fc41d56["enableAsyncUsesCustomExecutorIfPresent()"]
+  4a348387_58ee_fc4a_e8f1_a18b3fc41d56 -->|calls| cf7a25d0_7b28_41bf_80b3_da08bcd781f9
+  7d785ba0_098b_7b95_55b1_ee12d0165a9b["enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasCustomTaskExecutor()"]
+  7d785ba0_098b_7b95_55b1_ee12d0165a9b -->|calls| cf7a25d0_7b28_41bf_80b3_da08bcd781f9
+  dd4d64d6_2b9a_3fbb_41f9_0f84e4784dcb["enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasCustomTaskExecutorWithReservedName()"]
+  dd4d64d6_2b9a_3fbb_41f9_0f84e4784dcb -->|calls| cf7a25d0_7b28_41bf_80b3_da08bcd781f9
+  0e6956eb_db21_22cc_6571_ac5a8812dd74["enableAsyncUsesAsyncConfigurerWhenModeIsForce()"]
+  0e6956eb_db21_22cc_6571_ac5a8812dd74 -->|calls| cf7a25d0_7b28_41bf_80b3_da08bcd781f9
+  aad6e43c_45c4_325f_b537_68100bd6bc77["enableAsyncLinksToCustomTaskExecutorWhenAsyncConfigurerOverridesIt()"]
+  aad6e43c_45c4_325f_b537_68100bd6bc77 -->|calls| cf7a25d0_7b28_41bf_80b3_da08bcd781f9
+  c31956f7_ff79_a487_e8c6_45b66ca3140b["enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasPrimaryCustomTaskExecutor()"]
+  c31956f7_ff79_a487_e8c6_45b66ca3140b -->|calls| cf7a25d0_7b28_41bf_80b3_da08bcd781f9
+  978d69af_b70d_41fb_7591_b5c632f1760d["shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorIsDefined()"]
+  978d69af_b70d_41fb_7591_b5c632f1760d -->|calls| cf7a25d0_7b28_41bf_80b3_da08bcd781f9
+  2500d60e_f49c_9d56_911a_2f01307ac317["shouldNotAliasApplicationTaskExecutorWhenApplicationTaskExecutorIsMissing()"]
+  2500d60e_f49c_9d56_911a_2f01307ac317 -->|calls| cf7a25d0_7b28_41bf_80b3_da08bcd781f9
+  dd14aacb_f031_d008_3ca0_1aa6eb55a156["shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorRegisteredAsSingleton()"]
+  dd14aacb_f031_d008_3ca0_1aa6eb55a156 -->|calls| cf7a25d0_7b28_41bf_80b3_da08bcd781f9
+  113cdf61_eeda_7d4a_ab01_f3a4728f5af3["shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorAliasIsDefined()"]
+  113cdf61_eeda_7d4a_ab01_f3a4728f5af3 -->|calls| cf7a25d0_7b28_41bf_80b3_da08bcd781f9
+  style cf7a25d0_7b28_41bf_80b3_da08bcd781f9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -940,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-taskexecutionautoconfigurationtests-java-createcustomasyncexecutor"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","label":"createCustomAsyncExecutor","type":"Function","slug":"fn-taskexecutionautoconfigurationtests-java-createcustomasyncexecutor","lc":5,"lang":"java","cbc":10},{"id":"0b42e719:d521:3ca2:a7b0:8dde8f0b1872","label":"enableAsyncUsesCustomExecutorIfPresent","type":"Function","slug":"","lc":13,"lang":"java","cc":2},{"id":"cd0ce62f:ffbe:c920:1298:519e297e3fc1","label":"enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasCustomTaskExecutor","type":"Function","slug":"","lc":15,"lang":"java","cc":2},{"id":"68010ed4:e92e:987a:211b:6efe25d904b3","label":"enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasCustomTaskExecutorWithReservedName","type":"Function","slug":"","lc":15,"lang":"java","cc":2},{"id":"995c213c:1f63:1437:74ba:5d579e787ddd","label":"enableAsyncUsesAsyncConfigurerWhenModeIsForce","type":"Function","slug":"","lc":22,"lang":"java","cc":2},{"id":"5489830d:7851:a846:e138:0015cf322224","label":"enableAsyncLinksToCustomTaskExecutorWhenAsyncConfigurerOverridesIt","type":"Function","slug":"","lc":31,"lang":"java","cc":2},{"id":"421ff881:f4e6:f73c:1c56:aa4292fd0c1b","label":"enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasPrimaryCustomTaskExecutor","type":"Function","slug":"","lc":16,"lang":"java","cc":2},{"id":"0714da5c:c2ea:1ea1:16ec:d4fd4f0a2544","label":"shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorIsDefined","type":"Function","slug":"","lc":14,"lang":"java","cc":1},{"id":"e8d926ef:f731:21bb:36f0:8f42d975bcad","label":"shouldNotAliasApplicationTaskExecutorWhenApplicationTaskExecutorIsMissing","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"4065f302:e212:8ee6:1bce:a7991ecd78a6","label":"shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorRegisteredAsSingleton","type":"Function","slug":"","lc":15,"lang":"java","cc":1},{"id":"2eb3a92f:ba91:a253:8262:24a31a4f9e58","label":"shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorAliasIsDefined","type":"Function","slug":"","lc":18,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:TaskExecution","label":"TaskExecution","type":"Subdomain","slug":"subdomain-taskexecution"}],"edges":[{"source":"0b42e719:d521:3ca2:a7b0:8dde8f0b1872","target":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","type":"calls"},{"source":"cd0ce62f:ffbe:c920:1298:519e297e3fc1","target":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","type":"calls"},{"source":"68010ed4:e92e:987a:211b:6efe25d904b3","target":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","type":"calls"},{"source":"995c213c:1f63:1437:74ba:5d579e787ddd","target":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","type":"calls"},{"source":"5489830d:7851:a846:e138:0015cf322224","target":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","type":"calls"},{"source":"421ff881:f4e6:f73c:1c56:aa4292fd0c1b","target":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","type":"calls"},{"source":"0714da5c:c2ea:1ea1:16ec:d4fd4f0a2544","target":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","type":"calls"},{"source":"e8d926ef:f731:21bb:36f0:8f42d975bcad","target":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","type":"calls"},{"source":"4065f302:e212:8ee6:1bce:a7991ecd78a6","target":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","type":"calls"},{"source":"2eb3a92f:ba91:a253:8262:24a31a4f9e58","target":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","type":"calls"},{"source":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"810c4be8:ec7e:19e8:9ed5:2abaa0203291","target":"subdomain:GradlePlugin:TaskExecution","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","label":"createCustomAsyncExecutor","type":"Function","slug":"fn-taskexecutionautoconfigurationtests-java-createcustomasyncexecutor","lc":5,"lang":"java","cbc":10},{"id":"4a348387:58ee:fc4a:e8f1:a18b3fc41d56","label":"enableAsyncUsesCustomExecutorIfPresent","type":"Function","slug":"","lc":13,"lang":"java","cc":2},{"id":"7d785ba0:098b:7b95:55b1:ee12d0165a9b","label":"enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasCustomTaskExecutor","type":"Function","slug":"","lc":15,"lang":"java","cc":2},{"id":"dd4d64d6:2b9a:3fbb:41f9:0f84e4784dcb","label":"enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasCustomTaskExecutorWithReservedName","type":"Function","slug":"","lc":15,"lang":"java","cc":2},{"id":"0e6956eb:db21:22cc:6571:ac5a8812dd74","label":"enableAsyncUsesAsyncConfigurerWhenModeIsForce","type":"Function","slug":"","lc":22,"lang":"java","cc":2},{"id":"aad6e43c:45c4:325f:b537:68100bd6bc77","label":"enableAsyncLinksToCustomTaskExecutorWhenAsyncConfigurerOverridesIt","type":"Function","slug":"","lc":31,"lang":"java","cc":2},{"id":"c31956f7:ff79:a487:e8c6:45b66ca3140b","label":"enableAsyncUsesAutoConfiguredExecutorWhenModeIsForceAndHasPrimaryCustomTaskExecutor","type":"Function","slug":"","lc":16,"lang":"java","cc":2},{"id":"978d69af:b70d:41fb:7591:b5c632f1760d","label":"shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorIsDefined","type":"Function","slug":"","lc":14,"lang":"java","cc":1},{"id":"2500d60e:f49c:9d56:911a:2f01307ac317","label":"shouldNotAliasApplicationTaskExecutorWhenApplicationTaskExecutorIsMissing","type":"Function","slug":"","lc":8,"lang":"java","cc":1},{"id":"dd14aacb:f031:d008:3ca0:1aa6eb55a156","label":"shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorRegisteredAsSingleton","type":"Function","slug":"","lc":15,"lang":"java","cc":1},{"id":"113cdf61:eeda:7d4a:ab01:f3a4728f5af3","label":"shouldNotAliasApplicationTaskExecutorWhenBootstrapExecutorAliasIsDefined","type":"Function","slug":"","lc":18,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"4a348387:58ee:fc4a:e8f1:a18b3fc41d56","target":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","type":"calls"},{"source":"7d785ba0:098b:7b95:55b1:ee12d0165a9b","target":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","type":"calls"},{"source":"dd4d64d6:2b9a:3fbb:41f9:0f84e4784dcb","target":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","type":"calls"},{"source":"0e6956eb:db21:22cc:6571:ac5a8812dd74","target":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","type":"calls"},{"source":"aad6e43c:45c4:325f:b537:68100bd6bc77","target":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","type":"calls"},{"source":"c31956f7:ff79:a487:e8c6:45b66ca3140b","target":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","type":"calls"},{"source":"978d69af:b70d:41fb:7591:b5c632f1760d","target":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","type":"calls"},{"source":"2500d60e:f49c:9d56:911a:2f01307ac317","target":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","type":"calls"},{"source":"dd14aacb:f031:d008:3ca0:1aa6eb55a156","target":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","type":"calls"},{"source":"113cdf61:eeda:7d4a:ab01:f3a4728f5af3","target":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","type":"calls"},{"source":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"cf7a25d0:7b28:41bf:80b3:da08bcd781f9","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -973,7 +973,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-taskexecution.html">TaskExecution</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 

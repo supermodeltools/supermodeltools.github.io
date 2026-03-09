@@ -811,7 +811,7 @@ a.pill:hover {
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the getNames() function in JavaBeanBinderTests.java from the spring-boot codebase.","image":["https://repos.supermodeltools.com/images/share/fn-javabeanbindertests-java-getnames.svg"],"name":"getNames() — spring-boot Function Reference","url":"https://repos.supermodeltools.com/fn-javabeanbindertests-java-getnames.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"getNames() — spring-boot Function Reference","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getNames() is a function in the spring-boot codebase."},"name":"What does getNames() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getNames() calls 1 function(s): getNames."},"name":"What does getNames() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getNames() is called by 2 function(s): getNames, getNames."},"name":"What calls getNames()?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getNames() is a function in the spring-boot codebase."},"name":"What does getNames() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getNames() calls 1 function(s): getNames."},"name":"What does getNames() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"getNames() is called by 4 function(s): bindWhenBeanWithGetIsMethodsFoundDoesNotUseIsGetter, bindWhenBeanWithGetSetIsMethodsFoundUsesGetterThatMatchesSetter, getNames, getNames."},"name":"What calls getNames()?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -870,11 +870,11 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 1</span>
-        <span class="pill">called by 2</span>
+        <span class="pill">called by 4</span>
         
         
         
@@ -886,7 +886,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"cb":2,"co":1,"el":977,"et":{"calls":3},"lc":3,"sl":975}</script>
+      <script type="application/json" id="entity-profile-data">{"cb":4,"co":1,"el":977,"et":{"calls":5},"lc":3,"sl":975}</script>
     </div>
 
     
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"getNames","slug":"fn-javabeanbindertests-java-getnames","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"getNames","slug":"fn-javabeanbindertests-java-getnames","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>getNames() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ad448dd5_a290_ea6d_8a57_07326dd7f8e5["getNames()"]
-  5586d56b_1989_1b75_aedf_8b999e9ef3b6["getNames()"]
-  5586d56b_1989_1b75_aedf_8b999e9ef3b6 -->|calls| ad448dd5_a290_ea6d_8a57_07326dd7f8e5
-  ad20b315_e8c1_7024_323d_bec7e2637c1a["getNames()"]
-  ad20b315_e8c1_7024_323d_bec7e2637c1a -->|calls| ad448dd5_a290_ea6d_8a57_07326dd7f8e5
-  5586d56b_1989_1b75_aedf_8b999e9ef3b6["getNames()"]
-  ad448dd5_a290_ea6d_8a57_07326dd7f8e5 -->|calls| 5586d56b_1989_1b75_aedf_8b999e9ef3b6
-  style ad448dd5_a290_ea6d_8a57_07326dd7f8e5 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  ac48e2d8_fdcb_2eba_d600_fa453478803d["getNames()"]
+  9104a2cd_f81d_96af_83fc_f359c4cec284["getNames()"]
+  9104a2cd_f81d_96af_83fc_f359c4cec284 -->|calls| ac48e2d8_fdcb_2eba_d600_fa453478803d
+  8675fc89_7a6c_a4cf_4c2f_ccf0a17e2698["getNames()"]
+  8675fc89_7a6c_a4cf_4c2f_ccf0a17e2698 -->|calls| ac48e2d8_fdcb_2eba_d600_fa453478803d
+  446a75d6_d87f_5638_63d1_4930ee46ef39["bindWhenBeanWithGetSetIsMethodsFoundUsesGetterThatMatchesSetter()"]
+  446a75d6_d87f_5638_63d1_4930ee46ef39 -->|calls| ac48e2d8_fdcb_2eba_d600_fa453478803d
+  eb3d8020_f3fb_4250_9c99_9a6ccac7eea9["bindWhenBeanWithGetIsMethodsFoundDoesNotUseIsGetter()"]
+  eb3d8020_f3fb_4250_9c99_9a6ccac7eea9 -->|calls| ac48e2d8_fdcb_2eba_d600_fa453478803d
+  8675fc89_7a6c_a4cf_4c2f_ccf0a17e2698["getNames()"]
+  ac48e2d8_fdcb_2eba_d600_fa453478803d -->|calls| 8675fc89_7a6c_a4cf_4c2f_ccf0a17e2698
+  style ac48e2d8_fdcb_2eba_d600_fa453478803d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +930,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-javabeanbindertests-java-getnames"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ad448dd5:a290:ea6d:8a57:07326dd7f8e5","label":"getNames","type":"Function","slug":"fn-javabeanbindertests-java-getnames","lc":3,"lang":"java","cc":1,"cbc":2},{"id":"5586d56b:1989:1b75:aedf:8b999e9ef3b6","label":"getNames","type":"Function","slug":"fn-javabeanbindertests-java-getnames-2","lc":3,"lang":"java","cc":1,"cbc":3},{"id":"ad20b315:e8c1:7024:323d:bec7e2637c1a","label":"getNames","type":"Function","slug":"","lc":3,"lang":"java","cc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"ad448dd5:a290:ea6d:8a57:07326dd7f8e5","target":"5586d56b:1989:1b75:aedf:8b999e9ef3b6","type":"calls"},{"source":"5586d56b:1989:1b75:aedf:8b999e9ef3b6","target":"ad448dd5:a290:ea6d:8a57:07326dd7f8e5","type":"calls"},{"source":"ad20b315:e8c1:7024:323d:bec7e2637c1a","target":"ad448dd5:a290:ea6d:8a57:07326dd7f8e5","type":"calls"},{"source":"ad448dd5:a290:ea6d:8a57:07326dd7f8e5","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"ad448dd5:a290:ea6d:8a57:07326dd7f8e5","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"ac48e2d8:fdcb:2eba:d600:fa453478803d","label":"getNames","type":"Function","slug":"fn-javabeanbindertests-java-getnames","lc":3,"lang":"java","cc":1,"cbc":4},{"id":"8675fc89:7a6c:a4cf:4c2f:ccf0a17e2698","label":"getNames","type":"Function","slug":"","lc":3,"lang":"java","cc":1,"cbc":1},{"id":"9104a2cd:f81d:96af:83fc:f359c4cec284","label":"getNames","type":"Function","slug":"","lc":3,"lang":"java","cc":1},{"id":"446a75d6:d87f:5638:63d1:4930ee46ef39","label":"bindWhenBeanWithGetSetIsMethodsFoundUsesGetterThatMatchesSetter","type":"Function","slug":"fn-javabeanbindertests-java-bindwhenbeanwithgetsetismethodsfoundusesgetterthatmatchessetter","lc":8,"lang":"java","cc":6},{"id":"eb3d8020:f3fb:4250:9c99:9a6ccac7eea9","label":"bindWhenBeanWithGetIsMethodsFoundDoesNotUseIsGetter","type":"Function","slug":"fn-javabeanbindertests-java-bindwhenbeanwithgetismethodsfounddoesnotuseisgetter","lc":8,"lang":"java","cc":6},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"ac48e2d8:fdcb:2eba:d600:fa453478803d","target":"8675fc89:7a6c:a4cf:4c2f:ccf0a17e2698","type":"calls"},{"source":"9104a2cd:f81d:96af:83fc:f359c4cec284","target":"ac48e2d8:fdcb:2eba:d600:fa453478803d","type":"calls"},{"source":"8675fc89:7a6c:a4cf:4c2f:ccf0a17e2698","target":"ac48e2d8:fdcb:2eba:d600:fa453478803d","type":"calls"},{"source":"446a75d6:d87f:5638:63d1:4930ee46ef39","target":"ac48e2d8:fdcb:2eba:d600:fa453478803d","type":"calls"},{"source":"eb3d8020:f3fb:4250:9c99:9a6ccac7eea9","target":"ac48e2d8:fdcb:2eba:d600:fa453478803d","type":"calls"},{"source":"ac48e2d8:fdcb:2eba:d600:fa453478803d","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"ac48e2d8:fdcb:2eba:d600:fa453478803d","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -957,7 +961,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 
@@ -976,14 +980,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li><a href="/fn-javabeanbindertests-java-getnames-2.html">getNames()</a></li></ul>
+      <ul><li>getNames()</li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Called By</h2>
-      <ul><li><a href="/fn-javabeanbindertests-java-getnames-2.html">getNames()</a></li><li>getNames()</li></ul>
+      <ul><li><a href="/fn-javabeanbindertests-java-bindwhenbeanwithgetismethodsfounddoesnotuseisgetter.html">bindWhenBeanWithGetIsMethodsFoundDoesNotUseIsGetter()</a></li><li><a href="/fn-javabeanbindertests-java-bindwhenbeanwithgetsetismethodsfoundusesgetterthatmatchessetter.html">bindWhenBeanWithGetSetIsMethodsFoundUsesGetterThatMatchesSetter()</a></li><li>getNames()</li><li>getNames()</li></ul>
     </div>
     
 
@@ -1018,7 +1022,7 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What calls getNames()?</summary>
-        <div class="faq-answer">getNames() is called by 2 function(s): getNames, getNames.</div>
+        <div class="faq-answer">getNames() is called by 4 function(s): bindWhenBeanWithGetIsMethodsFoundDoesNotUseIsGetter, bindWhenBeanWithGetSetIsMethodsFoundUsesGetterThatMatchesSetter, getNames, getNames.</div>
       </details>
       
     </div>

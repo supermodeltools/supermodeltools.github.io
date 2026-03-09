@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/actions.html" class="pill pill-orange">Actions</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"isBridgeJulIntoSlf4j","slug":"fn-logbackloggingsystem-java-isbridgejulintoslf4j","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"isBridgeJulIntoSlf4j","slug":"fn-logbackloggingsystem-java-isbridgejulintoslf4j","type":"Function"},"subdomain":{"name":"Actions","slug":"subdomain-actions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/actions.html">Actions</a><span class="arch-sep">&rarr;</span>
             <span>isBridgeJulIntoSlf4j() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  d987d459_6f7c_09dd_049e_48a581af2444["isBridgeJulIntoSlf4j()"]
-  2633610f_8569_c7da_3bcc_fb5d5baf8959["configureJdkLoggingBridgeHandler()"]
-  2633610f_8569_c7da_3bcc_fb5d5baf8959 -->|calls| d987d459_6f7c_09dd_049e_48a581af2444
-  b5e08526_babc_a0aa_7a45_022cdfd9260b["isBridgeHandlerAvailable()"]
-  d987d459_6f7c_09dd_049e_48a581af2444 -->|calls| b5e08526_babc_a0aa_7a45_022cdfd9260b
-  d0d12903_ab4c_6caa_4998_f01cb3d2298a["isJulUsingASingleConsoleHandlerAtMost()"]
-  d987d459_6f7c_09dd_049e_48a581af2444 -->|calls| d0d12903_ab4c_6caa_4998_f01cb3d2298a
-  style d987d459_6f7c_09dd_049e_48a581af2444 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  74ad4fd7_deb9_2b5a_78c2_48c1e043f7a2["isBridgeJulIntoSlf4j()"]
+  a182cc12_ee3a_fd5a_c798_0a3f9d9db87f["configureJdkLoggingBridgeHandler()"]
+  a182cc12_ee3a_fd5a_c798_0a3f9d9db87f -->|calls| 74ad4fd7_deb9_2b5a_78c2_48c1e043f7a2
+  e8050730_0e38_979f_6cc4_9343547ad057["isBridgeHandlerAvailable()"]
+  74ad4fd7_deb9_2b5a_78c2_48c1e043f7a2 -->|calls| e8050730_0e38_979f_6cc4_9343547ad057
+  0d3f0f8a_9849_2b60_467d_79471337ce05["isJulUsingASingleConsoleHandlerAtMost()"]
+  74ad4fd7_deb9_2b5a_78c2_48c1e043f7a2 -->|calls| 0d3f0f8a_9849_2b60_467d_79471337ce05
+  style 74ad4fd7_deb9_2b5a_78c2_48c1e043f7a2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-logbackloggingsystem-java-isbridgejulintoslf4j"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"d987d459:6f7c:09dd:049e:48a581af2444","label":"isBridgeJulIntoSlf4j","type":"Function","slug":"fn-logbackloggingsystem-java-isbridgejulintoslf4j","lc":3,"lang":"java","cc":2,"cbc":1},{"id":"b5e08526:babc:a0aa:7a45:022cdfd9260b","label":"isBridgeHandlerAvailable","type":"Function","slug":"fn-logbackloggingsystem-java-isbridgehandleravailable","lc":3,"lang":"java","cc":1,"cbc":3},{"id":"d0d12903:ab4c:6caa:4998:f01cb3d2298a","label":"isJulUsingASingleConsoleHandlerAtMost","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"2633610f:8569:c7da:3bcc:fb5d5baf8959","label":"configureJdkLoggingBridgeHandler","type":"Function","slug":"fn-logbackloggingsystem-java-configurejdkloggingbridgehandler","lc":11,"lang":"java","cc":2,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"d987d459:6f7c:09dd:049e:48a581af2444","target":"b5e08526:babc:a0aa:7a45:022cdfd9260b","type":"calls"},{"source":"d987d459:6f7c:09dd:049e:48a581af2444","target":"d0d12903:ab4c:6caa:4998:f01cb3d2298a","type":"calls"},{"source":"2633610f:8569:c7da:3bcc:fb5d5baf8959","target":"d987d459:6f7c:09dd:049e:48a581af2444","type":"calls"},{"source":"d987d459:6f7c:09dd:049e:48a581af2444","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"d987d459:6f7c:09dd:049e:48a581af2444","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"74ad4fd7:deb9:2b5a:78c2:48c1e043f7a2","label":"isBridgeJulIntoSlf4j","type":"Function","slug":"fn-logbackloggingsystem-java-isbridgejulintoslf4j","lc":3,"lang":"java","cc":2,"cbc":1},{"id":"e8050730:0e38:979f:6cc4:9343547ad057","label":"isBridgeHandlerAvailable","type":"Function","slug":"fn-logbackloggingsystem-java-isbridgehandleravailable","lc":3,"lang":"java","cc":1,"cbc":3},{"id":"0d3f0f8a:9849:2b60:467d:79471337ce05","label":"isJulUsingASingleConsoleHandlerAtMost","type":"Function","slug":"","lc":5,"lang":"java","cc":1,"cbc":1},{"id":"a182cc12:ee3a:fd5a:c798:0a3f9d9db87f","label":"configureJdkLoggingBridgeHandler","type":"Function","slug":"fn-logbackloggingsystem-java-configurejdkloggingbridgehandler","lc":11,"lang":"java","cc":2,"cbc":1},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Actions","label":"Actions","type":"Subdomain","slug":"subdomain-actions"}],"edges":[{"source":"74ad4fd7:deb9:2b5a:78c2:48c1e043f7a2","target":"e8050730:0e38:979f:6cc4:9343547ad057","type":"calls"},{"source":"74ad4fd7:deb9:2b5a:78c2:48c1e043f7a2","target":"0d3f0f8a:9849:2b60:467d:79471337ce05","type":"calls"},{"source":"a182cc12:ee3a:fd5a:c798:0a3f9d9db87f","target":"74ad4fd7:deb9:2b5a:78c2:48c1e043f7a2","type":"calls"},{"source":"74ad4fd7:deb9:2b5a:78c2:48c1e043f7a2","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"74ad4fd7:deb9:2b5a:78c2:48c1e043f7a2","target":"subdomain:GradlePlugin:Actions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -957,7 +957,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-actions.html">Actions</a></li></ul>
     </div>
     
 

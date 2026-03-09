@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
         <a href="/domain/gradleplugin.html" class="pill pill-green">GradlePlugin</a>
-        <a href="/subdomain/pluginregistration.html" class="pill pill-orange">PluginRegistration</a>
+        <a href="/subdomain/dsl.html" class="pill pill-orange">Dsl</a>
         
         
         <span class="pill">calls 10</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"init","slug":"fn-configurationmetadataannotationprocessor-java-init","type":"Function"},"subdomain":{"name":"PluginRegistration","slug":"subdomain-pluginregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GradlePlugin","slug":"domain-gradleplugin"},"entity":{"name":"init","slug":"fn-configurationmetadataannotationprocessor-java-init","type":"Function"},"subdomain":{"name":"Dsl","slug":"subdomain-dsl"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/gradleplugin.html">GradlePlugin</a><span class="arch-sep">&rarr;</span>
-            <a href="/pluginregistration.html">PluginRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dsl.html">Dsl</a><span class="arch-sep">&rarr;</span>
             <span>init() — spring-boot Function Reference</span>
           </div>
         </noscript>
@@ -911,28 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2["init()"]
-  0b40b718_0626_b714_c59a_8dc8faca831a["configurationPropertiesAnnotation()"]
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 -->|calls| 0b40b718_0626_b714_c59a_8dc8faca831a
-  b51af59e_1d22_f7af_befc_3604e254211b["configurationPropertiesSourceAnnotation()"]
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 -->|calls| b51af59e_1d22_f7af_befc_3604e254211b
-  8f5605ca_7126_c567_a7e4_4ab65ac80614["nestedConfigurationPropertyAnnotation()"]
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 -->|calls| 8f5605ca_7126_c567_a7e4_4ab65ac80614
-  97461d86_8573_3316_9f99_5af7d2f98a45["deprecatedConfigurationPropertyAnnotation()"]
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 -->|calls| 97461d86_8573_3316_9f99_5af7d2f98a45
-  c18debc3_4034_e05b_9f1d_70552453bd63["constructorBindingAnnotation()"]
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 -->|calls| c18debc3_4034_e05b_9f1d_70552453bd63
-  a377aa67_a2e1_c794_cb3b_1202a731e670["autowiredAnnotation()"]
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 -->|calls| a377aa67_a2e1_c794_cb3b_1202a731e670
-  a25cf164_0363_b46c_58aa_ab12e3b346ff["defaultValueAnnotation()"]
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 -->|calls| a25cf164_0363_b46c_58aa_ab12e3b346ff
-  1e2b33d9_3206_7dd4_5707_147ec46c90ce["endpointAnnotations()"]
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 -->|calls| 1e2b33d9_3206_7dd4_5707_147ec46c90ce
-  29bc34af_9a06_5e59_2115_6cd3eab82bb0["readOperationAnnotation()"]
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 -->|calls| 29bc34af_9a06_5e59_2115_6cd3eab82bb0
-  87593147_70e1_66eb_531d_6b137f698200["nameAnnotation()"]
-  95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 -->|calls| 87593147_70e1_66eb_531d_6b137f698200
-  style 95d221bf_ca81_e5d9_cdec_7dd5e3656fe2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9["init()"]
+  eba00224_ce48_d25c_4dce_b4d564dbb8af["configurationPropertiesAnnotation()"]
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 -->|calls| eba00224_ce48_d25c_4dce_b4d564dbb8af
+  de85dafc_237f_1449_6f16_0b2810fd14e1["configurationPropertiesSourceAnnotation()"]
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 -->|calls| de85dafc_237f_1449_6f16_0b2810fd14e1
+  eccac221_3c2b_0837_0296_35b734cc935b["nestedConfigurationPropertyAnnotation()"]
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 -->|calls| eccac221_3c2b_0837_0296_35b734cc935b
+  4a5a74e4_518b_8fe0_11b7_c102c6a81b5f["deprecatedConfigurationPropertyAnnotation()"]
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 -->|calls| 4a5a74e4_518b_8fe0_11b7_c102c6a81b5f
+  521ebf45_3da5_607e_571d_63e9c072ca32["constructorBindingAnnotation()"]
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 -->|calls| 521ebf45_3da5_607e_571d_63e9c072ca32
+  22db01c2_4fa1_f866_a3b5_62a3a986b35a["autowiredAnnotation()"]
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 -->|calls| 22db01c2_4fa1_f866_a3b5_62a3a986b35a
+  0cf7a422_b89e_4504_a944_da88fa795f66["defaultValueAnnotation()"]
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 -->|calls| 0cf7a422_b89e_4504_a944_da88fa795f66
+  db9a4e30_b752_11fe_e000_a7d9911c2571["endpointAnnotations()"]
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 -->|calls| db9a4e30_b752_11fe_e000_a7d9911c2571
+  091a3943_598b_070d_b40c_7d65249ed7d4["readOperationAnnotation()"]
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 -->|calls| 091a3943_598b_070d_b40c_7d65249ed7d4
+  84165264_5c05_bf48_71b5_47402410eb13["nameAnnotation()"]
+  5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 -->|calls| 84165264_5c05_bf48_71b5_47402410eb13
+  style 5d4378aa_1093_89f6_c7b9_53b7ceefb1a9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -940,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-configurationmetadataannotationprocessor-java-init"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","label":"init","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-init","lc":12,"lang":"java","cc":10},{"id":"0b40b718:0626:b714:c59a:8dc8faca831a","label":"configurationPropertiesAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-configurationpropertiesannotation","lc":3,"lang":"java","cbc":2},{"id":"b51af59e:1d22:f7af:befc:3604e254211b","label":"configurationPropertiesSourceAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-configurationpropertiessourceannotation","lc":3,"lang":"java","cbc":2},{"id":"8f5605ca:7126:c567:a7e4:4ab65ac80614","label":"nestedConfigurationPropertyAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-nestedconfigurationpropertyannotation","lc":3,"lang":"java","cbc":2},{"id":"97461d86:8573:3316:9f99:5af7d2f98a45","label":"deprecatedConfigurationPropertyAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-deprecatedconfigurationpropertyannotation","lc":3,"lang":"java","cbc":2},{"id":"c18debc3:4034:e05b:9f1d:70552453bd63","label":"constructorBindingAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-constructorbindingannotation","lc":3,"lang":"java","cbc":2},{"id":"a377aa67:a2e1:c794:cb3b:1202a731e670","label":"autowiredAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-autowiredannotation","lc":3,"lang":"java","cbc":2},{"id":"a25cf164:0363:b46c:58aa:ab12e3b346ff","label":"defaultValueAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-defaultvalueannotation","lc":3,"lang":"java","cbc":2},{"id":"1e2b33d9:3206:7dd4:5707:147ec46c90ce","label":"endpointAnnotations","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-endpointannotations","lc":4,"lang":"java","cbc":2},{"id":"29bc34af:9a06:5e59:2115:6cd3eab82bb0","label":"readOperationAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-readoperationannotation","lc":3,"lang":"java","cbc":2},{"id":"87593147:70e1:66eb:531d:6b137f698200","label":"nameAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-nameannotation","lc":3,"lang":"java","cbc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:PluginRegistration","label":"PluginRegistration","type":"Subdomain","slug":"subdomain-pluginregistration"}],"edges":[{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"0b40b718:0626:b714:c59a:8dc8faca831a","type":"calls"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"b51af59e:1d22:f7af:befc:3604e254211b","type":"calls"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"8f5605ca:7126:c567:a7e4:4ab65ac80614","type":"calls"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"97461d86:8573:3316:9f99:5af7d2f98a45","type":"calls"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"c18debc3:4034:e05b:9f1d:70552453bd63","type":"calls"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"a377aa67:a2e1:c794:cb3b:1202a731e670","type":"calls"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"a25cf164:0363:b46c:58aa:ab12e3b346ff","type":"calls"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"1e2b33d9:3206:7dd4:5707:147ec46c90ce","type":"calls"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"29bc34af:9a06:5e59:2115:6cd3eab82bb0","type":"calls"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"87593147:70e1:66eb:531d:6b137f698200","type":"calls"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"95d221bf:ca81:e5d9:cdec:7dd5e3656fe2","target":"subdomain:GradlePlugin:PluginRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","label":"init","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-init","lc":12,"lang":"java","cc":10},{"id":"eba00224:ce48:d25c:4dce:b4d564dbb8af","label":"configurationPropertiesAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-configurationpropertiesannotation","lc":3,"lang":"java","cbc":2},{"id":"de85dafc:237f:1449:6f16:0b2810fd14e1","label":"configurationPropertiesSourceAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-configurationpropertiessourceannotation","lc":3,"lang":"java","cbc":2},{"id":"eccac221:3c2b:0837:0296:35b734cc935b","label":"nestedConfigurationPropertyAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-nestedconfigurationpropertyannotation","lc":3,"lang":"java","cbc":2},{"id":"4a5a74e4:518b:8fe0:11b7:c102c6a81b5f","label":"deprecatedConfigurationPropertyAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-deprecatedconfigurationpropertyannotation","lc":3,"lang":"java","cbc":2},{"id":"521ebf45:3da5:607e:571d:63e9c072ca32","label":"constructorBindingAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-constructorbindingannotation","lc":3,"lang":"java","cbc":2},{"id":"22db01c2:4fa1:f866:a3b5:62a3a986b35a","label":"autowiredAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-autowiredannotation","lc":3,"lang":"java","cbc":2},{"id":"0cf7a422:b89e:4504:a944:da88fa795f66","label":"defaultValueAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-defaultvalueannotation","lc":3,"lang":"java","cbc":2},{"id":"db9a4e30:b752:11fe:e000:a7d9911c2571","label":"endpointAnnotations","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-endpointannotations","lc":4,"lang":"java","cbc":2},{"id":"091a3943:598b:070d:b40c:7d65249ed7d4","label":"readOperationAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-readoperationannotation","lc":3,"lang":"java","cbc":2},{"id":"84165264:5c05:bf48:71b5:47402410eb13","label":"nameAnnotation","type":"Function","slug":"fn-configurationmetadataannotationprocessor-java-nameannotation","lc":3,"lang":"java","cbc":2},{"id":"domain:GradlePlugin","label":"GradlePlugin","type":"Domain","slug":"domain-gradleplugin"},{"id":"subdomain:GradlePlugin:Dsl","label":"Dsl","type":"Subdomain","slug":"subdomain-dsl"}],"edges":[{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"eba00224:ce48:d25c:4dce:b4d564dbb8af","type":"calls"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"de85dafc:237f:1449:6f16:0b2810fd14e1","type":"calls"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"eccac221:3c2b:0837:0296:35b734cc935b","type":"calls"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"4a5a74e4:518b:8fe0:11b7:c102c6a81b5f","type":"calls"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"521ebf45:3da5:607e:571d:63e9c072ca32","type":"calls"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"22db01c2:4fa1:f866:a3b5:62a3a986b35a","type":"calls"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"0cf7a422:b89e:4504:a944:da88fa795f66","type":"calls"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"db9a4e30:b752:11fe:e000:a7d9911c2571","type":"calls"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"091a3943:598b:070d:b40c:7d65249ed7d4","type":"calls"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"84165264:5c05:bf48:71b5:47402410eb13","type":"calls"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"domain:GradlePlugin","type":"belongsTo"},{"source":"5d4378aa:1093:89f6:c7b9:53b7ceefb1a9","target":"subdomain:GradlePlugin:Dsl","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -980,7 +980,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-pluginregistration.html">PluginRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-dsl.html">Dsl</a></li></ul>
     </div>
     
 
