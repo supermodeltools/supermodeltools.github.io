@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/aten.html" class="pill pill-green">ATen</a>
-        <a href="/subdomain/dispatcher.html" class="pill pill-orange">Dispatcher</a>
+        <a href="/domain/atencore.html" class="pill pill-green">ATenCore</a>
+        <a href="/subdomain/nativekernels.html" class="pill pill-orange">NativeKernels</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATen","slug":"domain-aten"},"entity":{"name":"cpp_impl","slug":"fn-generate-kernels-py-cpp-impl","type":"Function"},"subdomain":{"name":"Dispatcher","slug":"subdomain-dispatcher"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATenCore","slug":"domain-atencore"},"entity":{"name":"cpp_impl","slug":"fn-generate-kernels-py-cpp-impl","type":"Function"},"subdomain":{"name":"NativeKernels","slug":"subdomain-nativekernels"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/aten.html">ATen</a><span class="arch-sep">&rarr;</span>
-            <a href="/dispatcher.html">Dispatcher</a><span class="arch-sep">&rarr;</span>
+            <a href="/atencore.html">ATenCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/nativekernels.html">NativeKernels</a><span class="arch-sep">&rarr;</span>
             <span>cpp_impl() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ccf6e04a_9a8b_bb3a_1041_ee880ff673f5["cpp_impl()"]
-  ed66652f_2307_d491_c4b5_add36b8966ad["cpp_impl()"]
-  ed66652f_2307_d491_c4b5_add36b8966ad -->|calls| ccf6e04a_9a8b_bb3a_1041_ee880ff673f5
-  ed66652f_2307_d491_c4b5_add36b8966ad["cpp_impl()"]
-  ccf6e04a_9a8b_bb3a_1041_ee880ff673f5 -->|calls| ed66652f_2307_d491_c4b5_add36b8966ad
-  style ccf6e04a_9a8b_bb3a_1041_ee880ff673f5 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  84d421d8_00ac_db43_921f_e939f269441f["cpp_impl()"]
+  312793e2_1af6_3233_25d8_969fa4dcc85d["cpp_impl()"]
+  312793e2_1af6_3233_25d8_969fa4dcc85d -->|calls| 84d421d8_00ac_db43_921f_e939f269441f
+  312793e2_1af6_3233_25d8_969fa4dcc85d["cpp_impl()"]
+  84d421d8_00ac_db43_921f_e939f269441f -->|calls| 312793e2_1af6_3233_25d8_969fa4dcc85d
+  style 84d421d8_00ac_db43_921f_e939f269441f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-generate-kernels-py-cpp-impl"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ccf6e04a:9a8b:bb3a:1041:ee880ff673f5","label":"cpp_impl","type":"Function","slug":"fn-generate-kernels-py-cpp-impl","lc":7,"lang":"python","cc":1,"cbc":1},{"id":"ed66652f:2307:d491:c4b5:add36b8966ad","label":"cpp_impl","type":"Function","slug":"fn-generate-kernels-py-cpp-impl-2","lc":7,"lang":"python","cc":1,"cbc":1},{"id":"domain:ATen","label":"ATen","type":"Domain","slug":"domain-aten"},{"id":"subdomain:ATen:Dispatcher","label":"Dispatcher","type":"Subdomain","slug":"subdomain-dispatcher"}],"edges":[{"source":"ccf6e04a:9a8b:bb3a:1041:ee880ff673f5","target":"ed66652f:2307:d491:c4b5:add36b8966ad","type":"calls"},{"source":"ed66652f:2307:d491:c4b5:add36b8966ad","target":"ccf6e04a:9a8b:bb3a:1041:ee880ff673f5","type":"calls"},{"source":"ccf6e04a:9a8b:bb3a:1041:ee880ff673f5","target":"domain:ATen","type":"belongsTo"},{"source":"ccf6e04a:9a8b:bb3a:1041:ee880ff673f5","target":"subdomain:ATen:Dispatcher","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"84d421d8:00ac:db43:921f:e939f269441f","label":"cpp_impl","type":"Function","slug":"fn-generate-kernels-py-cpp-impl","lc":7,"lang":"python","cc":1,"cbc":1},{"id":"312793e2:1af6:3233:25d8:969fa4dcc85d","label":"cpp_impl","type":"Function","slug":"fn-generate-kernels-py-cpp-impl-2","lc":7,"lang":"python","cc":1,"cbc":1},{"id":"domain:ATenCore","label":"ATenCore","type":"Domain","slug":"domain-atencore"},{"id":"subdomain:ATenCore:NativeKernels","label":"NativeKernels","type":"Subdomain","slug":"subdomain-nativekernels"}],"edges":[{"source":"84d421d8:00ac:db43:921f:e939f269441f","target":"312793e2:1af6:3233:25d8:969fa4dcc85d","type":"calls"},{"source":"312793e2:1af6:3233:25d8:969fa4dcc85d","target":"84d421d8:00ac:db43:921f:e939f269441f","type":"calls"},{"source":"84d421d8:00ac:db43:921f:e939f269441f","target":"domain:ATenCore","type":"belongsTo"},{"source":"84d421d8:00ac:db43:921f:e939f269441f","target":"subdomain:ATenCore:NativeKernels","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -952,14 +952,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-aten.html">ATen</a></li></ul>
+      <ul><li><a href="/domain-atencore.html">ATenCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-dispatcher.html">Dispatcher</a></li></ul>
+      <ul><li><a href="/subdomain-nativekernels.html">NativeKernels</a></li></ul>
     </div>
     
 

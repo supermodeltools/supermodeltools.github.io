@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/microbenchmarks.html" class="pill pill-orange">Microbenchmarks</a>
+        <a href="/domain/dynamobenchmark.html" class="pill pill-green">DynamoBenchmark</a>
+        <a href="/subdomain/performanceprofiling.html" class="pill pill-orange">PerformanceProfiling</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"_get_model_cls_and_config","slug":"fn-huggingface-py-get-model-cls-and-config","type":"Function"},"subdomain":{"name":"Microbenchmarks","slug":"subdomain-microbenchmarks"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBenchmark","slug":"domain-dynamobenchmark"},"entity":{"name":"_get_model_cls_and_config","slug":"fn-huggingface-py-get-model-cls-and-config","type":"Function"},"subdomain":{"name":"PerformanceProfiling","slug":"subdomain-performanceprofiling"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/microbenchmarks.html">Microbenchmarks</a><span class="arch-sep">&rarr;</span>
+            <a href="/dynamobenchmark.html">DynamoBenchmark</a><span class="arch-sep">&rarr;</span>
+            <a href="/performanceprofiling.html">PerformanceProfiling</a><span class="arch-sep">&rarr;</span>
             <span>_get_model_cls_and_config() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  a18a8328_102a_7c25_1469_258836045073["_get_model_cls_and_config()"]
-  c65dd068_bd28_486f_854c_3cd56556eae1["_download_model()"]
-  c65dd068_bd28_486f_854c_3cd56556eae1 -->|calls| a18a8328_102a_7c25_1469_258836045073
-  6a9700a7_b785_f89c_45f0_2bee1fc6bc56["load_model()"]
-  6a9700a7_b785_f89c_45f0_2bee1fc6bc56 -->|calls| a18a8328_102a_7c25_1469_258836045073
-  652a589a_a27b_9b62_910d_d35bef38b534["get_module_cls_by_model_name()"]
-  a18a8328_102a_7c25_1469_258836045073 -->|calls| 652a589a_a27b_9b62_910d_d35bef38b534
-  style a18a8328_102a_7c25_1469_258836045073 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  20425020_1f99_ee37_6ece_348d7f61ca3d["_get_model_cls_and_config()"]
+  4dac8cba_74b1_aa80_d692_f60ccce38366["_download_model()"]
+  4dac8cba_74b1_aa80_d692_f60ccce38366 -->|calls| 20425020_1f99_ee37_6ece_348d7f61ca3d
+  4621a24c_32cc_9d54_5d53_86c498e07973["load_model()"]
+  4621a24c_32cc_9d54_5d53_86c498e07973 -->|calls| 20425020_1f99_ee37_6ece_348d7f61ca3d
+  b0c481d9_f7b7_7661_49b1_25607a790cc6["get_module_cls_by_model_name()"]
+  20425020_1f99_ee37_6ece_348d7f61ca3d -->|calls| b0c481d9_f7b7_7661_49b1_25607a790cc6
+  style 20425020_1f99_ee37_6ece_348d7f61ca3d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-huggingface-py-get-model-cls-and-config"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"a18a8328:102a:7c25:1469:258836045073","label":"_get_model_cls_and_config","type":"Function","slug":"fn-huggingface-py-get-model-cls-and-config","lc":23,"lang":"python","cc":1,"cbc":2},{"id":"652a589a:a27b:9b62:910d:d35bef38b534","label":"get_module_cls_by_model_name","type":"Function","slug":"fn-huggingface-py-get-module-cls-by-model-name","lc":8,"lang":"python","cbc":2},{"id":"c65dd068:bd28:486f:854c:3cd56556eae1","label":"_download_model","type":"Function","slug":"fn-huggingface-py-download-model","lc":8,"lang":"python","cc":1,"cbc":1},{"id":"6a9700a7:b785:f89c:45f0:2bee1fc6bc56","label":"load_model","type":"Function","slug":"fn-huggingface-py-load-model","lc":84,"lang":"python","cc":5},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:Microbenchmarks","label":"Microbenchmarks","type":"Subdomain","slug":"subdomain-microbenchmarks"}],"edges":[{"source":"a18a8328:102a:7c25:1469:258836045073","target":"652a589a:a27b:9b62:910d:d35bef38b534","type":"calls"},{"source":"c65dd068:bd28:486f:854c:3cd56556eae1","target":"a18a8328:102a:7c25:1469:258836045073","type":"calls"},{"source":"6a9700a7:b785:f89c:45f0:2bee1fc6bc56","target":"a18a8328:102a:7c25:1469:258836045073","type":"calls"},{"source":"a18a8328:102a:7c25:1469:258836045073","target":"domain:DynamoBench","type":"belongsTo"},{"source":"a18a8328:102a:7c25:1469:258836045073","target":"subdomain:DynamoBench:Microbenchmarks","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"20425020:1f99:ee37:6ece:348d7f61ca3d","label":"_get_model_cls_and_config","type":"Function","slug":"fn-huggingface-py-get-model-cls-and-config","lc":23,"lang":"python","cc":1,"cbc":2},{"id":"b0c481d9:f7b7:7661:49b1:25607a790cc6","label":"get_module_cls_by_model_name","type":"Function","slug":"fn-huggingface-py-get-module-cls-by-model-name","lc":8,"lang":"python","cbc":2},{"id":"4dac8cba:74b1:aa80:d692:f60ccce38366","label":"_download_model","type":"Function","slug":"fn-huggingface-py-download-model","lc":8,"lang":"python","cc":1,"cbc":1},{"id":"4621a24c:32cc:9d54:5d53:86c498e07973","label":"load_model","type":"Function","slug":"fn-huggingface-py-load-model","lc":84,"lang":"python","cc":5},{"id":"domain:DynamoBenchmark","label":"DynamoBenchmark","type":"Domain","slug":"domain-dynamobenchmark"},{"id":"subdomain:DynamoBenchmark:PerformanceProfiling","label":"PerformanceProfiling","type":"Subdomain","slug":"subdomain-performanceprofiling"}],"edges":[{"source":"20425020:1f99:ee37:6ece:348d7f61ca3d","target":"b0c481d9:f7b7:7661:49b1:25607a790cc6","type":"calls"},{"source":"4dac8cba:74b1:aa80:d692:f60ccce38366","target":"20425020:1f99:ee37:6ece:348d7f61ca3d","type":"calls"},{"source":"4621a24c:32cc:9d54:5d53:86c498e07973","target":"20425020:1f99:ee37:6ece:348d7f61ca3d","type":"calls"},{"source":"20425020:1f99:ee37:6ece:348d7f61ca3d","target":"domain:DynamoBenchmark","type":"belongsTo"},{"source":"20425020:1f99:ee37:6ece:348d7f61ca3d","target":"subdomain:DynamoBenchmark:PerformanceProfiling","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -970,14 +970,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-dynamobench.html">DynamoBench</a></li></ul>
+      <ul><li><a href="/domain-dynamobenchmark.html">DynamoBenchmark</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-microbenchmarks.html">Microbenchmarks</a></li></ul>
+      <ul><li><a href="/subdomain-performanceprofiling.html">PerformanceProfiling</a></li></ul>
     </div>
     
 

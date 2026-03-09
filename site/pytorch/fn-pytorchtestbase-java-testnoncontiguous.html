@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
-        <a href="/domain/aten.html" class="pill pill-green">ATen</a>
-        <a href="/subdomain/dispatcher.html" class="pill pill-orange">Dispatcher</a>
+        <a href="/domain/atencore.html" class="pill pill-green">ATenCore</a>
+        <a href="/subdomain/operatordispatch.html" class="pill pill-orange">OperatorDispatch</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATen","slug":"domain-aten"},"entity":{"name":"testNonContiguous","slug":"fn-pytorchtestbase-java-testnoncontiguous","type":"Function"},"subdomain":{"name":"Dispatcher","slug":"subdomain-dispatcher"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATenCore","slug":"domain-atencore"},"entity":{"name":"testNonContiguous","slug":"fn-pytorchtestbase-java-testnoncontiguous","type":"Function"},"subdomain":{"name":"OperatorDispatch","slug":"subdomain-operatordispatch"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/aten.html">ATen</a><span class="arch-sep">&rarr;</span>
-            <a href="/dispatcher.html">Dispatcher</a><span class="arch-sep">&rarr;</span>
+            <a href="/atencore.html">ATenCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/operatordispatch.html">OperatorDispatch</a><span class="arch-sep">&rarr;</span>
             <span>testNonContiguous() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  24707460_46b3_e44d_3be8_b8756c11a7a1["testNonContiguous()"]
-  00b55a03_5101_84d2_31da_e2265dc22dc7["loadModel()"]
-  24707460_46b3_e44d_3be8_b8756c11a7a1 -->|calls| 00b55a03_5101_84d2_31da_e2265dc22dc7
-  style 24707460_46b3_e44d_3be8_b8756c11a7a1 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  4669e582_d77d_7084_fa12_ae5a6989e627["testNonContiguous()"]
+  86268425_74ab_f295_338c_51718bee167d["loadModel()"]
+  4669e582_d77d_7084_fa12_ae5a6989e627 -->|calls| 86268425_74ab_f295_338c_51718bee167d
+  style 4669e582_d77d_7084_fa12_ae5a6989e627 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-pytorchtestbase-java-testnoncontiguous"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"24707460:46b3:e44d:3be8:b8756c11a7a1","label":"testNonContiguous","type":"Function","slug":"fn-pytorchtestbase-java-testnoncontiguous","lc":9,"lang":"java","cc":1},{"id":"00b55a03:5101:84d2:31da:e2265dc22dc7","label":"loadModel","type":"Function","slug":"fn-pytorchtestbase-java-loadmodel","lc":1,"lang":"java","cbc":22},{"id":"domain:ATen","label":"ATen","type":"Domain","slug":"domain-aten"},{"id":"subdomain:ATen:Dispatcher","label":"Dispatcher","type":"Subdomain","slug":"subdomain-dispatcher"}],"edges":[{"source":"24707460:46b3:e44d:3be8:b8756c11a7a1","target":"00b55a03:5101:84d2:31da:e2265dc22dc7","type":"calls"},{"source":"24707460:46b3:e44d:3be8:b8756c11a7a1","target":"domain:ATen","type":"belongsTo"},{"source":"24707460:46b3:e44d:3be8:b8756c11a7a1","target":"subdomain:ATen:Dispatcher","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"4669e582:d77d:7084:fa12:ae5a6989e627","label":"testNonContiguous","type":"Function","slug":"fn-pytorchtestbase-java-testnoncontiguous","lc":9,"lang":"java","cc":1},{"id":"86268425:74ab:f295:338c:51718bee167d","label":"loadModel","type":"Function","slug":"fn-pytorchtestbase-java-loadmodel","lc":1,"lang":"java","cbc":22},{"id":"domain:ATenCore","label":"ATenCore","type":"Domain","slug":"domain-atencore"},{"id":"subdomain:ATenCore:OperatorDispatch","label":"OperatorDispatch","type":"Subdomain","slug":"subdomain-operatordispatch"}],"edges":[{"source":"4669e582:d77d:7084:fa12:ae5a6989e627","target":"86268425:74ab:f295:338c:51718bee167d","type":"calls"},{"source":"4669e582:d77d:7084:fa12:ae5a6989e627","target":"domain:ATenCore","type":"belongsTo"},{"source":"4669e582:d77d:7084:fa12:ae5a6989e627","target":"subdomain:ATenCore:OperatorDispatch","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -952,14 +952,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-aten.html">ATen</a></li></ul>
+      <ul><li><a href="/domain-atencore.html">ATenCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-dispatcher.html">Dispatcher</a></li></ul>
+      <ul><li><a href="/subdomain-operatordispatch.html">OperatorDispatch</a></li></ul>
     </div>
     
 

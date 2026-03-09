@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/aten.html" class="pill pill-green">ATen</a>
-        <a href="/subdomain/dispatcher.html" class="pill pill-orange">Dispatcher</a>
+        <a href="/domain/atencore.html" class="pill pill-green">ATenCore</a>
+        <a href="/subdomain/nativekernels.html" class="pill pill-orange">NativeKernels</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATen","slug":"domain-aten"},"entity":{"name":"generate_embedded_hsa_header","slug":"fn-generate-aiter-embedded-hsa-py-generate-embedded-hsa-header","type":"Function"},"subdomain":{"name":"Dispatcher","slug":"subdomain-dispatcher"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATenCore","slug":"domain-atencore"},"entity":{"name":"generate_embedded_hsa_header","slug":"fn-generate-aiter-embedded-hsa-py-generate-embedded-hsa-header","type":"Function"},"subdomain":{"name":"NativeKernels","slug":"subdomain-nativekernels"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/aten.html">ATen</a><span class="arch-sep">&rarr;</span>
-            <a href="/dispatcher.html">Dispatcher</a><span class="arch-sep">&rarr;</span>
+            <a href="/atencore.html">ATenCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/nativekernels.html">NativeKernels</a><span class="arch-sep">&rarr;</span>
             <span>generate_embedded_hsa_header() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  28bae301_6cca_7744_555e_d19914c43fd9["generate_embedded_hsa_header()"]
-  88048c83_9f53_2f93_a5d7_39e6f813cda6["main()"]
-  88048c83_9f53_2f93_a5d7_39e6f813cda6 -->|calls| 28bae301_6cca_7744_555e_d19914c43fd9
-  9de795eb_aa2b_f142_f780_4a0886b88832["sanitize_identifier()"]
-  28bae301_6cca_7744_555e_d19914c43fd9 -->|calls| 9de795eb_aa2b_f142_f780_4a0886b88832
-  5d7ac112_5b59_e2b5_dd08_1606cca91044["bytes_to_hex_array()"]
-  28bae301_6cca_7744_555e_d19914c43fd9 -->|calls| 5d7ac112_5b59_e2b5_dd08_1606cca91044
-  style 28bae301_6cca_7744_555e_d19914c43fd9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  e0bdd0d0_776d_6486_0d4a_6905f1536ff7["generate_embedded_hsa_header()"]
+  56fc4a3f_215f_de0e_8418_9f5334ebb49e["main()"]
+  56fc4a3f_215f_de0e_8418_9f5334ebb49e -->|calls| e0bdd0d0_776d_6486_0d4a_6905f1536ff7
+  6e0ce74b_5dc8_0f28_5374_9589520dc840["sanitize_identifier()"]
+  e0bdd0d0_776d_6486_0d4a_6905f1536ff7 -->|calls| 6e0ce74b_5dc8_0f28_5374_9589520dc840
+  7e331f64_b022_7531_0bc8_c06b0fa0e9a8["bytes_to_hex_array()"]
+  e0bdd0d0_776d_6486_0d4a_6905f1536ff7 -->|calls| 7e331f64_b022_7531_0bc8_c06b0fa0e9a8
+  style e0bdd0d0_776d_6486_0d4a_6905f1536ff7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-generate-aiter-embedded-hsa-py-generate-embedded-hsa-header"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"28bae301:6cca:7744:555e:d19914c43fd9","label":"generate_embedded_hsa_header","type":"Function","slug":"fn-generate-aiter-embedded-hsa-py-generate-embedded-hsa-header","lc":89,"lang":"python","cc":2,"cbc":1},{"id":"9de795eb:aa2b:f142:f780:4a0886b88832","label":"sanitize_identifier","type":"Function","slug":"fn-generate-aiter-embedded-hsa-py-sanitize-identifier","lc":3,"lang":"python","cbc":1},{"id":"5d7ac112:5b59:e2b5:dd08:1606cca91044","label":"bytes_to_hex_array","type":"Function","slug":"fn-generate-aiter-embedded-hsa-py-bytes-to-hex-array","lc":10,"lang":"python","cbc":1},{"id":"88048c83:9f53:2f93:a5d7:39e6f813cda6","label":"main","type":"Function","slug":"fn-generate-aiter-embedded-hsa-py-main","lc":26,"lang":"python","cc":1,"cbc":1},{"id":"domain:ATen","label":"ATen","type":"Domain","slug":"domain-aten"},{"id":"subdomain:ATen:Dispatcher","label":"Dispatcher","type":"Subdomain","slug":"subdomain-dispatcher"}],"edges":[{"source":"28bae301:6cca:7744:555e:d19914c43fd9","target":"9de795eb:aa2b:f142:f780:4a0886b88832","type":"calls"},{"source":"28bae301:6cca:7744:555e:d19914c43fd9","target":"5d7ac112:5b59:e2b5:dd08:1606cca91044","type":"calls"},{"source":"88048c83:9f53:2f93:a5d7:39e6f813cda6","target":"28bae301:6cca:7744:555e:d19914c43fd9","type":"calls"},{"source":"28bae301:6cca:7744:555e:d19914c43fd9","target":"domain:ATen","type":"belongsTo"},{"source":"28bae301:6cca:7744:555e:d19914c43fd9","target":"subdomain:ATen:Dispatcher","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"e0bdd0d0:776d:6486:0d4a:6905f1536ff7","label":"generate_embedded_hsa_header","type":"Function","slug":"fn-generate-aiter-embedded-hsa-py-generate-embedded-hsa-header","lc":89,"lang":"python","cc":2,"cbc":1},{"id":"6e0ce74b:5dc8:0f28:5374:9589520dc840","label":"sanitize_identifier","type":"Function","slug":"fn-generate-aiter-embedded-hsa-py-sanitize-identifier","lc":3,"lang":"python","cbc":1},{"id":"7e331f64:b022:7531:0bc8:c06b0fa0e9a8","label":"bytes_to_hex_array","type":"Function","slug":"fn-generate-aiter-embedded-hsa-py-bytes-to-hex-array","lc":10,"lang":"python","cbc":1},{"id":"56fc4a3f:215f:de0e:8418:9f5334ebb49e","label":"main","type":"Function","slug":"fn-generate-aiter-embedded-hsa-py-main","lc":26,"lang":"python","cc":1,"cbc":1},{"id":"domain:ATenCore","label":"ATenCore","type":"Domain","slug":"domain-atencore"},{"id":"subdomain:ATenCore:NativeKernels","label":"NativeKernels","type":"Subdomain","slug":"subdomain-nativekernels"}],"edges":[{"source":"e0bdd0d0:776d:6486:0d4a:6905f1536ff7","target":"6e0ce74b:5dc8:0f28:5374:9589520dc840","type":"calls"},{"source":"e0bdd0d0:776d:6486:0d4a:6905f1536ff7","target":"7e331f64:b022:7531:0bc8:c06b0fa0e9a8","type":"calls"},{"source":"56fc4a3f:215f:de0e:8418:9f5334ebb49e","target":"e0bdd0d0:776d:6486:0d4a:6905f1536ff7","type":"calls"},{"source":"e0bdd0d0:776d:6486:0d4a:6905f1536ff7","target":"domain:ATenCore","type":"belongsTo"},{"source":"e0bdd0d0:776d:6486:0d4a:6905f1536ff7","target":"subdomain:ATenCore:NativeKernels","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1036,14 +1036,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-aten.html">ATen</a></li></ul>
+      <ul><li><a href="/domain-atencore.html">ATenCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-dispatcher.html">Dispatcher</a></li></ul>
+      <ul><li><a href="/subdomain-nativekernels.html">NativeKernels</a></li></ul>
     </div>
     
 

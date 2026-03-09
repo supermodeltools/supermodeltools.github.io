@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/backendeval.html" class="pill pill-orange">BackendEval</a>
+        <a href="/domain/dynamobenchmark.html" class="pill pill-green">DynamoBenchmark</a>
+        <a href="/subdomain/accuracytesting.html" class="pill pill-orange">AccuracyTesting</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"init_optimizer","slug":"fn-common-py-init-optimizer","type":"Function"},"subdomain":{"name":"BackendEval","slug":"subdomain-backendeval"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBenchmark","slug":"domain-dynamobenchmark"},"entity":{"name":"init_optimizer","slug":"fn-common-py-init-optimizer","type":"Function"},"subdomain":{"name":"AccuracyTesting","slug":"subdomain-accuracytesting"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/backendeval.html">BackendEval</a><span class="arch-sep">&rarr;</span>
+            <a href="/dynamobenchmark.html">DynamoBenchmark</a><span class="arch-sep">&rarr;</span>
+            <a href="/accuracytesting.html">AccuracyTesting</a><span class="arch-sep">&rarr;</span>
             <span>init_optimizer() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  a0e8d94b_82a4_adcd_4265_759573e79bc2["init_optimizer()"]
-  45dcf937_2ffa_946a_0c0a_100d21496b85["check_accuracy()"]
-  45dcf937_2ffa_946a_0c0a_100d21496b85 -->|calls| a0e8d94b_82a4_adcd_4265_759573e79bc2
-  62814dc9_8697_d7b2_99e8_4b939820fd89["check_tolerance()"]
-  62814dc9_8697_d7b2_99e8_4b939820fd89 -->|calls| a0e8d94b_82a4_adcd_4265_759573e79bc2
-  06004a1a_4473_0196_1025_6edc3956b15e["run_performance_test_non_alternate()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| a0e8d94b_82a4_adcd_4265_759573e79bc2
-  8b2dbca5_38c1_1ef3_3295_59470789cbe4["run_performance_test()"]
-  8b2dbca5_38c1_1ef3_3295_59470789cbe4 -->|calls| a0e8d94b_82a4_adcd_4265_759573e79bc2
-  style a0e8d94b_82a4_adcd_4265_759573e79bc2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  91b13b4d_3a26_ba09_a611_78d171f3b39d["init_optimizer()"]
+  8bfeb893_ba71_f55b_01b0_d0430eb6ff7f["check_accuracy()"]
+  8bfeb893_ba71_f55b_01b0_d0430eb6ff7f -->|calls| 91b13b4d_3a26_ba09_a611_78d171f3b39d
+  45236b5c_678a_7334_c54f_2348ba341679["check_tolerance()"]
+  45236b5c_678a_7334_c54f_2348ba341679 -->|calls| 91b13b4d_3a26_ba09_a611_78d171f3b39d
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65["run_performance_test_non_alternate()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| 91b13b4d_3a26_ba09_a611_78d171f3b39d
+  53e1cb49_6217_34d5_521a_e98db78d0aa6["run_performance_test()"]
+  53e1cb49_6217_34d5_521a_e98db78d0aa6 -->|calls| 91b13b4d_3a26_ba09_a611_78d171f3b39d
+  style 91b13b4d_3a26_ba09_a611_78d171f3b39d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-common-py-init-optimizer"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"a0e8d94b:82a4:adcd:4265:759573e79bc2","label":"init_optimizer","type":"Function","slug":"fn-common-py-init-optimizer","lc":16,"lang":"python","cbc":4},{"id":"45dcf937:2ffa:946a:0c0a:100d21496b85","label":"check_accuracy","type":"Function","slug":"fn-common-py-check-accuracy","lc":337,"lang":"python","cc":15,"cbc":2},{"id":"62814dc9:8697:d7b2:99e8:4b939820fd89","label":"check_tolerance","type":"Function","slug":"fn-common-py-check-tolerance","lc":76,"lang":"python","cc":4,"cbc":1},{"id":"06004a1a:4473:0196:1025:6edc3956b15e","label":"run_performance_test_non_alternate","type":"Function","slug":"fn-common-py-run-performance-test-non-alternate","lc":167,"lang":"python","cc":12,"cbc":1},{"id":"8b2dbca5:38c1:1ef3:3295:59470789cbe4","label":"run_performance_test","type":"Function","slug":"fn-common-py-run-performance-test","lc":202,"lang":"python","cc":11,"cbc":1},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:BackendEval","label":"BackendEval","type":"Subdomain","slug":"subdomain-backendeval"}],"edges":[{"source":"45dcf937:2ffa:946a:0c0a:100d21496b85","target":"a0e8d94b:82a4:adcd:4265:759573e79bc2","type":"calls"},{"source":"62814dc9:8697:d7b2:99e8:4b939820fd89","target":"a0e8d94b:82a4:adcd:4265:759573e79bc2","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"a0e8d94b:82a4:adcd:4265:759573e79bc2","type":"calls"},{"source":"8b2dbca5:38c1:1ef3:3295:59470789cbe4","target":"a0e8d94b:82a4:adcd:4265:759573e79bc2","type":"calls"},{"source":"a0e8d94b:82a4:adcd:4265:759573e79bc2","target":"domain:DynamoBench","type":"belongsTo"},{"source":"a0e8d94b:82a4:adcd:4265:759573e79bc2","target":"subdomain:DynamoBench:BackendEval","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"91b13b4d:3a26:ba09:a611:78d171f3b39d","label":"init_optimizer","type":"Function","slug":"fn-common-py-init-optimizer","lc":16,"lang":"python","cbc":4},{"id":"8bfeb893:ba71:f55b:01b0:d0430eb6ff7f","label":"check_accuracy","type":"Function","slug":"fn-common-py-check-accuracy","lc":337,"lang":"python","cc":15,"cbc":2},{"id":"45236b5c:678a:7334:c54f:2348ba341679","label":"check_tolerance","type":"Function","slug":"fn-common-py-check-tolerance","lc":76,"lang":"python","cc":4,"cbc":1},{"id":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","label":"run_performance_test_non_alternate","type":"Function","slug":"fn-common-py-run-performance-test-non-alternate","lc":167,"lang":"python","cc":12,"cbc":1},{"id":"53e1cb49:6217:34d5:521a:e98db78d0aa6","label":"run_performance_test","type":"Function","slug":"fn-common-py-run-performance-test","lc":202,"lang":"python","cc":11,"cbc":1},{"id":"domain:DynamoBenchmark","label":"DynamoBenchmark","type":"Domain","slug":"domain-dynamobenchmark"},{"id":"subdomain:DynamoBenchmark:AccuracyTesting","label":"AccuracyTesting","type":"Subdomain","slug":"subdomain-accuracytesting"}],"edges":[{"source":"8bfeb893:ba71:f55b:01b0:d0430eb6ff7f","target":"91b13b4d:3a26:ba09:a611:78d171f3b39d","type":"calls"},{"source":"45236b5c:678a:7334:c54f:2348ba341679","target":"91b13b4d:3a26:ba09:a611:78d171f3b39d","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"91b13b4d:3a26:ba09:a611:78d171f3b39d","type":"calls"},{"source":"53e1cb49:6217:34d5:521a:e98db78d0aa6","target":"91b13b4d:3a26:ba09:a611:78d171f3b39d","type":"calls"},{"source":"91b13b4d:3a26:ba09:a611:78d171f3b39d","target":"domain:DynamoBenchmark","type":"belongsTo"},{"source":"91b13b4d:3a26:ba09:a611:78d171f3b39d","target":"subdomain:DynamoBenchmark:AccuracyTesting","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -965,14 +965,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-dynamobench.html">DynamoBench</a></li></ul>
+      <ul><li><a href="/domain-dynamobenchmark.html">DynamoBenchmark</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-backendeval.html">BackendEval</a></li></ul>
+      <ul><li><a href="/subdomain-accuracytesting.html">AccuracyTesting</a></li></ul>
     </div>
     
 

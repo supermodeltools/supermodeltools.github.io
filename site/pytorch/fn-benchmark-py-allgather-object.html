@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/aten.html" class="pill pill-green">ATen</a>
-        <a href="/subdomain/opregistration.html" class="pill pill-orange">OpRegistration</a>
+        <a href="/domain/atencore.html" class="pill pill-green">ATenCore</a>
+        <a href="/subdomain/quantizedcpu.html" class="pill pill-orange">QuantizedCPU</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATen","slug":"domain-aten"},"entity":{"name":"allgather_object","slug":"fn-benchmark-py-allgather-object","type":"Function"},"subdomain":{"name":"OpRegistration","slug":"subdomain-opregistration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATenCore","slug":"domain-atencore"},"entity":{"name":"allgather_object","slug":"fn-benchmark-py-allgather-object","type":"Function"},"subdomain":{"name":"QuantizedCPU","slug":"subdomain-quantizedcpu"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/aten.html">ATen</a><span class="arch-sep">&rarr;</span>
-            <a href="/opregistration.html">OpRegistration</a><span class="arch-sep">&rarr;</span>
+            <a href="/atencore.html">ATenCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/quantizedcpu.html">QuantizedCPU</a><span class="arch-sep">&rarr;</span>
             <span>allgather_object() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  72264553_cd28_dd48_f9bc_7d21cbc67c69["allgather_object()"]
-  9a39f289_cb87_97ae_8878_7d5b582011c8["allgather_run()"]
-  9a39f289_cb87_97ae_8878_7d5b582011c8 -->|calls| 72264553_cd28_dd48_f9bc_7d21cbc67c69
-  7fa343a7_1a5f_6bc4_0163_249039a46100["run_benchmark()"]
-  7fa343a7_1a5f_6bc4_0163_249039a46100 -->|calls| 72264553_cd28_dd48_f9bc_7d21cbc67c69
-  style 72264553_cd28_dd48_f9bc_7d21cbc67c69 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  58eb6775_299b_fc3a_6ce2_8916cf94c06d["allgather_object()"]
+  90887e95_7301_a766_7f87_83bf2cdd099a["allgather_run()"]
+  90887e95_7301_a766_7f87_83bf2cdd099a -->|calls| 58eb6775_299b_fc3a_6ce2_8916cf94c06d
+  50b344f0_fc8e_e6cf_d8fc_d4141cfab654["run_benchmark()"]
+  50b344f0_fc8e_e6cf_d8fc_d4141cfab654 -->|calls| 58eb6775_299b_fc3a_6ce2_8916cf94c06d
+  style 58eb6775_299b_fc3a_6ce2_8916cf94c06d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-benchmark-py-allgather-object"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"72264553:cd28:dd48:f9bc:7d21cbc67c69","label":"allgather_object","type":"Function","slug":"fn-benchmark-py-allgather-object","lc":4,"lang":"python","cbc":2},{"id":"9a39f289:cb87:97ae:8878:7d5b582011c8","label":"allgather_run","type":"Function","slug":"fn-benchmark-py-allgather-run","lc":7,"lang":"python","cc":1,"cbc":1},{"id":"7fa343a7:1a5f:6bc4:0163:249039a46100","label":"run_benchmark","type":"Function","slug":"fn-benchmark-py-run-benchmark","lc":12,"lang":"python","cc":2,"cbc":1},{"id":"domain:ATen","label":"ATen","type":"Domain","slug":"domain-aten"},{"id":"subdomain:ATen:OpRegistration","label":"OpRegistration","type":"Subdomain","slug":"subdomain-opregistration"}],"edges":[{"source":"9a39f289:cb87:97ae:8878:7d5b582011c8","target":"72264553:cd28:dd48:f9bc:7d21cbc67c69","type":"calls"},{"source":"7fa343a7:1a5f:6bc4:0163:249039a46100","target":"72264553:cd28:dd48:f9bc:7d21cbc67c69","type":"calls"},{"source":"72264553:cd28:dd48:f9bc:7d21cbc67c69","target":"domain:ATen","type":"belongsTo"},{"source":"72264553:cd28:dd48:f9bc:7d21cbc67c69","target":"subdomain:ATen:OpRegistration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"58eb6775:299b:fc3a:6ce2:8916cf94c06d","label":"allgather_object","type":"Function","slug":"fn-benchmark-py-allgather-object","lc":4,"lang":"python","cbc":2},{"id":"90887e95:7301:a766:7f87:83bf2cdd099a","label":"allgather_run","type":"Function","slug":"fn-benchmark-py-allgather-run","lc":7,"lang":"python","cc":1,"cbc":1},{"id":"50b344f0:fc8e:e6cf:d8fc:d4141cfab654","label":"run_benchmark","type":"Function","slug":"fn-benchmark-py-run-benchmark","lc":12,"lang":"python","cc":2,"cbc":1},{"id":"domain:ATenCore","label":"ATenCore","type":"Domain","slug":"domain-atencore"},{"id":"subdomain:ATenCore:QuantizedCPU","label":"QuantizedCPU","type":"Subdomain","slug":"subdomain-quantizedcpu"}],"edges":[{"source":"90887e95:7301:a766:7f87:83bf2cdd099a","target":"58eb6775:299b:fc3a:6ce2:8916cf94c06d","type":"calls"},{"source":"50b344f0:fc8e:e6cf:d8fc:d4141cfab654","target":"58eb6775:299b:fc3a:6ce2:8916cf94c06d","type":"calls"},{"source":"58eb6775:299b:fc3a:6ce2:8916cf94c06d","target":"domain:ATenCore","type":"belongsTo"},{"source":"58eb6775:299b:fc3a:6ce2:8916cf94c06d","target":"subdomain:ATenCore:QuantizedCPU","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -949,14 +949,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-aten.html">ATen</a></li></ul>
+      <ul><li><a href="/domain-atencore.html">ATenCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-opregistration.html">OpRegistration</a></li></ul>
+      <ul><li><a href="/subdomain-quantizedcpu.html">QuantizedCPU</a></li></ul>
     </div>
     
 

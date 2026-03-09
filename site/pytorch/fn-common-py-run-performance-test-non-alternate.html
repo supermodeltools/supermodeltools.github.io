@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/microbenchmarks.html" class="pill pill-orange">Microbenchmarks</a>
+        <a href="/domain/dynamobenchmark.html" class="pill pill-green">DynamoBenchmark</a>
+        <a href="/subdomain/performanceprofiling.html" class="pill pill-orange">PerformanceProfiling</a>
         
         
         <span class="pill">calls 12</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"run_performance_test_non_alternate","slug":"fn-common-py-run-performance-test-non-alternate","type":"Function"},"subdomain":{"name":"Microbenchmarks","slug":"subdomain-microbenchmarks"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBenchmark","slug":"domain-dynamobenchmark"},"entity":{"name":"run_performance_test_non_alternate","slug":"fn-common-py-run-performance-test-non-alternate","type":"Function"},"subdomain":{"name":"PerformanceProfiling","slug":"subdomain-performanceprofiling"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/microbenchmarks.html">Microbenchmarks</a><span class="arch-sep">&rarr;</span>
+            <a href="/dynamobenchmark.html">DynamoBenchmark</a><span class="arch-sep">&rarr;</span>
+            <a href="/performanceprofiling.html">PerformanceProfiling</a><span class="arch-sep">&rarr;</span>
             <span>run_performance_test_non_alternate() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,34 +911,34 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  06004a1a_4473_0196_1025_6edc3956b15e["run_performance_test_non_alternate()"]
-  a75e4c0f_46d3_44b3_04f6_709c388e9569["run_one_model()"]
-  a75e4c0f_46d3_44b3_04f6_709c388e9569 -->|calls| 06004a1a_4473_0196_1025_6edc3956b15e
-  bc8b0fb0_4eb7_e185_e50f_a11ffba95111["maybe_cast()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| bc8b0fb0_4eb7_e185_e50f_a11ffba95111
-  1bd661d3_1ae8_4da3_cf0f_4f9cc8f60f81["deepcopy_and_maybe_parallelize()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| 1bd661d3_1ae8_4da3_cf0f_4f9cc8f60f81
-  a0e8d94b_82a4_adcd_4265_759573e79bc2["init_optimizer()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| a0e8d94b_82a4_adcd_4265_759573e79bc2
-  687ff01e_8ec7_cadd_f4a1_17bbcdf9f581["get_dynamo_stats()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| 687ff01e_8ec7_cadd_f4a1_17bbcdf9f581
-  1b449a63_22ec_f6f4_5d15_b3f44efc8822["empty_gpu_cache()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| 1b449a63_22ec_f6f4_5d15_b3f44efc8822
-  aef96b48_b872_10c4_a122_fac26d1c64a9["get_peak_memory()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| aef96b48_b872_10c4_a122_fac26d1c64a9
-  b8976e90_6129_dc37_f6b1_c3d7c2cc6b5e["write_csv_when_exception()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| b8976e90_6129_dc37_f6b1_c3d7c2cc6b5e
-  28702cd3_70d7_d1c9_c5be_18535a48c26a["output_signpost()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| 28702cd3_70d7_d1c9_c5be_18535a48c26a
-  1939454e_3b63_6556_27a5_f36c51bb4b74["reset_counters()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| 1939454e_3b63_6556_27a5_f36c51bb4b74
-  b431dc60_6d67_8796_d31e_8b432118c82e["maybe_snapshot_memory()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| b431dc60_6d67_8796_d31e_8b432118c82e
-  48bc92ed_7d92_74c4_b7e0_02501bd60010["get_excess_memory()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| 48bc92ed_7d92_74c4_b7e0_02501bd60010
-  921c8807_fab7_3fef_877b_1de09e6ec0c4["latency_experiment_summary()"]
-  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| 921c8807_fab7_3fef_877b_1de09e6ec0c4
-  style 06004a1a_4473_0196_1025_6edc3956b15e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65["run_performance_test_non_alternate()"]
+  848307bf_3d9c_2d5a_9864_a22a9224007c["run_one_model()"]
+  848307bf_3d9c_2d5a_9864_a22a9224007c -->|calls| 954c1b3a_8bae_4c2c_d7a2_80fc7f23da65
+  e42fc669_ca84_4e47_ffdf_a044b696e547["maybe_cast()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| e42fc669_ca84_4e47_ffdf_a044b696e547
+  3722698b_dbea_cb98_e375_57c2fe4132a3["deepcopy_and_maybe_parallelize()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| 3722698b_dbea_cb98_e375_57c2fe4132a3
+  91b13b4d_3a26_ba09_a611_78d171f3b39d["init_optimizer()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| 91b13b4d_3a26_ba09_a611_78d171f3b39d
+  cabffcf1_e6e6_dff5_3aa1_c98b1396ea1b["get_dynamo_stats()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| cabffcf1_e6e6_dff5_3aa1_c98b1396ea1b
+  26f01bfa_9f06_8f36_1dad_1b16b4247469["empty_gpu_cache()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| 26f01bfa_9f06_8f36_1dad_1b16b4247469
+  4a377c8a_8884_abae_d23a_65b5cbd6d8fd["get_peak_memory()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| 4a377c8a_8884_abae_d23a_65b5cbd6d8fd
+  fbb8cf1b_0635_34de_f62c_6c3b962dfa34["write_csv_when_exception()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| fbb8cf1b_0635_34de_f62c_6c3b962dfa34
+  59cac873_0424_2741_88f1_6c4a0d5abf19["output_signpost()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| 59cac873_0424_2741_88f1_6c4a0d5abf19
+  87b1e84e_dd65_8e16_847f_4ca354c4b27e["reset_counters()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| 87b1e84e_dd65_8e16_847f_4ca354c4b27e
+  aa885cf3_004e_86e0_92bb_febc9c3b3005["maybe_snapshot_memory()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| aa885cf3_004e_86e0_92bb_febc9c3b3005
+  0491ef5e_240e_16be_bf57_7ffefccc0763["get_excess_memory()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| 0491ef5e_240e_16be_bf57_7ffefccc0763
+  9c064a17_8144_7015_d3d8_8ce9ae6659d7["latency_experiment_summary()"]
+  954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 -->|calls| 9c064a17_8144_7015_d3d8_8ce9ae6659d7
+  style 954c1b3a_8bae_4c2c_d7a2_80fc7f23da65 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -946,7 +946,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-common-py-run-performance-test-non-alternate"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"06004a1a:4473:0196:1025:6edc3956b15e","label":"run_performance_test_non_alternate","type":"Function","slug":"fn-common-py-run-performance-test-non-alternate","lc":167,"lang":"python","cc":12,"cbc":1},{"id":"bc8b0fb0:4eb7:e185:e50f:a11ffba95111","label":"maybe_cast","type":"Function","slug":"fn-common-py-maybe-cast","lc":3,"lang":"python","cc":1,"cbc":4},{"id":"1bd661d3:1ae8:4da3:cf0f:4f9cc8f60f81","label":"deepcopy_and_maybe_parallelize","type":"Function","slug":"fn-common-py-deepcopy-and-maybe-parallelize","lc":46,"lang":"python","cc":2,"cbc":3},{"id":"a0e8d94b:82a4:adcd:4265:759573e79bc2","label":"init_optimizer","type":"Function","slug":"fn-common-py-init-optimizer","lc":16,"lang":"python","cbc":4},{"id":"687ff01e:8ec7:cadd:f4a1:17bbcdf9f581","label":"get_dynamo_stats","type":"Function","slug":"fn-common-py-get-dynamo-stats","lc":21,"lang":"python","cbc":4},{"id":"1b449a63:22ec:f6f4:5d15:b3f44efc8822","label":"empty_gpu_cache","type":"Function","slug":"fn-common-py-empty-gpu-cache","lc":13,"lang":"python","cbc":6},{"id":"aef96b48:b872:10c4:a122:fac26d1c64a9","label":"get_peak_memory","type":"Function","slug":"fn-common-py-get-peak-memory","lc":2,"lang":"python","cbc":2},{"id":"b8976e90:6129:dc37:f6b1:c3d7c2cc6b5e","label":"write_csv_when_exception","type":"Function","slug":"fn-common-py-write-csv-when-exception","lc":16,"lang":"python","cc":1,"cbc":3},{"id":"28702cd3:70d7:d1c9:c5be:18535a48c26a","label":"output_signpost","type":"Function","slug":"fn-common-py-output-signpost","lc":102,"lang":"python","cbc":6},{"id":"1939454e:3b63:6556:27a5:f36c51bb4b74","label":"reset_counters","type":"Function","slug":"fn-common-py-reset-counters","lc":7,"lang":"python","cbc":2},{"id":"b431dc60:6d67:8796:d31e:8b432118c82e","label":"maybe_snapshot_memory","type":"Function","slug":"fn-common-py-maybe-snapshot-memory","lc":20,"lang":"python","cbc":2},{"id":"48bc92ed:7d92:74c4:b7e0:02501bd60010","label":"get_excess_memory","type":"Function","slug":"fn-common-py-get-excess-memory","lc":2,"lang":"python","cbc":2},{"id":"921c8807:fab7:3fef:877b:1de09e6ec0c4","label":"latency_experiment_summary","type":"Function","slug":"fn-common-py-latency-experiment-summary","lc":84,"lang":"python","cc":2,"cbc":1},{"id":"a75e4c0f:46d3:44b3:04f6:709c388e9569","label":"run_one_model","type":"Function","slug":"fn-common-py-run-one-model","lc":99,"lang":"python","cc":10,"cbc":1},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:Microbenchmarks","label":"Microbenchmarks","type":"Subdomain","slug":"subdomain-microbenchmarks"}],"edges":[{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"bc8b0fb0:4eb7:e185:e50f:a11ffba95111","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"1bd661d3:1ae8:4da3:cf0f:4f9cc8f60f81","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"a0e8d94b:82a4:adcd:4265:759573e79bc2","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"687ff01e:8ec7:cadd:f4a1:17bbcdf9f581","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"1b449a63:22ec:f6f4:5d15:b3f44efc8822","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"aef96b48:b872:10c4:a122:fac26d1c64a9","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"b8976e90:6129:dc37:f6b1:c3d7c2cc6b5e","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"28702cd3:70d7:d1c9:c5be:18535a48c26a","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"1939454e:3b63:6556:27a5:f36c51bb4b74","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"b431dc60:6d67:8796:d31e:8b432118c82e","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"48bc92ed:7d92:74c4:b7e0:02501bd60010","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"921c8807:fab7:3fef:877b:1de09e6ec0c4","type":"calls"},{"source":"a75e4c0f:46d3:44b3:04f6:709c388e9569","target":"06004a1a:4473:0196:1025:6edc3956b15e","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"domain:DynamoBench","type":"belongsTo"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"subdomain:DynamoBench:Microbenchmarks","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","label":"run_performance_test_non_alternate","type":"Function","slug":"fn-common-py-run-performance-test-non-alternate","lc":167,"lang":"python","cc":12,"cbc":1},{"id":"e42fc669:ca84:4e47:ffdf:a044b696e547","label":"maybe_cast","type":"Function","slug":"fn-common-py-maybe-cast","lc":3,"lang":"python","cc":1,"cbc":4},{"id":"3722698b:dbea:cb98:e375:57c2fe4132a3","label":"deepcopy_and_maybe_parallelize","type":"Function","slug":"fn-common-py-deepcopy-and-maybe-parallelize","lc":46,"lang":"python","cc":2,"cbc":3},{"id":"91b13b4d:3a26:ba09:a611:78d171f3b39d","label":"init_optimizer","type":"Function","slug":"fn-common-py-init-optimizer","lc":16,"lang":"python","cbc":4},{"id":"cabffcf1:e6e6:dff5:3aa1:c98b1396ea1b","label":"get_dynamo_stats","type":"Function","slug":"fn-common-py-get-dynamo-stats","lc":21,"lang":"python","cbc":4},{"id":"26f01bfa:9f06:8f36:1dad:1b16b4247469","label":"empty_gpu_cache","type":"Function","slug":"fn-common-py-empty-gpu-cache","lc":13,"lang":"python","cbc":6},{"id":"4a377c8a:8884:abae:d23a:65b5cbd6d8fd","label":"get_peak_memory","type":"Function","slug":"fn-common-py-get-peak-memory","lc":2,"lang":"python","cbc":2},{"id":"fbb8cf1b:0635:34de:f62c:6c3b962dfa34","label":"write_csv_when_exception","type":"Function","slug":"fn-common-py-write-csv-when-exception","lc":16,"lang":"python","cc":1,"cbc":3},{"id":"59cac873:0424:2741:88f1:6c4a0d5abf19","label":"output_signpost","type":"Function","slug":"fn-common-py-output-signpost","lc":102,"lang":"python","cbc":6},{"id":"87b1e84e:dd65:8e16:847f:4ca354c4b27e","label":"reset_counters","type":"Function","slug":"fn-common-py-reset-counters","lc":7,"lang":"python","cbc":2},{"id":"aa885cf3:004e:86e0:92bb:febc9c3b3005","label":"maybe_snapshot_memory","type":"Function","slug":"fn-common-py-maybe-snapshot-memory","lc":20,"lang":"python","cbc":2},{"id":"0491ef5e:240e:16be:bf57:7ffefccc0763","label":"get_excess_memory","type":"Function","slug":"fn-common-py-get-excess-memory","lc":2,"lang":"python","cbc":2},{"id":"9c064a17:8144:7015:d3d8:8ce9ae6659d7","label":"latency_experiment_summary","type":"Function","slug":"fn-common-py-latency-experiment-summary","lc":84,"lang":"python","cc":2,"cbc":1},{"id":"848307bf:3d9c:2d5a:9864:a22a9224007c","label":"run_one_model","type":"Function","slug":"fn-common-py-run-one-model","lc":99,"lang":"python","cc":10,"cbc":1},{"id":"domain:DynamoBenchmark","label":"DynamoBenchmark","type":"Domain","slug":"domain-dynamobenchmark"},{"id":"subdomain:DynamoBenchmark:PerformanceProfiling","label":"PerformanceProfiling","type":"Subdomain","slug":"subdomain-performanceprofiling"}],"edges":[{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"e42fc669:ca84:4e47:ffdf:a044b696e547","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"3722698b:dbea:cb98:e375:57c2fe4132a3","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"91b13b4d:3a26:ba09:a611:78d171f3b39d","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"cabffcf1:e6e6:dff5:3aa1:c98b1396ea1b","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"26f01bfa:9f06:8f36:1dad:1b16b4247469","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"4a377c8a:8884:abae:d23a:65b5cbd6d8fd","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"fbb8cf1b:0635:34de:f62c:6c3b962dfa34","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"59cac873:0424:2741:88f1:6c4a0d5abf19","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"87b1e84e:dd65:8e16:847f:4ca354c4b27e","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"aa885cf3:004e:86e0:92bb:febc9c3b3005","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"0491ef5e:240e:16be:bf57:7ffefccc0763","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"9c064a17:8144:7015:d3d8:8ce9ae6659d7","type":"calls"},{"source":"848307bf:3d9c:2d5a:9864:a22a9224007c","target":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","type":"calls"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"domain:DynamoBenchmark","type":"belongsTo"},{"source":"954c1b3a:8bae:4c2c:d7a2:80fc7f23da65","target":"subdomain:DynamoBenchmark:PerformanceProfiling","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1134,14 +1134,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-dynamobench.html">DynamoBench</a></li></ul>
+      <ul><li><a href="/domain-dynamobenchmark.html">DynamoBenchmark</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-microbenchmarks.html">Microbenchmarks</a></li></ul>
+      <ul><li><a href="/subdomain-performanceprofiling.html">PerformanceProfiling</a></li></ul>
     </div>
     
 

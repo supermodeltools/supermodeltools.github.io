@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
-        <a href="/domain/androidjni.html" class="pill pill-green">AndroidJNI</a>
-        <a href="/subdomain/literuntime.html" class="pill pill-orange">LiteRuntime</a>
+        <a href="/domain/androidruntime.html" class="pill pill-green">AndroidRuntime</a>
+        <a href="/subdomain/jnibridge.html" class="pill pill-orange">JNIBridge</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AndroidJNI","slug":"domain-androidjni"},"entity":{"name":"toString","slug":"fn-tensor-java-tostring","type":"Function"},"subdomain":{"name":"LiteRuntime","slug":"subdomain-literuntime"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AndroidRuntime","slug":"domain-androidruntime"},"entity":{"name":"toString","slug":"fn-tensor-java-tostring","type":"Function"},"subdomain":{"name":"JNIBridge","slug":"subdomain-jnibridge"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/androidjni.html">AndroidJNI</a><span class="arch-sep">&rarr;</span>
-            <a href="/literuntime.html">LiteRuntime</a><span class="arch-sep">&rarr;</span>
+            <a href="/androidruntime.html">AndroidRuntime</a><span class="arch-sep">&rarr;</span>
+            <a href="/jnibridge.html">JNIBridge</a><span class="arch-sep">&rarr;</span>
             <span>toString() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3d575103_b0c5_f1cb_0731_43f23f63abdf["toString()"]
-  774a02f5_d20e_3500_c64e_636e87a5625c["toString()"]
-  774a02f5_d20e_3500_c64e_636e87a5625c -->|calls| 3d575103_b0c5_f1cb_0731_43f23f63abdf
-  d7001ea7_5869_fc69_cc98_6842091bfbec["Tensor()"]
-  3d575103_b0c5_f1cb_0731_43f23f63abdf -->|calls| d7001ea7_5869_fc69_cc98_6842091bfbec
-  774a02f5_d20e_3500_c64e_636e87a5625c["toString()"]
-  3d575103_b0c5_f1cb_0731_43f23f63abdf -->|calls| 774a02f5_d20e_3500_c64e_636e87a5625c
-  style 3d575103_b0c5_f1cb_0731_43f23f63abdf fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  598c8a78_20f3_5a44_b8d0_069fd4142c7e["toString()"]
+  14a60590_edc4_4de6_d628_315a28ee1146["toString()"]
+  14a60590_edc4_4de6_d628_315a28ee1146 -->|calls| 598c8a78_20f3_5a44_b8d0_069fd4142c7e
+  3d2bbe2c_60a9_25c7_4168_2d728015269b["Tensor()"]
+  598c8a78_20f3_5a44_b8d0_069fd4142c7e -->|calls| 3d2bbe2c_60a9_25c7_4168_2d728015269b
+  14a60590_edc4_4de6_d628_315a28ee1146["toString()"]
+  598c8a78_20f3_5a44_b8d0_069fd4142c7e -->|calls| 14a60590_edc4_4de6_d628_315a28ee1146
+  style 598c8a78_20f3_5a44_b8d0_069fd4142c7e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-tensor-java-tostring"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3d575103:b0c5:f1cb:0731:43f23f63abdf","label":"toString","type":"Function","slug":"fn-tensor-java-tostring","lc":4,"lang":"java","cc":2,"cbc":1},{"id":"d7001ea7:5869:fc69:cc98:6842091bfbec","label":"Tensor","type":"Function","slug":"fn-tensor-java-tensor","lc":5,"lang":"java","cc":1,"cbc":6},{"id":"774a02f5:d20e:3500:c64e:636e87a5625c","label":"toString","type":"Function","slug":"fn-tensor-java-tostring-2","lc":4,"lang":"java","cc":2,"cbc":1},{"id":"domain:AndroidJNI","label":"AndroidJNI","type":"Domain","slug":"domain-androidjni"},{"id":"subdomain:AndroidJNI:LiteRuntime","label":"LiteRuntime","type":"Subdomain","slug":"subdomain-literuntime"}],"edges":[{"source":"3d575103:b0c5:f1cb:0731:43f23f63abdf","target":"d7001ea7:5869:fc69:cc98:6842091bfbec","type":"calls"},{"source":"3d575103:b0c5:f1cb:0731:43f23f63abdf","target":"774a02f5:d20e:3500:c64e:636e87a5625c","type":"calls"},{"source":"774a02f5:d20e:3500:c64e:636e87a5625c","target":"3d575103:b0c5:f1cb:0731:43f23f63abdf","type":"calls"},{"source":"3d575103:b0c5:f1cb:0731:43f23f63abdf","target":"domain:AndroidJNI","type":"belongsTo"},{"source":"3d575103:b0c5:f1cb:0731:43f23f63abdf","target":"subdomain:AndroidJNI:LiteRuntime","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"598c8a78:20f3:5a44:b8d0:069fd4142c7e","label":"toString","type":"Function","slug":"fn-tensor-java-tostring","lc":4,"lang":"java","cc":2,"cbc":1},{"id":"3d2bbe2c:60a9:25c7:4168:2d728015269b","label":"Tensor","type":"Function","slug":"fn-tensor-java-tensor","lc":5,"lang":"java","cc":1,"cbc":6},{"id":"14a60590:edc4:4de6:d628:315a28ee1146","label":"toString","type":"Function","slug":"fn-tensor-java-tostring-2","lc":4,"lang":"java","cc":2,"cbc":1},{"id":"domain:AndroidRuntime","label":"AndroidRuntime","type":"Domain","slug":"domain-androidruntime"},{"id":"subdomain:AndroidRuntime:JNIBridge","label":"JNIBridge","type":"Subdomain","slug":"subdomain-jnibridge"}],"edges":[{"source":"598c8a78:20f3:5a44:b8d0:069fd4142c7e","target":"3d2bbe2c:60a9:25c7:4168:2d728015269b","type":"calls"},{"source":"598c8a78:20f3:5a44:b8d0:069fd4142c7e","target":"14a60590:edc4:4de6:d628:315a28ee1146","type":"calls"},{"source":"14a60590:edc4:4de6:d628:315a28ee1146","target":"598c8a78:20f3:5a44:b8d0:069fd4142c7e","type":"calls"},{"source":"598c8a78:20f3:5a44:b8d0:069fd4142c7e","target":"domain:AndroidRuntime","type":"belongsTo"},{"source":"598c8a78:20f3:5a44:b8d0:069fd4142c7e","target":"subdomain:AndroidRuntime:JNIBridge","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -951,14 +951,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-androidjni.html">AndroidJNI</a></li></ul>
+      <ul><li><a href="/domain-androidruntime.html">AndroidRuntime</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-literuntime.html">LiteRuntime</a></li></ul>
+      <ul><li><a href="/subdomain-jnibridge.html">JNIBridge</a></li></ul>
     </div>
     
 

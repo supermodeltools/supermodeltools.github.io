@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/backendeval.html" class="pill pill-orange">BackendEval</a>
+        <a href="/domain/dynamobenchmark.html" class="pill pill-green">DynamoBenchmark</a>
+        <a href="/subdomain/performanceprofiling.html" class="pill pill-orange">PerformanceProfiling</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"get_memory_bytes","slug":"fn-utils-py-get-memory-bytes","type":"Function"},"subdomain":{"name":"BackendEval","slug":"subdomain-backendeval"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBenchmark","slug":"domain-dynamobenchmark"},"entity":{"name":"get_memory_bytes","slug":"fn-utils-py-get-memory-bytes","type":"Function"},"subdomain":{"name":"PerformanceProfiling","slug":"subdomain-performanceprofiling"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/backendeval.html">BackendEval</a><span class="arch-sep">&rarr;</span>
+            <a href="/dynamobenchmark.html">DynamoBenchmark</a><span class="arch-sep">&rarr;</span>
+            <a href="/performanceprofiling.html">PerformanceProfiling</a><span class="arch-sep">&rarr;</span>
             <span>get_memory_bytes() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  c3c974db_9b45_d58f_d15f_a51d78d80a72["get_memory_bytes()"]
-  3bec2d2a_33d1_b057_d872_e8f41e82b694["benchmark_single_shape_for_backend()"]
-  3bec2d2a_33d1_b057_d872_e8f41e82b694 -->|calls| c3c974db_9b45_d58f_d15f_a51d78d80a72
-  style c3c974db_9b45_d58f_d15f_a51d78d80a72 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  9ce451f6_32a0_3a82_b049_fa996d461c8a["get_memory_bytes()"]
+  284003db_e064_7800_06f3_45f6a31e6460["benchmark_single_shape_for_backend()"]
+  284003db_e064_7800_06f3_45f6a31e6460 -->|calls| 9ce451f6_32a0_3a82_b049_fa996d461c8a
+  style 9ce451f6_32a0_3a82_b049_fa996d461c8a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-utils-py-get-memory-bytes"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"c3c974db:9b45:d58f:d15f:a51d78d80a72","label":"get_memory_bytes","type":"Function","slug":"fn-utils-py-get-memory-bytes","lc":3,"lang":"python","cbc":1},{"id":"3bec2d2a:33d1:b057:d872:e8f41e82b694","label":"benchmark_single_shape_for_backend","type":"Function","slug":"fn-utils-py-benchmark-single-shape-for-backend","lc":19,"lang":"python","cc":3,"cbc":1},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:BackendEval","label":"BackendEval","type":"Subdomain","slug":"subdomain-backendeval"}],"edges":[{"source":"3bec2d2a:33d1:b057:d872:e8f41e82b694","target":"c3c974db:9b45:d58f:d15f:a51d78d80a72","type":"calls"},{"source":"c3c974db:9b45:d58f:d15f:a51d78d80a72","target":"domain:DynamoBench","type":"belongsTo"},{"source":"c3c974db:9b45:d58f:d15f:a51d78d80a72","target":"subdomain:DynamoBench:BackendEval","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"9ce451f6:32a0:3a82:b049:fa996d461c8a","label":"get_memory_bytes","type":"Function","slug":"fn-utils-py-get-memory-bytes","lc":3,"lang":"python","cbc":1},{"id":"284003db:e064:7800:06f3:45f6a31e6460","label":"benchmark_single_shape_for_backend","type":"Function","slug":"fn-utils-py-benchmark-single-shape-for-backend","lc":19,"lang":"python","cc":3,"cbc":1},{"id":"domain:DynamoBenchmark","label":"DynamoBenchmark","type":"Domain","slug":"domain-dynamobenchmark"},{"id":"subdomain:DynamoBenchmark:PerformanceProfiling","label":"PerformanceProfiling","type":"Subdomain","slug":"subdomain-performanceprofiling"}],"edges":[{"source":"284003db:e064:7800:06f3:45f6a31e6460","target":"9ce451f6:32a0:3a82:b049:fa996d461c8a","type":"calls"},{"source":"9ce451f6:32a0:3a82:b049:fa996d461c8a","target":"domain:DynamoBenchmark","type":"belongsTo"},{"source":"9ce451f6:32a0:3a82:b049:fa996d461c8a","target":"subdomain:DynamoBenchmark:PerformanceProfiling","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -946,14 +946,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-dynamobench.html">DynamoBench</a></li></ul>
+      <ul><li><a href="/domain-dynamobenchmark.html">DynamoBenchmark</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-backendeval.html">BackendEval</a></li></ul>
+      <ul><li><a href="/subdomain-performanceprofiling.html">PerformanceProfiling</a></li></ul>
     </div>
     
 

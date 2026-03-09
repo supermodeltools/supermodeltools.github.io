@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/microbenchmarks.html" class="pill pill-orange">Microbenchmarks</a>
+        <a href="/domain/dynamobenchmark.html" class="pill pill-green">DynamoBenchmark</a>
+        <a href="/subdomain/performanceprofiling.html" class="pill pill-orange">PerformanceProfiling</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"forward_and_backward_pass","slug":"fn-huggingface-py-forward-and-backward-pass","type":"Function"},"subdomain":{"name":"Microbenchmarks","slug":"subdomain-microbenchmarks"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBenchmark","slug":"domain-dynamobenchmark"},"entity":{"name":"forward_and_backward_pass","slug":"fn-huggingface-py-forward-and-backward-pass","type":"Function"},"subdomain":{"name":"PerformanceProfiling","slug":"subdomain-performanceprofiling"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/microbenchmarks.html">Microbenchmarks</a><span class="arch-sep">&rarr;</span>
+            <a href="/dynamobenchmark.html">DynamoBenchmark</a><span class="arch-sep">&rarr;</span>
+            <a href="/performanceprofiling.html">PerformanceProfiling</a><span class="arch-sep">&rarr;</span>
             <span>forward_and_backward_pass() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  075a50bf_87a6_87da_a0dc_f51575ad304e["forward_and_backward_pass()"]
-  2d2d061d_e5b8_0a15_0bf5_243c5ffeb3e6["optimizer_zero_grad()"]
-  075a50bf_87a6_87da_a0dc_f51575ad304e -->|calls| 2d2d061d_e5b8_0a15_0bf5_243c5ffeb3e6
-  8b09f835_4ac1_d178_d9c3_ad5d600960cf["compute_loss()"]
-  075a50bf_87a6_87da_a0dc_f51575ad304e -->|calls| 8b09f835_4ac1_d178_d9c3_ad5d600960cf
-  d091b8ff_9871_b43b_1b6e_e11bc431bb3e["optimizer_step()"]
-  075a50bf_87a6_87da_a0dc_f51575ad304e -->|calls| d091b8ff_9871_b43b_1b6e_e11bc431bb3e
-  fb00054c_64f4_dac7_a599_22a86810e779["scale()"]
-  075a50bf_87a6_87da_a0dc_f51575ad304e -->|calls| fb00054c_64f4_dac7_a599_22a86810e779
-  style 075a50bf_87a6_87da_a0dc_f51575ad304e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  e95cfa26_4356_23c7_3c67_d065e95ddc02["forward_and_backward_pass()"]
+  a57e2bbb_3520_7f76_8e3f_be590482c146["optimizer_zero_grad()"]
+  e95cfa26_4356_23c7_3c67_d065e95ddc02 -->|calls| a57e2bbb_3520_7f76_8e3f_be590482c146
+  b25e6f88_deb7_ba42_744a_06be5cc5e329["compute_loss()"]
+  e95cfa26_4356_23c7_3c67_d065e95ddc02 -->|calls| b25e6f88_deb7_ba42_744a_06be5cc5e329
+  b68227f1_5a63_96ff_7c8a_d2d9e3b8ffb4["optimizer_step()"]
+  e95cfa26_4356_23c7_3c67_d065e95ddc02 -->|calls| b68227f1_5a63_96ff_7c8a_d2d9e3b8ffb4
+  1a1acc3b_2829_0894_d0a7_8ca21d162735["scale()"]
+  e95cfa26_4356_23c7_3c67_d065e95ddc02 -->|calls| 1a1acc3b_2829_0894_d0a7_8ca21d162735
+  style e95cfa26_4356_23c7_3c67_d065e95ddc02 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-huggingface-py-forward-and-backward-pass"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"075a50bf:87a6:87da:a0dc:f51575ad304e","label":"forward_and_backward_pass","type":"Function","slug":"fn-huggingface-py-forward-and-backward-pass","lc":11,"lang":"python","cc":4},{"id":"2d2d061d:e5b8:0a15:0bf5:243c5ffeb3e6","label":"optimizer_zero_grad","type":"Function","slug":"fn-common-py-optimizer-zero-grad","lc":5,"lang":"python","cbc":1},{"id":"8b09f835:4ac1:d178:d9c3:ad5d600960cf","label":"compute_loss","type":"Function","slug":"fn-huggingface-py-compute-loss","lc":2,"lang":"python","cbc":1},{"id":"d091b8ff:9871:b43b:1b6e:e11bc431bb3e","label":"optimizer_step","type":"Function","slug":"fn-common-py-optimizer-step","lc":3,"lang":"python","cbc":1},{"id":"fb00054c:64f4:dac7:a599:22a86810e779","label":"scale","type":"Function","slug":"fn-common-py-scale","lc":2,"lang":"python","cbc":1},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:Microbenchmarks","label":"Microbenchmarks","type":"Subdomain","slug":"subdomain-microbenchmarks"}],"edges":[{"source":"075a50bf:87a6:87da:a0dc:f51575ad304e","target":"2d2d061d:e5b8:0a15:0bf5:243c5ffeb3e6","type":"calls"},{"source":"075a50bf:87a6:87da:a0dc:f51575ad304e","target":"8b09f835:4ac1:d178:d9c3:ad5d600960cf","type":"calls"},{"source":"075a50bf:87a6:87da:a0dc:f51575ad304e","target":"d091b8ff:9871:b43b:1b6e:e11bc431bb3e","type":"calls"},{"source":"075a50bf:87a6:87da:a0dc:f51575ad304e","target":"fb00054c:64f4:dac7:a599:22a86810e779","type":"calls"},{"source":"075a50bf:87a6:87da:a0dc:f51575ad304e","target":"domain:DynamoBench","type":"belongsTo"},{"source":"075a50bf:87a6:87da:a0dc:f51575ad304e","target":"subdomain:DynamoBench:Microbenchmarks","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"e95cfa26:4356:23c7:3c67:d065e95ddc02","label":"forward_and_backward_pass","type":"Function","slug":"fn-huggingface-py-forward-and-backward-pass","lc":11,"lang":"python","cc":4},{"id":"a57e2bbb:3520:7f76:8e3f:be590482c146","label":"optimizer_zero_grad","type":"Function","slug":"fn-common-py-optimizer-zero-grad","lc":5,"lang":"python","cbc":1},{"id":"b25e6f88:deb7:ba42:744a:06be5cc5e329","label":"compute_loss","type":"Function","slug":"fn-huggingface-py-compute-loss","lc":2,"lang":"python","cbc":1},{"id":"b68227f1:5a63:96ff:7c8a:d2d9e3b8ffb4","label":"optimizer_step","type":"Function","slug":"fn-common-py-optimizer-step","lc":3,"lang":"python","cbc":1},{"id":"1a1acc3b:2829:0894:d0a7:8ca21d162735","label":"scale","type":"Function","slug":"fn-common-py-scale","lc":2,"lang":"python","cbc":1},{"id":"domain:DynamoBenchmark","label":"DynamoBenchmark","type":"Domain","slug":"domain-dynamobenchmark"},{"id":"subdomain:DynamoBenchmark:PerformanceProfiling","label":"PerformanceProfiling","type":"Subdomain","slug":"subdomain-performanceprofiling"}],"edges":[{"source":"e95cfa26:4356:23c7:3c67:d065e95ddc02","target":"a57e2bbb:3520:7f76:8e3f:be590482c146","type":"calls"},{"source":"e95cfa26:4356:23c7:3c67:d065e95ddc02","target":"b25e6f88:deb7:ba42:744a:06be5cc5e329","type":"calls"},{"source":"e95cfa26:4356:23c7:3c67:d065e95ddc02","target":"b68227f1:5a63:96ff:7c8a:d2d9e3b8ffb4","type":"calls"},{"source":"e95cfa26:4356:23c7:3c67:d065e95ddc02","target":"1a1acc3b:2829:0894:d0a7:8ca21d162735","type":"calls"},{"source":"e95cfa26:4356:23c7:3c67:d065e95ddc02","target":"domain:DynamoBenchmark","type":"belongsTo"},{"source":"e95cfa26:4356:23c7:3c67:d065e95ddc02","target":"subdomain:DynamoBenchmark:PerformanceProfiling","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -960,14 +960,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-dynamobench.html">DynamoBench</a></li></ul>
+      <ul><li><a href="/domain-dynamobenchmark.html">DynamoBenchmark</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-microbenchmarks.html">Microbenchmarks</a></li></ul>
+      <ul><li><a href="/subdomain-performanceprofiling.html">PerformanceProfiling</a></li></ul>
     </div>
     
 

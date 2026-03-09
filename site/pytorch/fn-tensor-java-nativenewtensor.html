@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
-        <a href="/domain/androidjni.html" class="pill pill-green">AndroidJNI</a>
-        <a href="/subdomain/literuntime.html" class="pill pill-orange">LiteRuntime</a>
+        <a href="/domain/androidruntime.html" class="pill pill-green">AndroidRuntime</a>
+        <a href="/subdomain/jnibridge.html" class="pill pill-orange">JNIBridge</a>
         
         
         <span class="pill">calls 6</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AndroidJNI","slug":"domain-androidjni"},"entity":{"name":"nativeNewTensor","slug":"fn-tensor-java-nativenewtensor","type":"Function"},"subdomain":{"name":"LiteRuntime","slug":"subdomain-literuntime"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AndroidRuntime","slug":"domain-androidruntime"},"entity":{"name":"nativeNewTensor","slug":"fn-tensor-java-nativenewtensor","type":"Function"},"subdomain":{"name":"JNIBridge","slug":"subdomain-jnibridge"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/androidjni.html">AndroidJNI</a><span class="arch-sep">&rarr;</span>
-            <a href="/literuntime.html">LiteRuntime</a><span class="arch-sep">&rarr;</span>
+            <a href="/androidruntime.html">AndroidRuntime</a><span class="arch-sep">&rarr;</span>
+            <a href="/jnibridge.html">JNIBridge</a><span class="arch-sep">&rarr;</span>
             <span>nativeNewTensor() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,20 +911,20 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3cb263e8_13aa_c37f_b0c3_06e133555796["nativeNewTensor()"]
-  eecde931_292c_3644_a0bf_e7627308bbe5["Tensor_float32()"]
-  3cb263e8_13aa_c37f_b0c3_06e133555796 -->|calls| eecde931_292c_3644_a0bf_e7627308bbe5
-  bf53fbe1_5e73_932a_523d_068f3f78929c["Tensor_int32()"]
-  3cb263e8_13aa_c37f_b0c3_06e133555796 -->|calls| bf53fbe1_5e73_932a_523d_068f3f78929c
-  f5f97144_1819_0243_23ac_1bc5f0aa6212["Tensor_int64()"]
-  3cb263e8_13aa_c37f_b0c3_06e133555796 -->|calls| f5f97144_1819_0243_23ac_1bc5f0aa6212
-  0219faae_6d92_c215_dafa_d6a7c36f8943["Tensor_float64()"]
-  3cb263e8_13aa_c37f_b0c3_06e133555796 -->|calls| 0219faae_6d92_c215_dafa_d6a7c36f8943
-  a72f143b_b532_de1d_e765_e254e88ccc8d["Tensor_uint8()"]
-  3cb263e8_13aa_c37f_b0c3_06e133555796 -->|calls| a72f143b_b532_de1d_e765_e254e88ccc8d
-  b08f76d7_19f4_ca89_0055_a85a9ae31c8b["Tensor_int8()"]
-  3cb263e8_13aa_c37f_b0c3_06e133555796 -->|calls| b08f76d7_19f4_ca89_0055_a85a9ae31c8b
-  style 3cb263e8_13aa_c37f_b0c3_06e133555796 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  187d266d_a5e6_e08c_61cb_b0f9cfdf6286["nativeNewTensor()"]
+  3532a83f_cea0_cb06_12d3_13e0e9afce60["Tensor_float32()"]
+  187d266d_a5e6_e08c_61cb_b0f9cfdf6286 -->|calls| 3532a83f_cea0_cb06_12d3_13e0e9afce60
+  ae011950_1b50_f74e_5ebf_dcba516c9309["Tensor_int32()"]
+  187d266d_a5e6_e08c_61cb_b0f9cfdf6286 -->|calls| ae011950_1b50_f74e_5ebf_dcba516c9309
+  2eb506ff_3eaa_f6e5_c4fa_0fdf88fd5a4f["Tensor_int64()"]
+  187d266d_a5e6_e08c_61cb_b0f9cfdf6286 -->|calls| 2eb506ff_3eaa_f6e5_c4fa_0fdf88fd5a4f
+  ddd6fcf2_126a_c8cd_c419_b33ac2e02968["Tensor_float64()"]
+  187d266d_a5e6_e08c_61cb_b0f9cfdf6286 -->|calls| ddd6fcf2_126a_c8cd_c419_b33ac2e02968
+  37f06ce2_6614_8443_e564_d9c4ac85ca09["Tensor_uint8()"]
+  187d266d_a5e6_e08c_61cb_b0f9cfdf6286 -->|calls| 37f06ce2_6614_8443_e564_d9c4ac85ca09
+  f6193c68_4fae_1409_f1dc_f6bff67e4d9d["Tensor_int8()"]
+  187d266d_a5e6_e08c_61cb_b0f9cfdf6286 -->|calls| f6193c68_4fae_1409_f1dc_f6bff67e4d9d
+  style 187d266d_a5e6_e08c_61cb_b0f9cfdf6286 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -932,7 +932,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-tensor-java-nativenewtensor"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3cb263e8:13aa:c37f:b0c3:06e133555796","label":"nativeNewTensor","type":"Function","slug":"fn-tensor-java-nativenewtensor","lc":30,"lang":"java","cc":6},{"id":"eecde931:292c:3644:a0bf:e7627308bbe5","label":"Tensor_float32","type":"Function","slug":"fn-tensor-java-tensor-float32","lc":4,"lang":"java","cbc":2},{"id":"bf53fbe1:5e73:932a:523d:068f3f78929c","label":"Tensor_int32","type":"Function","slug":"fn-tensor-java-tensor-int32","lc":4,"lang":"java","cbc":2},{"id":"f5f97144:1819:0243:23ac:1bc5f0aa6212","label":"Tensor_int64","type":"Function","slug":"fn-tensor-java-tensor-int64","lc":4,"lang":"java","cbc":2},{"id":"0219faae:6d92:c215:dafa:d6a7c36f8943","label":"Tensor_float64","type":"Function","slug":"fn-tensor-java-tensor-float64","lc":4,"lang":"java","cbc":2},{"id":"a72f143b:b532:de1d:e765:e254e88ccc8d","label":"Tensor_uint8","type":"Function","slug":"fn-tensor-java-tensor-uint8","lc":4,"lang":"java","cbc":2},{"id":"b08f76d7:19f4:ca89:0055:a85a9ae31c8b","label":"Tensor_int8","type":"Function","slug":"fn-tensor-java-tensor-int8","lc":4,"lang":"java","cbc":2},{"id":"domain:AndroidJNI","label":"AndroidJNI","type":"Domain","slug":"domain-androidjni"},{"id":"subdomain:AndroidJNI:LiteRuntime","label":"LiteRuntime","type":"Subdomain","slug":"subdomain-literuntime"}],"edges":[{"source":"3cb263e8:13aa:c37f:b0c3:06e133555796","target":"eecde931:292c:3644:a0bf:e7627308bbe5","type":"calls"},{"source":"3cb263e8:13aa:c37f:b0c3:06e133555796","target":"bf53fbe1:5e73:932a:523d:068f3f78929c","type":"calls"},{"source":"3cb263e8:13aa:c37f:b0c3:06e133555796","target":"f5f97144:1819:0243:23ac:1bc5f0aa6212","type":"calls"},{"source":"3cb263e8:13aa:c37f:b0c3:06e133555796","target":"0219faae:6d92:c215:dafa:d6a7c36f8943","type":"calls"},{"source":"3cb263e8:13aa:c37f:b0c3:06e133555796","target":"a72f143b:b532:de1d:e765:e254e88ccc8d","type":"calls"},{"source":"3cb263e8:13aa:c37f:b0c3:06e133555796","target":"b08f76d7:19f4:ca89:0055:a85a9ae31c8b","type":"calls"},{"source":"3cb263e8:13aa:c37f:b0c3:06e133555796","target":"domain:AndroidJNI","type":"belongsTo"},{"source":"3cb263e8:13aa:c37f:b0c3:06e133555796","target":"subdomain:AndroidJNI:LiteRuntime","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"187d266d:a5e6:e08c:61cb:b0f9cfdf6286","label":"nativeNewTensor","type":"Function","slug":"fn-tensor-java-nativenewtensor","lc":30,"lang":"java","cc":6},{"id":"3532a83f:cea0:cb06:12d3:13e0e9afce60","label":"Tensor_float32","type":"Function","slug":"fn-tensor-java-tensor-float32","lc":4,"lang":"java","cbc":2},{"id":"ae011950:1b50:f74e:5ebf:dcba516c9309","label":"Tensor_int32","type":"Function","slug":"fn-tensor-java-tensor-int32","lc":4,"lang":"java","cbc":2},{"id":"2eb506ff:3eaa:f6e5:c4fa:0fdf88fd5a4f","label":"Tensor_int64","type":"Function","slug":"fn-tensor-java-tensor-int64","lc":4,"lang":"java","cbc":2},{"id":"ddd6fcf2:126a:c8cd:c419:b33ac2e02968","label":"Tensor_float64","type":"Function","slug":"fn-tensor-java-tensor-float64","lc":4,"lang":"java","cbc":2},{"id":"37f06ce2:6614:8443:e564:d9c4ac85ca09","label":"Tensor_uint8","type":"Function","slug":"fn-tensor-java-tensor-uint8","lc":4,"lang":"java","cbc":2},{"id":"f6193c68:4fae:1409:f1dc:f6bff67e4d9d","label":"Tensor_int8","type":"Function","slug":"fn-tensor-java-tensor-int8","lc":4,"lang":"java","cbc":2},{"id":"domain:AndroidRuntime","label":"AndroidRuntime","type":"Domain","slug":"domain-androidruntime"},{"id":"subdomain:AndroidRuntime:JNIBridge","label":"JNIBridge","type":"Subdomain","slug":"subdomain-jnibridge"}],"edges":[{"source":"187d266d:a5e6:e08c:61cb:b0f9cfdf6286","target":"3532a83f:cea0:cb06:12d3:13e0e9afce60","type":"calls"},{"source":"187d266d:a5e6:e08c:61cb:b0f9cfdf6286","target":"ae011950:1b50:f74e:5ebf:dcba516c9309","type":"calls"},{"source":"187d266d:a5e6:e08c:61cb:b0f9cfdf6286","target":"2eb506ff:3eaa:f6e5:c4fa:0fdf88fd5a4f","type":"calls"},{"source":"187d266d:a5e6:e08c:61cb:b0f9cfdf6286","target":"ddd6fcf2:126a:c8cd:c419:b33ac2e02968","type":"calls"},{"source":"187d266d:a5e6:e08c:61cb:b0f9cfdf6286","target":"37f06ce2:6614:8443:e564:d9c4ac85ca09","type":"calls"},{"source":"187d266d:a5e6:e08c:61cb:b0f9cfdf6286","target":"f6193c68:4fae:1409:f1dc:f6bff67e4d9d","type":"calls"},{"source":"187d266d:a5e6:e08c:61cb:b0f9cfdf6286","target":"domain:AndroidRuntime","type":"belongsTo"},{"source":"187d266d:a5e6:e08c:61cb:b0f9cfdf6286","target":"subdomain:AndroidRuntime:JNIBridge","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -983,14 +983,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-androidjni.html">AndroidJNI</a></li></ul>
+      <ul><li><a href="/domain-androidruntime.html">AndroidRuntime</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-literuntime.html">LiteRuntime</a></li></ul>
+      <ul><li><a href="/subdomain-jnibridge.html">JNIBridge</a></li></ul>
     </div>
     
 

@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
-        <a href="/domain/androidjni.html" class="pill pill-green">AndroidJNI</a>
-        <a href="/subdomain/literuntime.html" class="pill pill-orange">LiteRuntime</a>
+        <a href="/domain/androidruntime.html" class="pill pill-green">AndroidRuntime</a>
+        <a href="/subdomain/jnibridge.html" class="pill pill-orange">JNIBridge</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AndroidJNI","slug":"domain-androidjni"},"entity":{"name":"checkNormMeanArg","slug":"fn-tensorimageutils-java-checknormmeanarg","type":"Function"},"subdomain":{"name":"LiteRuntime","slug":"subdomain-literuntime"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AndroidRuntime","slug":"domain-androidruntime"},"entity":{"name":"checkNormMeanArg","slug":"fn-tensorimageutils-java-checknormmeanarg","type":"Function"},"subdomain":{"name":"JNIBridge","slug":"subdomain-jnibridge"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/androidjni.html">AndroidJNI</a><span class="arch-sep">&rarr;</span>
-            <a href="/literuntime.html">LiteRuntime</a><span class="arch-sep">&rarr;</span>
+            <a href="/androidruntime.html">AndroidRuntime</a><span class="arch-sep">&rarr;</span>
+            <a href="/jnibridge.html">JNIBridge</a><span class="arch-sep">&rarr;</span>
             <span>checkNormMeanArg() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  5e51e962_b733_e676_1c80_ef72a01c9ff2["checkNormMeanArg()"]
-  13d3189c_8f29_252b_e843_96f274dbd73b["bitmapToFloat32Tensor()"]
-  13d3189c_8f29_252b_e843_96f274dbd73b -->|calls| 5e51e962_b733_e676_1c80_ef72a01c9ff2
-  c7151ee0_ed4b_1a53_3168_512e3a360658["bitmapToFloatBuffer()"]
-  c7151ee0_ed4b_1a53_3168_512e3a360658 -->|calls| 5e51e962_b733_e676_1c80_ef72a01c9ff2
-  fffcef7b_118e_d611_413c_9aab60df0420["imageYUV420CenterCropToFloat32Tensor()"]
-  fffcef7b_118e_d611_413c_9aab60df0420 -->|calls| 5e51e962_b733_e676_1c80_ef72a01c9ff2
-  9c0c468b_38fa_322e_1f5f_b5c8519d2410["imageYUV420CenterCropToFloatBuffer()"]
-  9c0c468b_38fa_322e_1f5f_b5c8519d2410 -->|calls| 5e51e962_b733_e676_1c80_ef72a01c9ff2
-  style 5e51e962_b733_e676_1c80_ef72a01c9ff2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a89714a1_47f8_e7c5_4360_abc3ed518e6a["checkNormMeanArg()"]
+  a7ba050e_429a_1e08_5739_cd3023e8fa82["bitmapToFloat32Tensor()"]
+  a7ba050e_429a_1e08_5739_cd3023e8fa82 -->|calls| a89714a1_47f8_e7c5_4360_abc3ed518e6a
+  1ba86ec3_0a74_bb63_ef4c_8b59fdc00081["bitmapToFloatBuffer()"]
+  1ba86ec3_0a74_bb63_ef4c_8b59fdc00081 -->|calls| a89714a1_47f8_e7c5_4360_abc3ed518e6a
+  7ca2999e_0538_501b_4e55_94faebbaf5ad["imageYUV420CenterCropToFloat32Tensor()"]
+  7ca2999e_0538_501b_4e55_94faebbaf5ad -->|calls| a89714a1_47f8_e7c5_4360_abc3ed518e6a
+  4fd6290f_44a5_1ef4_c8b7_81cb29d154d7["imageYUV420CenterCropToFloatBuffer()"]
+  4fd6290f_44a5_1ef4_c8b7_81cb29d154d7 -->|calls| a89714a1_47f8_e7c5_4360_abc3ed518e6a
+  style a89714a1_47f8_e7c5_4360_abc3ed518e6a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-tensorimageutils-java-checknormmeanarg"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"5e51e962:b733:e676:1c80:ef72a01c9ff2","label":"checkNormMeanArg","type":"Function","slug":"fn-tensorimageutils-java-checknormmeanarg","lc":5,"lang":"java","cbc":4},{"id":"13d3189c:8f29:252b:e843:96f274dbd73b","label":"bitmapToFloat32Tensor","type":"Function","slug":"fn-tensorimageutils-java-bitmaptofloat32tensor","lc":11,"lang":"java","cc":5},{"id":"c7151ee0:ed4b:1a53:3168:512e3a360658","label":"bitmapToFloatBuffer","type":"Function","slug":"fn-tensorimageutils-java-bitmaptofloatbuffer","lc":45,"lang":"java","cc":3,"cbc":1},{"id":"fffcef7b:118e:d611:413c:9aab60df0420","label":"imageYUV420CenterCropToFloat32Tensor","type":"Function","slug":"fn-tensorimageutils-java-imageyuv420centercroptofloat32tensor","lc":32,"lang":"java","cc":7},{"id":"9c0c468b:38fa:322e:1f5f:b5c8519d2410","label":"imageYUV420CenterCropToFloatBuffer","type":"Function","slug":"fn-tensorimageutils-java-imageyuv420centercroptofloatbuffer","lc":54,"lang":"java","cc":6,"cbc":2},{"id":"domain:AndroidJNI","label":"AndroidJNI","type":"Domain","slug":"domain-androidjni"},{"id":"subdomain:AndroidJNI:LiteRuntime","label":"LiteRuntime","type":"Subdomain","slug":"subdomain-literuntime"}],"edges":[{"source":"13d3189c:8f29:252b:e843:96f274dbd73b","target":"5e51e962:b733:e676:1c80:ef72a01c9ff2","type":"calls"},{"source":"c7151ee0:ed4b:1a53:3168:512e3a360658","target":"5e51e962:b733:e676:1c80:ef72a01c9ff2","type":"calls"},{"source":"fffcef7b:118e:d611:413c:9aab60df0420","target":"5e51e962:b733:e676:1c80:ef72a01c9ff2","type":"calls"},{"source":"9c0c468b:38fa:322e:1f5f:b5c8519d2410","target":"5e51e962:b733:e676:1c80:ef72a01c9ff2","type":"calls"},{"source":"5e51e962:b733:e676:1c80:ef72a01c9ff2","target":"domain:AndroidJNI","type":"belongsTo"},{"source":"5e51e962:b733:e676:1c80:ef72a01c9ff2","target":"subdomain:AndroidJNI:LiteRuntime","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a89714a1:47f8:e7c5:4360:abc3ed518e6a","label":"checkNormMeanArg","type":"Function","slug":"fn-tensorimageutils-java-checknormmeanarg","lc":5,"lang":"java","cbc":4},{"id":"a7ba050e:429a:1e08:5739:cd3023e8fa82","label":"bitmapToFloat32Tensor","type":"Function","slug":"fn-tensorimageutils-java-bitmaptofloat32tensor","lc":11,"lang":"java","cc":5},{"id":"1ba86ec3:0a74:bb63:ef4c:8b59fdc00081","label":"bitmapToFloatBuffer","type":"Function","slug":"fn-tensorimageutils-java-bitmaptofloatbuffer","lc":45,"lang":"java","cc":3,"cbc":1},{"id":"7ca2999e:0538:501b:4e55:94faebbaf5ad","label":"imageYUV420CenterCropToFloat32Tensor","type":"Function","slug":"fn-tensorimageutils-java-imageyuv420centercroptofloat32tensor","lc":32,"lang":"java","cc":7},{"id":"4fd6290f:44a5:1ef4:c8b7:81cb29d154d7","label":"imageYUV420CenterCropToFloatBuffer","type":"Function","slug":"fn-tensorimageutils-java-imageyuv420centercroptofloatbuffer","lc":54,"lang":"java","cc":6,"cbc":2},{"id":"domain:AndroidRuntime","label":"AndroidRuntime","type":"Domain","slug":"domain-androidruntime"},{"id":"subdomain:AndroidRuntime:JNIBridge","label":"JNIBridge","type":"Subdomain","slug":"subdomain-jnibridge"}],"edges":[{"source":"a7ba050e:429a:1e08:5739:cd3023e8fa82","target":"a89714a1:47f8:e7c5:4360:abc3ed518e6a","type":"calls"},{"source":"1ba86ec3:0a74:bb63:ef4c:8b59fdc00081","target":"a89714a1:47f8:e7c5:4360:abc3ed518e6a","type":"calls"},{"source":"7ca2999e:0538:501b:4e55:94faebbaf5ad","target":"a89714a1:47f8:e7c5:4360:abc3ed518e6a","type":"calls"},{"source":"4fd6290f:44a5:1ef4:c8b7:81cb29d154d7","target":"a89714a1:47f8:e7c5:4360:abc3ed518e6a","type":"calls"},{"source":"a89714a1:47f8:e7c5:4360:abc3ed518e6a","target":"domain:AndroidRuntime","type":"belongsTo"},{"source":"a89714a1:47f8:e7c5:4360:abc3ed518e6a","target":"subdomain:AndroidRuntime:JNIBridge","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -954,14 +954,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-androidjni.html">AndroidJNI</a></li></ul>
+      <ul><li><a href="/domain-androidruntime.html">AndroidRuntime</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-literuntime.html">LiteRuntime</a></li></ul>
+      <ul><li><a href="/subdomain-jnibridge.html">JNIBridge</a></li></ul>
     </div>
     
 

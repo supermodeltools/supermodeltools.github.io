@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/aten.html" class="pill pill-green">ATen</a>
-        <a href="/subdomain/boxing.html" class="pill pill-orange">Boxing</a>
+        <a href="/domain/atencore.html" class="pill pill-green">ATenCore</a>
+        <a href="/subdomain/quantizedcpu.html" class="pill pill-orange">QuantizedCPU</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATen","slug":"domain-aten"},"entity":{"name":"print","slug":"fn-compare-fastrnn-results-py-print","type":"Function"},"subdomain":{"name":"Boxing","slug":"subdomain-boxing"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATenCore","slug":"domain-atencore"},"entity":{"name":"print","slug":"fn-compare-fastrnn-results-py-print","type":"Function"},"subdomain":{"name":"QuantizedCPU","slug":"subdomain-quantizedcpu"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/aten.html">ATen</a><span class="arch-sep">&rarr;</span>
-            <a href="/boxing.html">Boxing</a><span class="arch-sep">&rarr;</span>
+            <a href="/atencore.html">ATenCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/quantizedcpu.html">QuantizedCPU</a><span class="arch-sep">&rarr;</span>
             <span>print() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  c79a7a75_3a00_f73a_21b6_e8a37e281bf9["print()"]
-  9afab642_fc83_07a4_7015_636eacdfef7e["header_fmt_str()"]
-  9afab642_fc83_07a4_7015_636eacdfef7e -->|calls| c79a7a75_3a00_f73a_21b6_e8a37e281bf9
-  style c79a7a75_3a00_f73a_21b6_e8a37e281bf9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  23c71353_6538_0a3c_fa5b_ba254f2f1588["print()"]
+  c737a5ce_3600_4281_2cb5_23f0b1ab5308["header_fmt_str()"]
+  c737a5ce_3600_4281_2cb5_23f0b1ab5308 -->|calls| 23c71353_6538_0a3c_fa5b_ba254f2f1588
+  style 23c71353_6538_0a3c_fa5b_ba254f2f1588 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-compare-fastrnn-results-py-print"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"c79a7a75:3a00:f73a:21b6:e8a37e281bf9","label":"print","type":"Function","slug":"fn-compare-fastrnn-results-py-print","lc":1,"lang":"python","cbc":1},{"id":"9afab642:fc83:07a4:7015:636eacdfef7e","label":"header_fmt_str","type":"Function","slug":"fn-compare-fastrnn-results-py-header-fmt-str","lc":14,"lang":"python","cc":1},{"id":"domain:ATen","label":"ATen","type":"Domain","slug":"domain-aten"},{"id":"subdomain:ATen:Boxing","label":"Boxing","type":"Subdomain","slug":"subdomain-boxing"}],"edges":[{"source":"9afab642:fc83:07a4:7015:636eacdfef7e","target":"c79a7a75:3a00:f73a:21b6:e8a37e281bf9","type":"calls"},{"source":"c79a7a75:3a00:f73a:21b6:e8a37e281bf9","target":"domain:ATen","type":"belongsTo"},{"source":"c79a7a75:3a00:f73a:21b6:e8a37e281bf9","target":"subdomain:ATen:Boxing","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"23c71353:6538:0a3c:fa5b:ba254f2f1588","label":"print","type":"Function","slug":"fn-compare-fastrnn-results-py-print","lc":1,"lang":"python","cbc":1},{"id":"c737a5ce:3600:4281:2cb5:23f0b1ab5308","label":"header_fmt_str","type":"Function","slug":"fn-compare-fastrnn-results-py-header-fmt-str","lc":14,"lang":"python","cc":1},{"id":"domain:ATenCore","label":"ATenCore","type":"Domain","slug":"domain-atencore"},{"id":"subdomain:ATenCore:QuantizedCPU","label":"QuantizedCPU","type":"Subdomain","slug":"subdomain-quantizedcpu"}],"edges":[{"source":"c737a5ce:3600:4281:2cb5:23f0b1ab5308","target":"23c71353:6538:0a3c:fa5b:ba254f2f1588","type":"calls"},{"source":"23c71353:6538:0a3c:fa5b:ba254f2f1588","target":"domain:ATenCore","type":"belongsTo"},{"source":"23c71353:6538:0a3c:fa5b:ba254f2f1588","target":"subdomain:ATenCore:QuantizedCPU","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -944,14 +944,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-aten.html">ATen</a></li></ul>
+      <ul><li><a href="/domain-atencore.html">ATenCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-boxing.html">Boxing</a></li></ul>
+      <ul><li><a href="/subdomain-quantizedcpu.html">QuantizedCPU</a></li></ul>
     </div>
     
 
