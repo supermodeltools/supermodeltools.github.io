@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>substituteAtApply() — tailwindcss Function Reference | tailwindcss Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the substituteAtApply() function in apply.ts from the tailwindcss codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/fn-apply-ts-substituteatapply/">
+<meta property="og:title" content="substituteAtApply() — tailwindcss Function Reference — tailwindcss Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the substituteAtApply() function in apply.ts from the tailwindcss codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/fn-apply-ts-substituteatapply.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/fn-apply-ts-substituteatapply.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="tailwindcss Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="substituteAtApply() — tailwindcss Function Reference — tailwindcss Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the substituteAtApply() function in apply.ts from the tailwindcss codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-apply-ts-substituteatapply.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the substituteAtApply() function in apply.ts from the tailwindcss codebase.","image":["https://repos.supermodeltools.com/images/share/fn-apply-ts-substituteatapply.svg"],"name":"substituteAtApply() — tailwindcss Function Reference","url":"https://repos.supermodeltools.com/fn-apply-ts-substituteatapply.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"substituteAtApply() — tailwindcss Function Reference","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"substituteAtApply() is a function in the tailwindcss codebase."},"name":"What does substituteAtApply() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"substituteAtApply() calls 8 function(s): cloneAstNode, compileCandidates, get, resolveApplyDependencies, rule, segment, toCss, walk."},"name":"What does substituteAtApply() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"substituteAtApply() is called by 4 function(s): buildPluginApi, createUtilitySignatureCache, createVariantSignatureCache, parseCss."},"name":"What calls substituteAtApply()?"}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      tailwindcss Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/function.html">Function</a><span class="sep">/</span>
+        <span>substituteAtApply() — tailwindcss Function Reference</span>
+      </div>
+      <h1 class="entity-title">substituteAtApply() — tailwindcss Function Reference</h1>
+      <p class="entity-desc">Architecture documentation for the substituteAtApply() function in apply.ts from the tailwindcss codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/function.html" class="pill pill-accent">Function</a>
+        <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
+        <a href="/domain/oxide.html" class="pill pill-green">Oxide</a>
+        <a href="/subdomain/preprocessors.html" class="pill pill-orange">PreProcessors</a>
+        
+        
+        <span class="pill">calls 8</span>
+        <span class="pill">called by 4</span>
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"cb":4,"co":8,"el":300,"et":{"calls":12},"lc":291,"sl":10}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+      <div class="visuals-archmap" id="arch-map-container">
+        <div class="arch-map-svg"></div>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Oxide","slug":"domain-oxide"},"entity":{"name":"substituteAtApply","slug":"fn-apply-ts-substituteatapply","type":"Function"},"subdomain":{"name":"PreProcessors","slug":"subdomain-preprocessors"}}</script>
+        <noscript>
+          <div class="arch-map-fallback">
+            <a href="/oxide.html">Oxide</a><span class="arch-sep">&rarr;</span>
+            <a href="/preprocessors.html">PreProcessors</a><span class="arch-sep">&rarr;</span>
+            <span>substituteAtApply() — tailwindcss Function Reference</span>
+          </div>
+        </noscript>
+      </div>
+      
+
+      
+      <div class="visuals-row">
+        
+        <div class="visuals-cell mermaid-container">
+          <h3>Dependency Diagram</h3>
+          <pre class="mermaid">graph TD
+  83319d30_ebfd_3181_49b5_b7a0e1ab5989["substituteAtApply()"]
+  5b98d7f7_a765_3560_e9d7_b0666e5bc0ad["createUtilitySignatureCache()"]
+  5b98d7f7_a765_3560_e9d7_b0666e5bc0ad -->|calls| 83319d30_ebfd_3181_49b5_b7a0e1ab5989
+  7940c30d_333a_3255_a755_6a7346cf140e["createVariantSignatureCache()"]
+  7940c30d_333a_3255_a755_6a7346cf140e -->|calls| 83319d30_ebfd_3181_49b5_b7a0e1ab5989
+  543b2aac_6b71_3609_5189_d25aa2038672["buildPluginApi()"]
+  543b2aac_6b71_3609_5189_d25aa2038672 -->|calls| 83319d30_ebfd_3181_49b5_b7a0e1ab5989
+  2efc5608_6ece_d525_d502_ae402d3e7a6b["parseCss()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| 83319d30_ebfd_3181_49b5_b7a0e1ab5989
+  72bcf502_1614_63ec_b8d2_2c996b682c33["rule()"]
+  83319d30_ebfd_3181_49b5_b7a0e1ab5989 -->|calls| 72bcf502_1614_63ec_b8d2_2c996b682c33
+  089aa8da_dc18_42e3_92c2_a1d831f00b7a["walk()"]
+  83319d30_ebfd_3181_49b5_b7a0e1ab5989 -->|calls| 089aa8da_dc18_42e3_92c2_a1d831f00b7a
+  e524234f_493e_88f5_da04_62f5e181537b["get()"]
+  83319d30_ebfd_3181_49b5_b7a0e1ab5989 -->|calls| e524234f_493e_88f5_da04_62f5e181537b
+  f0f31142_8c05_b0e1_a3a5_9e3df9833861["resolveApplyDependencies()"]
+  83319d30_ebfd_3181_49b5_b7a0e1ab5989 -->|calls| f0f31142_8c05_b0e1_a3a5_9e3df9833861
+  c30d772c_45fb_99d9_5db3_4694e7e32649["toCss()"]
+  83319d30_ebfd_3181_49b5_b7a0e1ab5989 -->|calls| c30d772c_45fb_99d9_5db3_4694e7e32649
+  90477a8c_9d5a_e0c7_cc3e_99a0c5a7f9e7["compileCandidates()"]
+  83319d30_ebfd_3181_49b5_b7a0e1ab5989 -->|calls| 90477a8c_9d5a_e0c7_cc3e_99a0c5a7f9e7
+  436e9d88_b972_8d93_42b2_57be4f7f6801["segment()"]
+  83319d30_ebfd_3181_49b5_b7a0e1ab5989 -->|calls| 436e9d88_b972_8d93_42b2_57be4f7f6801
+  305395f6_2121_4624_0f83_a1580e4b16ac["cloneAstNode()"]
+  83319d30_ebfd_3181_49b5_b7a0e1ab5989 -->|calls| 305395f6_2121_4624_0f83_a1580e4b16ac
+  style 83319d30_ebfd_3181_49b5_b7a0e1ab5989 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+        </div>
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="fn-apply-ts-substituteatapply"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","label":"substituteAtApply","type":"Function","slug":"fn-apply-ts-substituteatapply","lc":291,"lang":"typescript","cc":8,"cbc":4},{"id":"72bcf502:1614:63ec:b8d2:2c996b682c33","label":"rule","type":"Function","slug":"fn-ast-ts-rule","lc":7,"lang":"typescript","cc":2,"cbc":14},{"id":"089aa8da:dc18:42e3:92c2:a1d831f00b7a","label":"walk","type":"Function","slug":"fn-walk-ts-walk-2","lc":12,"lang":"typescript","cc":1,"cbc":37},{"id":"e524234f:493e:88f5:da04:62f5e181537b","label":"get","type":"Function","slug":"fn-default-map-ts-get","lc":10,"lang":"typescript","cbc":45},{"id":"f0f31142:8c05:b0e1:a3a5:9e3df9833861","label":"resolveApplyDependencies","type":"Function","slug":"fn-apply-ts-resolveapplydependencies","lc":23,"lang":"typescript","cbc":1},{"id":"c30d772c:45fb:99d9:5db3:4694e7e32649","label":"toCss","type":"Function","slug":"fn-ast-ts-tocss","lc":206,"lang":"typescript","cc":1,"cbc":18},{"id":"90477a8c:9d5a:e0c7:cc3e:99a0c5a7f9e7","label":"compileCandidates","type":"Function","slug":"fn-compile-ts-compilecandidates","lc":111,"lang":"typescript","cc":6,"cbc":4},{"id":"436e9d88:b972:8d93:42b2:57be4f7f6801","label":"segment","type":"Function","slug":"fn-segment-ts-segment","lc":74,"lang":"typescript","cbc":39},{"id":"305395f6:2121:4624:0f83:a1580e4b16ac","label":"cloneAstNode","type":"Function","slug":"fn-ast-ts-cloneastnode","lc":61,"lang":"typescript","cbc":3},{"id":"5b98d7f7:a765:3560:e9d7:b0666e5bc0ad","label":"createUtilitySignatureCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createutilitysignaturecache","lc":41,"lang":"typescript","cc":7,"cbc":1},{"id":"7940c30d:333a:3255:a755:6a7346cf140e","label":"createVariantSignatureCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createvariantsignaturecache","lc":91,"lang":"typescript","cc":6,"cbc":1},{"id":"543b2aac:6b71:3609:5189:d25aa2038672","label":"buildPluginApi","type":"Function","slug":"fn-plugin-api-ts-buildpluginapi","lc":450,"lang":"typescript","cc":24,"cbc":1},{"id":"2efc5608:6ece:d525:d502:ae402d3e7a6b","label":"parseCss","type":"Function","slug":"fn-index-ts-parsecss","lc":567,"lang":"typescript","cc":32,"cbc":2},{"id":"domain:Oxide","label":"Oxide","type":"Domain","slug":"domain-oxide"},{"id":"subdomain:Oxide:PreProcessors","label":"PreProcessors","type":"Subdomain","slug":"subdomain-preprocessors"}],"edges":[{"source":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","target":"72bcf502:1614:63ec:b8d2:2c996b682c33","type":"calls"},{"source":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","target":"089aa8da:dc18:42e3:92c2:a1d831f00b7a","type":"calls"},{"source":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","target":"e524234f:493e:88f5:da04:62f5e181537b","type":"calls"},{"source":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","target":"f0f31142:8c05:b0e1:a3a5:9e3df9833861","type":"calls"},{"source":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","target":"c30d772c:45fb:99d9:5db3:4694e7e32649","type":"calls"},{"source":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","target":"90477a8c:9d5a:e0c7:cc3e:99a0c5a7f9e7","type":"calls"},{"source":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","target":"436e9d88:b972:8d93:42b2:57be4f7f6801","type":"calls"},{"source":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","target":"305395f6:2121:4624:0f83:a1580e4b16ac","type":"calls"},{"source":"5b98d7f7:a765:3560:e9d7:b0666e5bc0ad","target":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","type":"calls"},{"source":"7940c30d:333a:3255:a755:6a7346cf140e","target":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","type":"calls"},{"source":"543b2aac:6b71:3609:5189:d25aa2038672","target":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","type":"calls"},{"source":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","target":"domain:Oxide","type":"belongsTo"},{"source":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","target":"subdomain:Oxide:PreProcessors","type":"belongsTo"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">packages/tailwindcss/src/apply.ts lines 10–300</p>
+      <pre class="source-code"><code class="language-typescript">export function substituteAtApply(ast: AstNode[], designSystem: DesignSystem) {
+  let features = Features.None
+
+  // Wrap the whole AST in a root rule to make sure there is always a parent
+  // available for `@apply` at-rules. In some cases, the incoming `ast` just
+  // contains `@apply` at-rules which means that there is no proper parent to
+  // rely on.
+  let root = rule(&#39;&amp;&#39;, ast)
+
+  // Track all nodes containing `@apply`
+  let parents = new Set&lt;AstNode&gt;()
+
+  // Track all the dependencies of an `AstNode`
+  let dependencies = new DefaultMap&lt;AstNode, Set&lt;string&gt;&gt;(() =&gt; new Set&lt;string&gt;())
+
+  // Track all `@utility` definitions by its root (name)
+  let definitions = new DefaultMap(() =&gt; new Set&lt;AstNode&gt;())
+
+  // Collect all new `@utility` definitions and all `@apply` rules first
+  walk([root], (node, ctx) =&gt; {
+    if (node.kind !== &#39;at-rule&#39;) return
+
+    // Do not allow `@apply` rules inside `@keyframes` rules.
+    if (node.name === &#39;@keyframes&#39;) {
+      walk(node.nodes, (child) =&gt; {
+        if (child.kind === &#39;at-rule&#39; &amp;&amp; child.name === &#39;@apply&#39;) {
+          throw new Error(`You cannot use \`@apply\` inside \`@keyframes\`.`)
+        }
+      })
+      return WalkAction.Skip
+    }
+
+    // `@utility` defines a utility, which is important information in order to
+    // do a correct topological sort later on.
+    if (node.name === &#39;@utility&#39;) {
+      let name = node.params.replace(/-\*$/, &#39;&#39;)
+      definitions.get(name).add(node)
+
+      // In case `@apply` rules are used inside `@utility` rules.
+      walk(node.nodes, (child) =&gt; {
+        if (child.kind !== &#39;at-rule&#39; || child.name !== &#39;@apply&#39;) return
+
+        parents.add(node)
+
+        for (let dependency of resolveApplyDependencies(child, designSystem)) {
+          dependencies.get(node).add(dependency)
+        }
+      })
+      return
+    }
+
+    // Any other `@apply` node.
+    if (node.name === &#39;@apply&#39;) {
+      // `@apply` cannot be top-level, so we need to have a parent such that we
+      // can replace the `@apply` node with the actual utility classes later.
+      if (ctx.parent === null) return
+
+      features |= Features.AtApply
+
+      parents.add(ctx.parent)
+
+      for (let dependency of resolveApplyDependencies(node, designSystem)) {
+        // Mark every parent in the path as having a dependency to that utility.
+        for (let parent of ctx.path()) {
+          if (!parents.has(parent)) continue
+          dependencies.get(parent).add(dependency)
+        }
+      }
+    }
+  })
+
+  // Topological sort before substituting `@apply`
+  let seen = new Set&lt;AstNode&gt;()
+  let sorted: AstNode[] = []
+  let wip = new Set&lt;AstNode&gt;()
+
+  function visit(node: AstNode, path: AstNode[] = []) {
+    if (seen.has(node)) {
+      return
+    }
+
+    // Circular dependency detected
+    if (wip.has(node)) {
+      // Next node in the path is the one that caused the circular dependency
+      let next = path[(path.indexOf(node) &#43; 1) % path.length]
+
+      if (
+        node.kind === &#39;at-rule&#39; &amp;&amp;
+        node.name === &#39;@utility&#39; &amp;&amp;
+        next.kind === &#39;at-rule&#39; &amp;&amp;
+        next.name === &#39;@utility&#39;
+      ) {
+        walk(node.nodes, (child) =&gt; {
+          if (child.kind !== &#39;at-rule&#39; || child.name !== &#39;@apply&#39;) return
+
+          let candidates = child.params.split(/\s&#43;/g)
+          for (let candidate of candidates) {
+            for (let candidateAstNode of designSystem.parseCandidate(candidate)) {
+              switch (candidateAstNode.kind) {
+                case &#39;arbitrary&#39;:
+                  break
+
+                case &#39;static&#39;:
+                case &#39;functional&#39;:
+                  if (next.params.replace(/-\*$/, &#39;&#39;) === candidateAstNode.root) {
+                    throw new Error(
+                      `You cannot \`@apply\` the \`${candidate}\` utility here because it creates a circular dependency.`,
+                    )
+                  }
+                  break
+
+                default:
+                  candidateAstNode satisfies never
+              }
+            }
+          }
+        })
+      }
+
+      // Generic fallback error in case we cannot properly detect the origin of
+      // the circular dependency.
+      throw new Error(
+        `Circular dependency detected:\n\n${toCss([node])}\nRelies on:\n\n${toCss([next])}`,
+      )
+    }
+
+    wip.add(node)
+
+    for (let dependencyId of dependencies.get(node)) {
+      for (let dependency of definitions.get(dependencyId)) {
+        path.push(node)
+        visit(dependency, path)
+        path.pop()
+      }
+    }
+
+    seen.add(node)
+    wip.delete(node)
+
+    sorted.push(node)
+  }
+
+  for (let node of parents) {
+    visit(node)
+  }
+
+  // Substitute the `@apply` at-rules in order. Note that the list is going to
+  // be flattened so we do not have to recursively walk over child rules
+  for (let parent of sorted) {
+    if (!(&#39;nodes&#39; in parent)) continue
+
+    walk(parent.nodes, (child) =&gt; {
+      if (child.kind !== &#39;at-rule&#39; || child.name !== &#39;@apply&#39;) return
+
+      let parts = child.params.split(/(\s&#43;)/g)
+      let candidateOffsets: Record&lt;string, number&gt; = {}
+
+      let offset = 0
+      for (let [idx, part] of parts.entries()) {
+        if (idx % 2 === 0) candidateOffsets[part] = offset
+        offset &#43;= part.length
+      }
+
+      // Replace the `@apply` rule with the actual utility classes
+      {
+        // Parse the candidates to an AST that we can replace the `@apply` rule
+        // with.
+        let candidates = Object.keys(candidateOffsets)
+        let compiled = compileCandidates(candidates, designSystem, {
+          respectImportant: false,
+          onInvalidCandidate: (candidate) =&gt; {
+            // When using prefix, make sure prefix is used in candidate
+            if (designSystem.theme.prefix &amp;&amp; !candidate.startsWith(designSystem.theme.prefix)) {
+              throw new Error(
+                `Cannot apply unprefixed utility class \`${candidate}\`. Did you mean \`${designSystem.theme.prefix}:${candidate}\`?`,
+              )
+            }
+
+            // When the utility is blocklisted, let the user know
+            //
+            // Note: `@apply` is processed before handling incoming classes from
+            // template files. This means that the `invalidCandidates` set will
+            // only contain explicit classes via:
+            //
+            // - `blocklist` from a JS config
+            // - `@source not inline(…)`
+            if (designSystem.invalidCandidates.has(candidate)) {
+              throw new Error(
+                `Cannot apply utility class \`${candidate}\` because it has been explicitly disabled: https://tailwindcss.com/docs/detecting-classes-in-source-files#explicitly-excluding-classes`,
+              )
+            }
+
+            // Verify if variants exist
+            let parts = segment(candidate, &#39;:&#39;)
+            if (parts.length &gt; 1) {
+              let utility = parts.pop()!
+
+              // Ensure utility on its own compiles, if not, we will fallback to
+              // the next error
+              if (designSystem.candidatesToCss([utility])[0]) {
+                let compiledVariants = designSystem.candidatesToCss(
+                  parts.map((variant) =&gt; `${variant}:[--tw-variant-check:1]`),
+                )
+                let unknownVariants = parts.filter((_, idx) =&gt; compiledVariants[idx] === null)
+                if (unknownVariants.length &gt; 0) {
+                  if (unknownVariants.length === 1) {
+                    throw new Error(
+                      `Cannot apply utility class \`${candidate}\` because the ${unknownVariants.map((variant) =&gt; `\`${variant}\``)} variant does not exist.`,
+                    )
+                  } else {
+                    let formatter = new Intl.ListFormat(&#39;en&#39;, {
+                      style: &#39;long&#39;,
+                      type: &#39;conjunction&#39;,
+                    })
+                    throw new Error(
+                      `Cannot apply utility class \`${candidate}\` because the ${formatter.format(unknownVariants.map((variant) =&gt; `\`${variant}\``))} variants do not exist.`,
+                    )
+                  }
+                }
+              }
+            }
+
+            // When the theme is empty, it means that no theme was loaded and
+            // `@import &#34;tailwindcss&#34;`, `@reference &#34;app.css&#34;` or similar is
+            // very likely missing.
+            if (designSystem.theme.size === 0) {
+              throw new Error(
+                `Cannot apply unknown utility class \`${candidate}\`. Are you using CSS modules or similar and missing \`@reference\`? https://tailwindcss.com/docs/functions-and-directives#reference-directive`,
+              )
+            }
+
+            // Fallback to most generic error message
+            throw new Error(`Cannot apply unknown utility class \`${candidate}\``)
+          },
+        })
+
+        let src = child.src
+
+        let candidateAst = compiled.astNodes.map((node) =&gt; {
+          let candidate = compiled.nodeSorting.get(node)?.candidate
+          let candidateOffset = candidate ? candidateOffsets[candidate] : undefined
+
+          node = cloneAstNode(node)
+
+          if (!src || !candidate || candidateOffset === undefined) {
+            // While the original nodes may have come from an `@utility` we still
+            // want to replace the source because the `@apply` is ultimately the
+            // reason the node was emitted into the AST.
+            walk([node], (node) =&gt; {
+              node.src = src
+            })
+
+            return node
+          }
+
+          let candidateSrc: SourceLocation = [src[0], src[1], src[2]]
+
+          candidateSrc[1] &#43;= 7 /* &#39;@apply &#39;.length */ &#43; candidateOffset
+          candidateSrc[2] = candidateSrc[1] &#43; candidate.length
+
+          // While the original nodes may have come from an `@utility` we still
+          // want to replace the source because the `@apply` is ultimately the
+          // reason the node was emitted into the AST.
+          walk([node], (node) =&gt; {
+            node.src = candidateSrc
+          })
+
+          return node
+        })
+
+        // Collect the nodes to insert in place of the `@apply` rule. When a rule
+        // was used, we want to insert its children instead of the rule because we
+        // don&#39;t want the wrapping selector.
+        let newNodes: AstNode[] = []
+        for (let candidateNode of candidateAst) {
+          if (candidateNode.kind === &#39;rule&#39;) {
+            for (let child of candidateNode.nodes) {
+              newNodes.push(child)
+            }
+          } else {
+            newNodes.push(candidateNode)
+          }
+        }
+
+        return WalkAction.Replace(newNodes)
+      }
+    })
+  }
+
+  return features
+}</code></pre>
+    </div>
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-oxide.html">Oxide</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Subdomains</h2>
+      <ul><li><a href="/subdomain-preprocessors.html">PreProcessors</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Calls</h2>
+      <ul><li><a href="/fn-ast-ts-cloneastnode.html">cloneAstNode()</a></li><li><a href="/fn-compile-ts-compilecandidates.html">compileCandidates()</a></li><li><a href="/fn-default-map-ts-get.html">get()</a></li><li><a href="/fn-apply-ts-resolveapplydependencies.html">resolveApplyDependencies()</a></li><li><a href="/fn-ast-ts-rule.html">rule()</a></li><li><a href="/fn-segment-ts-segment.html">segment()</a></li><li><a href="/fn-ast-ts-tocss.html">toCss()</a></li><li><a href="/fn-walk-ts-walk-2.html">walk()</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Called By</h2>
+      <ul><li><a href="/fn-plugin-api-ts-buildpluginapi.html">buildPluginApi()</a></li><li><a href="/fn-canonicalize-candidates-ts-createutilitysignaturecache.html">createUtilitySignatureCache()</a></li><li><a href="/fn-canonicalize-candidates-ts-createvariantsignaturecache.html">createVariantSignatureCache()</a></li><li><a href="/fn-index-ts-parsecss.html">parseCss()</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/tailwindcss/blob/main/packages/tailwindcss/src/apply.ts#L10">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does substituteAtApply() do?</summary>
+        <div class="faq-answer">substituteAtApply() is a function in the tailwindcss codebase.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does substituteAtApply() call?</summary>
+        <div class="faq-answer">substituteAtApply() calls 8 function(s): cloneAstNode, compileCandidates, get, resolveApplyDependencies, rule, segment, toCss, walk.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What calls substituteAtApply()?</summary>
+        <div class="faq-answer">substituteAtApply() is called by 4 function(s): buildPluginApi, createUtilitySignatureCache, createVariantSignatureCache, parseCss.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>parseCss() — tailwindcss Function Reference | tailwindcss Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the parseCss() function in index.ts from the tailwindcss codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/fn-index-ts-parsecss/">
+<meta property="og:title" content="parseCss() — tailwindcss Function Reference — tailwindcss Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the parseCss() function in index.ts from the tailwindcss codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/fn-index-ts-parsecss.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/fn-index-ts-parsecss.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="tailwindcss Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="parseCss() — tailwindcss Function Reference — tailwindcss Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the parseCss() function in index.ts from the tailwindcss codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-index-ts-parsecss.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the parseCss() function in index.ts from the tailwindcss codebase.","image":["https://repos.supermodeltools.com/images/share/fn-index-ts-parsecss.svg"],"name":"parseCss() — tailwindcss Function Reference","url":"https://repos.supermodeltools.com/fn-index-ts-parsecss.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"parseCss() — tailwindcss Function Reference","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"parseCss() is a function in the tailwindcss codebase."},"name":"What does parseCss() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"parseCss() calls 32 function(s): add, addKeyframes, applyCompatibilityHooks, atRoot, atRule, buildDesignSystem, compoundsForSelectors, context, and 24 more."},"name":"What does parseCss() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"parseCss() is called by 2 function(s): __unstable__loadDesignSystem, compileAst."},"name":"What calls parseCss()?"}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      tailwindcss Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/function.html">Function</a><span class="sep">/</span>
+        <span>parseCss() — tailwindcss Function Reference</span>
+      </div>
+      <h1 class="entity-title">parseCss() — tailwindcss Function Reference</h1>
+      <p class="entity-desc">Architecture documentation for the parseCss() function in index.ts from the tailwindcss codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/function.html" class="pill pill-accent">Function</a>
+        <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
+        <a href="/domain/nodeserver.html" class="pill pill-green">NodeServer</a>
+        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
+        
+        
+        <span class="pill">calls 32</span>
+        <span class="pill">called by 2</span>
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"cb":2,"co":32,"el":707,"et":{"calls":34},"lc":567,"sl":141}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+      <div class="visuals-archmap" id="arch-map-container">
+        <div class="arch-map-svg"></div>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"NodeServer","slug":"domain-nodeserver"},"entity":{"name":"parseCss","slug":"fn-index-ts-parsecss","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
+        <noscript>
+          <div class="arch-map-fallback">
+            <a href="/nodeserver.html">NodeServer</a><span class="arch-sep">&rarr;</span>
+            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
+            <span>parseCss() — tailwindcss Function Reference</span>
+          </div>
+        </noscript>
+      </div>
+      
+
+      
+      <div class="visuals-row">
+        
+        <div class="visuals-cell mermaid-container">
+          <h3>Dependency Diagram</h3>
+          <pre class="mermaid">graph TD
+  2efc5608_6ece_d525_d502_ae402d3e7a6b["parseCss()"]
+  128bf357_64f2_c210_c50a_e65e0918f802["compileAst()"]
+  128bf357_64f2_c210_c50a_e65e0918f802 -->|calls| 2efc5608_6ece_d525_d502_ae402d3e7a6b
+  f7a6d7c1_522e_5a2b_2c2d_43b8d1d7d945["__unstable__loadDesignSystem()"]
+  f7a6d7c1_522e_5a2b_2c2d_43b8d1d7d945 -->|calls| 2efc5608_6ece_d525_d502_ae402d3e7a6b
+  79a09a26_c1e5_31f8_1d66_20854e8673db["substituteAtImports()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| 79a09a26_c1e5_31f8_1d66_20854e8673db
+  089aa8da_dc18_42e3_92c2_a1d831f00b7a["walk()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| 089aa8da_dc18_42e3_92c2_a1d831f00b7a
+  33d88b83_09a9_2e2a_9356_0e29887a8ab8["cssContext()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| 33d88b83_09a9_2e2a_9356_0e29887a8ab8
+  436e9d88_b972_8d93_42b2_57be4f7f6801["segment()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| 436e9d88_b972_8d93_42b2_57be4f7f6801
+  f4585287_ee8e_811e_36b8_d519e2b40a55["createCssUtility()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| f4585287_ee8e_811e_36b8_d519e2b40a55
+  6558d5b5_df7f_7392_976b_c635aa9e318a["expand()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| 6558d5b5_df7f_7392_976b_c635aa9e318a
+  3606880a_4e3a_e8f3_277d_2a064ffe0dc6["set()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| 3606880a_4e3a_e8f3_277d_2a064ffe0dc6
+  f17d9c40_3327_6b32_29b6_ea16a62ba8e5["styleRule()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| f17d9c40_3327_6b32_29b6_ea16a62ba8e5
+  72bcf502_1614_63ec_b8d2_2c996b682c33["rule()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| 72bcf502_1614_63ec_b8d2_2c996b682c33
+  dec25af0_0fc9_f71e_0ea2_93492f3ee3b7["compoundsForSelectors()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| dec25af0_0fc9_f71e_0ea2_93492f3ee3b7
+  c0503c69_b751_2965_5f8b_e5497dfedbeb["add()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| c0503c69_b751_2965_5f8b_e5497dfedbeb
+  8a7fa96a_dec0_d6f4_e3eb_fcc1fa1a2ea8["fromAst()"]
+  2efc5608_6ece_d525_d502_ae402d3e7a6b -->|calls| 8a7fa96a_dec0_d6f4_e3eb_fcc1fa1a2ea8
+  style 2efc5608_6ece_d525_d502_ae402d3e7a6b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+        </div>
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="fn-index-ts-parsecss"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"2efc5608:6ece:d525:d502:ae402d3e7a6b","label":"parseCss","type":"Function","slug":"fn-index-ts-parsecss","lc":567,"lang":"typescript","cc":32,"cbc":2},{"id":"79a09a26:c1e5:31f8:1d66:20854e8673db","label":"substituteAtImports","type":"Function","slug":"fn-at-import-ts-substituteatimports","lc":66,"lang":"typescript","cc":5,"cbc":1},{"id":"089aa8da:dc18:42e3:92c2:a1d831f00b7a","label":"walk","type":"Function","slug":"fn-walk-ts-walk-2","lc":12,"lang":"typescript","cc":1,"cbc":37},{"id":"33d88b83:09a9:2e2a:9356:0e29887a8ab8","label":"cssContext","type":"Function","slug":"fn-ast-ts-csscontext","lc":29,"lang":"typescript","cc":1,"cbc":3},{"id":"436e9d88:b972:8d93:42b2:57be4f7f6801","label":"segment","type":"Function","slug":"fn-segment-ts-segment","lc":74,"lang":"typescript","cbc":39},{"id":"f4585287:ee8e:811e:36b8:d519e2b40a55","label":"createCssUtility","type":"Function","slug":"fn-utilities-ts-createcssutility","lc":361,"lang":"typescript","cc":14,"cbc":1},{"id":"6558d5b5:df7f:7392:976b:c635aa9e318a","label":"expand","type":"Function","slug":"fn-brace-expansion-ts-expand","lc":49,"lang":"typescript","cc":3,"cbc":1},{"id":"3606880a:4e3a:e8f3:277d:2a064ffe0dc6","label":"set","type":"Function","slug":"fn-variants-ts-set","lc":33,"lang":"typescript","cc":2,"cbc":8},{"id":"f17d9c40:3327:6b32:29b6:ea16a62ba8e5","label":"styleRule","type":"Function","slug":"fn-ast-ts-stylerule","lc":7,"lang":"typescript","cbc":8},{"id":"72bcf502:1614:63ec:b8d2:2c996b682c33","label":"rule","type":"Function","slug":"fn-ast-ts-rule","lc":7,"lang":"typescript","cc":2,"cbc":14},{"id":"dec25af0:0fc9:f71e:0ea2:93492f3ee3b7","label":"compoundsForSelectors","type":"Function","slug":"fn-variants-ts-compoundsforselectors","lc":28,"lang":"typescript","cbc":5},{"id":"c0503c69:b751:2965:5f8b:e5497dfedbeb","label":"add","type":"Function","slug":"fn-theme-ts-add","lc":27,"lang":"typescript","cc":2,"cbc":16},{"id":"8a7fa96a:dec0:d6f4:e3eb:fcc1fa1a2ea8","label":"fromAst","type":"Function","slug":"fn-variants-ts-fromast","lc":25,"lang":"typescript","cc":4,"cbc":2},{"id":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","label":"theme","type":"Function","slug":"fn-css-functions-ts-theme","lc":60,"lang":"typescript","cc":4,"cbc":3},{"id":"2cd222e5:12e4:0010:57b2:7f91f9e1fb24","label":"parseThemeOptions","type":"Function","slug":"fn-index-ts-parsethemeoptions","lc":20,"lang":"typescript","cc":1,"cbc":1},{"id":"c890170b:7842:d668:1ea6:7ce5332b74c9","label":"addKeyframes","type":"Function","slug":"fn-theme-ts-addkeyframes","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"33fd307f:f9de:9d13:86d4:6c9083de9d77","label":"unescape","type":"Function","slug":"fn-escape-ts-unescape","lc":7,"lang":"typescript","cbc":4},{"id":"c30d772c:45fb:99d9:5db3:4694e7e32649","label":"toCss","type":"Function","slug":"fn-ast-ts-tocss","lc":206,"lang":"typescript","cc":1,"cbc":18},{"id":"41105f60:74d6:b27a:bb40:3564743934e1","label":"atRule","type":"Function","slug":"fn-ast-ts-atrule","lc":8,"lang":"typescript","cbc":18},{"id":"33281725:69c5:fe93:dd76:77c64c7893d4","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"8d8ddf01:9db1:a11f:eedf:4aa9c19eea96","label":"applyCompatibilityHooks","type":"Function","slug":"fn-apply-compat-hooks-ts-applycompatibilityhooks","lc":195,"lang":"typescript","cc":7,"cbc":1},{"id":"cc5059d3:42ae:af85:3748:89c7105ff5fe","label":"topologicalSort","type":"Function","slug":"fn-topological-sort-ts-topologicalsort","lc":36,"lang":"typescript","cbc":1},{"id":"764527aa:a3c0:1a36:4946:e81dedb3f0eb","label":"decl","type":"Function","slug":"fn-ast-ts-decl","lc":8,"lang":"typescript","cbc":15},{"id":"2e64cdc8:eef0:90b9:4bbe:65bde165f68f","label":"escape","type":"Function","slug":"fn-escape-ts-escape","lc":72,"lang":"typescript","cbc":7},{"id":"a0257f54:6d3c:b9ca:adc3:03a0a978bb52","label":"getKeyframes","type":"Function","slug":"fn-theme-ts-getkeyframes","lc":3,"lang":"typescript","cbc":1},{"id":"f22da34b:48e3:998d:53d2:cc7e221ee16d","label":"context","type":"Function","slug":"fn-ast-ts-context","lc":7,"lang":"typescript","cbc":3},{"id":"c3b021b6:96c0:41b7:16f0:c5e893533ac5","label":"atRoot","type":"Function","slug":"fn-ast-ts-atroot","lc":6,"lang":"typescript","cbc":3},{"id":"35ae50c9:4cd5:4234:c8bd:f4c2896a1a01","label":"substituteAtVariant","type":"Function","slug":"fn-variants-ts-substituteatvariant","lc":26,"lang":"typescript","cc":4,"cbc":3},{"id":"e81eaf19:b2bc:0b78:0857:ca3e64d0c5bd","label":"substituteFunctions","type":"Function","slug":"fn-css-functions-ts-substitutefunctions","lc":26,"lang":"typescript","cc":2,"cbc":3},{"id":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","label":"substituteAtApply","type":"Function","slug":"fn-apply-ts-substituteatapply","lc":291,"lang":"typescript","cc":8,"cbc":4},{"id":"6dad3c96:bcb3:10d3:6a55:b0e64b5d57c4","label":"keys","type":"Function","slug":"fn-utilities-ts-keys","lc":14,"lang":"typescript","cc":1,"cbc":4}],"edges":[{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"79a09a26:c1e5:31f8:1d66:20854e8673db","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"089aa8da:dc18:42e3:92c2:a1d831f00b7a","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"33d88b83:09a9:2e2a:9356:0e29887a8ab8","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"436e9d88:b972:8d93:42b2:57be4f7f6801","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"f4585287:ee8e:811e:36b8:d519e2b40a55","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"6558d5b5:df7f:7392:976b:c635aa9e318a","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"3606880a:4e3a:e8f3:277d:2a064ffe0dc6","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"f17d9c40:3327:6b32:29b6:ea16a62ba8e5","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"72bcf502:1614:63ec:b8d2:2c996b682c33","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"dec25af0:0fc9:f71e:0ea2:93492f3ee3b7","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"c0503c69:b751:2965:5f8b:e5497dfedbeb","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"8a7fa96a:dec0:d6f4:e3eb:fcc1fa1a2ea8","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"aeb3c1b0:87d9:8113:28f1:a5b62334afbe","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"2cd222e5:12e4:0010:57b2:7f91f9e1fb24","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"c890170b:7842:d668:1ea6:7ce5332b74c9","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"33fd307f:f9de:9d13:86d4:6c9083de9d77","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"c30d772c:45fb:99d9:5db3:4694e7e32649","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"41105f60:74d6:b27a:bb40:3564743934e1","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"33281725:69c5:fe93:dd76:77c64c7893d4","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"8d8ddf01:9db1:a11f:eedf:4aa9c19eea96","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"cc5059d3:42ae:af85:3748:89c7105ff5fe","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"764527aa:a3c0:1a36:4946:e81dedb3f0eb","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"2e64cdc8:eef0:90b9:4bbe:65bde165f68f","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"a0257f54:6d3c:b9ca:adc3:03a0a978bb52","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"f22da34b:48e3:998d:53d2:cc7e221ee16d","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"c3b021b6:96c0:41b7:16f0:c5e893533ac5","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"35ae50c9:4cd5:4234:c8bd:f4c2896a1a01","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"e81eaf19:b2bc:0b78:0857:ca3e64d0c5bd","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"83319d30:ebfd:3181:49b5:b7a0e1ab5989","type":"calls"},{"source":"2efc5608:6ece:d525:d502:ae402d3e7a6b","target":"6dad3c96:bcb3:10d3:6a55:b0e64b5d57c4","type":"calls"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">packages/tailwindcss/src/index.ts lines 141–707</p>
+      <pre class="source-code"><code class="language-typescript">async function parseCss(
+  ast: AstNode[],
+  {
+    base = &#39;&#39;,
+    from,
+    loadModule = throwOnLoadModule,
+    loadStylesheet = throwOnLoadStylesheet,
+  }: CompileOptions = {},
+) {
+  let features = Features.None
+  ast = [contextNode({ base }, ast)] as AstNode[]
+
+  features |= await substituteAtImports(ast, base, loadStylesheet, 0, from !== undefined)
+
+  let important = null as boolean | null
+  let theme = new Theme()
+  let customVariants = new Map&lt;string, (designSystem: DesignSystem) =&gt; void&gt;()
+  let customVariantDependencies = new Map&lt;string, Set&lt;string&gt;&gt;()
+  let customUtilities: ((designSystem: DesignSystem) =&gt; void)[] = []
+  let firstThemeRule = null as StyleRule | null
+  let utilitiesNode = null as AtRule | null
+  let variantNodes: AtRule[] = []
+  let sources: { base: string; pattern: string; negated: boolean }[] = []
+  let inlineCandidates: string[] = []
+  let ignoredCandidates: string[] = []
+  let root = null as Root
+
+  // Handle at-rules
+  walk(ast, (node, _ctx) =&gt; {
+    if (node.kind !== &#39;at-rule&#39;) return
+    let ctx = cssContext(_ctx)
+
+    // Find `@tailwind utilities` so that we can later replace it with the
+    // actual generated utility class CSS.
+    if (
+      node.name === &#39;@tailwind&#39; &amp;&amp;
+      (node.params === &#39;utilities&#39; || node.params.startsWith(&#39;utilities&#39;))
+    ) {
+      // Any additional `@tailwind utilities` nodes can be removed
+      if (utilitiesNode !== null) {
+        return WalkAction.Replace([])
+      }
+
+      // When inside `@reference` we should treat `@tailwind utilities` as if
+      // it wasn&#39;t there in the first place. This should also let `build()`
+      // return the cached static AST.
+      if (ctx.context.reference) {
+        return WalkAction.Replace([])
+      }
+
+      let params = segment(node.params, &#39; &#39;)
+      for (let param of params) {
+        if (param.startsWith(&#39;source(&#39;)) {
+          let path = param.slice(7, -1)
+
+          // Keyword: `source(none)`
+          if (path === &#39;none&#39;) {
+            root = path
+            continue
+          }
+
+          // Explicit path: `source(&#39;…&#39;)`
+          if (
+            (path[0] === &#39;&#34;&#39; &amp;&amp; path[path.length - 1] !== &#39;&#34;&#39;) ||
+            (path[0] === &#34;&#39;&#34; &amp;&amp; path[path.length - 1] !== &#34;&#39;&#34;) ||
+            (path[0] !== &#34;&#39;&#34; &amp;&amp; path[0] !== &#39;&#34;&#39;)
+          ) {
+            throw new Error(&#39;`source(…)` paths must be quoted.&#39;)
+          }
+
+          root = {
+            base: (ctx.context.sourceBase as string) ?? (ctx.context.base as string),
+            pattern: path.slice(1, -1),
+          }
+        }
+      }
+
+      utilitiesNode = node
+      features |= Features.Utilities
+    }
+
+    // Collect custom `@utility` at-rules
+    if (node.name === &#39;@utility&#39;) {
+      if (ctx.parent !== null) {
+        throw new Error(&#39;`@utility` cannot be nested.&#39;)
+      }
+
+      if (node.nodes.length === 0) {
+        throw new Error(
+          `\`@utility ${node.params}\` is empty. Utilities should include at least one property.`,
+        )
+      }
+
+      let utility = createCssUtility(node)
+      if (utility === null) {
+        if (!node.params.endsWith(&#39;-*&#39;)) {
+          if (node.params.endsWith(&#39;*&#39;)) {
+            throw new Error(
+              `\`@utility ${node.params}\` defines an invalid utility name. A functional utility must end in \`-*\`.`,
+            )
+          } else if (node.params.includes(&#39;*&#39;)) {
+            throw new Error(
+              `\`@utility ${node.params}\` defines an invalid utility name. The dynamic portion marked by \`-*\` must appear once at the end.`,
+            )
+          }
+        }
+
+        throw new Error(
+          `\`@utility ${node.params}\` defines an invalid utility name. Utilities should be alphanumeric and start with a lowercase letter.`,
+        )
+      }
+
+      customUtilities.push(utility)
+    }
+
+    // Collect paths from `@source` at-rules
+    if (node.name === &#39;@source&#39;) {
+      if (node.nodes.length &gt; 0) {
+        throw new Error(&#39;`@source` cannot have a body.&#39;)
+      }
+
+      if (ctx.parent !== null) {
+        throw new Error(&#39;`@source` cannot be nested.&#39;)
+      }
+
+      let not = false
+      let inline = false
+      let path = node.params
+
+      if (path[0] === &#39;n&#39; &amp;&amp; path.startsWith(&#39;not &#39;)) {
+        not = true
+        path = path.slice(4)
+      }
+
+      if (path[0] === &#39;i&#39; &amp;&amp; path.startsWith(&#39;inline(&#39;)) {
+        inline = true
+        path = path.slice(7, -1).trim()
+      }
+
+      if (
+        (path[0] === &#39;&#34;&#39; &amp;&amp; path[path.length - 1] !== &#39;&#34;&#39;) ||
+        (path[0] === &#34;&#39;&#34; &amp;&amp; path[path.length - 1] !== &#34;&#39;&#34;) ||
+        (path[0] !== &#34;&#39;&#34; &amp;&amp; path[0] !== &#39;&#34;&#39;)
+      ) {
+        throw new Error(&#39;`@source` paths must be quoted.&#39;)
+      }
+
+      let source = path.slice(1, -1)
+
+      if (inline) {
+        let destination = not ? ignoredCandidates : inlineCandidates
+        let sources = segment(source, &#39; &#39;)
+        for (let source of sources) {
+          for (let candidate of expand(source)) {
+            destination.push(candidate)
+          }
+        }
+      } else {
+        sources.push({
+          base: ctx.context.base as string,
+          pattern: source,
+          negated: not,
+        })
+      }
+
+      return WalkAction.ReplaceSkip([])
+    }
+
+    // Apply `@variant` at-rules
+    if (node.name === &#39;@variant&#39;) {
+      // Legacy `@variant` at-rules containing `@slot` or without a body should
+      // be considered a `@custom-variant` at-rule.
+      if (ctx.parent === null) {
+        // Body-less `@variant`, e.g.: `@variant foo (…);`
+        if (node.nodes.length === 0) {
+          node.name = &#39;@custom-variant&#39;
+        }
+
+        // Using `@slot`:
+        //
+        // ```css
+        // @variant foo {
+        //   &amp;:hover {
+        //     @slot;
+        //   }
+        // }
+        // ```
+        else {
+          walk(node.nodes, (child) =&gt; {
+            if (child.kind === &#39;at-rule&#39; &amp;&amp; child.name === &#39;@slot&#39;) {
+              node.name = &#39;@custom-variant&#39;
+              return WalkAction.Stop
+            }
+          })
+
+          // No `@slot` found, so this is still a regular `@variant` at-rule
+          if (node.name === &#39;@variant&#39;) {
+            variantNodes.push(node)
+          }
+        }
+      }
+
+      // Collect all the `@variant` at-rules, we will replace them later once
+      // all variants are registered in the system.
+      else {
+        variantNodes.push(node)
+      }
+    }
+
+    // Register custom variants from `@custom-variant` at-rules
+    if (node.name === &#39;@custom-variant&#39;) {
+      if (ctx.parent !== null) {
+        throw new Error(&#39;`@custom-variant` cannot be nested.&#39;)
+      }
+
+      let [name, selector] = segment(node.params, &#39; &#39;)
+
+      if (!IS_VALID_VARIANT_NAME.test(name)) {
+        throw new Error(
+          `\`@custom-variant ${name}\` defines an invalid variant name. Variants should only contain alphanumeric, dashes, or underscore characters and start with a lowercase letter or number.`,
+        )
+      }
+
+      if (node.nodes.length &gt; 0 &amp;&amp; selector) {
+        throw new Error(`\`@custom-variant ${name}\` cannot have both a selector and a body.`)
+      }
+
+      // Variants with a selector, but without a body, e.g.: `@custom-variant hocus (&amp;:hover, &amp;:focus);`
+      if (node.nodes.length === 0) {
+        if (!selector) {
+          throw new Error(`\`@custom-variant ${name}\` has no selector or body.`)
+        }
+
+        let selectors = segment(selector.slice(1, -1), &#39;,&#39;)
+        if (selectors.length === 0 || selectors.some((selector) =&gt; selector.trim() === &#39;&#39;)) {
+          throw new Error(
+            `\`@custom-variant ${name} (${selectors.join(&#39;,&#39;)})\` selector is invalid.`,
+          )
+        }
+
+        let atRuleParams: string[] = []
+        let styleRuleSelectors: string[] = []
+
+        for (let selector of selectors) {
+          selector = selector.trim()
+
+          if (selector[0] === &#39;@&#39;) {
+            atRuleParams.push(selector)
+          } else {
+            styleRuleSelectors.push(selector)
+          }
+        }
+
+        customVariants.set(name, (designSystem) =&gt; {
+          designSystem.variants.static(
+            name,
+            (r) =&gt; {
+              let nodes: AstNode[] = []
+
+              if (styleRuleSelectors.length &gt; 0) {
+                nodes.push(styleRule(styleRuleSelectors.join(&#39;, &#39;), r.nodes))
+              }
+
+              for (let selector of atRuleParams) {
+                nodes.push(rule(selector, r.nodes))
+              }
+
+              r.nodes = nodes
+            },
+            {
+              compounds: compoundsForSelectors([...styleRuleSelectors, ...atRuleParams]),
+            },
+          )
+        })
+        customVariantDependencies.set(name, new Set&lt;string&gt;())
+      }
+
+      // Variants without a selector, but with a body:
+      //
+      // E.g.:
+      //
+      // ```css
+      // @custom-variant hocus {
+      //   &amp;:hover {
+      //     @slot;
+      //   }
+      //
+      //   &amp;:focus {
+      //     @slot;
+      //   }
+      // }
+      // ```
+      else {
+        let dependencies = new Set&lt;string&gt;()
+        walk(node.nodes, (child) =&gt; {
+          if (child.kind === &#39;at-rule&#39; &amp;&amp; child.name === &#39;@variant&#39;) {
+            dependencies.add(child.params)
+          }
+        })
+
+        customVariants.set(name, (designSystem) =&gt; {
+          designSystem.variants.fromAst(name, node.nodes, designSystem)
+        })
+        customVariantDependencies.set(name, dependencies)
+      }
+
+      // Remove `@custom-variant` at-rule so it&#39;s not included in the compiled CSS
+      return WalkAction.ReplaceSkip([])
+    }
+
+    if (node.name === &#39;@media&#39;) {
+      let params = segment(node.params, &#39; &#39;)
+      let unknownParams: string[] = []
+
+      for (let param of params) {
+        // Handle `@media source(…)`
+        if (param.startsWith(&#39;source(&#39;)) {
+          let path = param.slice(7, -1)
+
+          walk(node.nodes, (child) =&gt; {
+            if (child.kind !== &#39;at-rule&#39;) return
+
+            if (child.name === &#39;@tailwind&#39; &amp;&amp; child.params === &#39;utilities&#39;) {
+              child.params &#43;= ` source(${path})`
+              return WalkAction.ReplaceStop([
+                contextNode({ sourceBase: ctx.context.base }, [child]),
+              ])
+            }
+          })
+        }
+
+        // Handle `@media theme(…)`
+        //
+        // We support `@import &#34;tailwindcss&#34; theme(reference)` as a way to
+        // import an external theme file as a reference, which becomes `@media
+        // theme(reference) { … }` when the `@import` is processed.
+        else if (param.startsWith(&#39;theme(&#39;)) {
+          let themeParams = param.slice(6, -1)
+          let hasReference = themeParams.includes(&#39;reference&#39;)
+
+          walk(node.nodes, (child) =&gt; {
+            if (child.kind === &#39;context&#39;) return
+            if (child.kind !== &#39;at-rule&#39;) {
+              if (hasReference) {
+                throw new Error(
+                  `Files imported with \`@import &#34;…&#34; theme(reference)\` must only contain \`@theme\` blocks.\nUse \`@reference &#34;…&#34;;\` instead.`,
+                )
+              }
+
+              return WalkAction.Continue
+            }
+
+            if (child.name === &#39;@theme&#39;) {
+              child.params &#43;= &#39; &#39; &#43; themeParams
+              return WalkAction.Skip
+            }
+          })
+        }
+
+        // Handle `@media prefix(…)`
+        //
+        // We support `@import &#34;tailwindcss&#34; prefix(ident)` as a way to
+        // configure a theme prefix for variables and utilities.
+        else if (param.startsWith(&#39;prefix(&#39;)) {
+          let prefix = param.slice(7, -1)
+
+          walk(node.nodes, (child) =&gt; {
+            if (child.kind !== &#39;at-rule&#39;) return
+            if (child.name === &#39;@theme&#39;) {
+              child.params &#43;= ` prefix(${prefix})`
+              return WalkAction.Skip
+            }
+          })
+        }
+
+        // Handle important
+        else if (param === &#39;important&#39;) {
+          important = true
+        }
+
+        // Handle `@import &#34;…&#34; reference`
+        else if (param === &#39;reference&#39;) {
+          node.nodes = [contextNode({ reference: true }, node.nodes)]
+        }
+
+        //
+        else {
+          unknownParams.push(param)
+        }
+      }
+
+      if (unknownParams.length &gt; 0) {
+        node.params = unknownParams.join(&#39; &#39;)
+      } else if (params.length &gt; 0) {
+        return WalkAction.Replace(node.nodes)
+      }
+
+      return WalkAction.Continue
+    }
+
+    // Handle `@theme`
+    if (node.name === &#39;@theme&#39;) {
+      let [themeOptions, themePrefix] = parseThemeOptions(node.params)
+
+      features |= Features.AtTheme
+
+      if (ctx.context.reference) {
+        themeOptions |= ThemeOptions.REFERENCE
+      }
+
+      if (themePrefix) {
+        if (!IS_VALID_PREFIX.test(themePrefix)) {
+          throw new Error(
+            `The prefix &#34;${themePrefix}&#34; is invalid. Prefixes must be lowercase ASCII letters (a-z) only.`,
+          )
+        }
+
+        theme.prefix = themePrefix
+      }
+
+      // Record all custom properties in the `@theme` declaration
+      walk(node.nodes, (child) =&gt; {
+        // Collect `@keyframes` rules to re-insert with theme variables later,
+        // since the `@theme` rule itself will be removed.
+        if (child.kind === &#39;at-rule&#39; &amp;&amp; child.name === &#39;@keyframes&#39;) {
+          theme.addKeyframes(child)
+          return WalkAction.Skip
+        }
+
+        if (child.kind === &#39;comment&#39;) return
+        if (child.kind === &#39;declaration&#39; &amp;&amp; child.property.startsWith(&#39;--&#39;)) {
+          theme.add(unescape(child.property), child.value ?? &#39;&#39;, themeOptions, child.src)
+          return
+        }
+
+        let snippet = toCss([atRule(node.name, node.params, [child])])
+          .split(&#39;\n&#39;)
+          .map((line, idx, all) =&gt; `${idx === 0 || idx &gt;= all.length - 2 ? &#39; &#39; : &#39;&gt;&#39;} ${line}`)
+          .join(&#39;\n&#39;)
+
+        throw new Error(
+          `\`@theme\` blocks must only contain custom properties or \`@keyframes\`.\n\n${snippet}`,
+        )
+      })
+
+      // Keep a reference to the first `@theme` rule to update with the full
+      // theme later, and delete any other `@theme` rules.
+      if (!firstThemeRule) {
+        firstThemeRule = styleRule(&#39;:root, :host&#39;, [])
+        firstThemeRule.src = node.src
+        return WalkAction.ReplaceSkip(firstThemeRule)
+      } else {
+        return WalkAction.ReplaceSkip([])
+      }
+    }
+  })
+
+  let designSystem = buildDesignSystem(theme, utilitiesNode?.src)
+
+  if (important) {
+    designSystem.important = important
+  }
+
+  if (ignoredCandidates.length &gt; 0) {
+    for (let candidate of ignoredCandidates) {
+      designSystem.invalidCandidates.add(candidate)
+    }
+  }
+
+  // Apply hooks from backwards compatibility layer. This function takes a lot
+  // of random arguments because it really just needs access to &#34;the world&#34; to
+  // do whatever ungodly things it needs to do to make things backwards
+  // compatible without polluting core.
+  features |= await applyCompatibilityHooks({
+    designSystem,
+    base,
+    ast,
+    loadModule,
+    sources,
+  })
+
+  for (let name of customVariants.keys()) {
+    // Pre-register the variant to ensure its position in the variant list is
+    // based on the order we see them in the CSS.
+    designSystem.variants.static(name, () =&gt; {})
+  }
+
+  // Register custom variants in order
+  for (let variant of topologicalSort(customVariantDependencies, {
+    onCircularDependency(path, start) {
+      let output = toCss(
+        path.map((name, idx) =&gt; {
+          return atRule(&#39;@custom-variant&#39;, name, [atRule(&#39;@variant&#39;, path[idx &#43; 1] ?? start, [])])
+        }),
+      )
+        .replaceAll(&#39;;&#39;, &#39; { … }&#39;)
+        .replace(`@custom-variant ${start} {`, `@custom-variant ${start} { /* ← */`)
+
+      throw new Error(`Circular dependency detected in custom variants:\n\n${output}`)
+    },
+  })) {
+    customVariants.get(variant)?.(designSystem)
+  }
+
+  for (let customUtility of customUtilities) {
+    customUtility(designSystem)
+  }
+
+  // Output final set of theme variables at the position of the first
+  // `@theme` rule.
+  if (firstThemeRule) {
+    let nodes = []
+
+    for (let [key, value] of designSystem.theme.entries()) {
+      if (value.options &amp; ThemeOptions.REFERENCE) continue
+      let node = decl(escape(key), value.value)
+      node.src = value.src
+      nodes.push(node)
+    }
+
+    let keyframesRules = designSystem.theme.getKeyframes()
+    for (let keyframes of keyframesRules) {
+      // Wrap `@keyframes` in `AtRoot` so they are hoisted out of `:root` when
+      // printing. We push it to the top-level of the AST so that an eventual
+      // `@reference` does not cut it out when printing the document.
+      ast.push(context({ theme: true }, [atRoot([keyframes])]))
+    }
+
+    firstThemeRule.nodes = [context({ theme: true }, nodes)]
+  }
+
+  features |= substituteAtVariant(ast, designSystem)
+  features |= substituteFunctions(ast, designSystem)
+  features |= substituteAtApply(ast, designSystem)
+
+  // Replace the `@tailwind utilities` node with a context since it prints
+  // children directly.
+  if (utilitiesNode) {
+    let node = utilitiesNode as AstNode as Context
+    node.kind = &#39;context&#39;
+    node.context = {}
+  }
+
+  // Remove `@utility`, we couldn&#39;t replace it before yet because we had to
+  // handle the nested `@apply` at-rules first.
+  walk(ast, (node) =&gt; {
+    if (node.kind !== &#39;at-rule&#39;) return
+
+    if (node.name === &#39;@utility&#39;) {
+      return WalkAction.Replace([])
+    }
+
+    // The `@utility` has to be top-level, therefore we don&#39;t have to traverse
+    // into nested trees.
+    return WalkAction.Skip
+  })
+
+  return {
+    designSystem,
+    ast,
+    sources,
+    root,
+    utilitiesNode,
+    features,
+    inlineCandidates,
+  }
+}</code></pre>
+    </div>
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-nodeserver.html">NodeServer</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Subdomains</h2>
+      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Calls</h2>
+      <ul><li><a href="/fn-theme-ts-add.html">add()</a></li><li><a href="/fn-theme-ts-addkeyframes.html">addKeyframes()</a></li><li><a href="/fn-apply-compat-hooks-ts-applycompatibilityhooks.html">applyCompatibilityHooks()</a></li><li><a href="/fn-ast-ts-atroot.html">atRoot()</a></li><li><a href="/fn-ast-ts-atrule.html">atRule()</a></li><li><a href="/fn-design-system-ts-builddesignsystem.html">buildDesignSystem()</a></li><li><a href="/fn-variants-ts-compoundsforselectors.html">compoundsForSelectors()</a></li><li><a href="/fn-ast-ts-context.html">context()</a></li><li><a href="/fn-utilities-ts-createcssutility.html">createCssUtility()</a></li><li><a href="/fn-ast-ts-csscontext.html">cssContext()</a></li><li><a href="/fn-ast-ts-decl.html">decl()</a></li><li><a href="/fn-variants-ts-entries.html">entries()</a></li><li><a href="/fn-escape-ts-escape.html">escape()</a></li><li><a href="/fn-brace-expansion-ts-expand.html">expand()</a></li><li><a href="/fn-variants-ts-fromast.html">fromAst()</a></li><li><a href="/fn-utilities-ts-get.html">get()</a></li><li><a href="/fn-theme-ts-getkeyframes.html">getKeyframes()</a></li><li><a href="/fn-utilities-ts-keys.html">keys()</a></li><li><a href="/fn-index-ts-parsethemeoptions.html">parseThemeOptions()</a></li><li><a href="/fn-ast-ts-rule.html">rule()</a></li><li><a href="/fn-segment-ts-segment.html">segment()</a></li><li><a href="/fn-variants-ts-set.html">set()</a></li><li><a href="/fn-ast-ts-stylerule.html">styleRule()</a></li><li><a href="/fn-apply-ts-substituteatapply.html">substituteAtApply()</a></li><li><a href="/fn-at-import-ts-substituteatimports.html">substituteAtImports()</a></li><li><a href="/fn-variants-ts-substituteatvariant.html">substituteAtVariant()</a></li><li><a href="/fn-css-functions-ts-substitutefunctions.html">substituteFunctions()</a></li><li><a href="/fn-css-functions-ts-theme.html">theme()</a></li><li><a href="/fn-ast-ts-tocss.html">toCss()</a></li><li><a href="/fn-topological-sort-ts-topologicalsort.html">topologicalSort()</a></li><li><a href="/fn-escape-ts-unescape.html">unescape()</a></li><li><a href="/fn-walk-ts-walk-2.html">walk()</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Called By</h2>
+      <ul><li><a href="/fn-index-ts-unstable-loaddesignsystem.html">__unstable__loadDesignSystem()</a></li><li><a href="/fn-index-ts-compileast.html">compileAst()</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/tailwindcss/blob/main/packages/tailwindcss/src/index.ts#L141">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does parseCss() do?</summary>
+        <div class="faq-answer">parseCss() is a function in the tailwindcss codebase.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does parseCss() call?</summary>
+        <div class="faq-answer">parseCss() calls 32 function(s): add, addKeyframes, applyCompatibilityHooks, atRoot, atRule, buildDesignSystem, compoundsForSelectors, context, and 24 more.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What calls parseCss()?</summary>
+        <div class="faq-answer">parseCss() is called by 2 function(s): __unstable__loadDesignSystem, compileAst.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>
