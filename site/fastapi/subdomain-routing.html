@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>Routing — fastapi Architecture | fastapi Architecture Docs</title>
+<meta name="description" content="Manages APIRouter and path operation decorators. Architecture documentation for the Routing subdomain (part of FastAPI domain) in the fastapi codebase. Contains 0 source files.">
+<link rel="canonical" href="https://repos.supermodeltools.com/subdomain-routing/">
+<meta property="og:title" content="Routing — fastapi Architecture — fastapi Architecture Docs">
+<meta property="og:description" content="Manages APIRouter and path operation decorators. Architecture documentation for the Routing subdomain (part of FastAPI domain) in the fastapi codebase. Contains 0 source files.">
+<meta property="og:url" content="https://repos.supermodeltools.com/subdomain-routing.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/subdomain-routing.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="fastapi Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Routing — fastapi Architecture — fastapi Architecture Docs">
+<meta name="twitter:description" content="Manages APIRouter and path operation decorators. Architecture documentation for the Routing subdomain (part of FastAPI domain) in the fastapi codebase. Contains 0 source files.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/subdomain-routing.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Manages APIRouter and path operation decorators. Architecture documentation for the Routing subdomain (part of FastAPI domain) in the fastapi codebase. Contains 0 source files.","image":["https://repos.supermodeltools.com/images/share/subdomain-routing.svg"],"name":"Routing — fastapi Architecture","url":"https://repos.supermodeltools.com/subdomain-routing.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"Routing — fastapi Architecture","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Routing is a subdomain in the fastapi codebase, part of the FastAPI domain. Manages APIRouter and path operation decorators. It contains 0 source files."},"name":"What is the Routing subdomain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Routing belongs to the FastAPI domain."},"name":"Which domain does Routing belong to?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The Routing subdomain contains 1067 function(s): __call__, __class__, __exit__, __init__, __init__, __init__, __init__, __init__, and 1059 more."},"name":"What functions are in Routing?"}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      fastapi Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/subdomain.html">Subdomain</a><span class="sep">/</span>
+        <span>Routing — fastapi Architecture</span>
+      </div>
+      <h1 class="entity-title">Routing — fastapi Architecture</h1>
+      
+
+      <div class="entity-meta">
+        <a href="/node_type/subdomain.html" class="pill pill-accent">Subdomain</a>
+        
+        <a href="/domain/fastapi.html" class="pill pill-green">FastAPI</a>
+        <a href="/subdomain/routing.html" class="pill pill-orange">Routing</a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+      <div class="entity-summary">
+        <p>Manages APIRouter and path operation decorators.</p>
+      </div>
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data"></script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+
+      
+      <div class="visuals-row">
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="subdomain-routing"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"subdomain:FastAPI:Routing","label":"Routing","type":"Subdomain","slug":"subdomain-routing"},{"id":"domain:FastAPI","label":"FastAPI","type":"Domain","slug":"domain-fastapi"}],"edges":[{"source":"subdomain:FastAPI:Routing","target":"domain:FastAPI","type":"partOf"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-fastapi.html">FastAPI</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Functions</h2>
+      <ul><li><a href="/fn-test-stringified-annotations-simple-py-call.html">__call__()</a></li><li><a href="/fn-test-inherited-custom-class-py-class.html">__class__()</a></li><li><a href="/fn-tutorial010-py39-py-exit.html">__exit__()</a></li><li><a href="/fn-test-jsonable-encoder-py-init.html">__init__()</a></li><li><a href="/fn-tutorial003-py39-py-init-2.html">__init__()</a></li><li><a href="/fn-test-inherited-custom-class-py-init.html">__init__()</a></li><li><a href="/fn-test-validation-error-context-py-init.html">__init__()</a></li><li><a href="/fn-tutorial011-an-py39-py-init.html">__init__()</a></li><li><a href="/fn-tutorial010-py39-py-init.html">__init__()</a></li><li><a href="/fn-tutorial011-py39-py-init.html">__init__()</a></li><li><a href="/fn-test-jsonable-encoder-py-iter.html">__iter__()</a></li><li><a href="/fn-test-jsonable-encoder-py-iter-3.html">__iter__()</a></li><li><a href="/fn-test-general-performance-py-bench-get.html">_bench_get()</a></li><li><a href="/fn-test-general-performance-py-expected-large-payload-json-bytes.html">_expected_large_payload_json_bytes()</a></li><li><a href="/fn-routing-py-extract-endpoint-context.html">_extract_endpoint_context()</a></li><li><a href="/fn-test-enforce-once-required-parameter-py-get-client-key.html">_get_client_key()</a></li><li><a href="/fn-test-additional-responses-default-validationerror-py-a.html">a()</a></li><li><a href="/fn-test-additional-responses-custom-validationerror-py-a.html">a()</a></li><li><a href="/fn-test-additional-responses-response-class-py-a.html">a()</a></li><li><a href="/fn-test-additional-responses-router-py-a.html">a()</a></li><li><a href="/fn-routing-py-add-api-route.html">add_api_route()</a></li><li><a href="/fn-routing-py-add-api-websocket-route.html">add_api_websocket_route()</a></li><li><a href="/fn-routing-py-api-route.html">api_route()</a></li><li><a href="/fn-test-computed-fields-py-area.html">area()</a></li><li><a href="/fn-test-general-performance-py-async-dict-with-response-model.html">async_dict_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-async-large-dict-with-response-model.html">async_large_dict_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-async-large-model-with-response-model.html">async_large_model_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-async-large-receive.html">async_large_receive()</a></li><li><a href="/fn-test-general-performance-py-async-model-with-response-model.html">async_model_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-async-validated.html">async_validated()</a></li><li><a href="/fn-tutorial005-an-py39-py-authenticate-user.html">authenticate_user()</a></li><li><a href="/fn-tutorial005-py39-py-authenticate-user.html">authenticate_user()</a></li><li><a href="/fn-test-response-class-no-mediatype-py-b.html">b()</a></li><li><a href="/fn-test-additional-responses-router-py-b.html">b()</a></li><li><a href="/fn-test-generic-parameterless-depends-py-b.html">b()</a></li><li><a href="/fn-tutorial001-an-py310-py-body.html">body()</a></li><li><a href="/fn-tutorial001-an-py39-py-body.html">body()</a></li><li><a href="/fn-tutorial001-py310-py-body.html">body()</a></li><li><a href="/fn-tutorial001-py39-py-body.html">body()</a></li><li><a href="/fn-test-response-by-alias-py-by-alias-model.html">by_alias_model()</a></li><li><a href="/fn-test-additional-responses-router-py-c.html">c()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-callback0.html">callback0()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-callback1.html">callback1()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-callback2.html">callback2()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-callback3.html">callback3()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-callback4.html">callback4()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-callback5.html">callback5()</a></li><li><a href="/fn-test-additional-responses-custom-model-in-callback-py-callback-route.html">callback_route()</a></li><li><a href="/fn-test-security-scopes-py-client-fixture.html">client_fixture()</a></li><li><a href="/fn-tutorial001-02-an-py39-py-common-parameters.html">common_parameters()</a></li><li><a href="/fn-tutorial001-an-py39-py-common-parameters.html">common_parameters()</a></li><li><a href="/fn-tutorial001-py39-py-common-parameters.html">common_parameters()</a></li><li><a href="/fn-tutorial001-02-an-py310-py-common-parameters.html">common_parameters()</a></li><li><a href="/fn-test-openapi-separate-input-output-schemas-py-computed-field.html">computed_field()</a></li><li><a href="/fn-tutorial003-py39-py-connect.html">connect()</a></li><li><a href="/fn-test-json-type-py-cookie-json-list.html">cookie_json_list()</a></li><li><a href="/fn-tutorial005-py310-py-create-access-token.html">create_access_token()</a></li><li><a href="/fn-tutorial004-an-py310-py-create-access-token.html">create_access_token()</a></li><li><a href="/fn-tutorial004-py39-py-create-access-token.html">create_access_token()</a></li><li><a href="/fn-tutorial004-py310-py-create-access-token.html">create_access_token()</a></li><li><a href="/fn-tutorial005-an-py310-py-create-access-token.html">create_access_token()</a></li><li><a href="/fn-tutorial004-an-py39-py-create-access-token.html">create_access_token()</a></li><li><a href="/fn-tutorial003-py310-py-create-author-items.html">create_author_items()</a></li><li><a href="/fn-tutorial003-py39-py-create-author-items.html">create_author_items()</a></li><li><a href="/fn-tutorial002-py39-py-create-cookie.html">create_cookie()</a></li><li><a href="/fn-tutorial001-02-py310-py-create-file.html">create_file()</a></li><li><a href="/fn-tutorial001-py39-py-create-file.html">create_file()</a></li><li><a href="/fn-tutorial001-03-an-py39-py-create-file.html">create_file()</a></li><li><a href="/fn-tutorial001-02-an-py310-py-create-file.html">create_file()</a></li><li><a href="/fn-tutorial001-03-py39-py-create-file.html">create_file()</a></li><li><a href="/fn-tutorial001-an-py39-py-create-file.html">create_file()</a></li><li><a href="/fn-tutorial001-02-py39-py-create-file.html">create_file()</a></li><li><a href="/fn-tutorial001-02-an-py39-py-create-file.html">create_file()</a></li><li><a href="/fn-tutorial002-an-py39-py-create-files.html">create_files()</a></li><li><a href="/fn-tutorial002-py39-py-create-files.html">create_files()</a></li><li><a href="/fn-tutorial003-an-py39-py-create-files.html">create_files()</a></li><li><a href="/fn-tutorial003-py39-py-create-files.html">create_files()</a></li><li><a href="/fn-tutorial002-an-py310-py-create-hero.html">create_hero()</a></li><li><a href="/fn-tutorial001-py310-py-create-hero.html">create_hero()</a></li><li><a href="/fn-tutorial001-an-py39-py-create-hero.html">create_hero()</a></li><li><a href="/fn-tutorial002-py310-py-create-hero.html">create_hero()</a></li><li><a href="/fn-tutorial001-an-py310-py-create-hero.html">create_hero()</a></li><li><a href="/fn-tutorial001-py39-py-create-hero.html">create_hero()</a></li><li><a href="/fn-tutorial002-py39-py-create-item-5.html">create_item()</a></li><li><a href="/fn-tutorial004-py310-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial001-py310-py-create-item-2.html">create_item()</a></li><li><a href="/fn-tutorial002-py39-py-create-item-3.html">create_item()</a></li><li><a href="/fn-tutorial001-py39-py-create-item-5.html">create_item()</a></li><li><a href="/fn-tutorial001-py39-py-create-item-6.html">create_item()</a></li><li><a href="/fn-tutorial003-an-py310-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial004-an-py310-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial004-py310-py-create-item-2.html">create_item()</a></li><li><a href="/fn-test-security-oauth2-authorization-code-bearer-scopes-openapi-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial001-py310-py-create-item-3.html">create_item()</a></li><li><a href="/fn-tutorial003-py310-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial005-py310-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial001-py39-py-create-item-2.html">create_item()</a></li><li><a href="/fn-tutorial001-01-py310-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial005-py39-py-create-item-2.html">create_item()</a></li><li><a href="/fn-tutorial001-py39-py-create-item-4.html">create_item()</a></li><li><a href="/fn-tutorial001-py310-py-create-item-4.html">create_item()</a></li><li><a href="/fn-tutorial001-py39-py-create-item-7.html">create_item()</a></li><li><a href="/fn-tutorial007-py39-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial002-py310-py-create-item-2.html">create_item()</a></li><li><a href="/fn-tutorial004-py39-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial006-py39-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial007-pv1-py39-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial002-py310-py-create-item-3.html">create_item()</a></li><li><a href="/fn-tutorial001-py310-py-create-item-5.html">create_item()</a></li><li><a href="/fn-tutorial004-py39-py-create-item-2.html">create_item()</a></li><li><a href="/fn-tutorial002-an-py310-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial001-01-py39-py-create-item.html">create_item()</a></li><li><a href="/fn-tutorial003-py39-py-create-item-2.html">create_item()</a></li><li><a href="/fn-test-no-schema-split-py-create-message.html">create_message()</a></li><li><a href="/fn-tutorial003-py310-py-create-user.html">create_user()</a></li><li><a href="/fn-test-response-model-data-filter-no-inheritance-py-create-user.html">create_user()</a></li><li><a href="/fn-tutorial001-py39-py-create-user.html">create_user()</a></li><li><a href="/fn-test-response-model-data-filter-py-create-user.html">create_user()</a></li><li><a href="/fn-tutorial002-py310-py-create-user-2.html">create_user()</a></li><li><a href="/fn-tutorial002-py39-py-create-user.html">create_user()</a></li><li><a href="/fn-tutorial003-01-py310-py-create-user.html">create_user()</a></li><li><a href="/fn-tutorial003-py39-py-custom-generate-unique-id.html">custom_generate_unique_id()</a></li><li><a href="/fn-test-generate-unique-id-function-py-custom-generate-unique-id2.html">custom_generate_unique_id2()</a></li><li><a href="/fn-tutorial006-py39-py-custom-http-exception-handler.html">custom_http_exception_handler()</a></li><li><a href="/fn-tutorial001-py39-py-custom-openapi.html">custom_openapi()</a></li><li><a href="/fn-tutorial001-py39-py-custom-swagger-ui-html.html">custom_swagger_ui_html()</a></li><li><a href="/fn-tutorial002-py39-py-custom-swagger-ui-html.html">custom_swagger_ui_html()</a></li><li><a href="/fn-test-additional-responses-router-py-d.html">d()</a></li><li><a href="/fn-test-reponse-set-reponse-code-empty-py-delete-deployment.html">delete_deployment()</a></li><li><a href="/fn-tutorial002-an-py310-py-delete-hero.html">delete_hero()</a></li><li><a href="/fn-tutorial002-py310-py-delete-hero.html">delete_hero()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-dep0.html">dep0()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-dep1.html">dep1()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-dep2.html">dep2()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-dep3.html">dep3()</a></li><li><a href="/fn-test-security-scopes-dont-propagate-py-dep3.html">dep3()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-dep4.html">dep4()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-dep5.html">dep5()</a></li><li><a href="/fn-test-general-performance-py-dep-b.html">dep_b()</a></li><li><a href="/fn-test-sub-callbacks-py-event-callback.html">event_callback()</a></li><li><a href="/fn-test-duplicate-models-openapi-py-f.html">f()</a></li><li><a href="/fn-tutorial003-py39-py-fake-answer-to-everything-ml-model.html">fake_answer_to_everything_ml_model()</a></li><li><a href="/fn-tutorial002-an-py310-py-fake-decode-token.html">fake_decode_token()</a></li><li><a href="/fn-tutorial003-an-py310-py-fake-decode-token.html">fake_decode_token()</a></li><li><a href="/fn-tutorial003-py310-py-fake-decode-token.html">fake_decode_token()</a></li><li><a href="/fn-tutorial002-py310-py-fake-decode-token.html">fake_decode_token()</a></li><li><a href="/fn-tutorial003-py310-py-fake-hash-password.html">fake_hash_password()</a></li><li><a href="/fn-tutorial003-an-py310-py-fake-hash-password.html">fake_hash_password()</a></li><li><a href="/fn-tutorial001-py39-py-fake-password-hasher.html">fake_password_hasher()</a></li><li><a href="/fn-tutorial002-py39-py-fake-password-hasher.html">fake_password_hasher()</a></li><li><a href="/fn-tutorial001-py310-py-fake-save-user.html">fake_save_user()</a></li><li><a href="/fn-tutorial002-py310-py-fake-save-user.html">fake_save_user()</a></li><li><a href="/fn-tutorial007-py39-py-fake-video-streamer.html">fake_video_streamer()</a></li><li><a href="/fn-test-openapi-model-description-trim-on-formfeed-py-foo.html">foo()</a></li><li><a href="/fn-test-additional-properties-py-foo.html">foo()</a></li><li><a href="/fn-test-enforce-once-required-parameter-py-foo-handler.html">foo_handler()</a></li><li><a href="/fn-test-json-type-py-form-json-list.html">form_json_list()</a></li><li><a href="/fn-tutorial004-py39-py-generate-html-response.html">generate_html_response()</a></li><li><a href="/fn-tutorial014-an-py310-py-generate-stream.html">generate_stream()</a></li><li><a href="/fn-tutorial013-an-py310-py-generate-stream.html">generate_stream()</a></li><li><a href="/fn-test-allow-inf-nan-in-enforcing-py-get.html">get()</a></li><li><a href="/fn-tutorial001-py39-py-get.html">get()</a></li><li><a href="/fn-tutorial003-py39-py-get.html">get()</a></li><li><a href="/fn-test-default-response-class-router-py-get-a.html">get_a()</a></li><li><a href="/fn-test-custom-route-class-py-get-a.html">get_a()</a></li><li><a href="/fn-test-default-response-class-py-get-a-a.html">get_a_a()</a></li><li><a href="/fn-test-default-response-class-router-py-get-a-a.html">get_a_a()</a></li><li><a href="/fn-test-default-response-class-router-py-get-a-a-path-override.html">get_a_a_path_override()</a></li><li><a href="/fn-test-default-response-class-py-get-a-a-path-override.html">get_a_a_path_override()</a></li><li><a href="/fn-test-default-response-class-router-py-get-a-b.html">get_a_b()</a></li><li><a href="/fn-test-default-response-class-py-get-a-b-path-override.html">get_a_b_path_override()</a></li><li><a href="/fn-test-default-response-class-router-py-get-a-b-path-override.html">get_a_b_path_override()</a></li><li><a href="/fn-test-default-response-class-py-get-a-path-override.html">get_a_path_override()</a></li><li><a href="/fn-test-default-response-class-router-py-get-a-path-override.html">get_a_path_override()</a></li><li><a href="/fn-tutorial003-py310-py-get-authors.html">get_authors()</a></li><li><a href="/fn-tutorial003-py39-py-get-authors.html">get_authors()</a></li><li><a href="/fn-test-default-response-class-py-get-b.html">get_b()</a></li><li><a href="/fn-test-custom-route-class-py-get-b.html">get_b()</a></li><li><a href="/fn-test-default-response-class-router-py-get-b.html">get_b()</a></li><li><a href="/fn-test-default-response-class-router-py-get-b-a.html">get_b_a()</a></li><li><a href="/fn-test-default-response-class-router-py-get-b-a-c.html">get_b_a_c()</a></li><li><a href="/fn-test-default-response-class-py-get-b-a-c.html">get_b_a_c()</a></li><li><a href="/fn-test-default-response-class-router-py-get-b-a-c-path-override.html">get_b_a_c_path_override()</a></li><li><a href="/fn-test-default-response-class-py-get-b-a-c-path-override.html">get_b_a_c_path_override()</a></li><li><a href="/fn-test-default-response-class-router-py-get-b-a-path-override.html">get_b_a_path_override()</a></li><li><a href="/fn-test-default-response-class-py-get-b-a-path-override.html">get_b_a_path_override()</a></li><li><a href="/fn-test-default-response-class-router-py-get-b-path-override.html">get_b_path_override()</a></li><li><a href="/fn-test-default-response-class-py-get-b-path-override.html">get_b_path_override()</a></li><li><a href="/fn-test-custom-route-class-py-get-c.html">get_c()</a></li><li><a href="/fn-test-filter-pydantic-sub-model-pv2-py-get-client.html">get_client()</a></li><li><a href="/fn-test-regex-deprecated-params-py-get-client.html">get_client()</a></li><li><a href="/fn-test-tutorial001-py-get-client-9.html">get_client()</a></li><li><a href="/fn-test-serialize-response-model-py-get-coerce-exclude-unset.html">get_coerce_exclude_unset()</a></li><li><a href="/fn-tutorial002-an-py39-py-get-cookie-or-token.html">get_cookie_or_token()</a></li><li><a href="/fn-tutorial002-py39-py-get-cookie-or-token.html">get_cookie_or_token()</a></li><li><a href="/fn-tutorial002-an-py310-py-get-cookie-or-token.html">get_cookie_or_token()</a></li><li><a href="/fn-tutorial002-py310-py-get-cookie-or-token.html">get_cookie_or_token()</a></li><li><a href="/fn-tutorial004-an-py39-py-get-current-active-user.html">get_current_active_user()</a></li><li><a href="/fn-tutorial003-py310-py-get-current-active-user.html">get_current_active_user()</a></li><li><a href="/fn-tutorial004-an-py310-py-get-current-active-user.html">get_current_active_user()</a></li><li><a href="/fn-tutorial004-py310-py-get-current-active-user.html">get_current_active_user()</a></li><li><a href="/fn-tutorial003-an-py310-py-get-current-active-user.html">get_current_active_user()</a></li><li><a href="/fn-tutorial005-an-py310-py-get-current-active-user.html">get_current_active_user()</a></li><li><a href="/fn-tutorial005-py310-py-get-current-active-user.html">get_current_active_user()</a></li><li><a href="/fn-tutorial004-py39-py-get-current-active-user.html">get_current_active_user()</a></li><li><a href="/fn-tutorial002-py39-py-get-current-user.html">get_current_user()</a></li><li><a href="/fn-tutorial005-an-py39-py-get-current-user.html">get_current_user()</a></li><li><a href="/fn-tutorial003-py39-py-get-current-user.html">get_current_user()</a></li><li><a href="/fn-test-security-oauth2-py-get-current-user.html">get_current_user()</a></li><li><a href="/fn-test-security-api-key-header-optional-py-get-current-user.html">get_current_user()</a></li><li><a href="/fn-tutorial002-an-py39-py-get-current-user.html">get_current_user()</a></li><li><a href="/fn-tutorial003-an-py39-py-get-current-user.html">get_current_user()</a></li><li><a href="/fn-tutorial005-py39-py-get-current-user.html">get_current_user()</a></li><li><a href="/fn-test-security-api-key-cookie-optional-py-get-current-user.html">get_current_user()</a></li><li><a href="/fn-tutorial007-an-py39-py-get-current-username.html">get_current_username()</a></li><li><a href="/fn-tutorial007-py39-py-get-current-username.html">get_current_username()</a></li><li><a href="/fn-test-repeated-cookie-headers-py-get-direct-cookie.html">get_direct_cookie()</a></li><li><a href="/fn-test-empty-router-py-get-empty.html">get_empty()</a></li><li><a href="/fn-test-skip-defaults-py-get-exclude-unset.html">get_exclude_unset()</a></li><li><a href="/fn-test-skip-defaults-py-get-exclude-unset-none.html">get_exclude_unset_none()</a></li><li><a href="/fn-tutorial001-py39-py-get-full-name.html">get_full_name()</a></li><li><a href="/fn-tutorial001-py39-py-get-headers.html">get_headers()</a></li><li><a href="/fn-test-validate-response-py-get-invalid-none.html">get_invalid_none()</a></li><li><a href="/fn-test-validate-response-dataclass-py-get-invalidlist.html">get_invalidlist()</a></li><li><a href="/fn-test-validate-response-py-get-invalidlist.html">get_invalidlist()</a></li><li><a href="/fn-test-validation-error-context-py-get-item.html">get_item()</a></li><li><a href="/fn-tutorial002b-py39-py-get-items.html">get_items()</a></li><li><a href="/fn-tutorial001-py39-py-get-items.html">get_items()</a></li><li><a href="/fn-tutorial005-py39-py-get-items.html">get_items()</a></li><li><a href="/fn-tutorial003-py39-py-get-items.html">get_items()</a></li><li><a href="/fn-tutorial004-py39-py-get-items.html">get_items()</a></li><li><a href="/fn-tutorial002-py39-py-get-items.html">get_items()</a></li><li><a href="/fn-test-app02-py-get-mod-path.html">get_mod_path()</a></li><li><a href="/fn-tutorial005-py39-py-get-model.html">get_model()</a></li><li><a href="/fn-test-tutorial008b-py-get-module.html">get_module()</a></li><li><a href="/fn-tutorial003-py39-py-get-name-with-age.html">get_name_with_age()</a></li><li><a href="/fn-test-extra-routes-py-get-not-decorated.html">get_not_decorated()</a></li><li><a href="/fn-test-serialize-response-dataclass-py-get-objectlist.html">get_objectlist()</a></li><li><a href="/fn-tutorial001-py39-py-get-or-create-task.html">get_or_create_task()</a></li><li><a href="/fn-test-orjson-response-class-py-get-orjson-non-str-keys.html">get_orjson_non_str_keys()</a></li><li><a href="/fn-tutorial005-py39-py-get-password-hash.html">get_password_hash()</a></li><li><a href="/fn-tutorial005-an-py39-py-get-password-hash.html">get_password_hash()</a></li><li><a href="/fn-test-default-response-class-py-get-path-override.html">get_path_override()</a></li><li><a href="/fn-test-default-response-class-router-py-get-path-override.html">get_path_override()</a></li><li><a href="/fn-tutorial010-py39-py-get-person-name.html">get_person_name()</a></li><li><a href="/fn-tutorial003-04-py310-py-get-portal.html">get_portal()</a></li><li><a href="/fn-tutorial003-02-py39-py-get-portal.html">get_portal()</a></li><li><a href="/fn-tutorial003-05-py310-py-get-portal.html">get_portal()</a></li><li><a href="/fn-test-default-response-class-py-get-root.html">get_root()</a></li><li><a href="/fn-test-default-response-class-router-py-get-root.html">get_root()</a></li><li><a href="/fn-tutorial003-py39-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-tutorial001-an-py310-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-tutorial001-py310-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-tutorial002-py39-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-routing-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-tutorial003-py310-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-tutorial002-an-py310-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-tutorial002-py310-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-tutorial001-py39-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-tutorial001-an-py39-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-tutorial002-an-py39-py-get-route-handler.html">get_route_handler()</a></li><li><a href="/fn-tutorial001-py310-py-get-session.html">get_session()</a></li><li><a href="/fn-tutorial002-an-py310-py-get-session.html">get_session()</a></li><li><a href="/fn-tutorial001-an-py310-py-get-session.html">get_session()</a></li><li><a href="/fn-tutorial013-an-py310-py-get-session.html">get_session()</a></li><li><a href="/fn-tutorial002-py310-py-get-session.html">get_session()</a></li><li><a href="/fn-tutorial001-py39-py-get-session.html">get_session()</a></li><li><a href="/fn-tutorial001-an-py39-py-get-session.html">get_session()</a></li><li><a href="/fn-tutorial014-an-py310-py-get-session.html">get_session()</a></li><li><a href="/fn-test-tutorial001-py-get-test-module.html">get_test_module()</a></li><li><a href="/fn-tutorial004-an-py39-py-get-user.html">get_user()</a></li><li><a href="/fn-tutorial003-an-py39-py-get-user.html">get_user()</a></li><li><a href="/fn-tutorial004-py310-py-get-user.html">get_user()</a></li><li><a href="/fn-test-params-repr-py-get-user.html">get_user()</a></li><li><a href="/fn-tutorial003-py39-py-get-user.html">get_user()</a></li><li><a href="/fn-tutorial004-py39-py-get-user.html">get_user()</a></li><li><a href="/fn-tutorial004-an-py310-py-get-user.html">get_user()</a></li><li><a href="/fn-tutorial005-py310-py-get-user.html">get_user()</a></li><li><a href="/fn-test-route-scope-py-get-user.html">get_user()</a></li><li><a href="/fn-tutorial005-an-py310-py-get-user.html">get_user()</a></li><li><a href="/fn-tutorial008e-an-py39-py-get-username.html">get_username()</a></li><li><a href="/fn-tutorial008c-py39-py-get-username.html">get_username()</a></li><li><a href="/fn-tutorial008b-an-py39-py-get-username.html">get_username()</a></li><li><a href="/fn-tutorial008e-py39-py-get-username.html">get_username()</a></li><li><a href="/fn-tutorial008b-py39-py-get-username.html">get_username()</a></li><li><a href="/fn-tutorial008c-an-py39-py-get-username.html">get_username()</a></li><li><a href="/fn-tutorial008d-an-py39-py-get-username.html">get_username()</a></li><li><a href="/fn-tutorial008d-py39-py-get-username.html">get_username()</a></li><li><a href="/fn-test-serialize-response-py-get-valid.html">get_valid()</a></li><li><a href="/fn-test-serialize-response-dataclass-py-get-valid.html">get_valid()</a></li><li><a href="/fn-test-serialize-response-model-py-get-validlist.html">get_validlist()</a></li><li><a href="/fn-test-extra-routes-py-head-item.html">head_item()</a></li><li><a href="/fn-test-openapi-examples-py-header-examples.html">header_examples()</a></li><li><a href="/fn-test-exception-handlers-py-http-exception-handler.html">http_exception_handler()</a></li><li><a href="/fn-routing-py-include-router.html">include_router()</a></li><li><a href="/fn-test-ws-router-py-index.html">index()</a></li><li><a href="/fn-tutorial001-pv1-py39-py-info.html">info()</a></li><li><a href="/fn-tutorial001-py39-py-invoice-notification.html">invoice_notification()</a></li><li><a href="/fn-tutorial001-py310-py-invoice-notification.html">invoice_notification()</a></li><li><a href="/fn-tutorial004-py39-py-lifespan.html">lifespan()</a></li><li><a href="/fn-tutorial001-an-py39-py-login-2.html">login()</a></li><li><a href="/fn-tutorial003-an-py39-py-login.html">login()</a></li><li><a href="/fn-tutorial001-an-py39-py-login.html">login()</a></li><li><a href="/fn-tutorial002-an-py39-py-login.html">login()</a></li><li><a href="/fn-test-security-oauth2-optional-py-login.html">login()</a></li><li><a href="/fn-tutorial003-py39-py-login.html">login()</a></li><li><a href="/fn-tutorial005-an-py39-py-login-for-access-token.html">login_for_access_token()</a></li><li><a href="/fn-tutorial005-py39-py-login-for-access-token.html">login_for_access_token()</a></li><li><a href="/fn-tutorial006-py39-py-magic-data-reader.html">magic_data_reader()</a></li><li><a href="/fn-test-ws-router-py-make-app.html">make_app()</a></li><li><a href="/fn-tutorial001-an-py39-py-make-not-authenticated-error.html">make_not_authenticated_error()</a></li><li><a href="/fn-test-response-model-include-exclude-py-mixed.html">mixed()</a></li><li><a href="/fn-tutorial004-js-modifyopenapifile.html">modifyOpenAPIFile()</a></li><li><a href="/fn-tutorial001-py39-py-new-subscription.html">new_subscription()</a></li><li><a href="/fn-test-webhooks-security-py-new-subscription.html">new_subscription()</a></li><li><a href="/fn-test-response-by-alias-py-no-alias-dict.html">no_alias_dict()</a></li><li><a href="/fn-test-response-by-alias-py-no-alias-list.html">no_alias_list()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-no-response-model-annotation-list-of-model.html">no_response_model_annotation_list_of_model()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-no-response-model-annotation-response-class.html">no_response_model_annotation_response_class()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-no-response-model-annotation-return-dict-with-extra-data.html">no_response_model_annotation_return_dict_with_extra_data()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-no-response-model-annotation-return-invalid-dict.html">no_response_model_annotation_return_invalid_dict()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-no-response-model-annotation-return-same-model.html">no_response_model_annotation_return_same_model()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-no-response-model-annotation-union-return-model1.html">no_response_model_annotation_union_return_model1()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-no-response-model-no-annotation-return-model.html">no_response_model_no_annotation_return_model()</a></li><li><a href="/fn-tutorial003-py310-py-not-timed.html">not_timed()</a></li><li><a href="/fn-tutorial003-py39-py-not-timed.html">not_timed()</a></li><li><a href="/fn-tutorial002-an-py39-py-on-startup.html">on_startup()</a></li><li><a href="/fn-tutorial002-py39-py-on-startup.html">on_startup()</a></li><li><a href="/fn-tutorial004-py39-py-operation.html">operation()</a></li><li><a href="/fn-test-response-change-status-code-py-parent-dep.html">parent_dep()</a></li><li><a href="/fn-test-wrapped-method-forward-reference-py-passthrough.html">passthrough()</a></li><li><a href="/fn-test-extra-routes-py-patch-item.html">patch_item()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-path1-default.html">path1_default()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-path1-override.html">path1_override()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-path3-default-router2-default.html">path3_default_router2_default()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-path3-default-router2-override.html">path3_default_router2_override()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-path3-override-router2-default.html">path3_override_router2_default()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-path3-override-router2-override.html">path3_override_router2_override()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-path5-default-router4-default.html">path5_default_router4_default()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-path5-default-router4-override.html">path5_default_router4_override()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-path5-override-router4-default.html">path5_override_router4_default()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-path5-override-router4-override.html">path5_override_router4_override()</a></li><li><a href="/fn-test-starlette-urlconvertors-py-path-convertor.html">path_convertor()</a></li><li><a href="/fn-test-openapi-examples-py-path-examples.html">path_examples()</a></li><li><a href="/fn-test-forms-single-model-py-post-form-extra-allow.html">post_form_extra_allow()</a></li><li><a href="/fn-test-form-default-py-post-multi-part.html">post_multi_part()</a></li><li><a href="/fn-test-tuples-py-post-tuple-of-models.html">post_tuple_of_models()</a></li><li><a href="/fn-tutorial003-py39-py-predict.html">predict()</a></li><li><a href="/fn-tutorial008b-py310-py-process-item.html">process_item()</a></li><li><a href="/fn-tutorial007-py39-py-process-items.html">process_items()</a></li><li><a href="/fn-test-general-performance-py-pytest.html">pytest()</a></li><li><a href="/fn-tutorial006-an-py39-py-read-current-user.html">read_current_user()</a></li><li><a href="/fn-test-security-http-digest-py-read-current-user.html">read_current_user()</a></li><li><a href="/fn-test-security-http-bearer-py-read-current-user.html">read_current_user()</a></li><li><a href="/fn-test-security-api-key-header-py-read-current-user.html">read_current_user()</a></li><li><a href="/fn-test-security-http-basic-realm-description-py-read-current-user.html">read_current_user()</a></li><li><a href="/fn-test-security-http-basic-realm-py-read-current-user.html">read_current_user()</a></li><li><a href="/fn-test-security-http-basic-optional-py-read-current-user.html">read_current_user()</a></li><li><a href="/fn-test-security-api-key-cookie-py-read-current-user.html">read_current_user()</a></li><li><a href="/fn-test-response-by-alias-py-read-dict.html">read_dict()</a></li><li><a href="/fn-tutorial006-py39-py-read-elements.html">read_elements()</a></li><li><a href="/fn-tutorial004-py39-py-read-file.html">read_file()</a></li><li><a href="/fn-tutorial001-py310-py-read-hero.html">read_hero()</a></li><li><a href="/fn-tutorial001-an-py39-py-read-hero.html">read_hero()</a></li><li><a href="/fn-tutorial001-py39-py-read-hero.html">read_hero()</a></li><li><a href="/fn-tutorial001-an-py310-py-read-hero.html">read_hero()</a></li><li><a href="/fn-tutorial002-py310-py-read-hero.html">read_hero()</a></li><li><a href="/fn-tutorial002-an-py310-py-read-hero.html">read_hero()</a></li><li><a href="/fn-tutorial002-an-py39-py-read-heroes.html">read_heroes()</a></li><li><a href="/fn-tutorial002-py39-py-read-heroes.html">read_heroes()</a></li><li><a href="/fn-tutorial001-py39-py-read-item-4.html">read_item()</a></li><li><a href="/fn-tutorial004-py310-py-read-item-2.html">read_item()</a></li><li><a href="/fn-tutorial002-py39-py-read-item.html">read_item()</a></li><li><a href="/fn-test-pydanticv2-dataclasses-uuid-stringified-annotations-py-read-item.html">read_item()</a></li><li><a href="/fn-tutorial002-py310-py-read-item.html">read_item()</a></li><li><a href="/fn-tutorial001-py39-py-read-item-3.html">read_item()</a></li><li><a href="/fn-tutorial001-py39-py-read-item-6.html">read_item()</a></li><li><a href="/fn-tutorial003-py39-py-read-item-2.html">read_item()</a></li><li><a href="/fn-tutorial002-py39-py-read-item-3.html">read_item()</a></li><li><a href="/fn-test-starlette-exception-py-read-item.html">read_item()</a></li><li><a href="/fn-tutorial004-py310-py-read-item.html">read_item()</a></li><li><a href="/fn-tutorial004-py39-py-read-item.html">read_item()</a></li><li><a href="/fn-tutorial003-py39-py-read-item.html">read_item()</a></li><li><a href="/fn-tutorial006-py39-py-read-item.html">read_item()</a></li><li><a href="/fn-tutorial001-py39-py-read-item.html">read_item()</a></li><li><a href="/fn-tutorial006-py39-py-read-item-name.html">read_item_name()</a></li><li><a href="/fn-tutorial005-py39-py-read-item-name.html">read_item_name()</a></li><li><a href="/fn-tutorial006-py310-py-read-item-name.html">read_item_name()</a></li><li><a href="/fn-tutorial005-py310-py-read-item-name.html">read_item_name()</a></li><li><a href="/fn-test-include-route-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial006-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial005-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial003-py39-py-read-items-7.html">read_items()</a></li><li><a href="/fn-tutorial001-py39-py-read-items-13.html">read_items()</a></li><li><a href="/fn-tutorial003-an-py39-py-read-items-4.html">read_items()</a></li><li><a href="/fn-tutorial004-py39-py-read-items-5.html">read_items()</a></li><li><a href="/fn-tutorial003-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial003-an-py39-py-read-items-3.html">read_items()</a></li><li><a href="/fn-tutorial005-an-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-test-security-oauth2-password-bearer-optional-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial001-an-py39-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial002-py39-py-read-items-8.html">read_items()</a></li><li><a href="/fn-tutorial012-an-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial001-an-py39-py-read-items-5.html">read_items()</a></li><li><a href="/fn-tutorial001b-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial010-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial004-an-py310-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial002-an-py310-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial006-an-py39-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial004-an-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial001-py39-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial004-py310-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial001-an-py39-py-read-items-8.html">read_items()</a></li><li><a href="/fn-tutorial002-py310-py-read-items-5.html">read_items()</a></li><li><a href="/fn-tutorial001-an-py310-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial002-py39-py-read-items-9.html">read_items()</a></li><li><a href="/fn-tutorial001-an-py310-py-read-items-3.html">read_items()</a></li><li><a href="/fn-tutorial004-an-py39-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial001-py310-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial003-py39-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial002-py310-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial001-py39-py-read-items-11.html">read_items()</a></li><li><a href="/fn-tutorial002-py39-py-read-items-3.html">read_items()</a></li><li><a href="/fn-tutorial001-py39-py-read-items-10.html">read_items()</a></li><li><a href="/fn-tutorial003-an-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial004-py39-py-read-items-3.html">read_items()</a></li><li><a href="/fn-tutorial001-02-an-py310-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial001-py310-py-read-items-3.html">read_items()</a></li><li><a href="/fn-test-custom-swagger-ui-redirect-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial002-py39-py-read-items-10.html">read_items()</a></li><li><a href="/fn-tutorial012-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial003-py39-py-read-items-6.html">read_items()</a></li><li><a href="/fn-tutorial001-01-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial002-an-py39-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial001-py39-py-read-items-8.html">read_items()</a></li><li><a href="/fn-tutorial001-py39-py-read-items-12.html">read_items()</a></li><li><a href="/fn-tutorial003-py310-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial001-an-py39-py-read-items-10.html">read_items()</a></li><li><a href="/fn-tutorial003-py39-py-read-items-8.html">read_items()</a></li><li><a href="/fn-tutorial006-py39-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial003-py39-py-read-items-5.html">read_items()</a></li><li><a href="/fn-tutorial002-an-py39-py-read-items-5.html">read_items()</a></li><li><a href="/fn-tutorial004-py39-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial004-py39-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial006-py39-py-read-items-3.html">read_items()</a></li><li><a href="/fn-tutorial002-py39-py-read-items-6.html">read_items()</a></li><li><a href="/fn-tutorial001-an-py310-py-read-items-8.html">read_items()</a></li><li><a href="/fn-tutorial001-an-py39-py-read-items-7.html">read_items()</a></li><li><a href="/fn-tutorial002-py39-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial005-py39-py-read-items-2.html">read_items()</a></li><li><a href="/fn-tutorial001-py39-py-read-items-3.html">read_items()</a></li><li><a href="/fn-tutorial003-py39-py-read-items-3.html">read_items()</a></li><li><a href="/fn-tutorial002-an-py39-py-read-items-4.html">read_items()</a></li><li><a href="/fn-tutorial003-an-py310-py-read-items.html">read_items()</a></li><li><a href="/fn-tutorial001-py310-py-read-items-8.html">read_items()</a></li><li><a href="/fn-tutorial005-py39-py-read-keyword-weights.html">read_keyword_weights()</a></li><li><a href="/fn-test-response-by-alias-py-read-list.html">read_list()</a></li><li><a href="/fn-test-list-py-read-list-bytes.html">read_list_bytes()</a></li><li><a href="/fn-test-list-py-read-list-uploadfile-alias.html">read_list_uploadfile_alias()</a></li><li><a href="/fn-test-list-py-read-list-uploadfile-validation-alias.html">read_list_uploadfile_validation_alias()</a></li><li><a href="/fn-tutorial001-an-py39-py-read-me.html">read_me()</a></li><li><a href="/fn-test-optional-str-py-read-model-optional-alias-2.html">read_model_optional_alias()</a></li><li><a href="/fn-test-optional-str-py-read-model-optional-alias-3.html">read_model_optional_alias()</a></li><li><a href="/fn-test-optional-str-py-read-model-optional-alias-4.html">read_model_optional_alias()</a></li><li><a href="/fn-test-optional-list-py-read-model-optional-list-str-2.html">read_model_optional_list_str()</a></li><li><a href="/fn-test-optional-list-py-read-model-optional-list-str-3.html">read_model_optional_list_str()</a></li><li><a href="/fn-test-optional-str-py-read-model-optional-validation-alias-2.html">read_model_optional_validation_alias()</a></li><li><a href="/fn-test-optional-str-py-read-model-optional-validation-alias-4.html">read_model_optional_validation_alias()</a></li><li><a href="/fn-test-optional-str-py-read-model-optional-validation-alias-3.html">read_model_optional_validation_alias()</a></li><li><a href="/fn-test-list-py-read-model-required-list-alias-2.html">read_model_required_list_alias()</a></li><li><a href="/fn-test-list-py-read-model-required-list-alias-3.html">read_model_required_list_alias()</a></li><li><a href="/fn-test-list-py-read-model-required-list-validation-alias-2.html">read_model_required_list_validation_alias()</a></li><li><a href="/fn-test-list-py-read-model-required-list-validation-alias-3.html">read_model_required_list_validation_alias()</a></li><li><a href="/fn-test-required-str-py-read-model-required-str-2.html">read_model_required_str()</a></li><li><a href="/fn-test-required-str-py-read-model-required-str-3.html">read_model_required_str()</a></li><li><a href="/fn-test-required-str-py-read-model-required-str-4.html">read_model_required_str()</a></li><li><a href="/fn-tutorial002-py39-py-read-next-item.html">read_next_item()</a></li><li><a href="/fn-tutorial002-py310-py-read-next-item.html">read_next_item()</a></li><li><a href="/fn-test-optional-py-read-optional-bytes-alias.html">read_optional_bytes_alias()</a></li><li><a href="/fn-test-optional-py-read-optional-bytes-validation-alias.html">read_optional_bytes_validation_alias()</a></li><li><a href="/fn-test-optional-list-py-read-optional-list-alias-3.html">read_optional_list_alias()</a></li><li><a href="/fn-test-optional-list-py-read-optional-list-alias-2.html">read_optional_list_alias()</a></li><li><a href="/fn-test-optional-list-py-read-optional-list-bytes.html">read_optional_list_bytes()</a></li><li><a href="/fn-test-optional-list-py-read-optional-list-uploadfile-alias.html">read_optional_list_uploadfile_alias()</a></li><li><a href="/fn-test-optional-list-py-read-optional-list-uploadfile-validation-alias.html">read_optional_list_uploadfile_validation_alias()</a></li><li><a href="/fn-test-optional-list-py-read-optional-list-validation-alias-3.html">read_optional_list_validation_alias()</a></li><li><a href="/fn-test-optional-list-py-read-optional-list-validation-alias-2.html">read_optional_list_validation_alias()</a></li><li><a href="/fn-test-optional-str-py-read-optional-str-3.html">read_optional_str()</a></li><li><a href="/fn-test-optional-str-py-read-optional-str-4.html">read_optional_str()</a></li><li><a href="/fn-test-optional-str-py-read-optional-str-2.html">read_optional_str()</a></li><li><a href="/fn-test-optional-py-read-optional-uploadfile.html">read_optional_uploadfile()</a></li><li><a href="/fn-tutorial005-py39-py-read-own-items.html">read_own_items()</a></li><li><a href="/fn-tutorial005-an-py39-py-read-own-items.html">read_own_items()</a></li><li><a href="/fn-test-response-model-data-filter-py-read-pets.html">read_pets()</a></li><li><a href="/fn-test-response-model-data-filter-no-inheritance-py-read-pets.html">read_pets()</a></li><li><a href="/fn-test-required-str-py-read-required-alias-4.html">read_required_alias()</a></li><li><a href="/fn-test-required-str-py-read-required-alias-3.html">read_required_alias()</a></li><li><a href="/fn-test-required-str-py-read-required-alias-5.html">read_required_alias()</a></li><li><a href="/fn-test-required-str-py-read-required-alias-2.html">read_required_alias()</a></li><li><a href="/fn-test-required-str-py-read-required-alias-and-validation-alias-5.html">read_required_alias_and_validation_alias()</a></li><li><a href="/fn-test-required-py-read-required-bytes-alias.html">read_required_bytes_alias()</a></li><li><a href="/fn-test-required-py-read-required-bytes-validation-alias.html">read_required_bytes_validation_alias()</a></li><li><a href="/fn-test-list-py-read-required-list-str-2.html">read_required_list_str()</a></li><li><a href="/fn-test-list-py-read-required-list-str-3.html">read_required_list_str()</a></li><li><a href="/fn-test-required-str-py-read-required-str-5.html">read_required_str()</a></li><li><a href="/fn-test-required-py-read-required-uploadfile.html">read_required_uploadfile()</a></li><li><a href="/fn-test-required-str-py-read-required-validation-alias-5.html">read_required_validation_alias()</a></li><li><a href="/fn-test-required-str-py-read-required-validation-alias-4.html">read_required_validation_alias()</a></li><li><a href="/fn-test-required-str-py-read-required-validation-alias-2.html">read_required_validation_alias()</a></li><li><a href="/fn-test-required-str-py-read-required-validation-alias-3.html">read_required_validation_alias()</a></li><li><a href="/fn-tutorial005-py310-py-read-system-status.html">read_system_status()</a></li><li><a href="/fn-tutorial005-an-py310-py-read-system-status.html">read_system_status()</a></li><li><a href="/fn-tutorial003-py39-py-read-unicorn.html">read_unicorn()</a></li><li><a href="/fn-tutorial003-py39-py-read-user.html">read_user()</a></li><li><a href="/fn-tutorial002-py39-py-read-user-2.html">read_user()</a></li><li><a href="/fn-tutorial002-py39-py-read-user.html">read_user()</a></li><li><a href="/fn-tutorial003-py39-py-read-user-2.html">read_user()</a></li><li><a href="/fn-tutorial001-py39-py-read-user-2.html">read_user()</a></li><li><a href="/fn-tutorial001-py39-py-read-user.html">read_user()</a></li><li><a href="/fn-test-router-prefix-with-template-py-read-user.html">read_user()</a></li><li><a href="/fn-tutorial003-py39-py-read-user-me.html">read_user_me()</a></li><li><a href="/fn-tutorial002b-py39-py-read-users.html">read_users()</a></li><li><a href="/fn-tutorial001-an-py39-py-read-users.html">read_users()</a></li><li><a href="/fn-tutorial003b-py39-py-read-users.html">read_users()</a></li><li><a href="/fn-tutorial002-py39-py-read-users.html">read_users()</a></li><li><a href="/fn-tutorial002-py310-py-read-users.html">read_users()</a></li><li><a href="/fn-tutorial006-py39-py-read-users.html">read_users()</a></li><li><a href="/fn-tutorial001-py39-py-read-users.html">read_users()</a></li><li><a href="/fn-tutorial001-02-an-py39-py-read-users.html">read_users()</a></li><li><a href="/fn-tutorial003b-py39-py-read-users2.html">read_users2()</a></li><li><a href="/fn-tutorial003-py310-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-tutorial004-py310-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-tutorial004-py39-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-tutorial005-an-py310-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-tutorial005-py310-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-tutorial002-py310-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-tutorial003-an-py310-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-tutorial002-an-py310-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-tutorial004-an-py310-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-test-security-oauth2-optional-description-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-tutorial004-an-py39-py-read-users-me.html">read_users_me()</a></li><li><a href="/fn-test-security-oauth2-authorization-code-bearer-scopes-openapi-py-read-with-oauth2-scheme.html">read_with_oauth2_scheme()</a></li><li><a href="/fn-test-custom-middleware-exception-py-receive-wrapper.html">receive_wrapper()</a></li><li><a href="/fn-tutorial006c-py39-py-redirect-pydantic.html">redirect_pydantic()</a></li><li><a href="/fn-tutorial006-py39-py-redirect-typer.html">redirect_typer()</a></li><li><a href="/fn-tutorial002-py39-py-redoc-html.html">redoc_html()</a></li><li><a href="/fn-tutorial001-py39-py-redoc-html.html">redoc_html()</a></li><li><a href="/fn-tutorial009c-py39-py-render.html">render()</a></li><li><a href="/fn-test-annotated-py-required.html">required()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-filtering-model-annotation-submodel-return-submodel.html">response_model_filtering_model_annotation_submodel_return_submodel()</a></li><li><a href="/fn-test-response-model-default-factory-py-response-model-has-default-factory-return-dict.html">response_model_has_default_factory_return_dict()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-model1-annotation-model2-return-dict-with-extra-data.html">response_model_model1_annotation_model2_return_dict_with_extra_data()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-model1-annotation-model2-return-invalid-dict.html">response_model_model1_annotation_model2_return_invalid_dict()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-model1-annotation-model2-return-same-model.html">response_model_model1_annotation_model2_return_same_model()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-no-annotation-return-dict-with-extra-data.html">response_model_no_annotation_return_dict_with_extra_data()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-no-annotation-return-invalid-dict.html">response_model_no_annotation_return_invalid_dict()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-no-annotation-return-same-model.html">response_model_no_annotation_return_same_model()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-none-annotation-return-dict-with-extra-data.html">response_model_none_annotation_return_dict_with_extra_data()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-none-annotation-return-invalid-dict.html">response_model_none_annotation_return_invalid_dict()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-none-annotation-return-same-model.html">response_model_none_annotation_return_same_model()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-response-model-union-no-annotation-return-model1.html">response_model_union_no_annotation_return_model1()</a></li><li><a href="/fn-test-validation-error-context-py-response-validation-handler.html">response_validation_handler()</a></li><li><a href="/fn-tutorial001-py39-py-root-2.html">root()</a></li><li><a href="/fn-tutorial001-py39-py-root.html">root()</a></li><li><a href="/fn-tutorial003-py39-py-root.html">root()</a></li><li><a href="/fn-routing-py-route.html">route()</a></li><li><a href="/fn-test-additional-responses-union-duplicate-anyof-py-route2.html">route2()</a></li><li><a href="/fn-test-openapi-route-extensions-py-route-with-extras.html">route_with_extras()</a></li><li><a href="/fn-test-exception-handlers-py-route-with-http-exception.html">route_with_http_exception()</a></li><li><a href="/fn-test-exception-handlers-py-route-with-request-validation-exception.html">route_with_request_validation_exception()</a></li><li><a href="/fn-test-exception-handlers-py-route-with-server-error.html">route_with_server_error()</a></li><li><a href="/fn-test-ws-router-py-router-native-prefix-ws.html">router_native_prefix_ws()</a></li><li><a href="/fn-test-ws-router-py-router-ws-custom-error.html">router_ws_custom_error()</a></li><li><a href="/fn-test-ws-router-py-router-ws-decorator-depends.html">router_ws_decorator_depends()</a></li><li><a href="/fn-test-ws-router-py-router-ws-depends-err.html">router_ws_depends_err()</a></li><li><a href="/fn-test-ws-router-py-router-ws-depends-validate.html">router_ws_depends_validate()</a></li><li><a href="/fn-test-ws-router-py-routerindex.html">routerindex()</a></li><li><a href="/fn-test-ws-dependencies-py-routerindex.html">routerindex()</a></li><li><a href="/fn-test-ws-router-py-routerindex2.html">routerindex2()</a></li><li><a href="/fn-test-ws-router-py-routerindexparams.html">routerindexparams()</a></li><li><a href="/fn-test-ws-router-py-routerprefixindex.html">routerprefixindex()</a></li><li><a href="/fn-routing-py-run-endpoint-function.html">run_endpoint_function()</a></li><li><a href="/fn-test-custom-middleware-exception-py-run-middleware.html">run_middleware()</a></li><li><a href="/fn-tutorial009-py310-py-say-hi.html">say_hi()</a></li><li><a href="/fn-tutorial009c-py39-py-say-hi.html">say_hi()</a></li><li><a href="/fn-tutorial009b-py39-py-say-hi.html">say_hi()</a></li><li><a href="/fn-tutorial002-py310-py-send-notification.html">send_notification()</a></li><li><a href="/fn-tutorial002-py39-py-send-notification.html">send_notification()</a></li><li><a href="/fn-tutorial002-an-py310-py-send-notification.html">send_notification()</a></li><li><a href="/fn-tutorial001-py39-py-send-notification.html">send_notification()</a></li><li><a href="/fn-tutorial002-an-py39-py-send-notification.html">send_notification()</a></li><li><a href="/fn-tutorial003-py39-py-send-personal-message.html">send_personal_message()</a></li><li><a href="/fn-test-datetime-custom-encoder-py-serialize-datetime.html">serialize_datetime()</a></li><li><a href="/fn-test-exception-handlers-py-server-error-exception-handler.html">server_error_exception_handler()</a></li><li><a href="/fn-test-repeated-cookie-headers-py-set-cookie.html">set_cookie()</a></li><li><a href="/fn-tutorial002-py39-py-shutdown-event.html">shutdown_event()</a></li><li><a href="/fn-test-response-model-include-exclude-py-simple-exclude.html">simple_exclude()</a></li><li><a href="/fn-test-response-model-include-exclude-py-simple-include.html">simple_include()</a></li><li><a href="/fn-tutorial003-py39-py-startup-event.html">startup_event()</a></li><li><a href="/fn-tutorial001-py39-py-startup-event.html">startup_event()</a></li><li><a href="/fn-test-router-events-py-state.html">state()</a></li><li><a href="/fn-test-validation-error-context-py-subapp-websocket-endpoint.html">subapp_websocket_endpoint()</a></li><li><a href="/fn-tutorial001-py39-py-sum-numbers.html">sum_numbers()</a></li><li><a href="/fn-tutorial001-py310-py-sum-numbers.html">sum_numbers()</a></li><li><a href="/fn-tutorial002-py310-py-sum-numbers.html">sum_numbers()</a></li><li><a href="/fn-tutorial002-an-py39-py-sum-numbers.html">sum_numbers()</a></li><li><a href="/fn-tutorial002-an-py310-py-sum-numbers.html">sum_numbers()</a></li><li><a href="/fn-tutorial001-an-py310-py-sum-numbers.html">sum_numbers()</a></li><li><a href="/fn-tutorial001-an-py39-py-sum-numbers.html">sum_numbers()</a></li><li><a href="/fn-tutorial002-py39-py-sum-numbers.html">sum_numbers()</a></li><li><a href="/fn-tutorial002-py39-py-swagger-ui-redirect.html">swagger_ui_redirect()</a></li><li><a href="/fn-tutorial001-py39-py-swagger-ui-redirect.html">swagger_ui_redirect()</a></li><li><a href="/fn-test-general-performance-py-sync-dict-no-response-model.html">sync_dict_no_response_model()</a></li><li><a href="/fn-test-general-performance-py-sync-large-dict-with-response-model.html">sync_large_dict_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-sync-large-model-with-response-model.html">sync_large_model_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-sync-model-no-response-model.html">sync_model_no_response_model()</a></li><li><a href="/fn-test-additional-responses-router-py-test-a.html">test_a()</a></li><li><a href="/fn-test-openapi-schema-type-py-test-allowed-schema-type.html">test_allowed_schema_type()</a></li><li><a href="/fn-test-ws-router-py-test-app.html">test_app()</a></li><li><a href="/fn-test-default-response-class-router-py-test-app.html">test_app()</a></li><li><a href="/fn-test-openapi-servers-py-test-app.html">test_app()</a></li><li><a href="/fn-test-router-events-py-test-app-lifespan-state.html">test_app_lifespan_state()</a></li><li><a href="/fn-test-default-response-class-router-py-test-app-override.html">test_app_override()</a></li><li><a href="/fn-test-default-response-class-py-test-app-override.html">test_app_override()</a></li><li><a href="/fn-test-generate-unique-id-function-py-test-app-path-operation-overrides-generate-unique-id.html">test_app_path_operation_overrides_generate_unique_id()</a></li><li><a href="/fn-test-general-performance-py-test-async-return-dict-without-response-model.html">test_async_return_dict_without_response_model()</a></li><li><a href="/fn-test-general-performance-py-test-async-return-large-dict-with-response-model.html">test_async_return_large_dict_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-test-async-return-large-model-with-response-model.html">test_async_return_large_model_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-test-async-return-model-without-response-model.html">test_async_return_model_without_response_model()</a></li><li><a href="/fn-test-additional-responses-router-py-test-b.html">test_b()</a></li><li><a href="/fn-test-additional-responses-router-py-test-c.html">test_c()</a></li><li><a href="/fn-test-schema-extra-examples-py-test-call-api.html">test_call_api()</a></li><li><a href="/fn-test-openapi-examples-py-test-call-api.html">test_call_api()</a></li><li><a href="/fn-test-additional-properties-bool-py-test-call-invalid.html">test_call_invalid()</a></li><li><a href="/fn-test-generate-unique-id-function-py-test-callback-override-generate-unique-id.html">test_callback_override_generate_unique_id()</a></li><li><a href="/fn-test-serialize-response-dataclass-py-test-coerce.html">test_coerce()</a></li><li><a href="/fn-test-repeated-cookie-headers-py-test-cookie-is-set-once.html">test_cookie_is_set_once()</a></li><li><a href="/fn-test-params-repr-py-test-cookie-repr-ellipsis.html">test_cookie_repr_ellipsis()</a></li><li><a href="/fn-test-params-repr-py-test-cookie-repr-list.html">test_cookie_repr_list()</a></li><li><a href="/fn-test-params-repr-py-test-cookie-repr-str.html">test_cookie_repr_str()</a></li><li><a href="/fn-test-openapi-separate-input-output-schemas-py-test-create-item.html">test_create_item()</a></li><li><a href="/fn-test-openapi-separate-input-output-schemas-py-test-create-item-list.html">test_create_item_list()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-custom-enum-encoders.html">test_custom_enum_encoders()</a></li><li><a href="/fn-test-custom-middleware-exception-py-test-custom-middleware-exception-not-raised.html">test_custom_middleware_exception_not_raised()</a></li><li><a href="/fn-test-custom-schema-fields-py-test-custom-response-schema.html">test_custom_response_schema()</a></li><li><a href="/fn-test-additional-responses-router-py-test-d.html">test_d()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-decimal-encoder-infinity.html">test_decimal_encoder_infinity()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-decimal-encoder-int.html">test_decimal_encoder_int()</a></li><li><a href="/fn-test-datastructures-py-test-default-placeholder-bool.html">test_default_placeholder_bool()</a></li><li><a href="/fn-test-forms-single-model-py-test-defaults.html">test_defaults()</a></li><li><a href="/fn-test-extra-routes-py-test-delete.html">test_delete()</a></li><li><a href="/fn-test-ws-router-py-test-depend-err-handler.html">test_depend_err_handler()</a></li><li><a href="/fn-test-ws-router-py-test-depend-err-middleware.html">test_depend_err_middleware()</a></li><li><a href="/fn-test-ws-router-py-test-depend-validation.html">test_depend_validation()</a></li><li><a href="/fn-test-depends-hashable-py-test-depends-hashable.html">test_depends_hashable()</a></li><li><a href="/fn-test-union-forms-py-test-empty-form.html">test_empty_form()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-class.html">test_encode_class()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-custom-json-encoders-model-pydanticv2.html">test_encode_custom_json_encoders_model_pydanticv2()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-dataclass.html">test_encode_dataclass()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-dict.html">test_encode_dict()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-model-with-alias-raises.html">test_encode_model_with_alias_raises()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-model-with-default.html">test_encode_model_with_default()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-model-with-pure-path.html">test_encode_model_with_pure_path()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-model-with-pure-posix-path.html">test_encode_model_with_pure_posix_path()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-model-with-pure-windows-path.html">test_encode_model_with_pure_windows_path()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-pure-path.html">test_encode_pure_path()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-encode-pydantic-undefined.html">test_encode_pydantic_undefined()</a></li><li><a href="/fn-test-response-model-data-filter-no-inheritance-py-test-filter-second-level-model.html">test_filter_second_level_model()</a></li><li><a href="/fn-test-response-model-data-filter-py-test-filter-second-level-model.html">test_filter_second_level_model()</a></li><li><a href="/fn-test-filter-pydantic-sub-model-pv2-py-test-filter-sub-model.html">test_filter_sub_model()</a></li><li><a href="/fn-test-form-default-py-test-form-default-multi-part.html">test_form_default_multi_part()</a></li><li><a href="/fn-test-schema-ref-pydantic-v2-py-test-get.html">test_get()</a></li><li><a href="/fn-test-get-model-definitions-formfeed-escape-py-test-get.html">test_get()</a></li><li><a href="/fn-test-schema-compat-pydantic-v2-py-test-get.html">test_get()</a></li><li><a href="/fn-test-router-prefix-with-template-py-test-get.html">test_get()</a></li><li><a href="/fn-test-route-scope-py-test-get.html">test_get()</a></li><li><a href="/fn-test-duplicate-models-openapi-py-test-get-api-route.html">test_get_api_route()</a></li><li><a href="/fn-test-extra-routes-py-test-get-api-route.html">test_get_api_route()</a></li><li><a href="/fn-test-extra-routes-py-test-get-api-route-not-decorated.html">test_get_api_route_not_decorated()</a></li><li><a href="/fn-test-tutorial010-py-test-get-db.html">test_get_db()</a></li><li><a href="/fn-test-tutorial007-py-test-get-db.html">test_get_db()</a></li><li><a href="/fn-test-starlette-exception-py-test-get-item-not-found.html">test_get_item_not_found()</a></li><li><a href="/fn-test-tutorial003-py-test-get-name-with-age-pass-str.html">test_get_name_with_age_pass_str()</a></li><li><a href="/fn-test-repeated-parameter-alias-py-test-get-parameters.html">test_get_parameters()</a></li><li><a href="/fn-test-custom-route-class-py-test-get-path.html">test_get_path()</a></li><li><a href="/fn-test-tutorial010-py-test-get-person-name.html">test_get_person_name()</a></li><li><a href="/fn-test-top-level-security-scheme-in-openapi-py-test-get-root-no-token.html">test_get_root_no_token()</a></li><li><a href="/fn-test-openapi-route-extensions-py-test-get-route.html">test_get_route()</a></li><li><a href="/fn-test-enforce-once-required-parameter-py-test-get-valid.html">test_get_valid()</a></li><li><a href="/fn-test-local-docs-py-test-google-fonts-in-generated-redoc.html">test_google_fonts_in_generated_redoc()</a></li><li><a href="/fn-test-tutorial001-py-test-gzip-request.html">test_gzip_request()</a></li><li><a href="/fn-test-json-type-py-test-header-json-list.html">test_header_json_list()</a></li><li><a href="/fn-test-params-repr-py-test-header-repr-none.html">test_header_repr_none()</a></li><li><a href="/fn-test-params-repr-py-test-header-repr-number.html">test_header_repr_number()</a></li><li><a href="/fn-test-empty-router-py-test-include-empty.html">test_include_empty()</a></li><li><a href="/fn-test-multipart-installation-py-test-incorrect-multipart-installed-file-upload.html">test_incorrect_multipart_installed_file_upload()</a></li><li><a href="/fn-test-multipart-installation-py-test-incorrect-multipart-installed-multi-form.html">test_incorrect_multipart_installed_multi_form()</a></li><li><a href="/fn-test-security-oauth2-password-bearer-optional-py-test-incorrect-token.html">test_incorrect_token()</a></li><li><a href="/fn-test-validate-response-dataclass-py-test-invalid-list.html">test_invalid_list()</a></li><li><a href="/fn-test-validate-response-py-test-invalid-list.html">test_invalid_list()</a></li><li><a href="/fn-test-route-scope-py-test-invalid-method-doesnt-match.html">test_invalid_method_doesnt_match()</a></li><li><a href="/fn-test-route-scope-py-test-invalid-path-doesnt-match.html">test_invalid_path_doesnt_match()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-invalid-response-model-field.html">test_invalid_response_model_field()</a></li><li><a href="/fn-test-response-model-invalid-py-test-invalid-response-model-in-responses-raises.html">test_invalid_response_model_in_responses_raises()</a></li><li><a href="/fn-test-response-model-invalid-py-test-invalid-response-model-raises.html">test_invalid_response_model_raises()</a></li><li><a href="/fn-test-jsonable-encoder-py-test-json-encoder-error-with-pydanticv1.html">test_json_encoder_error_with_pydanticv1()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-test-level1-default.html">test_level1_default()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-test-level1-override.html">test_level1_override()</a></li><li><a href="/fn-test-list-py-test-list.html">test_list()</a></li><li><a href="/fn-test-list-py-test-list-alias-by-alias.html">test_list_alias_by_alias()</a></li><li><a href="/fn-test-list-py-test-list-alias-missing.html">test_list_alias_missing()</a></li><li><a href="/fn-test-list-py-test-list-schema.html">test_list_schema()</a></li><li><a href="/fn-test-list-py-test-list-validation-alias-by-validation-alias.html">test_list_validation_alias_by_validation_alias()</a></li><li><a href="/fn-test-list-py-test-list-validation-alias-missing.html">test_list_validation_alias_missing()</a></li><li><a href="/fn-test-router-events-py-test-merged-mixed-state-lifespans.html">test_merged_mixed_state_lifespans()</a></li><li><a href="/fn-test-router-events-py-test-merged-no-return-lifespans-return-none.html">test_merged_no_return_lifespans_return_none()</a></li><li><a href="/fn-test-tuples-py-test-model-with-tuple-invalid.html">test_model_with_tuple_invalid()</a></li><li><a href="/fn-test-ambiguous-params-py-test-multiple-annotations.html">test_multiple_annotations()</a></li><li><a href="/fn-test-annotated-py-test-multiple-path.html">test_multiple_path()</a></li><li><a href="/fn-test-ws-router-py-test-native-prefix-router.html">test_native_prefix_router()</a></li><li><a href="/fn-test-response-model-include-exclude-py-test-nested-exclude-simple.html">test_nested_exclude_simple()</a></li><li><a href="/fn-test-response-model-include-exclude-py-test-nested-include-mixed.html">test_nested_include_mixed()</a></li><li><a href="/fn-test-response-model-include-exclude-py-test-nested-include-simple.html">test_nested_include_simple()</a></li><li><a href="/fn-test-annotated-py-test-nested-router.html">test_nested_router()</a></li><li><a href="/fn-test-forms-single-model-py-test-no-data.html">test_no_data()</a></li><li><a href="/fn-test-multipart-installation-py-test-no-multipart-installed.html">test_no_multipart_installed()</a></li><li><a href="/fn-test-multipart-installation-py-test-no-multipart-installed-file-bytes.html">test_no_multipart_installed_file_bytes()</a></li><li><a href="/fn-test-multipart-installation-py-test-no-multipart-installed-form-file.html">test_no_multipart_installed_form_file()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-no-response-model-annotation-list-of-model.html">test_no_response_model_annotation_list_of_model()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-no-response-model-annotation-return-class.html">test_no_response_model_annotation_return_class()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-no-response-model-annotation-return-dict-with-extra-data.html">test_no_response_model_annotation_return_dict_with_extra_data()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-no-response-model-annotation-return-invalid-dict.html">test_no_response_model_annotation_return_invalid_dict()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-no-response-model-annotation-return-same-model.html">test_no_response_model_annotation_return_same_model()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-no-response-model-annotation-union-return-model1.html">test_no_response_model_annotation_union_return_model1()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-no-response-model-no-annotation-return-model.html">test_no_response_model_no_annotation_return_model()</a></li><li><a href="/fn-test-serialize-response-dataclass-py-test-no-response-model-objectlist.html">test_no_response_model_objectlist()</a></li><li><a href="/fn-test-security-oauth2-authorization-code-bearer-description-py-test-no-token.html">test_no_token()</a></li><li><a href="/fn-test-security-oauth2-password-bearer-optional-description-py-test-no-token.html">test_no_token()</a></li><li><a href="/fn-test-security-oauth2-authorization-code-bearer-py-test-no-token.html">test_no_token()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-test-openapi.html">test_openapi()</a></li><li><a href="/fn-test-tutorial001-py-test-openapi-2.html">test_openapi()</a></li><li><a href="/fn-test-response-model-sub-types-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-response-by-alias-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-oauth2-password-bearer-optional-description-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-additional-responses-router-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-oauth2-authorization-code-bearer-description-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-additional-responses-response-class-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-additional-properties-bool-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-tutorial002-py-test-openapi-schema-7.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-http-digest-description-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-no-schema-split-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-filter-pydantic-sub-model-pv2-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-oauth2-optional-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-http-bearer-description-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-additional-response-extra-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-tutorial001-py-test-openapi-schema-13.html">test_openapi_schema()</a></li><li><a href="/fn-test-additional-responses-bad-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-annotated-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-http-base-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-sub-callbacks-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-additional-properties-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-openapi-route-extensions-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-openid-connect-optional-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-oauth2-authorization-code-bearer-scopes-openapi-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-api-key-cookie-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-computed-fields-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-tutorial002-py-test-openapi-schema-19.html">test_openapi_schema()</a></li><li><a href="/fn-test-tutorial003-py-test-openapi-schema-17.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-api-key-header-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-arbitrary-types-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-custom-route-class-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-generic-parameterless-depends-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-openid-connect-description-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-starlette-exception-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-security-openid-connect-py-test-openapi-schema.html">test_openapi_schema()</a></li><li><a href="/fn-test-openapi-separate-input-output-schemas-py-test-openapi-schema-no-separate.html">test_openapi_schema_no_separate()</a></li><li><a href="/fn-test-optional-str-py-test-optional-alias-by-alias-3.html">test_optional_alias_by_alias()</a></li><li><a href="/fn-test-optional-str-py-test-optional-alias-by-alias-4.html">test_optional_alias_by_alias()</a></li><li><a href="/fn-test-optional-str-py-test-optional-alias-by-alias-2.html">test_optional_alias_by_alias()</a></li><li><a href="/fn-test-optional-py-test-optional-alias-by-name.html">test_optional_alias_by_name()</a></li><li><a href="/fn-test-optional-str-py-test-optional-alias-missing-2.html">test_optional_alias_missing()</a></li><li><a href="/fn-test-optional-str-py-test-optional-alias-missing-4.html">test_optional_alias_missing()</a></li><li><a href="/fn-test-optional-str-py-test-optional-alias-missing-3.html">test_optional_alias_missing()</a></li><li><a href="/fn-test-optional-py-test-optional-alias-schema.html">test_optional_alias_schema()</a></li><li><a href="/fn-test-optional-file-list-py-test-optional-bytes-list.html">test_optional_bytes_list()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list.html">test_optional_list()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-alias-by-alias-2.html">test_optional_list_alias_by_alias()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-alias-by-name-3.html">test_optional_list_alias_by_name()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-alias-by-name-4.html">test_optional_list_alias_by_name()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-alias-missing-2.html">test_optional_list_alias_missing()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-schema.html">test_optional_list_schema()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-str-alias-schema-2.html">test_optional_list_str_alias_schema()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-str-alias-schema-3.html">test_optional_list_str_alias_schema()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-str-missing-3.html">test_optional_list_str_missing()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-str-missing-2.html">test_optional_list_str_missing()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-validation-alias-by-name-2.html">test_optional_list_validation_alias_by_name()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-validation-alias-by-name-3.html">test_optional_list_validation_alias_by_name()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-validation-alias-schema-3.html">test_optional_list_validation_alias_schema()</a></li><li><a href="/fn-test-optional-list-py-test-optional-list-validation-alias-schema-2.html">test_optional_list_validation_alias_schema()</a></li><li><a href="/fn-test-optional-py-test-optional-missing.html">test_optional_missing()</a></li><li><a href="/fn-test-optional-str-py-test-optional-str-3.html">test_optional_str()</a></li><li><a href="/fn-test-optional-str-py-test-optional-str-2.html">test_optional_str()</a></li><li><a href="/fn-test-optional-str-py-test-optional-str-4.html">test_optional_str()</a></li><li><a href="/fn-test-optional-str-py-test-optional-str-schema-3.html">test_optional_str_schema()</a></li><li><a href="/fn-test-optional-str-py-test-optional-str-schema-4.html">test_optional_str_schema()</a></li><li><a href="/fn-test-optional-str-py-test-optional-str-schema-2.html">test_optional_str_schema()</a></li><li><a href="/fn-test-optional-py-test-optional-validation-alias-by-name.html">test_optional_validation_alias_by_name()</a></li><li><a href="/fn-test-optional-str-py-test-optional-validation-alias-by-validation-alias-3.html">test_optional_validation_alias_by_validation_alias()</a></li><li><a href="/fn-test-optional-str-py-test-optional-validation-alias-by-validation-alias-2.html">test_optional_validation_alias_by_validation_alias()</a></li><li><a href="/fn-test-optional-list-py-test-optional-validation-alias-by-validation-alias.html">test_optional_validation_alias_by_validation_alias()</a></li><li><a href="/fn-test-optional-str-py-test-optional-validation-alias-by-validation-alias-4.html">test_optional_validation_alias_by_validation_alias()</a></li><li><a href="/fn-test-optional-str-py-test-optional-validation-alias-missing-3.html">test_optional_validation_alias_missing()</a></li><li><a href="/fn-test-optional-list-py-test-optional-validation-alias-missing.html">test_optional_validation_alias_missing()</a></li><li><a href="/fn-test-optional-str-py-test-optional-validation-alias-missing-4.html">test_optional_validation_alias_missing()</a></li><li><a href="/fn-test-optional-str-py-test-optional-validation-alias-missing-2.html">test_optional_validation_alias_missing()</a></li><li><a href="/fn-test-optional-py-test-optional-validation-alias-schema.html">test_optional_validation_alias_schema()</a></li><li><a href="/fn-test-extra-routes-py-test-options.html">test_options()</a></li><li><a href="/fn-test-tutorial001-py-test-override-in-items-with-params-run.html">test_override_in_items_with_params_run()</a></li><li><a href="/fn-test-tutorial001-py-test-override-in-users-with-params.html">test_override_in_users_with_params()</a></li><li><a href="/fn-test-exception-handlers-py-test-override-request-validation-exception.html">test_override_request_validation_exception()</a></li><li><a href="/fn-test-exception-handlers-py-test-override-server-error-exception-response.html">test_override_server_error_exception_response()</a></li><li><a href="/fn-test-app02-py-test-override-settings.html">test_override_settings()</a></li><li><a href="/fn-test-callable-endpoint-py-test-partial.html">test_partial()</a></li><li><a href="/fn-test-additional-response-extra-py-test-path-operation.html">test_path_operation()</a></li><li><a href="/fn-test-response-model-sub-types-py-test-path-operations.html">test_path_operations()</a></li><li><a href="/fn-test-params-repr-py-test-path-repr.html">test_path_repr()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-test-paths-level3.html">test_paths_level3()</a></li><li><a href="/fn-test-include-router-defaults-overrides-py-test-paths-level5.html">test_paths_level5()</a></li><li><a href="/fn-test-tutorial003-py-test-post-files.html">test_post_files()</a></li><li><a href="/fn-test-tutorial002-py-test-post-files.html">test_post_files()</a></li><li><a href="/fn-test-union-forms-py-test-post-user-form.html">test_post_user_form()</a></li><li><a href="/fn-test-ws-router-py-test-prefix-router.html">test_prefix_router()</a></li><li><a href="/fn-test-tutorial006-py-test-process-items.html">test_process_items()</a></li><li><a href="/fn-test-inherited-custom-class-py-test-pydanticv2.html">test_pydanticv2()</a></li><li><a href="/fn-test-pydantic-v1-error-py-test-raises-pydantic-v1-model-in-response-model.html">test_raises_pydantic_v1_model_in_response_model()</a></li><li><a href="/fn-test-pydantic-v1-error-py-test-raises-pydantic-v1-model-in-union.html">test_raises_pydantic_v1_model_in_union()</a></li><li><a href="/fn-test-security-oauth2-authorization-code-bearer-scopes-openapi-simple-py-test-read-admin.html">test_read_admin()</a></li><li><a href="/fn-test-response-by-alias-py-test-read-dict-by-alias.html">test_read_dict_by_alias()</a></li><li><a href="/fn-tutorial004-py39-py-test-read-items.html">test_read_items()</a></li><li><a href="/fn-tutorial003-py39-py-test-read-items.html">test_read_items()</a></li><li><a href="/fn-test-response-by-alias-py-test-read-list-by-alias.html">test_read_list_by_alias()</a></li><li><a href="/fn-test-response-by-alias-py-test-read-model.html">test_read_model()</a></li><li><a href="/fn-test-response-by-alias-py-test-read-model-no-alias.html">test_read_model_no_alias()</a></li><li><a href="/fn-test-security-oauth2-authorization-code-bearer-scopes-openapi-py-test-read-with-get-token.html">test_read_with_get_token()</a></li><li><a href="/fn-test-read-with-orm-mode-py-test-read-with-orm-mode.html">test_read_with_orm_mode()</a></li><li><a href="/fn-test-router-redirect-slashes-py-test-redirect-slashes-disabled.html">test_redirect_slashes_disabled()</a></li><li><a href="/fn-test-router-redirect-slashes-py-test-redirect-slashes-enabled.html">test_redirect_slashes_enabled()</a></li><li><a href="/fn-test-tutorial001-py-test-request-class.html">test_request_class()</a></li><li><a href="/fn-test-validation-error-context-py-test-request-validation-error-includes-endpoint-context.html">test_request_validation_error_includes_endpoint_context()</a></li><li><a href="/fn-test-required-str-py-test-required-alias-by-name-3.html">test_required_alias_by_name()</a></li><li><a href="/fn-test-required-py-test-required-alias-by-name.html">test_required_alias_by_name()</a></li><li><a href="/fn-test-required-str-py-test-required-alias-by-name-4.html">test_required_alias_by_name()</a></li><li><a href="/fn-test-required-str-py-test-required-alias-by-name-2.html">test_required_alias_by_name()</a></li><li><a href="/fn-test-required-py-test-required-alias-schema.html">test_required_alias_schema()</a></li><li><a href="/fn-test-list-py-test-required-list-alias-by-alias-2.html">test_required_list_alias_by_alias()</a></li><li><a href="/fn-test-list-py-test-required-list-alias-by-alias-3.html">test_required_list_alias_by_alias()</a></li><li><a href="/fn-test-list-py-test-required-list-alias-missing-3.html">test_required_list_alias_missing()</a></li><li><a href="/fn-test-list-py-test-required-list-alias-missing-2.html">test_required_list_alias_missing()</a></li><li><a href="/fn-test-list-py-test-required-list-str-3.html">test_required_list_str()</a></li><li><a href="/fn-test-list-py-test-required-list-str-2.html">test_required_list_str()</a></li><li><a href="/fn-test-list-py-test-required-list-str-schema-3.html">test_required_list_str_schema()</a></li><li><a href="/fn-test-list-py-test-required-list-str-schema-2.html">test_required_list_str_schema()</a></li><li><a href="/fn-test-list-py-test-required-list-validation-alias-by-validation-alias-2.html">test_required_list_validation_alias_by_validation_alias()</a></li><li><a href="/fn-test-list-py-test-required-list-validation-alias-by-validation-alias-3.html">test_required_list_validation_alias_by_validation_alias()</a></li><li><a href="/fn-test-list-py-test-required-list-validation-alias-missing-3.html">test_required_list_validation_alias_missing()</a></li><li><a href="/fn-test-list-py-test-required-list-validation-alias-missing-2.html">test_required_list_validation_alias_missing()</a></li><li><a href="/fn-test-required-py-test-required-missing.html">test_required_missing()</a></li><li><a href="/fn-test-required-str-py-test-required-str-alias-schema-3.html">test_required_str_alias_schema()</a></li><li><a href="/fn-test-required-str-py-test-required-str-alias-schema-2.html">test_required_str_alias_schema()</a></li><li><a href="/fn-test-required-str-py-test-required-str-alias-schema-4.html">test_required_str_alias_schema()</a></li><li><a href="/fn-test-required-str-py-test-required-str-missing-3.html">test_required_str_missing()</a></li><li><a href="/fn-test-required-str-py-test-required-str-missing-4.html">test_required_str_missing()</a></li><li><a href="/fn-test-required-str-py-test-required-str-missing-2.html">test_required_str_missing()</a></li><li><a href="/fn-test-required-str-py-test-required-validation-alias-by-name-2.html">test_required_validation_alias_by_name()</a></li><li><a href="/fn-test-required-str-py-test-required-validation-alias-by-name-4.html">test_required_validation_alias_by_name()</a></li><li><a href="/fn-test-required-str-py-test-required-validation-alias-by-name-3.html">test_required_validation_alias_by_name()</a></li><li><a href="/fn-test-required-py-test-required-validation-alias-by-name.html">test_required_validation_alias_by_name()</a></li><li><a href="/fn-test-required-str-py-test-required-validation-alias-schema-2.html">test_required_validation_alias_schema()</a></li><li><a href="/fn-test-required-str-py-test-required-validation-alias-schema-3.html">test_required_validation_alias_schema()</a></li><li><a href="/fn-test-required-str-py-test-required-validation-alias-schema-4.html">test_required_validation_alias_schema()</a></li><li><a href="/fn-test-required-py-test-required-validation-alias-schema.html">test_required_validation_alias_schema()</a></li><li><a href="/fn-test-swagger-ui-init-oauth-py-test-response.html">test_response()</a></li><li><a href="/fn-test-no-swagger-ui-redirect-py-test-response.html">test_response()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-filtering-model-annotation-submodel-return-submodel.html">test_response_model_filtering_model_annotation_submodel_return_submodel()</a></li><li><a href="/fn-test-response-model-default-factory-py-test-response-model-has-default-factory-return-dict.html">test_response_model_has_default_factory_return_dict()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-model1-annotation-model2-return-dict-with-extra-data.html">test_response_model_model1_annotation_model2_return_dict_with_extra_data()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-model1-annotation-model2-return-invalid-dict.html">test_response_model_model1_annotation_model2_return_invalid_dict()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-model1-annotation-model2-return-same-model.html">test_response_model_model1_annotation_model2_return_same_model()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-no-annotation-return-dict-with-extra-data.html">test_response_model_no_annotation_return_dict_with_extra_data()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-no-annotation-return-invalid-dict.html">test_response_model_no_annotation_return_invalid_dict()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-no-annotation-return-same-model.html">test_response_model_no_annotation_return_same_model()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-none-annotation-return-dict-with-extra-data.html">test_response_model_none_annotation_return_dict_with_extra_data()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-none-annotation-return-invalid-dict.html">test_response_model_none_annotation_return_invalid_dict()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-none-annotation-return-same-model.html">test_response_model_none_annotation_return_same_model()</a></li><li><a href="/fn-test-response-model-as-return-annotation-py-test-response-model-union-no-annotation-return-model1.html">test_response_model_union_no_annotation_return_model1()</a></li><li><a href="/fn-test-validation-error-context-py-test-response-validation-error-includes-endpoint-context.html">test_response_validation_error_includes_endpoint_context()</a></li><li><a href="/fn-test-skip-defaults-py-test-return-exclude-defaults.html">test_return_exclude_defaults()</a></li><li><a href="/fn-test-custom-route-class-py-test-route-classes.html">test_route_classes()</a></li><li><a href="/fn-test-starlette-urlconvertors-py-test-route-converters-float.html">test_route_converters_float()</a></li><li><a href="/fn-test-starlette-urlconvertors-py-test-route-converters-int.html">test_route_converters_int()</a></li><li><a href="/fn-test-starlette-urlconvertors-py-test-route-converters-path.html">test_route_converters_path()</a></li><li><a href="/fn-test-ws-router-py-test-router.html">test_router()</a></li><li><a href="/fn-test-ws-router-py-test-router2.html">test_router2()</a></li><li><a href="/fn-test-default-response-class-py-test-router-a.html">test_router_a()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-a.html">test_router_a()</a></li><li><a href="/fn-test-default-response-class-py-test-router-a-a.html">test_router_a_a()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-a-a.html">test_router_a_a()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-a-a-override.html">test_router_a_a_override()</a></li><li><a href="/fn-test-default-response-class-py-test-router-a-a-override.html">test_router_a_a_override()</a></li><li><a href="/fn-test-default-response-class-py-test-router-a-b.html">test_router_a_b()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-a-b.html">test_router_a_b()</a></li><li><a href="/fn-test-default-response-class-py-test-router-a-b-override.html">test_router_a_b_override()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-a-b-override.html">test_router_a_b_override()</a></li><li><a href="/fn-test-default-response-class-py-test-router-a-override.html">test_router_a_override()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-a-override.html">test_router_a_override()</a></li><li><a href="/fn-test-router-events-py-test-router-async-generator-lifespan.html">test_router_async_generator_lifespan()</a></li><li><a href="/fn-test-router-events-py-test-router-async-shutdown-handler.html">test_router_async_shutdown_handler()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-b.html">test_router_b()</a></li><li><a href="/fn-test-default-response-class-py-test-router-b.html">test_router_b()</a></li><li><a href="/fn-test-default-response-class-py-test-router-b-a.html">test_router_b_a()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-b-a.html">test_router_b_a()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-b-a-c.html">test_router_b_a_c()</a></li><li><a href="/fn-test-default-response-class-py-test-router-b-a-c.html">test_router_b_a_c()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-b-a-c-override.html">test_router_b_a_c_override()</a></li><li><a href="/fn-test-default-response-class-py-test-router-b-a-c-override.html">test_router_b_a_c_override()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-b-a-override.html">test_router_b_a_override()</a></li><li><a href="/fn-test-default-response-class-py-test-router-b-a-override.html">test_router_b_a_override()</a></li><li><a href="/fn-test-default-response-class-py-test-router-b-override.html">test_router_b_override()</a></li><li><a href="/fn-test-default-response-class-router-py-test-router-b-override.html">test_router_b_override()</a></li><li><a href="/fn-test-router-circular-import-py-test-router-circular-import.html">test_router_circular_import()</a></li><li><a href="/fn-test-router-events-py-test-router-events.html">test_router_events()</a></li><li><a href="/fn-test-generate-unique-id-function-py-test-router-include-overrides-generate-unique-id.html">test_router_include_overrides_generate_unique_id()</a></li><li><a href="/fn-test-router-events-py-test-router-nested-lifespan-state.html">test_router_nested_lifespan_state()</a></li><li><a href="/fn-test-router-events-py-test-router-nested-lifespan-state-overriding-by-parent.html">test_router_nested_lifespan_state_overriding_by_parent()</a></li><li><a href="/fn-test-generate-unique-id-function-py-test-router-overrides-generate-unique-id.html">test_router_overrides_generate_unique_id()</a></li><li><a href="/fn-test-generate-unique-id-function-py-test-router-path-operation-overrides-generate-unique-id.html">test_router_path_operation_overrides_generate_unique_id()</a></li><li><a href="/fn-test-router-events-py-test-router-sync-generator-lifespan.html">test_router_sync_generator_lifespan()</a></li><li><a href="/fn-test-ws-router-py-test-router-with-params.html">test_router_with_params()</a></li><li><a href="/fn-test-ws-router-py-test-router-ws-depends.html">test_router_ws_depends()</a></li><li><a href="/fn-test-ws-router-py-test-router-ws-depends-with-override.html">test_router_ws_depends_with_override()</a></li><li><a href="/fn-test-ws-dependencies-py-test-routerindex.html">test_routerindex()</a></li><li><a href="/fn-test-tutorial013-py-test-say-hello.html">test_say_hello()</a></li><li><a href="/fn-test-tutorial009-tutorial009b-py-test-say-hi.html">test_say_hi()</a></li><li><a href="/fn-test-required-str-py-test-schema.html">test_schema()</a></li><li><a href="/fn-test-security-api-key-header-description-py-test-security-api-key.html">test_security_api_key()</a></li><li><a href="/fn-test-security-api-key-cookie-description-py-test-security-api-key.html">test_security_api_key()</a></li><li><a href="/fn-test-security-api-key-cookie-optional-py-test-security-api-key-no-key.html">test_security_api_key_no_key()</a></li><li><a href="/fn-test-security-api-key-header-optional-py-test-security-api-key-no-key.html">test_security_api_key_no_key()</a></li><li><a href="/fn-test-security-http-base-py-test-security-http-base.html">test_security_http_base()</a></li><li><a href="/fn-test-security-http-base-optional-py-test-security-http-base.html">test_security_http_base()</a></li><li><a href="/fn-test-security-http-base-description-py-test-security-http-base-no-credentials.html">test_security_http_base_no_credentials()</a></li><li><a href="/fn-test-security-http-basic-realm-description-py-test-security-http-basic-invalid-credentials.html">test_security_http_basic_invalid_credentials()</a></li><li><a href="/fn-test-security-http-basic-realm-py-test-security-http-basic-invalid-credentials.html">test_security_http_basic_invalid_credentials()</a></li><li><a href="/fn-test-security-http-basic-optional-py-test-security-http-basic-invalid-credentials.html">test_security_http_basic_invalid_credentials()</a></li><li><a href="/fn-test-security-http-bearer-description-py-test-security-http-bearer.html">test_security_http_bearer()</a></li><li><a href="/fn-test-security-http-bearer-py-test-security-http-bearer-incorrect-scheme-credentials.html">test_security_http_bearer_incorrect_scheme_credentials()</a></li><li><a href="/fn-test-security-http-bearer-optional-py-test-security-http-bearer-no-credentials.html">test_security_http_bearer_no_credentials()</a></li><li><a href="/fn-test-security-http-digest-description-py-test-security-http-digest.html">test_security_http_digest()</a></li><li><a href="/fn-test-security-http-digest-py-test-security-http-digest-incorrect-scheme-credentials.html">test_security_http_digest_incorrect_scheme_credentials()</a></li><li><a href="/fn-test-security-http-digest-optional-py-test-security-http-digest-no-credentials.html">test_security_http_digest_no_credentials()</a></li><li><a href="/fn-test-security-openid-connect-py-test-security-oauth2.html">test_security_oauth2()</a></li><li><a href="/fn-test-security-openid-connect-description-py-test-security-oauth2.html">test_security_oauth2()</a></li><li><a href="/fn-test-security-oauth2-py-test-security-oauth2.html">test_security_oauth2()</a></li><li><a href="/fn-test-security-openid-connect-optional-py-test-security-oauth2.html">test_security_oauth2()</a></li><li><a href="/fn-test-security-oauth2-optional-description-py-test-security-oauth2-password-bearer-no-header.html">test_security_oauth2_password_bearer_no_header()</a></li><li><a href="/fn-test-security-oauth2-optional-py-test-security-oauth2-password-other-header.html">test_security_oauth2_password_other_header()</a></li><li><a href="/fn-test-operations-signatures-py-test-signatures-consistency.html">test_signatures_consistency()</a></li><li><a href="/fn-test-router-events-py-test-startup-shutdown-handlers-as-parameters.html">test_startup_shutdown_handlers_as_parameters()</a></li><li><a href="/fn-test-security-oauth2-py-test-strict-login-correct-grant-type.html">test_strict_login_correct_grant_type()</a></li><li><a href="/fn-test-security-oauth2-optional-description-py-test-strict-login-incorrect-grant-type.html">test_strict_login_incorrect_grant_type()</a></li><li><a href="/fn-test-security-oauth2-py-test-strict-login-no-data.html">test_strict_login_no_data()</a></li><li><a href="/fn-test-security-oauth2-optional-py-test-strict-login-no-grant-type.html">test_strict_login_no_grant_type()</a></li><li><a href="/fn-test-local-docs-py-test-strings-in-generated-redoc.html">test_strings_in_generated_redoc()</a></li><li><a href="/fn-test-local-docs-py-test-strings-in-generated-swagger.html">test_strings_in_generated_swagger()</a></li><li><a href="/fn-test-include-route-py-test-sub-router.html">test_sub_router()</a></li><li><a href="/fn-test-validation-error-context-py-test-subapp-request-validation-error-includes-endpoint-context.html">test_subapp_request_validation_error_includes_endpoint_context()</a></li><li><a href="/fn-test-validation-error-context-py-test-subapp-websocket-validation-error-includes-endpoint-context.html">test_subapp_websocket_validation_error_includes_endpoint_context()</a></li><li><a href="/fn-test-required-str-py-test-success.html">test_success()</a></li><li><a href="/fn-test-no-swagger-ui-redirect-py-test-swagger-ui.html">test_swagger_ui()</a></li><li><a href="/fn-test-custom-swagger-ui-redirect-py-test-swagger-ui-oauth2-redirect.html">test_swagger_ui_oauth2_redirect()</a></li><li><a href="/fn-test-general-performance-py-test-sync-receiving-large-payload.html">test_sync_receiving_large_payload()</a></li><li><a href="/fn-test-general-performance-py-test-sync-receiving-validated-pydantic-model.html">test_sync_receiving_validated_pydantic_model()</a></li><li><a href="/fn-test-general-performance-py-test-sync-return-dict-with-response-model.html">test_sync_return_dict_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-test-sync-return-large-dict-with-response-model.html">test_sync_return_large_dict_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-test-sync-return-large-model-with-response-model.html">test_sync_return_large_model_with_response_model()</a></li><li><a href="/fn-test-general-performance-py-test-sync-return-model-with-response-model.html">test_sync_return_model_with_response_model()</a></li><li><a href="/fn-test-security-oauth2-authorization-code-bearer-py-test-token-with-whitespaces.html">test_token_with_whitespaces()</a></li><li><a href="/fn-test-generate-unique-id-function-py-test-top-level-generate-unique-id.html">test_top_level_generate_unique_id()</a></li><li><a href="/fn-test-extra-routes-py-test-trace.html">test_trace()</a></li><li><a href="/fn-test-tuples-py-test-tuple-form-valid.html">test_tuple_form_valid()</a></li><li><a href="/fn-test-arbitrary-types-py-test-typeadapter.html">test_typeadapter()</a></li><li><a href="/fn-test-datastructures-py-test-upload-file.html">test_upload_file()</a></li><li><a href="/fn-test-datastructures-py-test-upload-file-invalid-pydantic-v2.html">test_upload_file_invalid_pydantic_v2()</a></li><li><a href="/fn-test-starlette-urlconvertors-py-test-url-path-for-path-convertor.html">test_url_path_for_path_convertor()</a></li><li><a href="/fn-test-empty-router-py-test-use-empty.html">test_use_empty()</a></li><li><a href="/fn-test-serialize-response-model-py-test-valid.html">test_valid()</a></li><li><a href="/fn-test-serialize-response-py-test-valid.html">test_valid()</a></li><li><a href="/fn-test-validate-response-py-test-valid-none-data.html">test_valid_none_data()</a></li><li><a href="/fn-test-validation-error-context-py-test-validation-error-with-only-path.html">test_validation_error_with_only_path()</a></li><li><a href="/fn-test-serialize-response-model-py-test-validdict.html">test_validdict()</a></li><li><a href="/fn-test-serialize-response-model-py-test-validlist-exclude-unset.html">test_validlist_exclude_unset()</a></li><li><a href="/fn-test-generate-unique-id-function-py-test-warn-duplicate-operation-id.html">test_warn_duplicate_operation_id()</a></li><li><a href="/fn-tutorial002-py39-py-test-websocket.html">test_websocket()</a></li><li><a href="/fn-test-route-scope-py-test-websocket.html">test_websocket()</a></li><li><a href="/fn-test-tutorial002-py-test-websocket-invalid-data.html">test_websocket_invalid_data()</a></li><li><a href="/fn-test-route-scope-py-test-websocket-invalid-path-doesnt-match.html">test_websocket_invalid_path_doesnt_match()</a></li><li><a href="/fn-test-validation-error-context-py-test-websocket-validation-error-includes-endpoint-context.html">test_websocket_validation_error_includes_endpoint_context()</a></li><li><a href="/fn-test-tutorial002-py-test-websocket-with-cookie.html">test_websocket_with_cookie()</a></li><li><a href="/fn-test-openapi-separate-input-output-schemas-py-test-with-computed-field.html">test_with_computed_field()</a></li><li><a href="/fn-test-ws-router-py-test-wrong-uri.html">test_wrong_uri()</a></li><li><a href="/fn-tutorial003-py310-py-timed.html">timed()</a></li><li><a href="/fn-tutorial003-py39-py-timed.html">timed()</a></li><li><a href="/fn-test-annotated-py-unrelated.html">unrelated()</a></li><li><a href="/fn-tutorial002-an-py39-py-update-hero.html">update_hero()</a></li><li><a href="/fn-tutorial002-py39-py-update-hero.html">update_hero()</a></li><li><a href="/fn-tutorial002-py310-py-update-item-4.html">update_item()</a></li><li><a href="/fn-tutorial003-py310-py-update-item-4.html">update_item()</a></li><li><a href="/fn-tutorial005-an-py310-py-update-item-2.html">update_item()</a></li><li><a href="/fn-tutorial001-py310-py-update-item-7.html">update_item()</a></li><li><a href="/fn-tutorial003-an-py310-py-update-item-2.html">update_item()</a></li><li><a href="/fn-tutorial001-py310-py-update-item-5.html">update_item()</a></li><li><a href="/fn-tutorial001-pv1-py310-py-update-item.html">update_item()</a></li><li><a href="/fn-tutorial005-py310-py-update-item-3.html">update_item()</a></li><li><a href="/fn-tutorial001-py39-py-update-item-6.html">update_item()</a></li><li><a href="/fn-tutorial004-an-py310-py-update-item-2.html">update_item()</a></li><li><a href="/fn-tutorial004-py310-py-update-item-4.html">update_item()</a></li><li><a href="/fn-tutorial001-an-py39-py-upsert-item.html">upsert_item()</a></li><li><a href="/fn-tutorial001-an-py310-py-upsert-item.html">upsert_item()</a></li><li><a href="/fn-tutorial001-py39-py-upsert-item.html">upsert_item()</a></li><li><a href="/fn-tutorial001-py310-py-upsert-item.html">upsert_item()</a></li><li><a href="/fn-tutorial002-py39-py-use-route-names-as-operation-ids.html">use_route_names_as_operation_ids()</a></li><li><a href="/fn-tutorial001-py39-py-uvicorn.html">uvicorn()</a></li><li><a href="/fn-test-response-model-sub-types-py-valid1.html">valid1()</a></li><li><a href="/fn-test-response-model-sub-types-py-valid3.html">valid3()</a></li><li><a href="/fn-tutorial004-py39-py-validation-exception-handler.html">validation_exception_handler()</a></li><li><a href="/fn-tutorial005-py39-py-validation-exception-handler.html">validation_exception_handler()</a></li><li><a href="/fn-tutorial006-an-py39-py-verify-key.html">verify_key()</a></li><li><a href="/fn-tutorial004-an-py310-py-verify-password.html">verify_password()</a></li><li><a href="/fn-tutorial005-py310-py-verify-password.html">verify_password()</a></li><li><a href="/fn-tutorial005-an-py310-py-verify-password.html">verify_password()</a></li><li><a href="/fn-tutorial004-an-py39-py-verify-password.html">verify_password()</a></li><li><a href="/fn-tutorial004-py310-py-verify-password.html">verify_password()</a></li><li><a href="/fn-tutorial004-py39-py-verify-password.html">verify_password()</a></li><li><a href="/fn-tutorial012-py39-py-verify-token.html">verify_token()</a></li><li><a href="/fn-tutorial012-an-py39-py-verify-token.html">verify_token()</a></li><li><a href="/fn-tutorial006-py39-py-verify-token.html">verify_token()</a></li><li><a href="/fn-test-pydantic-v1-error-py-warnings.html">warnings()</a></li><li><a href="/fn-tutorial002-py39-py-websocket.html">websocket()</a></li><li><a href="/fn-test-validation-error-context-py-websocket-endpoint.html">websocket_endpoint()</a></li><li><a href="/fn-tutorial001-py39-py-websocket-endpoint.html">websocket_endpoint()</a></li><li><a href="/fn-tutorial002-an-py39-py-websocket-endpoint.html">websocket_endpoint()</a></li><li><a href="/fn-tutorial003-py39-py-websocket-endpoint.html">websocket_endpoint()</a></li><li><a href="/fn-tutorial002-py310-py-websocket-endpoint.html">websocket_endpoint()</a></li><li><a href="/fn-tutorial002-an-py310-py-websocket-endpoint.html">websocket_endpoint()</a></li><li><a href="/fn-tutorial002-py39-py-websocket-endpoint.html">websocket_endpoint()</a></li><li><a href="/fn-test-route-scope-py-websocket-item.html">websocket_item()</a></li><li><a href="/fn-test-ws-router-py-websocket-middleware.html">websocket_middleware()</a></li><li><a href="/fn-routing-py-websocket-route.html">websocket_route()</a></li><li><a href="/fn-test-exception-handlers-py-with-yield.html">with_yield()</a></li><li><a href="/fn-tutorial002-py310-py-write-log.html">write_log()</a></li><li><a href="/fn-tutorial002-an-py39-py-write-log.html">write_log()</a></li><li><a href="/fn-tutorial002-an-py310-py-write-log.html">write_log()</a></li><li><a href="/fn-tutorial002-py39-py-write-log.html">write_log()</a></li><li><a href="/fn-tutorial001-py39-py-write-notification.html">write_notification()</a></li><li><a href="/fn-test-ws-router-py-ws-dependency.html">ws_dependency()</a></li><li><a href="/fn-test-ws-router-py-ws-dependency-err.html">ws_dependency_err()</a></li><li><a href="/fn-test-ws-router-py-ws-dependency-validate.html">ws_dependency_validate()</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What is the Routing subdomain?</summary>
+        <div class="faq-answer">Routing is a subdomain in the fastapi codebase, part of the FastAPI domain. Manages APIRouter and path operation decorators. It contains 0 source files.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Which domain does Routing belong to?</summary>
+        <div class="faq-answer">Routing belongs to the FastAPI domain.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What functions are in Routing?</summary>
+        <div class="faq-answer">The Routing subdomain contains 1067 function(s): __call__, __class__, __exit__, __init__, __init__, __init__, __init__, __init__, and 1059 more.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>
