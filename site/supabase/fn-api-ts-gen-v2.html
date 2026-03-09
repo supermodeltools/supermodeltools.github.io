@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/documentation.html" class="pill pill-green">Documentation</a>
-        <a href="/subdomain/referencegenerator.html" class="pill pill-orange">ReferenceGenerator</a>
+        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
+        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Documentation","slug":"domain-documentation"},"entity":{"name":"gen_v2","slug":"fn-api-ts-gen-v2","type":"Function"},"subdomain":{"name":"ReferenceGenerator","slug":"subdomain-referencegenerator"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"gen_v2","slug":"fn-api-ts-gen-v2","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/documentation.html">Documentation</a><span class="arch-sep">&rarr;</span>
-            <a href="/referencegenerator.html">ReferenceGenerator</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
+            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
             <span>gen_v2() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,18 +911,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  9d748d5c_82a4_6589_9ff2_735e44e585c1["gen_v2()"]
-  f0c0bed7_ab96_1952_dc1c_19633bd7669b["gen()"]
-  f0c0bed7_ab96_1952_dc1c_19633bd7669b -->|calls| 9d748d5c_82a4_6589_9ff2_735e44e585c1
-  d7d89c19_cf17_d4e3_2db6_dbe7ca754321["toArrayWithKey()"]
-  9d748d5c_82a4_6589_9ff2_735e44e585c1 -->|calls| d7d89c19_cf17_d4e3_2db6_dbe7ca754321
-  e9d9b8bc_42f6_6aa2_e200_318dfc0e9c1b["slugify()"]
-  9d748d5c_82a4_6589_9ff2_735e44e585c1 -->|calls| e9d9b8bc_42f6_6aa2_e200_318dfc0e9c1b
-  d244e371_f81a_a834_a547_4b2e5aacee34["toTitle()"]
-  9d748d5c_82a4_6589_9ff2_735e44e585c1 -->|calls| d244e371_f81a_a834_a547_4b2e5aacee34
-  eddb7d99_7b0f_0d6f_47a9_03f24047cc0d["writeToDisk()"]
-  9d748d5c_82a4_6589_9ff2_735e44e585c1 -->|calls| eddb7d99_7b0f_0d6f_47a9_03f24047cc0d
-  style 9d748d5c_82a4_6589_9ff2_735e44e585c1 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  6efff6de_3d15_a9cc_7f71_7a206c6aa6da["gen_v2()"]
+  b1f8ee4f_ff9a_29a0_55ad_8e7004b26e06["gen()"]
+  b1f8ee4f_ff9a_29a0_55ad_8e7004b26e06 -->|calls| 6efff6de_3d15_a9cc_7f71_7a206c6aa6da
+  f4361a86_951d_ecf7_467e_e12a26d41d48["toArrayWithKey()"]
+  6efff6de_3d15_a9cc_7f71_7a206c6aa6da -->|calls| f4361a86_951d_ecf7_467e_e12a26d41d48
+  e360a980_6d0a_7690_12ba_52e07c032688["slugify()"]
+  6efff6de_3d15_a9cc_7f71_7a206c6aa6da -->|calls| e360a980_6d0a_7690_12ba_52e07c032688
+  2d14703d_ecc8_c6eb_e46f_9b592fc3282d["toTitle()"]
+  6efff6de_3d15_a9cc_7f71_7a206c6aa6da -->|calls| 2d14703d_ecc8_c6eb_e46f_9b592fc3282d
+  4e13297b_4619_015e_ecea_99201a8c6a9c["writeToDisk()"]
+  6efff6de_3d15_a9cc_7f71_7a206c6aa6da -->|calls| 4e13297b_4619_015e_ecea_99201a8c6a9c
+  style 6efff6de_3d15_a9cc_7f71_7a206c6aa6da fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -930,7 +930,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-api-ts-gen-v2"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"9d748d5c:82a4:6589:9ff2:735e44e585c1","label":"gen_v2","type":"Function","slug":"fn-api-ts-gen-v2","lc":37,"lang":"typescript","cc":4,"cbc":1},{"id":"d7d89c19:cf17:d4e3:2db6:dbe7ca754321","label":"toArrayWithKey","type":"Function","slug":"fn-helpers-ts-toarraywithkey","lc":7,"lang":"typescript","cbc":2},{"id":"e9d9b8bc:42f6:6aa2:e200:318dfc0e9c1b","label":"slugify","type":"Function","slug":"fn-helpers-ts-slugify","lc":11,"lang":"typescript","cbc":2},{"id":"d244e371:f81a:a834:a547:4b2e5aacee34","label":"toTitle","type":"Function","slug":"fn-helpers-ts-totitle","lc":3,"lang":"typescript","cbc":2},{"id":"eddb7d99:7b0f:0d6f:47a9:03f24047cc0d","label":"writeToDisk","type":"Function","slug":"fn-helpers-ts-writetodisk","lc":8,"lang":"typescript","cbc":5},{"id":"f0c0bed7:ab96:1952:dc1c:19633bd7669b","label":"gen","type":"Function","slug":"fn-api-ts-gen","lc":18,"lang":"typescript","cc":2},{"id":"domain:Documentation","label":"Documentation","type":"Domain","slug":"domain-documentation"},{"id":"subdomain:Documentation:ReferenceGenerator","label":"ReferenceGenerator","type":"Subdomain","slug":"subdomain-referencegenerator"}],"edges":[{"source":"9d748d5c:82a4:6589:9ff2:735e44e585c1","target":"d7d89c19:cf17:d4e3:2db6:dbe7ca754321","type":"calls"},{"source":"9d748d5c:82a4:6589:9ff2:735e44e585c1","target":"e9d9b8bc:42f6:6aa2:e200:318dfc0e9c1b","type":"calls"},{"source":"9d748d5c:82a4:6589:9ff2:735e44e585c1","target":"d244e371:f81a:a834:a547:4b2e5aacee34","type":"calls"},{"source":"9d748d5c:82a4:6589:9ff2:735e44e585c1","target":"eddb7d99:7b0f:0d6f:47a9:03f24047cc0d","type":"calls"},{"source":"f0c0bed7:ab96:1952:dc1c:19633bd7669b","target":"9d748d5c:82a4:6589:9ff2:735e44e585c1","type":"calls"},{"source":"9d748d5c:82a4:6589:9ff2:735e44e585c1","target":"domain:Documentation","type":"belongsTo"},{"source":"9d748d5c:82a4:6589:9ff2:735e44e585c1","target":"subdomain:Documentation:ReferenceGenerator","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"6efff6de:3d15:a9cc:7f71:7a206c6aa6da","label":"gen_v2","type":"Function","slug":"fn-api-ts-gen-v2","lc":37,"lang":"typescript","cc":4,"cbc":1},{"id":"f4361a86:951d:ecf7:467e:e12a26d41d48","label":"toArrayWithKey","type":"Function","slug":"fn-helpers-ts-toarraywithkey","lc":7,"lang":"typescript","cbc":2},{"id":"e360a980:6d0a:7690:12ba:52e07c032688","label":"slugify","type":"Function","slug":"fn-helpers-ts-slugify","lc":11,"lang":"typescript","cbc":2},{"id":"2d14703d:ecc8:c6eb:e46f:9b592fc3282d","label":"toTitle","type":"Function","slug":"fn-helpers-ts-totitle","lc":3,"lang":"typescript","cbc":2},{"id":"4e13297b:4619:015e:ecea:99201a8c6a9c","label":"writeToDisk","type":"Function","slug":"fn-helpers-ts-writetodisk","lc":8,"lang":"typescript","cbc":5},{"id":"b1f8ee4f:ff9a:29a0:55ad:8e7004b26e06","label":"gen","type":"Function","slug":"fn-api-ts-gen","lc":18,"lang":"typescript","cc":2},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"6efff6de:3d15:a9cc:7f71:7a206c6aa6da","target":"f4361a86:951d:ecf7:467e:e12a26d41d48","type":"calls"},{"source":"6efff6de:3d15:a9cc:7f71:7a206c6aa6da","target":"e360a980:6d0a:7690:12ba:52e07c032688","type":"calls"},{"source":"6efff6de:3d15:a9cc:7f71:7a206c6aa6da","target":"2d14703d:ecc8:c6eb:e46f:9b592fc3282d","type":"calls"},{"source":"6efff6de:3d15:a9cc:7f71:7a206c6aa6da","target":"4e13297b:4619:015e:ecea:99201a8c6a9c","type":"calls"},{"source":"b1f8ee4f:ff9a:29a0:55ad:8e7004b26e06","target":"6efff6de:3d15:a9cc:7f71:7a206c6aa6da","type":"calls"},{"source":"6efff6de:3d15:a9cc:7f71:7a206c6aa6da","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"6efff6de:3d15:a9cc:7f71:7a206c6aa6da","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -988,14 +988,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-documentation.html">Documentation</a></li></ul>
+      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-referencegenerator.html">ReferenceGenerator</a></li></ul>
+      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
     </div>
     
 

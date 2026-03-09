@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/documentation.html" class="pill pill-green">Documentation</a>
-        <a href="/subdomain/searchengine.html" class="pill pill-orange">SearchEngine</a>
+        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
+        <a href="/subdomain/tooling.html" class="pill pill-orange">Tooling</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Documentation","slug":"domain-documentation"},"entity":{"name":"octokit","slug":"fn-octokit-ts-octokit","type":"Function"},"subdomain":{"name":"SearchEngine","slug":"subdomain-searchengine"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"octokit","slug":"fn-octokit-ts-octokit","type":"Function"},"subdomain":{"name":"Tooling","slug":"subdomain-tooling"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/documentation.html">Documentation</a><span class="arch-sep">&rarr;</span>
-            <a href="/searchengine.html">SearchEngine</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
+            <a href="/tooling.html">Tooling</a><span class="arch-sep">&rarr;</span>
             <span>octokit() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  e61ad73a_8f1c_3fb5_027f_289254d13472["octokit()"]
-  c75b8894_961a_2bfd_2b7b_5690984b21dd["getLatestRelease()"]
-  c75b8894_961a_2bfd_2b7b_5690984b21dd -->|calls| e61ad73a_8f1c_3fb5_027f_289254d13472
-  9bb64291_535f_28da_3f62_b6633069d8a6["getGitHubFileContents()"]
-  9bb64291_535f_28da_3f62_b6633069d8a6 -->|calls| e61ad73a_8f1c_3fb5_027f_289254d13472
-  1c4ae5fc_85d6_c02f_6f40_eed717b44eef["checkForImmutableCommit()"]
-  1c4ae5fc_85d6_c02f_6f40_eed717b44eef -->|calls| e61ad73a_8f1c_3fb5_027f_289254d13472
-  style e61ad73a_8f1c_3fb5_027f_289254d13472 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  2ebc05b3_30d3_91c0_3dfe_6ff93f76a87d["octokit()"]
+  c3be2923_32bc_84e2_463f_c1669cdd7d48["getLatestRelease()"]
+  c3be2923_32bc_84e2_463f_c1669cdd7d48 -->|calls| 2ebc05b3_30d3_91c0_3dfe_6ff93f76a87d
+  c02b28dd_e434_1226_4e8d_18520520d863["getGitHubFileContents()"]
+  c02b28dd_e434_1226_4e8d_18520520d863 -->|calls| 2ebc05b3_30d3_91c0_3dfe_6ff93f76a87d
+  90cc7946_c8f1_1ae0_0aef_0dd0a211d7ca["checkForImmutableCommit()"]
+  90cc7946_c8f1_1ae0_0aef_0dd0a211d7ca -->|calls| 2ebc05b3_30d3_91c0_3dfe_6ff93f76a87d
+  style 2ebc05b3_30d3_91c0_3dfe_6ff93f76a87d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-octokit-ts-octokit"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"e61ad73a:8f1c:3fb5:027f:289254d13472","label":"octokit","type":"Function","slug":"fn-octokit-ts-octokit","lc":25,"lang":"typescript","cbc":3},{"id":"c75b8894:961a:2bfd:2b7b:5690984b21dd","label":"getLatestRelease","type":"Function","slug":"fn-page-tsx-getlatestrelease","lc":31,"lang":"tsx","cc":1,"cbc":1},{"id":"9bb64291:535f:28da:3f62:b6633069d8a6","label":"getGitHubFileContents","type":"Function","slug":"fn-octokit-ts-getgithubfilecontents","lc":50,"lang":"typescript","cc":1,"cbc":1},{"id":"1c4ae5fc:85d6:c02f:6f40:eed717b44eef","label":"checkForImmutableCommit","type":"Function","slug":"fn-octokit-ts-checkforimmutablecommit","lc":42,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:Documentation","label":"Documentation","type":"Domain","slug":"domain-documentation"},{"id":"subdomain:Documentation:SearchEngine","label":"SearchEngine","type":"Subdomain","slug":"subdomain-searchengine"}],"edges":[{"source":"c75b8894:961a:2bfd:2b7b:5690984b21dd","target":"e61ad73a:8f1c:3fb5:027f:289254d13472","type":"calls"},{"source":"9bb64291:535f:28da:3f62:b6633069d8a6","target":"e61ad73a:8f1c:3fb5:027f:289254d13472","type":"calls"},{"source":"1c4ae5fc:85d6:c02f:6f40:eed717b44eef","target":"e61ad73a:8f1c:3fb5:027f:289254d13472","type":"calls"},{"source":"e61ad73a:8f1c:3fb5:027f:289254d13472","target":"domain:Documentation","type":"belongsTo"},{"source":"e61ad73a:8f1c:3fb5:027f:289254d13472","target":"subdomain:Documentation:SearchEngine","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"2ebc05b3:30d3:91c0:3dfe:6ff93f76a87d","label":"octokit","type":"Function","slug":"fn-octokit-ts-octokit","lc":25,"lang":"typescript","cbc":3},{"id":"c3be2923:32bc:84e2:463f:c1669cdd7d48","label":"getLatestRelease","type":"Function","slug":"fn-page-tsx-getlatestrelease","lc":31,"lang":"tsx","cc":1,"cbc":1},{"id":"c02b28dd:e434:1226:4e8d:18520520d863","label":"getGitHubFileContents","type":"Function","slug":"fn-octokit-ts-getgithubfilecontents","lc":50,"lang":"typescript","cc":1,"cbc":1},{"id":"90cc7946:c8f1:1ae0:0aef:0dd0a211d7ca","label":"checkForImmutableCommit","type":"Function","slug":"fn-octokit-ts-checkforimmutablecommit","lc":42,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Tooling","label":"Tooling","type":"Subdomain","slug":"subdomain-tooling"}],"edges":[{"source":"c3be2923:32bc:84e2:463f:c1669cdd7d48","target":"2ebc05b3:30d3:91c0:3dfe:6ff93f76a87d","type":"calls"},{"source":"c02b28dd:e434:1226:4e8d:18520520d863","target":"2ebc05b3:30d3:91c0:3dfe:6ff93f76a87d","type":"calls"},{"source":"90cc7946:c8f1:1ae0:0aef:0dd0a211d7ca","target":"2ebc05b3:30d3:91c0:3dfe:6ff93f76a87d","type":"calls"},{"source":"2ebc05b3:30d3:91c0:3dfe:6ff93f76a87d","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"2ebc05b3:30d3:91c0:3dfe:6ff93f76a87d","target":"subdomain:BuildAutomation:Tooling","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -972,14 +972,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-documentation.html">Documentation</a></li></ul>
+      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-searchengine.html">SearchEngine</a></li></ul>
+      <ul><li><a href="/subdomain-tooling.html">Tooling</a></li></ul>
     </div>
     
 

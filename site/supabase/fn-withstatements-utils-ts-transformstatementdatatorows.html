@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/studioapi.html" class="pill pill-green">StudioAPI</a>
-        <a href="/subdomain/authinterfaces.html" class="pill pill-orange">AuthInterfaces</a>
+        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
+        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"StudioAPI","slug":"domain-studioapi"},"entity":{"name":"transformStatementDataToRows","slug":"fn-withstatements-utils-ts-transformstatementdatatorows","type":"Function"},"subdomain":{"name":"AuthInterfaces","slug":"subdomain-authinterfaces"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"transformStatementDataToRows","slug":"fn-withstatements-utils-ts-transformstatementdatatorows","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/studioapi.html">StudioAPI</a><span class="arch-sep">&rarr;</span>
-            <a href="/authinterfaces.html">AuthInterfaces</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
+            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
             <span>transformStatementDataToRows() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  88d6222e_de46_5fb9_e22a_391ab933e657["transformStatementDataToRows()"]
-  2dd4a9e3_e620_0637_97a3_3739513792e2["WithStatements()"]
-  2dd4a9e3_e620_0637_97a3_3739513792e2 -->|calls| 88d6222e_de46_5fb9_e22a_391ab933e657
-  6bb3f591_c669_a335_9544_84439159fc0a["filterProtectedSchemaIndexAdvisorResult()"]
-  88d6222e_de46_5fb9_e22a_391ab933e657 -->|calls| 6bb3f591_c669_a335_9544_84439159fc0a
-  452e6bc1_4467_4e15_ef2e_9b6688e30f0a["queryInvolvesProtectedSchemas()"]
-  88d6222e_de46_5fb9_e22a_391ab933e657 -->|calls| 452e6bc1_4467_4e15_ef2e_9b6688e30f0a
-  style 88d6222e_de46_5fb9_e22a_391ab933e657 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  ca9a4e1e_35fe_5ef4_9352_66738ef5eb77["transformStatementDataToRows()"]
+  7b145d90_e261_e47b_0f58_664ef8a34ba6["WithStatements()"]
+  7b145d90_e261_e47b_0f58_664ef8a34ba6 -->|calls| ca9a4e1e_35fe_5ef4_9352_66738ef5eb77
+  42b1d632_b15f_91a2_ec32_198d0792e4b1["filterProtectedSchemaIndexAdvisorResult()"]
+  ca9a4e1e_35fe_5ef4_9352_66738ef5eb77 -->|calls| 42b1d632_b15f_91a2_ec32_198d0792e4b1
+  e6dede91_da3a_4a20_1264_8f623c79dd35["queryInvolvesProtectedSchemas()"]
+  ca9a4e1e_35fe_5ef4_9352_66738ef5eb77 -->|calls| e6dede91_da3a_4a20_1264_8f623c79dd35
+  style ca9a4e1e_35fe_5ef4_9352_66738ef5eb77 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-withstatements-utils-ts-transformstatementdatatorows"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"88d6222e:de46:5fb9:e22a:391ab933e657","label":"transformStatementDataToRows","type":"Function","slug":"fn-withstatements-utils-ts-transformstatementdatatorows","lc":41,"lang":"typescript","cc":2,"cbc":1},{"id":"6bb3f591:c669:a335:9544:84439159fc0a","label":"filterProtectedSchemaIndexAdvisorResult","type":"Function","slug":"fn-index-advisor-utils-ts-filterprotectedschemaindexadvisorresult","lc":19,"lang":"typescript","cc":1,"cbc":1},{"id":"452e6bc1:4467:4e15:ef2e:9b6688e30f0a","label":"queryInvolvesProtectedSchemas","type":"Function","slug":"fn-index-advisor-utils-ts-queryinvolvesprotectedschemas","lc":16,"lang":"typescript","cbc":2},{"id":"2dd4a9e3:e620:0637:97a3:3739513792e2","label":"WithStatements","type":"Function","slug":"fn-withstatements-tsx-withstatements","lc":248,"lang":"tsx","cc":2},{"id":"domain:StudioAPI","label":"StudioAPI","type":"Domain","slug":"domain-studioapi"},{"id":"subdomain:StudioAPI:AuthInterfaces","label":"AuthInterfaces","type":"Subdomain","slug":"subdomain-authinterfaces"}],"edges":[{"source":"88d6222e:de46:5fb9:e22a:391ab933e657","target":"6bb3f591:c669:a335:9544:84439159fc0a","type":"calls"},{"source":"88d6222e:de46:5fb9:e22a:391ab933e657","target":"452e6bc1:4467:4e15:ef2e:9b6688e30f0a","type":"calls"},{"source":"2dd4a9e3:e620:0637:97a3:3739513792e2","target":"88d6222e:de46:5fb9:e22a:391ab933e657","type":"calls"},{"source":"88d6222e:de46:5fb9:e22a:391ab933e657","target":"domain:StudioAPI","type":"belongsTo"},{"source":"88d6222e:de46:5fb9:e22a:391ab933e657","target":"subdomain:StudioAPI:AuthInterfaces","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"ca9a4e1e:35fe:5ef4:9352:66738ef5eb77","label":"transformStatementDataToRows","type":"Function","slug":"fn-withstatements-utils-ts-transformstatementdatatorows","lc":41,"lang":"typescript","cc":2,"cbc":1},{"id":"42b1d632:b15f:91a2:ec32:198d0792e4b1","label":"filterProtectedSchemaIndexAdvisorResult","type":"Function","slug":"fn-index-advisor-utils-ts-filterprotectedschemaindexadvisorresult","lc":19,"lang":"typescript","cc":1,"cbc":1},{"id":"e6dede91:da3a:4a20:1264:8f623c79dd35","label":"queryInvolvesProtectedSchemas","type":"Function","slug":"fn-index-advisor-utils-ts-queryinvolvesprotectedschemas","lc":16,"lang":"typescript","cbc":2},{"id":"7b145d90:e261:e47b:0f58:664ef8a34ba6","label":"WithStatements","type":"Function","slug":"fn-withstatements-tsx-withstatements","lc":248,"lang":"tsx","cc":2},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"ca9a4e1e:35fe:5ef4:9352:66738ef5eb77","target":"42b1d632:b15f:91a2:ec32:198d0792e4b1","type":"calls"},{"source":"ca9a4e1e:35fe:5ef4:9352:66738ef5eb77","target":"e6dede91:da3a:4a20:1264:8f623c79dd35","type":"calls"},{"source":"7b145d90:e261:e47b:0f58:664ef8a34ba6","target":"ca9a4e1e:35fe:5ef4:9352:66738ef5eb77","type":"calls"},{"source":"ca9a4e1e:35fe:5ef4:9352:66738ef5eb77","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"ca9a4e1e:35fe:5ef4:9352:66738ef5eb77","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -988,14 +988,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-studioapi.html">StudioAPI</a></li></ul>
+      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-authinterfaces.html">AuthInterfaces</a></li></ul>
+      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
     </div>
     
 

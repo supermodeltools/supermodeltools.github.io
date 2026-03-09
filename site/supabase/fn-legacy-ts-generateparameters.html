@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/documentation.html" class="pill pill-green">Documentation</a>
-        <a href="/subdomain/referencegenerator.html" class="pill pill-orange">ReferenceGenerator</a>
+        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
+        <a href="/subdomain/tooling.html" class="pill pill-orange">Tooling</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Documentation","slug":"domain-documentation"},"entity":{"name":"generateParameters","slug":"fn-legacy-ts-generateparameters","type":"Function"},"subdomain":{"name":"ReferenceGenerator","slug":"subdomain-referencegenerator"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"generateParameters","slug":"fn-legacy-ts-generateparameters","type":"Function"},"subdomain":{"name":"Tooling","slug":"subdomain-tooling"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/documentation.html">Documentation</a><span class="arch-sep">&rarr;</span>
-            <a href="/referencegenerator.html">ReferenceGenerator</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
+            <a href="/tooling.html">Tooling</a><span class="arch-sep">&rarr;</span>
             <span>generateParameters() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  011b96fa_014a_ca7b_7066_16a90b843f58["generateParameters()"]
-  9158ab42_cdf6_b224_40e4_1a130c223d7b["gen()"]
-  9158ab42_cdf6_b224_40e4_1a130c223d7b -->|calls| 011b96fa_014a_ca7b_7066_16a90b843f58
-  61589ca3_27f7_947c_047f_f16b581edc8f["recurseThroughParams()"]
-  011b96fa_014a_ca7b_7066_16a90b843f58 -->|calls| 61589ca3_27f7_947c_047f_f16b581edc8f
-  35eb617b_dde0_e4e9_6c87_78fc871fbc6a["methodListGroup()"]
-  011b96fa_014a_ca7b_7066_16a90b843f58 -->|calls| 35eb617b_dde0_e4e9_6c87_78fc871fbc6a
-  style 011b96fa_014a_ca7b_7066_16a90b843f58 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  24ec444a_cf73_f108_a0ed_c66a8dcb769f["generateParameters()"]
+  df0f8897_23fb_921f_a8ab_e4a14ce74201["gen()"]
+  df0f8897_23fb_921f_a8ab_e4a14ce74201 -->|calls| 24ec444a_cf73_f108_a0ed_c66a8dcb769f
+  ed5690b1_a54e_ada9_c086_e63fd836f0f8["recurseThroughParams()"]
+  24ec444a_cf73_f108_a0ed_c66a8dcb769f -->|calls| ed5690b1_a54e_ada9_c086_e63fd836f0f8
+  0c6c23f7_0f97_4f8c_f02f_4716c30931a6["methodListGroup()"]
+  24ec444a_cf73_f108_a0ed_c66a8dcb769f -->|calls| 0c6c23f7_0f97_4f8c_f02f_4716c30931a6
+  style 24ec444a_cf73_f108_a0ed_c66a8dcb769f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-legacy-ts-generateparameters"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"011b96fa:014a:ca7b:7066:16a90b843f58","label":"generateParameters","type":"Function","slug":"fn-legacy-ts-generateparameters","lc":16,"lang":"typescript","cc":2,"cbc":1},{"id":"61589ca3:27f7:947c:047f:f16b581edc8f","label":"recurseThroughParams","type":"Function","slug":"fn-legacy-ts-recursethroughparams","lc":34,"lang":"typescript","cc":5,"cbc":1},{"id":"35eb617b:dde0:e4e9:6c87:78fc871fbc6a","label":"methodListGroup","type":"Function","slug":"fn-legacy-ts-methodlistgroup","lc":5,"lang":"typescript","cbc":2},{"id":"9158ab42:cdf6:b224:40e4:1a130c223d7b","label":"gen","type":"Function","slug":"fn-legacy-ts-gen","lc":53,"lang":"typescript","cc":9},{"id":"domain:Documentation","label":"Documentation","type":"Domain","slug":"domain-documentation"},{"id":"subdomain:Documentation:ReferenceGenerator","label":"ReferenceGenerator","type":"Subdomain","slug":"subdomain-referencegenerator"}],"edges":[{"source":"011b96fa:014a:ca7b:7066:16a90b843f58","target":"61589ca3:27f7:947c:047f:f16b581edc8f","type":"calls"},{"source":"011b96fa:014a:ca7b:7066:16a90b843f58","target":"35eb617b:dde0:e4e9:6c87:78fc871fbc6a","type":"calls"},{"source":"9158ab42:cdf6:b224:40e4:1a130c223d7b","target":"011b96fa:014a:ca7b:7066:16a90b843f58","type":"calls"},{"source":"011b96fa:014a:ca7b:7066:16a90b843f58","target":"domain:Documentation","type":"belongsTo"},{"source":"011b96fa:014a:ca7b:7066:16a90b843f58","target":"subdomain:Documentation:ReferenceGenerator","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"24ec444a:cf73:f108:a0ed:c66a8dcb769f","label":"generateParameters","type":"Function","slug":"fn-legacy-ts-generateparameters","lc":16,"lang":"typescript","cc":2,"cbc":1},{"id":"ed5690b1:a54e:ada9:c086:e63fd836f0f8","label":"recurseThroughParams","type":"Function","slug":"fn-legacy-ts-recursethroughparams","lc":34,"lang":"typescript","cc":5,"cbc":1},{"id":"0c6c23f7:0f97:4f8c:f02f:4716c30931a6","label":"methodListGroup","type":"Function","slug":"fn-legacy-ts-methodlistgroup","lc":5,"lang":"typescript","cbc":2},{"id":"df0f8897:23fb:921f:a8ab:e4a14ce74201","label":"gen","type":"Function","slug":"fn-legacy-ts-gen","lc":53,"lang":"typescript","cc":9},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Tooling","label":"Tooling","type":"Subdomain","slug":"subdomain-tooling"}],"edges":[{"source":"24ec444a:cf73:f108:a0ed:c66a8dcb769f","target":"ed5690b1:a54e:ada9:c086:e63fd836f0f8","type":"calls"},{"source":"24ec444a:cf73:f108:a0ed:c66a8dcb769f","target":"0c6c23f7:0f97:4f8c:f02f:4716c30931a6","type":"calls"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"24ec444a:cf73:f108:a0ed:c66a8dcb769f","type":"calls"},{"source":"24ec444a:cf73:f108:a0ed:c66a8dcb769f","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"24ec444a:cf73:f108:a0ed:c66a8dcb769f","target":"subdomain:BuildAutomation:Tooling","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -963,14 +963,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-documentation.html">Documentation</a></li></ul>
+      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-referencegenerator.html">ReferenceGenerator</a></li></ul>
+      <ul><li><a href="/subdomain-tooling.html">Tooling</a></li></ul>
     </div>
     
 

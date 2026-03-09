@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/documentation.html" class="pill pill-green">Documentation</a>
-        <a href="/subdomain/referencegenerator.html" class="pill pill-orange">ReferenceGenerator</a>
+        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
+        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Documentation","slug":"domain-documentation"},"entity":{"name":"fromDocsMarkdown","slug":"fn-utils-server-ts-fromdocsmarkdown","type":"Function"},"subdomain":{"name":"ReferenceGenerator","slug":"subdomain-referencegenerator"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"fromDocsMarkdown","slug":"fn-utils-server-ts-fromdocsmarkdown","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/documentation.html">Documentation</a><span class="arch-sep">&rarr;</span>
-            <a href="/referencegenerator.html">ReferenceGenerator</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
+            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
             <span>fromDocsMarkdown() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  8cb58d5f_0216_6c62_8bb2_51c0e7e721f5["fromDocsMarkdown()"]
-  1d37a54a_5794_9411_6bcc_ac4d9d9118f3["rewriteNodes()"]
-  1d37a54a_5794_9411_6bcc_ac4d9d9118f3 -->|calls| 8cb58d5f_0216_6c62_8bb2_51c0e7e721f5
-  ad9c956d_0da8_8517_e773_946e4a1560b2["preprocessMdx()"]
-  ad9c956d_0da8_8517_e773_946e4a1560b2 -->|calls| 8cb58d5f_0216_6c62_8bb2_51c0e7e721f5
-  style 8cb58d5f_0216_6c62_8bb2_51c0e7e721f5 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d197cd6b_c8d3_3b11_6fe5_ee7b13014e03["fromDocsMarkdown()"]
+  1722b7d8_62ec_b023_594c_048e4579dd81["rewriteNodes()"]
+  1722b7d8_62ec_b023_594c_048e4579dd81 -->|calls| d197cd6b_c8d3_3b11_6fe5_ee7b13014e03
+  13c9b9f8_cf2a_9257_18ab_04d400e5156b["preprocessMdx()"]
+  13c9b9f8_cf2a_9257_18ab_04d400e5156b -->|calls| d197cd6b_c8d3_3b11_6fe5_ee7b13014e03
+  style d197cd6b_c8d3_3b11_6fe5_ee7b13014e03 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-utils-server-ts-fromdocsmarkdown"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"8cb58d5f:0216:6c62:8bb2:51c0e7e721f5","label":"fromDocsMarkdown","type":"Function","slug":"fn-utils-server-ts-fromdocsmarkdown","lc":6,"lang":"typescript","cbc":2},{"id":"1d37a54a:5794:9411:6bcc:ac4d9d9118f3","label":"rewriteNodes","type":"Function","slug":"fn-partial-ts-rewritenodes","lc":11,"lang":"typescript","cc":3,"cbc":1},{"id":"ad9c956d:0da8:8517:e773:946e4a1560b2","label":"preprocessMdx","type":"Function","slug":"fn-utils-ts-preprocessmdx","lc":11,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:Documentation","label":"Documentation","type":"Domain","slug":"domain-documentation"},{"id":"subdomain:Documentation:ReferenceGenerator","label":"ReferenceGenerator","type":"Subdomain","slug":"subdomain-referencegenerator"}],"edges":[{"source":"1d37a54a:5794:9411:6bcc:ac4d9d9118f3","target":"8cb58d5f:0216:6c62:8bb2:51c0e7e721f5","type":"calls"},{"source":"ad9c956d:0da8:8517:e773:946e4a1560b2","target":"8cb58d5f:0216:6c62:8bb2:51c0e7e721f5","type":"calls"},{"source":"8cb58d5f:0216:6c62:8bb2:51c0e7e721f5","target":"domain:Documentation","type":"belongsTo"},{"source":"8cb58d5f:0216:6c62:8bb2:51c0e7e721f5","target":"subdomain:Documentation:ReferenceGenerator","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d197cd6b:c8d3:3b11:6fe5:ee7b13014e03","label":"fromDocsMarkdown","type":"Function","slug":"fn-utils-server-ts-fromdocsmarkdown","lc":6,"lang":"typescript","cbc":2},{"id":"1722b7d8:62ec:b023:594c:048e4579dd81","label":"rewriteNodes","type":"Function","slug":"fn-partial-ts-rewritenodes","lc":11,"lang":"typescript","cc":3,"cbc":1},{"id":"13c9b9f8:cf2a:9257:18ab:04d400e5156b","label":"preprocessMdx","type":"Function","slug":"fn-utils-ts-preprocessmdx","lc":11,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"1722b7d8:62ec:b023:594c:048e4579dd81","target":"d197cd6b:c8d3:3b11:6fe5:ee7b13014e03","type":"calls"},{"source":"13c9b9f8:cf2a:9257:18ab:04d400e5156b","target":"d197cd6b:c8d3:3b11:6fe5:ee7b13014e03","type":"calls"},{"source":"d197cd6b:c8d3:3b11:6fe5:ee7b13014e03","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"d197cd6b:c8d3:3b11:6fe5:ee7b13014e03","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -951,14 +951,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-documentation.html">Documentation</a></li></ul>
+      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-referencegenerator.html">ReferenceGenerator</a></li></ul>
+      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
     </div>
     
 

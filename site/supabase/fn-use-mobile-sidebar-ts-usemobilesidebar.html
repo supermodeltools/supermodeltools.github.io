@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/domain/designsystem.html" class="pill pill-green">DesignSystem</a>
-        <a href="/subdomain/statecontext.html" class="pill pill-orange">StateContext</a>
+        <a href="/subdomain/thememanagement.html" class="pill pill-orange">ThemeManagement</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DesignSystem","slug":"domain-designsystem"},"entity":{"name":"useMobileSidebar","slug":"fn-use-mobile-sidebar-ts-usemobilesidebar","type":"Function"},"subdomain":{"name":"StateContext","slug":"subdomain-statecontext"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DesignSystem","slug":"domain-designsystem"},"entity":{"name":"useMobileSidebar","slug":"fn-use-mobile-sidebar-ts-usemobilesidebar","type":"Function"},"subdomain":{"name":"ThemeManagement","slug":"subdomain-thememanagement"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/designsystem.html">DesignSystem</a><span class="arch-sep">&rarr;</span>
-            <a href="/statecontext.html">StateContext</a><span class="arch-sep">&rarr;</span>
+            <a href="/thememanagement.html">ThemeManagement</a><span class="arch-sep">&rarr;</span>
             <span>useMobileSidebar() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ff9e2443_d25d_ddb9_483c_a043a1101daa["useMobileSidebar()"]
-  9a381aae_e819_1d38_40ad_41d8019d7dfd["MobileSidebarSheet()"]
-  9a381aae_e819_1d38_40ad_41d8019d7dfd -->|calls| ff9e2443_d25d_ddb9_483c_a043a1101daa
-  eb65ea3c_2506_4d29_20bf_d60ba6915ff4["NavigationItem()"]
-  eb65ea3c_2506_4d29_20bf_d60ba6915ff4 -->|calls| ff9e2443_d25d_ddb9_483c_a043a1101daa
-  9ab33bb3_30ac_4647_b821_3440f6d8f12b["TopNavigation()"]
-  9ab33bb3_30ac_4647_b821_3440f6d8f12b -->|calls| ff9e2443_d25d_ddb9_483c_a043a1101daa
-  style ff9e2443_d25d_ddb9_483c_a043a1101daa fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  480e3867_acff_ad65_e30c_93198383aaf1["useMobileSidebar()"]
+  3d49b50a_6a93_06f0_3b68_a4266cd98e74["MobileSidebarSheet()"]
+  3d49b50a_6a93_06f0_3b68_a4266cd98e74 -->|calls| 480e3867_acff_ad65_e30c_93198383aaf1
+  a267d8eb_6ad5_3019_2fc3_2edc8eec4678["NavigationItem()"]
+  a267d8eb_6ad5_3019_2fc3_2edc8eec4678 -->|calls| 480e3867_acff_ad65_e30c_93198383aaf1
+  18faf8b7_d841_e7a3_cb78_920581cb097d["TopNavigation()"]
+  18faf8b7_d841_e7a3_cb78_920581cb097d -->|calls| 480e3867_acff_ad65_e30c_93198383aaf1
+  style 480e3867_acff_ad65_e30c_93198383aaf1 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-use-mobile-sidebar-ts-usemobilesidebar"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ff9e2443:d25d:ddb9:483c:a043a1101daa","label":"useMobileSidebar","type":"Function","slug":"fn-use-mobile-sidebar-ts-usemobilesidebar","lc":12,"lang":"typescript","cbc":3},{"id":"9a381aae:e819:1d38:40ad:41d8019d7dfd","label":"MobileSidebarSheet","type":"Function","slug":"fn-mobile-sidebar-sheet-tsx-mobilesidebarsheet","lc":14,"lang":"tsx","cc":1},{"id":"eb65ea3c:2506:4d29:20bf:d60ba6915ff4","label":"NavigationItem","type":"Function","slug":"fn-side-navigation-item-tsx-navigationitem","lc":38,"lang":"tsx","cc":1},{"id":"9ab33bb3:30ac:4647:b821:3440f6d8f12b","label":"TopNavigation","type":"Function","slug":"fn-top-navigation-tsx-topnavigation","lc":32,"lang":"tsx","cc":1},{"id":"domain:DesignSystem","label":"DesignSystem","type":"Domain","slug":"domain-designsystem"},{"id":"subdomain:DesignSystem:StateContext","label":"StateContext","type":"Subdomain","slug":"subdomain-statecontext"}],"edges":[{"source":"9a381aae:e819:1d38:40ad:41d8019d7dfd","target":"ff9e2443:d25d:ddb9:483c:a043a1101daa","type":"calls"},{"source":"eb65ea3c:2506:4d29:20bf:d60ba6915ff4","target":"ff9e2443:d25d:ddb9:483c:a043a1101daa","type":"calls"},{"source":"9ab33bb3:30ac:4647:b821:3440f6d8f12b","target":"ff9e2443:d25d:ddb9:483c:a043a1101daa","type":"calls"},{"source":"ff9e2443:d25d:ddb9:483c:a043a1101daa","target":"domain:DesignSystem","type":"belongsTo"},{"source":"ff9e2443:d25d:ddb9:483c:a043a1101daa","target":"subdomain:DesignSystem:StateContext","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"480e3867:acff:ad65:e30c:93198383aaf1","label":"useMobileSidebar","type":"Function","slug":"fn-use-mobile-sidebar-ts-usemobilesidebar","lc":12,"lang":"typescript","cbc":3},{"id":"3d49b50a:6a93:06f0:3b68:a4266cd98e74","label":"MobileSidebarSheet","type":"Function","slug":"fn-mobile-sidebar-sheet-tsx-mobilesidebarsheet","lc":14,"lang":"tsx","cc":1},{"id":"a267d8eb:6ad5:3019:2fc3:2edc8eec4678","label":"NavigationItem","type":"Function","slug":"fn-side-navigation-item-tsx-navigationitem","lc":38,"lang":"tsx","cc":1},{"id":"18faf8b7:d841:e7a3:cb78:920581cb097d","label":"TopNavigation","type":"Function","slug":"fn-top-navigation-tsx-topnavigation","lc":32,"lang":"tsx","cc":1},{"id":"domain:DesignSystem","label":"DesignSystem","type":"Domain","slug":"domain-designsystem"},{"id":"subdomain:DesignSystem:ThemeManagement","label":"ThemeManagement","type":"Subdomain","slug":"subdomain-thememanagement"}],"edges":[{"source":"3d49b50a:6a93:06f0:3b68:a4266cd98e74","target":"480e3867:acff:ad65:e30c:93198383aaf1","type":"calls"},{"source":"a267d8eb:6ad5:3019:2fc3:2edc8eec4678","target":"480e3867:acff:ad65:e30c:93198383aaf1","type":"calls"},{"source":"18faf8b7:d841:e7a3:cb78:920581cb097d","target":"480e3867:acff:ad65:e30c:93198383aaf1","type":"calls"},{"source":"480e3867:acff:ad65:e30c:93198383aaf1","target":"domain:DesignSystem","type":"belongsTo"},{"source":"480e3867:acff:ad65:e30c:93198383aaf1","target":"subdomain:DesignSystem:ThemeManagement","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -966,7 +966,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-statecontext.html">StateContext</a></li></ul>
+      <ul><li><a href="/subdomain-thememanagement.html">ThemeManagement</a></li></ul>
     </div>
     
 

@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/documentation.html" class="pill pill-green">Documentation</a>
-        <a href="/subdomain/layouts.html" class="pill pill-orange">Layouts</a>
+        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
+        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
         
         
         <span class="pill">calls 7</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Documentation","slug":"domain-documentation"},"entity":{"name":"syncErrorCodes","slug":"fn-errorsync-ts-syncerrorcodes","type":"Function"},"subdomain":{"name":"Layouts","slug":"subdomain-layouts"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"syncErrorCodes","slug":"fn-errorsync-ts-syncerrorcodes","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/documentation.html">Documentation</a><span class="arch-sep">&rarr;</span>
-            <a href="/layouts.html">Layouts</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
+            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
             <span>syncErrorCodes() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,24 +911,24 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  8495d61e_7c7c_4836_8c5e_31c7e74666b1["syncErrorCodes()"]
-  8590e74c_f5d9_1194_dc16_262695e040be["sync()"]
-  8590e74c_f5d9_1194_dc16_262695e040be -->|calls| 8495d61e_7c7c_4836_8c5e_31c7e74666b1
-  4106ff8d_220a_4b42_1e87_139e36b397cf["error()"]
-  8495d61e_7c7c_4836_8c5e_31c7e74666b1 -->|calls| 4106ff8d_220a_4b42_1e87_139e36b397cf
-  dc43fdd9_07c2_0557_7a35_977f759410e7["fetchErrorCodes()"]
-  8495d61e_7c7c_4836_8c5e_31c7e74666b1 -->|calls| dc43fdd9_07c2_0557_7a35_977f759410e7
-  5840d3dd_5042_7809_b3af_4a888e512c33["mapError()"]
-  8495d61e_7c7c_4836_8c5e_31c7e74666b1 -->|calls| 5840d3dd_5042_7809_b3af_4a888e512c33
-  8c8a48ff_5210_1428_fd6a_9616557e5c71["flatMapAsync()"]
-  8495d61e_7c7c_4836_8c5e_31c7e74666b1 -->|calls| 8c8a48ff_5210_1428_fd6a_9616557e5c71
-  2575df25_0fd4_bc6a_0144_07be7b4c1f64["uploadErrorCodes()"]
-  8495d61e_7c7c_4836_8c5e_31c7e74666b1 -->|calls| 2575df25_0fd4_bc6a_0144_07be7b4c1f64
-  1b1b3a56_4dea_9bbb_22d1_2e30323c9c22["deleteUnusedErrorCodes()"]
-  8495d61e_7c7c_4836_8c5e_31c7e74666b1 -->|calls| 1b1b3a56_4dea_9bbb_22d1_2e30323c9c22
-  3903e756_72a0_a06e_f73c_3bd272d2f901["ok()"]
-  8495d61e_7c7c_4836_8c5e_31c7e74666b1 -->|calls| 3903e756_72a0_a06e_f73c_3bd272d2f901
-  style 8495d61e_7c7c_4836_8c5e_31c7e74666b1 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a91c4a5e_155c_686b_90fc_7015424faa66["syncErrorCodes()"]
+  fc7b469c_6c1b_9b90_2a46_ee97418da3a9["sync()"]
+  fc7b469c_6c1b_9b90_2a46_ee97418da3a9 -->|calls| a91c4a5e_155c_686b_90fc_7015424faa66
+  edf62e54_01cc_d6a4_1a21_23a680f2b6f6["error()"]
+  a91c4a5e_155c_686b_90fc_7015424faa66 -->|calls| edf62e54_01cc_d6a4_1a21_23a680f2b6f6
+  9f21fb02_62bb_0797_d76c_ac31fcc6624e["fetchErrorCodes()"]
+  a91c4a5e_155c_686b_90fc_7015424faa66 -->|calls| 9f21fb02_62bb_0797_d76c_ac31fcc6624e
+  df34bf99_c4f7_17c8_f0e5_22e5f2dbdf72["mapError()"]
+  a91c4a5e_155c_686b_90fc_7015424faa66 -->|calls| df34bf99_c4f7_17c8_f0e5_22e5f2dbdf72
+  69bda8bd_0b49_c3ea_bb36_36b0a5f6bcbe["flatMapAsync()"]
+  a91c4a5e_155c_686b_90fc_7015424faa66 -->|calls| 69bda8bd_0b49_c3ea_bb36_36b0a5f6bcbe
+  a4afadbc_21ac_5ca3_f036_43934377d30e["uploadErrorCodes()"]
+  a91c4a5e_155c_686b_90fc_7015424faa66 -->|calls| a4afadbc_21ac_5ca3_f036_43934377d30e
+  f0c7b9ad_b5be_19dd_23ca_fb9d0520a4ff["deleteUnusedErrorCodes()"]
+  a91c4a5e_155c_686b_90fc_7015424faa66 -->|calls| f0c7b9ad_b5be_19dd_23ca_fb9d0520a4ff
+  3fe4b2b6_cf0b_ebbf_7208_3f0b19158d8e["ok()"]
+  a91c4a5e_155c_686b_90fc_7015424faa66 -->|calls| 3fe4b2b6_cf0b_ebbf_7208_3f0b19158d8e
+  style a91c4a5e_155c_686b_90fc_7015424faa66 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -936,7 +936,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-errorsync-ts-syncerrorcodes"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","label":"syncErrorCodes","type":"Function","slug":"fn-errorsync-ts-syncerrorcodes","lc":43,"lang":"typescript","cc":7,"cbc":1},{"id":"4106ff8d:220a:4b42:1e87:139e36b397cf","label":"error","type":"Function","slug":"fn-helpers-fn-ts-error","lc":3,"lang":"typescript","cbc":18},{"id":"dc43fdd9:07c2:0557:7a35:977f759410e7","label":"fetchErrorCodes","type":"Function","slug":"fn-errorsync-ts-fetcherrorcodes","lc":7,"lang":"typescript","cc":3,"cbc":1},{"id":"5840d3dd:5042:7809:b3af:4a888e512c33","label":"mapError","type":"Function","slug":"fn-helpers-fn-ts-maperror","lc":4,"lang":"typescript","cc":2,"cbc":5},{"id":"8c8a48ff:5210:1428:fd6a:9616557e5c71","label":"flatMapAsync","type":"Function","slug":"fn-helpers-fn-ts-flatmapasync","lc":6,"lang":"typescript","cc":1,"cbc":1},{"id":"2575df25:0fd4:bc6a:0144:07be7b4c1f64","label":"uploadErrorCodes","type":"Function","slug":"fn-errorsync-ts-uploaderrorcodes","lc":14,"lang":"typescript","cc":4,"cbc":1},{"id":"1b1b3a56:4dea:9bbb:22d1:2e30323c9c22","label":"deleteUnusedErrorCodes","type":"Function","slug":"fn-errorsync-ts-deleteunusederrorcodes","lc":20,"lang":"typescript","cc":3,"cbc":1},{"id":"3903e756:72a0:a06e:f73c:3bd272d2f901","label":"ok","type":"Function","slug":"fn-helpers-fn-ts-ok","lc":3,"lang":"typescript","cbc":12},{"id":"8590e74c:f5d9:1194:dc16:262695e040be","label":"sync","type":"Function","slug":"fn-rootsync-ts-sync","lc":10,"lang":"typescript","cc":1},{"id":"domain:Documentation","label":"Documentation","type":"Domain","slug":"domain-documentation"},{"id":"subdomain:Documentation:Layouts","label":"Layouts","type":"Subdomain","slug":"subdomain-layouts"}],"edges":[{"source":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","target":"4106ff8d:220a:4b42:1e87:139e36b397cf","type":"calls"},{"source":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","target":"dc43fdd9:07c2:0557:7a35:977f759410e7","type":"calls"},{"source":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","target":"5840d3dd:5042:7809:b3af:4a888e512c33","type":"calls"},{"source":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","target":"8c8a48ff:5210:1428:fd6a:9616557e5c71","type":"calls"},{"source":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","target":"2575df25:0fd4:bc6a:0144:07be7b4c1f64","type":"calls"},{"source":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","target":"1b1b3a56:4dea:9bbb:22d1:2e30323c9c22","type":"calls"},{"source":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","target":"3903e756:72a0:a06e:f73c:3bd272d2f901","type":"calls"},{"source":"8590e74c:f5d9:1194:dc16:262695e040be","target":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","type":"calls"},{"source":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","target":"domain:Documentation","type":"belongsTo"},{"source":"8495d61e:7c7c:4836:8c5e:31c7e74666b1","target":"subdomain:Documentation:Layouts","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a91c4a5e:155c:686b:90fc:7015424faa66","label":"syncErrorCodes","type":"Function","slug":"fn-errorsync-ts-syncerrorcodes","lc":43,"lang":"typescript","cc":7,"cbc":1},{"id":"edf62e54:01cc:d6a4:1a21:23a680f2b6f6","label":"error","type":"Function","slug":"fn-helpers-fn-ts-error","lc":3,"lang":"typescript","cbc":18},{"id":"9f21fb02:62bb:0797:d76c:ac31fcc6624e","label":"fetchErrorCodes","type":"Function","slug":"fn-errorsync-ts-fetcherrorcodes","lc":7,"lang":"typescript","cc":3,"cbc":1},{"id":"df34bf99:c4f7:17c8:f0e5:22e5f2dbdf72","label":"mapError","type":"Function","slug":"fn-helpers-fn-ts-maperror","lc":4,"lang":"typescript","cc":2,"cbc":5},{"id":"69bda8bd:0b49:c3ea:bb36:36b0a5f6bcbe","label":"flatMapAsync","type":"Function","slug":"fn-helpers-fn-ts-flatmapasync","lc":6,"lang":"typescript","cc":1,"cbc":1},{"id":"a4afadbc:21ac:5ca3:f036:43934377d30e","label":"uploadErrorCodes","type":"Function","slug":"fn-errorsync-ts-uploaderrorcodes","lc":14,"lang":"typescript","cc":4,"cbc":1},{"id":"f0c7b9ad:b5be:19dd:23ca:fb9d0520a4ff","label":"deleteUnusedErrorCodes","type":"Function","slug":"fn-errorsync-ts-deleteunusederrorcodes","lc":20,"lang":"typescript","cc":3,"cbc":1},{"id":"3fe4b2b6:cf0b:ebbf:7208:3f0b19158d8e","label":"ok","type":"Function","slug":"fn-helpers-fn-ts-ok","lc":3,"lang":"typescript","cbc":12},{"id":"fc7b469c:6c1b:9b90:2a46:ee97418da3a9","label":"sync","type":"Function","slug":"fn-rootsync-ts-sync","lc":10,"lang":"typescript","cc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"a91c4a5e:155c:686b:90fc:7015424faa66","target":"edf62e54:01cc:d6a4:1a21:23a680f2b6f6","type":"calls"},{"source":"a91c4a5e:155c:686b:90fc:7015424faa66","target":"9f21fb02:62bb:0797:d76c:ac31fcc6624e","type":"calls"},{"source":"a91c4a5e:155c:686b:90fc:7015424faa66","target":"df34bf99:c4f7:17c8:f0e5:22e5f2dbdf72","type":"calls"},{"source":"a91c4a5e:155c:686b:90fc:7015424faa66","target":"69bda8bd:0b49:c3ea:bb36:36b0a5f6bcbe","type":"calls"},{"source":"a91c4a5e:155c:686b:90fc:7015424faa66","target":"a4afadbc:21ac:5ca3:f036:43934377d30e","type":"calls"},{"source":"a91c4a5e:155c:686b:90fc:7015424faa66","target":"f0c7b9ad:b5be:19dd:23ca:fb9d0520a4ff","type":"calls"},{"source":"a91c4a5e:155c:686b:90fc:7015424faa66","target":"3fe4b2b6:cf0b:ebbf:7208:3f0b19158d8e","type":"calls"},{"source":"fc7b469c:6c1b:9b90:2a46:ee97418da3a9","target":"a91c4a5e:155c:686b:90fc:7015424faa66","type":"calls"},{"source":"a91c4a5e:155c:686b:90fc:7015424faa66","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"a91c4a5e:155c:686b:90fc:7015424faa66","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1000,14 +1000,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-documentation.html">Documentation</a></li></ul>
+      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-layouts.html">Layouts</a></li></ul>
+      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
     </div>
     
 

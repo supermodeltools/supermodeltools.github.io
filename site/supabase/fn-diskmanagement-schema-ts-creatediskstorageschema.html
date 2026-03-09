@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/studioapi.html" class="pill pill-green">StudioAPI</a>
-        <a href="/subdomain/authinterfaces.html" class="pill pill-orange">AuthInterfaces</a>
+        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
+        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
         
         
         <span class="pill">calls 7</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"StudioAPI","slug":"domain-studioapi"},"entity":{"name":"CreateDiskStorageSchema","slug":"fn-diskmanagement-schema-ts-creatediskstorageschema","type":"Function"},"subdomain":{"name":"AuthInterfaces","slug":"subdomain-authinterfaces"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"CreateDiskStorageSchema","slug":"fn-diskmanagement-schema-ts-creatediskstorageschema","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/studioapi.html">StudioAPI</a><span class="arch-sep">&rarr;</span>
-            <a href="/authinterfaces.html">AuthInterfaces</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
+            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
             <span>CreateDiskStorageSchema() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,24 +911,24 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  99041470_3b66_aafd_d659_5a99d219bd83["CreateDiskStorageSchema()"]
-  c39c4c6c_5b90_b764_00ec_cf3def48e194["DiskManagementForm()"]
-  c39c4c6c_5b90_b764_00ec_cf3def48e194 -->|calls| 99041470_3b66_aafd_d659_5a99d219bd83
-  f2d3aa02_c4ff_08b8_3dea_3d3f95a803d4["formatNumber()"]
-  99041470_3b66_aafd_d659_5a99d219bd83 -->|calls| f2d3aa02_c4ff_08b8_3dea_3d3f95a803d4
-  574f8363_f11e_d3ed_f0af_f75df8b3b593["calculateMaxIopsAllowedForDiskSizeWithio2()"]
-  99041470_3b66_aafd_d659_5a99d219bd83 -->|calls| 574f8363_f11e_d3ed_f0af_f75df8b3b593
-  311837bb_5ffb_0d34_df3b_fcf5c80036f4["calculateDiskSizeRequiredForIopsWithIo2()"]
-  99041470_3b66_aafd_d659_5a99d219bd83 -->|calls| 311837bb_5ffb_0d34_df3b_fcf5c80036f4
-  eac36f37_dc63_e52b_3f2d_1011002d8e3a["calculateMaxIopsAllowedForDiskSizeWithGp3()"]
-  99041470_3b66_aafd_d659_5a99d219bd83 -->|calls| eac36f37_dc63_e52b_3f2d_1011002d8e3a
-  e7dc652d_fdba_0658_c138_a85bb7f0a49c["calculateDiskSizeRequiredForIopsWithGp3()"]
-  99041470_3b66_aafd_d659_5a99d219bd83 -->|calls| e7dc652d_fdba_0658_c138_a85bb7f0a49c
-  b77a427c_ed56_2e2b_e4e7_65cd9aa06250["calculateMaxThroughput()"]
-  99041470_3b66_aafd_d659_5a99d219bd83 -->|calls| b77a427c_ed56_2e2b_e4e7_65cd9aa06250
-  ff203c7e_243b_c0e5_ed7d_91d176d0be30["calculateIopsRequiredForThroughput()"]
-  99041470_3b66_aafd_d659_5a99d219bd83 -->|calls| ff203c7e_243b_c0e5_ed7d_91d176d0be30
-  style 99041470_3b66_aafd_d659_5a99d219bd83 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  9413d56a_6852_0b8a_9906_3b72d845acd9["CreateDiskStorageSchema()"]
+  55cfca1e_a7e1_9d6f_40d6_814559175d26["DiskManagementForm()"]
+  55cfca1e_a7e1_9d6f_40d6_814559175d26 -->|calls| 9413d56a_6852_0b8a_9906_3b72d845acd9
+  0fae9866_1d37_dac9_8476_c35a6f369d1b["formatNumber()"]
+  9413d56a_6852_0b8a_9906_3b72d845acd9 -->|calls| 0fae9866_1d37_dac9_8476_c35a6f369d1b
+  b3da8af1_3f4a_143d_a36b_26cc9aab7a25["calculateMaxIopsAllowedForDiskSizeWithio2()"]
+  9413d56a_6852_0b8a_9906_3b72d845acd9 -->|calls| b3da8af1_3f4a_143d_a36b_26cc9aab7a25
+  711b099c_8dc1_e644_00d5_e2cc866c2287["calculateDiskSizeRequiredForIopsWithIo2()"]
+  9413d56a_6852_0b8a_9906_3b72d845acd9 -->|calls| 711b099c_8dc1_e644_00d5_e2cc866c2287
+  2b28f9eb_5a7b_ef13_f5d4_9841c6daf04d["calculateMaxIopsAllowedForDiskSizeWithGp3()"]
+  9413d56a_6852_0b8a_9906_3b72d845acd9 -->|calls| 2b28f9eb_5a7b_ef13_f5d4_9841c6daf04d
+  d3974440_71aa_c117_9ed5_46aea9d478e8["calculateDiskSizeRequiredForIopsWithGp3()"]
+  9413d56a_6852_0b8a_9906_3b72d845acd9 -->|calls| d3974440_71aa_c117_9ed5_46aea9d478e8
+  ce1c68fa_d789_4da3_0374_063ed0c12c53["calculateMaxThroughput()"]
+  9413d56a_6852_0b8a_9906_3b72d845acd9 -->|calls| ce1c68fa_d789_4da3_0374_063ed0c12c53
+  ce217505_c0f3_f6d9_581b_b66f664a77d1["calculateIopsRequiredForThroughput()"]
+  9413d56a_6852_0b8a_9906_3b72d845acd9 -->|calls| ce217505_c0f3_f6d9_581b_b66f664a77d1
+  style 9413d56a_6852_0b8a_9906_3b72d845acd9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -936,7 +936,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-diskmanagement-schema-ts-creatediskstorageschema"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"99041470:3b66:aafd:d659:5a99d219bd83","label":"CreateDiskStorageSchema","type":"Function","slug":"fn-diskmanagement-schema-ts-creatediskstorageschema","lc":190,"lang":"typescript","cc":7,"cbc":1},{"id":"f2d3aa02:c4ff:08b8:3dea:3d3f95a803d4","label":"formatNumber","type":"Function","slug":"fn-diskmanagement-utils-ts-formatnumber","lc":3,"lang":"typescript","cbc":1},{"id":"574f8363:f11e:d3ed:f0af:f75df8b3b593","label":"calculateMaxIopsAllowedForDiskSizeWithio2","type":"Function","slug":"fn-diskmanagement-utils-ts-calculatemaxiopsallowedfordisksizewithio2","lc":3,"lang":"typescript","cbc":1},{"id":"311837bb:5ffb:0d34:df3b:fcf5c80036f4","label":"calculateDiskSizeRequiredForIopsWithIo2","type":"Function","slug":"fn-diskmanagement-utils-ts-calculatedisksizerequiredforiopswithio2","lc":3,"lang":"typescript","cbc":1},{"id":"eac36f37:dc63:e52b:3f2d:1011002d8e3a","label":"calculateMaxIopsAllowedForDiskSizeWithGp3","type":"Function","slug":"fn-diskmanagement-utils-ts-calculatemaxiopsallowedfordisksizewithgp3","lc":3,"lang":"typescript","cbc":1},{"id":"e7dc652d:fdba:0658:c138:a85bb7f0a49c","label":"calculateDiskSizeRequiredForIopsWithGp3","type":"Function","slug":"fn-diskmanagement-utils-ts-calculatedisksizerequiredforiopswithgp3","lc":3,"lang":"typescript","cbc":1},{"id":"b77a427c:ed56:2e2b:e4e7:65cd9aa06250","label":"calculateMaxThroughput","type":"Function","slug":"fn-diskmanagement-utils-ts-calculatemaxthroughput","lc":3,"lang":"typescript","cbc":1},{"id":"ff203c7e:243b:c0e5:ed7d:91d176d0be30","label":"calculateIopsRequiredForThroughput","type":"Function","slug":"fn-diskmanagement-utils-ts-calculateiopsrequiredforthroughput","lc":3,"lang":"typescript","cbc":1},{"id":"c39c4c6c:5b90:b764:00ec:cf3def48e194","label":"DiskManagementForm","type":"Function","slug":"fn-diskmanagementform-tsx-diskmanagementform","lc":490,"lang":"tsx","cc":2},{"id":"domain:StudioAPI","label":"StudioAPI","type":"Domain","slug":"domain-studioapi"},{"id":"subdomain:StudioAPI:AuthInterfaces","label":"AuthInterfaces","type":"Subdomain","slug":"subdomain-authinterfaces"}],"edges":[{"source":"99041470:3b66:aafd:d659:5a99d219bd83","target":"f2d3aa02:c4ff:08b8:3dea:3d3f95a803d4","type":"calls"},{"source":"99041470:3b66:aafd:d659:5a99d219bd83","target":"574f8363:f11e:d3ed:f0af:f75df8b3b593","type":"calls"},{"source":"99041470:3b66:aafd:d659:5a99d219bd83","target":"311837bb:5ffb:0d34:df3b:fcf5c80036f4","type":"calls"},{"source":"99041470:3b66:aafd:d659:5a99d219bd83","target":"eac36f37:dc63:e52b:3f2d:1011002d8e3a","type":"calls"},{"source":"99041470:3b66:aafd:d659:5a99d219bd83","target":"e7dc652d:fdba:0658:c138:a85bb7f0a49c","type":"calls"},{"source":"99041470:3b66:aafd:d659:5a99d219bd83","target":"b77a427c:ed56:2e2b:e4e7:65cd9aa06250","type":"calls"},{"source":"99041470:3b66:aafd:d659:5a99d219bd83","target":"ff203c7e:243b:c0e5:ed7d:91d176d0be30","type":"calls"},{"source":"c39c4c6c:5b90:b764:00ec:cf3def48e194","target":"99041470:3b66:aafd:d659:5a99d219bd83","type":"calls"},{"source":"99041470:3b66:aafd:d659:5a99d219bd83","target":"domain:StudioAPI","type":"belongsTo"},{"source":"99041470:3b66:aafd:d659:5a99d219bd83","target":"subdomain:StudioAPI:AuthInterfaces","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"9413d56a:6852:0b8a:9906:3b72d845acd9","label":"CreateDiskStorageSchema","type":"Function","slug":"fn-diskmanagement-schema-ts-creatediskstorageschema","lc":190,"lang":"typescript","cc":7,"cbc":1},{"id":"0fae9866:1d37:dac9:8476:c35a6f369d1b","label":"formatNumber","type":"Function","slug":"fn-diskmanagement-utils-ts-formatnumber","lc":3,"lang":"typescript","cbc":1},{"id":"b3da8af1:3f4a:143d:a36b:26cc9aab7a25","label":"calculateMaxIopsAllowedForDiskSizeWithio2","type":"Function","slug":"fn-diskmanagement-utils-ts-calculatemaxiopsallowedfordisksizewithio2","lc":3,"lang":"typescript","cbc":1},{"id":"711b099c:8dc1:e644:00d5:e2cc866c2287","label":"calculateDiskSizeRequiredForIopsWithIo2","type":"Function","slug":"fn-diskmanagement-utils-ts-calculatedisksizerequiredforiopswithio2","lc":3,"lang":"typescript","cbc":1},{"id":"2b28f9eb:5a7b:ef13:f5d4:9841c6daf04d","label":"calculateMaxIopsAllowedForDiskSizeWithGp3","type":"Function","slug":"fn-diskmanagement-utils-ts-calculatemaxiopsallowedfordisksizewithgp3","lc":3,"lang":"typescript","cbc":1},{"id":"d3974440:71aa:c117:9ed5:46aea9d478e8","label":"calculateDiskSizeRequiredForIopsWithGp3","type":"Function","slug":"fn-diskmanagement-utils-ts-calculatedisksizerequiredforiopswithgp3","lc":3,"lang":"typescript","cbc":1},{"id":"ce1c68fa:d789:4da3:0374:063ed0c12c53","label":"calculateMaxThroughput","type":"Function","slug":"fn-diskmanagement-utils-ts-calculatemaxthroughput","lc":3,"lang":"typescript","cbc":1},{"id":"ce217505:c0f3:f6d9:581b:b66f664a77d1","label":"calculateIopsRequiredForThroughput","type":"Function","slug":"fn-diskmanagement-utils-ts-calculateiopsrequiredforthroughput","lc":3,"lang":"typescript","cbc":1},{"id":"55cfca1e:a7e1:9d6f:40d6:814559175d26","label":"DiskManagementForm","type":"Function","slug":"fn-diskmanagementform-tsx-diskmanagementform","lc":490,"lang":"tsx","cc":2},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"9413d56a:6852:0b8a:9906:3b72d845acd9","target":"0fae9866:1d37:dac9:8476:c35a6f369d1b","type":"calls"},{"source":"9413d56a:6852:0b8a:9906:3b72d845acd9","target":"b3da8af1:3f4a:143d:a36b:26cc9aab7a25","type":"calls"},{"source":"9413d56a:6852:0b8a:9906:3b72d845acd9","target":"711b099c:8dc1:e644:00d5:e2cc866c2287","type":"calls"},{"source":"9413d56a:6852:0b8a:9906:3b72d845acd9","target":"2b28f9eb:5a7b:ef13:f5d4:9841c6daf04d","type":"calls"},{"source":"9413d56a:6852:0b8a:9906:3b72d845acd9","target":"d3974440:71aa:c117:9ed5:46aea9d478e8","type":"calls"},{"source":"9413d56a:6852:0b8a:9906:3b72d845acd9","target":"ce1c68fa:d789:4da3:0374:063ed0c12c53","type":"calls"},{"source":"9413d56a:6852:0b8a:9906:3b72d845acd9","target":"ce217505:c0f3:f6d9:581b:b66f664a77d1","type":"calls"},{"source":"55cfca1e:a7e1:9d6f:40d6:814559175d26","target":"9413d56a:6852:0b8a:9906:3b72d845acd9","type":"calls"},{"source":"9413d56a:6852:0b8a:9906:3b72d845acd9","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"9413d56a:6852:0b8a:9906:3b72d845acd9","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1147,14 +1147,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-studioapi.html">StudioAPI</a></li></ul>
+      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-authinterfaces.html">AuthInterfaces</a></li></ul>
+      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
     </div>
     
 

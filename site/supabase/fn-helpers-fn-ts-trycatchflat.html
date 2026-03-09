@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/documentation.html" class="pill pill-green">Documentation</a>
-        <a href="/subdomain/contentprocessing.html" class="pill pill-orange">ContentProcessing</a>
+        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
+        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Documentation","slug":"domain-documentation"},"entity":{"name":"tryCatchFlat","slug":"fn-helpers-fn-ts-trycatchflat","type":"Function"},"subdomain":{"name":"ContentProcessing","slug":"subdomain-contentprocessing"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"tryCatchFlat","slug":"fn-helpers-fn-ts-trycatchflat","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/documentation.html">Documentation</a><span class="arch-sep">&rarr;</span>
-            <a href="/contentprocessing.html">ContentProcessing</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
+            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
             <span>tryCatchFlat() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,18 +911,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  c48f7287_af0b_0fab_d9c3_af5bf39e7521["tryCatchFlat()"]
-  37512008_f566_94ae_19d6_e5f52fbbba48["createContentEmbedding()"]
-  37512008_f566_94ae_19d6_e5f52fbbba48 -->|calls| c48f7287_af0b_0fab_d9c3_af5bf39e7521
-  37b7321b_4211_8860_dac9_6555ac31bd89["resolveSingleError()"]
-  37b7321b_4211_8860_dac9_6555ac31bd89 -->|calls| c48f7287_af0b_0fab_d9c3_af5bf39e7521
-  5e3e9968_fc89_7a2f_0a76_33391d539ed1["resolveErrors()"]
-  5e3e9968_fc89_7a2f_0a76_33391d539ed1 -->|calls| c48f7287_af0b_0fab_d9c3_af5bf39e7521
-  5936323e_8018_1414_3b64_97fa0a076f0c["resolveSearch()"]
-  5936323e_8018_1414_3b64_97fa0a076f0c -->|calls| c48f7287_af0b_0fab_d9c3_af5bf39e7521
-  4106ff8d_220a_4b42_1e87_139e36b397cf["error()"]
-  c48f7287_af0b_0fab_d9c3_af5bf39e7521 -->|calls| 4106ff8d_220a_4b42_1e87_139e36b397cf
-  style c48f7287_af0b_0fab_d9c3_af5bf39e7521 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  5e3c2d9f_3111_3895_7006_b2176c353f5e["tryCatchFlat()"]
+  2ab7d95e_020d_5572_58e2_494eb6531638["createContentEmbedding()"]
+  2ab7d95e_020d_5572_58e2_494eb6531638 -->|calls| 5e3c2d9f_3111_3895_7006_b2176c353f5e
+  3814c905_b85a_8ddd_328c_923501920ee2["resolveSingleError()"]
+  3814c905_b85a_8ddd_328c_923501920ee2 -->|calls| 5e3c2d9f_3111_3895_7006_b2176c353f5e
+  598ef5b4_ad81_99e0_9015_23e9f7dbad04["resolveErrors()"]
+  598ef5b4_ad81_99e0_9015_23e9f7dbad04 -->|calls| 5e3c2d9f_3111_3895_7006_b2176c353f5e
+  aaa7e5f8_7bac_1ef3_87f2_22d57cfa5ea2["resolveSearch()"]
+  aaa7e5f8_7bac_1ef3_87f2_22d57cfa5ea2 -->|calls| 5e3c2d9f_3111_3895_7006_b2176c353f5e
+  edf62e54_01cc_d6a4_1a21_23a680f2b6f6["error()"]
+  5e3c2d9f_3111_3895_7006_b2176c353f5e -->|calls| edf62e54_01cc_d6a4_1a21_23a680f2b6f6
+  style 5e3c2d9f_3111_3895_7006_b2176c353f5e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -930,7 +930,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-helpers-fn-ts-trycatchflat"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"c48f7287:af0b:0fab:d9c3:af5bf39e7521","label":"tryCatchFlat","type":"Function","slug":"fn-helpers-fn-ts-trycatchflat","lc":16,"lang":"typescript","cc":1,"cbc":4},{"id":"4106ff8d:220a:4b42:1e87:139e36b397cf","label":"error","type":"Function","slug":"fn-helpers-fn-ts-error","lc":3,"lang":"typescript","cbc":18},{"id":"37512008:f566:94ae:19d6:e5f52fbbba48","label":"createContentEmbedding","type":"Function","slug":"fn-openai-ts-createcontentembedding","lc":9,"lang":"typescript","cc":1},{"id":"37b7321b:4211:8860:dac9:6555ac31bd89","label":"resolveSingleError","type":"Function","slug":"fn-errorresolver-ts-resolvesingleerror","lc":19,"lang":"typescript","cc":4},{"id":"5e3e9968:fc89:7a2f:0a76:33391d539ed1","label":"resolveErrors","type":"Function","slug":"fn-errorresolver-ts-resolveerrors","lc":60,"lang":"typescript","cc":9},{"id":"5936323e:8018:1414:3b64:97fa0a076f0c","label":"resolveSearch","type":"Function","slug":"fn-globalsearchresolver-ts-resolvesearch","lc":27,"lang":"typescript","cc":6},{"id":"domain:Documentation","label":"Documentation","type":"Domain","slug":"domain-documentation"},{"id":"subdomain:Documentation:ContentProcessing","label":"ContentProcessing","type":"Subdomain","slug":"subdomain-contentprocessing"}],"edges":[{"source":"c48f7287:af0b:0fab:d9c3:af5bf39e7521","target":"4106ff8d:220a:4b42:1e87:139e36b397cf","type":"calls"},{"source":"37512008:f566:94ae:19d6:e5f52fbbba48","target":"c48f7287:af0b:0fab:d9c3:af5bf39e7521","type":"calls"},{"source":"37b7321b:4211:8860:dac9:6555ac31bd89","target":"c48f7287:af0b:0fab:d9c3:af5bf39e7521","type":"calls"},{"source":"5e3e9968:fc89:7a2f:0a76:33391d539ed1","target":"c48f7287:af0b:0fab:d9c3:af5bf39e7521","type":"calls"},{"source":"5936323e:8018:1414:3b64:97fa0a076f0c","target":"c48f7287:af0b:0fab:d9c3:af5bf39e7521","type":"calls"},{"source":"c48f7287:af0b:0fab:d9c3:af5bf39e7521","target":"domain:Documentation","type":"belongsTo"},{"source":"c48f7287:af0b:0fab:d9c3:af5bf39e7521","target":"subdomain:Documentation:ContentProcessing","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"5e3c2d9f:3111:3895:7006:b2176c353f5e","label":"tryCatchFlat","type":"Function","slug":"fn-helpers-fn-ts-trycatchflat","lc":16,"lang":"typescript","cc":1,"cbc":4},{"id":"edf62e54:01cc:d6a4:1a21:23a680f2b6f6","label":"error","type":"Function","slug":"fn-helpers-fn-ts-error","lc":3,"lang":"typescript","cbc":18},{"id":"2ab7d95e:020d:5572:58e2:494eb6531638","label":"createContentEmbedding","type":"Function","slug":"fn-openai-ts-createcontentembedding","lc":9,"lang":"typescript","cc":1},{"id":"3814c905:b85a:8ddd:328c:923501920ee2","label":"resolveSingleError","type":"Function","slug":"fn-errorresolver-ts-resolvesingleerror","lc":19,"lang":"typescript","cc":4},{"id":"598ef5b4:ad81:99e0:9015:23e9f7dbad04","label":"resolveErrors","type":"Function","slug":"fn-errorresolver-ts-resolveerrors","lc":60,"lang":"typescript","cc":9},{"id":"aaa7e5f8:7bac:1ef3:87f2:22d57cfa5ea2","label":"resolveSearch","type":"Function","slug":"fn-globalsearchresolver-ts-resolvesearch","lc":27,"lang":"typescript","cc":6},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"5e3c2d9f:3111:3895:7006:b2176c353f5e","target":"edf62e54:01cc:d6a4:1a21:23a680f2b6f6","type":"calls"},{"source":"2ab7d95e:020d:5572:58e2:494eb6531638","target":"5e3c2d9f:3111:3895:7006:b2176c353f5e","type":"calls"},{"source":"3814c905:b85a:8ddd:328c:923501920ee2","target":"5e3c2d9f:3111:3895:7006:b2176c353f5e","type":"calls"},{"source":"598ef5b4:ad81:99e0:9015:23e9f7dbad04","target":"5e3c2d9f:3111:3895:7006:b2176c353f5e","type":"calls"},{"source":"aaa7e5f8:7bac:1ef3:87f2:22d57cfa5ea2","target":"5e3c2d9f:3111:3895:7006:b2176c353f5e","type":"calls"},{"source":"5e3c2d9f:3111:3895:7006:b2176c353f5e","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"5e3c2d9f:3111:3895:7006:b2176c353f5e","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -967,14 +967,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-documentation.html">Documentation</a></li></ul>
+      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-contentprocessing.html">ContentProcessing</a></li></ul>
+      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
     </div>
     
 
