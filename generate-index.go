@@ -82,13 +82,14 @@ func main() {
 func generateSitemap(cfg Config) error {
 	var b strings.Builder
 	b.WriteString(`<?xml version="1.0" encoding="UTF-8"?>` + "\n")
-	b.WriteString(`<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">` + "\n")
+	b.WriteString(`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">` + "\n")
+	b.WriteString(fmt.Sprintf("  <url>\n    <loc>%s/</loc>\n    <priority>1.0</priority>\n  </url>\n", baseURL))
 	for _, cat := range cfg.Categories {
 		for _, repo := range cat.Repos {
-			b.WriteString(fmt.Sprintf("  <sitemap>\n    <loc>%s/%s/sitemap.xml</loc>\n  </sitemap>\n", baseURL, url.PathEscape(repo.Name)))
+			b.WriteString(fmt.Sprintf("  <url>\n    <loc>%s/%s/</loc>\n    <priority>0.8</priority>\n  </url>\n", baseURL, url.PathEscape(repo.Name)))
 		}
 	}
-	b.WriteString("</sitemapindex>\n")
+	b.WriteString("</urlset>\n")
 	return os.WriteFile("site/sitemap.xml", []byte(b.String()), 0644)
 }
 
@@ -119,6 +120,10 @@ func generateRepoPages(cfg Config) error {
 	for _, cat := range cfg.Categories {
 		for _, repo := range cat.Repos {
 			dir := fmt.Sprintf("site/%s", url.PathEscape(repo.Name))
+			// Skip if arch-docs have already been deployed to this directory
+			if _, err := os.Stat(fmt.Sprintf("%s/index.html", dir)); err == nil {
+				continue
+			}
 			if err := os.MkdirAll(dir, 0755); err != nil {
 				return fmt.Errorf("creating dir %s: %w", dir, err)
 			}
