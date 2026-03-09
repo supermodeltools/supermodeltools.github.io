@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>DiskManagementForm() — supabase Function Reference | supabase Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the DiskManagementForm() function in DiskManagementForm.tsx from the supabase codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/fn-diskmanagementform-tsx-diskmanagementform/">
+<meta property="og:title" content="DiskManagementForm() — supabase Function Reference — supabase Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the DiskManagementForm() function in DiskManagementForm.tsx from the supabase codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/fn-diskmanagementform-tsx-diskmanagementform.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/fn-diskmanagementform-tsx-diskmanagementform.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="supabase Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DiskManagementForm() — supabase Function Reference — supabase Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the DiskManagementForm() function in DiskManagementForm.tsx from the supabase codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-diskmanagementform-tsx-diskmanagementform.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the DiskManagementForm() function in DiskManagementForm.tsx from the supabase codebase.","image":["https://repos.supermodeltools.com/images/share/fn-diskmanagementform-tsx-diskmanagementform.svg"],"name":"DiskManagementForm() — supabase Function Reference","url":"https://repos.supermodeltools.com/fn-diskmanagementform-tsx-diskmanagementform.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"DiskManagementForm() — supabase Function Reference","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"DiskManagementForm() is a function in the supabase codebase."},"name":"What does DiskManagementForm() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"DiskManagementForm() calls 2 function(s): CreateDiskStorageSchema, mapComputeSizeNameToAddonVariantId."},"name":"What does DiskManagementForm() call?"}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      supabase Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/function.html">Function</a><span class="sep">/</span>
+        <span>DiskManagementForm() — supabase Function Reference</span>
+      </div>
+      <h1 class="entity-title">DiskManagementForm() — supabase Function Reference</h1>
+      <p class="entity-desc">Architecture documentation for the DiskManagementForm() function in DiskManagementForm.tsx from the supabase codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/function.html" class="pill pill-accent">Function</a>
+        <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
+        <a href="/domain/studioapi.html" class="pill pill-green">StudioAPI</a>
+        <a href="/subdomain/authinterfaces.html" class="pill pill-orange">AuthInterfaces</a>
+        
+        
+        <span class="pill">calls 2</span>
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"co":2,"el":559,"et":{"calls":2},"lc":490,"sl":70}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+      <div class="visuals-archmap" id="arch-map-container">
+        <div class="arch-map-svg"></div>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"StudioAPI","slug":"domain-studioapi"},"entity":{"name":"DiskManagementForm","slug":"fn-diskmanagementform-tsx-diskmanagementform","type":"Function"},"subdomain":{"name":"AuthInterfaces","slug":"subdomain-authinterfaces"}}</script>
+        <noscript>
+          <div class="arch-map-fallback">
+            <a href="/studioapi.html">StudioAPI</a><span class="arch-sep">&rarr;</span>
+            <a href="/authinterfaces.html">AuthInterfaces</a><span class="arch-sep">&rarr;</span>
+            <span>DiskManagementForm() — supabase Function Reference</span>
+          </div>
+        </noscript>
+      </div>
+      
+
+      
+      <div class="visuals-row">
+        
+        <div class="visuals-cell mermaid-container">
+          <h3>Dependency Diagram</h3>
+          <pre class="mermaid">graph TD
+  c39c4c6c_5b90_b764_00ec_cf3def48e194["DiskManagementForm()"]
+  7e815a24_fa81_6cd6_05ad_cbdc55563da1["mapComputeSizeNameToAddonVariantId()"]
+  c39c4c6c_5b90_b764_00ec_cf3def48e194 -->|calls| 7e815a24_fa81_6cd6_05ad_cbdc55563da1
+  99041470_3b66_aafd_d659_5a99d219bd83["CreateDiskStorageSchema()"]
+  c39c4c6c_5b90_b764_00ec_cf3def48e194 -->|calls| 99041470_3b66_aafd_d659_5a99d219bd83
+  style c39c4c6c_5b90_b764_00ec_cf3def48e194 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+        </div>
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="fn-diskmanagementform-tsx-diskmanagementform"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"c39c4c6c:5b90:b764:00ec:cf3def48e194","label":"DiskManagementForm","type":"Function","slug":"fn-diskmanagementform-tsx-diskmanagementform","lc":490,"lang":"tsx","cc":2},{"id":"7e815a24:fa81:6cd6:05ad:cbdc55563da1","label":"mapComputeSizeNameToAddonVariantId","type":"Function","slug":"fn-diskmanagement-utils-ts-mapcomputesizenametoaddonvariantid","lc":8,"lang":"typescript","cc":1,"cbc":1},{"id":"99041470:3b66:aafd:d659:5a99d219bd83","label":"CreateDiskStorageSchema","type":"Function","slug":"fn-diskmanagement-schema-ts-creatediskstorageschema","lc":190,"lang":"typescript","cc":7,"cbc":1},{"id":"domain:StudioAPI","label":"StudioAPI","type":"Domain","slug":"domain-studioapi"},{"id":"subdomain:StudioAPI:AuthInterfaces","label":"AuthInterfaces","type":"Subdomain","slug":"subdomain-authinterfaces"}],"edges":[{"source":"c39c4c6c:5b90:b764:00ec:cf3def48e194","target":"7e815a24:fa81:6cd6:05ad:cbdc55563da1","type":"calls"},{"source":"c39c4c6c:5b90:b764:00ec:cf3def48e194","target":"99041470:3b66:aafd:d659:5a99d219bd83","type":"calls"},{"source":"c39c4c6c:5b90:b764:00ec:cf3def48e194","target":"domain:StudioAPI","type":"belongsTo"},{"source":"c39c4c6c:5b90:b764:00ec:cf3def48e194","target":"subdomain:StudioAPI:AuthInterfaces","type":"belongsTo"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">apps/studio/components/interfaces/DiskManagement/DiskManagementForm.tsx lines 70–559</p>
+      <pre class="source-code"><code class="language-tsx">export function DiskManagementForm() {
+  const { ref: projectRef } = useParams()
+  const { data: project } = useSelectedProjectQuery()
+  const { data: org } = useSelectedOrganizationQuery()
+  const { setProjectStatus } = useSetProjectStatus()
+
+  const isSpendCapEnabled =
+    org?.plan.id !== &#39;free&#39; &amp;&amp; !org?.usage_billing_enabled &amp;&amp; project?.cloud_provider !== &#39;FLY&#39;
+
+  const { data: resourceWarnings } = useResourceWarningsQuery({ ref: projectRef })
+  // [Joshen Cleanup] JFYI this client side filtering can be cleaned up once BE changes are live which will only return the warnings based on the provided ref
+  const projectResourceWarnings = (resourceWarnings ?? [])?.find(
+    (warning) =&gt; warning.project === project?.ref
+  )
+  const isReadOnlyMode = projectResourceWarnings?.is_readonly_mode_enabled
+  const isAws = useIsAwsCloudProvider()
+  const isAwsK8s = useIsAwsK8sCloudProvider()
+  const isAwsNimbus = useIsAwsNimbusCloudProvider()
+
+  const { can: canUpdateDiskConfiguration, isSuccess: isPermissionsLoaded } =
+    useAsyncCheckPermissions(PermissionAction.UPDATE, &#39;projects&#39;, {
+      resource: {
+        project_id: project?.id,
+      },
+    })
+
+  const { hasAccess, isSuccess: isEntitlementsLoaded } = useCheckEntitlements(
+    &#39;instances.compute_update_available_sizes&#39;
+  )
+
+  const [isDialogOpen, setIsDialogOpen] = useState&lt;boolean&gt;(false)
+  const [refetchInterval, setRefetchInterval] = useState&lt;number | false&gt;(false)
+  const [message, setMessageState] = useState&lt;DiskManagementMessage | null&gt;(null)
+  const [advancedSettingsOpen, setAdvancedSettingsOpenState] = useState(false)
+
+  const { data: databases, isSuccess: isReadReplicasSuccess } = useReadReplicasQuery({ projectRef })
+  const { data, isSuccess: isDiskAttributesSuccess } = useDiskAttributesQuery(
+    { projectRef },
+    {
+      refetchInterval,
+      refetchOnWindowFocus: false,
+      enabled: project != null &amp;&amp; isAws,
+    }
+  )
+
+  const { isSuccess: isAddonsSuccess } = useProjectAddonsQuery({ projectRef })
+  const { isWithinCooldownWindow, isSuccess: isCooldownSuccess } =
+    useRemainingDurationForDiskAttributeUpdate({
+      projectRef,
+      enabled: project != null &amp;&amp; isAws,
+    })
+  const { data: diskUtil, isSuccess: isDiskUtilizationSuccess } = useDiskUtilizationQuery(
+    {
+      projectRef,
+    },
+    { enabled: project != null &amp;&amp; isAws }
+  )
+
+  const { data: diskAutoscaleConfig, isSuccess: isDiskAutoscaleConfigSuccess } =
+    useDiskAutoscaleCustomConfigQuery({ projectRef }, { enabled: project != null &amp;&amp; isAws })
+
+  const computeSize = project?.infra_compute_size
+    ? mapComputeSizeNameToAddonVariantId(project?.infra_compute_size)
+    : undefined
+
+  // @ts-ignore
+  const { type, iops, throughput_mbps, size_gb } = data?.attributes ?? { size_gb: 0, iops: 0 }
+  const { growth_percent, max_size_gb, min_increment_gb } = diskAutoscaleConfig ?? {}
+  const defaultValues = {
+    storageType: type ?? DiskType.GP3,
+    provisionedIOPS: iops,
+    throughput: throughput_mbps,
+    totalSize: size_gb,
+    computeSize: computeSize ?? &#39;ci_micro&#39;,
+    growthPercent: growth_percent,
+    minIncrementGb: min_increment_gb,
+    maxSizeGb: max_size_gb,
+  }
+
+  const form = useForm&lt;DiskStorageSchemaType&gt;({
+    resolver: zodResolver(
+      CreateDiskStorageSchema({
+        defaultTotalSize: defaultValues.totalSize,
+        cloudProvider: project?.cloud_provider as CloudProvider,
+      })
+    ),
+    defaultValues,
+    mode: &#39;onBlur&#39;,
+    reValidateMode: &#39;onChange&#39;,
+  })
+
+  useEffect(() =&gt; {
+    if (!isDiskAttributesSuccess) return
+    // @ts-ignore
+    const { type, iops, throughput_mbps, size_gb } = data?.attributes ?? { size_gb: 0 }
+    const formValues = {
+      storageType: type,
+      provisionedIOPS: iops,
+      throughput: throughput_mbps,
+      totalSize: size_gb,
+      computeSize: form.getValues(&#39;computeSize&#39;),
+    }
+
+    if (!(&#39;requested_modification&#39; in data)) {
+      if (refetchInterval !== false) {
+        form.reset(formValues)
+        setRefetchInterval(false)
+        toast.success(&#39;Disk configuration changes have been successfully applied!&#39;)
+      }
+    } else {
+      setRefetchInterval(2000)
+    }
+  }, [data, isDiskAttributesSuccess, form, refetchInterval])
+
+  const { computeSize: modifiedComputeSize } = form.watch()
+
+  // We only support disk configurations for &gt;=Large instances
+  // If a customer downgrades back to &lt;Large, we should reset the storage settings to avoid incurring unnecessary costs
+  useEffect(() =&gt; {
+    if (modifiedComputeSize &amp;&amp; project?.infra_compute_size &amp;&amp; isDialogOpen) {
+      if (RESTRICTED_COMPUTE_FOR_THROUGHPUT_ON_GP3.includes(modifiedComputeSize)) {
+        form.setValue(&#39;storageType&#39;, DiskType.GP3)
+        form.setValue(&#39;throughput&#39;, DISK_LIMITS[&#39;gp3&#39;].minThroughput)
+        form.setValue(&#39;provisionedIOPS&#39;, DISK_LIMITS[&#39;gp3&#39;].minIops)
+      }
+    }
+  }, [modifiedComputeSize, isDialogOpen, project])
+
+  const isSuccess =
+    isAddonsSuccess &amp;&amp;
+    isDiskAttributesSuccess &amp;&amp;
+    isDiskUtilizationSuccess &amp;&amp;
+    isReadReplicasSuccess &amp;&amp;
+    isDiskAutoscaleConfigSuccess &amp;&amp;
+    isCooldownSuccess
+
+  const isRequestingChanges = data?.requested_modification !== undefined
+  const readReplicas = (databases ?? []).filter((db) =&gt; db.identifier !== projectRef)
+  const isPlanUpgradeRequired = !hasAccess
+
+  const { formState } = form
+  const usedSize = Math.round(((diskUtil?.metrics.fs_used_bytes ?? 0) / GB) * 100) / 100
+  const totalSize = formState.defaultValues?.totalSize || 0
+  const usedPercentage = (usedSize / totalSize) * 100
+
+  const disableIopsThroughputConfig =
+    modifiedComputeSize &amp;&amp;
+    !isSpendCapEnabled &amp;&amp;
+    RESTRICTED_COMPUTE_FOR_THROUGHPUT_ON_GP3.includes(modifiedComputeSize)
+
+  const isBranch = project?.parent_project_ref !== undefined
+
+  const disableDiskInputs =
+    isRequestingChanges ||
+    isPlanUpgradeRequired ||
+    isWithinCooldownWindow ||
+    isSpendCapEnabled ||
+    !canUpdateDiskConfiguration ||
+    !isAws
+
+  const disableComputeInputs = isPlanUpgradeRequired
+  const isDirty = !!Object.keys(form.formState.dirtyFields).length
+  const isProjectResizing = project?.status === PROJECT_STATUS.RESIZING
+  const isProjectRequestingDiskChanges = isRequestingChanges &amp;&amp; !isProjectResizing
+  const noPermissions = isPermissionsLoaded &amp;&amp; !canUpdateDiskConfiguration
+
+  const { mutateAsync: updateDiskConfiguration, isPending: isUpdatingDisk } =
+    useUpdateDiskAttributesMutation({
+      // this is to suppress to toast message
+      onError: () =&gt; {},
+      onSuccess: () =&gt; setRefetchInterval(2000),
+    })
+  const { mutateAsync: updateSubscriptionAddon, isPending: isUpdatingCompute } =
+    useProjectAddonUpdateMutation({
+      // this is to suppress to toast message
+      onError: () =&gt; {},
+      onSuccess: () =&gt; {
+        //Manually set project status to RESIZING, Project status should be RESIZING on next project status request.
+        if (projectRef) setProjectStatus({ ref: projectRef, status: PROJECT_STATUS.RESIZING })
+      },
+    })
+  const { mutateAsync: updateDiskAutoscaleConfig, isPending: isUpdatingDiskAutoscaleConfig } =
+    useUpdateDiskAutoscaleConfigMutation({
+      // this is to suppress to toast message
+      onError: () =&gt; {},
+    })
+
+  const isUpdatingConfig = isUpdatingDisk || isUpdatingCompute || isUpdatingDiskAutoscaleConfig
+
+  const onSubmit = async (data: DiskStorageSchemaType) =&gt; {
+    let payload = data
+    let willUpdateDiskConfiguration = false
+    setMessageState(null)
+
+    // [Joshen] Skip disk configuration related stuff for AWS Nimbus
+    try {
+      if (
+        !isAwsK8s &amp;&amp;
+        !isAwsNimbus &amp;&amp;
+        (payload.storageType !== form.formState.defaultValues?.storageType ||
+          payload.provisionedIOPS !== form.formState.defaultValues?.provisionedIOPS ||
+          payload.throughput !== form.formState.defaultValues?.throughput ||
+          payload.totalSize !== form.formState.defaultValues?.totalSize)
+      ) {
+        willUpdateDiskConfiguration = true
+
+        await updateDiskConfiguration({
+          ref: projectRef,
+          provisionedIOPS: payload.provisionedIOPS!,
+          storageType: payload.storageType,
+          totalSize: payload.totalSize!,
+          throughput: payload.throughput,
+        })
+      }
+
+      if (
+        !isAwsK8s &amp;&amp;
+        !isAwsNimbus &amp;&amp;
+        (payload.growthPercent !== form.formState.defaultValues?.growthPercent ||
+          payload.minIncrementGb !== form.formState.defaultValues?.minIncrementGb ||
+          payload.maxSizeGb !== form.formState.defaultValues?.maxSizeGb)
+      ) {
+        await updateDiskAutoscaleConfig({
+          projectRef,
+          growthPercent: payload.growthPercent,
+          minIncrementGb: payload.minIncrementGb,
+          maxSizeGb: payload.maxSizeGb,
+        })
+      }
+
+      if (payload.computeSize !== form.formState.defaultValues?.computeSize) {
+        await updateSubscriptionAddon({
+          projectRef: projectRef,
+          // cast variant to AddonVariantId to satisfy type
+          variant: payload.computeSize as AddonVariantId,
+          type: &#39;compute_instance&#39;,
+          suppressToast: true,
+        })
+      }
+
+      setIsDialogOpen(false)
+      form.reset(data as DiskStorageSchemaType)
+      toast.success(
+        `Successfully updated disk settings!${willUpdateDiskConfiguration ? &#39; The requested changes will be applied to your disk shortly.&#39; : &#39;&#39;}`
+      )
+    } catch (error: unknown) {
+      setMessageState({
+        message: error instanceof Error ? error.message : &#39;An unknown error occurred&#39;,
+        type: &#39;error&#39;,
+      })
+    }
+  }
+
+  useEffect(() =&gt; {
+    // Initialize field values properly when data has been loaded, preserving any user changes
+    if (isDiskAttributesSuccess || isSuccess) {
+      form.reset(defaultValues, {})
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSuccess, isDiskAttributesSuccess])
+
+  return (
+    &lt;&gt;
+      &lt;ScaffoldContainer className=&#34;relative flex flex-col gap-10&#34; bottomPadding&gt;
+        {isEntitlementsLoaded &amp;&amp; isPlanUpgradeRequired &amp;&amp; (
+          &lt;UpgradeToPro
+            featureProposition=&#34;configure compute and disk&#34;
+            primaryText=&#34;Only available on Pro Plan and above&#34;
+            secondaryText=&#34;Upgrade to the Pro Plan to configure compute and disk settings.&#34;
+          /&gt;
+        )}
+
+        {(isProjectResizing ||
+          isProjectRequestingDiskChanges ||
+          (isEntitlementsLoaded &amp;&amp; !isPlanUpgradeRequired &amp;&amp; noPermissions)) &amp;&amp; (
+          &lt;div className=&#34;relative flex flex-col gap-10&#34;&gt;
+            &lt;DiskMangementRestartRequiredSection
+              visible={isProjectResizing}
+              title=&#34;Your project will now automatically restart.&#34;
+              description=&#34;Your project will be unavailable for up to 2 mins.&#34;
+            /&gt;
+            &lt;NoticeBar
+              type=&#34;default&#34;
+              visible={isProjectRequestingDiskChanges}
+              title=&#34;Disk configuration changes have been requested&#34;
+              description=&#34;The requested changes will be applied to your disk shortly&#34;
+            /&gt;
+            &lt;NoticeBar
+              type=&#34;default&#34;
+              visible={isEntitlementsLoaded &amp;&amp; !isPlanUpgradeRequired &amp;&amp; noPermissions}
+              title=&#34;You do not have permission to update disk configuration&#34;
+              description=&#34;Please contact your organization administrator to update your disk configuration&#34;
+            /&gt;
+          &lt;/div&gt;
+        )}
+
+        &lt;Separator /&gt;
+      &lt;/ScaffoldContainer&gt;
+
+      &lt;Form_Shadcn_ {...form}&gt;
+        &lt;form
+          id=&#34;disk-compute-form&#34;
+          onSubmit={form.handleSubmit(onSubmit)}
+          className=&#34;flex flex-col gap-8&#34;
+        &gt;
+          &lt;ScaffoldContainer className=&#34;relative flex flex-col gap-10&#34; bottomPadding&gt;
+            &lt;ComputeSizeField form={form} disabled={disableComputeInputs} /&gt;
+
+            {!(isAws || isAwsNimbus) &amp;&amp; &lt;Separator /&gt;}
+
+            &lt;SpendCapDisabledSection /&gt;
+
+            &lt;div className=&#34;flex flex-col gap-y-4&#34;&gt;
+              &lt;NoticeBar
+                type=&#34;default&#34;
+                visible={!(isAws || isAwsNimbus)}
+                title=&#34;Disk configuration is only available for projects in the AWS cloud provider&#34;
+                description={
+                  isAwsK8s
+                    ? &#39;Configuring your disk for AWS (Revamped) projects is unavailable for now.&#39;
+                    : isBranch
+                      ? &#39;Delete and recreate your Preview Branch to configure disk size. It was deployed on an older branching infrastructure.&#39;
+                      : &#39;The Fly Postgres offering is deprecated - please migrate your instance to the AWS cloud prov to configure your disk.&#39;
+                }
+              /&gt;
+
+              {isAws &amp;&amp; (
+                &lt;&gt;
+                  &lt;div className=&#34;flex flex-col gap-y-3&#34;&gt;
+                    &lt;DiskCountdownRadial /&gt;
+                    {!isReadOnlyMode &amp;&amp; usedPercentage &gt;= 90 &amp;&amp; isWithinCooldownWindow &amp;&amp; (
+                      &lt;Admonition
+                        type=&#34;destructive&#34;
+                        title=&#34;Database size is currently over 90% of disk size&#34;
+                        description=&#34;Your project will enter read-only mode once you reach 95% of the disk space to prevent your database from exceeding the disk limitations&#34;
+                      &gt;
+                        &lt;DocsButton
+                          abbrev={false}
+                          className=&#34;mt-2&#34;
+                          href={`${DOCS_URL}/guides/platform/database-size#read-only-mode`}
+                        /&gt;
+                      &lt;/Admonition&gt;
+                    )}
+                    {isReadOnlyMode &amp;&amp; (
+                      &lt;Admonition
+                        type=&#34;destructive&#34;
+                        title=&#34;Project is currently in read-only mode&#34;
+                        description=&#34;You will need to manually override read-only mode and reduce the database size to below 95% of the disk size&#34;
+                      &gt;
+                        &lt;DocsButton
+                          abbrev={false}
+                          className=&#34;mt-2&#34;
+                          href={`${DOCS_URL}/guides/platform/database-size#disabling-read-only-mode`}
+                        /&gt;
+                      &lt;/Admonition&gt;
+                    )}
+                  &lt;/div&gt;
+
+                  &lt;DiskSizeField
+                    form={form}
+                    disableInput={disableDiskInputs}
+                    setAdvancedSettingsOpenState={setAdvancedSettingsOpenState}
+                  /&gt;
+                &lt;/&gt;
+              )}
+            &lt;/div&gt;
+
+            {isAws &amp;&amp; (
+              &lt;&gt;
+                &lt;Separator /&gt;
+
+                &lt;Collapsible_Shadcn_
+                  // TO DO: wrap component into pattern
+                  className=&#34;-space-y-px&#34;
+                  open={advancedSettingsOpen}
+                  onOpenChange={() =&gt; setAdvancedSettingsOpenState((prev) =&gt; !prev)}
+                &gt;
+                  &lt;CollapsibleTrigger_Shadcn_ className=&#34;px-[var(--card-padding-x)] py-3 w-full border flex items-center gap-6 rounded-t data-[state=closed]:rounded-b group justify-between&#34;&gt;
+                    &lt;div className=&#34;flex flex-col items-start&#34;&gt;
+                      &lt;span className=&#34;text-sm text-foreground&#34;&gt;Advanced disk settings&lt;/span&gt;
+                      &lt;span className=&#34;text-sm text-foreground-light text-left&#34;&gt;
+                        Specify additional settings for your disk, including autoscaling
+                        configuration, IOPS, throughput, and disk type.
+                      &lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;ChevronRight
+                      size={16}
+                      className=&#34;text-foreground-light transition-all group-data-[state=open]:rotate-90&#34;
+                      strokeWidth={1}
+                    /&gt;
+                  &lt;/CollapsibleTrigger_Shadcn_&gt;
+                  &lt;CollapsibleContent_Shadcn_
+                    className={cn(
+                      &#39;transition-all rounded-b&#39;,
+                      &#39;data-[state=open]:border data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down&#39;
+                    )}
+                  &gt;
+                    &lt;div className=&#34;flex flex-col gap-y-8 py-8&#34;&gt;
+                      &lt;div className=&#34;px-[var(--card-padding-x)] flex flex-col gap-y-8&#34;&gt;
+                        &lt;AutoScaleFields form={form} /&gt;
+                      &lt;/div&gt;
+                      &lt;Separator /&gt;
+                      &lt;div className=&#34;px-[var(--card-padding-x)] flex flex-col gap-y-8&#34;&gt;
+                        &lt;NoticeBar
+                          type=&#34;default&#34;
+                          visible={!!disableIopsThroughputConfig}
+                          title=&#34;Adjusting disk configuration requires LARGE Compute size or above&#34;
+                          description={`Increase your compute size to adjust your disk&#39;s storage type, ${form.getValues(&#39;storageType&#39;) === &#39;gp3&#39; ? &#39;IOPS, &#39; : &#39;&#39;} and throughput`}
+                          actions={
+                            canUpdateDiskConfiguration ? (
+                              &lt;Button
+                                type=&#34;default&#34;
+                                onClick={() =&gt; {
+                                  form.setValue(&#39;computeSize&#39;, &#39;ci_large&#39;)
+                                }}
+                              &gt;
+                                Change to LARGE Compute
+                              &lt;/Button&gt;
+                            ) : (
+                              &lt;RequestUpgradeToBillingOwners
+                                addon=&#34;computeSize&#34;
+                                featureProposition=&#34;adjust disk configuration&#34;
+                              /&gt;
+                            )
+                          }
+                        /&gt;
+                        &lt;StorageTypeField
+                          form={form}
+                          disableInput={disableIopsThroughputConfig || disableDiskInputs}
+                        /&gt;
+                        &lt;IOPSField
+                          form={form}
+                          disableInput={disableIopsThroughputConfig || disableDiskInputs}
+                        /&gt;
+                        &lt;ThroughputField
+                          form={form}
+                          disableInput={disableIopsThroughputConfig || disableDiskInputs}
+                        /&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/CollapsibleContent_Shadcn_&gt;
+                &lt;/Collapsible_Shadcn_&gt;
+              &lt;/&gt;
+            )}
+          &lt;/ScaffoldContainer&gt;
+
+          &lt;AnimatePresence&gt;
+            {isDirty ? (
+              &lt;motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.1, delay: 0.2 }}
+                className=&#34;z-10 w-full left-0 right-0 sticky bottom-0 bg-surface-100 border-t h-16 items-center flex&#34;
+              &gt;
+                &lt;div
+                  className={cn(
+                    MAX_WIDTH_CLASSES,
+                    PADDING_CLASSES,
+                    &#39;flex items-center gap-3 justify-end&#39;
+                  )}
+                &gt;
+                  &lt;FormFooterChangeBadge formState={formState} /&gt;
+                  &lt;Button
+                    type=&#34;default&#34;
+                    onClick={() =&gt; form.reset()}
+                    disabled={!isDirty}
+                    size=&#34;medium&#34;
+                  &gt;
+                    Cancel
+                  &lt;/Button&gt;
+                  &lt;DiskManagementReviewAndSubmitDialog
+                    loading={isUpdatingConfig}
+                    disabled={noPermissions}
+                    form={form}
+                    numReplicas={readReplicas.length}
+                    isDialogOpen={isDialogOpen}
+                    onSubmit={onSubmit}
+                    setIsDialogOpen={setIsDialogOpen}
+                    message={message}
+                  /&gt;
+                &lt;/div&gt;
+              &lt;/motion.div&gt;
+            ) : null}
+          &lt;/AnimatePresence&gt;
+        &lt;/form&gt;
+      &lt;/Form_Shadcn_&gt;
+    &lt;/&gt;
+  )
+}</code></pre>
+    </div>
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-studioapi.html">StudioAPI</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Subdomains</h2>
+      <ul><li><a href="/subdomain-authinterfaces.html">AuthInterfaces</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Calls</h2>
+      <ul><li><a href="/fn-diskmanagement-schema-ts-creatediskstorageschema.html">CreateDiskStorageSchema()</a></li><li><a href="/fn-diskmanagement-utils-ts-mapcomputesizenametoaddonvariantid.html">mapComputeSizeNameToAddonVariantId()</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/supabase/blob/main/apps/studio/components/interfaces/DiskManagement/DiskManagementForm.tsx#L70">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does DiskManagementForm() do?</summary>
+        <div class="faq-answer">DiskManagementForm() is a function in the supabase codebase.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What does DiskManagementForm() call?</summary>
+        <div class="faq-answer">DiskManagementForm() calls 2 function(s): CreateDiskStorageSchema, mapComputeSizeNameToAddonVariantId.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

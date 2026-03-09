@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>WhyUseStandbyKeysIllustration() — supabase Function Reference | supabase Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the WhyUseStandbyKeysIllustration() function in illustrations.tsx from the supabase codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/fn-illustrations-tsx-whyusestandbykeysillustration/">
+<meta property="og:title" content="WhyUseStandbyKeysIllustration() — supabase Function Reference — supabase Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the WhyUseStandbyKeysIllustration() function in illustrations.tsx from the supabase codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/fn-illustrations-tsx-whyusestandbykeysillustration.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/fn-illustrations-tsx-whyusestandbykeysillustration.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="supabase Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WhyUseStandbyKeysIllustration() — supabase Function Reference — supabase Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the WhyUseStandbyKeysIllustration() function in illustrations.tsx from the supabase codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-illustrations-tsx-whyusestandbykeysillustration.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the WhyUseStandbyKeysIllustration() function in illustrations.tsx from the supabase codebase.","image":["https://repos.supermodeltools.com/images/share/fn-illustrations-tsx-whyusestandbykeysillustration.svg"],"name":"WhyUseStandbyKeysIllustration() — supabase Function Reference","url":"https://repos.supermodeltools.com/fn-illustrations-tsx-whyusestandbykeysillustration.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"WhyUseStandbyKeysIllustration() — supabase Function Reference","position":2}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      supabase Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/function.html">Function</a><span class="sep">/</span>
+        <span>WhyUseStandbyKeysIllustration() — supabase Function Reference</span>
+      </div>
+      <h1 class="entity-title">WhyUseStandbyKeysIllustration() — supabase Function Reference</h1>
+      <p class="entity-desc">Architecture documentation for the WhyUseStandbyKeysIllustration() function in illustrations.tsx from the supabase codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/function.html" class="pill pill-accent">Function</a>
+        <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
+        <a href="/domain/studioapi.html" class="pill pill-green">StudioAPI</a>
+        <a href="/subdomain/authinterfaces.html" class="pill pill-orange">AuthInterfaces</a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"el":384,"lc":143,"sl":242}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+      <div class="visuals-archmap" id="arch-map-container">
+        <div class="arch-map-svg"></div>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"StudioAPI","slug":"domain-studioapi"},"entity":{"name":"WhyUseStandbyKeysIllustration","slug":"fn-illustrations-tsx-whyusestandbykeysillustration","type":"Function"},"subdomain":{"name":"AuthInterfaces","slug":"subdomain-authinterfaces"}}</script>
+        <noscript>
+          <div class="arch-map-fallback">
+            <a href="/studioapi.html">StudioAPI</a><span class="arch-sep">&rarr;</span>
+            <a href="/authinterfaces.html">AuthInterfaces</a><span class="arch-sep">&rarr;</span>
+            <span>WhyUseStandbyKeysIllustration() — supabase Function Reference</span>
+          </div>
+        </noscript>
+      </div>
+      
+
+      
+      <div class="visuals-row">
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="fn-illustrations-tsx-whyusestandbykeysillustration"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"36a589eb:ec87:5cd2:1059:437e9582ad17","label":"WhyUseStandbyKeysIllustration","type":"Function","slug":"fn-illustrations-tsx-whyusestandbykeysillustration","lc":143,"lang":"tsx"},{"id":"domain:StudioAPI","label":"StudioAPI","type":"Domain","slug":"domain-studioapi"},{"id":"subdomain:StudioAPI:AuthInterfaces","label":"AuthInterfaces","type":"Subdomain","slug":"subdomain-authinterfaces"}],"edges":[{"source":"36a589eb:ec87:5cd2:1059:437e9582ad17","target":"domain:StudioAPI","type":"belongsTo"},{"source":"36a589eb:ec87:5cd2:1059:437e9582ad17","target":"subdomain:StudioAPI:AuthInterfaces","type":"belongsTo"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">apps/studio/components/interfaces/JwtSecrets/illustrations.tsx lines 242–384</p>
+      <pre class="source-code"><code class="language-tsx">export const WhyUseStandbyKeysIllustration = () =&gt; (
+  &lt;svg
+    width=&#34;180&#34;
+    height=&#34;150&#34;
+    viewBox=&#34;0 0 180 150&#34;
+    fill=&#34;none&#34;
+    xmlns=&#34;http://www.w3.org/2000/svg&#34;
+  &gt;
+    &lt;g clip-path=&#34;url(#clip0_10_801)&#34;&gt;
+      &lt;rect
+        opacity=&#34;0.5&#34;
+        x=&#34;43.25&#34;
+        y=&#34;24.2769&#34;
+        width=&#34;175.006&#34;
+        height=&#34;36.9587&#34;
+        rx=&#34;18.4793&#34;
+        stroke=&#34;#4D4D4D&#34;
+      /&gt;
+      &lt;rect
+        opacity=&#34;0.25&#34;
+        x=&#34;34.3435&#34;
+        y=&#34;15.25&#34;
+        width=&#34;247.068&#34;
+        height=&#34;52.5&#34;
+        rx=&#34;26.25&#34;
+        stroke=&#34;#4D4D4D&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M47.2647 86.8536C47.4599 86.6583 47.4599 86.3417 47.2647 86.1464L44.0827 82.9645C43.8874 82.7692 43.5709 82.7692 43.3756 82.9645C43.1803 83.1597 43.1803 83.4763 43.3756 83.6716L46.204 86.5L43.3756 89.3284C43.1803 89.5237 43.1803 89.8403 43.3756 90.0355C43.5709 90.2308 43.8874 90.2308 44.0827 90.0355L47.2647 86.8536ZM54.9111 42.2563H35.9111V43.2563H54.9111V42.2563ZM25.4111 52.7563V76.5H26.4111V52.7563H25.4111ZM35.9111 87H46.9111V86H35.9111V87ZM25.4111 76.5C25.4111 82.299 30.1121 87 35.9111 87V86C30.6644 86 26.4111 81.7467 26.4111 76.5H25.4111ZM35.9111 42.2563C30.1121 42.2563 25.4111 46.9573 25.4111 52.7563H26.4111C26.4111 47.5096 30.6644 43.2563 35.9111 43.2563V42.2563Z&#34;
+        fill=&#34;#FAFAFA&#34;
+      /&gt;
+      &lt;mask id=&#34;path-4-inside-1_10_801&#34; fill=&#34;white&#34;&gt;
+        &lt;path d=&#34;M52.9111 43C52.9111 36.9249 57.836 32 63.9111 32H181.911V54H63.9111C57.836 54 52.9111 49.0751 52.9111 43V43Z&#34; /&gt;
+      &lt;/mask&gt;
+      &lt;path
+        d=&#34;M52.9111 43C52.9111 36.9249 57.836 32 63.9111 32H181.911V54H63.9111C57.836 54 52.9111 49.0751 52.9111 43V43Z&#34;
+        fill=&#34;#292929&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M51.9111 43C51.9111 36.3726 57.2837 31 63.9111 31H181.911V33H63.9111C58.3883 33 53.9111 37.4772 53.9111 43H51.9111ZM181.911 55H63.9111C57.2837 55 51.9111 49.6274 51.9111 43H53.9111C53.9111 48.5228 58.3883 53 63.9111 53H181.911V55ZM63.9111 55C57.2837 55 51.9111 49.6274 51.9111 43C51.9111 36.3726 57.2837 31 63.9111 31V33C58.3883 33 53.9111 37.4772 53.9111 43C53.9111 48.5228 58.3883 53 63.9111 53V55ZM181.911 32V54V32Z&#34;
+        fill=&#34;#4D4D4D&#34;
+        mask=&#34;url(#path-4-inside-1_10_801)&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M69.9111 38H71.9111&#34;
+        stroke=&#34;#B4B4B4&#34;
+        stroke-linecap=&#34;round&#34;
+        stroke-linejoin=&#34;round&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M70.9111 44L72.4111 42.5&#34;
+        stroke=&#34;#B4B4B4&#34;
+        stroke-linecap=&#34;round&#34;
+        stroke-linejoin=&#34;round&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M70.9111 48C73.1203 48 74.9111 46.2091 74.9111 44C74.9111 41.7909 73.1203 40 70.9111 40C68.702 40 66.9111 41.7909 66.9111 44C66.9111 46.2091 68.702 48 70.9111 48Z&#34;
+        stroke=&#34;#B4B4B4&#34;
+        stroke-linecap=&#34;round&#34;
+        stroke-linejoin=&#34;round&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M86.4898 47.132C85.4338 47.132 84.5208 46.714 83.8718 46.054L84.4218 45.416C84.9608 45.966 85.7088 46.329 86.5008 46.329C87.5238 46.329 88.1068 45.856 88.1068 45.141C88.1068 44.393 87.5458 44.173 86.8088 43.854L85.7748 43.403C85.0488 43.117 84.2128 42.589 84.2128 41.533C84.2128 40.422 85.2028 39.608 86.5778 39.608C87.4798 39.608 88.2718 39.971 88.7998 40.499L88.3158 41.093C87.8428 40.675 87.2928 40.411 86.5778 40.411C85.7088 40.411 85.1478 40.818 85.1478 41.478C85.1478 42.171 85.8188 42.424 86.4348 42.688L87.4468 43.128C88.3268 43.513 89.0418 43.986 89.0418 45.064C89.0418 46.219 88.0738 47.132 86.4898 47.132ZM93.0685 47V40.51H90.6925V39.74H96.3685V40.51H93.9925V47H93.0685ZM97.6782 47L100.109 39.74H101.143L103.574 47H102.606L101.924 44.778H99.3062L98.6132 47H97.6782ZM99.5372 44.041H101.693L101.352 42.93C101.099 42.116 100.868 41.335 100.637 40.488H100.593C100.362 41.335 100.131 42.116 99.8782 42.93L99.5372 44.041ZM105.335 47V39.74H106.27L108.613 44.327L109.339 45.812H109.361C109.328 45.097 109.24 44.272 109.24 43.513V39.74H110.109V47H109.174L106.831 42.413L106.105 40.928H106.083C106.116 41.665 106.204 42.446 106.204 43.194V47H105.335ZM112.453 47V39.74H114.213C116.391 39.74 117.557 41.038 117.557 43.337C117.557 45.647 116.391 47 114.257 47H112.453ZM113.366 46.252H114.158C115.797 46.252 116.611 45.174 116.611 43.337C116.611 41.511 115.797 40.488 114.158 40.488H113.366V46.252ZM119.746 47V39.74H121.726C123.2 39.74 124.201 40.235 124.201 41.511C124.201 42.226 123.783 42.875 122.936 43.095V43.139C123.992 43.304 124.608 43.876 124.608 44.877C124.608 46.307 123.497 47 121.891 47H119.746ZM120.67 42.842H121.572C122.804 42.842 123.299 42.391 123.299 41.588C123.299 40.796 122.727 40.466 121.616 40.466H120.67V42.842ZM120.67 46.274H121.759C122.991 46.274 123.706 45.823 123.706 44.833C123.706 43.931 123.024 43.524 121.759 43.524H120.67V46.274ZM128.547 47V44.404L126.127 39.74H127.095L128.184 41.907C128.459 42.457 128.712 43.007 129.009 43.59H129.053C129.339 43.007 129.625 42.446 129.9 41.885L130.945 39.74H131.891L129.471 44.404V47H128.547ZM140.978 47V39.74H141.902V43.381H141.935L144.971 39.74H146.005L143.728 42.501L146.269 47H145.246L143.156 43.216L141.902 44.69V47H140.978ZM148.261 47V39.74H152.716V40.51H149.185V42.798H152.166V43.579H149.185V46.219H152.826V47H148.261ZM156.93 47V44.404L154.51 39.74H155.478L156.567 41.907C156.842 42.457 157.095 43.007 157.392 43.59H157.436C157.722 43.007 158.008 42.446 158.283 41.885L159.328 39.74H160.274L157.854 44.404V47H156.93Z&#34;
+        fill=&#34;#FAFAFA&#34;
+      /&gt;
+      &lt;mask id=&#34;path-10-inside-2_10_801&#34; fill=&#34;white&#34;&gt;
+        &lt;path d=&#34;M52.9111 86C52.9111 79.9249 57.836 75 63.9111 75H181.911V97H63.9111C57.836 97 52.9111 92.0751 52.9111 86V86Z&#34; /&gt;
+      &lt;/mask&gt;
+      &lt;path
+        d=&#34;M52.9111 86C52.9111 79.9249 57.836 75 63.9111 75H181.911V97H63.9111C57.836 97 52.9111 92.0751 52.9111 86V86Z&#34;
+        fill=&#34;#002918&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M51.9111 86C51.9111 79.3726 57.2837 74 63.9111 74H181.911V76H63.9111C58.3883 76 53.9111 80.4772 53.9111 86H51.9111ZM181.911 98H63.9111C57.2837 98 51.9111 92.6274 51.9111 86H53.9111C53.9111 91.5228 58.3883 96 63.9111 96H181.911V98ZM63.9111 98C57.2837 98 51.9111 92.6274 51.9111 86C51.9111 79.3726 57.2837 74 63.9111 74V76C58.3883 76 53.9111 80.4772 53.9111 86C53.9111 91.5228 58.3883 96 63.9111 96V98ZM181.911 75V97V75Z&#34;
+        fill=&#34;#006239&#34;
+        mask=&#34;url(#path-10-inside-2_10_801)&#34;
+      /&gt;
+      &lt;g clip-path=&#34;url(#clip1_10_801)&#34;&gt;
+        &lt;path
+          d=&#34;M75.411 81L74.411 82M74.411 82L75.911 83.5L74.161 85.25L72.661 83.75M74.411 82L72.661 83.75M70.606 85.805C70.8642 86.0597 71.0694 86.363 71.2099 86.6974C71.3504 87.0318 71.4233 87.3906 71.4245 87.7533C71.4258 88.116 71.3552 88.4753 71.217 88.8107C71.0788 89.146 70.8756 89.4506 70.6191 89.7071C70.3626 89.9635 70.058 90.1667 69.7227 90.305C69.3874 90.4432 69.028 90.5137 68.6653 90.5125C68.3027 90.5113 67.9438 90.4384 67.6094 90.2979C67.275 90.1574 66.9718 89.9522 66.717 89.694C66.2161 89.1753 65.9389 88.4807 65.9452 87.7596C65.9514 87.0386 66.2407 86.3489 66.7505 85.839C67.2604 85.3291 67.9501 85.0399 68.6712 85.0336C69.3922 85.0274 70.0869 85.3046 70.6055 85.8055L70.606 85.805ZM70.606 85.805L72.661 83.75&#34;
+          stroke=&#34;#006239&#34;
+          stroke-linecap=&#34;round&#34;
+          stroke-linejoin=&#34;round&#34;
+        /&gt;
+      &lt;/g&gt;
+      &lt;path
+        d=&#34;M87.0288 90.132C85.2138 90.132 83.8608 88.735 83.8608 86.37C83.8608 84.038 85.2028 82.608 87.0838 82.608C87.9528 82.608 88.6348 83.026 89.0528 83.488L88.5358 84.071C88.1618 83.675 87.6888 83.411 87.0838 83.411C85.6978 83.411 84.8068 84.544 84.8068 86.348C84.8068 88.174 85.6978 89.329 87.0838 89.329C87.7438 89.329 88.2388 89.043 88.7008 88.526L89.2288 89.087C88.6568 89.747 87.9528 90.132 87.0288 90.132ZM93.5415 90.132C92.1225 90.132 91.0995 89.34 91.0995 87.261V82.74H92.0235V87.272C92.0235 88.79 92.6725 89.329 93.5415 89.329C94.4105 89.329 95.0705 88.79 95.0705 87.272V82.74H95.9615V87.261C95.9615 89.34 94.9495 90.132 93.5415 90.132ZM98.4262 90V82.74H100.67C102.133 82.74 103.189 83.268 103.189 84.775C103.189 85.908 102.551 86.579 101.572 86.832L103.409 90H102.364L100.626 86.931H99.3392V90H98.4262ZM99.3392 86.183H100.538C101.66 86.183 102.276 85.721 102.276 84.775C102.276 83.818 101.66 83.477 100.538 83.477H99.3392V86.183ZM105.522 90V82.74H107.766C109.229 82.74 110.285 83.268 110.285 84.775C110.285 85.908 109.647 86.579 108.668 86.832L110.505 90H109.46L107.722 86.931H106.435V90H105.522ZM106.435 86.183H107.634C108.756 86.183 109.372 85.721 109.372 84.775C109.372 83.818 108.756 83.477 107.634 83.477H106.435V86.183ZM112.783 90V82.74H117.238V83.51H113.707V85.798H116.688V86.579H113.707V89.219H117.348V90H112.783ZM119.526 90V82.74H120.461L122.804 87.327L123.53 88.812H123.552C123.519 88.097 123.431 87.272 123.431 86.513V82.74H124.3V90H123.365L121.022 85.413L120.296 83.928H120.274C120.307 84.665 120.395 85.446 120.395 86.194V90H119.526ZM128.547 90V83.51H126.171V82.74H131.847V83.51H129.471V90H128.547ZM140.978 90V82.74H141.902V86.381H141.935L144.971 82.74H146.005L143.728 85.501L146.269 90H145.246L143.156 86.216L141.902 87.69V90H140.978ZM148.261 90V82.74H152.716V83.51H149.185V85.798H152.166V86.579H149.185V89.219H152.826V90H148.261ZM156.93 90V87.404L154.51 82.74H155.478L156.567 84.907C156.842 85.457 157.095 86.007 157.392 86.59H157.436C157.722 86.007 158.008 85.446 158.283 84.885L159.328 82.74H160.274L157.854 87.404V90H156.93Z&#34;
+        fill=&#34;#85E0BA&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M46.9111 96.5C47.1873 96.5 47.4111 96.2761 47.4111 96C47.4111 95.7239 47.1873 95.5 46.9111 95.5V96.5ZM47.2647 131.884C47.4599 131.688 47.4599 131.372 47.2647 131.176L44.0827 127.994C43.8874 127.799 43.5709 127.799 43.3756 127.994C43.1803 128.19 43.1803 128.506 43.3756 128.702L46.204 131.53L43.3756 134.358C43.1803 134.554 43.1803 134.87 43.3756 135.066C43.5709 135.261 43.8874 135.261 44.0827 135.066L47.2647 131.884ZM45.9945 95.5C45.7183 95.5 45.4945 95.7239 45.4945 96C45.4945 96.2761 45.7183 96.5 45.9945 96.5V95.5ZM44.1611 96.5C44.4373 96.5 44.6611 96.2761 44.6611 96C44.6611 95.7239 44.4373 95.5 44.1611 95.5V96.5ZM42.3278 95.5C42.0517 95.5 41.8278 95.7239 41.8278 96C41.8278 96.2761 42.0517 96.5 42.3278 96.5V95.5ZM40.4945 96.5C40.7706 96.5 40.9945 96.2761 40.9945 96C40.9945 95.7239 40.7706 95.5 40.4945 95.5V96.5ZM38.6611 95.5C38.385 95.5 38.1611 95.7239 38.1611 96C38.1611 96.2761 38.385 96.5 38.6611 96.5V95.5ZM36.8278 96.5C37.1039 96.5 37.3278 96.2761 37.3278 96C37.3278 95.7239 37.1039 95.5 36.8278 95.5V96.5ZM34.8822 95.5498C34.6073 95.5766 34.4062 95.8211 34.4329 96.0959C34.4597 96.3707 34.7042 96.5719 34.979 96.5451L34.8822 95.5498ZM33.1523 96.9067C33.4166 96.8266 33.5659 96.5474 33.4858 96.2832C33.4058 96.0189 33.1266 95.8695 32.8623 95.9496L33.1523 96.9067ZM30.9602 96.7383C30.7168 96.8686 30.6252 97.1717 30.7556 97.4151C30.886 97.6585 31.189 97.7502 31.4324 97.6198L30.9602 96.7383ZM29.8845 98.6559C30.0979 98.4806 30.1287 98.1655 29.9534 97.9522C29.7781 97.7388 29.4631 97.708 29.2497 97.8833L29.8845 98.6559ZM27.7944 99.3386C27.6191 99.5519 27.65 99.867 27.8633 100.042C28.0767 100.218 28.3918 100.187 28.5671 99.9734L27.7944 99.3386ZM27.5309 101.521C27.6613 101.278 27.5696 100.975 27.3262 100.844C27.0828 100.714 26.7798 100.806 26.6494 101.049L27.5309 101.521ZM25.8607 102.951C25.7807 103.215 25.93 103.495 26.1943 103.575C26.4586 103.655 26.7377 103.505 26.8178 103.241L25.8607 102.951ZM26.4562 105.068C26.483 104.793 26.2819 104.549 26.007 104.522C25.7322 104.495 25.4877 104.696 25.4609 104.971L26.4562 105.068ZM25.4111 106.971C25.4111 107.247 25.635 107.471 25.9111 107.471C26.1873 107.471 26.4111 107.247 26.4111 106.971H25.4111ZM26.4111 108.912C26.4111 108.636 26.1873 108.412 25.9111 108.412C25.635 108.412 25.4111 108.636 25.4111 108.912H26.4111ZM25.4111 110.853C25.4111 111.129 25.635 111.353 25.9111 111.353C26.1873 111.353 26.4111 111.129 26.4111 110.853H25.4111ZM26.4111 112.794C26.4111 112.518 26.1873 112.294 25.9111 112.294C25.635 112.294 25.4111 112.518 25.4111 112.794H26.4111ZM25.4111 114.736C25.4111 115.012 25.635 115.236 25.9111 115.236C26.1873 115.236 26.4111 115.012 26.4111 114.736H25.4111ZM26.4111 116.677C26.4111 116.401 26.1873 116.177 25.9111 116.177C25.635 116.177 25.4111 116.401 25.4111 116.677H26.4111ZM25.4111 118.618C25.4111 118.894 25.635 119.118 25.9111 119.118C26.1873 119.118 26.4111 118.894 26.4111 118.618H25.4111ZM26.4111 120.559C26.4111 120.283 26.1873 120.059 25.9111 120.059C25.635 120.059 25.4111 120.283 25.4111 120.559H26.4111ZM25.4609 122.559C25.4877 122.834 25.7322 123.035 26.007 123.008C26.2819 122.981 26.483 122.737 26.4562 122.462L25.4609 122.559ZM26.8178 124.289C26.7377 124.025 26.4586 123.875 26.1943 123.955C25.93 124.035 25.7807 124.315 25.8607 124.579L26.8178 124.289ZM26.6494 126.481C26.7798 126.724 27.0828 126.816 27.3262 126.686C27.5696 126.555 27.6613 126.252 27.5309 126.009L26.6494 126.481ZM28.5671 127.557C28.3918 127.343 28.0767 127.312 27.8633 127.488C27.65 127.663 27.6191 127.978 27.7944 128.191L28.5671 127.557ZM29.2497 129.647C29.4631 129.822 29.7781 129.791 29.9534 129.578C30.1287 129.364 30.0979 129.049 29.8845 128.874L29.2497 129.647ZM31.4324 129.91C31.189 129.78 30.886 129.872 30.7556 130.115C30.6252 130.358 30.7168 130.661 30.9603 130.792L31.4324 129.91ZM32.8623 131.58C33.1266 131.66 33.4058 131.511 33.4858 131.247C33.5659 130.983 33.4166 130.703 33.1523 130.623L32.8623 131.58ZM34.979 130.985C34.7042 130.958 34.4597 131.159 34.4329 131.434C34.4062 131.709 34.6073 131.953 34.8822 131.98L34.979 130.985ZM36.8278 132.03C37.1039 132.03 37.3278 131.806 37.3278 131.53C37.3278 131.254 37.1039 131.03 36.8278 131.03V132.03ZM38.6611 131.03C38.385 131.03 38.1611 131.254 38.1611 131.53C38.1611 131.806 38.385 132.03 38.6611 132.03V131.03ZM40.4945 132.03C40.7706 132.03 40.9945 131.806 40.9945 131.53C40.9945 131.254 40.7706 131.03 40.4945 131.03V132.03ZM42.3278 131.03C42.0517 131.03 41.8278 131.254 41.8278 131.53C41.8278 131.806 42.0517 132.03 42.3278 132.03V131.03ZM44.1611 132.03C44.4373 132.03 44.6611 131.806 44.6611 131.53C44.6611 131.254 44.4373 131.03 44.1611 131.03V132.03ZM45.9945 131.03C45.7183 131.03 45.4945 131.254 45.4945 131.53C45.4945 131.806 45.7183 132.03 45.9945 132.03V131.03ZM46.9111 95.5H45.9945V96.5H46.9111V95.5ZM44.1611 95.5H42.3278V96.5H44.1611V95.5ZM40.4945 95.5H38.6611V96.5H40.4945V95.5ZM36.8278 95.5H35.9111V96.5H36.8278V95.5ZM35.9111 95.5C35.5641 95.5 35.2208 95.5169 34.8822 95.5498L34.979 96.5451C35.2855 96.5153 35.5965 96.5 35.9111 96.5V95.5ZM32.8623 95.9496C32.198 96.1509 31.5616 96.4162 30.9602 96.7383L31.4324 97.6198C31.9763 97.3285 32.5517 97.0886 33.1523 96.9067L32.8623 95.9496ZM29.2497 97.8833C28.7185 98.3197 28.2309 98.8073 27.7944 99.3386L28.5671 99.9734C28.9622 99.4925 29.4036 99.051 29.8845 98.6559L29.2497 97.8833ZM26.6494 101.049C26.3273 101.65 26.062 102.287 25.8607 102.951L26.8178 103.241C26.9997 102.641 27.2396 102.065 27.5309 101.521L26.6494 101.049ZM25.4609 104.971C25.428 105.31 25.4111 105.653 25.4111 106H26.4111C26.4111 105.685 26.4264 105.374 26.4562 105.068L25.4609 104.971ZM25.4111 106V106.971H26.4111V106H25.4111ZM25.4111 108.912V110.853H26.4111V108.912H25.4111ZM25.4111 112.794V114.736H26.4111V112.794H25.4111ZM25.4111 116.677V118.618H26.4111V116.677H25.4111ZM25.4111 120.559V121.53H26.4111V120.559H25.4111ZM25.4111 121.53C25.4111 121.877 25.428 122.22 25.4609 122.559L26.4562 122.462C26.4264 122.156 26.4111 121.845 26.4111 121.53H25.4111ZM25.8607 124.579C26.062 125.243 26.3273 125.88 26.6494 126.481L27.5309 126.009C27.2396 125.465 26.9997 124.889 26.8178 124.289L25.8607 124.579ZM27.7944 128.191C28.2309 128.723 28.7185 129.21 29.2497 129.647L29.8845 128.874C29.4036 128.479 28.9622 128.038 28.5671 127.557L27.7944 128.191ZM30.9603 130.792C31.5616 131.114 32.198 131.379 32.8623 131.58L33.1523 130.623C32.5517 130.441 31.9763 130.202 31.4324 129.91L30.9603 130.792ZM34.8822 131.98C35.2208 132.013 35.5641 132.03 35.9111 132.03V131.03C35.5965 131.03 35.2855 131.015 34.979 130.985L34.8822 131.98ZM35.9111 132.03H36.8278V131.03H35.9111V132.03ZM38.6611 132.03H40.4945V131.03H38.6611V132.03ZM42.3278 132.03H44.1611V131.03H42.3278V132.03ZM45.9945 132.03H46.9111V131.03H45.9945V132.03Z&#34;
+        fill=&#34;#9F3BE1&#34;
+      /&gt;
+      &lt;mask id=&#34;path-15-inside-3_10_801&#34; fill=&#34;white&#34;&gt;
+        &lt;path d=&#34;M52.9111 131.53C52.9111 125.455 57.836 120.53 63.9111 120.53H181.911V142.53H63.9111C57.836 142.53 52.9111 137.605 52.9111 131.53V131.53Z&#34; /&gt;
+      &lt;/mask&gt;
+      &lt;path
+        d=&#34;M52.9111 131.53C52.9111 125.455 57.836 120.53 63.9111 120.53H181.911V142.53H63.9111C57.836 142.53 52.9111 137.605 52.9111 131.53V131.53Z&#34;
+        fill=&#34;#1A161D&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M51.9111 131.53C51.9111 124.903 57.2837 119.53 63.9111 119.53H181.911V121.53H63.9111C58.3883 121.53 53.9111 126.007 53.9111 131.53H51.9111ZM181.911 143.53H63.9111C57.2837 143.53 51.9111 138.157 51.9111 131.53H53.9111C53.9111 137.053 58.3883 141.53 63.9111 141.53H181.911V143.53ZM63.9111 143.53C57.2837 143.53 51.9111 138.157 51.9111 131.53C51.9111 124.903 57.2837 119.53 63.9111 119.53V121.53C58.3883 121.53 53.9111 126.007 53.9111 131.53C53.9111 137.053 58.3883 141.53 63.9111 141.53V143.53ZM181.911 120.53V142.53V120.53Z&#34;
+        fill=&#34;#9F3BE1&#34;
+        mask=&#34;url(#path-15-inside-3_10_801)&#34;
+      /&gt;
+      &lt;g clip-path=&#34;url(#clip2_10_801)&#34;&gt;
+        &lt;path
+          d=&#34;M75.411 126.53L74.411 127.53M74.411 127.53L75.911 129.03L74.161 130.78L72.661 129.28M74.411 127.53L72.661 129.28M70.606 131.335C70.8642 131.59 71.0694 131.893 71.2099 132.227C71.3504 132.562 71.4233 132.921 71.4245 133.283C71.4258 133.646 71.3552 134.005 71.217 134.341C71.0788 134.676 70.8756 134.981 70.6191 135.237C70.3626 135.494 70.058 135.697 69.7227 135.835C69.3874 135.973 69.028 136.044 68.6653 136.043C68.3027 136.041 67.9438 135.968 67.6094 135.828C67.275 135.687 66.9718 135.482 66.717 135.224C66.2161 134.705 65.9389 134.011 65.9452 133.29C65.9514 132.569 66.2407 131.879 66.7505 131.369C67.2604 130.859 67.9501 130.57 68.6712 130.564C69.3922 130.557 70.0869 130.835 70.6055 131.336L70.606 131.335ZM70.606 131.335L72.661 129.28&#34;
+          stroke=&#34;#7C5695&#34;
+          stroke-linecap=&#34;round&#34;
+          stroke-linejoin=&#34;round&#34;
+        /&gt;
+      &lt;/g&gt;
+      &lt;path
+        d=&#34;M84.2089 135.53V128.27H86.4199C88.0149 128.27 89.0819 128.809 89.0819 130.404C89.0819 131.933 88.0039 132.648 86.4199 132.648H85.1219V135.53H84.2089ZM85.1219 131.9H86.2989C87.5639 131.9 88.1689 131.438 88.1689 130.404C88.1689 129.348 87.5529 129.007 86.2989 129.007H85.1219V131.9ZM91.2826 135.53V128.27H93.5266C94.9896 128.27 96.0456 128.798 96.0456 130.305C96.0456 131.438 95.4076 132.109 94.4286 132.362L96.2656 135.53H95.2206L93.4826 132.461H92.1956V135.53H91.2826ZM92.1956 131.713H93.3946C94.5166 131.713 95.1326 131.251 95.1326 130.305C95.1326 129.348 94.5166 129.007 93.3946 129.007H92.1956V131.713ZM98.5433 135.53V128.27H102.998V129.04H99.4673V131.328H102.448V132.109H99.4673V134.749H103.108V135.53H98.5433ZM107.146 135.53L104.847 128.27H105.815L106.981 132.197C107.234 133.055 107.41 133.737 107.674 134.595H107.718C107.982 133.737 108.158 133.055 108.411 132.197L109.566 128.27H110.501L108.213 135.53H107.146ZM112.515 135.53V134.749H114.308V129.04H112.515V128.27H117.025V129.04H115.232V134.749H117.025V135.53H112.515ZM121.865 135.662C120.237 135.662 119.093 134.199 119.093 131.867C119.093 129.546 120.237 128.138 121.865 128.138C123.493 128.138 124.637 129.557 124.637 131.867C124.637 134.199 123.493 135.662 121.865 135.662ZM121.865 134.859C122.965 134.859 123.691 133.682 123.691 131.867C123.691 130.063 122.965 128.941 121.865 128.941C120.765 128.941 120.039 130.063 120.039 131.867C120.039 133.682 120.765 134.859 121.865 134.859ZM128.972 135.662C127.553 135.662 126.53 134.87 126.53 132.791V128.27H127.454V132.802C127.454 134.32 128.103 134.859 128.972 134.859C129.841 134.859 130.501 134.32 130.501 132.802V128.27H131.392V132.791C131.392 134.87 130.38 135.662 128.972 135.662ZM136.112 135.662C135.056 135.662 134.143 135.244 133.494 134.584L134.044 133.946C134.583 134.496 135.331 134.859 136.123 134.859C137.146 134.859 137.729 134.386 137.729 133.671C137.729 132.923 137.168 132.703 136.431 132.384L135.397 131.933C134.671 131.647 133.835 131.119 133.835 130.063C133.835 128.952 134.825 128.138 136.2 128.138C137.102 128.138 137.894 128.501 138.422 129.029L137.938 129.623C137.465 129.205 136.915 128.941 136.2 128.941C135.331 128.941 134.77 129.348 134.77 130.008C134.77 130.701 135.441 130.954 136.057 131.218L137.069 131.658C137.949 132.043 138.664 132.516 138.664 133.594C138.664 134.749 137.696 135.662 136.112 135.662ZM148.026 135.53V128.27H148.95V131.911H148.983L152.019 128.27H153.053L150.776 131.031L153.317 135.53H152.294L150.204 131.746L148.95 133.22V135.53H148.026ZM155.309 135.53V128.27H159.764V129.04H156.233V131.328H159.214V132.109H156.233V134.749H159.874V135.53H155.309ZM163.978 135.53V132.934L161.558 128.27H162.526L163.615 130.437C163.89 130.987 164.143 131.537 164.44 132.12H164.484C164.77 131.537 165.056 130.976 165.331 130.415L166.376 128.27H167.322L164.902 132.934V135.53H163.978Z&#34;
+        fill=&#34;#C792EA&#34;
+      /&gt;
+      &lt;rect y=&#34;101.5&#34; width=&#34;190&#34; height=&#34;48.5&#34; fill=&#34;url(#paint0_linear_10_801)&#34; /&gt;
+    &lt;/g&gt;
+    &lt;defs&gt;
+      &lt;linearGradient
+        id=&#34;paint0_linear_10_801&#34;
+        x1=&#34;95&#34;
+        y1=&#34;101.5&#34;
+        x2=&#34;95&#34;
+        y2=&#34;150&#34;
+        gradientUnits=&#34;userSpaceOnUse&#34;
+      &gt;
+        &lt;stop stop-color=&#34;#1F1F1F&#34; stop-opacity=&#34;0&#34; /&gt;
+        &lt;stop offset=&#34;0.775&#34; stop-color=&#34;#1F1F1F&#34; /&gt;
+      &lt;/linearGradient&gt;
+      &lt;clipPath id=&#34;clip0_10_801&#34;&gt;
+        &lt;rect width=&#34;180&#34; height=&#34;150&#34; fill=&#34;white&#34; /&gt;
+      &lt;/clipPath&gt;
+      &lt;clipPath id=&#34;clip1_10_801&#34;&gt;
+        &lt;rect width=&#34;12&#34; height=&#34;12&#34; fill=&#34;white&#34; transform=&#34;translate(64.9111 80)&#34; /&gt;
+      &lt;/clipPath&gt;
+      &lt;clipPath id=&#34;clip2_10_801&#34;&gt;
+        &lt;rect width=&#34;12&#34; height=&#34;12&#34; fill=&#34;white&#34; transform=&#34;translate(64.9111 125.53)&#34; /&gt;
+      &lt;/clipPath&gt;
+    &lt;/defs&gt;
+  &lt;/svg&gt;
+)</code></pre>
+    </div>
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-studioapi.html">StudioAPI</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Subdomains</h2>
+      <ul><li><a href="/subdomain-authinterfaces.html">AuthInterfaces</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/supabase/blob/main/apps/studio/components/interfaces/JwtSecrets/illustrations.tsx#L242">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

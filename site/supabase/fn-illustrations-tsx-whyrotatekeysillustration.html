@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>WhyRotateKeysIllustration() — supabase Function Reference | supabase Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the WhyRotateKeysIllustration() function in illustrations.tsx from the supabase codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/fn-illustrations-tsx-whyrotatekeysillustration/">
+<meta property="og:title" content="WhyRotateKeysIllustration() — supabase Function Reference — supabase Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the WhyRotateKeysIllustration() function in illustrations.tsx from the supabase codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/fn-illustrations-tsx-whyrotatekeysillustration.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/fn-illustrations-tsx-whyrotatekeysillustration.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="supabase Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WhyRotateKeysIllustration() — supabase Function Reference — supabase Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the WhyRotateKeysIllustration() function in illustrations.tsx from the supabase codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-illustrations-tsx-whyrotatekeysillustration.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the WhyRotateKeysIllustration() function in illustrations.tsx from the supabase codebase.","image":["https://repos.supermodeltools.com/images/share/fn-illustrations-tsx-whyrotatekeysillustration.svg"],"name":"WhyRotateKeysIllustration() — supabase Function Reference","url":"https://repos.supermodeltools.com/fn-illustrations-tsx-whyrotatekeysillustration.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"WhyRotateKeysIllustration() — supabase Function Reference","position":2}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      supabase Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/function.html">Function</a><span class="sep">/</span>
+        <span>WhyRotateKeysIllustration() — supabase Function Reference</span>
+      </div>
+      <h1 class="entity-title">WhyRotateKeysIllustration() — supabase Function Reference</h1>
+      <p class="entity-desc">Architecture documentation for the WhyRotateKeysIllustration() function in illustrations.tsx from the supabase codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/function.html" class="pill pill-accent">Function</a>
+        <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
+        <a href="/domain/studioapi.html" class="pill pill-green">StudioAPI</a>
+        <a href="/subdomain/authinterfaces.html" class="pill pill-orange">AuthInterfaces</a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"el":240,"lc":108,"sl":133}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+      <div class="visuals-archmap" id="arch-map-container">
+        <div class="arch-map-svg"></div>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"StudioAPI","slug":"domain-studioapi"},"entity":{"name":"WhyRotateKeysIllustration","slug":"fn-illustrations-tsx-whyrotatekeysillustration","type":"Function"},"subdomain":{"name":"AuthInterfaces","slug":"subdomain-authinterfaces"}}</script>
+        <noscript>
+          <div class="arch-map-fallback">
+            <a href="/studioapi.html">StudioAPI</a><span class="arch-sep">&rarr;</span>
+            <a href="/authinterfaces.html">AuthInterfaces</a><span class="arch-sep">&rarr;</span>
+            <span>WhyRotateKeysIllustration() — supabase Function Reference</span>
+          </div>
+        </noscript>
+      </div>
+      
+
+      
+      <div class="visuals-row">
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="fn-illustrations-tsx-whyrotatekeysillustration"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"58676adf:d9dc:a171:d4bf:6df1c28bd2af","label":"WhyRotateKeysIllustration","type":"Function","slug":"fn-illustrations-tsx-whyrotatekeysillustration","lc":108,"lang":"tsx"},{"id":"domain:StudioAPI","label":"StudioAPI","type":"Domain","slug":"domain-studioapi"},{"id":"subdomain:StudioAPI:AuthInterfaces","label":"AuthInterfaces","type":"Subdomain","slug":"subdomain-authinterfaces"}],"edges":[{"source":"58676adf:d9dc:a171:d4bf:6df1c28bd2af","target":"domain:StudioAPI","type":"belongsTo"},{"source":"58676adf:d9dc:a171:d4bf:6df1c28bd2af","target":"subdomain:StudioAPI:AuthInterfaces","type":"belongsTo"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">apps/studio/components/interfaces/JwtSecrets/illustrations.tsx lines 133–240</p>
+      <pre class="source-code"><code class="language-tsx">export const WhyRotateKeysIllustration = () =&gt; (
+  &lt;svg
+    width=&#34;180&#34;
+    height=&#34;150&#34;
+    viewBox=&#34;0 0 180 150&#34;
+    fill=&#34;none&#34;
+    xmlns=&#34;http://www.w3.org/2000/svg&#34;
+  &gt;
+    &lt;g clip-path=&#34;url(#clip0_10_778)&#34;&gt;
+      &lt;path
+        d=&#34;M46.9111 82C47.1873 82 47.4111 81.7761 47.4111 81.5C47.4111 81.2239 47.1873 81 46.9111 81V82ZM47.2647 117.384C47.4599 117.188 47.4599 116.872 47.2647 116.676L44.0827 113.494C43.8874 113.299 43.5709 113.299 43.3756 113.494C43.1803 113.69 43.1803 114.006 43.3756 114.202L46.204 117.03L43.3756 119.858C43.1803 120.054 43.1803 120.37 43.3756 120.566C43.5709 120.761 43.8874 120.761 44.0827 120.566L47.2647 117.384ZM45.9945 81C45.7183 81 45.4945 81.2239 45.4945 81.5C45.4945 81.7761 45.7183 82 45.9945 82V81ZM44.1611 82C44.4373 82 44.6611 81.7761 44.6611 81.5C44.6611 81.2239 44.4373 81 44.1611 81V82ZM42.3278 81C42.0517 81 41.8278 81.2239 41.8278 81.5C41.8278 81.7761 42.0517 82 42.3278 82V81ZM40.4945 82C40.7706 82 40.9945 81.7761 40.9945 81.5C40.9945 81.2239 40.7706 81 40.4945 81V82ZM38.6611 81C38.385 81 38.1611 81.2239 38.1611 81.5C38.1611 81.7761 38.385 82 38.6611 82V81ZM36.8278 82C37.1039 82 37.3278 81.7761 37.3278 81.5C37.3278 81.2239 37.1039 81 36.8278 81V82ZM34.8822 81.0498C34.6073 81.0766 34.4062 81.3211 34.4329 81.5959C34.4597 81.8707 34.7042 82.0719 34.979 82.0451L34.8822 81.0498ZM33.1523 82.4067C33.4166 82.3266 33.5659 82.0474 33.4858 81.7832C33.4058 81.5189 33.1266 81.3695 32.8623 81.4496L33.1523 82.4067ZM30.9602 82.2383C30.7168 82.3686 30.6252 82.6717 30.7556 82.9151C30.886 83.1585 31.189 83.2502 31.4324 83.1198L30.9602 82.2383ZM29.8845 84.1559C30.0979 83.9806 30.1287 83.6655 29.9534 83.4522C29.7781 83.2388 29.4631 83.208 29.2497 83.3833L29.8845 84.1559ZM27.7944 84.8386C27.6191 85.0519 27.65 85.367 27.8633 85.5423C28.0767 85.7176 28.3918 85.6867 28.5671 85.4734L27.7944 84.8386ZM27.5309 87.0213C27.6613 86.7778 27.5696 86.4748 27.3262 86.3444C27.0828 86.2141 26.7798 86.3057 26.6494 86.5491L27.5309 87.0213ZM25.8607 88.4512C25.7807 88.7155 25.93 88.9946 26.1943 89.0747C26.4586 89.1548 26.7377 89.0054 26.8178 88.7411L25.8607 88.4512ZM26.4562 90.5679C26.483 90.293 26.2819 90.0485 26.007 90.0218C25.7322 89.9951 25.4877 90.1962 25.4609 90.471L26.4562 90.5679ZM25.4111 92.4706C25.4111 92.7468 25.635 92.9706 25.9111 92.9706C26.1873 92.9706 26.4111 92.7468 26.4111 92.4706H25.4111ZM26.4111 94.4119C26.4111 94.1357 26.1873 93.9119 25.9111 93.9119C25.635 93.9119 25.4111 94.1357 25.4111 94.4119H26.4111ZM25.4111 96.3531C25.4111 96.6293 25.635 96.8531 25.9111 96.8531C26.1873 96.8531 26.4111 96.6293 26.4111 96.3531H25.4111ZM26.4111 98.2944C26.4111 98.0182 26.1873 97.7944 25.9111 97.7944C25.635 97.7944 25.4111 98.0182 25.4111 98.2944H26.4111ZM25.4111 100.236C25.4111 100.512 25.635 100.736 25.9111 100.736C26.1873 100.736 26.4111 100.512 26.4111 100.236H25.4111ZM26.4111 102.177C26.4111 101.901 26.1873 101.677 25.9111 101.677C25.635 101.677 25.4111 101.901 25.4111 102.177H26.4111ZM25.4111 104.118C25.4111 104.394 25.635 104.618 25.9111 104.618C26.1873 104.618 26.4111 104.394 26.4111 104.118H25.4111ZM26.4111 106.059C26.4111 105.783 26.1873 105.559 25.9111 105.559C25.635 105.559 25.4111 105.783 25.4111 106.059H26.4111ZM25.4609 108.059C25.4877 108.334 25.7322 108.535 26.007 108.508C26.2819 108.481 26.483 108.237 26.4562 107.962L25.4609 108.059ZM26.8178 109.789C26.7377 109.525 26.4586 109.375 26.1943 109.455C25.93 109.535 25.7807 109.815 25.8607 110.079L26.8178 109.789ZM26.6494 111.981C26.7798 112.224 27.0828 112.316 27.3262 112.186C27.5696 112.055 27.6613 111.752 27.5309 111.509L26.6494 111.981ZM28.5671 113.057C28.3918 112.843 28.0767 112.812 27.8633 112.988C27.65 113.163 27.6191 113.478 27.7944 113.691L28.5671 113.057ZM29.2497 115.147C29.4631 115.322 29.7781 115.291 29.9534 115.078C30.1287 114.864 30.0979 114.549 29.8845 114.374L29.2497 115.147ZM31.4324 115.41C31.189 115.28 30.886 115.372 30.7556 115.615C30.6252 115.858 30.7168 116.161 30.9603 116.292L31.4324 115.41ZM32.8623 117.08C33.1266 117.16 33.4058 117.011 33.4858 116.747C33.5659 116.483 33.4166 116.203 33.1523 116.123L32.8623 117.08ZM34.979 116.485C34.7042 116.458 34.4597 116.659 34.4329 116.934C34.4062 117.209 34.6073 117.453 34.8822 117.48L34.979 116.485ZM36.8278 117.53C37.1039 117.53 37.3278 117.306 37.3278 117.03C37.3278 116.754 37.1039 116.53 36.8278 116.53V117.53ZM38.6611 116.53C38.385 116.53 38.1611 116.754 38.1611 117.03C38.1611 117.306 38.385 117.53 38.6611 117.53V116.53ZM40.4945 117.53C40.7706 117.53 40.9945 117.306 40.9945 117.03C40.9945 116.754 40.7706 116.53 40.4945 116.53V117.53ZM42.3278 116.53C42.0517 116.53 41.8278 116.754 41.8278 117.03C41.8278 117.306 42.0517 117.53 42.3278 117.53V116.53ZM44.1611 117.53C44.4373 117.53 44.6611 117.306 44.6611 117.03C44.6611 116.754 44.4373 116.53 44.1611 116.53V117.53ZM45.9945 116.53C45.7183 116.53 45.4945 116.754 45.4945 117.03C45.4945 117.306 45.7183 117.53 45.9945 117.53V116.53ZM46.9111 81H45.9945V82H46.9111V81ZM44.1611 81H42.3278V82H44.1611V81ZM40.4945 81H38.6611V82H40.4945V81ZM36.8278 81H35.9111V82H36.8278V81ZM35.9111 81C35.5641 81 35.2208 81.0169 34.8822 81.0498L34.979 82.0451C35.2855 82.0153 35.5965 82 35.9111 82V81ZM32.8623 81.4496C32.198 81.6509 31.5616 81.9162 30.9602 82.2383L31.4324 83.1198C31.9763 82.8285 32.5517 82.5886 33.1523 82.4067L32.8623 81.4496ZM29.2497 83.3833C28.7185 83.8197 28.2309 84.3073 27.7944 84.8386L28.5671 85.4734C28.9622 84.9925 29.4036 84.551 29.8845 84.1559L29.2497 83.3833ZM26.6494 86.5491C26.3273 87.1504 26.062 87.7869 25.8607 88.4512L26.8178 88.7411C26.9997 88.1406 27.2396 87.5652 27.5309 87.0213L26.6494 86.5491ZM25.4609 90.471C25.428 90.8097 25.4111 91.153 25.4111 91.5H26.4111C26.4111 91.1853 26.4264 90.8744 26.4562 90.5679L25.4609 90.471ZM25.4111 91.5V92.4706H26.4111V91.5H25.4111ZM25.4111 94.4119V96.3531H26.4111V94.4119H25.4111ZM25.4111 98.2944V100.236H26.4111V98.2944H25.4111ZM25.4111 102.177V104.118H26.4111V102.177H25.4111ZM25.4111 106.059V107.03H26.4111V106.059H25.4111ZM25.4111 107.03C25.4111 107.377 25.428 107.72 25.4609 108.059L26.4562 107.962C26.4264 107.656 26.4111 107.345 26.4111 107.03H25.4111ZM25.8607 110.079C26.062 110.743 26.3273 111.38 26.6494 111.981L27.5309 111.509C27.2396 110.965 26.9997 110.389 26.8178 109.789L25.8607 110.079ZM27.7944 113.691C28.2309 114.223 28.7185 114.71 29.2497 115.147L29.8845 114.374C29.4036 113.979 28.9622 113.538 28.5671 113.057L27.7944 113.691ZM30.9603 116.292C31.5616 116.614 32.198 116.879 32.8623 117.08L33.1523 116.123C32.5517 115.941 31.9763 115.702 31.4324 115.41L30.9603 116.292ZM34.8822 117.48C35.2208 117.513 35.5641 117.53 35.9111 117.53V116.53C35.5965 116.53 35.2855 116.515 34.979 116.485L34.8822 117.48ZM35.9111 117.53H36.8278V116.53H35.9111V117.53ZM38.6611 117.53H40.4945V116.53H38.6611V117.53ZM42.3278 117.53H44.1611V116.53H42.3278V117.53ZM45.9945 117.53H46.9111V116.53H45.9945V117.53Z&#34;
+        fill=&#34;#9F3BE1&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M47.2647 69.1399C47.4599 68.9446 47.4599 68.628 47.2647 68.4328L44.0827 65.2508C43.8874 65.0555 43.5709 65.0555 43.3756 65.2508C43.1803 65.446 43.1803 65.7626 43.3756 65.9579L46.204 68.7863L43.3756 71.6147C43.1803 71.81 43.1803 72.1266 43.3756 72.3219C43.5709 72.5171 43.8874 72.5171 44.0827 72.3219L47.2647 69.1399ZM54.9111 32.7563H35.9111V33.7563H54.9111V32.7563ZM25.4111 43.2563V58.7863H26.4111V43.2563H25.4111ZM35.9111 69.2863H46.9111V68.2863H35.9111V69.2863ZM25.4111 58.7863C25.4111 64.5853 30.1121 69.2863 35.9111 69.2863V68.2863C30.6644 68.2863 26.4111 64.033 26.4111 58.7863H25.4111ZM35.9111 32.7563C30.1121 32.7563 25.4111 37.4573 25.4111 43.2563H26.4111C26.4111 38.0096 30.6644 33.7563 35.9111 33.7563V32.7563Z&#34;
+        fill=&#34;#FAFAFA&#34;
+      /&gt;
+      &lt;mask id=&#34;path-3-inside-1_10_778&#34; fill=&#34;white&#34;&gt;
+        &lt;path d=&#34;M52.9111 117.03C52.9111 110.955 57.836 106.03 63.9111 106.03H181.911V128.03H63.9111C57.836 128.03 52.9111 123.105 52.9111 117.03V117.03Z&#34; /&gt;
+      &lt;/mask&gt;
+      &lt;path
+        d=&#34;M52.9111 117.03C52.9111 110.955 57.836 106.03 63.9111 106.03H181.911V128.03H63.9111C57.836 128.03 52.9111 123.105 52.9111 117.03V117.03Z&#34;
+        fill=&#34;#1A161D&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M51.9111 117.03C51.9111 110.403 57.2837 105.03 63.9111 105.03H181.911V107.03H63.9111C58.3883 107.03 53.9111 111.507 53.9111 117.03H51.9111ZM181.911 129.03H63.9111C57.2837 129.03 51.9111 123.657 51.9111 117.03H53.9111C53.9111 122.553 58.3883 127.03 63.9111 127.03H181.911V129.03ZM63.9111 129.03C57.2837 129.03 51.9111 123.657 51.9111 117.03C51.9111 110.403 57.2837 105.03 63.9111 105.03V107.03C58.3883 107.03 53.9111 111.507 53.9111 117.03C53.9111 122.553 58.3883 127.03 63.9111 127.03V129.03ZM181.911 106.03V128.03V106.03Z&#34;
+        fill=&#34;#9F3BE1&#34;
+        mask=&#34;url(#path-3-inside-1_10_778)&#34;
+      /&gt;
+      &lt;g clip-path=&#34;url(#clip1_10_778)&#34;&gt;
+        &lt;path
+          d=&#34;M75.411 112.03L74.411 113.03M74.411 113.03L75.911 114.53L74.161 116.28L72.661 114.78M74.411 113.03L72.661 114.78M70.606 116.835C70.8642 117.09 71.0694 117.393 71.2099 117.727C71.3504 118.062 71.4233 118.421 71.4245 118.783C71.4258 119.146 71.3552 119.505 71.217 119.841C71.0788 120.176 70.8756 120.481 70.6191 120.737C70.3626 120.994 70.058 121.197 69.7227 121.335C69.3874 121.473 69.028 121.544 68.6653 121.543C68.3027 121.541 67.9438 121.468 67.6094 121.328C67.275 121.187 66.9718 120.982 66.717 120.724C66.2161 120.205 65.9389 119.511 65.9452 118.79C65.9514 118.069 66.2407 117.379 66.7505 116.869C67.2604 116.359 67.9501 116.07 68.6712 116.064C69.3922 116.057 70.0869 116.335 70.6055 116.836L70.606 116.835ZM70.606 116.835L72.661 114.78&#34;
+          stroke=&#34;#7C5695&#34;
+          stroke-linecap=&#34;round&#34;
+          stroke-linejoin=&#34;round&#34;
+        /&gt;
+      &lt;/g&gt;
+      &lt;path
+        d=&#34;M84.2089 121.03V113.77H86.4199C88.0149 113.77 89.0819 114.309 89.0819 115.904C89.0819 117.433 88.0039 118.148 86.4199 118.148H85.1219V121.03H84.2089ZM85.1219 117.4H86.2989C87.5639 117.4 88.1689 116.938 88.1689 115.904C88.1689 114.848 87.5529 114.507 86.2989 114.507H85.1219V117.4ZM91.2826 121.03V113.77H93.5266C94.9896 113.77 96.0456 114.298 96.0456 115.805C96.0456 116.938 95.4076 117.609 94.4286 117.862L96.2656 121.03H95.2206L93.4826 117.961H92.1956V121.03H91.2826ZM92.1956 117.213H93.3946C94.5166 117.213 95.1326 116.751 95.1326 115.805C95.1326 114.848 94.5166 114.507 93.3946 114.507H92.1956V117.213ZM98.5433 121.03V113.77H102.998V114.54H99.4673V116.828H102.448V117.609H99.4673V120.249H103.108V121.03H98.5433ZM107.146 121.03L104.847 113.77H105.815L106.981 117.697C107.234 118.555 107.41 119.237 107.674 120.095H107.718C107.982 119.237 108.158 118.555 108.411 117.697L109.566 113.77H110.501L108.213 121.03H107.146ZM112.515 121.03V120.249H114.308V114.54H112.515V113.77H117.025V114.54H115.232V120.249H117.025V121.03H112.515ZM121.865 121.162C120.237 121.162 119.093 119.699 119.093 117.367C119.093 115.046 120.237 113.638 121.865 113.638C123.493 113.638 124.637 115.057 124.637 117.367C124.637 119.699 123.493 121.162 121.865 121.162ZM121.865 120.359C122.965 120.359 123.691 119.182 123.691 117.367C123.691 115.563 122.965 114.441 121.865 114.441C120.765 114.441 120.039 115.563 120.039 117.367C120.039 119.182 120.765 120.359 121.865 120.359ZM128.972 121.162C127.553 121.162 126.53 120.37 126.53 118.291V113.77H127.454V118.302C127.454 119.82 128.103 120.359 128.972 120.359C129.841 120.359 130.501 119.82 130.501 118.302V113.77H131.392V118.291C131.392 120.37 130.38 121.162 128.972 121.162ZM136.112 121.162C135.056 121.162 134.143 120.744 133.494 120.084L134.044 119.446C134.583 119.996 135.331 120.359 136.123 120.359C137.146 120.359 137.729 119.886 137.729 119.171C137.729 118.423 137.168 118.203 136.431 117.884L135.397 117.433C134.671 117.147 133.835 116.619 133.835 115.563C133.835 114.452 134.825 113.638 136.2 113.638C137.102 113.638 137.894 114.001 138.422 114.529L137.938 115.123C137.465 114.705 136.915 114.441 136.2 114.441C135.331 114.441 134.77 114.848 134.77 115.508C134.77 116.201 135.441 116.454 136.057 116.718L137.069 117.158C137.949 117.543 138.664 118.016 138.664 119.094C138.664 120.249 137.696 121.162 136.112 121.162ZM148.026 121.03V113.77H148.95V117.411H148.983L152.019 113.77H153.053L150.776 116.531L153.317 121.03H152.294L150.204 117.246L148.95 118.72V121.03H148.026ZM155.309 121.03V113.77H159.764V114.54H156.233V116.828H159.214V117.609H156.233V120.249H159.874V121.03H155.309ZM163.978 121.03V118.434L161.558 113.77H162.526L163.615 115.937C163.89 116.487 164.143 117.037 164.44 117.62H164.484C164.77 117.037 165.056 116.476 165.331 115.915L166.376 113.77H167.322L164.902 118.434V121.03H163.978Z&#34;
+        fill=&#34;#C792EA&#34;
+      /&gt;
+      &lt;mask id=&#34;path-7-inside-2_10_778&#34; fill=&#34;white&#34;&gt;
+        &lt;path d=&#34;M52.9111 33.2563C52.9111 27.1812 57.836 22.2563 63.9111 22.2563H181.911V44.2563H63.9111C57.836 44.2563 52.9111 39.3314 52.9111 33.2563V33.2563Z&#34; /&gt;
+      &lt;/mask&gt;
+      &lt;path
+        d=&#34;M52.9111 33.2563C52.9111 27.1812 57.836 22.2563 63.9111 22.2563H181.911V44.2563H63.9111C57.836 44.2563 52.9111 39.3314 52.9111 33.2563V33.2563Z&#34;
+        fill=&#34;#1F1F1F&#34;
+      /&gt;
+      &lt;path
+        fill-rule=&#34;evenodd&#34;
+        clip-rule=&#34;evenodd&#34;
+        d=&#34;M180.928 22.7563V21.7563V21.2563H181.911V21.7563V22.2563V22.7563V23.2563H180.928V22.7563ZM178.961 23.2563V22.7563V21.7563V21.2563H176.994V21.7563V22.7563V23.2563H178.961ZM175.028 23.2563V22.7563V21.7563V21.2563H173.061V21.7563V22.7563V23.2563H175.028ZM171.094 23.2563V22.7563V21.7563V21.2563H169.128V21.7563V22.7563V23.2563H171.094ZM167.161 23.2563V22.7563V21.7563V21.2563H165.194V21.7563V22.7563V23.2563H167.161ZM163.228 23.2563V22.7563V21.7563V21.2563H161.261V21.7563V22.7563V23.2563H163.228ZM159.294 23.2563V22.7563V21.7563V21.2563H157.328V21.7563V22.7563V23.2563H159.294ZM155.361 23.2563V22.7563V21.7563V21.2563H153.394V21.7563V22.7563V23.2563H155.361ZM151.428 23.2563V22.7563V21.7563V21.2563H149.461V21.7563V22.7563V23.2563H151.428ZM147.494 23.2563V22.7563V21.7563V21.2563H145.528V21.7563V22.7563V23.2563H147.494ZM143.561 23.2563V22.7563V21.7563V21.2563H141.594V21.7563V22.7563V23.2563H143.561ZM139.628 23.2563V22.7563V21.7563V21.2563H137.661V21.7563V22.7563V23.2563H139.628ZM135.694 23.2563V22.7563V21.7563V21.2563H133.728V21.7563V22.7563V23.2563H135.694ZM131.761 23.2563V22.7563V21.7563V21.2563H129.794V21.7563V22.7563V23.2563H131.761ZM127.828 23.2563V22.7563V21.7563V21.2563H125.861V21.7563V22.7563V23.2563H127.828ZM123.894 23.2563V22.7563V21.7563V21.2563H121.928V21.7563V22.7563V23.2563H123.894ZM119.961 23.2563V22.7563V21.7563V21.2563H117.994V21.7563V22.7563V23.2563H119.961ZM116.028 23.2563V22.7563V21.7563V21.2563H114.061V21.7563V22.7563V23.2563H116.028ZM112.094 23.2563V22.7563V21.7563V21.2563H110.128V21.7563V22.7563V23.2563H112.094ZM108.161 23.2563V22.7563V21.7563V21.2563H106.194V21.7563V22.7563V23.2563H108.161ZM104.228 23.2563V22.7563V21.7563V21.2563H102.261V21.7563V22.7563V23.2563H104.228ZM100.294 23.2563V22.7563V21.7563V21.2563H98.3278V21.7563V22.7563V23.2563H100.294ZM96.3611 23.2563V22.7563V21.7563V21.2563H94.3944V21.7563V22.7563V23.2563H96.3611ZM92.4278 23.2563V22.7563V21.7563V21.2563H90.4611V21.7563V22.7563V23.2563H92.4278ZM88.4944 23.2563V22.7563V21.7563V21.2563H86.5278V21.7563V22.7563V23.2563H88.4944ZM84.5611 23.2563V22.7563V21.7563V21.2563H82.5944V21.7563V22.7563V23.2563H84.5611ZM80.6278 23.2563V22.7563V21.7563V21.2563H78.6611V21.7563V22.7563V23.2563H80.6278ZM76.6944 23.2563V22.7563V21.7563V21.2563H74.7278V21.7563V22.7563V23.2563H76.6944ZM72.7611 23.2563V22.7563V21.7563V21.2563H70.7944V21.7563V22.7563V23.2563H72.7611ZM68.8278 23.2563V22.7563V21.7563V21.2563H66.8611V21.7563V22.7563V23.2563H68.8278ZM64.8944 23.2563V22.7563V21.7563V21.2563H63.9111C63.812 21.2563 63.7132 21.2575 63.6147 21.2599C63.3191 21.2671 63.0259 21.285 62.7357 21.3132L62.7841 21.8108L62.881 22.8061L62.9294 23.3038C63.1613 23.2812 63.3958 23.2666 63.6324 23.2601C63.725 23.2576 63.8179 23.2563 63.9111 23.2563H64.8944ZM60.5719 22.2487L60.8619 23.2058L61.0069 23.6843C60.375 23.8757 59.7694 24.1281 59.197 24.4347L58.9609 23.994L58.4888 23.1124L58.2527 22.6717C58.94 22.3036 59.6675 22.0003 60.427 21.7702L60.5719 22.2487ZM56.6153 24.3665L57.2501 25.1392L57.5675 25.5255C57.3776 25.6815 57.1936 25.8444 57.0158 26.0137C56.875 26.1478 56.7382 26.2859 56.6054 26.4279C56.4586 26.5848 56.3169 26.7465 56.1803 26.9127L55.794 26.5953L55.0214 25.9604L54.635 25.643C55.1338 25.036 55.6909 24.4789 56.2979 23.9802L56.6153 24.3665ZM53.7673 27.8339L54.6488 28.3061L55.0896 28.5422C54.783 29.1146 54.5306 29.7201 54.3391 30.352L53.8606 30.2071L52.9036 29.9171L52.425 29.7721C52.6551 29.0126 52.9584 28.2851 53.3265 27.5978L53.7673 27.8339ZM52.4657 32.1293L53.461 32.2261L53.9586 32.2745C53.9351 32.5166 53.9201 32.7613 53.9141 33.0084C53.9121 33.0908 53.9111 33.1734 53.9111 33.2563C53.9111 33.3463 53.9123 33.436 53.9147 33.5254C53.921 33.7653 53.9358 34.0029 53.9586 34.238L53.461 34.2865L52.4657 34.3833L51.968 34.4318C51.9398 34.1415 51.9219 33.8484 51.9147 33.5527C51.9123 33.4542 51.9111 33.3554 51.9111 33.2563C51.9111 33.1444 51.9127 33.0329 51.9157 32.9217C51.9235 32.639 51.941 32.3586 51.968 32.0808L52.4657 32.1293ZM52.9036 36.5955L53.8606 36.3055L54.3391 36.1605C54.5306 36.7924 54.783 37.398 55.0896 37.9704L54.6488 38.2065L53.7673 38.6786L53.3265 38.9147C52.9584 38.2274 52.6551 37.4999 52.425 36.7405L52.9036 36.5955ZM55.0214 40.5521L55.794 39.9173L56.1803 39.5999C56.2844 39.7265 56.3914 39.8505 56.5014 39.9718C56.7637 40.261 57.0427 40.5348 57.3369 40.7917C57.4127 40.8579 57.4896 40.9231 57.5675 40.9871L57.2501 41.3734L56.6153 42.1461L56.2979 42.5324C56.1461 42.4077 55.9975 42.2794 55.8521 42.1475C55.4977 41.8261 55.1625 41.4837 54.8487 41.1224C54.7763 41.0391 54.7051 40.9548 54.635 40.8695L55.0214 40.5521ZM58.4888 43.4001L58.9609 42.5186L59.197 42.0779C59.7694 42.3845 60.375 42.6369 61.0069 42.8283L60.8619 43.3068L60.5719 44.2639L60.427 44.7424C59.6675 44.5123 58.94 44.209 58.2527 43.8409L58.4888 43.4001ZM62.7841 44.7017L62.881 43.7064L62.9294 43.2088C63.1311 43.2284 63.3347 43.2421 63.5399 43.2495C63.663 43.254 63.7868 43.2563 63.9111 43.2563M64.8945 43.7563V44.7563V45.2563H63.9111C63.7517 45.2563 63.593 45.2532 63.435 45.247C63.2002 45.2378 62.967 45.2219 62.7357 45.1994L62.7841 44.7017M66.8611 45.2563H68.8278V44.7563V43.7563V43.2563H66.8611V43.7563V44.7563V45.2563ZM64.8945 43.7563V43.2563ZM63.9111 43.2563H64.8945ZM70.7945 43.2563V43.7563V44.7563V45.2563H72.7611V44.7563V43.7563V43.2563H70.7945ZM74.7278 43.2563V43.7563V44.7563V45.2563H76.6945V44.7563V43.7563V43.2563H74.7278ZM78.6611 43.2563V43.7563V44.7563V45.2563H80.6278V44.7563V43.7563V43.2563H78.6611ZM82.5945 43.2563V43.7563V44.7563V45.2563H84.5611V44.7563V43.7563V43.2563H82.5945ZM86.5278 43.2563V43.7563V44.7563V45.2563H88.4945V44.7563V43.7563V43.2563H86.5278ZM90.4611 43.2563V43.7563V44.7563V45.2563H92.4278V44.7563V43.7563V43.2563H90.4611ZM94.3945 43.2563V43.7563V44.7563V45.2563H96.3611V44.7563V43.7563V43.2563H94.3945ZM98.3278 43.2563V43.7563V44.7563V45.2563H100.294V44.7563V43.7563V43.2563H98.3278ZM102.261 43.2563V43.7563V44.7563V45.2563H104.228V44.7563V43.7563V43.2563H102.261ZM106.194 43.2563V43.7563V44.7563V45.2563H108.161V44.7563V43.7563V43.2563H106.194ZM110.128 43.2563V43.7563V44.7563V45.2563H112.094V44.7563V43.7563V43.2563H110.128ZM114.061 43.2563V43.7563V44.7563V45.2563H116.028V44.7563V43.7563V43.2563H114.061ZM117.994 43.2563V43.7563V44.7563V45.2563H119.961V44.7563V43.7563V43.2563H117.994ZM121.928 43.2563V43.7563V44.7563V45.2563H123.894V44.7563V43.7563V43.2563H121.928ZM125.861 43.2563V43.7563V44.7563V45.2563H127.828V44.7563V43.7563V43.2563H125.861ZM129.794 43.2563V43.7563V44.7563V45.2563H131.761V44.7563V43.7563V43.2563H129.794ZM133.728 43.2563V43.7563V44.7563V45.2563H135.694V44.7563V43.7563V43.2563H133.728ZM137.661 43.2563V43.7563V44.7563V45.2563H139.628V44.7563V43.7563V43.2563H137.661ZM141.594 43.2563V43.7563V44.7563V45.2563H143.561V44.7563V43.7563V43.2563H141.594ZM145.528 43.2563V43.7563V44.7563V45.2563H147.494V44.7563V43.7563V43.2563H145.528ZM149.461 43.2563V43.7563V44.7563V45.2563H151.428V44.7563V43.7563V43.2563H149.461ZM153.394 43.2563V43.7563V44.7563V45.2563H155.361V44.7563V43.7563V43.2563H153.394ZM157.328 43.2563V43.7563V44.7563V45.2563H159.294V44.7563V43.7563V43.2563H157.328ZM161.261 43.2563V43.7563V44.7563V45.2563H163.228V44.7563V43.7563V43.2563H161.261ZM165.194 43.2563V43.7563V44.7563V45.2563H167.161V44.7563V43.7563V43.2563H165.194ZM169.128 43.2563V43.7563V44.7563V45.2563H171.094V44.7563V43.7563V43.2563H169.128ZM173.061 43.2563V43.7563V44.7563V45.2563H175.028V44.7563V43.7563V43.2563H173.061ZM176.994 43.2563V43.7563V44.7563V45.2563H178.961V44.7563V43.7563V43.2563H176.994ZM180.928 43.2563V43.7563V44.7563V45.2563H181.911V44.7563V44.2563V43.7563V43.2563H180.928Z&#34;
+        fill=&#34;#4D4D4D&#34;
+        mask=&#34;url(#path-7-inside-2_10_778)&#34;
+      /&gt;
+      &lt;g clip-path=&#34;url(#clip2_10_778)&#34;&gt;
+        &lt;path
+          d=&#34;M75.411 28.2563L74.411 29.2563M74.411 29.2563L75.911 30.7563L74.161 32.5063L72.661 31.0063M74.411 29.2563L72.661 31.0063M70.606 33.0613C70.8642 33.316 71.0694 33.6193 71.2099 33.9537C71.3504 34.2881 71.4233 34.6469 71.4245 35.0096C71.4258 35.3723 71.3552 35.7316 71.217 36.0669C71.0788 36.4022 70.8756 36.7069 70.6191 36.9634C70.3626 37.2198 70.058 37.423 69.7227 37.5612C69.3874 37.6995 69.028 37.77 68.6653 37.7688C68.3027 37.7676 67.9438 37.6946 67.6094 37.5542C67.275 37.4137 66.9718 37.2085 66.717 36.9503C66.2161 36.4316 65.9389 35.737 65.9452 35.0159C65.9514 34.2949 66.2407 33.6052 66.7505 33.0953C67.2604 32.5854 67.9501 32.2962 68.6712 32.2899C69.3922 32.2837 70.0869 32.5609 70.6055 33.0618L70.606 33.0613ZM70.606 33.0613L72.661 31.0063&#34;
+          stroke=&#34;#B4B4B4&#34;
+          stroke-linecap=&#34;round&#34;
+          stroke-linejoin=&#34;round&#34;
+        /&gt;
+      &lt;/g&gt;
+      &lt;path
+        d=&#34;M84.2392 37.2563V29.9963H85.1742L87.5172 34.5833L88.2432 36.0683H88.2652C88.2322 35.3533 88.1442 34.5283 88.1442 33.7693V29.9963H89.0132V37.2563H88.0782L85.7352 32.6693L85.0092 31.1843H84.9872C85.0202 31.9213 85.1082 32.7023 85.1082 33.4503V37.2563H84.2392ZM91.6869 37.2563V29.9963H96.1419V30.7663H92.6109V33.0543H95.5919V33.8353H92.6109V36.4753H96.2519V37.2563H91.6869ZM98.7386 37.2563L97.6276 29.9853H98.5406L99.1236 34.5503C99.1566 35.1553 99.2336 35.7493 99.2776 36.3433H99.3106C99.4646 35.7493 99.6296 35.1443 99.7726 34.5503L100.532 31.8663H101.181L101.94 34.5503C102.072 35.1333 102.237 35.7493 102.391 36.3433H102.435C102.479 35.7493 102.545 35.1443 102.589 34.5503L103.139 29.9853H104.008L102.941 37.2563H101.929L101.104 34.2093C101.005 33.7803 100.917 33.3293 100.84 32.9003H100.807C100.719 33.3293 100.631 33.7803 100.521 34.2093L99.7286 37.2563H98.7386ZM112.787 37.2563V29.9963H113.711V33.6373H113.744L116.78 29.9963H117.814L115.537 32.7573L118.078 37.2563H117.055L114.965 33.4723L113.711 34.9463V37.2563H112.787ZM120.07 37.2563V29.9963H124.525V30.7663H120.994V33.0543H123.975V33.8353H120.994V36.4753H124.635V37.2563H120.07ZM128.738 37.2563V34.6603L126.318 29.9963H127.286L128.375 32.1633C128.65 32.7133 128.903 33.2633 129.2 33.8463H129.244C129.53 33.2633 129.816 32.7023 130.091 32.1413L131.136 29.9963H132.082L129.662 34.6603V37.2563H128.738Z&#34;
+        fill=&#34;#FAFAFA&#34;
+      /&gt;
+      &lt;mask id=&#34;path-11-inside-3_10_778&#34; fill=&#34;white&#34;&gt;
+        &lt;path d=&#34;M52.9111 76.5C52.9111 70.4249 57.836 65.5 63.9111 65.5H181.911V87.5H63.9111C57.836 87.5 52.9111 82.5751 52.9111 76.5V76.5Z&#34; /&gt;
+      &lt;/mask&gt;
+      &lt;path
+        d=&#34;M52.9111 76.5C52.9111 70.4249 57.836 65.5 63.9111 65.5H181.911V87.5H63.9111C57.836 87.5 52.9111 82.5751 52.9111 76.5V76.5Z&#34;
+        fill=&#34;#002918&#34;
+      /&gt;
+      &lt;path
+        d=&#34;M51.9111 76.5C51.9111 69.8726 57.2837 64.5 63.9111 64.5H181.911V66.5H63.9111C58.3883 66.5 53.9111 70.9772 53.9111 76.5H51.9111ZM181.911 88.5H63.9111C57.2837 88.5 51.9111 83.1274 51.9111 76.5H53.9111C53.9111 82.0228 58.3883 86.5 63.9111 86.5H181.911V88.5ZM63.9111 88.5C57.2837 88.5 51.9111 83.1274 51.9111 76.5C51.9111 69.8726 57.2837 64.5 63.9111 64.5V66.5C58.3883 66.5 53.9111 70.9772 53.9111 76.5C53.9111 82.0228 58.3883 86.5 63.9111 86.5V88.5ZM181.911 65.5V87.5V65.5Z&#34;
+        fill=&#34;#006239&#34;
+        mask=&#34;url(#path-11-inside-3_10_778)&#34;
+      /&gt;
+      &lt;g clip-path=&#34;url(#clip3_10_778)&#34;&gt;
+        &lt;path
+          d=&#34;M75.411 71.5L74.411 72.5M74.411 72.5L75.911 74L74.161 75.75L72.661 74.25M74.411 72.5L72.661 74.25M70.606 76.305C70.8642 76.5597 71.0694 76.863 71.2099 77.1974C71.3504 77.5318 71.4233 77.8906 71.4245 78.2533C71.4258 78.616 71.3552 78.9753 71.217 79.3107C71.0788 79.646 70.8756 79.9506 70.6191 80.2071C70.3626 80.4635 70.058 80.6667 69.7227 80.805C69.3874 80.9432 69.028 81.0137 68.6653 81.0125C68.3027 81.0113 67.9438 80.9384 67.6094 80.7979C67.275 80.6574 66.9718 80.4522 66.717 80.194C66.2161 79.6753 65.9389 78.9807 65.9452 78.2596C65.9514 77.5386 66.2407 76.8489 66.7505 76.339C67.2604 75.8291 67.9501 75.5399 68.6712 75.5336C69.3922 75.5274 70.0869 75.8046 70.6055 76.3055L70.606 76.305ZM70.606 76.305L72.661 74.25&#34;
+          stroke=&#34;#006239&#34;
+          stroke-linecap=&#34;round&#34;
+          stroke-linejoin=&#34;round&#34;
+        /&gt;
+      &lt;/g&gt;
+      &lt;path
+        d=&#34;M87.0288 80.632C85.2138 80.632 83.8608 79.235 83.8608 76.87C83.8608 74.538 85.2028 73.108 87.0838 73.108C87.9528 73.108 88.6348 73.526 89.0528 73.988L88.5358 74.571C88.1618 74.175 87.6888 73.911 87.0838 73.911C85.6978 73.911 84.8068 75.044 84.8068 76.848C84.8068 78.674 85.6978 79.829 87.0838 79.829C87.7438 79.829 88.2388 79.543 88.7008 79.026L89.2288 79.587C88.6568 80.247 87.9528 80.632 87.0288 80.632ZM93.5415 80.632C92.1225 80.632 91.0995 79.84 91.0995 77.761V73.24H92.0235V77.772C92.0235 79.29 92.6725 79.829 93.5415 79.829C94.4105 79.829 95.0705 79.29 95.0705 77.772V73.24H95.9615V77.761C95.9615 79.84 94.9495 80.632 93.5415 80.632ZM98.4262 80.5V73.24H100.67C102.133 73.24 103.189 73.768 103.189 75.275C103.189 76.408 102.551 77.079 101.572 77.332L103.409 80.5H102.364L100.626 77.431H99.3392V80.5H98.4262ZM99.3392 76.683H100.538C101.66 76.683 102.276 76.221 102.276 75.275C102.276 74.318 101.66 73.977 100.538 73.977H99.3392V76.683ZM105.522 80.5V73.24H107.766C109.229 73.24 110.285 73.768 110.285 75.275C110.285 76.408 109.647 77.079 108.668 77.332L110.505 80.5H109.46L107.722 77.431H106.435V80.5H105.522ZM106.435 76.683H107.634C108.756 76.683 109.372 76.221 109.372 75.275C109.372 74.318 108.756 73.977 107.634 73.977H106.435V76.683ZM112.783 80.5V73.24H117.238V74.01H113.707V76.298H116.688V77.079H113.707V79.719H117.348V80.5H112.783ZM119.526 80.5V73.24H120.461L122.804 77.827L123.53 79.312H123.552C123.519 78.597 123.431 77.772 123.431 77.013V73.24H124.3V80.5H123.365L121.022 75.913L120.296 74.428H120.274C120.307 75.165 120.395 75.946 120.395 76.694V80.5H119.526ZM128.547 80.5V74.01H126.171V73.24H131.847V74.01H129.471V80.5H128.547ZM140.978 80.5V73.24H141.902V76.881H141.935L144.971 73.24H146.005L143.728 76.001L146.269 80.5H145.246L143.156 76.716L141.902 78.19V80.5H140.978ZM148.261 80.5V73.24H152.716V74.01H149.185V76.298H152.166V77.079H149.185V79.719H152.826V80.5H148.261ZM156.93 80.5V77.904L154.51 73.24H155.478L156.567 75.407C156.842 75.957 157.095 76.507 157.392 77.09H157.436C157.722 76.507 158.008 75.946 158.283 75.385L159.328 73.24H160.274L157.854 77.904V80.5H156.93Z&#34;
+        fill=&#34;#85E0BA&#34;
+      /&gt;
+    &lt;/g&gt;
+    &lt;defs&gt;
+      &lt;clipPath id=&#34;clip0_10_778&#34;&gt;
+        &lt;rect width=&#34;180&#34; height=&#34;150&#34; fill=&#34;white&#34; /&gt;
+      &lt;/clipPath&gt;
+      &lt;clipPath id=&#34;clip1_10_778&#34;&gt;
+        &lt;rect width=&#34;12&#34; height=&#34;12&#34; fill=&#34;white&#34; transform=&#34;translate(64.9111 111.03)&#34; /&gt;
+      &lt;/clipPath&gt;
+      &lt;clipPath id=&#34;clip2_10_778&#34;&gt;
+        &lt;rect width=&#34;12&#34; height=&#34;12&#34; fill=&#34;white&#34; transform=&#34;translate(64.9111 27.2563)&#34; /&gt;
+      &lt;/clipPath&gt;
+      &lt;clipPath id=&#34;clip3_10_778&#34;&gt;
+        &lt;rect width=&#34;12&#34; height=&#34;12&#34; fill=&#34;white&#34; transform=&#34;translate(64.9111 70.5)&#34; /&gt;
+      &lt;/clipPath&gt;
+    &lt;/defs&gt;
+  &lt;/svg&gt;
+)</code></pre>
+    </div>
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-studioapi.html">StudioAPI</a></li></ul>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <h2>Subdomains</h2>
+      <ul><li><a href="/subdomain-authinterfaces.html">AuthInterfaces</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/supabase/blob/main/apps/studio/components/interfaces/JwtSecrets/illustrations.tsx#L133">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

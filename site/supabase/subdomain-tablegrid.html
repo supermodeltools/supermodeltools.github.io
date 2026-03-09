@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>TableGrid — supabase Architecture | supabase Architecture Docs</title>
+<meta name="description" content="A complex data-grid for direct database interaction and spreadsheet-like editing. Architecture documentation for the TableGrid subdomain (part of StudioAPI domain) in the supabase codebase. Contains 0 source files.">
+<link rel="canonical" href="https://repos.supermodeltools.com/subdomain-tablegrid/">
+<meta property="og:title" content="TableGrid — supabase Architecture — supabase Architecture Docs">
+<meta property="og:description" content="A complex data-grid for direct database interaction and spreadsheet-like editing. Architecture documentation for the TableGrid subdomain (part of StudioAPI domain) in the supabase codebase. Contains 0 source files.">
+<meta property="og:url" content="https://repos.supermodeltools.com/subdomain-tablegrid.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/subdomain-tablegrid.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="supabase Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TableGrid — supabase Architecture — supabase Architecture Docs">
+<meta name="twitter:description" content="A complex data-grid for direct database interaction and spreadsheet-like editing. Architecture documentation for the TableGrid subdomain (part of StudioAPI domain) in the supabase codebase. Contains 0 source files.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/subdomain-tablegrid.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"A complex data-grid for direct database interaction and spreadsheet-like editing. Architecture documentation for the TableGrid subdomain (part of StudioAPI domain) in the supabase codebase. Contains 0 source files.","image":["https://repos.supermodeltools.com/images/share/subdomain-tablegrid.svg"],"name":"TableGrid — supabase Architecture","url":"https://repos.supermodeltools.com/subdomain-tablegrid.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"TableGrid — supabase Architecture","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"TableGrid is a subdomain in the supabase codebase, part of the StudioAPI domain. A complex data-grid for direct database interaction and spreadsheet-like editing. It contains 0 source files."},"name":"What is the TableGrid subdomain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"TableGrid belongs to the StudioAPI domain."},"name":"Which domain does TableGrid belong to?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The TableGrid subdomain contains 308 function(s): AddColumn.renderHeaderCell, AddColumnHeader, AdditionalMonthlySpend, AnalyticsBucketFields, BackupItem, BackupsEmpty, BackupsList, BackupsList, and 300 more."},"name":"What functions are in TableGrid?"}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      supabase Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/subdomain.html">Subdomain</a><span class="sep">/</span>
+        <span>TableGrid — supabase Architecture</span>
+      </div>
+      <h1 class="entity-title">TableGrid — supabase Architecture</h1>
+      
+
+      <div class="entity-meta">
+        <a href="/node_type/subdomain.html" class="pill pill-accent">Subdomain</a>
+        
+        <a href="/domain/studioapi.html" class="pill pill-green">StudioAPI</a>
+        <a href="/subdomain/tablegrid.html" class="pill pill-orange">TableGrid</a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+      <div class="entity-summary">
+        <p>A complex data-grid for direct database interaction and spreadsheet-like editing.</p>
+      </div>
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data"></script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+
+      
+      <div class="visuals-row">
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="subdomain-tablegrid"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"subdomain:StudioAPI:TableGrid","label":"TableGrid","type":"Subdomain","slug":"subdomain-tablegrid"},{"id":"domain:StudioAPI","label":"StudioAPI","type":"Domain","slug":"domain-studioapi"}],"edges":[{"source":"subdomain:StudioAPI:TableGrid","target":"domain:StudioAPI","type":"partOf"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-studioapi.html">StudioAPI</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Functions</h2>
+      <ul><li><a href="/fn-addcolumn-tsx-addcolumn-renderheadercell.html">AddColumn.renderHeaderCell()</a></li><li><a href="/fn-addcolumn-tsx-addcolumnheader.html">AddColumnHeader()</a></li><li><a href="/fn-additionalmonthlyspend-tsx-additionalmonthlyspend.html">AdditionalMonthlySpend()</a></li><li><a href="/fn-destinationpanelfields-tsx-analyticsbucketfields.html">AnalyticsBucketFields()</a></li><li><a href="/fn-backupitem-tsx-backupitem.html">BackupItem()</a></li><li><a href="/fn-backupsempty-tsx-backupsempty.html">BackupsEmpty()</a></li><li><a href="/fn-backupslist-tsx-backupslist.html">BackupsList()</a></li><li><a href="/fn-backupslist-tsx-backupslist-2.html">BackupsList()</a></li><li><a href="/fn-backupsstoragealert-tsx-backupsstoragealert.html">BackupsStorageAlert()</a></li><li><a href="/fn-datetimeeditor-tsx-baseeditor.html">BaseEditor()</a></li><li><a href="/fn-timeeditor-tsx-baseeditor.html">BaseEditor()</a></li><li><a href="/fn-batchrestartdialog-tsx-batchrestartdialog.html">BatchRestartDialog()</a></li><li><a href="/fn-binaryformatter-tsx-binaryformatter.html">BinaryFormatter()</a></li><li><a href="/fn-comingsoon-tsx-blanknode.html">BlankNode()</a></li><li><a href="/fn-blockkeys-tsx-blockkeys.html">BlockKeys()</a></li><li><a href="/fn-booleaneditor-tsx-booleaneditor.html">BooleanEditor()</a></li><li><a href="/fn-booleanformatter-tsx-booleanformatter.html">BooleanFormatter()</a></li><li><a href="/fn-comingsoon-tsx-ctanode.html">CTANode()</a></li><li><a href="/fn-choosefunctionform-tsx-choosefunctionform.html">ChooseFunctionForm()</a></li><li><a href="/fn-triggersheet-tsx-closeconfirmationmodal.html">CloseConfirmationModal()</a></li><li><a href="/fn-edithookpanel-tsx-closeconfirmationmodal.html">CloseConfirmationModal()</a></li><li><a href="/fn-columnheader-tsx-columnheader.html">ColumnHeader()</a></li><li><a href="/fn-columnlist-tsx-columnlist.html">ColumnList()</a></li><li><a href="/fn-columnmenu-tsx-columnmenu.html">ColumnMenu()</a></li><li><a href="/fn-confirmrestoredialog-tsx-confirmrestoredialog.html">ConfirmRestoreDialog()</a></li><li><a href="/fn-createfunctionheader-tsx-createfunctionheader.html">CreateFunctionHeader()</a></li><li><a href="/fn-createnewprojectdialog-tsx-createnewprojectdialog.html">CreateNewProjectDialog()</a></li><li><a href="/fn-createtriggerbuttons-tsx-createtriggerbuttons.html">CreateTriggerButtons()</a></li><li><a href="/fn-filterpopovernew-utils-ts-default-operators.html">DEFAULT_OPERATORS()</a></li><li><a href="/fn-databasebackupsnav-tsx-databasebackupsnav.html">DatabaseBackupsNav()</a></li><li><a href="/fn-filterpopovernew-tsx-datepickeroption.html">DatePickerOption()</a></li><li><a href="/fn-datetimeeditor-tsx-datetimeeditor.html">DateTimeEditor()</a></li><li><a href="/fn-defaultformatter-tsx-defaultformatter.html">DefaultFormatter()</a></li><li><a href="/fn-headernew-tsx-defaultheader.html">DefaultHeader()</a></li><li><a href="/fn-header-tsx-defaultheader.html">DefaultHeader()</a></li><li><a href="/fn-defaultvalue-tsx-defaultvalue.html">DefaultValue()</a></li><li><a href="/fn-deletedestination-tsx-deletedestination.html">DeleteDestination()</a></li><li><a href="/fn-deleteenumeratedtypemodal-tsx-deleteenumeratedtypemodal.html">DeleteEnumeratedTypeModal()</a></li><li><a href="/fn-deleteeventtrigger-tsx-deleteeventtrigger.html">DeleteEventTrigger()</a></li><li><a href="/fn-deletefunction-tsx-deletefunction.html">DeleteFunction()</a></li><li><a href="/fn-deletehookmodal-tsx-deletehookmodal.html">DeleteHookModal()</a></li><li><a href="/fn-deleterolemodal-tsx-deleterolemodal.html">DeleteRoleModal()</a></li><li><a href="/fn-deletetrigger-tsx-deletetrigger.html">DeleteTrigger()</a></li><li><a href="/fn-destinationnameinput-tsx-destinationnameinput.html">DestinationNameInput()</a></li><li><a href="/fn-destinationrow-tsx-destinationrow.html">DestinationRow()</a></li><li><a href="/fn-destinationtypeselection-tsx-destinationtypeselection.html">DestinationTypeSelection()</a></li><li><a href="/fn-destinations-tsx-destinations.html">Destinations()</a></li><li><a href="/fn-dropdowncontrol-tsx-dropdowncontrol.html">DropdownControl()</a></li><li><a href="/fn-emptyvalue-tsx-emptyvalue.html">EmptyValue()</a></li><li><a href="/fn-enableextensionmodal-tsx-enableextensionmodal.html">EnableExtensionModal()</a></li><li><a href="/fn-enablereplicationcallout-tsx-enablereplicationcallout.html">EnableReplicationCallout()</a></li><li><a href="/fn-enablereplicationcallout-tsx-enablereplicationmodal.html">EnableReplicationModal()</a></li><li><a href="/fn-enumeratedtypevaluerow-tsx-enumeratedtypevaluerow.html">EnumeratedTypeValueRow()</a></li><li><a href="/fn-enumeratedtypes-tsx-enumeratedtypes.html">EnumeratedTypes()</a></li><li><a href="/fn-errordetailsdialog-tsx-errordetailsdialog.html">ErrorDetailsDialog()</a></li><li><a href="/fn-erroredtabledetails-tsx-erroredtabledetails.html">ErroredTableDetails()</a></li><li><a href="/fn-eventtriggerlist-tsx-eventtriggerlist.html">EventTriggerList()</a></li><li><a href="/fn-eventtriggerslist-tsx-eventtriggerslist.html">EventTriggersList()</a></li><li><a href="/fn-exportdialog-tsx-exportdialog.html">ExportDialog()</a></li><li><a href="/fn-extensioncardskeleton-tsx-extensioncardskeleton.html">ExtensionCardSkeleton()</a></li><li><a href="/fn-extensionrow-tsx-extensionrow.html">ExtensionRow()</a></li><li><a href="/fn-extensions-tsx-extensions-2.html">Extensions()</a></li><li><a href="/fn-filterpopover-tsx-filterpopover.html">FilterPopover()</a></li><li><a href="/fn-filterpopovernew-tsx-filterpopovernew.html">FilterPopoverNew()</a></li><li><a href="/fn-filterpopoverprimitive-tsx-filterpopoverprimitive.html">FilterPopoverPrimitive()</a></li><li><a href="/fn-filterrow-tsx-filterrow.html">FilterRow()</a></li><li><a href="/fn-footer-tsx-footer-2.html">Footer()</a></li><li><a href="/fn-foreignkeyformatter-tsx-foreignkeyformatter.html">ForeignKeyFormatter()</a></li><li><a href="/fn-griderror-tsx-foreigntablemissingvaultkeyerror.html">ForeignTableMissingVaultKeyError()</a></li><li><a href="/fn-formcontents-tsx-formcontents.html">FormContents()</a></li><li><a href="/fn-enableextensionmodal-tsx-formschema.html">FormSchema()</a></li><li><a href="/fn-choosefunctionform-tsx-function.html">Function()</a></li><li><a href="/fn-functioneditor-tsx-functioneditor.html">FunctionEditor()</a></li><li><a href="/fn-functionlist-tsx-functionlist.html">FunctionList()</a></li><li><a href="/fn-functionslist-tsx-functionslist.html">FunctionsList()</a></li><li><a href="/fn-griderror-tsx-generalerror.html">GeneralError()</a></li><li><a href="/fn-grid-tsx-grid-2.html">Grid()</a></li><li><a href="/fn-griderror-tsx-griderror.html">GridError()</a></li><li><a href="/fn-httpheaders-tsx-httpheaders.html">HTTPHeaders()</a></li><li><a href="/fn-httpparameters-tsx-httpparameters.html">HTTPParameters()</a></li><li><a href="/fn-header-tsx-header.html">Header()</a></li><li><a href="/fn-headernew-tsx-headernew.html">HeaderNew()</a></li><li><a href="/fn-hooklist-tsx-hooklist.html">HookList()</a></li><li><a href="/fn-hookslist-tsx-hookslist.html">HooksList()</a></li><li><a href="/fn-hookslistempty-tsx-hookslistempty.html">HooksListEmpty()</a></li><li><a href="/fn-indexes-tsx-indexes.html">Indexes()</a></li><li><a href="/fn-headernew-tsx-insertbutton.html">InsertButton()</a></li><li><a href="/fn-griderror-tsx-invalidorderingoperatorerror.html">InvalidOrderingOperatorError()</a></li><li><a href="/fn-griderror-tsx-invalidsyntaxerror.html">InvalidSyntaxError()</a></li><li><a href="/fn-index-tsx-jwtsecretkeystable.html">JWTSecretKeysTable()</a></li><li><a href="/fn-jsoneditor-tsx-jsoneditor.html">JsonEditor()</a></li><li><a href="/fn-jsonformatter-tsx-jsonformatter.html">JsonFormatter()</a></li><li><a href="/fn-migrations-tsx-migrations.html">Migrations()</a></li><li><a href="/fn-migrationsemptystate-tsx-migrationsemptystate.html">MigrationsEmptyState()</a></li><li><a href="/fn-monacoeditor-tsx-monacoeditor.html">MonacoEditor()</a></li><li><a href="/fn-mssqlvalidation-tsx-mssqladmonition.html">MsSqlAdmonition()</a></li><li><a href="/fn-mssqlvalidation-tsx-mssqlnovalidsortadmonition.html">MsSqlNoValidSortAdmonition()</a></li><li><a href="/fn-mssqlvalidation-tsx-mssqlsortwarningadmonition.html">MsSqlSortWarningAdmonition()</a></li><li><a href="/fn-nodestinationsavailable-tsx-nodestinationsavailable.html">NoDestinationsAvailable()</a></li><li><a href="/fn-choosefunctionform-tsx-nofunctionsstate.html">NoFunctionsState()</a></li><li><a href="/fn-nodes-tsx-nodecontainer.html">NodeContainer()</a></li><li><a href="/fn-choosefunctionform-tsx-noticebox.html">NoticeBox()</a></li><li><a href="/fn-nullvalue-tsx-nullvalue.html">NullValue()</a></li><li><a href="/fn-numbereditor-tsx-numbereditor.html">NumberEditor()</a></li><li><a href="/fn-pitrform-tsx-pitrform.html">PITRForm()</a></li><li><a href="/fn-pitrnotice-tsx-pitrnotice.html">PITRNotice()</a></li><li><a href="/fn-pitrselection-tsx-pitrselection.html">PITRSelection()</a></li><li><a href="/fn-pitrstatus-tsx-pitrstatus.html">PITRStatus()</a></li><li><a href="/fn-pagination-tsx-pagination-2.html">Pagination()</a></li><li><a href="/fn-pipelinestatus-tsx-pipelinestatus.html">PipelineStatus()</a></li><li><a href="/fn-previousrestoreitem-tsx-previousrestoreitem.html">PreviousRestoreItem()</a></li><li><a href="/fn-nodes-tsx-primarydatabasenode.html">PrimaryDatabaseNode()</a></li><li><a href="/fn-comingsoon-tsx-primarynode.html">PrimaryNode()</a></li><li><a href="/fn-privilegeshead-tsx-privilegeshead.html">PrivilegesHead()</a></li><li><a href="/fn-privilegestable-tsx-privilegestable.html">PrivilegesTable()</a></li><li><a href="/fn-protectedschemawarning-tsx-protectedschemadialog.html">ProtectedSchemaDialog()</a></li><li><a href="/fn-protectedschemawarning-tsx-protectedschemawarning.html">ProtectedSchemaWarning()</a></li><li><a href="/fn-publicationselection-tsx-publicationselection.html">PublicationSelection()</a></li><li><a href="/fn-publicationskeleton-tsx-publicationskeleton.html">PublicationSkeleton()</a></li><li><a href="/fn-publicationscombobox-tsx-publicationscombobox.html">PublicationsComboBox()</a></li><li><a href="/fn-publicationslist-tsx-publicationslist.html">PublicationsList()</a></li><li><a href="/fn-publicationstableitem-tsx-publicationstableitem.html">PublicationsTableItem()</a></li><li><a href="/fn-publicationstables-tsx-publicationstables.html">PublicationsTables()</a></li><li><a href="/fn-readreplicadetails-tsx-readreplicadetails.html">ReadReplicaDetails()</a></li><li><a href="/fn-readreplicaeligibilitywarnings-tsx-readreplicaeligibilitywarnings.html">ReadReplicaEligibilityWarnings()</a></li><li><a href="/fn-nodes-tsx-readreplicanode.html">ReadReplicaNode()</a></li><li><a href="/fn-readreplicapricingdialog-tsx-readreplicapricingdialog.html">ReadReplicaPricingDialog()</a></li><li><a href="/fn-readreplicarow-tsx-readreplicarow.html">ReadReplicaRow()</a></li><li><a href="/fn-referencerecordpeek-tsx-referencerecordpeek.html">ReferenceRecordPeek()</a></li><li><a href="/fn-refreshbutton-tsx-refreshbutton.html">RefreshButton()</a></li><li><a href="/fn-comingsoon-tsx-replicanode.html">ReplicaNode()</a></li><li><a href="/fn-comingsoon-tsx-replicationcomingsoon.html">ReplicationComingSoon()</a></li><li><a href="/fn-replicationdisclaimerdialog-tsx-replicationdisclaimerdialog.html">ReplicationDisclaimerDialog()</a></li><li><a href="/fn-nodes-tsx-replicationnode.html">ReplicationNode()</a></li><li><a href="/fn-replicationpipelinestatus-tsx-replicationpipelinestatus.html">ReplicationPipelineStatus()</a></li><li><a href="/fn-comingsoon-tsx-replicationstaticmockup.html">ReplicationStaticMockup()</a></li><li><a href="/fn-restarttabledialog-tsx-restarttabledialog.html">RestartTableDialog()</a></li><li><a href="/fn-restoretonewproject-tsx-restoretonewproject.html">RestoreToNewProject()</a></li><li><a href="/fn-retrycountdown-tsx-retrycountdown.html">RetryCountdown()</a></li><li><a href="/fn-rolerow-tsx-rolerow.html">RoleRow()</a></li><li><a href="/fn-rolerowskeleton-tsx-rolerowskeleton.html">RoleRowSkeleton()</a></li><li><a href="/fn-roleslist-tsx-roleslist.html">RolesList()</a></li><li><a href="/fn-privilegeshead-tsx-rolesselect.html">RolesSelect()</a></li><li><a href="/fn-rowcontextmenu-tsx-rowcontextmenu.html">RowContextMenu()</a></li><li><a href="/fn-pagination-tsx-rowcountselector.html">RowCountSelector()</a></li><li><a href="/fn-headernew-tsx-rowheader.html">RowHeader()</a></li><li><a href="/fn-header-tsx-rowheader.html">RowHeader()</a></li><li><a href="/fn-rowmenu-tsx-rowmenu.html">RowMenu()</a></li><li><a href="/fn-rowrenderer-tsx-rowrenderer.html">RowRenderer()</a></li><li><a href="/fn-filterpopovernew-utils-ts-string-operators.html">STRING_OPERATORS()</a></li><li><a href="/fn-savequeueactionbar-tsx-savequeueactionbar.html">SaveQueueActionBar()</a></li><li><a href="/fn-choosefunctionform-tsx-schemafunctiongroup.html">SchemaFunctionGroup()</a></li><li><a href="/fn-schemagraph-tsx-schemagraph.html">SchemaGraph()</a></li><li><a href="/fn-schemagraphlegend-tsx-schemagraphlegend.html">SchemaGraphLegend()</a></li><li><a href="/fn-schematable-tsx-schematable.html">SchemaTable()</a></li><li><a href="/fn-selectcolumn-tsx-selectcellformatter.html">SelectCellFormatter()</a></li><li><a href="/fn-selectcolumn-tsx-selectcellheader.html">SelectCellHeader()</a></li><li><a href="/fn-selectcolumn-tsx-selectcolumn-rendercell.html">SelectColumn.renderCell()</a></li><li><a href="/fn-selectcolumn-tsx-selectcolumn-rendergroupcell.html">SelectColumn.renderGroupCell()</a></li><li><a href="/fn-selectcolumn-tsx-selectcolumn-renderheadercell.html">SelectColumn.renderHeaderCell()</a></li><li><a href="/fn-selecteditor-tsx-selecteditor.html">SelectEditor()</a></li><li><a href="/fn-shortcuts-tsx-shortcuts.html">Shortcuts()</a></li><li><a href="/fn-slotlagmetrics-tsx-slotlagmetricsinline.html">SlotLagMetricsInline()</a></li><li><a href="/fn-slotlagmetrics-tsx-slotlagmetricslist.html">SlotLagMetricsList()</a></li><li><a href="/fn-sortpopover-tsx-sortpopover.html">SortPopover()</a></li><li><a href="/fn-sortpopoverprimitive-tsx-sortpopoverprimitive.html">SortPopoverPrimitive()</a></li><li><a href="/fn-sortrow-tsx-sortrow.html">SortRow()</a></li><li><a href="/fn-statusbadge-tsx-statusbadge.html">StatusBadge()</a></li><li><a href="/fn-supabasegrid-tsx-supabasegrid.html">SupabaseGrid()</a></li><li><a href="/fn-tableindexadvisorcontext-tsx-tableindexadvisorcontext-getsuggestionsforcolumn.html">TableIndexAdvisorContext.getSuggestionsForColumn()</a></li><li><a href="/fn-tableindexadvisorcontext-tsx-tableindexadvisorcontext-invalidate.html">TableIndexAdvisorContext.invalidate()</a></li><li><a href="/fn-tableindexadvisorcontext-tsx-tableindexadvisorcontext-opensheet.html">TableIndexAdvisorContext.openSheet()</a></li><li><a href="/fn-tableindexadvisorcontext-tsx-tableindexadvisorprovider.html">TableIndexAdvisorProvider()</a></li><li><a href="/fn-tablelist-tsx-tablelist.html">TableList()</a></li><li><a href="/fn-schematablenode-tsx-tablenode.html">TableNode()</a></li><li><a href="/fn-tablereplicationrow-tsx-tablereplicationrow.html">TableReplicationRow()</a></li><li><a href="/fn-privilegeshead-tsx-tablesselect.html">TablesSelect()</a></li><li><a href="/fn-texteditor-tsx-texteditor.html">TextEditor()</a></li><li><a href="/fn-timeeditor-tsx-timeeditor.html">TimeEditor()</a></li><li><a href="/fn-timeinput-tsx-timeinput.html">TimeInput()</a></li><li><a href="/fn-timeeditor-tsx-timewithtimezoneeditor.html">TimeWithTimezoneEditor()</a></li><li><a href="/fn-timezoneselection-tsx-timezoneselection.html">TimezoneSelection()</a></li><li><a href="/fn-triggerlist-tsx-triggerlist.html">TriggerList()</a></li><li><a href="/fn-triggersheet-tsx-triggersheet.html">TriggerSheet()</a></li><li><a href="/fn-triggerslist-tsx-triggerslist.html">TriggersList()</a></li><li><a href="/fn-truncatedwarningoverlay-tsx-truncatedwarningoverlay.html">TruncatedWarningOverlay()</a></li><li><a href="/fn-updateversionmodal-tsx-updateversionmodal.html">UpdateVersionModal()</a></li><li><a href="/fn-validationfailuressection-tsx-validationfailuressection.html">ValidationFailuresSection()</a></li><li><a href="/fn-privileges-utils-ts-addorremoveoperation.html">addOrRemoveOperation()</a></li><li><a href="/fn-queueoperationutils-ts-applycelledit.html">applyCellEdit()</a></li><li><a href="/fn-queueoperationutils-ts-applyrowadd.html">applyRowAdd()</a></li><li><a href="/fn-numbereditor-tsx-autofocusandselect.html">autoFocusAndSelect()</a></li><li><a href="/fn-timeeditor-tsx-autofocusandselect.html">autoFocusAndSelect()</a></li><li><a href="/fn-supabasegrid-utils-ts-buildtableeditorurl.html">buildTableEditorUrl()</a></li><li><a href="/fn-filterpopovernew-utils-ts-columntofilterproperty.html">columnToFilterProperty()</a></li><li><a href="/fn-pitr-utils-ts-constraindatetorange.html">constrainDateToRange()</a></li><li><a href="/fn-functions-utils-ts-convertargumenttypes.html">convertArgumentTypes()</a></li><li><a href="/fn-queueconflictresolution-ts-editoperationmatchestempid.html">editOperationMatchesTempId()</a></li><li><a href="/fn-eventtriggerlist-utils-ts-ensuresemicolon.html">ensureSemicolon()</a></li><li><a href="/fn-eventtriggerlist-utils-ts-escapeidentifier.html">escapeIdentifier()</a></li><li><a href="/fn-eventtriggerlist-utils-ts-escapeliteral.html">escapeLiteral()</a></li><li><a href="/fn-filterpopovernew-tsx-filtergrouptofilters.html">filterGroupToFilters()</a></li><li><a href="/fn-filterpopovernew-tsx-filterstofiltergroup.html">filtersToFilterGroup()</a></li><li><a href="/fn-supabasegrid-utils-ts-filterstourlparams.html">filtersToUrlParams()</a></li><li><a href="/fn-schemas-utils-ts-findtableshandleids.html">findTablesHandleIds()</a></li><li><a href="/fn-tables-utils-ts-formatallentities.html">formatAllEntities()</a></li><li><a href="/fn-common-ts-formatclipboardvalue.html">formatClipboardValue()</a></li><li><a href="/fn-pagination-utils-ts-formatestimatedcount.html">formatEstimatedCount()</a></li><li><a href="/fn-supabasegrid-utils-ts-formatfilterurlparams.html">formatFilterURLParams()</a></li><li><a href="/fn-replicationpipelinestatus-utils-tsx-formatlagbytesvalue.html">formatLagBytesValue()</a></li><li><a href="/fn-replicationpipelinestatus-utils-tsx-formatlagdurationvalue.html">formatLagDurationValue()</a></li><li><a href="/fn-pitr-utils-ts-formatnumbertotwodigits.html">formatNumberToTwoDigits()</a></li><li><a href="/fn-header-utils-ts-formatrowsforcsv.html">formatRowsForCSV()</a></li><li><a href="/fn-supabasegrid-utils-ts-formatsorturlparams.html">formatSortURLParams()</a></li><li><a href="/fn-pitr-utils-ts-formattimetotimestring.html">formatTimeToTimeString()</a></li><li><a href="/fn-eventtriggerlist-utils-ts-generateeventtriggercreatesql.html">generateEventTriggerCreateSQL()</a></li><li><a href="/fn-queueoperationutils-ts-generatetablechangekey.html">generateTableChangeKey()</a></li><li><a href="/fn-triggerlist-utils-ts-generatetriggercreatesql.html">generateTriggerCreateSQL()</a></li><li><a href="/fn-gridcolumns-tsx-getcelleditor.html">getCellEditor()</a></li><li><a href="/fn-gridcolumns-tsx-getcellrenderer.html">getCellRenderer()</a></li><li><a href="/fn-gridcolumns-tsx-getcolumndefaultwidth.html">getColumnDefaultWidth()</a></li><li><a href="/fn-columnheader-tsx-getcolumnformat.html">getColumnFormat()</a></li><li><a href="/fn-gridcolumns-tsx-getcolumntype.html">getColumnType()</a></li><li><a href="/fn-restoretonewproject-utils-ts-getcomputehourlyprice.html">getComputeHourlyPrice()</a></li><li><a href="/fn-replicationdiagram-utils-ts-getdagregraphlayout.html">getDagreGraphLayout()</a></li><li><a href="/fn-pitr-utils-ts-getdatesbetweenrange.html">getDatesBetweenRange()</a></li><li><a href="/fn-privileges-utils-ts-getdefaultcolumncheckedstates.html">getDefaultColumnCheckedStates()</a></li><li><a href="/fn-privileges-utils-ts-getdefaulttablecheckedstates.html">getDefaultTableCheckedStates()</a></li><li><a href="/fn-replicationpipelinestatus-utils-tsx-getformattedlagvalue.html">getFormattedLagValue()</a></li><li><a href="/fn-schemas-utils-ts-getgraphdatafromtables.html">getGraphDataFromTables()</a></li><li><a href="/fn-gridcolumns-tsx-getgridcolumns.html">getGridColumns()</a></li><li><a href="/fn-column-ts-getinitialgridcolumns.html">getInitialGridColumns()</a></li><li><a href="/fn-readreplicas-utils-ts-getisintransition.html">getIsInTransition()</a></li><li><a href="/fn-supabasegrid-utils-ts-getlatestparams.html">getLatestParams()</a></li><li><a href="/fn-schemas-utils-ts-getlayoutedelementsviadagre.html">getLayoutedElementsViaDagre()</a></li><li><a href="/fn-schemas-utils-ts-getlayoutedelementsvialocalstorage.html">getLayoutedElementsViaLocalStorage()</a></li><li><a href="/fn-pitr-utils-ts-getpitrretentionduration.html">getPITRRetentionDuration()</a></li><li><a href="/fn-pipeline-utils-ts-getpipelinestatemessages.html">getPipelineStateMessages()</a></li><li><a href="/fn-readreplicas-utils-ts-getstatuslabel.html">getStatusLabel()</a></li><li><a href="/fn-pipeline-utils-ts-getstatusname.html">getStatusName()</a></li><li><a href="/fn-supabasegrid-utils-ts-getstoragekey.html">getStorageKey()</a></li><li><a href="/fn-supabasegrid-utils-ts-handlecopycell.html">handleCopyCell()</a></li><li><a href="/fn-functions-utils-ts-haswhitespace.html">hasWhitespace()</a></li><li><a href="/fn-hooks-tsx-includes.html">includes()</a></li><li><a href="/fn-types-ts-isarraycolumn.html">isArrayColumn()</a></li><li><a href="/fn-types-ts-isbinarycolumn.html">isBinaryColumn()</a></li><li><a href="/fn-types-ts-isboolcolumn.html">isBoolColumn()</a></li><li><a href="/fn-types-ts-iscitextcolumn.html">isCiTextColumn()</a></li><li><a href="/fn-types-ts-isdatecolumn.html">isDateColumn()</a></li><li><a href="/fn-filterpopovernew-utils-ts-isdatelikecolumn.html">isDateLikeColumn()</a></li><li><a href="/fn-types-ts-isdatetimecolumn.html">isDateTimeColumn()</a></li><li><a href="/fn-edithookpanel-tsx-isedgefunction.html">isEdgeFunction()</a></li><li><a href="/fn-types-ts-isenumcolumn.html">isEnumColumn()</a></li><li><a href="/fn-types-ts-isforeignkeycolumn.html">isForeignKeyColumn()</a></li><li><a href="/fn-types-ts-isjsoncolumn.html">isJsonColumn()</a></li><li><a href="/fn-types-ts-isnumericalcolumn.html">isNumericalColumn()</a></li><li><a href="/fn-filterpopovernew-tsx-isoptionrecord.html">isOptionRecord()</a></li><li><a href="/fn-table-ts-ispendingaddrow.html">isPendingAddRow()</a></li><li><a href="/fn-table-ts-ispendingdeleterow.html">isPendingDeleteRow()</a></li><li><a href="/fn-types-ts-istextcolumn.html">isTextColumn()</a></li><li><a href="/fn-types-ts-istimecolumn.html">isTimeColumn()</a></li><li><a href="/fn-replicationpipelinestatus-utils-tsx-isvalidretrypolicy.html">isValidRetryPolicy()</a></li><li><a href="/fn-supabasegrid-utils-ts-loadtableeditorstatefromlocalstorage.html">loadTableEditorStateFromLocalStorage()</a></li><li><a href="/fn-queueoperationutils-ts-markrowasdeleted.html">markRowAsDeleted()</a></li><li><a href="/fn-queueconflictresolution-ts-operationmatchesrow.html">operationMatchesRow()</a></li><li><a href="/fn-edithookpanel-tsx-parseheaders.html">parseHeaders()</a></li><li><a href="/fn-edithookpanel-tsx-parseparameters.html">parseParameters()</a></li><li><a href="/fn-supabasegrid-utils-ts-parsesupatable.html">parseSupaTable()</a></li><li><a href="/fn-restoretonewproject-utils-ts-projectspectomonthlyprice.html">projectSpecToMonthlyPrice()</a></li><li><a href="/fn-queueoperationutils-ts-queuecelleditwithoptimisticupdate.html">queueCellEditWithOptimisticUpdate()</a></li><li><a href="/fn-queueoperationutils-ts-queuerowaddwithoptimisticupdate.html">queueRowAddWithOptimisticUpdate()</a></li><li><a href="/fn-queueoperationutils-ts-queuerowdeleteswithoptimisticupdate.html">queueRowDeletesWithOptimisticUpdate()</a></li><li><a href="/fn-queueoperationutils-ts-reapplyoptimisticupdates.html">reapplyOptimisticUpdates()</a></li><li><a href="/fn-queueoperationutils-ts-removerow.html">removeRow()</a></li><li><a href="/fn-columnheader-tsx-rendercolumnicon.html">renderColumnIcon()</a></li><li><a href="/fn-queueconflictresolution-ts-resolvedeleterowconflicts.html">resolveDeleteRowConflicts()</a></li><li><a href="/fn-queueconflictresolution-ts-resolveeditcellconflicts.html">resolveEditCellConflicts()</a></li><li><a href="/fn-constants-ts-rlsacknowledgedkey.html">rlsAcknowledgedKey()</a></li><li><a href="/fn-grid-tsx-rowkeygetter.html">rowKeyGetter()</a></li><li><a href="/fn-queueoperationutils-ts-rowmatchesidentifiers.html">rowMatchesIdentifiers()</a></li><li><a href="/fn-supabasegrid-utils-ts-savetableeditorstatetolocalstorage.html">saveTableEditorStateToLocalStorage()</a></li><li><a href="/fn-filterpopovernew-tsx-serializefilterproperties.html">serializeFilterProperties()</a></li><li><a href="/fn-supabasegrid-utils-ts-sortstourlparams.html">sortsToUrlParams()</a></li><li><a href="/fn-selectcolumn-tsx-stoppropagation.html">stopPropagation()</a></li><li><a href="/fn-filterpopovernew-tsx-tooptiontext.html">toOptionText()</a></li><li><a href="/fn-jsoneditor-tsx-tryformatinitialvalue.html">tryFormatInitialValue()</a></li><li><a href="/fn-queueconflictresolution-ts-upsertoperation.html">upsertOperation()</a></li><li><a href="/fn-privileges-utils-ts-useapplyprivilegeoperations.html">useApplyPrivilegeOperations()</a></li><li><a href="/fn-usecheckeligibilitydeployreplica-ts-usecheckeligibilitydeployreplica.html">useCheckEligibilityDeployReplica()</a></li><li><a href="/fn-tableindexadvisorcontext-tsx-usecolumnhasindexsuggestion.html">useColumnHasIndexSuggestion()</a></li><li><a href="/fn-usedestinationinformation-ts-usedestinationinformation.html">useDestinationInformation()</a></li><li><a href="/fn-usegetreplicacost-ts-usegetreplicacost.html">useGetReplicaCost()</a></li><li><a href="/fn-usefilterlifecycle-ts-useinitializefiltersfromurl.html">useInitializeFiltersFromUrl()</a></li><li><a href="/fn-useisetlprivatealpha-ts-useisetlprivatealpha.html">useIsETLPrivateAlpha()</a></li><li><a href="/fn-hooks-tsx-usekeyboardshortcuts.html">useKeyboardShortcuts()</a></li><li><a href="/fn-grid-utils-tsx-useonrowschange.html">useOnRowsChange()</a></li><li><a href="/fn-useoperationqueueactions-ts-useoperationqueueactions.html">useOperationQueueActions()</a></li><li><a href="/fn-useoperationqueueshortcuts-ts-useoperationqueueshortcuts.html">useOperationQueueShortcuts()</a></li><li><a href="/fn-privileges-utils-ts-useprivilegesstate.html">usePrivilegesState()</a></li><li><a href="/fn-usefilterlifecycle-ts-usesyncfilterstourl.html">useSyncFiltersToUrl()</a></li><li><a href="/fn-supabasegrid-utils-ts-usesynctableeditorstatefromlocalstoragewithurl.html">useSyncTableEditorStateFromLocalStorageWithUrl()</a></li><li><a href="/fn-usetablefilter-ts-usetablefilter.html">useTableFilter()</a></li><li><a href="/fn-usetablefilternew-ts-usetablefilternew.html">useTableFilterNew()</a></li><li><a href="/fn-tableindexadvisorcontext-tsx-usetableindexadvisor.html">useTableIndexAdvisor()</a></li><li><a href="/fn-usetablesort-ts-usetablesort.html">useTableSort()</a></li><li><a href="/fn-mssqlvalidation-tsx-validatemssqlsorting.html">validateMsSqlSorting()</a></li><li><a href="/fn-jsoneditor-tsx-verifyjson.html">verifyJSON()</a></li><li><a href="/fn-gridcolumns-tsx-withpendingaddplaceholders.html">withPendingAddPlaceholders()</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What is the TableGrid subdomain?</summary>
+        <div class="faq-answer">TableGrid is a subdomain in the supabase codebase, part of the StudioAPI domain. A complex data-grid for direct database interaction and spreadsheet-like editing. It contains 0 source files.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Which domain does TableGrid belong to?</summary>
+        <div class="faq-answer">TableGrid belongs to the StudioAPI domain.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What functions are in TableGrid?</summary>
+        <div class="faq-answer">The TableGrid subdomain contains 308 function(s): AddColumn.renderHeaderCell, AddColumnHeader, AdditionalMonthlySpend, AnalyticsBucketFields, BackupItem, BackupsEmpty, BackupsList, BackupsList, and 300 more.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>
