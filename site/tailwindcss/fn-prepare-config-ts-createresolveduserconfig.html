@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/upgradetoolchain.html" class="pill pill-green">UpgradeToolchain</a>
-        <a href="/subdomain/configcodemods.html" class="pill pill-orange">ConfigCodemods</a>
+        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
+        <a href="/subdomain/resolver.html" class="pill pill-orange">Resolver</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"UpgradeToolchain","slug":"domain-upgradetoolchain"},"entity":{"name":"createResolvedUserConfig","slug":"fn-prepare-config-ts-createresolveduserconfig","type":"Function"},"subdomain":{"name":"ConfigCodemods","slug":"subdomain-configcodemods"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"createResolvedUserConfig","slug":"fn-prepare-config-ts-createresolveduserconfig","type":"Function"},"subdomain":{"name":"Resolver","slug":"subdomain-resolver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/upgradetoolchain.html">UpgradeToolchain</a><span class="arch-sep">&rarr;</span>
-            <a href="/configcodemods.html">ConfigCodemods</a><span class="arch-sep">&rarr;</span>
+            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
+            <a href="/resolver.html">Resolver</a><span class="arch-sep">&rarr;</span>
             <span>createResolvedUserConfig() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  0c235361_73ad_1ff1_b47f_c98868ec052e["createResolvedUserConfig()"]
-  81027392_cc2f_9a08_69bd_0d748140ba5a["prepareConfig()"]
-  81027392_cc2f_9a08_69bd_0d748140ba5a -->|calls| 0c235361_73ad_1ff1_b47f_c98868ec052e
-  defb4503_a9b9_0c19_6ce4_64177c7a5618["loadModule()"]
-  0c235361_73ad_1ff1_b47f_c98868ec052e -->|calls| defb4503_a9b9_0c19_6ce4_64177c7a5618
-  a6e89cbd_3575_3ad8_27ff_c1cbf38f5125["resolveConfig()"]
-  0c235361_73ad_1ff1_b47f_c98868ec052e -->|calls| a6e89cbd_3575_3ad8_27ff_c1cbf38f5125
-  style 0c235361_73ad_1ff1_b47f_c98868ec052e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  b48b8480_aa44_4cd2_d0a3_1a35cc57bec3["createResolvedUserConfig()"]
+  b8fc93a2_9459_0b11_65b3_ced75d9aff9b["prepareConfig()"]
+  b8fc93a2_9459_0b11_65b3_ced75d9aff9b -->|calls| b48b8480_aa44_4cd2_d0a3_1a35cc57bec3
+  a91e84df_ca35_a5ec_32c1_20fd6c83c927["loadModule()"]
+  b48b8480_aa44_4cd2_d0a3_1a35cc57bec3 -->|calls| a91e84df_ca35_a5ec_32c1_20fd6c83c927
+  260b377a_db1b_08ab_41b4_178ba719047d["resolveConfig()"]
+  b48b8480_aa44_4cd2_d0a3_1a35cc57bec3 -->|calls| 260b377a_db1b_08ab_41b4_178ba719047d
+  style b48b8480_aa44_4cd2_d0a3_1a35cc57bec3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-prepare-config-ts-createresolveduserconfig"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"0c235361:73ad:1ff1:b47f:c98868ec052e","label":"createResolvedUserConfig","type":"Function","slug":"fn-prepare-config-ts-createresolveduserconfig","lc":15,"lang":"typescript","cc":2,"cbc":1},{"id":"defb4503:a9b9:0c19:6ce4:64177c7a5618","label":"loadModule","type":"Function","slug":"fn-compile-ts-loadmodule","lc":39,"lang":"typescript","cc":3,"cbc":4},{"id":"a6e89cbd:3575:3ad8:27ff:c1cbf38f5125","label":"resolveConfig","type":"Function","slug":"fn-resolve-config-ts-resolveconfig","lc":54,"lang":"typescript","cc":2,"cbc":4},{"id":"81027392:cc2f:9a08:69bd:0d748140ba5a","label":"prepareConfig","type":"Function","slug":"fn-prepare-config-ts-prepareconfig","lc":55,"lang":"typescript","cc":6,"cbc":1},{"id":"domain:UpgradeToolchain","label":"UpgradeToolchain","type":"Domain","slug":"domain-upgradetoolchain"},{"id":"subdomain:UpgradeToolchain:ConfigCodemods","label":"ConfigCodemods","type":"Subdomain","slug":"subdomain-configcodemods"}],"edges":[{"source":"0c235361:73ad:1ff1:b47f:c98868ec052e","target":"defb4503:a9b9:0c19:6ce4:64177c7a5618","type":"calls"},{"source":"0c235361:73ad:1ff1:b47f:c98868ec052e","target":"a6e89cbd:3575:3ad8:27ff:c1cbf38f5125","type":"calls"},{"source":"81027392:cc2f:9a08:69bd:0d748140ba5a","target":"0c235361:73ad:1ff1:b47f:c98868ec052e","type":"calls"},{"source":"0c235361:73ad:1ff1:b47f:c98868ec052e","target":"domain:UpgradeToolchain","type":"belongsTo"},{"source":"0c235361:73ad:1ff1:b47f:c98868ec052e","target":"subdomain:UpgradeToolchain:ConfigCodemods","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"b48b8480:aa44:4cd2:d0a3:1a35cc57bec3","label":"createResolvedUserConfig","type":"Function","slug":"fn-prepare-config-ts-createresolveduserconfig","lc":15,"lang":"typescript","cc":2,"cbc":1},{"id":"a91e84df:ca35:a5ec:32c1:20fd6c83c927","label":"loadModule","type":"Function","slug":"fn-compile-ts-loadmodule","lc":39,"lang":"typescript","cc":3,"cbc":4},{"id":"260b377a:db1b:08ab:41b4:178ba719047d","label":"resolveConfig","type":"Function","slug":"fn-resolve-config-ts-resolveconfig","lc":54,"lang":"typescript","cc":2,"cbc":4},{"id":"b8fc93a2:9459:0b11:65b3:ced75d9aff9b","label":"prepareConfig","type":"Function","slug":"fn-prepare-config-ts-prepareconfig","lc":55,"lang":"typescript","cc":6,"cbc":1},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Resolver","label":"Resolver","type":"Subdomain","slug":"subdomain-resolver"}],"edges":[{"source":"b48b8480:aa44:4cd2:d0a3:1a35cc57bec3","target":"a91e84df:ca35:a5ec:32c1:20fd6c83c927","type":"calls"},{"source":"b48b8480:aa44:4cd2:d0a3:1a35cc57bec3","target":"260b377a:db1b:08ab:41b4:178ba719047d","type":"calls"},{"source":"b8fc93a2:9459:0b11:65b3:ced75d9aff9b","target":"b48b8480:aa44:4cd2:d0a3:1a35cc57bec3","type":"calls"},{"source":"b48b8480:aa44:4cd2:d0a3:1a35cc57bec3","target":"domain:TailwindNode","type":"belongsTo"},{"source":"b48b8480:aa44:4cd2:d0a3:1a35cc57bec3","target":"subdomain:TailwindNode:Resolver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -962,14 +962,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-upgradetoolchain.html">UpgradeToolchain</a></li></ul>
+      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-configcodemods.html">ConfigCodemods</a></li></ul>
+      <ul><li><a href="/subdomain-resolver.html">Resolver</a></li></ul>
     </div>
     
 

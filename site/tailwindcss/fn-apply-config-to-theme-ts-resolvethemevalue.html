@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
-        <a href="/subdomain/moduleresolver.html" class="pill pill-orange">ModuleResolver</a>
+        <a href="/domain/oxidecore.html" class="pill pill-green">OxideCore</a>
+        <a href="/subdomain/extractor.html" class="pill pill-orange">Extractor</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"resolveThemeValue","slug":"fn-apply-config-to-theme-ts-resolvethemevalue","type":"Function"},"subdomain":{"name":"ModuleResolver","slug":"subdomain-moduleresolver"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideCore","slug":"domain-oxidecore"},"entity":{"name":"resolveThemeValue","slug":"fn-apply-config-to-theme-ts-resolvethemevalue","type":"Function"},"subdomain":{"name":"Extractor","slug":"subdomain-extractor"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
-            <a href="/moduleresolver.html">ModuleResolver</a><span class="arch-sep">&rarr;</span>
+            <a href="/oxidecore.html">OxideCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/extractor.html">Extractor</a><span class="arch-sep">&rarr;</span>
             <span>resolveThemeValue() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,18 +911,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ffc01706_87de_3c63_6c42_caa1f57264ac["resolveThemeValue()"]
-  624b05de_d52c_d64a_808e_f268e710dcb0["createSpacingCache()"]
-  624b05de_d52c_d64a_808e_f268e710dcb0 -->|calls| ffc01706_87de_3c63_6c42_caa1f57264ac
-  f75861a8_d410_3392_e040_2ca9a89bff9b["resolveVariablesInValue()"]
-  f75861a8_d410_3392_e040_2ca9a89bff9b -->|calls| ffc01706_87de_3c63_6c42_caa1f57264ac
-  9ba8f2ba_7446_8c5e_e7d9_7b6b04d26563["applyCompatibilityHooks()"]
-  9ba8f2ba_7446_8c5e_e7d9_7b6b04d26563 -->|calls| ffc01706_87de_3c63_6c42_caa1f57264ac
-  5c7d0e47_3ac0_b2e9_c37c_869a5fa774f3["upgradeToFullPluginSupport()"]
-  5c7d0e47_3ac0_b2e9_c37c_869a5fa774f3 -->|calls| ffc01706_87de_3c63_6c42_caa1f57264ac
-  4144b31f_c25f_9906_8fcb_f3c05613aaae["applyConfigToTheme()"]
-  4144b31f_c25f_9906_8fcb_f3c05613aaae -->|calls| ffc01706_87de_3c63_6c42_caa1f57264ac
-  style ffc01706_87de_3c63_6c42_caa1f57264ac fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  eea12d5d_a0f4_1836_fca5_ed2dadffa7de["resolveThemeValue()"]
+  147cc4e5_7937_bcc3_a352_d0989bd613c9["createSpacingCache()"]
+  147cc4e5_7937_bcc3_a352_d0989bd613c9 -->|calls| eea12d5d_a0f4_1836_fca5_ed2dadffa7de
+  34264c8d_8c34_5aae_6e5b_a9b84e09c5aa["resolveVariablesInValue()"]
+  34264c8d_8c34_5aae_6e5b_a9b84e09c5aa -->|calls| eea12d5d_a0f4_1836_fca5_ed2dadffa7de
+  240fd3b2_eb2c_d423_d2b8_a59072b3d1e1["applyCompatibilityHooks()"]
+  240fd3b2_eb2c_d423_d2b8_a59072b3d1e1 -->|calls| eea12d5d_a0f4_1836_fca5_ed2dadffa7de
+  877d0932_59fe_9248_7285_3627a166ee97["upgradeToFullPluginSupport()"]
+  877d0932_59fe_9248_7285_3627a166ee97 -->|calls| eea12d5d_a0f4_1836_fca5_ed2dadffa7de
+  39f6d494_5106_f76f_2f6f_6155b34ad436["applyConfigToTheme()"]
+  39f6d494_5106_f76f_2f6f_6155b34ad436 -->|calls| eea12d5d_a0f4_1836_fca5_ed2dadffa7de
+  style eea12d5d_a0f4_1836_fca5_ed2dadffa7de fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -930,7 +930,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-apply-config-to-theme-ts-resolvethemevalue"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ffc01706:87de:3c63:6c42:caa1f57264ac","label":"resolveThemeValue","type":"Function","slug":"fn-apply-config-to-theme-ts-resolvethemevalue","lc":16,"lang":"typescript","cbc":5},{"id":"624b05de:d52c:d64a:808e:f268e710dcb0","label":"createSpacingCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createspacingcache","lc":29,"lang":"typescript","cc":3,"cbc":1},{"id":"f75861a8:d410:3392:e040:2ca9a89bff9b","label":"resolveVariablesInValue","type":"Function","slug":"fn-canonicalize-candidates-ts-resolvevariablesinvalue","lc":65,"lang":"typescript","cc":5,"cbc":1},{"id":"9ba8f2ba:7446:8c5e:e7d9:7b6b04d26563","label":"applyCompatibilityHooks","type":"Function","slug":"fn-apply-compat-hooks-ts-applycompatibilityhooks","lc":195,"lang":"typescript","cc":7,"cbc":1},{"id":"5c7d0e47:3ac0:b2e9:c37c:869a5fa774f3","label":"upgradeToFullPluginSupport","type":"Function","slug":"fn-apply-compat-hooks-ts-upgradetofullpluginsupport","lc":207,"lang":"typescript","cc":12,"cbc":1},{"id":"4144b31f:c25f:9906:8fcb:f3c05613aaae","label":"applyConfigToTheme","type":"Function","slug":"fn-apply-config-to-theme-ts-applyconfigtotheme","lc":89,"lang":"typescript","cc":6,"cbc":1},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:ModuleResolver","label":"ModuleResolver","type":"Subdomain","slug":"subdomain-moduleresolver"}],"edges":[{"source":"624b05de:d52c:d64a:808e:f268e710dcb0","target":"ffc01706:87de:3c63:6c42:caa1f57264ac","type":"calls"},{"source":"f75861a8:d410:3392:e040:2ca9a89bff9b","target":"ffc01706:87de:3c63:6c42:caa1f57264ac","type":"calls"},{"source":"9ba8f2ba:7446:8c5e:e7d9:7b6b04d26563","target":"ffc01706:87de:3c63:6c42:caa1f57264ac","type":"calls"},{"source":"5c7d0e47:3ac0:b2e9:c37c:869a5fa774f3","target":"ffc01706:87de:3c63:6c42:caa1f57264ac","type":"calls"},{"source":"4144b31f:c25f:9906:8fcb:f3c05613aaae","target":"ffc01706:87de:3c63:6c42:caa1f57264ac","type":"calls"},{"source":"ffc01706:87de:3c63:6c42:caa1f57264ac","target":"domain:TailwindNode","type":"belongsTo"},{"source":"ffc01706:87de:3c63:6c42:caa1f57264ac","target":"subdomain:TailwindNode:ModuleResolver","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"eea12d5d:a0f4:1836:fca5:ed2dadffa7de","label":"resolveThemeValue","type":"Function","slug":"fn-apply-config-to-theme-ts-resolvethemevalue","lc":16,"lang":"typescript","cbc":5},{"id":"147cc4e5:7937:bcc3:a352:d0989bd613c9","label":"createSpacingCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createspacingcache","lc":29,"lang":"typescript","cc":3,"cbc":1},{"id":"34264c8d:8c34:5aae:6e5b:a9b84e09c5aa","label":"resolveVariablesInValue","type":"Function","slug":"fn-canonicalize-candidates-ts-resolvevariablesinvalue","lc":65,"lang":"typescript","cc":5,"cbc":1},{"id":"240fd3b2:eb2c:d423:d2b8:a59072b3d1e1","label":"applyCompatibilityHooks","type":"Function","slug":"fn-apply-compat-hooks-ts-applycompatibilityhooks","lc":195,"lang":"typescript","cc":7,"cbc":1},{"id":"877d0932:59fe:9248:7285:3627a166ee97","label":"upgradeToFullPluginSupport","type":"Function","slug":"fn-apply-compat-hooks-ts-upgradetofullpluginsupport","lc":207,"lang":"typescript","cc":12,"cbc":1},{"id":"39f6d494:5106:f76f:2f6f:6155b34ad436","label":"applyConfigToTheme","type":"Function","slug":"fn-apply-config-to-theme-ts-applyconfigtotheme","lc":89,"lang":"typescript","cc":6,"cbc":1},{"id":"domain:OxideCore","label":"OxideCore","type":"Domain","slug":"domain-oxidecore"},{"id":"subdomain:OxideCore:Extractor","label":"Extractor","type":"Subdomain","slug":"subdomain-extractor"}],"edges":[{"source":"147cc4e5:7937:bcc3:a352:d0989bd613c9","target":"eea12d5d:a0f4:1836:fca5:ed2dadffa7de","type":"calls"},{"source":"34264c8d:8c34:5aae:6e5b:a9b84e09c5aa","target":"eea12d5d:a0f4:1836:fca5:ed2dadffa7de","type":"calls"},{"source":"240fd3b2:eb2c:d423:d2b8:a59072b3d1e1","target":"eea12d5d:a0f4:1836:fca5:ed2dadffa7de","type":"calls"},{"source":"877d0932:59fe:9248:7285:3627a166ee97","target":"eea12d5d:a0f4:1836:fca5:ed2dadffa7de","type":"calls"},{"source":"39f6d494:5106:f76f:2f6f:6155b34ad436","target":"eea12d5d:a0f4:1836:fca5:ed2dadffa7de","type":"calls"},{"source":"eea12d5d:a0f4:1836:fca5:ed2dadffa7de","target":"domain:OxideCore","type":"belongsTo"},{"source":"eea12d5d:a0f4:1836:fca5:ed2dadffa7de","target":"subdomain:OxideCore:Extractor","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -967,14 +967,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
+      <ul><li><a href="/domain-oxidecore.html">OxideCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-moduleresolver.html">ModuleResolver</a></li></ul>
+      <ul><li><a href="/subdomain-extractor.html">Extractor</a></li></ul>
     </div>
     
 

@@ -869,7 +869,7 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/rust.html" class="pill pill-blue">rust</a>
-        <a href="/domain/oxideengine.html" class="pill pill-green">OxideEngine</a>
+        <a href="/domain/oxidecore.html" class="pill pill-green">OxideCore</a>
         <a href="/subdomain/scanner.html" class="pill pill-orange">Scanner</a>
         
         
@@ -894,10 +894,10 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideEngine","slug":"domain-oxideengine"},"entity":{"name":"scan","slug":"fn-mod-rs-scan","type":"Function"},"subdomain":{"name":"Scanner","slug":"subdomain-scanner"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideCore","slug":"domain-oxidecore"},"entity":{"name":"scan","slug":"fn-mod-rs-scan","type":"Function"},"subdomain":{"name":"Scanner","slug":"subdomain-scanner"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/oxideengine.html">OxideEngine</a><span class="arch-sep">&rarr;</span>
+            <a href="/oxidecore.html">OxideCore</a><span class="arch-sep">&rarr;</span>
             <a href="/scanner.html">Scanner</a><span class="arch-sep">&rarr;</span>
             <span>scan() — tailwindcss Function Reference</span>
           </div>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  31028172_8103_f4a2_f5fa_a99e92f75a55["scan()"]
-  864bd1b3_9d91_4f8f_2db1_44e2df701ac2["scan_sources()"]
-  31028172_8103_f4a2_f5fa_a99e92f75a55 -->|calls| 864bd1b3_9d91_4f8f_2db1_44e2df701ac2
-  fa3685b9_83e5_072f_9630_0c89774316a7["extract_candidates()"]
-  31028172_8103_f4a2_f5fa_a99e92f75a55 -->|calls| fa3685b9_83e5_072f_9630_0c89774316a7
-  78514031_c5f5_0f3b_0413_ebe3747cbdbd["iter()"]
-  31028172_8103_f4a2_f5fa_a99e92f75a55 -->|calls| 78514031_c5f5_0f3b_0413_ebe3747cbdbd
-  style 31028172_8103_f4a2_f5fa_a99e92f75a55 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  cce6c56f_320a_aeb4_af32_acae71cb497a["scan()"]
+  2e12dfd0_a255_88ce_0c2e_001cf6d360d8["scan_sources()"]
+  cce6c56f_320a_aeb4_af32_acae71cb497a -->|calls| 2e12dfd0_a255_88ce_0c2e_001cf6d360d8
+  612245e1_310b_3774_5352_d2c19d9b09bf["extract_candidates()"]
+  cce6c56f_320a_aeb4_af32_acae71cb497a -->|calls| 612245e1_310b_3774_5352_d2c19d9b09bf
+  e30bb153_9912_144b_99e4_f2671fa56df3["iter()"]
+  cce6c56f_320a_aeb4_af32_acae71cb497a -->|calls| e30bb153_9912_144b_99e4_f2671fa56df3
+  style cce6c56f_320a_aeb4_af32_acae71cb497a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-mod-rs-scan"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"31028172:8103:f4a2:f5fa:a99e92f75a55","label":"scan","type":"Function","slug":"fn-mod-rs-scan","lc":17,"lang":"rust","cc":3},{"id":"864bd1b3:9d91:4f8f:2db1:44e2df701ac2","label":"scan_sources","type":"Function","slug":"fn-mod-rs-scan-sources","lc":37,"lang":"rust","cbc":3},{"id":"fa3685b9:83e5:072f:9630:0c89774316a7","label":"extract_candidates","type":"Function","slug":"fn-mod-rs-extract-candidates","lc":33,"lang":"rust","cc":3,"cbc":2},{"id":"78514031:c5f5:0f3b:0413:ebe3747cbdbd","label":"iter","type":"Function","slug":"fn-sources-rs-iter","lc":3,"lang":"rust","cbc":7},{"id":"domain:OxideEngine","label":"OxideEngine","type":"Domain","slug":"domain-oxideengine"},{"id":"subdomain:OxideEngine:Scanner","label":"Scanner","type":"Subdomain","slug":"subdomain-scanner"}],"edges":[{"source":"31028172:8103:f4a2:f5fa:a99e92f75a55","target":"864bd1b3:9d91:4f8f:2db1:44e2df701ac2","type":"calls"},{"source":"31028172:8103:f4a2:f5fa:a99e92f75a55","target":"fa3685b9:83e5:072f:9630:0c89774316a7","type":"calls"},{"source":"31028172:8103:f4a2:f5fa:a99e92f75a55","target":"78514031:c5f5:0f3b:0413:ebe3747cbdbd","type":"calls"},{"source":"31028172:8103:f4a2:f5fa:a99e92f75a55","target":"domain:OxideEngine","type":"belongsTo"},{"source":"31028172:8103:f4a2:f5fa:a99e92f75a55","target":"subdomain:OxideEngine:Scanner","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"cce6c56f:320a:aeb4:af32:acae71cb497a","label":"scan","type":"Function","slug":"fn-mod-rs-scan","lc":17,"lang":"rust","cc":3},{"id":"2e12dfd0:a255:88ce:0c2e:001cf6d360d8","label":"scan_sources","type":"Function","slug":"fn-mod-rs-scan-sources","lc":37,"lang":"rust","cbc":3},{"id":"612245e1:310b:3774:5352:d2c19d9b09bf","label":"extract_candidates","type":"Function","slug":"fn-mod-rs-extract-candidates","lc":33,"lang":"rust","cc":3,"cbc":2},{"id":"e30bb153:9912:144b:99e4:f2671fa56df3","label":"iter","type":"Function","slug":"fn-sources-rs-iter","lc":3,"lang":"rust","cbc":7},{"id":"domain:OxideCore","label":"OxideCore","type":"Domain","slug":"domain-oxidecore"},{"id":"subdomain:OxideCore:Scanner","label":"Scanner","type":"Subdomain","slug":"subdomain-scanner"}],"edges":[{"source":"cce6c56f:320a:aeb4:af32:acae71cb497a","target":"2e12dfd0:a255:88ce:0c2e:001cf6d360d8","type":"calls"},{"source":"cce6c56f:320a:aeb4:af32:acae71cb497a","target":"612245e1:310b:3774:5352:d2c19d9b09bf","type":"calls"},{"source":"cce6c56f:320a:aeb4:af32:acae71cb497a","target":"e30bb153:9912:144b:99e4:f2671fa56df3","type":"calls"},{"source":"cce6c56f:320a:aeb4:af32:acae71cb497a","target":"domain:OxideCore","type":"belongsTo"},{"source":"cce6c56f:320a:aeb4:af32:acae71cb497a","target":"subdomain:OxideCore:Scanner","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -964,7 +964,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-oxideengine.html">OxideEngine</a></li></ul>
+      <ul><li><a href="/domain-oxidecore.html">OxideCore</a></li></ul>
     </div>
     
 

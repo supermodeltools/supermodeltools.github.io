@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/rust.html" class="pill pill-blue">rust</a>
-        <a href="/domain/oxideengine.html" class="pill pill-green">OxideEngine</a>
-        <a href="/subdomain/preprocessors.html" class="pill pill-orange">PreProcessors</a>
+        <a href="/domain/oxidecore.html" class="pill pill-green">OxideCore</a>
+        <a href="/subdomain/scanner.html" class="pill pill-orange">Scanner</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideEngine","slug":"domain-oxideengine"},"entity":{"name":"test","slug":"fn-glob-rs-test","type":"Function"},"subdomain":{"name":"PreProcessors","slug":"subdomain-preprocessors"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideCore","slug":"domain-oxidecore"},"entity":{"name":"test","slug":"fn-glob-rs-test","type":"Function"},"subdomain":{"name":"Scanner","slug":"subdomain-scanner"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/oxideengine.html">OxideEngine</a><span class="arch-sep">&rarr;</span>
-            <a href="/preprocessors.html">PreProcessors</a><span class="arch-sep">&rarr;</span>
+            <a href="/oxidecore.html">OxideCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/scanner.html">Scanner</a><span class="arch-sep">&rarr;</span>
             <span>test() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,30 +911,30 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  1eb4b015_da54_d935_eec6_9de7fa6155f7["test()"]
-  1bc9386d_61df_be43_701f_ce5bcbf9a32b["it_should_keep_globs_that_start_with_file_wildcards_as_is()"]
-  1bc9386d_61df_be43_701f_ce5bcbf9a32b -->|calls| 1eb4b015_da54_d935_eec6_9de7fa6155f7
-  82e0b753_bac1_6c4f_14a9_d83be4124606["it_should_keep_globs_that_start_with_folder_wildcards_as_is()"]
-  82e0b753_bac1_6c4f_14a9_d83be4124606 -->|calls| 1eb4b015_da54_d935_eec6_9de7fa6155f7
-  62ee84b1_27c3_255e_37e6_8b7c138ef97c["it_should_move_the_starting_folder_to_the_path()"]
-  62ee84b1_27c3_255e_37e6_8b7c138ef97c -->|calls| 1eb4b015_da54_d935_eec6_9de7fa6155f7
-  2eebd06e_3013_f439_7841_551ea9236a4d["it_should_move_the_starting_folders_to_the_path()"]
-  2eebd06e_3013_f439_7841_551ea9236a4d -->|calls| 1eb4b015_da54_d935_eec6_9de7fa6155f7
-  f9db8c61_b2e3_9b2a_7980_5c05adff8df4["it_should_branch_expandable_folders()"]
-  f9db8c61_b2e3_9b2a_7980_5c05adff8df4 -->|calls| 1eb4b015_da54_d935_eec6_9de7fa6155f7
-  ffd202d0_977e_981c_f5bd_ce23cc21eacf["it_should_expand_multiple_expansions_in_the_same_folder()"]
-  ffd202d0_977e_981c_f5bd_ce23cc21eacf -->|calls| 1eb4b015_da54_d935_eec6_9de7fa6155f7
-  de0d43ba_fbfa_4a9e_6f9a_622f79309ec0["multiple_expansions_per_folder_starting_at_the_root()"]
-  de0d43ba_fbfa_4a9e_6f9a_622f79309ec0 -->|calls| 1eb4b015_da54_d935_eec6_9de7fa6155f7
-  7d303bd7_5e41_6c93_0ff2_fc5feb9e47fa["it_should_stop_expanding_once_we_hit_a_wildcard()"]
-  7d303bd7_5e41_6c93_0ff2_fc5feb9e47fa -->|calls| 1eb4b015_da54_d935_eec6_9de7fa6155f7
-  9f586502_c012_8ee7_1434_cfe7c75713cd["it_should_keep_the_negation_symbol_for_all_new_patterns()"]
-  9f586502_c012_8ee7_1434_cfe7c75713cd -->|calls| 1eb4b015_da54_d935_eec6_9de7fa6155f7
-  c63f8c9a_211e_be14_81a4_f73614dc0a91["it_should_expand_a_complex_example()"]
-  c63f8c9a_211e_be14_81a4_f73614dc0a91 -->|calls| 1eb4b015_da54_d935_eec6_9de7fa6155f7
-  667d5e1c_5b8d_ae53_9461_c3a159c78be9["optimize_patterns()"]
-  1eb4b015_da54_d935_eec6_9de7fa6155f7 -->|calls| 667d5e1c_5b8d_ae53_9461_c3a159c78be9
-  style 1eb4b015_da54_d935_eec6_9de7fa6155f7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  ae537468_c9b0_95e0_c2aa_9dc1ab399a01["test()"]
+  0b50e28a_de0a_a827_b8fe_cd2fdd8f5147["it_should_keep_globs_that_start_with_file_wildcards_as_is()"]
+  0b50e28a_de0a_a827_b8fe_cd2fdd8f5147 -->|calls| ae537468_c9b0_95e0_c2aa_9dc1ab399a01
+  51f3180a_a2ac_a361_3522_a85b6ed12f80["it_should_keep_globs_that_start_with_folder_wildcards_as_is()"]
+  51f3180a_a2ac_a361_3522_a85b6ed12f80 -->|calls| ae537468_c9b0_95e0_c2aa_9dc1ab399a01
+  4eed7edd_98f9_80ce_f985_dfb5a6a8e60a["it_should_move_the_starting_folder_to_the_path()"]
+  4eed7edd_98f9_80ce_f985_dfb5a6a8e60a -->|calls| ae537468_c9b0_95e0_c2aa_9dc1ab399a01
+  ad267933_0f5b_4039_f2b7_ddee313a1d9e["it_should_move_the_starting_folders_to_the_path()"]
+  ad267933_0f5b_4039_f2b7_ddee313a1d9e -->|calls| ae537468_c9b0_95e0_c2aa_9dc1ab399a01
+  e2858bd0_06ef_8e6b_8e6e_255fb3c0a7bf["it_should_branch_expandable_folders()"]
+  e2858bd0_06ef_8e6b_8e6e_255fb3c0a7bf -->|calls| ae537468_c9b0_95e0_c2aa_9dc1ab399a01
+  384ba238_812c_4111_f3e7_73d634ba6b9e["it_should_expand_multiple_expansions_in_the_same_folder()"]
+  384ba238_812c_4111_f3e7_73d634ba6b9e -->|calls| ae537468_c9b0_95e0_c2aa_9dc1ab399a01
+  2ab643e2_bca9_5dea_be80_884cd7fcab5f["multiple_expansions_per_folder_starting_at_the_root()"]
+  2ab643e2_bca9_5dea_be80_884cd7fcab5f -->|calls| ae537468_c9b0_95e0_c2aa_9dc1ab399a01
+  7d3216ef_96c6_da58_34d4_a90f6a6201f4["it_should_stop_expanding_once_we_hit_a_wildcard()"]
+  7d3216ef_96c6_da58_34d4_a90f6a6201f4 -->|calls| ae537468_c9b0_95e0_c2aa_9dc1ab399a01
+  f7e62435_27e5_1a1a_a81e_c9e5ce595bd6["it_should_keep_the_negation_symbol_for_all_new_patterns()"]
+  f7e62435_27e5_1a1a_a81e_c9e5ce595bd6 -->|calls| ae537468_c9b0_95e0_c2aa_9dc1ab399a01
+  abe90231_3f86_5fef_2dfd_0ac5e42aca78["it_should_expand_a_complex_example()"]
+  abe90231_3f86_5fef_2dfd_0ac5e42aca78 -->|calls| ae537468_c9b0_95e0_c2aa_9dc1ab399a01
+  283c7ab9_1224_9328_f0d9_b30a1d550ed4["optimize_patterns()"]
+  ae537468_c9b0_95e0_c2aa_9dc1ab399a01 -->|calls| 283c7ab9_1224_9328_f0d9_b30a1d550ed4
+  style ae537468_c9b0_95e0_c2aa_9dc1ab399a01 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -942,7 +942,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-glob-rs-test"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"1eb4b015:da54:d935:eec6:9de7fa6155f7","label":"test","type":"Function","slug":"fn-glob-rs-test","lc":47,"lang":"rust","cc":1,"cbc":10},{"id":"667d5e1c:5b8d:ae53:9461:c3a159c78be9","label":"optimize_patterns","type":"Function","slug":"fn-glob-rs-optimize-patterns","lc":43,"lang":"rust","cc":1,"cbc":1},{"id":"1bc9386d:61df:be43:701f:ce5bcbf9a32b","label":"it_should_keep_globs_that_start_with_file_wildcards_as_is","type":"Function","slug":"fn-glob-rs-it-should-keep-globs-that-start-with-file-wildcards-as-is","lc":18,"lang":"rust","cc":2},{"id":"82e0b753:bac1:6c4f:14a9:d83be4124606","label":"it_should_keep_globs_that_start_with_folder_wildcards_as_is","type":"Function","slug":"fn-glob-rs-it-should-keep-globs-that-start-with-folder-wildcards-as-is","lc":18,"lang":"rust","cc":2},{"id":"62ee84b1:27c3:255e:37e6:8b7c138ef97c","label":"it_should_move_the_starting_folder_to_the_path","type":"Function","slug":"fn-glob-rs-it-should-move-the-starting-folder-to-the-path","lc":18,"lang":"rust","cc":2},{"id":"2eebd06e:3013:f439:7841:551ea9236a4d","label":"it_should_move_the_starting_folders_to_the_path","type":"Function","slug":"fn-glob-rs-it-should-move-the-starting-folders-to-the-path","lc":18,"lang":"rust","cc":2},{"id":"f9db8c61:b2e3:9b2a:7980:5c05adff8df4","label":"it_should_branch_expandable_folders","type":"Function","slug":"fn-glob-rs-it-should-branch-expandable-folders","lc":24,"lang":"rust","cc":2},{"id":"ffd202d0:977e:981c:f5bd:ce23cc21eacf","label":"it_should_expand_multiple_expansions_in_the_same_folder","type":"Function","slug":"fn-glob-rs-it-should-expand-multiple-expansions-in-the-same-folder","lc":37,"lang":"rust","cc":2},{"id":"de0d43ba:fbfa:4a9e:6f9a:622f79309ec0","label":"multiple_expansions_per_folder_starting_at_the_root","type":"Function","slug":"fn-glob-rs-multiple-expansions-per-folder-starting-at-the-root","lc":97,"lang":"rust","cc":2},{"id":"7d303bd7:5e41:6c93:0ff2:fc5feb9e47fa","label":"it_should_stop_expanding_once_we_hit_a_wildcard","type":"Function","slug":"fn-glob-rs-it-should-stop-expanding-once-we-hit-a-wildcard","lc":24,"lang":"rust","cc":2},{"id":"9f586502:c012:8ee7:1434:cfe7c75713cd","label":"it_should_keep_the_negation_symbol_for_all_new_patterns","type":"Function","slug":"fn-glob-rs-it-should-keep-the-negation-symbol-for-all-new-patterns","lc":20,"lang":"rust","cc":2},{"id":"c63f8c9a:211e:be14:81a4:f73614dc0a91","label":"it_should_expand_a_complex_example","type":"Function","slug":"fn-glob-rs-it-should-expand-a-complex-example","lc":37,"lang":"rust","cc":2},{"id":"domain:OxideEngine","label":"OxideEngine","type":"Domain","slug":"domain-oxideengine"},{"id":"subdomain:OxideEngine:PreProcessors","label":"PreProcessors","type":"Subdomain","slug":"subdomain-preprocessors"}],"edges":[{"source":"1eb4b015:da54:d935:eec6:9de7fa6155f7","target":"667d5e1c:5b8d:ae53:9461:c3a159c78be9","type":"calls"},{"source":"1bc9386d:61df:be43:701f:ce5bcbf9a32b","target":"1eb4b015:da54:d935:eec6:9de7fa6155f7","type":"calls"},{"source":"82e0b753:bac1:6c4f:14a9:d83be4124606","target":"1eb4b015:da54:d935:eec6:9de7fa6155f7","type":"calls"},{"source":"62ee84b1:27c3:255e:37e6:8b7c138ef97c","target":"1eb4b015:da54:d935:eec6:9de7fa6155f7","type":"calls"},{"source":"2eebd06e:3013:f439:7841:551ea9236a4d","target":"1eb4b015:da54:d935:eec6:9de7fa6155f7","type":"calls"},{"source":"f9db8c61:b2e3:9b2a:7980:5c05adff8df4","target":"1eb4b015:da54:d935:eec6:9de7fa6155f7","type":"calls"},{"source":"ffd202d0:977e:981c:f5bd:ce23cc21eacf","target":"1eb4b015:da54:d935:eec6:9de7fa6155f7","type":"calls"},{"source":"de0d43ba:fbfa:4a9e:6f9a:622f79309ec0","target":"1eb4b015:da54:d935:eec6:9de7fa6155f7","type":"calls"},{"source":"7d303bd7:5e41:6c93:0ff2:fc5feb9e47fa","target":"1eb4b015:da54:d935:eec6:9de7fa6155f7","type":"calls"},{"source":"9f586502:c012:8ee7:1434:cfe7c75713cd","target":"1eb4b015:da54:d935:eec6:9de7fa6155f7","type":"calls"},{"source":"c63f8c9a:211e:be14:81a4:f73614dc0a91","target":"1eb4b015:da54:d935:eec6:9de7fa6155f7","type":"calls"},{"source":"1eb4b015:da54:d935:eec6:9de7fa6155f7","target":"domain:OxideEngine","type":"belongsTo"},{"source":"1eb4b015:da54:d935:eec6:9de7fa6155f7","target":"subdomain:OxideEngine:PreProcessors","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","label":"test","type":"Function","slug":"fn-glob-rs-test","lc":47,"lang":"rust","cc":1,"cbc":10},{"id":"283c7ab9:1224:9328:f0d9:b30a1d550ed4","label":"optimize_patterns","type":"Function","slug":"fn-glob-rs-optimize-patterns","lc":43,"lang":"rust","cc":1,"cbc":1},{"id":"0b50e28a:de0a:a827:b8fe:cd2fdd8f5147","label":"it_should_keep_globs_that_start_with_file_wildcards_as_is","type":"Function","slug":"fn-glob-rs-it-should-keep-globs-that-start-with-file-wildcards-as-is","lc":18,"lang":"rust","cc":2},{"id":"51f3180a:a2ac:a361:3522:a85b6ed12f80","label":"it_should_keep_globs_that_start_with_folder_wildcards_as_is","type":"Function","slug":"fn-glob-rs-it-should-keep-globs-that-start-with-folder-wildcards-as-is","lc":18,"lang":"rust","cc":2},{"id":"4eed7edd:98f9:80ce:f985:dfb5a6a8e60a","label":"it_should_move_the_starting_folder_to_the_path","type":"Function","slug":"fn-glob-rs-it-should-move-the-starting-folder-to-the-path","lc":18,"lang":"rust","cc":2},{"id":"ad267933:0f5b:4039:f2b7:ddee313a1d9e","label":"it_should_move_the_starting_folders_to_the_path","type":"Function","slug":"fn-glob-rs-it-should-move-the-starting-folders-to-the-path","lc":18,"lang":"rust","cc":2},{"id":"e2858bd0:06ef:8e6b:8e6e:255fb3c0a7bf","label":"it_should_branch_expandable_folders","type":"Function","slug":"fn-glob-rs-it-should-branch-expandable-folders","lc":24,"lang":"rust","cc":2},{"id":"384ba238:812c:4111:f3e7:73d634ba6b9e","label":"it_should_expand_multiple_expansions_in_the_same_folder","type":"Function","slug":"fn-glob-rs-it-should-expand-multiple-expansions-in-the-same-folder","lc":37,"lang":"rust","cc":2},{"id":"2ab643e2:bca9:5dea:be80:884cd7fcab5f","label":"multiple_expansions_per_folder_starting_at_the_root","type":"Function","slug":"fn-glob-rs-multiple-expansions-per-folder-starting-at-the-root","lc":97,"lang":"rust","cc":2},{"id":"7d3216ef:96c6:da58:34d4:a90f6a6201f4","label":"it_should_stop_expanding_once_we_hit_a_wildcard","type":"Function","slug":"fn-glob-rs-it-should-stop-expanding-once-we-hit-a-wildcard","lc":24,"lang":"rust","cc":2},{"id":"f7e62435:27e5:1a1a:a81e:c9e5ce595bd6","label":"it_should_keep_the_negation_symbol_for_all_new_patterns","type":"Function","slug":"fn-glob-rs-it-should-keep-the-negation-symbol-for-all-new-patterns","lc":20,"lang":"rust","cc":2},{"id":"abe90231:3f86:5fef:2dfd:0ac5e42aca78","label":"it_should_expand_a_complex_example","type":"Function","slug":"fn-glob-rs-it-should-expand-a-complex-example","lc":37,"lang":"rust","cc":2},{"id":"domain:OxideCore","label":"OxideCore","type":"Domain","slug":"domain-oxidecore"},{"id":"subdomain:OxideCore:Scanner","label":"Scanner","type":"Subdomain","slug":"subdomain-scanner"}],"edges":[{"source":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","target":"283c7ab9:1224:9328:f0d9:b30a1d550ed4","type":"calls"},{"source":"0b50e28a:de0a:a827:b8fe:cd2fdd8f5147","target":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","type":"calls"},{"source":"51f3180a:a2ac:a361:3522:a85b6ed12f80","target":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","type":"calls"},{"source":"4eed7edd:98f9:80ce:f985:dfb5a6a8e60a","target":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","type":"calls"},{"source":"ad267933:0f5b:4039:f2b7:ddee313a1d9e","target":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","type":"calls"},{"source":"e2858bd0:06ef:8e6b:8e6e:255fb3c0a7bf","target":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","type":"calls"},{"source":"384ba238:812c:4111:f3e7:73d634ba6b9e","target":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","type":"calls"},{"source":"2ab643e2:bca9:5dea:be80:884cd7fcab5f","target":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","type":"calls"},{"source":"7d3216ef:96c6:da58:34d4:a90f6a6201f4","target":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","type":"calls"},{"source":"f7e62435:27e5:1a1a:a81e:c9e5ce595bd6","target":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","type":"calls"},{"source":"abe90231:3f86:5fef:2dfd:0ac5e42aca78","target":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","type":"calls"},{"source":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","target":"domain:OxideCore","type":"belongsTo"},{"source":"ae537468:c9b0:95e0:c2aa:9dc1ab399a01","target":"subdomain:OxideCore:Scanner","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1010,14 +1010,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-oxideengine.html">OxideEngine</a></li></ul>
+      <ul><li><a href="/domain-oxidecore.html">OxideCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-preprocessors.html">PreProcessors</a></li></ul>
+      <ul><li><a href="/subdomain-scanner.html">Scanner</a></li></ul>
     </div>
     
 

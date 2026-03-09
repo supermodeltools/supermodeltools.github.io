@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
-        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
+        <a href="/domain/oxidecore.html" class="pill pill-green">OxideCore</a>
+        <a href="/subdomain/extractor.html" class="pill pill-orange">Extractor</a>
         
         
         <span class="pill">calls 3</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"parse","slug":"fn-value-parser-ts-parse","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideCore","slug":"domain-oxidecore"},"entity":{"name":"parse","slug":"fn-value-parser-ts-parse","type":"Function"},"subdomain":{"name":"Extractor","slug":"subdomain-extractor"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
-            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
+            <a href="/oxidecore.html">OxideCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/extractor.html">Extractor</a><span class="arch-sep">&rarr;</span>
             <span>parse() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  dd689f9e_bf18_4dc5_8ad2_481bc54885e4["parse()"]
-  c74dc271_89cc_9e0b_ff88_8229ce5f39a9["migrateTheme()"]
-  c74dc271_89cc_9e0b_ff88_8229ce5f39a9 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  25e1344e_80a3_b5b3_a293_39cbd77a67bf["migrateImport()"]
-  25e1344e_80a3_b5b3_a293_39cbd77a67bf -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  b980d16d_bce2_2358_6d26_e54f164d9798["migratePreflight()"]
-  b980d16d_bce2_2358_6d26_e54f164d9798 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  b4c82a32_6372_11d6_c4e1_a254cd69ab09["substituteFunctionsInValue()"]
-  b4c82a32_6372_11d6_c4e1_a254cd69ab09 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  cc277efc_1f20_25d8_e011_7a969696aea8["injectVar()"]
-  cc277efc_1f20_25d8_e011_7a969696aea8 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  d2676dc2_c34d_0cd0_7f4e_03b4ff9b2f0f["createConverter()"]
-  d2676dc2_c34d_0cd0_7f4e_03b4ff9b2f0f -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  8029353e_6fdc_6476_1b7a_28db449fa9ef["substituteFunctionsInValue()"]
-  8029353e_6fdc_6476_1b7a_28db449fa9ef -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  e4758757_d129_8e5c_9a90_306008b717ff["printArbitraryValueCache()"]
-  e4758757_d129_8e5c_9a90_306008b717ff -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  8c6963ef_315d_c1c3_3d5b_4b6a17653818["simplifyArbitraryVariantCache()"]
-  8c6963ef_315d_c1c3_3d5b_4b6a17653818 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  c70a4362_b9c3_311e_bf1b_1a68ce030454["isVarCache()"]
-  c70a4362_b9c3_311e_bf1b_1a68ce030454 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  c6d8403d_d01a_7e1b_df10_c24ca7bcfd61["constantFoldDeclaration()"]
-  c6d8403d_d01a_7e1b_df10_c24ca7bcfd61 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  dec3ff16_e76c_2f36_cac4_d70f83ff36e3["theme()"]
-  dec3ff16_e76c_2f36_cac4_d70f83ff36e3 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  ab7d6038_43be_2a4f_e37a_7e913f18f727["substituteFunctionsInValue()"]
-  ab7d6038_43be_2a4f_e37a_7e913f18f727 -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  94921bd4_2a60_2c6b_1ca2_566db21e526d["createCssUtility()"]
-  94921bd4_2a60_2c6b_1ca2_566db21e526d -->|calls| dd689f9e_bf18_4dc5_8ad2_481bc54885e4
-  style dd689f9e_bf18_4dc5_8ad2_481bc54885e4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  aa41627c_4c88_f61f_84d9_11df979dc422["parse()"]
+  337f709a_1ae5_1bc0_6ad7_9b556d0002bf["migrateTheme()"]
+  337f709a_1ae5_1bc0_6ad7_9b556d0002bf -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  5f81f183_e96f_2576_ddf1_681929375c92["migrateImport()"]
+  5f81f183_e96f_2576_ddf1_681929375c92 -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  fe4538b0_1ddf_4191_c69e_fe2539d9b2b8["migratePreflight()"]
+  fe4538b0_1ddf_4191_c69e_fe2539d9b2b8 -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  4d0910c7_b579_a637_58b5_5e9b88985116["substituteFunctionsInValue()"]
+  4d0910c7_b579_a637_58b5_5e9b88985116 -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  49772c66_e8d5_8a06_4f64_be614a9e0baa["injectVar()"]
+  49772c66_e8d5_8a06_4f64_be614a9e0baa -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  7662b4c0_804d_0157_335d_4232dd84d976["createConverter()"]
+  7662b4c0_804d_0157_335d_4232dd84d976 -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  532e3320_1c9f_61c2_79c6_dc3b79e2d99f["substituteFunctionsInValue()"]
+  532e3320_1c9f_61c2_79c6_dc3b79e2d99f -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  ec0e81e0_c742_3836_99be_7205654bfd97["printArbitraryValueCache()"]
+  ec0e81e0_c742_3836_99be_7205654bfd97 -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  8dd43286_0e31_c376_fe18_ade28b081087["simplifyArbitraryVariantCache()"]
+  8dd43286_0e31_c376_fe18_ade28b081087 -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  7c80dec6_47b7_99d5_ca6c_ac3288c18c69["isVarCache()"]
+  7c80dec6_47b7_99d5_ca6c_ac3288c18c69 -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  15f6a096_287b_7813_460b_71e534fc953e["constantFoldDeclaration()"]
+  15f6a096_287b_7813_460b_71e534fc953e -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  1c99c340_5dc2_d1b2_4fe2_994141238cbb["theme()"]
+  1c99c340_5dc2_d1b2_4fe2_994141238cbb -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  9199d53e_65d2_d90c_030b_5d88ee7ab2a3["substituteFunctionsInValue()"]
+  9199d53e_65d2_d90c_030b_5d88ee7ab2a3 -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  30866087_07b8_1f4e_462e_1a80ca5d21f8["createCssUtility()"]
+  30866087_07b8_1f4e_462e_1a80ca5d21f8 -->|calls| aa41627c_4c88_f61f_84d9_11df979dc422
+  style aa41627c_4c88_f61f_84d9_11df979dc422 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-value-parser-ts-parse"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","label":"parse","type":"Function","slug":"fn-value-parser-ts-parse","lc":207,"lang":"typescript","cc":3,"cbc":21},{"id":"f95c5570:01df:29e4:896d:8f3afe42d778","label":"word","type":"Function","slug":"fn-value-parser-ts-word","lc":6,"lang":"typescript","cbc":2},{"id":"ac98f3e0:bdde:b4bf:5a40:00b60f1e5dd5","label":"separator","type":"Function","slug":"fn-value-parser-ts-separator","lc":6,"lang":"typescript","cbc":1},{"id":"8d46b2d9:4348:d440:17bc:1855a0d9bf7d","label":"fun","type":"Function","slug":"fn-value-parser-ts-fun","lc":7,"lang":"typescript","cbc":1},{"id":"c74dc271:89cc:9e0b:ff88:8229ce5f39a9","label":"migrateTheme","type":"Function","slug":"fn-migrate-js-config-ts-migratetheme","lc":194,"lang":"typescript","cc":12,"cbc":1},{"id":"25e1344e:80a3:b5b3:a293:39cbd77a67bf","label":"migrateImport","type":"Function","slug":"fn-migrate-import-ts-migrateimport","lc":45,"lang":"typescript","cc":3,"cbc":2},{"id":"b980d16d:bce2:2358:6d26:e54f164d9798","label":"migratePreflight","type":"Function","slug":"fn-migrate-preflight-ts-migratepreflight","lc":81,"lang":"typescript","cc":5,"cbc":2},{"id":"b4c82a32:6372:11d6:c4e1:a254cd69ab09","label":"substituteFunctionsInValue","type":"Function","slug":"fn-migrate-preflight-ts-substitutefunctionsinvalue","lc":48,"lang":"typescript","cc":4,"cbc":1},{"id":"cc277efc:1f20:25d8:e011:7a969696aea8","label":"injectVar","type":"Function","slug":"fn-migrate-automatic-var-injection-ts-injectvar","lc":26,"lang":"typescript","cc":1,"cbc":2},{"id":"d2676dc2:c34d:0cd0:7f4e:03b4ff9b2f0f","label":"createConverter","type":"Function","slug":"fn-migrate-theme-to-var-ts-createconverter","lc":155,"lang":"typescript","cc":7,"cbc":1},{"id":"8029353e:6fdc:6476:1b7a:28db449fa9ef","label":"substituteFunctionsInValue","type":"Function","slug":"fn-migrate-theme-to-var-ts-substitutefunctionsinvalue","lc":79,"lang":"typescript","cc":4,"cbc":1},{"id":"e4758757:d129:8e5c:9a90:306008b717ff","label":"printArbitraryValueCache","type":"Function","slug":"fn-candidate-ts-printarbitraryvaluecache","lc":56,"lang":"typescript","cc":4},{"id":"8c6963ef:315d:c1c3:3d5b:4b6a17653818","label":"simplifyArbitraryVariantCache","type":"Function","slug":"fn-candidate-ts-simplifyarbitraryvariantcache","lc":21,"lang":"typescript","cc":2},{"id":"c70a4362:b9c3:311e:bf1b:1a68ce030454","label":"isVarCache","type":"Function","slug":"fn-candidate-ts-isvarcache","lc":4,"lang":"typescript","cc":1},{"id":"c6d8403d:d01a:7e1b:df10:c24ca7bcfd61","label":"constantFoldDeclaration","type":"Function","slug":"fn-constant-fold-declaration-ts-constantfolddeclaration","lc":108,"lang":"typescript","cc":5,"cbc":2},{"id":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","label":"theme","type":"Function","slug":"fn-css-functions-ts-theme","lc":60,"lang":"typescript","cc":4,"cbc":3},{"id":"ab7d6038:43be:2a4f:e37a:7e913f18f727","label":"substituteFunctionsInValue","type":"Function","slug":"fn-css-functions-ts-substitutefunctionsinvalue","lc":20,"lang":"typescript","cc":4,"cbc":1},{"id":"94921bd4:2a60:2c6b:1ca2:566db21e526d","label":"createCssUtility","type":"Function","slug":"fn-utilities-ts-createcssutility","lc":361,"lang":"typescript","cc":14,"cbc":1},{"id":"078a5468:fa86:f1a6:7fa1:a13347af2aea","label":"resolveValueFunction","type":"Function","slug":"fn-utilities-ts-resolvevaluefunction","lc":143,"lang":"typescript","cc":7,"cbc":1},{"id":"38085355:e592:a2bd:84ec:04f95b7b5680","label":"decodeArbitraryValue","type":"Function","slug":"fn-decode-arbitrary-value-ts-decodearbitraryvalue","lc":14,"lang":"typescript","cc":5,"cbc":3},{"id":"6d664561:fda1:a7a8:1378:bf989544debb","label":"extractUsedVariables","type":"Function","slug":"fn-variables-ts-extractusedvariables","lc":15,"lang":"typescript","cc":2,"cbc":2},{"id":"85e8d057:55af:82fa:5b14:bfd7c2866568","label":"optimizeAst","type":"Function","slug":"fn-ast-ts-optimizeast","lc":461,"lang":"typescript","cc":14,"cbc":2},{"id":"2dca9a0c:a389:caac:1419:15431e0c627d","label":"substituteAtImports","type":"Function","slug":"fn-at-import-ts-substituteatimports","lc":66,"lang":"typescript","cc":5,"cbc":1},{"id":"b34fa726:ee21:fe23:990f:6a293f207935","label":"createConverterCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createconvertercache","lc":160,"lang":"typescript","cc":8,"cbc":1},{"id":"383a54da:bad4:8da6:02b7:5171ae7dcb92","label":"substituteFunctionsInValue","type":"Function","slug":"fn-canonicalize-candidates-ts-substitutefunctionsinvalue","lc":79,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","target":"f95c5570:01df:29e4:896d:8f3afe42d778","type":"calls"},{"source":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","target":"ac98f3e0:bdde:b4bf:5a40:00b60f1e5dd5","type":"calls"},{"source":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","target":"8d46b2d9:4348:d440:17bc:1855a0d9bf7d","type":"calls"},{"source":"c74dc271:89cc:9e0b:ff88:8229ce5f39a9","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"25e1344e:80a3:b5b3:a293:39cbd77a67bf","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"b980d16d:bce2:2358:6d26:e54f164d9798","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"b4c82a32:6372:11d6:c4e1:a254cd69ab09","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"cc277efc:1f20:25d8:e011:7a969696aea8","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"d2676dc2:c34d:0cd0:7f4e:03b4ff9b2f0f","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"8029353e:6fdc:6476:1b7a:28db449fa9ef","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"e4758757:d129:8e5c:9a90:306008b717ff","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"8c6963ef:315d:c1c3:3d5b:4b6a17653818","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"c70a4362:b9c3:311e:bf1b:1a68ce030454","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"c6d8403d:d01a:7e1b:df10:c24ca7bcfd61","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"ab7d6038:43be:2a4f:e37a:7e913f18f727","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"94921bd4:2a60:2c6b:1ca2:566db21e526d","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"078a5468:fa86:f1a6:7fa1:a13347af2aea","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"38085355:e592:a2bd:84ec:04f95b7b5680","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"6d664561:fda1:a7a8:1378:bf989544debb","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"2dca9a0c:a389:caac:1419:15431e0c627d","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"b34fa726:ee21:fe23:990f:6a293f207935","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"383a54da:bad4:8da6:02b7:5171ae7dcb92","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","target":"domain:TailwindNode","type":"belongsTo"},{"source":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"aa41627c:4c88:f61f:84d9:11df979dc422","label":"parse","type":"Function","slug":"fn-value-parser-ts-parse","lc":207,"lang":"typescript","cc":3,"cbc":21},{"id":"75d319a5:37fa:0c10:6339:561c1c2ec8b5","label":"word","type":"Function","slug":"fn-value-parser-ts-word","lc":6,"lang":"typescript","cbc":2},{"id":"3acb1380:9806:aa71:38ed:0d0bd35ac384","label":"separator","type":"Function","slug":"fn-value-parser-ts-separator","lc":6,"lang":"typescript","cbc":1},{"id":"5b6d547f:1bfc:1ed8:8e13:ba76180d5b02","label":"fun","type":"Function","slug":"fn-value-parser-ts-fun","lc":7,"lang":"typescript","cbc":1},{"id":"337f709a:1ae5:1bc0:6ad7:9b556d0002bf","label":"migrateTheme","type":"Function","slug":"fn-migrate-js-config-ts-migratetheme","lc":194,"lang":"typescript","cc":12,"cbc":1},{"id":"5f81f183:e96f:2576:ddf1:681929375c92","label":"migrateImport","type":"Function","slug":"fn-migrate-import-ts-migrateimport","lc":45,"lang":"typescript","cc":3,"cbc":2},{"id":"fe4538b0:1ddf:4191:c69e:fe2539d9b2b8","label":"migratePreflight","type":"Function","slug":"fn-migrate-preflight-ts-migratepreflight","lc":81,"lang":"typescript","cc":5,"cbc":2},{"id":"4d0910c7:b579:a637:58b5:5e9b88985116","label":"substituteFunctionsInValue","type":"Function","slug":"fn-migrate-preflight-ts-substitutefunctionsinvalue","lc":48,"lang":"typescript","cc":4,"cbc":1},{"id":"49772c66:e8d5:8a06:4f64:be614a9e0baa","label":"injectVar","type":"Function","slug":"fn-migrate-automatic-var-injection-ts-injectvar","lc":26,"lang":"typescript","cc":1,"cbc":2},{"id":"7662b4c0:804d:0157:335d:4232dd84d976","label":"createConverter","type":"Function","slug":"fn-migrate-theme-to-var-ts-createconverter","lc":155,"lang":"typescript","cc":7,"cbc":1},{"id":"532e3320:1c9f:61c2:79c6:dc3b79e2d99f","label":"substituteFunctionsInValue","type":"Function","slug":"fn-migrate-theme-to-var-ts-substitutefunctionsinvalue","lc":79,"lang":"typescript","cc":4,"cbc":1},{"id":"ec0e81e0:c742:3836:99be:7205654bfd97","label":"printArbitraryValueCache","type":"Function","slug":"fn-candidate-ts-printarbitraryvaluecache","lc":56,"lang":"typescript","cc":4},{"id":"8dd43286:0e31:c376:fe18:ade28b081087","label":"simplifyArbitraryVariantCache","type":"Function","slug":"fn-candidate-ts-simplifyarbitraryvariantcache","lc":21,"lang":"typescript","cc":2},{"id":"7c80dec6:47b7:99d5:ca6c:ac3288c18c69","label":"isVarCache","type":"Function","slug":"fn-candidate-ts-isvarcache","lc":4,"lang":"typescript","cc":1},{"id":"15f6a096:287b:7813:460b:71e534fc953e","label":"constantFoldDeclaration","type":"Function","slug":"fn-constant-fold-declaration-ts-constantfolddeclaration","lc":108,"lang":"typescript","cc":5,"cbc":2},{"id":"1c99c340:5dc2:d1b2:4fe2:994141238cbb","label":"theme","type":"Function","slug":"fn-css-functions-ts-theme","lc":60,"lang":"typescript","cc":4,"cbc":3},{"id":"9199d53e:65d2:d90c:030b:5d88ee7ab2a3","label":"substituteFunctionsInValue","type":"Function","slug":"fn-css-functions-ts-substitutefunctionsinvalue","lc":20,"lang":"typescript","cc":4,"cbc":1},{"id":"30866087:07b8:1f4e:462e:1a80ca5d21f8","label":"createCssUtility","type":"Function","slug":"fn-utilities-ts-createcssutility","lc":361,"lang":"typescript","cc":14,"cbc":1},{"id":"c5f2230a:38de:b9b9:f41b:32eee3d63db0","label":"resolveValueFunction","type":"Function","slug":"fn-utilities-ts-resolvevaluefunction","lc":143,"lang":"typescript","cc":7,"cbc":1},{"id":"c24016a6:c87c:afd3:8695:7387277b67e6","label":"decodeArbitraryValue","type":"Function","slug":"fn-decode-arbitrary-value-ts-decodearbitraryvalue","lc":14,"lang":"typescript","cc":5,"cbc":3},{"id":"9e722c27:e81f:1332:6d17:2ea6b13910ef","label":"extractUsedVariables","type":"Function","slug":"fn-variables-ts-extractusedvariables","lc":15,"lang":"typescript","cc":2,"cbc":2},{"id":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","label":"optimizeAst","type":"Function","slug":"fn-ast-ts-optimizeast","lc":461,"lang":"typescript","cc":14,"cbc":2},{"id":"ebcee053:7473:a34f:62cf:335d3cb2c576","label":"substituteAtImports","type":"Function","slug":"fn-at-import-ts-substituteatimports","lc":66,"lang":"typescript","cc":5,"cbc":1},{"id":"f9cb0e63:9df9:167a:0230:60022fd42d97","label":"createConverterCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createconvertercache","lc":160,"lang":"typescript","cc":8,"cbc":1},{"id":"4be71c85:ead5:7356:c456:850fbf2d70e8","label":"substituteFunctionsInValue","type":"Function","slug":"fn-canonicalize-candidates-ts-substitutefunctionsinvalue","lc":79,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:OxideCore","label":"OxideCore","type":"Domain","slug":"domain-oxidecore"},{"id":"subdomain:OxideCore:Extractor","label":"Extractor","type":"Subdomain","slug":"subdomain-extractor"}],"edges":[{"source":"aa41627c:4c88:f61f:84d9:11df979dc422","target":"75d319a5:37fa:0c10:6339:561c1c2ec8b5","type":"calls"},{"source":"aa41627c:4c88:f61f:84d9:11df979dc422","target":"3acb1380:9806:aa71:38ed:0d0bd35ac384","type":"calls"},{"source":"aa41627c:4c88:f61f:84d9:11df979dc422","target":"5b6d547f:1bfc:1ed8:8e13:ba76180d5b02","type":"calls"},{"source":"337f709a:1ae5:1bc0:6ad7:9b556d0002bf","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"5f81f183:e96f:2576:ddf1:681929375c92","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"fe4538b0:1ddf:4191:c69e:fe2539d9b2b8","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"4d0910c7:b579:a637:58b5:5e9b88985116","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"49772c66:e8d5:8a06:4f64:be614a9e0baa","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"7662b4c0:804d:0157:335d:4232dd84d976","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"532e3320:1c9f:61c2:79c6:dc3b79e2d99f","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"ec0e81e0:c742:3836:99be:7205654bfd97","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"8dd43286:0e31:c376:fe18:ade28b081087","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"7c80dec6:47b7:99d5:ca6c:ac3288c18c69","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"15f6a096:287b:7813:460b:71e534fc953e","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"1c99c340:5dc2:d1b2:4fe2:994141238cbb","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"9199d53e:65d2:d90c:030b:5d88ee7ab2a3","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"30866087:07b8:1f4e:462e:1a80ca5d21f8","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"c5f2230a:38de:b9b9:f41b:32eee3d63db0","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"c24016a6:c87c:afd3:8695:7387277b67e6","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"9e722c27:e81f:1332:6d17:2ea6b13910ef","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"ebcee053:7473:a34f:62cf:335d3cb2c576","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"f9cb0e63:9df9:167a:0230:60022fd42d97","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"4be71c85:ead5:7356:c456:850fbf2d70e8","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"aa41627c:4c88:f61f:84d9:11df979dc422","target":"domain:OxideCore","type":"belongsTo"},{"source":"aa41627c:4c88:f61f:84d9:11df979dc422","target":"subdomain:OxideCore:Extractor","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1176,14 +1176,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
+      <ul><li><a href="/domain-oxidecore.html">OxideCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
+      <ul><li><a href="/subdomain-extractor.html">Extractor</a></li></ul>
     </div>
     
 

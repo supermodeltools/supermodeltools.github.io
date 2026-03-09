@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
-        <a href="/subdomain/moduleresolver.html" class="pill pill-orange">ModuleResolver</a>
+        <a href="/subdomain/resolver.html" class="pill pill-orange">Resolver</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"importModule","slug":"fn-compile-ts-importmodule","type":"Function"},"subdomain":{"name":"ModuleResolver","slug":"subdomain-moduleresolver"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"importModule","slug":"fn-compile-ts-importmodule","type":"Function"},"subdomain":{"name":"Resolver","slug":"subdomain-resolver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
-            <a href="/moduleresolver.html">ModuleResolver</a><span class="arch-sep">&rarr;</span>
+            <a href="/resolver.html">Resolver</a><span class="arch-sep">&rarr;</span>
             <span>importModule() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  fce4910c_dda8_97c8_04f7_dd6ac77a1b2b["importModule()"]
-  defb4503_a9b9_0c19_6ce4_64177c7a5618["loadModule()"]
-  defb4503_a9b9_0c19_6ce4_64177c7a5618 -->|calls| fce4910c_dda8_97c8_04f7_dd6ac77a1b2b
-  style fce4910c_dda8_97c8_04f7_dd6ac77a1b2b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a61f205b_c683_ac33_c876_9f66959a4634["importModule()"]
+  a91e84df_ca35_a5ec_32c1_20fd6c83c927["loadModule()"]
+  a91e84df_ca35_a5ec_32c1_20fd6c83c927 -->|calls| a61f205b_c683_ac33_c876_9f66959a4634
+  style a61f205b_c683_ac33_c876_9f66959a4634 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-compile-ts-importmodule"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"fce4910c:dda8:97c8:04f7:dd6ac77a1b2b","label":"importModule","type":"Function","slug":"fn-compile-ts-importmodule","lc":15,"lang":"typescript","cbc":1},{"id":"defb4503:a9b9:0c19:6ce4:64177c7a5618","label":"loadModule","type":"Function","slug":"fn-compile-ts-loadmodule","lc":39,"lang":"typescript","cc":3,"cbc":4},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:ModuleResolver","label":"ModuleResolver","type":"Subdomain","slug":"subdomain-moduleresolver"}],"edges":[{"source":"defb4503:a9b9:0c19:6ce4:64177c7a5618","target":"fce4910c:dda8:97c8:04f7:dd6ac77a1b2b","type":"calls"},{"source":"fce4910c:dda8:97c8:04f7:dd6ac77a1b2b","target":"domain:TailwindNode","type":"belongsTo"},{"source":"fce4910c:dda8:97c8:04f7:dd6ac77a1b2b","target":"subdomain:TailwindNode:ModuleResolver","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a61f205b:c683:ac33:c876:9f66959a4634","label":"importModule","type":"Function","slug":"fn-compile-ts-importmodule","lc":15,"lang":"typescript","cbc":1},{"id":"a91e84df:ca35:a5ec:32c1:20fd6c83c927","label":"loadModule","type":"Function","slug":"fn-compile-ts-loadmodule","lc":39,"lang":"typescript","cc":3,"cbc":4},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Resolver","label":"Resolver","type":"Subdomain","slug":"subdomain-resolver"}],"edges":[{"source":"a91e84df:ca35:a5ec:32c1:20fd6c83c927","target":"a61f205b:c683:ac33:c876:9f66959a4634","type":"calls"},{"source":"a61f205b:c683:ac33:c876:9f66959a4634","target":"domain:TailwindNode","type":"belongsTo"},{"source":"a61f205b:c683:ac33:c876:9f66959a4634","target":"subdomain:TailwindNode:Resolver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -965,7 +965,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-moduleresolver.html">ModuleResolver</a></li></ul>
+      <ul><li><a href="/subdomain-resolver.html">Resolver</a></li></ul>
     </div>
     
 

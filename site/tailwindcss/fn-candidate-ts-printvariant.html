@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
-        <a href="/subdomain/moduleresolver.html" class="pill pill-orange">ModuleResolver</a>
+        <a href="/domain/oxidecore.html" class="pill pill-green">OxideCore</a>
+        <a href="/subdomain/extractor.html" class="pill pill-orange">Extractor</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"printVariant","slug":"fn-candidate-ts-printvariant","type":"Function"},"subdomain":{"name":"ModuleResolver","slug":"subdomain-moduleresolver"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideCore","slug":"domain-oxidecore"},"entity":{"name":"printVariant","slug":"fn-candidate-ts-printvariant","type":"Function"},"subdomain":{"name":"Extractor","slug":"subdomain-extractor"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
-            <a href="/moduleresolver.html">ModuleResolver</a><span class="arch-sep">&rarr;</span>
+            <a href="/oxidecore.html">OxideCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/extractor.html">Extractor</a><span class="arch-sep">&rarr;</span>
             <span>printVariant() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,28 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3296a15c_7509_05dd_b1b5_9ec2545d1dc3["printVariant()"]
-  da6194ca_f19b_d252_9ce7_f0acce424221["migrateArbitraryVariants()"]
-  da6194ca_f19b_d252_9ce7_f0acce424221 -->|calls| 3296a15c_7509_05dd_b1b5_9ec2545d1dc3
-  7286cd48_1b44_581e_9734_79adf3546cca["printCandidate()"]
-  7286cd48_1b44_581e_9734_79adf3546cca -->|calls| 3296a15c_7509_05dd_b1b5_9ec2545d1dc3
-  57a64953_1ead_27a1_b289_cd387e5ee6de["createCanonicalizeCandidateCache()"]
-  57a64953_1ead_27a1_b289_cd387e5ee6de -->|calls| 3296a15c_7509_05dd_b1b5_9ec2545d1dc3
-  ebc448d6_f163_795e_c08b_bb6abe78cd27["arbitraryVariants()"]
-  ebc448d6_f163_795e_c08b_bb6abe78cd27 -->|calls| 3296a15c_7509_05dd_b1b5_9ec2545d1dc3
-  247a78b1_eea7_8cde_7859_ba096022034a["modernizeArbitraryValuesVariant()"]
-  247a78b1_eea7_8cde_7859_ba096022034a -->|calls| 3296a15c_7509_05dd_b1b5_9ec2545d1dc3
-  49cf4ef4_bc58_de77_38ee_861472c10e76["buildDesignSystem()"]
-  49cf4ef4_bc58_de77_38ee_861472c10e76 -->|calls| 3296a15c_7509_05dd_b1b5_9ec2545d1dc3
-  f73eea13_ff68_dfe9_8ee2_cf00395d4af0["printArbitraryValue()"]
-  3296a15c_7509_05dd_b1b5_9ec2545d1dc3 -->|calls| f73eea13_ff68_dfe9_8ee2_cf00395d4af0
-  312eaadb_af6e_fe35_0f3d_3be858cc02ed["simplifyArbitraryVariant()"]
-  3296a15c_7509_05dd_b1b5_9ec2545d1dc3 -->|calls| 312eaadb_af6e_fe35_0f3d_3be858cc02ed
-  f4887993_20ca_88e0_3552_96431791d11b["isVar()"]
-  3296a15c_7509_05dd_b1b5_9ec2545d1dc3 -->|calls| f4887993_20ca_88e0_3552_96431791d11b
-  bdb3f8dc_91d3_aa49_3f27_90afb925aab0["printModifier()"]
-  3296a15c_7509_05dd_b1b5_9ec2545d1dc3 -->|calls| bdb3f8dc_91d3_aa49_3f27_90afb925aab0
-  style 3296a15c_7509_05dd_b1b5_9ec2545d1dc3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  872d3799_7b4c_a5f8_239c_e9b3a2874a9b["printVariant()"]
+  34095623_2d58_2da6_f37d_5df759191219["migrateArbitraryVariants()"]
+  34095623_2d58_2da6_f37d_5df759191219 -->|calls| 872d3799_7b4c_a5f8_239c_e9b3a2874a9b
+  c5ee07b8_715a_f66f_6005_da3347e76451["printCandidate()"]
+  c5ee07b8_715a_f66f_6005_da3347e76451 -->|calls| 872d3799_7b4c_a5f8_239c_e9b3a2874a9b
+  c5c3c6e0_600b_7c29_a3f3_927917502432["createCanonicalizeCandidateCache()"]
+  c5c3c6e0_600b_7c29_a3f3_927917502432 -->|calls| 872d3799_7b4c_a5f8_239c_e9b3a2874a9b
+  1673eb5d_d7f6_751a_930f_4fd6e143b610["arbitraryVariants()"]
+  1673eb5d_d7f6_751a_930f_4fd6e143b610 -->|calls| 872d3799_7b4c_a5f8_239c_e9b3a2874a9b
+  58f7284f_8249_1f9f_97c7_a46228345ae2["modernizeArbitraryValuesVariant()"]
+  58f7284f_8249_1f9f_97c7_a46228345ae2 -->|calls| 872d3799_7b4c_a5f8_239c_e9b3a2874a9b
+  162ee642_4709_df8b_7047_fd6a24e6d5f7["buildDesignSystem()"]
+  162ee642_4709_df8b_7047_fd6a24e6d5f7 -->|calls| 872d3799_7b4c_a5f8_239c_e9b3a2874a9b
+  f9e2f469_e292_a4ea_2117_28675899f2b3["printArbitraryValue()"]
+  872d3799_7b4c_a5f8_239c_e9b3a2874a9b -->|calls| f9e2f469_e292_a4ea_2117_28675899f2b3
+  5a07ac17_7935_99da_515f_922d0a0e83cc["simplifyArbitraryVariant()"]
+  872d3799_7b4c_a5f8_239c_e9b3a2874a9b -->|calls| 5a07ac17_7935_99da_515f_922d0a0e83cc
+  7e03ee41_2b4e_f988_6fb8_46891d8d5f6d["isVar()"]
+  872d3799_7b4c_a5f8_239c_e9b3a2874a9b -->|calls| 7e03ee41_2b4e_f988_6fb8_46891d8d5f6d
+  608e8475_a8ec_dfa2_e618_fe4e184f4320["printModifier()"]
+  872d3799_7b4c_a5f8_239c_e9b3a2874a9b -->|calls| 608e8475_a8ec_dfa2_e618_fe4e184f4320
+  style 872d3799_7b4c_a5f8_239c_e9b3a2874a9b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -940,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-candidate-ts-printvariant"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","label":"printVariant","type":"Function","slug":"fn-candidate-ts-printvariant","lc":46,"lang":"typescript","cc":4,"cbc":6},{"id":"f73eea13:ff68:dfe9:8ee2:cf00395d4af0","label":"printArbitraryValue","type":"Function","slug":"fn-candidate-ts-printarbitraryvalue","lc":3,"lang":"typescript","cc":1,"cbc":4},{"id":"312eaadb:af6e:fe35:0f3d:3be858cc02ed","label":"simplifyArbitraryVariant","type":"Function","slug":"fn-candidate-ts-simplifyarbitraryvariant","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"f4887993:20ca:88e0:3552:96431791d11b","label":"isVar","type":"Function","slug":"fn-candidate-ts-isvar","lc":3,"lang":"typescript","cc":1,"cbc":3},{"id":"bdb3f8dc:91d3:aa49:3f27:90afb925aab0","label":"printModifier","type":"Function","slug":"fn-candidate-ts-printmodifier","lc":16,"lang":"typescript","cc":2,"cbc":3},{"id":"da6194ca:f19b:d252:9ce7:f0acce424221","label":"migrateArbitraryVariants","type":"Function","slug":"fn-migrate-arbitrary-variants-ts-migratearbitraryvariants","lc":39,"lang":"typescript","cc":8},{"id":"7286cd48:1b44:581e:9734:79adf3546cca","label":"printCandidate","type":"Function","slug":"fn-candidate-ts-printcandidate","lc":61,"lang":"typescript","cc":4,"cbc":19},{"id":"57a64953:1ead:27a1:b289:cd387e5ee6de","label":"createCanonicalizeCandidateCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createcanonicalizecandidatecache","lc":62,"lang":"typescript","cc":4,"cbc":1},{"id":"ebc448d6:f163:795e:c08b:bb6abe78cd27","label":"arbitraryVariants","type":"Function","slug":"fn-canonicalize-candidates-ts-arbitraryvariants","lc":28,"lang":"typescript","cc":5},{"id":"247a78b1:eea7:8cde:7859:ba096022034a","label":"modernizeArbitraryValuesVariant","type":"Function","slug":"fn-canonicalize-candidates-ts-modernizearbitraryvaluesvariant","lc":372,"lang":"typescript","cc":12},{"id":"49cf4ef4:bc58:de77:38ee:861472c10e76","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:ModuleResolver","label":"ModuleResolver","type":"Subdomain","slug":"subdomain-moduleresolver"}],"edges":[{"source":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","target":"f73eea13:ff68:dfe9:8ee2:cf00395d4af0","type":"calls"},{"source":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","target":"312eaadb:af6e:fe35:0f3d:3be858cc02ed","type":"calls"},{"source":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","target":"f4887993:20ca:88e0:3552:96431791d11b","type":"calls"},{"source":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","target":"bdb3f8dc:91d3:aa49:3f27:90afb925aab0","type":"calls"},{"source":"da6194ca:f19b:d252:9ce7:f0acce424221","target":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","type":"calls"},{"source":"7286cd48:1b44:581e:9734:79adf3546cca","target":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","type":"calls"},{"source":"57a64953:1ead:27a1:b289:cd387e5ee6de","target":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","type":"calls"},{"source":"ebc448d6:f163:795e:c08b:bb6abe78cd27","target":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","type":"calls"},{"source":"247a78b1:eea7:8cde:7859:ba096022034a","target":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","type":"calls"},{"source":"49cf4ef4:bc58:de77:38ee:861472c10e76","target":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","type":"calls"},{"source":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","target":"domain:TailwindNode","type":"belongsTo"},{"source":"3296a15c:7509:05dd:b1b5:9ec2545d1dc3","target":"subdomain:TailwindNode:ModuleResolver","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","label":"printVariant","type":"Function","slug":"fn-candidate-ts-printvariant","lc":46,"lang":"typescript","cc":4,"cbc":6},{"id":"f9e2f469:e292:a4ea:2117:28675899f2b3","label":"printArbitraryValue","type":"Function","slug":"fn-candidate-ts-printarbitraryvalue","lc":3,"lang":"typescript","cc":1,"cbc":4},{"id":"5a07ac17:7935:99da:515f:922d0a0e83cc","label":"simplifyArbitraryVariant","type":"Function","slug":"fn-candidate-ts-simplifyarbitraryvariant","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"7e03ee41:2b4e:f988:6fb8:46891d8d5f6d","label":"isVar","type":"Function","slug":"fn-candidate-ts-isvar","lc":3,"lang":"typescript","cc":1,"cbc":3},{"id":"608e8475:a8ec:dfa2:e618:fe4e184f4320","label":"printModifier","type":"Function","slug":"fn-candidate-ts-printmodifier","lc":16,"lang":"typescript","cc":2,"cbc":3},{"id":"34095623:2d58:2da6:f37d:5df759191219","label":"migrateArbitraryVariants","type":"Function","slug":"fn-migrate-arbitrary-variants-ts-migratearbitraryvariants","lc":39,"lang":"typescript","cc":8},{"id":"c5ee07b8:715a:f66f:6005:da3347e76451","label":"printCandidate","type":"Function","slug":"fn-candidate-ts-printcandidate","lc":61,"lang":"typescript","cc":4,"cbc":19},{"id":"c5c3c6e0:600b:7c29:a3f3:927917502432","label":"createCanonicalizeCandidateCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createcanonicalizecandidatecache","lc":62,"lang":"typescript","cc":4,"cbc":1},{"id":"1673eb5d:d7f6:751a:930f:4fd6e143b610","label":"arbitraryVariants","type":"Function","slug":"fn-canonicalize-candidates-ts-arbitraryvariants","lc":28,"lang":"typescript","cc":5},{"id":"58f7284f:8249:1f9f:97c7:a46228345ae2","label":"modernizeArbitraryValuesVariant","type":"Function","slug":"fn-canonicalize-candidates-ts-modernizearbitraryvaluesvariant","lc":372,"lang":"typescript","cc":12},{"id":"162ee642:4709:df8b:7047:fd6a24e6d5f7","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"domain:OxideCore","label":"OxideCore","type":"Domain","slug":"domain-oxidecore"},{"id":"subdomain:OxideCore:Extractor","label":"Extractor","type":"Subdomain","slug":"subdomain-extractor"}],"edges":[{"source":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","target":"f9e2f469:e292:a4ea:2117:28675899f2b3","type":"calls"},{"source":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","target":"5a07ac17:7935:99da:515f:922d0a0e83cc","type":"calls"},{"source":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","target":"7e03ee41:2b4e:f988:6fb8:46891d8d5f6d","type":"calls"},{"source":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","target":"608e8475:a8ec:dfa2:e618:fe4e184f4320","type":"calls"},{"source":"34095623:2d58:2da6:f37d:5df759191219","target":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","type":"calls"},{"source":"c5ee07b8:715a:f66f:6005:da3347e76451","target":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","type":"calls"},{"source":"c5c3c6e0:600b:7c29:a3f3:927917502432","target":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","type":"calls"},{"source":"1673eb5d:d7f6:751a:930f:4fd6e143b610","target":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","type":"calls"},{"source":"58f7284f:8249:1f9f:97c7:a46228345ae2","target":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","type":"calls"},{"source":"162ee642:4709:df8b:7047:fd6a24e6d5f7","target":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","type":"calls"},{"source":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","target":"domain:OxideCore","type":"belongsTo"},{"source":"872d3799:7b4c:a5f8:239c:e9b3a2874a9b","target":"subdomain:OxideCore:Extractor","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1007,14 +1007,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
+      <ul><li><a href="/domain-oxidecore.html">OxideCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-moduleresolver.html">ModuleResolver</a></li></ul>
+      <ul><li><a href="/subdomain-extractor.html">Extractor</a></li></ul>
     </div>
     
 

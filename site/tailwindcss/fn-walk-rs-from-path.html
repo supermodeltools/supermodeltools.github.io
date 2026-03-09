@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/rust.html" class="pill pill-blue">rust</a>
-        <a href="/domain/oxideengine.html" class="pill pill-green">OxideEngine</a>
-        <a href="/subdomain/extractor.html" class="pill pill-orange">Extractor</a>
+        <a href="/domain/oxidecore.html" class="pill pill-green">OxideCore</a>
+        <a href="/subdomain/preprocessors.html" class="pill pill-orange">PreProcessors</a>
         
         
         <span class="pill">calls 3</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideEngine","slug":"domain-oxideengine"},"entity":{"name":"from_path","slug":"fn-walk-rs-from-path","type":"Function"},"subdomain":{"name":"Extractor","slug":"subdomain-extractor"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideCore","slug":"domain-oxidecore"},"entity":{"name":"from_path","slug":"fn-walk-rs-from-path","type":"Function"},"subdomain":{"name":"PreProcessors","slug":"subdomain-preprocessors"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/oxideengine.html">OxideEngine</a><span class="arch-sep">&rarr;</span>
-            <a href="/extractor.html">Extractor</a><span class="arch-sep">&rarr;</span>
+            <a href="/oxidecore.html">OxideCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/preprocessors.html">PreProcessors</a><span class="arch-sep">&rarr;</span>
             <span>from_path() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,22 +911,22 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  40ea6ad9_06cf_16e8_c957_48be154f12b5["from_path()"]
-  7ee899d7_1645_0e6e_1408_454ead013edc["visit()"]
-  7ee899d7_1645_0e6e_1408_454ead013edc -->|calls| 40ea6ad9_06cf_16e8_c957_48be154f12b5
-  ef326927_68a1_521a_d484_4c12fa04f0d1["generate_work()"]
-  ef326927_68a1_521a_d484_4c12fa04f0d1 -->|calls| 40ea6ad9_06cf_16e8_c957_48be154f12b5
-  69b68f25_2b3e_57d7_01c1_6d69a74fbadd["check_symlink_loop()"]
-  69b68f25_2b3e_57d7_01c1_6d69a74fbadd -->|calls| 40ea6ad9_06cf_16e8_c957_48be154f12b5
-  a97ca47a_806f_6fca_726d_200b800a2bce["path_equals()"]
-  a97ca47a_806f_6fca_726d_200b800a2bce -->|calls| 40ea6ad9_06cf_16e8_c957_48be154f12b5
-  2ecef8b2_a0e0_b4c9_c66b_ae0b57d28ad7["metadata()"]
-  40ea6ad9_06cf_16e8_c957_48be154f12b5 -->|calls| 2ecef8b2_a0e0_b4c9_c66b_ae0b57d28ad7
-  3a0dca32_7caa_fb30_0973_5e461917120c["file_type()"]
-  40ea6ad9_06cf_16e8_c957_48be154f12b5 -->|calls| 3a0dca32_7caa_fb30_0973_5e461917120c
-  1ffd1a12_19bf_7104_0d40_128335f902de["ino()"]
-  40ea6ad9_06cf_16e8_c957_48be154f12b5 -->|calls| 1ffd1a12_19bf_7104_0d40_128335f902de
-  style 40ea6ad9_06cf_16e8_c957_48be154f12b5 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  4f8b818e_4624_e279_547e_1fcfe18ed8ef["from_path()"]
+  ce678c90_98ad_d435_84e3_6f8488fdfc88["visit()"]
+  ce678c90_98ad_d435_84e3_6f8488fdfc88 -->|calls| 4f8b818e_4624_e279_547e_1fcfe18ed8ef
+  cd9b7722_b4af_f535_9d45_1e1aa954d6e5["generate_work()"]
+  cd9b7722_b4af_f535_9d45_1e1aa954d6e5 -->|calls| 4f8b818e_4624_e279_547e_1fcfe18ed8ef
+  3c2dfaa0_1cff_35e7_e0ef_1858781bbcaa["check_symlink_loop()"]
+  3c2dfaa0_1cff_35e7_e0ef_1858781bbcaa -->|calls| 4f8b818e_4624_e279_547e_1fcfe18ed8ef
+  95a4ec54_418d_db7b_7a2b_100761a92416["path_equals()"]
+  95a4ec54_418d_db7b_7a2b_100761a92416 -->|calls| 4f8b818e_4624_e279_547e_1fcfe18ed8ef
+  ee027c3d_a9bf_4874_7495_5adc806e14ae["metadata()"]
+  4f8b818e_4624_e279_547e_1fcfe18ed8ef -->|calls| ee027c3d_a9bf_4874_7495_5adc806e14ae
+  b681e759_b1be_8b23_d4a1_800e386fb43e["file_type()"]
+  4f8b818e_4624_e279_547e_1fcfe18ed8ef -->|calls| b681e759_b1be_8b23_d4a1_800e386fb43e
+  74c73503_448b_b54d_3e52_0e3ab6d42b55["ino()"]
+  4f8b818e_4624_e279_547e_1fcfe18ed8ef -->|calls| 74c73503_448b_b54d_3e52_0e3ab6d42b55
+  style 4f8b818e_4624_e279_547e_1fcfe18ed8ef fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -934,7 +934,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-walk-rs-from-path"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"40ea6ad9:06cf:16e8:c957:48be154f12b5","label":"from_path","type":"Function","slug":"fn-walk-rs-from-path","lc":10,"lang":"rust","cc":3,"cbc":4},{"id":"2ecef8b2:a0e0:b4c9:c66b:ae0b57d28ad7","label":"metadata","type":"Function","slug":"fn-walk-rs-metadata-3","lc":3,"lang":"rust","cc":2,"cbc":2},{"id":"3a0dca32:7caa:fb30:0973:5e461917120c","label":"file_type","type":"Function","slug":"fn-walk-rs-file-type-3","lc":3,"lang":"rust","cc":1,"cbc":2},{"id":"1ffd1a12:19bf:7104:0d40:128335f902de","label":"ino","type":"Function","slug":"fn-walk-rs-ino-3","lc":3,"lang":"rust","cc":1,"cbc":3},{"id":"7ee899d7:1645:0e6e:1408:454ead013edc","label":"visit","type":"Function","slug":"fn-walk-rs-visit-2","lc":75,"lang":"rust","cc":11,"cbc":2},{"id":"ef326927:68a1:521a:d484:4c12fa04f0d1","label":"generate_work","type":"Function","slug":"fn-walk-rs-generate-work","lc":71,"lang":"rust","cc":14,"cbc":1},{"id":"69b68f25:2b3e:57d7:01c1:6d69a74fbadd","label":"check_symlink_loop","type":"Function","slug":"fn-walk-rs-check-symlink-loop","lc":29,"lang":"rust","cc":3,"cbc":1},{"id":"a97ca47a:806f:6fca:726d:200b800a2bce","label":"path_equals","type":"Function","slug":"fn-walk-rs-path-equals","lc":20,"lang":"rust","cc":4,"cbc":2},{"id":"domain:OxideEngine","label":"OxideEngine","type":"Domain","slug":"domain-oxideengine"},{"id":"subdomain:OxideEngine:Extractor","label":"Extractor","type":"Subdomain","slug":"subdomain-extractor"}],"edges":[{"source":"40ea6ad9:06cf:16e8:c957:48be154f12b5","target":"2ecef8b2:a0e0:b4c9:c66b:ae0b57d28ad7","type":"calls"},{"source":"40ea6ad9:06cf:16e8:c957:48be154f12b5","target":"3a0dca32:7caa:fb30:0973:5e461917120c","type":"calls"},{"source":"40ea6ad9:06cf:16e8:c957:48be154f12b5","target":"1ffd1a12:19bf:7104:0d40:128335f902de","type":"calls"},{"source":"7ee899d7:1645:0e6e:1408:454ead013edc","target":"40ea6ad9:06cf:16e8:c957:48be154f12b5","type":"calls"},{"source":"ef326927:68a1:521a:d484:4c12fa04f0d1","target":"40ea6ad9:06cf:16e8:c957:48be154f12b5","type":"calls"},{"source":"69b68f25:2b3e:57d7:01c1:6d69a74fbadd","target":"40ea6ad9:06cf:16e8:c957:48be154f12b5","type":"calls"},{"source":"a97ca47a:806f:6fca:726d:200b800a2bce","target":"40ea6ad9:06cf:16e8:c957:48be154f12b5","type":"calls"},{"source":"40ea6ad9:06cf:16e8:c957:48be154f12b5","target":"domain:OxideEngine","type":"belongsTo"},{"source":"40ea6ad9:06cf:16e8:c957:48be154f12b5","target":"subdomain:OxideEngine:Extractor","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"4f8b818e:4624:e279:547e:1fcfe18ed8ef","label":"from_path","type":"Function","slug":"fn-walk-rs-from-path","lc":10,"lang":"rust","cc":3,"cbc":4},{"id":"ee027c3d:a9bf:4874:7495:5adc806e14ae","label":"metadata","type":"Function","slug":"fn-walk-rs-metadata-3","lc":3,"lang":"rust","cc":2,"cbc":2},{"id":"b681e759:b1be:8b23:d4a1:800e386fb43e","label":"file_type","type":"Function","slug":"fn-walk-rs-file-type-3","lc":3,"lang":"rust","cc":1,"cbc":3},{"id":"74c73503:448b:b54d:3e52:0e3ab6d42b55","label":"ino","type":"Function","slug":"fn-walk-rs-ino-3","lc":3,"lang":"rust","cc":1,"cbc":3},{"id":"ce678c90:98ad:d435:84e3:6f8488fdfc88","label":"visit","type":"Function","slug":"fn-walk-rs-visit-2","lc":75,"lang":"rust","cc":11,"cbc":2},{"id":"cd9b7722:b4af:f535:9d45:1e1aa954d6e5","label":"generate_work","type":"Function","slug":"fn-walk-rs-generate-work","lc":71,"lang":"rust","cc":14,"cbc":1},{"id":"3c2dfaa0:1cff:35e7:e0ef:1858781bbcaa","label":"check_symlink_loop","type":"Function","slug":"fn-walk-rs-check-symlink-loop","lc":29,"lang":"rust","cc":3,"cbc":1},{"id":"95a4ec54:418d:db7b:7a2b:100761a92416","label":"path_equals","type":"Function","slug":"fn-walk-rs-path-equals","lc":20,"lang":"rust","cc":4,"cbc":2},{"id":"domain:OxideCore","label":"OxideCore","type":"Domain","slug":"domain-oxidecore"},{"id":"subdomain:OxideCore:PreProcessors","label":"PreProcessors","type":"Subdomain","slug":"subdomain-preprocessors"}],"edges":[{"source":"4f8b818e:4624:e279:547e:1fcfe18ed8ef","target":"ee027c3d:a9bf:4874:7495:5adc806e14ae","type":"calls"},{"source":"4f8b818e:4624:e279:547e:1fcfe18ed8ef","target":"b681e759:b1be:8b23:d4a1:800e386fb43e","type":"calls"},{"source":"4f8b818e:4624:e279:547e:1fcfe18ed8ef","target":"74c73503:448b:b54d:3e52:0e3ab6d42b55","type":"calls"},{"source":"ce678c90:98ad:d435:84e3:6f8488fdfc88","target":"4f8b818e:4624:e279:547e:1fcfe18ed8ef","type":"calls"},{"source":"cd9b7722:b4af:f535:9d45:1e1aa954d6e5","target":"4f8b818e:4624:e279:547e:1fcfe18ed8ef","type":"calls"},{"source":"3c2dfaa0:1cff:35e7:e0ef:1858781bbcaa","target":"4f8b818e:4624:e279:547e:1fcfe18ed8ef","type":"calls"},{"source":"95a4ec54:418d:db7b:7a2b:100761a92416","target":"4f8b818e:4624:e279:547e:1fcfe18ed8ef","type":"calls"},{"source":"4f8b818e:4624:e279:547e:1fcfe18ed8ef","target":"domain:OxideCore","type":"belongsTo"},{"source":"4f8b818e:4624:e279:547e:1fcfe18ed8ef","target":"subdomain:OxideCore:PreProcessors","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -965,14 +965,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-oxideengine.html">OxideEngine</a></li></ul>
+      <ul><li><a href="/domain-oxidecore.html">OxideCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-extractor.html">Extractor</a></li></ul>
+      <ul><li><a href="/subdomain-preprocessors.html">PreProcessors</a></li></ul>
     </div>
     
 

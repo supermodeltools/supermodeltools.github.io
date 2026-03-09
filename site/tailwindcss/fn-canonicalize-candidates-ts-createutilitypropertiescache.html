@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
-        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
+        <a href="/domain/oxidecore.html" class="pill pill-green">OxideCore</a>
+        <a href="/subdomain/extractor.html" class="pill pill-orange">Extractor</a>
         
         
         <span class="pill">calls 6</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"createUtilityPropertiesCache","slug":"fn-canonicalize-candidates-ts-createutilitypropertiescache","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideCore","slug":"domain-oxidecore"},"entity":{"name":"createUtilityPropertiesCache","slug":"fn-canonicalize-candidates-ts-createutilitypropertiescache","type":"Function"},"subdomain":{"name":"Extractor","slug":"subdomain-extractor"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
-            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
+            <a href="/oxidecore.html">OxideCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/extractor.html">Extractor</a><span class="arch-sep">&rarr;</span>
             <span>createUtilityPropertiesCache() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,22 +911,22 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  494ea8ca_62b0_f86f_3df3_4e3c8408efaa["createUtilityPropertiesCache()"]
-  70feb5f7_6816_5a4b_0c21_91a727f585cd["prepareDesignSystemStorage()"]
-  70feb5f7_6816_5a4b_0c21_91a727f585cd -->|calls| 494ea8ca_62b0_f86f_3df3_4e3c8408efaa
-  827b776d_00d3_87e2_16c8_e40692673896["parseCandidate()"]
-  494ea8ca_62b0_f86f_3df3_4e3c8408efaa -->|calls| 827b776d_00d3_87e2_16c8_e40692673896
-  99acf59e_2840_7caa_322a_c945c7d08922["canonicalizeAst()"]
-  494ea8ca_62b0_f86f_3df3_4e3c8408efaa -->|calls| 99acf59e_2840_7caa_322a_c945c7d08922
-  5840bacf_30c5_360e_b83e_3d6cbe97c5af["cloneAstNode()"]
-  494ea8ca_62b0_f86f_3df3_4e3c8408efaa -->|calls| 5840bacf_30c5_360e_b83e_3d6cbe97c5af
-  09ffc88f_c462_43b9_0bee_1606e8171bfe["add()"]
-  494ea8ca_62b0_f86f_3df3_4e3c8408efaa -->|calls| 09ffc88f_c462_43b9_0bee_1606e8171bfe
-  5099f828_6467_ecb0_6ae3_26c5f07e1976["walk()"]
-  494ea8ca_62b0_f86f_3df3_4e3c8408efaa -->|calls| 5099f828_6467_ecb0_6ae3_26c5f07e1976
-  e9b6ad88_035b_ab6f_0a24_3b9e2cf37ebf["get()"]
-  494ea8ca_62b0_f86f_3df3_4e3c8408efaa -->|calls| e9b6ad88_035b_ab6f_0a24_3b9e2cf37ebf
-  style 494ea8ca_62b0_f86f_3df3_4e3c8408efaa fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  0559eb33_bab6_f852_f9ba_fb33d4ccbf87["createUtilityPropertiesCache()"]
+  a2942d1a_f047_15b5_30de_5a3a1b225e66["prepareDesignSystemStorage()"]
+  a2942d1a_f047_15b5_30de_5a3a1b225e66 -->|calls| 0559eb33_bab6_f852_f9ba_fb33d4ccbf87
+  265f1883_bca8_0010_bf0f_236afcc7d983["parseCandidate()"]
+  0559eb33_bab6_f852_f9ba_fb33d4ccbf87 -->|calls| 265f1883_bca8_0010_bf0f_236afcc7d983
+  c4a9045d_f9bc_68e7_baa6_b6857b1aa854["canonicalizeAst()"]
+  0559eb33_bab6_f852_f9ba_fb33d4ccbf87 -->|calls| c4a9045d_f9bc_68e7_baa6_b6857b1aa854
+  bcbff0cc_dafa_cce2_c73d_26c1a2a9ff75["cloneAstNode()"]
+  0559eb33_bab6_f852_f9ba_fb33d4ccbf87 -->|calls| bcbff0cc_dafa_cce2_c73d_26c1a2a9ff75
+  7c6dd0f9_6cfa_4bdb_fa85_b038435ef75b["add()"]
+  0559eb33_bab6_f852_f9ba_fb33d4ccbf87 -->|calls| 7c6dd0f9_6cfa_4bdb_fa85_b038435ef75b
+  5b097e4c_4be1_9dd8_1cda_32d13176f419["walk()"]
+  0559eb33_bab6_f852_f9ba_fb33d4ccbf87 -->|calls| 5b097e4c_4be1_9dd8_1cda_32d13176f419
+  44d685d1_9487_5b54_308b_46cb1c92d8be["get()"]
+  0559eb33_bab6_f852_f9ba_fb33d4ccbf87 -->|calls| 44d685d1_9487_5b54_308b_46cb1c92d8be
+  style 0559eb33_bab6_f852_f9ba_fb33d4ccbf87 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -934,7 +934,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-canonicalize-candidates-ts-createutilitypropertiescache"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"494ea8ca:62b0:f86f:3df3:4e3c8408efaa","label":"createUtilityPropertiesCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createutilitypropertiescache","lc":34,"lang":"typescript","cc":6,"cbc":1},{"id":"827b776d:00d3:87e2:16c8:e40692673896","label":"parseCandidate","type":"Function","slug":"fn-canonicalize-candidates-ts-parsecandidate","lc":7,"lang":"typescript","cc":1,"cbc":7},{"id":"99acf59e:2840:7caa:322a:c945c7d08922","label":"canonicalizeAst","type":"Function","slug":"fn-canonicalize-candidates-ts-canonicalizeast","lc":102,"lang":"typescript","cc":6,"cbc":2},{"id":"5840bacf:30c5:360e:b83e:3d6cbe97c5af","label":"cloneAstNode","type":"Function","slug":"fn-ast-ts-cloneastnode","lc":61,"lang":"typescript","cbc":3},{"id":"09ffc88f:c462:43b9:0bee:1606e8171bfe","label":"add","type":"Function","slug":"fn-theme-ts-add","lc":27,"lang":"typescript","cc":2,"cbc":16},{"id":"5099f828:6467:ecb0:6ae3:26c5f07e1976","label":"walk","type":"Function","slug":"fn-walk-ts-walk-2","lc":12,"lang":"typescript","cc":1,"cbc":40},{"id":"e9b6ad88:035b:ab6f:0a24:3b9e2cf37ebf","label":"get","type":"Function","slug":"fn-default-map-ts-get","lc":10,"lang":"typescript","cbc":52},{"id":"70feb5f7:6816:5a4b:0c21:91a727f585cd","label":"prepareDesignSystemStorage","type":"Function","slug":"fn-canonicalize-candidates-ts-preparedesignsystemstorage","lc":22,"lang":"typescript","cc":13,"cbc":5},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"494ea8ca:62b0:f86f:3df3:4e3c8408efaa","target":"827b776d:00d3:87e2:16c8:e40692673896","type":"calls"},{"source":"494ea8ca:62b0:f86f:3df3:4e3c8408efaa","target":"99acf59e:2840:7caa:322a:c945c7d08922","type":"calls"},{"source":"494ea8ca:62b0:f86f:3df3:4e3c8408efaa","target":"5840bacf:30c5:360e:b83e:3d6cbe97c5af","type":"calls"},{"source":"494ea8ca:62b0:f86f:3df3:4e3c8408efaa","target":"09ffc88f:c462:43b9:0bee:1606e8171bfe","type":"calls"},{"source":"494ea8ca:62b0:f86f:3df3:4e3c8408efaa","target":"5099f828:6467:ecb0:6ae3:26c5f07e1976","type":"calls"},{"source":"494ea8ca:62b0:f86f:3df3:4e3c8408efaa","target":"e9b6ad88:035b:ab6f:0a24:3b9e2cf37ebf","type":"calls"},{"source":"70feb5f7:6816:5a4b:0c21:91a727f585cd","target":"494ea8ca:62b0:f86f:3df3:4e3c8408efaa","type":"calls"},{"source":"494ea8ca:62b0:f86f:3df3:4e3c8408efaa","target":"domain:TailwindNode","type":"belongsTo"},{"source":"494ea8ca:62b0:f86f:3df3:4e3c8408efaa","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"0559eb33:bab6:f852:f9ba:fb33d4ccbf87","label":"createUtilityPropertiesCache","type":"Function","slug":"fn-canonicalize-candidates-ts-createutilitypropertiescache","lc":34,"lang":"typescript","cc":6,"cbc":1},{"id":"265f1883:bca8:0010:bf0f:236afcc7d983","label":"parseCandidate","type":"Function","slug":"fn-canonicalize-candidates-ts-parsecandidate","lc":7,"lang":"typescript","cc":1,"cbc":8},{"id":"c4a9045d:f9bc:68e7:baa6:b6857b1aa854","label":"canonicalizeAst","type":"Function","slug":"fn-canonicalize-candidates-ts-canonicalizeast","lc":102,"lang":"typescript","cc":6,"cbc":2},{"id":"bcbff0cc:dafa:cce2:c73d:26c1a2a9ff75","label":"cloneAstNode","type":"Function","slug":"fn-ast-ts-cloneastnode","lc":61,"lang":"typescript","cbc":3},{"id":"7c6dd0f9:6cfa:4bdb:fa85:b038435ef75b","label":"add","type":"Function","slug":"fn-theme-ts-add","lc":27,"lang":"typescript","cc":2,"cbc":16},{"id":"5b097e4c:4be1:9dd8:1cda:32d13176f419","label":"walk","type":"Function","slug":"fn-walk-ts-walk-2","lc":12,"lang":"typescript","cc":1,"cbc":37},{"id":"44d685d1:9487:5b54:308b:46cb1c92d8be","label":"get","type":"Function","slug":"fn-default-map-ts-get","lc":10,"lang":"typescript","cbc":51},{"id":"a2942d1a:f047:15b5:30de:5a3a1b225e66","label":"prepareDesignSystemStorage","type":"Function","slug":"fn-canonicalize-candidates-ts-preparedesignsystemstorage","lc":22,"lang":"typescript","cc":13,"cbc":5},{"id":"domain:OxideCore","label":"OxideCore","type":"Domain","slug":"domain-oxidecore"},{"id":"subdomain:OxideCore:Extractor","label":"Extractor","type":"Subdomain","slug":"subdomain-extractor"}],"edges":[{"source":"0559eb33:bab6:f852:f9ba:fb33d4ccbf87","target":"265f1883:bca8:0010:bf0f:236afcc7d983","type":"calls"},{"source":"0559eb33:bab6:f852:f9ba:fb33d4ccbf87","target":"c4a9045d:f9bc:68e7:baa6:b6857b1aa854","type":"calls"},{"source":"0559eb33:bab6:f852:f9ba:fb33d4ccbf87","target":"bcbff0cc:dafa:cce2:c73d:26c1a2a9ff75","type":"calls"},{"source":"0559eb33:bab6:f852:f9ba:fb33d4ccbf87","target":"7c6dd0f9:6cfa:4bdb:fa85:b038435ef75b","type":"calls"},{"source":"0559eb33:bab6:f852:f9ba:fb33d4ccbf87","target":"5b097e4c:4be1:9dd8:1cda:32d13176f419","type":"calls"},{"source":"0559eb33:bab6:f852:f9ba:fb33d4ccbf87","target":"44d685d1:9487:5b54:308b:46cb1c92d8be","type":"calls"},{"source":"a2942d1a:f047:15b5:30de:5a3a1b225e66","target":"0559eb33:bab6:f852:f9ba:fb33d4ccbf87","type":"calls"},{"source":"0559eb33:bab6:f852:f9ba:fb33d4ccbf87","target":"domain:OxideCore","type":"belongsTo"},{"source":"0559eb33:bab6:f852:f9ba:fb33d4ccbf87","target":"subdomain:OxideCore:Extractor","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -989,14 +989,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
+      <ul><li><a href="/domain-oxidecore.html">OxideCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
+      <ul><li><a href="/subdomain-extractor.html">Extractor</a></li></ul>
     </div>
     
 

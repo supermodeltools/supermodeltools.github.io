@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
-        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
+        <a href="/domain/oxidecore.html" class="pill pill-green">OxideCore</a>
+        <a href="/subdomain/extractor.html" class="pill pill-orange">Extractor</a>
         
         
         <span class="pill">calls 5</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"compileAstNodes","slug":"fn-compile-ts-compileastnodes","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideCore","slug":"domain-oxidecore"},"entity":{"name":"compileAstNodes","slug":"fn-compile-ts-compileastnodes","type":"Function"},"subdomain":{"name":"Extractor","slug":"subdomain-extractor"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
-            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
+            <a href="/oxidecore.html">OxideCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/extractor.html">Extractor</a><span class="arch-sep">&rarr;</span>
             <span>compileAstNodes() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,22 +911,22 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  0a11ec08_1c38_ff9e_aabf_28e172c8d7f8["compileAstNodes()"]
-  280bf6b7_9b23_32f7_65c7_94b235ecd958["compileCandidates()"]
-  280bf6b7_9b23_32f7_65c7_94b235ecd958 -->|calls| 0a11ec08_1c38_ff9e_aabf_28e172c8d7f8
-  49cf4ef4_bc58_de77_38ee_861472c10e76["buildDesignSystem()"]
-  49cf4ef4_bc58_de77_38ee_861472c10e76 -->|calls| 0a11ec08_1c38_ff9e_aabf_28e172c8d7f8
-  0e57f2b5_695f_8346_a0f6_d09d610db3b3["compileBaseUtility()"]
-  0a11ec08_1c38_ff9e_aabf_28e172c8d7f8 -->|calls| 0e57f2b5_695f_8346_a0f6_d09d610db3b3
-  554bc1d7_b388_9939_1247_35e64c69a615["escape()"]
-  0a11ec08_1c38_ff9e_aabf_28e172c8d7f8 -->|calls| 554bc1d7_b388_9939_1247_35e64c69a615
-  6587b569_f240_a230_2ee1_61d4305572cb["getPropertySort()"]
-  0a11ec08_1c38_ff9e_aabf_28e172c8d7f8 -->|calls| 6587b569_f240_a230_2ee1_61d4305572cb
-  d696f311_2d63_6782_8f13_b46a6808f165["applyImportant()"]
-  0a11ec08_1c38_ff9e_aabf_28e172c8d7f8 -->|calls| d696f311_2d63_6782_8f13_b46a6808f165
-  e4d970b6_47d1_52aa_7fab_ce7a113f2ddb["applyVariant()"]
-  0a11ec08_1c38_ff9e_aabf_28e172c8d7f8 -->|calls| e4d970b6_47d1_52aa_7fab_ce7a113f2ddb
-  style 0a11ec08_1c38_ff9e_aabf_28e172c8d7f8 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  1ad9e9ce_0ebc_0f81_adda_203ebfb922bf["compileAstNodes()"]
+  0af807b8_aad0_8b3d_6178_d99370446e79["compileCandidates()"]
+  0af807b8_aad0_8b3d_6178_d99370446e79 -->|calls| 1ad9e9ce_0ebc_0f81_adda_203ebfb922bf
+  162ee642_4709_df8b_7047_fd6a24e6d5f7["buildDesignSystem()"]
+  162ee642_4709_df8b_7047_fd6a24e6d5f7 -->|calls| 1ad9e9ce_0ebc_0f81_adda_203ebfb922bf
+  bbc0f502_a9a0_a0d2_09b3_8698b724ea3d["compileBaseUtility()"]
+  1ad9e9ce_0ebc_0f81_adda_203ebfb922bf -->|calls| bbc0f502_a9a0_a0d2_09b3_8698b724ea3d
+  c86e5713_178c_6dc0_bfc4_4d223a119aa8["escape()"]
+  1ad9e9ce_0ebc_0f81_adda_203ebfb922bf -->|calls| c86e5713_178c_6dc0_bfc4_4d223a119aa8
+  b260377b_cb85_6009_d59e_0e52ba38d236["getPropertySort()"]
+  1ad9e9ce_0ebc_0f81_adda_203ebfb922bf -->|calls| b260377b_cb85_6009_d59e_0e52ba38d236
+  757597de_051d_002b_f2f2_a458340dd2e8["applyImportant()"]
+  1ad9e9ce_0ebc_0f81_adda_203ebfb922bf -->|calls| 757597de_051d_002b_f2f2_a458340dd2e8
+  bf0b0462_65d9_f7a6_fcb4_cc7e5b4be798["applyVariant()"]
+  1ad9e9ce_0ebc_0f81_adda_203ebfb922bf -->|calls| bf0b0462_65d9_f7a6_fcb4_cc7e5b4be798
+  style 1ad9e9ce_0ebc_0f81_adda_203ebfb922bf fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -934,7 +934,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-compile-ts-compileastnodes"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"0a11ec08:1c38:ff9e:aabf:28e172c8d7f8","label":"compileAstNodes","type":"Function","slug":"fn-compile-ts-compileastnodes","lc":53,"lang":"typescript","cc":5,"cbc":2},{"id":"0e57f2b5:695f:8346:a0f6:d09d610db3b3","label":"compileBaseUtility","type":"Function","slug":"fn-compile-ts-compilebaseutility","lc":43,"lang":"typescript","cc":4,"cbc":1},{"id":"554bc1d7:b388:9939:1247:35e64c69a615","label":"escape","type":"Function","slug":"fn-escape-ts-escape","lc":72,"lang":"typescript","cbc":7},{"id":"6587b569:f240:a230:2ee1:61d4305572cb","label":"getPropertySort","type":"Function","slug":"fn-compile-ts-getpropertysort","lc":43,"lang":"typescript","cbc":1},{"id":"d696f311:2d63:6782:8f13:b46a6808f165","label":"applyImportant","type":"Function","slug":"fn-compile-ts-applyimportant","lc":15,"lang":"typescript","cbc":1},{"id":"e4d970b6:47d1:52aa:7fab:ce7a113f2ddb","label":"applyVariant","type":"Function","slug":"fn-compile-ts-applyvariant","lc":82,"lang":"typescript","cc":4,"cbc":3},{"id":"280bf6b7:9b23:32f7:65c7:94b235ecd958","label":"compileCandidates","type":"Function","slug":"fn-compile-ts-compilecandidates","lc":111,"lang":"typescript","cc":6,"cbc":4},{"id":"49cf4ef4:bc58:de77:38ee:861472c10e76","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"0a11ec08:1c38:ff9e:aabf:28e172c8d7f8","target":"0e57f2b5:695f:8346:a0f6:d09d610db3b3","type":"calls"},{"source":"0a11ec08:1c38:ff9e:aabf:28e172c8d7f8","target":"554bc1d7:b388:9939:1247:35e64c69a615","type":"calls"},{"source":"0a11ec08:1c38:ff9e:aabf:28e172c8d7f8","target":"6587b569:f240:a230:2ee1:61d4305572cb","type":"calls"},{"source":"0a11ec08:1c38:ff9e:aabf:28e172c8d7f8","target":"d696f311:2d63:6782:8f13:b46a6808f165","type":"calls"},{"source":"0a11ec08:1c38:ff9e:aabf:28e172c8d7f8","target":"e4d970b6:47d1:52aa:7fab:ce7a113f2ddb","type":"calls"},{"source":"280bf6b7:9b23:32f7:65c7:94b235ecd958","target":"0a11ec08:1c38:ff9e:aabf:28e172c8d7f8","type":"calls"},{"source":"49cf4ef4:bc58:de77:38ee:861472c10e76","target":"0a11ec08:1c38:ff9e:aabf:28e172c8d7f8","type":"calls"},{"source":"0a11ec08:1c38:ff9e:aabf:28e172c8d7f8","target":"domain:TailwindNode","type":"belongsTo"},{"source":"0a11ec08:1c38:ff9e:aabf:28e172c8d7f8","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"1ad9e9ce:0ebc:0f81:adda:203ebfb922bf","label":"compileAstNodes","type":"Function","slug":"fn-compile-ts-compileastnodes","lc":53,"lang":"typescript","cc":5,"cbc":2},{"id":"bbc0f502:a9a0:a0d2:09b3:8698b724ea3d","label":"compileBaseUtility","type":"Function","slug":"fn-compile-ts-compilebaseutility","lc":43,"lang":"typescript","cc":4,"cbc":1},{"id":"c86e5713:178c:6dc0:bfc4:4d223a119aa8","label":"escape","type":"Function","slug":"fn-escape-ts-escape","lc":72,"lang":"typescript","cbc":7},{"id":"b260377b:cb85:6009:d59e:0e52ba38d236","label":"getPropertySort","type":"Function","slug":"fn-compile-ts-getpropertysort","lc":43,"lang":"typescript","cbc":1},{"id":"757597de:051d:002b:f2f2:a458340dd2e8","label":"applyImportant","type":"Function","slug":"fn-compile-ts-applyimportant","lc":15,"lang":"typescript","cbc":1},{"id":"bf0b0462:65d9:f7a6:fcb4:cc7e5b4be798","label":"applyVariant","type":"Function","slug":"fn-compile-ts-applyvariant","lc":82,"lang":"typescript","cc":4,"cbc":3},{"id":"0af807b8:aad0:8b3d:6178:d99370446e79","label":"compileCandidates","type":"Function","slug":"fn-compile-ts-compilecandidates","lc":111,"lang":"typescript","cc":6,"cbc":4},{"id":"162ee642:4709:df8b:7047:fd6a24e6d5f7","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"domain:OxideCore","label":"OxideCore","type":"Domain","slug":"domain-oxidecore"},{"id":"subdomain:OxideCore:Extractor","label":"Extractor","type":"Subdomain","slug":"subdomain-extractor"}],"edges":[{"source":"1ad9e9ce:0ebc:0f81:adda:203ebfb922bf","target":"bbc0f502:a9a0:a0d2:09b3:8698b724ea3d","type":"calls"},{"source":"1ad9e9ce:0ebc:0f81:adda:203ebfb922bf","target":"c86e5713:178c:6dc0:bfc4:4d223a119aa8","type":"calls"},{"source":"1ad9e9ce:0ebc:0f81:adda:203ebfb922bf","target":"b260377b:cb85:6009:d59e:0e52ba38d236","type":"calls"},{"source":"1ad9e9ce:0ebc:0f81:adda:203ebfb922bf","target":"757597de:051d:002b:f2f2:a458340dd2e8","type":"calls"},{"source":"1ad9e9ce:0ebc:0f81:adda:203ebfb922bf","target":"bf0b0462:65d9:f7a6:fcb4:cc7e5b4be798","type":"calls"},{"source":"0af807b8:aad0:8b3d:6178:d99370446e79","target":"1ad9e9ce:0ebc:0f81:adda:203ebfb922bf","type":"calls"},{"source":"162ee642:4709:df8b:7047:fd6a24e6d5f7","target":"1ad9e9ce:0ebc:0f81:adda:203ebfb922bf","type":"calls"},{"source":"1ad9e9ce:0ebc:0f81:adda:203ebfb922bf","target":"domain:OxideCore","type":"belongsTo"},{"source":"1ad9e9ce:0ebc:0f81:adda:203ebfb922bf","target":"subdomain:OxideCore:Extractor","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1008,14 +1008,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
+      <ul><li><a href="/domain-oxidecore.html">OxideCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
+      <ul><li><a href="/subdomain-extractor.html">Extractor</a></li></ul>
     </div>
     
 

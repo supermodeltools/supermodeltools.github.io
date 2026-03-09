@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
-        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
+        <a href="/subdomain/resolver.html" class="pill pill-orange">Resolver</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"rule","slug":"fn-ast-ts-rule","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"rule","slug":"fn-ast-ts-rule","type":"Function"},"subdomain":{"name":"Resolver","slug":"subdomain-resolver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
-            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
+            <a href="/resolver.html">Resolver</a><span class="arch-sep">&rarr;</span>
             <span>rule() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  0acfef93_0959_e24d_458f_79c858a83f96["rule()"]
-  9de01284_aa0b_1184_45af_2231490540fc["cssAstToPostCssAst()"]
-  9de01284_aa0b_1184_45af_2231490540fc -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  dc792a20_53d2_4173_40d9_189b9ac07862["postCssAstToCssAst()"]
-  dc792a20_53d2_4173_40d9_189b9ac07862 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  5c82638e_5bf3_f665_8fe0_41578bdfe2d5["substituteAtApply()"]
-  5c82638e_5bf3_f665_8fe0_41578bdfe2d5 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  85e8d057_55af_82fa_5b14_bfd7c2866568["optimizeAst()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  0b044a4a_9433_8d4f_7442_094356116e83["buildPluginApi()"]
-  0b044a4a_9433_8d4f_7442_094356116e83 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  3e9f3fb8_51ce_6522_270b_a35573db6a78["objectToAst()"]
-  3e9f3fb8_51ce_6522_270b_a35573db6a78 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  2e8de857_7bdd_42a9_7506_6a3710b34b0c["parseVariantValue()"]
-  2e8de857_7bdd_42a9_7506_6a3710b34b0c -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  e4d970b6_47d1_52aa_7fab_ce7a113f2ddb["applyVariant()"]
-  e4d970b6_47d1_52aa_7fab_ce7a113f2ddb -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  dec3ff16_e76c_2f36_cac4_d70f83ff36e3["theme()"]
-  dec3ff16_e76c_2f36_cac4_d70f83ff36e3 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  af29df39_c85d_5105_d880_4d7152405f33["parse()"]
-  af29df39_c85d_5105_d880_4d7152405f33 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  dfe4d132_62ee_4dd0_28bc_661f6a358b63["parseCss()"]
-  dfe4d132_62ee_4dd0_28bc_661f6a358b63 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  311e28ba_bd69_1010_63f4_deb759cca646["alphaReplacedShadowProperties()"]
-  311e28ba_bd69_1010_63f4_deb759cca646 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  0849ebbf_e30b_6254_2bcb_2e4572e2c7aa["alphaReplacedDropShadowProperties()"]
-  0849ebbf_e30b_6254_2bcb_2e4572e2c7aa -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  44199c9f_cba3_31c4_6d14_795a88c756fb["createVariants()"]
-  44199c9f_cba3_31c4_6d14_795a88c756fb -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  style 0acfef93_0959_e24d_458f_79c858a83f96 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  69b42aa5_2332_1fbe_b961_82234ca6c571["rule()"]
+  e826f19c_595a_d69e_4404_b1af1d9ec702["cssAstToPostCssAst()"]
+  e826f19c_595a_d69e_4404_b1af1d9ec702 -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  8b1bc7b7_ca07_ac2f_8eb5_32dda141874e["postCssAstToCssAst()"]
+  8b1bc7b7_ca07_ac2f_8eb5_32dda141874e -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  73036952_36b9_a4c8_53c7_26fa355cf50f["substituteAtApply()"]
+  73036952_36b9_a4c8_53c7_26fa355cf50f -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62["optimizeAst()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  a940f963_e99e_b331_5033_8039aa4d835d["buildPluginApi()"]
+  a940f963_e99e_b331_5033_8039aa4d835d -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  49f07af0_d947_1020_5280_497d4ee44f1d["objectToAst()"]
+  49f07af0_d947_1020_5280_497d4ee44f1d -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  17e20432_6498_89d4_8208_7094c2f1b39d["parseVariantValue()"]
+  17e20432_6498_89d4_8208_7094c2f1b39d -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  bf0b0462_65d9_f7a6_fcb4_cc7e5b4be798["applyVariant()"]
+  bf0b0462_65d9_f7a6_fcb4_cc7e5b4be798 -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  1c99c340_5dc2_d1b2_4fe2_994141238cbb["theme()"]
+  1c99c340_5dc2_d1b2_4fe2_994141238cbb -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  2dd00ff8_fce6_3b47_fd34_800695b0ad49["parse()"]
+  2dd00ff8_fce6_3b47_fd34_800695b0ad49 -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  0dc6f2ff_6302_a5b5_0970_076cf0671961["parseCss()"]
+  0dc6f2ff_6302_a5b5_0970_076cf0671961 -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  5c3a732e_f7a2_eb28_bbe9_3eeb2662978f["alphaReplacedShadowProperties()"]
+  5c3a732e_f7a2_eb28_bbe9_3eeb2662978f -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  0d2ff17a_4251_bf3c_e75f_b5b53e682c81["alphaReplacedDropShadowProperties()"]
+  0d2ff17a_4251_bf3c_e75f_b5b53e682c81 -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  de772009_1768_098f_b6a6_f0f371ee2d74["createVariants()"]
+  de772009_1768_098f_b6a6_f0f371ee2d74 -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  style 69b42aa5_2332_1fbe_b961_82234ca6c571 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-ast-ts-rule"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"0acfef93:0959:e24d:458f:79c858a83f96","label":"rule","type":"Function","slug":"fn-ast-ts-rule","lc":7,"lang":"typescript","cc":2,"cbc":14},{"id":"89fb9787:a8e4:0573:ed3f:99f918996ea5","label":"parseAtRule","type":"Function","slug":"fn-css-parser-ts-parseatrule","lc":32,"lang":"typescript","cc":1,"cbc":2},{"id":"f6c706ca:dfe0:d8f1:1bd6:8a4d47af1bb1","label":"styleRule","type":"Function","slug":"fn-ast-ts-stylerule","lc":7,"lang":"typescript","cbc":8},{"id":"9de01284:aa0b:1184:45af:2231490540fc","label":"cssAstToPostCssAst","type":"Function","slug":"fn-ast-ts-cssasttopostcssast","lc":116,"lang":"typescript","cc":6,"cbc":1},{"id":"dc792a20:53d2:4173:40d9:189b9ac07862","label":"postCssAstToCssAst","type":"Function","slug":"fn-ast-ts-postcssasttocssast","lc":64,"lang":"typescript","cc":5,"cbc":2},{"id":"5c82638e:5bf3:f665:8fe0:41578bdfe2d5","label":"substituteAtApply","type":"Function","slug":"fn-apply-ts-substituteatapply","lc":291,"lang":"typescript","cc":8,"cbc":4},{"id":"85e8d057:55af:82fa:5b14:bfd7c2866568","label":"optimizeAst","type":"Function","slug":"fn-ast-ts-optimizeast","lc":461,"lang":"typescript","cc":14,"cbc":2},{"id":"0b044a4a:9433:8d4f:7442:094356116e83","label":"buildPluginApi","type":"Function","slug":"fn-plugin-api-ts-buildpluginapi","lc":450,"lang":"typescript","cc":24,"cbc":1},{"id":"3e9f3fb8:51ce:6522:270b:a35573db6a78","label":"objectToAst","type":"Function","slug":"fn-plugin-api-ts-objecttoast","lc":43,"lang":"typescript","cc":4,"cbc":2},{"id":"2e8de857:7bdd:42a9:7506:6a3710b34b0c","label":"parseVariantValue","type":"Function","slug":"fn-plugin-api-ts-parsevariantvalue","lc":13,"lang":"typescript","cc":3,"cbc":1},{"id":"e4d970b6:47d1:52aa:7fab:ce7a113f2ddb","label":"applyVariant","type":"Function","slug":"fn-compile-ts-applyvariant","lc":82,"lang":"typescript","cc":4,"cbc":3},{"id":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","label":"theme","type":"Function","slug":"fn-css-functions-ts-theme","lc":60,"lang":"typescript","cc":4,"cbc":3},{"id":"af29df39:c85d:5105:d880:4d7152405f33","label":"parse","type":"Function","slug":"fn-css-parser-ts-parse","lc":531,"lang":"typescript","cc":5,"cbc":8},{"id":"dfe4d132:62ee:4dd0:28bc:661f6a358b63","label":"parseCss","type":"Function","slug":"fn-index-ts-parsecss","lc":567,"lang":"typescript","cc":32,"cbc":2},{"id":"311e28ba:bd69:1010:63f4:deb759cca646","label":"alphaReplacedShadowProperties","type":"Function","slug":"fn-utilities-ts-alphareplacedshadowproperties","lc":45,"lang":"typescript","cc":6},{"id":"0849ebbf:e30b:6254:2bcb:2e4572e2c7aa","label":"alphaReplacedDropShadowProperties","type":"Function","slug":"fn-utilities-ts-alphareplaceddropshadowproperties","lc":50,"lang":"typescript","cc":6},{"id":"44199c9f:cba3:31c4:6d14:795a88c756fb","label":"createVariants","type":"Function","slug":"fn-variants-ts-createvariants","lc":816,"lang":"typescript","cc":21,"cbc":1},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"0acfef93:0959:e24d:458f:79c858a83f96","target":"89fb9787:a8e4:0573:ed3f:99f918996ea5","type":"calls"},{"source":"0acfef93:0959:e24d:458f:79c858a83f96","target":"f6c706ca:dfe0:d8f1:1bd6:8a4d47af1bb1","type":"calls"},{"source":"9de01284:aa0b:1184:45af:2231490540fc","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"dc792a20:53d2:4173:40d9:189b9ac07862","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"5c82638e:5bf3:f665:8fe0:41578bdfe2d5","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"0b044a4a:9433:8d4f:7442:094356116e83","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"3e9f3fb8:51ce:6522:270b:a35573db6a78","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"2e8de857:7bdd:42a9:7506:6a3710b34b0c","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"e4d970b6:47d1:52aa:7fab:ce7a113f2ddb","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"dec3ff16:e76c:2f36:cac4:d70f83ff36e3","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"af29df39:c85d:5105:d880:4d7152405f33","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"dfe4d132:62ee:4dd0:28bc:661f6a358b63","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"311e28ba:bd69:1010:63f4:deb759cca646","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"0849ebbf:e30b:6254:2bcb:2e4572e2c7aa","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"44199c9f:cba3:31c4:6d14:795a88c756fb","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"0acfef93:0959:e24d:458f:79c858a83f96","target":"domain:TailwindNode","type":"belongsTo"},{"source":"0acfef93:0959:e24d:458f:79c858a83f96","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"69b42aa5:2332:1fbe:b961:82234ca6c571","label":"rule","type":"Function","slug":"fn-ast-ts-rule","lc":7,"lang":"typescript","cc":2,"cbc":14},{"id":"6a737fcf:5ba9:4bde:f26a:3c28eb37d226","label":"parseAtRule","type":"Function","slug":"fn-css-parser-ts-parseatrule","lc":32,"lang":"typescript","cc":1,"cbc":2},{"id":"a6e3b537:8757:b62b:5cf7:da332dc705d7","label":"styleRule","type":"Function","slug":"fn-ast-ts-stylerule","lc":7,"lang":"typescript","cbc":8},{"id":"e826f19c:595a:d69e:4404:b1af1d9ec702","label":"cssAstToPostCssAst","type":"Function","slug":"fn-ast-ts-cssasttopostcssast","lc":116,"lang":"typescript","cc":6,"cbc":1},{"id":"8b1bc7b7:ca07:ac2f:8eb5:32dda141874e","label":"postCssAstToCssAst","type":"Function","slug":"fn-ast-ts-postcssasttocssast","lc":64,"lang":"typescript","cc":5,"cbc":2},{"id":"73036952:36b9:a4c8:53c7:26fa355cf50f","label":"substituteAtApply","type":"Function","slug":"fn-apply-ts-substituteatapply","lc":291,"lang":"typescript","cc":8,"cbc":4},{"id":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","label":"optimizeAst","type":"Function","slug":"fn-ast-ts-optimizeast","lc":461,"lang":"typescript","cc":14,"cbc":2},{"id":"a940f963:e99e:b331:5033:8039aa4d835d","label":"buildPluginApi","type":"Function","slug":"fn-plugin-api-ts-buildpluginapi","lc":450,"lang":"typescript","cc":24,"cbc":1},{"id":"49f07af0:d947:1020:5280:497d4ee44f1d","label":"objectToAst","type":"Function","slug":"fn-plugin-api-ts-objecttoast","lc":43,"lang":"typescript","cc":4,"cbc":2},{"id":"17e20432:6498:89d4:8208:7094c2f1b39d","label":"parseVariantValue","type":"Function","slug":"fn-plugin-api-ts-parsevariantvalue","lc":13,"lang":"typescript","cc":3,"cbc":1},{"id":"bf0b0462:65d9:f7a6:fcb4:cc7e5b4be798","label":"applyVariant","type":"Function","slug":"fn-compile-ts-applyvariant","lc":82,"lang":"typescript","cc":4,"cbc":3},{"id":"1c99c340:5dc2:d1b2:4fe2:994141238cbb","label":"theme","type":"Function","slug":"fn-css-functions-ts-theme","lc":60,"lang":"typescript","cc":4,"cbc":3},{"id":"2dd00ff8:fce6:3b47:fd34:800695b0ad49","label":"parse","type":"Function","slug":"fn-css-parser-ts-parse","lc":531,"lang":"typescript","cc":5,"cbc":8},{"id":"0dc6f2ff:6302:a5b5:0970:076cf0671961","label":"parseCss","type":"Function","slug":"fn-index-ts-parsecss","lc":567,"lang":"typescript","cc":32,"cbc":2},{"id":"5c3a732e:f7a2:eb28:bbe9:3eeb2662978f","label":"alphaReplacedShadowProperties","type":"Function","slug":"fn-utilities-ts-alphareplacedshadowproperties","lc":45,"lang":"typescript","cc":6},{"id":"0d2ff17a:4251:bf3c:e75f:b5b53e682c81","label":"alphaReplacedDropShadowProperties","type":"Function","slug":"fn-utilities-ts-alphareplaceddropshadowproperties","lc":50,"lang":"typescript","cc":6},{"id":"de772009:1768:098f:b6a6:f0f371ee2d74","label":"createVariants","type":"Function","slug":"fn-variants-ts-createvariants","lc":816,"lang":"typescript","cc":21,"cbc":1},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Resolver","label":"Resolver","type":"Subdomain","slug":"subdomain-resolver"}],"edges":[{"source":"69b42aa5:2332:1fbe:b961:82234ca6c571","target":"6a737fcf:5ba9:4bde:f26a:3c28eb37d226","type":"calls"},{"source":"69b42aa5:2332:1fbe:b961:82234ca6c571","target":"a6e3b537:8757:b62b:5cf7:da332dc705d7","type":"calls"},{"source":"e826f19c:595a:d69e:4404:b1af1d9ec702","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"8b1bc7b7:ca07:ac2f:8eb5:32dda141874e","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"73036952:36b9:a4c8:53c7:26fa355cf50f","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"a940f963:e99e:b331:5033:8039aa4d835d","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"49f07af0:d947:1020:5280:497d4ee44f1d","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"17e20432:6498:89d4:8208:7094c2f1b39d","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"bf0b0462:65d9:f7a6:fcb4:cc7e5b4be798","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"1c99c340:5dc2:d1b2:4fe2:994141238cbb","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"2dd00ff8:fce6:3b47:fd34:800695b0ad49","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"0dc6f2ff:6302:a5b5:0970:076cf0671961","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"5c3a732e:f7a2:eb28:bbe9:3eeb2662978f","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"0d2ff17a:4251:bf3c:e75f:b5b53e682c81","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"de772009:1768:098f:b6a6:f0f371ee2d74","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"69b42aa5:2332:1fbe:b961:82234ca6c571","target":"domain:TailwindNode","type":"belongsTo"},{"source":"69b42aa5:2332:1fbe:b961:82234ca6c571","target":"subdomain:TailwindNode:Resolver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -983,7 +983,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
+      <ul><li><a href="/subdomain-resolver.html">Resolver</a></li></ul>
     </div>
     
 

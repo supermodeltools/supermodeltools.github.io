@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
-        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
+        <a href="/subdomain/resolver.html" class="pill pill-orange">Resolver</a>
         
         
         <span class="pill">calls 14</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"optimizeAst","slug":"fn-ast-ts-optimizeast","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"optimizeAst","slug":"fn-ast-ts-optimizeast","type":"Function"},"subdomain":{"name":"Resolver","slug":"subdomain-resolver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
-            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
+            <a href="/resolver.html">Resolver</a><span class="arch-sep">&rarr;</span>
             <span>optimizeAst() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  85e8d057_55af_82fa_5b14_bfd7c2866568["optimizeAst()"]
-  49cf4ef4_bc58_de77_38ee_861472c10e76["buildDesignSystem()"]
-  49cf4ef4_bc58_de77_38ee_861472c10e76 -->|calls| 85e8d057_55af_82fa_5b14_bfd7c2866568
-  97704181_28be_3299_0cf1_c2e83c6c2ee6["compileAst()"]
-  97704181_28be_3299_0cf1_c2e83c6c2ee6 -->|calls| 85e8d057_55af_82fa_5b14_bfd7c2866568
-  09ffc88f_c462_43b9_0bee_1606e8171bfe["add()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| 09ffc88f_c462_43b9_0bee_1606e8171bfe
-  6d664561_fda1_a7a8_1378_bf989544debb["extractUsedVariables()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| 6d664561_fda1_a7a8_1378_bf989544debb
-  685f17ce_92d7_82a6_5867_4ebc84affe40["extractKeyframeNames()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| 685f17ce_92d7_82a6_5867_4ebc84affe40
-  a9446f1d_32d8_9bb7_02d6_19b0f0b65aba["decl()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| a9446f1d_32d8_9bb7_02d6_19b0f0b65aba
-  9e22226a_b4c8_4dd0_47cb_c480e2f940de["isVariableUsed()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| 9e22226a_b4c8_4dd0_47cb_c480e2f940de
-  94550866_1d17_68b1_2b22_027fc2c493f0["prefixKey()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| 94550866_1d17_68b1_2b22_027fc2c493f0
-  8651ee2d_cc6c_5076_f53a_d83880b108d6["findNode()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| 8651ee2d_cc6c_5076_f53a_d83880b108d6
-  5099f828_6467_ecb0_6ae3_26c5f07e1976["walk()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| 5099f828_6467_ecb0_6ae3_26c5f07e1976
-  c8ee3fd6_28aa_5f91_ba0f_2348caba36f4["resolveValue()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| c8ee3fd6_28aa_5f91_ba0f_2348caba36f4
-  a5993803_b2f2_4097_aab2_7d455f9c2127["toCss()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| a5993803_b2f2_4097_aab2_7d455f9c2127
-  0acfef93_0959_e24d_458f_79c858a83f96["rule()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| 0acfef93_0959_e24d_458f_79c858a83f96
-  8a66b26f_75df_caf7_1ebb_9198260a8773["atRule()"]
-  85e8d057_55af_82fa_5b14_bfd7c2866568 -->|calls| 8a66b26f_75df_caf7_1ebb_9198260a8773
-  style 85e8d057_55af_82fa_5b14_bfd7c2866568 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62["optimizeAst()"]
+  162ee642_4709_df8b_7047_fd6a24e6d5f7["buildDesignSystem()"]
+  162ee642_4709_df8b_7047_fd6a24e6d5f7 -->|calls| e79b6dcb_6a16_60c9_3af5_8cc1af958f62
+  8cf72c48_a79e_d3e1_1a14_c2c597f12bdf["compileAst()"]
+  8cf72c48_a79e_d3e1_1a14_c2c597f12bdf -->|calls| e79b6dcb_6a16_60c9_3af5_8cc1af958f62
+  7c6dd0f9_6cfa_4bdb_fa85_b038435ef75b["add()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| 7c6dd0f9_6cfa_4bdb_fa85_b038435ef75b
+  9e722c27_e81f_1332_6d17_2ea6b13910ef["extractUsedVariables()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| 9e722c27_e81f_1332_6d17_2ea6b13910ef
+  5a87c429_2aaa_7006_8d5c_5e69f5183d3b["extractKeyframeNames()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| 5a87c429_2aaa_7006_8d5c_5e69f5183d3b
+  720d91c8_3222_d0e5_40df_56a3a6224666["decl()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| 720d91c8_3222_d0e5_40df_56a3a6224666
+  e527aea8_4d19_54e7_be95_171c366078eb["isVariableUsed()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| e527aea8_4d19_54e7_be95_171c366078eb
+  81b8c52c_d553_fb14_e0b2_b74d039f616f["prefixKey()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| 81b8c52c_d553_fb14_e0b2_b74d039f616f
+  b4dcbc97_4f85_9cbd_ba8a_ffec1dbe646e["findNode()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| b4dcbc97_4f85_9cbd_ba8a_ffec1dbe646e
+  5b097e4c_4be1_9dd8_1cda_32d13176f419["walk()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| 5b097e4c_4be1_9dd8_1cda_32d13176f419
+  ef9d2b5c_0acf_d8fb_b0e2_d865c4ef792d["resolveValue()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| ef9d2b5c_0acf_d8fb_b0e2_d865c4ef792d
+  5e7f5213_ba45_6922_c692_c3db49335fd8["toCss()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| 5e7f5213_ba45_6922_c692_c3db49335fd8
+  69b42aa5_2332_1fbe_b961_82234ca6c571["rule()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| 69b42aa5_2332_1fbe_b961_82234ca6c571
+  64d3ff02_84ff_15e1_8559_93ed48bb5127["atRule()"]
+  e79b6dcb_6a16_60c9_3af5_8cc1af958f62 -->|calls| 64d3ff02_84ff_15e1_8559_93ed48bb5127
+  style e79b6dcb_6a16_60c9_3af5_8cc1af958f62 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-ast-ts-optimizeast"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"85e8d057:55af:82fa:5b14:bfd7c2866568","label":"optimizeAst","type":"Function","slug":"fn-ast-ts-optimizeast","lc":461,"lang":"typescript","cc":14,"cbc":2},{"id":"09ffc88f:c462:43b9:0bee:1606e8171bfe","label":"add","type":"Function","slug":"fn-theme-ts-add","lc":27,"lang":"typescript","cc":2,"cbc":16},{"id":"6d664561:fda1:a7a8:1378:bf989544debb","label":"extractUsedVariables","type":"Function","slug":"fn-variables-ts-extractusedvariables","lc":15,"lang":"typescript","cc":2,"cbc":2},{"id":"685f17ce:92d7:82a6:5867:4ebc84affe40","label":"extractKeyframeNames","type":"Function","slug":"fn-ast-ts-extractkeyframenames","lc":3,"lang":"typescript","cbc":1},{"id":"a9446f1d:32d8:9bb7:02d6:19b0f0b65aba","label":"decl","type":"Function","slug":"fn-ast-ts-decl","lc":8,"lang":"typescript","cbc":15},{"id":"9e22226a:b4c8:4dd0:47cb:c480e2f940de","label":"isVariableUsed","type":"Function","slug":"fn-ast-ts-isvariableused","lc":27,"lang":"typescript","cc":3,"cbc":1},{"id":"94550866:1d17:68b1:2b22:027fc2c493f0","label":"prefixKey","type":"Function","slug":"fn-theme-ts-prefixkey","lc":4,"lang":"typescript","cbc":3},{"id":"8651ee2d:cc6c:5076:f53a:d83880b108d6","label":"findNode","type":"Function","slug":"fn-ast-ts-findnode","lc":11,"lang":"typescript","cc":1,"cbc":1},{"id":"5099f828:6467:ecb0:6ae3:26c5f07e1976","label":"walk","type":"Function","slug":"fn-walk-ts-walk-2","lc":12,"lang":"typescript","cc":1,"cbc":40},{"id":"c8ee3fd6:28aa:5f91:ba0f:2348caba36f4","label":"resolveValue","type":"Function","slug":"fn-theme-ts-resolvevalue","lc":7,"lang":"typescript","cc":1,"cbc":3},{"id":"a5993803:b2f2:4097:aab2:7d455f9c2127","label":"toCss","type":"Function","slug":"fn-ast-ts-tocss","lc":206,"lang":"typescript","cc":1,"cbc":18},{"id":"0acfef93:0959:e24d:458f:79c858a83f96","label":"rule","type":"Function","slug":"fn-ast-ts-rule","lc":7,"lang":"typescript","cc":2,"cbc":14},{"id":"8a66b26f:75df:caf7:1ebb:9198260a8773","label":"atRule","type":"Function","slug":"fn-ast-ts-atrule","lc":8,"lang":"typescript","cbc":18},{"id":"e9b6ad88:035b:ab6f:0a24:3b9e2cf37ebf","label":"get","type":"Function","slug":"fn-default-map-ts-get","lc":10,"lang":"typescript","cbc":52},{"id":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","label":"parse","type":"Function","slug":"fn-value-parser-ts-parse","lc":207,"lang":"typescript","cc":3,"cbc":21},{"id":"49cf4ef4:bc58:de77:38ee:861472c10e76","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"97704181:28be:3299:0cf1:c2e83c6c2ee6","label":"compileAst","type":"Function","slug":"fn-index-ts-compileast","lc":107,"lang":"typescript","cc":8,"cbc":2},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"09ffc88f:c462:43b9:0bee:1606e8171bfe","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"6d664561:fda1:a7a8:1378:bf989544debb","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"685f17ce:92d7:82a6:5867:4ebc84affe40","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"a9446f1d:32d8:9bb7:02d6:19b0f0b65aba","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"9e22226a:b4c8:4dd0:47cb:c480e2f940de","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"94550866:1d17:68b1:2b22:027fc2c493f0","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"8651ee2d:cc6c:5076:f53a:d83880b108d6","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"5099f828:6467:ecb0:6ae3:26c5f07e1976","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"c8ee3fd6:28aa:5f91:ba0f:2348caba36f4","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"a5993803:b2f2:4097:aab2:7d455f9c2127","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"0acfef93:0959:e24d:458f:79c858a83f96","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"8a66b26f:75df:caf7:1ebb:9198260a8773","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"e9b6ad88:035b:ab6f:0a24:3b9e2cf37ebf","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"dd689f9e:bf18:4dc5:8ad2:481bc54885e4","type":"calls"},{"source":"49cf4ef4:bc58:de77:38ee:861472c10e76","target":"85e8d057:55af:82fa:5b14:bfd7c2866568","type":"calls"},{"source":"97704181:28be:3299:0cf1:c2e83c6c2ee6","target":"85e8d057:55af:82fa:5b14:bfd7c2866568","type":"calls"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"domain:TailwindNode","type":"belongsTo"},{"source":"85e8d057:55af:82fa:5b14:bfd7c2866568","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","label":"optimizeAst","type":"Function","slug":"fn-ast-ts-optimizeast","lc":461,"lang":"typescript","cc":14,"cbc":2},{"id":"7c6dd0f9:6cfa:4bdb:fa85:b038435ef75b","label":"add","type":"Function","slug":"fn-theme-ts-add","lc":27,"lang":"typescript","cc":2,"cbc":16},{"id":"9e722c27:e81f:1332:6d17:2ea6b13910ef","label":"extractUsedVariables","type":"Function","slug":"fn-variables-ts-extractusedvariables","lc":15,"lang":"typescript","cc":2,"cbc":2},{"id":"5a87c429:2aaa:7006:8d5c:5e69f5183d3b","label":"extractKeyframeNames","type":"Function","slug":"fn-ast-ts-extractkeyframenames","lc":3,"lang":"typescript","cbc":1},{"id":"720d91c8:3222:d0e5:40df:56a3a6224666","label":"decl","type":"Function","slug":"fn-ast-ts-decl","lc":8,"lang":"typescript","cbc":15},{"id":"e527aea8:4d19:54e7:be95:171c366078eb","label":"isVariableUsed","type":"Function","slug":"fn-ast-ts-isvariableused","lc":27,"lang":"typescript","cc":3,"cbc":1},{"id":"81b8c52c:d553:fb14:e0b2:b74d039f616f","label":"prefixKey","type":"Function","slug":"fn-theme-ts-prefixkey","lc":4,"lang":"typescript","cbc":3},{"id":"b4dcbc97:4f85:9cbd:ba8a:ffec1dbe646e","label":"findNode","type":"Function","slug":"fn-ast-ts-findnode","lc":11,"lang":"typescript","cc":1,"cbc":1},{"id":"5b097e4c:4be1:9dd8:1cda:32d13176f419","label":"walk","type":"Function","slug":"fn-walk-ts-walk-2","lc":12,"lang":"typescript","cc":1,"cbc":37},{"id":"ef9d2b5c:0acf:d8fb:b0e2:d865c4ef792d","label":"resolveValue","type":"Function","slug":"fn-theme-ts-resolvevalue","lc":7,"lang":"typescript","cc":1,"cbc":3},{"id":"5e7f5213:ba45:6922:c692:c3db49335fd8","label":"toCss","type":"Function","slug":"fn-ast-ts-tocss","lc":206,"lang":"typescript","cc":1,"cbc":18},{"id":"69b42aa5:2332:1fbe:b961:82234ca6c571","label":"rule","type":"Function","slug":"fn-ast-ts-rule","lc":7,"lang":"typescript","cc":2,"cbc":14},{"id":"64d3ff02:84ff:15e1:8559:93ed48bb5127","label":"atRule","type":"Function","slug":"fn-ast-ts-atrule","lc":8,"lang":"typescript","cbc":18},{"id":"44d685d1:9487:5b54:308b:46cb1c92d8be","label":"get","type":"Function","slug":"fn-default-map-ts-get","lc":10,"lang":"typescript","cbc":51},{"id":"aa41627c:4c88:f61f:84d9:11df979dc422","label":"parse","type":"Function","slug":"fn-value-parser-ts-parse","lc":207,"lang":"typescript","cc":3,"cbc":21},{"id":"162ee642:4709:df8b:7047:fd6a24e6d5f7","label":"buildDesignSystem","type":"Function","slug":"fn-design-system-ts-builddesignsystem","lc":186,"lang":"typescript","cc":24,"cbc":4},{"id":"8cf72c48:a79e:d3e1:1a14:c2c597f12bdf","label":"compileAst","type":"Function","slug":"fn-index-ts-compileast","lc":107,"lang":"typescript","cc":8,"cbc":2},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Resolver","label":"Resolver","type":"Subdomain","slug":"subdomain-resolver"}],"edges":[{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"7c6dd0f9:6cfa:4bdb:fa85:b038435ef75b","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"9e722c27:e81f:1332:6d17:2ea6b13910ef","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"5a87c429:2aaa:7006:8d5c:5e69f5183d3b","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"720d91c8:3222:d0e5:40df:56a3a6224666","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"e527aea8:4d19:54e7:be95:171c366078eb","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"81b8c52c:d553:fb14:e0b2:b74d039f616f","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"b4dcbc97:4f85:9cbd:ba8a:ffec1dbe646e","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"5b097e4c:4be1:9dd8:1cda:32d13176f419","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"ef9d2b5c:0acf:d8fb:b0e2:d865c4ef792d","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"5e7f5213:ba45:6922:c692:c3db49335fd8","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"69b42aa5:2332:1fbe:b961:82234ca6c571","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"64d3ff02:84ff:15e1:8559:93ed48bb5127","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"44d685d1:9487:5b54:308b:46cb1c92d8be","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"aa41627c:4c88:f61f:84d9:11df979dc422","type":"calls"},{"source":"162ee642:4709:df8b:7047:fd6a24e6d5f7","target":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","type":"calls"},{"source":"8cf72c48:a79e:d3e1:1a14:c2c597f12bdf","target":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","type":"calls"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"domain:TailwindNode","type":"belongsTo"},{"source":"e79b6dcb:6a16:60c9:3af5:8cc1af958f62","target":"subdomain:TailwindNode:Resolver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1437,7 +1437,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
+      <ul><li><a href="/subdomain-resolver.html">Resolver</a></li></ul>
     </div>
     
 

@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/tailwindnode.html" class="pill pill-green">TailwindNode</a>
-        <a href="/subdomain/compiler.html" class="pill pill-orange">Compiler</a>
+        <a href="/domain/oxidecore.html" class="pill pill-green">OxideCore</a>
+        <a href="/subdomain/extractor.html" class="pill pill-orange">Extractor</a>
         
         
         <span class="pill">calls 3</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"TailwindNode","slug":"domain-tailwindnode"},"entity":{"name":"analyze","slug":"fn-translation-map-test-ts-analyze","type":"Function"},"subdomain":{"name":"Compiler","slug":"subdomain-compiler"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OxideCore","slug":"domain-oxidecore"},"entity":{"name":"analyze","slug":"fn-translation-map-test-ts-analyze","type":"Function"},"subdomain":{"name":"Extractor","slug":"subdomain-extractor"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/tailwindnode.html">TailwindNode</a><span class="arch-sep">&rarr;</span>
-            <a href="/compiler.html">Compiler</a><span class="arch-sep">&rarr;</span>
+            <a href="/oxidecore.html">OxideCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/extractor.html">Extractor</a><span class="arch-sep">&rarr;</span>
             <span>analyze() — tailwindcss Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  b101840c_85d1_4855_367d_0e285d76ac93["analyze()"]
-  af29df39_c85d_5105_d880_4d7152405f33["parse()"]
-  b101840c_85d1_4855_367d_0e285d76ac93 -->|calls| af29df39_c85d_5105_d880_4d7152405f33
-  a5993803_b2f2_4097_aab2_7d455f9c2127["toCss()"]
-  b101840c_85d1_4855_367d_0e285d76ac93 -->|calls| a5993803_b2f2_4097_aab2_7d455f9c2127
-  df83385b_d775_d24c_e31c_7e33b11fbbb7["createTranslationMap()"]
-  b101840c_85d1_4855_367d_0e285d76ac93 -->|calls| df83385b_d775_d24c_e31c_7e33b11fbbb7
-  style b101840c_85d1_4855_367d_0e285d76ac93 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  293e2186_53e5_1547_0f70_14383f957f3c["analyze()"]
+  2dd00ff8_fce6_3b47_fd34_800695b0ad49["parse()"]
+  293e2186_53e5_1547_0f70_14383f957f3c -->|calls| 2dd00ff8_fce6_3b47_fd34_800695b0ad49
+  5e7f5213_ba45_6922_c692_c3db49335fd8["toCss()"]
+  293e2186_53e5_1547_0f70_14383f957f3c -->|calls| 5e7f5213_ba45_6922_c692_c3db49335fd8
+  262920bc_954f_3ffd_5ea8_0d63a1035ff4["createTranslationMap()"]
+  293e2186_53e5_1547_0f70_14383f957f3c -->|calls| 262920bc_954f_3ffd_5ea8_0d63a1035ff4
+  style 293e2186_53e5_1547_0f70_14383f957f3c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-translation-map-test-ts-analyze"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"b101840c:85d1:4855:367d:0e285d76ac93","label":"analyze","type":"Function","slug":"fn-translation-map-test-ts-analyze","lc":28,"lang":"typescript","cc":3},{"id":"af29df39:c85d:5105:d880:4d7152405f33","label":"parse","type":"Function","slug":"fn-css-parser-ts-parse","lc":531,"lang":"typescript","cc":5,"cbc":8},{"id":"a5993803:b2f2:4097:aab2:7d455f9c2127","label":"toCss","type":"Function","slug":"fn-ast-ts-tocss","lc":206,"lang":"typescript","cc":1,"cbc":18},{"id":"df83385b:d775:d24c:e31c:7e33b11fbbb7","label":"createTranslationMap","type":"Function","slug":"fn-source-map-ts-createtranslationmap","lc":34,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:TailwindNode","label":"TailwindNode","type":"Domain","slug":"domain-tailwindnode"},{"id":"subdomain:TailwindNode:Compiler","label":"Compiler","type":"Subdomain","slug":"subdomain-compiler"}],"edges":[{"source":"b101840c:85d1:4855:367d:0e285d76ac93","target":"af29df39:c85d:5105:d880:4d7152405f33","type":"calls"},{"source":"b101840c:85d1:4855:367d:0e285d76ac93","target":"a5993803:b2f2:4097:aab2:7d455f9c2127","type":"calls"},{"source":"b101840c:85d1:4855:367d:0e285d76ac93","target":"df83385b:d775:d24c:e31c:7e33b11fbbb7","type":"calls"},{"source":"b101840c:85d1:4855:367d:0e285d76ac93","target":"domain:TailwindNode","type":"belongsTo"},{"source":"b101840c:85d1:4855:367d:0e285d76ac93","target":"subdomain:TailwindNode:Compiler","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"293e2186:53e5:1547:0f70:14383f957f3c","label":"analyze","type":"Function","slug":"fn-translation-map-test-ts-analyze","lc":28,"lang":"typescript","cc":3},{"id":"2dd00ff8:fce6:3b47:fd34:800695b0ad49","label":"parse","type":"Function","slug":"fn-css-parser-ts-parse","lc":531,"lang":"typescript","cc":5,"cbc":8},{"id":"5e7f5213:ba45:6922:c692:c3db49335fd8","label":"toCss","type":"Function","slug":"fn-ast-ts-tocss","lc":206,"lang":"typescript","cc":1,"cbc":18},{"id":"262920bc:954f:3ffd:5ea8:0d63a1035ff4","label":"createTranslationMap","type":"Function","slug":"fn-source-map-ts-createtranslationmap","lc":34,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:OxideCore","label":"OxideCore","type":"Domain","slug":"domain-oxidecore"},{"id":"subdomain:OxideCore:Extractor","label":"Extractor","type":"Subdomain","slug":"subdomain-extractor"}],"edges":[{"source":"293e2186:53e5:1547:0f70:14383f957f3c","target":"2dd00ff8:fce6:3b47:fd34:800695b0ad49","type":"calls"},{"source":"293e2186:53e5:1547:0f70:14383f957f3c","target":"5e7f5213:ba45:6922:c692:c3db49335fd8","type":"calls"},{"source":"293e2186:53e5:1547:0f70:14383f957f3c","target":"262920bc:954f:3ffd:5ea8:0d63a1035ff4","type":"calls"},{"source":"293e2186:53e5:1547:0f70:14383f957f3c","target":"domain:OxideCore","type":"belongsTo"},{"source":"293e2186:53e5:1547:0f70:14383f957f3c","target":"subdomain:OxideCore:Extractor","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -975,14 +975,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-tailwindnode.html">TailwindNode</a></li></ul>
+      <ul><li><a href="/domain-oxidecore.html">OxideCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-compiler.html">Compiler</a></li></ul>
+      <ul><li><a href="/subdomain-extractor.html">Extractor</a></li></ul>
     </div>
     
 
