@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/engine.html" class="pill pill-green">Engine</a>
-        <a href="/subdomain/middleware.html" class="pill pill-orange">Middleware</a>
+        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
+        <a href="/subdomain/router.html" class="pill pill-orange">Router</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Engine","slug":"domain-engine"},"entity":{"name":"exampleFromPath","slug":"fn-githubapi-test-go-examplefrompath","type":"Function"},"subdomain":{"name":"Middleware","slug":"subdomain-middleware"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"exampleFromPath","slug":"fn-githubapi-test-go-examplefrompath","type":"Function"},"subdomain":{"name":"Router","slug":"subdomain-router"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/engine.html">Engine</a><span class="arch-sep">&rarr;</span>
-            <a href="/middleware.html">Middleware</a><span class="arch-sep">&rarr;</span>
+            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/router.html">Router</a><span class="arch-sep">&rarr;</span>
             <span>exampleFromPath() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ff78efb9_1547_b47e_b13a_8798e0684c6d["exampleFromPath()"]
-  5dacd150_f377_b790_f0e4_b0284f7613ab["TestShouldBindUri()"]
-  5dacd150_f377_b790_f0e4_b0284f7613ab -->|calls| ff78efb9_1547_b47e_b13a_8798e0684c6d
-  4248d903_5b2a_5665_bf92_f905a3ca999b["TestBindUri()"]
-  4248d903_5b2a_5665_bf92_f905a3ca999b -->|calls| ff78efb9_1547_b47e_b13a_8798e0684c6d
-  5cc80a6c_ce24_61ef_24b4_62bb81f87ec6["TestBindUriError()"]
-  5cc80a6c_ce24_61ef_24b4_62bb81f87ec6 -->|calls| ff78efb9_1547_b47e_b13a_8798e0684c6d
-  b7b7c696_a8c3_383b_671d_89ad4efc043c["TestGithubAPI()"]
-  b7b7c696_a8c3_383b_671d_89ad4efc043c -->|calls| ff78efb9_1547_b47e_b13a_8798e0684c6d
-  style ff78efb9_1547_b47e_b13a_8798e0684c6d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  4353fe50_9e3f_93a8_2070_f5ad4f159f4d["exampleFromPath()"]
+  860df4ed_b642_fd65_1bc7_f467177a9759["TestShouldBindUri()"]
+  860df4ed_b642_fd65_1bc7_f467177a9759 -->|calls| 4353fe50_9e3f_93a8_2070_f5ad4f159f4d
+  5568a70c_b9e3_0152_095f_c9443e0974dd["TestBindUri()"]
+  5568a70c_b9e3_0152_095f_c9443e0974dd -->|calls| 4353fe50_9e3f_93a8_2070_f5ad4f159f4d
+  7b5a0861_ba89_8c35_c436_9d0e941ec27f["TestBindUriError()"]
+  7b5a0861_ba89_8c35_c436_9d0e941ec27f -->|calls| 4353fe50_9e3f_93a8_2070_f5ad4f159f4d
+  6eab0031_4017_2f79_72dc_bd6c7565460e["TestGithubAPI()"]
+  6eab0031_4017_2f79_72dc_bd6c7565460e -->|calls| 4353fe50_9e3f_93a8_2070_f5ad4f159f4d
+  style 4353fe50_9e3f_93a8_2070_f5ad4f159f4d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-githubapi-test-go-examplefrompath"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ff78efb9:1547:b47e:b13a:8798e0684c6d","label":"exampleFromPath","type":"Function","slug":"fn-githubapi-test-go-examplefrompath","lc":34,"lang":"go","cbc":4},{"id":"5dacd150:f377:b790:f0e4:b0284f7613ab","label":"TestShouldBindUri","type":"Function","slug":"fn-githubapi-test-go-testshouldbinduri","lc":21,"lang":"go","cc":1},{"id":"4248d903:5b2a:5665:bf92:f905a3ca999b","label":"TestBindUri","type":"Function","slug":"fn-githubapi-test-go-testbinduri","lc":21,"lang":"go","cc":1},{"id":"5cc80a6c:ce24:61ef:24b4:62bb81f87ec6","label":"TestBindUriError","type":"Function","slug":"fn-githubapi-test-go-testbindurierror","lc":16,"lang":"go","cc":1},{"id":"b7b7c696:a8c3:383b:671d:89ad4efc043c","label":"TestGithubAPI","type":"Function","slug":"fn-githubapi-test-go-testgithubapi","lc":17,"lang":"go","cc":2},{"id":"domain:Engine","label":"Engine","type":"Domain","slug":"domain-engine"},{"id":"subdomain:Engine:Middleware","label":"Middleware","type":"Subdomain","slug":"subdomain-middleware"}],"edges":[{"source":"5dacd150:f377:b790:f0e4:b0284f7613ab","target":"ff78efb9:1547:b47e:b13a:8798e0684c6d","type":"calls"},{"source":"4248d903:5b2a:5665:bf92:f905a3ca999b","target":"ff78efb9:1547:b47e:b13a:8798e0684c6d","type":"calls"},{"source":"5cc80a6c:ce24:61ef:24b4:62bb81f87ec6","target":"ff78efb9:1547:b47e:b13a:8798e0684c6d","type":"calls"},{"source":"b7b7c696:a8c3:383b:671d:89ad4efc043c","target":"ff78efb9:1547:b47e:b13a:8798e0684c6d","type":"calls"},{"source":"ff78efb9:1547:b47e:b13a:8798e0684c6d","target":"domain:Engine","type":"belongsTo"},{"source":"ff78efb9:1547:b47e:b13a:8798e0684c6d","target":"subdomain:Engine:Middleware","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"4353fe50:9e3f:93a8:2070:f5ad4f159f4d","label":"exampleFromPath","type":"Function","slug":"fn-githubapi-test-go-examplefrompath","lc":34,"lang":"go","cbc":4},{"id":"860df4ed:b642:fd65:1bc7:f467177a9759","label":"TestShouldBindUri","type":"Function","slug":"fn-githubapi-test-go-testshouldbinduri","lc":21,"lang":"go","cc":1},{"id":"5568a70c:b9e3:0152:095f:c9443e0974dd","label":"TestBindUri","type":"Function","slug":"fn-githubapi-test-go-testbinduri","lc":21,"lang":"go","cc":1},{"id":"7b5a0861:ba89:8c35:c436:9d0e941ec27f","label":"TestBindUriError","type":"Function","slug":"fn-githubapi-test-go-testbindurierror","lc":16,"lang":"go","cc":1},{"id":"6eab0031:4017:2f79:72dc:bd6c7565460e","label":"TestGithubAPI","type":"Function","slug":"fn-githubapi-test-go-testgithubapi","lc":17,"lang":"go","cc":2},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Router","label":"Router","type":"Subdomain","slug":"subdomain-router"}],"edges":[{"source":"860df4ed:b642:fd65:1bc7:f467177a9759","target":"4353fe50:9e3f:93a8:2070:f5ad4f159f4d","type":"calls"},{"source":"5568a70c:b9e3:0152:095f:c9443e0974dd","target":"4353fe50:9e3f:93a8:2070:f5ad4f159f4d","type":"calls"},{"source":"7b5a0861:ba89:8c35:c436:9d0e941ec27f","target":"4353fe50:9e3f:93a8:2070:f5ad4f159f4d","type":"calls"},{"source":"6eab0031:4017:2f79:72dc:bd6c7565460e","target":"4353fe50:9e3f:93a8:2070:f5ad4f159f4d","type":"calls"},{"source":"4353fe50:9e3f:93a8:2070:f5ad4f159f4d","target":"domain:GinCore","type":"belongsTo"},{"source":"4353fe50:9e3f:93a8:2070:f5ad4f159f4d","target":"subdomain:GinCore:Router","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -983,14 +983,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-engine.html">Engine</a></li></ul>
+      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-middleware.html">Middleware</a></li></ul>
+      <ul><li><a href="/subdomain-router.html">Router</a></li></ul>
     </div>
     
 

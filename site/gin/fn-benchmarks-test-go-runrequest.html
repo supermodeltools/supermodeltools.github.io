@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/engine.html" class="pill pill-green">Engine</a>
-        <a href="/subdomain/context.html" class="pill pill-orange">Context</a>
+        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
+        <a href="/subdomain/router.html" class="pill pill-orange">Router</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Engine","slug":"domain-engine"},"entity":{"name":"runRequest","slug":"fn-benchmarks-test-go-runrequest","type":"Function"},"subdomain":{"name":"Context","slug":"subdomain-context"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"runRequest","slug":"fn-benchmarks-test-go-runrequest","type":"Function"},"subdomain":{"name":"Router","slug":"subdomain-router"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/engine.html">Engine</a><span class="arch-sep">&rarr;</span>
-            <a href="/context.html">Context</a><span class="arch-sep">&rarr;</span>
+            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/router.html">Router</a><span class="arch-sep">&rarr;</span>
             <span>runRequest() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,36 +911,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  99e094eb_5887_d096_71eb_dd13b8b6a66e["runRequest()"]
-  736a9c77_1bba_4a7e_3108_0f7bdba132ab["BenchmarkOneRoute()"]
-  736a9c77_1bba_4a7e_3108_0f7bdba132ab -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  360a3a9d_5789_e919_df98_d770b28749c0["BenchmarkRecoveryMiddleware()"]
-  360a3a9d_5789_e919_df98_d770b28749c0 -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  61ee2f63_c06d_a103_8fed_36399e7cefdd["BenchmarkLoggerMiddleware()"]
-  61ee2f63_c06d_a103_8fed_36399e7cefdd -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  6b0454d6_a327_1910_f349_52bea914ee5c["BenchmarkManyHandlers()"]
-  6b0454d6_a327_1910_f349_52bea914ee5c -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  a3600bb1_e798_f4de_2846_6ed2429f2d98["Benchmark5Params()"]
-  a3600bb1_e798_f4de_2846_6ed2429f2d98 -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  ae063951_c0f9_d087_23ab_62fbb592eefb["BenchmarkOneRouteJSON()"]
-  ae063951_c0f9_d087_23ab_62fbb592eefb -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  f0e67783_5751_2ae9_8edf_7022075d5400["BenchmarkOneRouteHTML()"]
-  f0e67783_5751_2ae9_8edf_7022075d5400 -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  c19c1441_22a2_000c_d018_e526232f3966["BenchmarkOneRouteSet()"]
-  c19c1441_22a2_000c_d018_e526232f3966 -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  50b0a401_181f_86fa_f02c_01fad33eeca7["BenchmarkOneRouteString()"]
-  50b0a401_181f_86fa_f02c_01fad33eeca7 -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  2c47a337_603e_a8af_b831_b712a0adb2fc["BenchmarkManyRoutesFirst()"]
-  2c47a337_603e_a8af_b831_b712a0adb2fc -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  7dca7ea4_ffab_707d_69fd_e8f98e53a8d2["BenchmarkManyRoutesLast()"]
-  7dca7ea4_ffab_707d_69fd_e8f98e53a8d2 -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  c3167b09_463f_cdae_97ec_7923710ff92a["Benchmark404()"]
-  c3167b09_463f_cdae_97ec_7923710ff92a -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  effe75a2_c126_0dfe_a7bc_82bb1458ff7f["Benchmark404Many()"]
-  effe75a2_c126_0dfe_a7bc_82bb1458ff7f -->|calls| 99e094eb_5887_d096_71eb_dd13b8b6a66e
-  72b4ab1d_cdde_24bb_8f06_9a3cf3edfeeb["newMockWriter()"]
-  99e094eb_5887_d096_71eb_dd13b8b6a66e -->|calls| 72b4ab1d_cdde_24bb_8f06_9a3cf3edfeeb
-  style 99e094eb_5887_d096_71eb_dd13b8b6a66e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a4cbfe04_d807_1b2e_a4a3_bee88b75a425["runRequest()"]
+  4173bb56_97f0_37ba_525b_f3716486a646["BenchmarkOneRoute()"]
+  4173bb56_97f0_37ba_525b_f3716486a646 -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  be1d08f5_5e86_7801_dba1_9727f7949a74["BenchmarkRecoveryMiddleware()"]
+  be1d08f5_5e86_7801_dba1_9727f7949a74 -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  4d24d1a7_5949_b569_5ab1_ae35c8725ac7["BenchmarkLoggerMiddleware()"]
+  4d24d1a7_5949_b569_5ab1_ae35c8725ac7 -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  0adb8944_95a5_abff_2a4c_cf732fc9b973["BenchmarkManyHandlers()"]
+  0adb8944_95a5_abff_2a4c_cf732fc9b973 -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  0537364f_deb3_f025_6c41_23fc31da6a40["Benchmark5Params()"]
+  0537364f_deb3_f025_6c41_23fc31da6a40 -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  8644947d_8164_0627_3dca_893782b7496a["BenchmarkOneRouteJSON()"]
+  8644947d_8164_0627_3dca_893782b7496a -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  3ffc1bd3_15cb_d487_9c4c_c2edbc89ec15["BenchmarkOneRouteHTML()"]
+  3ffc1bd3_15cb_d487_9c4c_c2edbc89ec15 -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  3110449d_2f5e_1f29_c5e3_d32ddc1a329e["BenchmarkOneRouteSet()"]
+  3110449d_2f5e_1f29_c5e3_d32ddc1a329e -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  5784a9b7_854d_aa3c_c1c2_3dd887ed364f["BenchmarkOneRouteString()"]
+  5784a9b7_854d_aa3c_c1c2_3dd887ed364f -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  89fede53_2aea_02fb_f97f_3d7c99843598["BenchmarkManyRoutesFirst()"]
+  89fede53_2aea_02fb_f97f_3d7c99843598 -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  8bfd4ae2_b0a5_2b90_7ca4_a403a2a9c14a["BenchmarkManyRoutesLast()"]
+  8bfd4ae2_b0a5_2b90_7ca4_a403a2a9c14a -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  a15704f7_f365_4487_0ef7_9728d2e2e67d["Benchmark404()"]
+  a15704f7_f365_4487_0ef7_9728d2e2e67d -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  462e0956_f68d_e993_5f1f_81bfd62bcd43["Benchmark404Many()"]
+  462e0956_f68d_e993_5f1f_81bfd62bcd43 -->|calls| a4cbfe04_d807_1b2e_a4a3_bee88b75a425
+  cf39f462_a9df_1c40_72a9_830660f10a20["newMockWriter()"]
+  a4cbfe04_d807_1b2e_a4a3_bee88b75a425 -->|calls| cf39f462_a9df_1c40_72a9_830660f10a20
+  style a4cbfe04_d807_1b2e_a4a3_bee88b75a425 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -948,7 +948,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-benchmarks-test-go-runrequest"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"99e094eb:5887:d096:71eb:dd13b8b6a66e","label":"runRequest","type":"Function","slug":"fn-benchmarks-test-go-runrequest","lc":13,"lang":"go","cc":1,"cbc":13},{"id":"72b4ab1d:cdde:24bb:8f06:9a3cf3edfeeb","label":"newMockWriter","type":"Function","slug":"fn-benchmarks-test-go-newmockwriter","lc":5,"lang":"go","cbc":3},{"id":"736a9c77:1bba:4a7e:3108:0f7bdba132ab","label":"BenchmarkOneRoute","type":"Function","slug":"fn-benchmarks-test-go-benchmarkoneroute","lc":5,"lang":"go","cc":1},{"id":"360a3a9d:5789:e919:df98:d770b28749c0","label":"BenchmarkRecoveryMiddleware","type":"Function","slug":"fn-benchmarks-test-go-benchmarkrecoverymiddleware","lc":6,"lang":"go","cc":1},{"id":"61ee2f63:c06d:a103:8fed:36399e7cefdd","label":"BenchmarkLoggerMiddleware","type":"Function","slug":"fn-benchmarks-test-go-benchmarkloggermiddleware","lc":6,"lang":"go","cc":2},{"id":"6b0454d6:a327:1910:f349:52bea914ee5c","label":"BenchmarkManyHandlers","type":"Function","slug":"fn-benchmarks-test-go-benchmarkmanyhandlers","lc":8,"lang":"go","cc":2},{"id":"a3600bb1:e798:f4de:2846:6ed2429f2d98","label":"Benchmark5Params","type":"Function","slug":"fn-benchmarks-test-go-benchmark5params","lc":7,"lang":"go","cc":1},{"id":"ae063951:c0f9:d087:23ab:62fbb592eefb","label":"BenchmarkOneRouteJSON","type":"Function","slug":"fn-benchmarks-test-go-benchmarkoneroutejson","lc":10,"lang":"go","cc":1},{"id":"f0e67783:5751:2ae9:8edf:7022075d5400","label":"BenchmarkOneRouteHTML","type":"Function","slug":"fn-benchmarks-test-go-benchmarkoneroutehtml","lc":11,"lang":"go","cc":1},{"id":"c19c1441:22a2:000c:d018:e526232f3966","label":"BenchmarkOneRouteSet","type":"Function","slug":"fn-benchmarks-test-go-benchmarkonerouteset","lc":7,"lang":"go","cc":1},{"id":"50b0a401:181f:86fa:f02c:01fad33eeca7","label":"BenchmarkOneRouteString","type":"Function","slug":"fn-benchmarks-test-go-benchmarkoneroutestring","lc":7,"lang":"go","cc":1},{"id":"2c47a337:603e:a8af:b831:b712a0adb2fc","label":"BenchmarkManyRoutesFirst","type":"Function","slug":"fn-benchmarks-test-go-benchmarkmanyroutesfirst","lc":5,"lang":"go","cc":1},{"id":"7dca7ea4:ffab:707d:69fd:e8f98e53a8d2","label":"BenchmarkManyRoutesLast","type":"Function","slug":"fn-benchmarks-test-go-benchmarkmanyrouteslast","lc":5,"lang":"go","cc":1},{"id":"c3167b09:463f:cdae:97ec:7923710ff92a","label":"Benchmark404","type":"Function","slug":"fn-benchmarks-test-go-benchmark404","lc":6,"lang":"go","cc":1},{"id":"effe75a2:c126:0dfe:a7bc:82bb1458ff7f","label":"Benchmark404Many","type":"Function","slug":"fn-benchmarks-test-go-benchmark404many","lc":14,"lang":"go","cc":1},{"id":"domain:Engine","label":"Engine","type":"Domain","slug":"domain-engine"},{"id":"subdomain:Engine:Context","label":"Context","type":"Subdomain","slug":"subdomain-context"}],"edges":[{"source":"99e094eb:5887:d096:71eb:dd13b8b6a66e","target":"72b4ab1d:cdde:24bb:8f06:9a3cf3edfeeb","type":"calls"},{"source":"736a9c77:1bba:4a7e:3108:0f7bdba132ab","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"360a3a9d:5789:e919:df98:d770b28749c0","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"61ee2f63:c06d:a103:8fed:36399e7cefdd","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"6b0454d6:a327:1910:f349:52bea914ee5c","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"a3600bb1:e798:f4de:2846:6ed2429f2d98","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"ae063951:c0f9:d087:23ab:62fbb592eefb","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"f0e67783:5751:2ae9:8edf:7022075d5400","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"c19c1441:22a2:000c:d018:e526232f3966","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"50b0a401:181f:86fa:f02c:01fad33eeca7","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"2c47a337:603e:a8af:b831:b712a0adb2fc","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"7dca7ea4:ffab:707d:69fd:e8f98e53a8d2","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"c3167b09:463f:cdae:97ec:7923710ff92a","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"effe75a2:c126:0dfe:a7bc:82bb1458ff7f","target":"99e094eb:5887:d096:71eb:dd13b8b6a66e","type":"calls"},{"source":"99e094eb:5887:d096:71eb:dd13b8b6a66e","target":"domain:Engine","type":"belongsTo"},{"source":"99e094eb:5887:d096:71eb:dd13b8b6a66e","target":"subdomain:Engine:Context","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","label":"runRequest","type":"Function","slug":"fn-benchmarks-test-go-runrequest","lc":13,"lang":"go","cc":1,"cbc":13},{"id":"cf39f462:a9df:1c40:72a9:830660f10a20","label":"newMockWriter","type":"Function","slug":"fn-benchmarks-test-go-newmockwriter","lc":5,"lang":"go","cbc":3},{"id":"4173bb56:97f0:37ba:525b:f3716486a646","label":"BenchmarkOneRoute","type":"Function","slug":"fn-benchmarks-test-go-benchmarkoneroute","lc":5,"lang":"go","cc":1},{"id":"be1d08f5:5e86:7801:dba1:9727f7949a74","label":"BenchmarkRecoveryMiddleware","type":"Function","slug":"fn-benchmarks-test-go-benchmarkrecoverymiddleware","lc":6,"lang":"go","cc":1},{"id":"4d24d1a7:5949:b569:5ab1:ae35c8725ac7","label":"BenchmarkLoggerMiddleware","type":"Function","slug":"fn-benchmarks-test-go-benchmarkloggermiddleware","lc":6,"lang":"go","cc":2},{"id":"0adb8944:95a5:abff:2a4c:cf732fc9b973","label":"BenchmarkManyHandlers","type":"Function","slug":"fn-benchmarks-test-go-benchmarkmanyhandlers","lc":8,"lang":"go","cc":2},{"id":"0537364f:deb3:f025:6c41:23fc31da6a40","label":"Benchmark5Params","type":"Function","slug":"fn-benchmarks-test-go-benchmark5params","lc":7,"lang":"go","cc":1},{"id":"8644947d:8164:0627:3dca:893782b7496a","label":"BenchmarkOneRouteJSON","type":"Function","slug":"fn-benchmarks-test-go-benchmarkoneroutejson","lc":10,"lang":"go","cc":1},{"id":"3ffc1bd3:15cb:d487:9c4c:c2edbc89ec15","label":"BenchmarkOneRouteHTML","type":"Function","slug":"fn-benchmarks-test-go-benchmarkoneroutehtml","lc":11,"lang":"go","cc":1},{"id":"3110449d:2f5e:1f29:c5e3:d32ddc1a329e","label":"BenchmarkOneRouteSet","type":"Function","slug":"fn-benchmarks-test-go-benchmarkonerouteset","lc":7,"lang":"go","cc":1},{"id":"5784a9b7:854d:aa3c:c1c2:3dd887ed364f","label":"BenchmarkOneRouteString","type":"Function","slug":"fn-benchmarks-test-go-benchmarkoneroutestring","lc":7,"lang":"go","cc":1},{"id":"89fede53:2aea:02fb:f97f:3d7c99843598","label":"BenchmarkManyRoutesFirst","type":"Function","slug":"fn-benchmarks-test-go-benchmarkmanyroutesfirst","lc":5,"lang":"go","cc":1},{"id":"8bfd4ae2:b0a5:2b90:7ca4:a403a2a9c14a","label":"BenchmarkManyRoutesLast","type":"Function","slug":"fn-benchmarks-test-go-benchmarkmanyrouteslast","lc":5,"lang":"go","cc":1},{"id":"a15704f7:f365:4487:0ef7:9728d2e2e67d","label":"Benchmark404","type":"Function","slug":"fn-benchmarks-test-go-benchmark404","lc":6,"lang":"go","cc":1},{"id":"462e0956:f68d:e993:5f1f:81bfd62bcd43","label":"Benchmark404Many","type":"Function","slug":"fn-benchmarks-test-go-benchmark404many","lc":14,"lang":"go","cc":1},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Router","label":"Router","type":"Subdomain","slug":"subdomain-router"}],"edges":[{"source":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","target":"cf39f462:a9df:1c40:72a9:830660f10a20","type":"calls"},{"source":"4173bb56:97f0:37ba:525b:f3716486a646","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"be1d08f5:5e86:7801:dba1:9727f7949a74","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"4d24d1a7:5949:b569:5ab1:ae35c8725ac7","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"0adb8944:95a5:abff:2a4c:cf732fc9b973","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"0537364f:deb3:f025:6c41:23fc31da6a40","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"8644947d:8164:0627:3dca:893782b7496a","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"3ffc1bd3:15cb:d487:9c4c:c2edbc89ec15","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"3110449d:2f5e:1f29:c5e3:d32ddc1a329e","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"5784a9b7:854d:aa3c:c1c2:3dd887ed364f","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"89fede53:2aea:02fb:f97f:3d7c99843598","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"8bfd4ae2:b0a5:2b90:7ca4:a403a2a9c14a","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"a15704f7:f365:4487:0ef7:9728d2e2e67d","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"462e0956:f68d:e993:5f1f:81bfd62bcd43","target":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","type":"calls"},{"source":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","target":"domain:GinCore","type":"belongsTo"},{"source":"a4cbfe04:d807:1b2e:a4a3:bee88b75a425","target":"subdomain:GinCore:Router","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -982,14 +982,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-engine.html">Engine</a></li></ul>
+      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-context.html">Context</a></li></ul>
+      <ul><li><a href="/subdomain-router.html">Router</a></li></ul>
     </div>
     
 

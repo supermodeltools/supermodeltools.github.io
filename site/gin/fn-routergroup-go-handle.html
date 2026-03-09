@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/engine.html" class="pill pill-green">Engine</a>
-        <a href="/subdomain/routing.html" class="pill pill-orange">Routing</a>
+        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
+        <a href="/subdomain/engine.html" class="pill pill-orange">Engine</a>
         
         
         <span class="pill">calls 3</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Engine","slug":"domain-engine"},"entity":{"name":"handle","slug":"fn-routergroup-go-handle","type":"Function"},"subdomain":{"name":"Routing","slug":"subdomain-routing"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"handle","slug":"fn-routergroup-go-handle","type":"Function"},"subdomain":{"name":"Engine","slug":"subdomain-engine"}}</script>
         <noscript>
           <div class="arch-map-fallback">
+            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
             <a href="/engine.html">Engine</a><span class="arch-sep">&rarr;</span>
-            <a href="/routing.html">Routing</a><span class="arch-sep">&rarr;</span>
             <span>handle() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,34 +911,34 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  32e87778_11d0_917e_5596_3c9ecb15835c["handle()"]
-  fe2eb460_f587_0308_0aa2_4c091436777e["Handle()"]
-  fe2eb460_f587_0308_0aa2_4c091436777e -->|calls| 32e87778_11d0_917e_5596_3c9ecb15835c
-  b56742b7_b3cc_addb_2490_ff2da80e220c["POST()"]
-  b56742b7_b3cc_addb_2490_ff2da80e220c -->|calls| 32e87778_11d0_917e_5596_3c9ecb15835c
-  debe1d0b_6920_e4c5_feae_7588f76b8758["GET()"]
-  debe1d0b_6920_e4c5_feae_7588f76b8758 -->|calls| 32e87778_11d0_917e_5596_3c9ecb15835c
-  7bb4c495_f1af_923a_f681_a3dadddcbfd9["DELETE()"]
-  7bb4c495_f1af_923a_f681_a3dadddcbfd9 -->|calls| 32e87778_11d0_917e_5596_3c9ecb15835c
-  f6e76bd4_3ad2_9d14_98a4_068f9284e3b6["PATCH()"]
-  f6e76bd4_3ad2_9d14_98a4_068f9284e3b6 -->|calls| 32e87778_11d0_917e_5596_3c9ecb15835c
-  8ad9af7c_790b_aed4_aeae_8c2c9ffeb8e8["PUT()"]
-  8ad9af7c_790b_aed4_aeae_8c2c9ffeb8e8 -->|calls| 32e87778_11d0_917e_5596_3c9ecb15835c
-  2d9528f6_05d4_81da_76d9_938b53591ca9["OPTIONS()"]
-  2d9528f6_05d4_81da_76d9_938b53591ca9 -->|calls| 32e87778_11d0_917e_5596_3c9ecb15835c
-  402fa494_2402_5e0c_532e_65422a8fce7b["HEAD()"]
-  402fa494_2402_5e0c_532e_65422a8fce7b -->|calls| 32e87778_11d0_917e_5596_3c9ecb15835c
-  9c089ac7_4206_53dd_64ad_45a07d5f2613["Any()"]
-  9c089ac7_4206_53dd_64ad_45a07d5f2613 -->|calls| 32e87778_11d0_917e_5596_3c9ecb15835c
-  8fc23ba9_89b8_e0da_0915_9bd1926a841a["Match()"]
-  8fc23ba9_89b8_e0da_0915_9bd1926a841a -->|calls| 32e87778_11d0_917e_5596_3c9ecb15835c
-  4f40b949_ffd0_22e3_8069_efd9154ea3aa["calculateAbsolutePath()"]
-  32e87778_11d0_917e_5596_3c9ecb15835c -->|calls| 4f40b949_ffd0_22e3_8069_efd9154ea3aa
-  0ee01cb4_048e_3b94_1647_9b917e1b519c["combineHandlers()"]
-  32e87778_11d0_917e_5596_3c9ecb15835c -->|calls| 0ee01cb4_048e_3b94_1647_9b917e1b519c
-  63f56aa2_94c0_90ce_5910_934980f5c1ef["returnObj()"]
-  32e87778_11d0_917e_5596_3c9ecb15835c -->|calls| 63f56aa2_94c0_90ce_5910_934980f5c1ef
-  style 32e87778_11d0_917e_5596_3c9ecb15835c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  1eefb55b_e2cd_6cd9_bc17_5283224b0ad6["handle()"]
+  e01ce676_f6b3_df49_bd6c_c58890368a45["Handle()"]
+  e01ce676_f6b3_df49_bd6c_c58890368a45 -->|calls| 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6
+  c8daff07_177b_5389_a503_c83f0703afbc["POST()"]
+  c8daff07_177b_5389_a503_c83f0703afbc -->|calls| 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6
+  29719207_5c82_b580_cd7a_4234208275dd["GET()"]
+  29719207_5c82_b580_cd7a_4234208275dd -->|calls| 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6
+  59eaaf30_0826_e748_a1a4_9a6a8ec8d5dc["DELETE()"]
+  59eaaf30_0826_e748_a1a4_9a6a8ec8d5dc -->|calls| 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6
+  b8fa1375_2be7_8255_9a0d_7ea1c5d0bde8["PATCH()"]
+  b8fa1375_2be7_8255_9a0d_7ea1c5d0bde8 -->|calls| 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6
+  08b256e8_6d11_ea75_5a53_e66c096cace2["PUT()"]
+  08b256e8_6d11_ea75_5a53_e66c096cace2 -->|calls| 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6
+  278ad4e7_9076_47ff_0428_2b88ef6620d1["OPTIONS()"]
+  278ad4e7_9076_47ff_0428_2b88ef6620d1 -->|calls| 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6
+  8a24dc44_6a90_527a_8587_da357fd90bbc["HEAD()"]
+  8a24dc44_6a90_527a_8587_da357fd90bbc -->|calls| 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6
+  f14fc815_c954_0227_2ba1_5b938e0da608["Any()"]
+  f14fc815_c954_0227_2ba1_5b938e0da608 -->|calls| 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6
+  0bc81caa_8b72_8424_fe12_a8bf8490315f["Match()"]
+  0bc81caa_8b72_8424_fe12_a8bf8490315f -->|calls| 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6
+  2ddf306f_49ee_b2a4_2bc2_d2cd90c997b0["calculateAbsolutePath()"]
+  1eefb55b_e2cd_6cd9_bc17_5283224b0ad6 -->|calls| 2ddf306f_49ee_b2a4_2bc2_d2cd90c997b0
+  deaf1e85_edb2_19c5_a9a3_bfb3bcf75aaf["combineHandlers()"]
+  1eefb55b_e2cd_6cd9_bc17_5283224b0ad6 -->|calls| deaf1e85_edb2_19c5_a9a3_bfb3bcf75aaf
+  d15eaf6d_1971_f039_df50_7b28a5de213a["returnObj()"]
+  1eefb55b_e2cd_6cd9_bc17_5283224b0ad6 -->|calls| d15eaf6d_1971_f039_df50_7b28a5de213a
+  style 1eefb55b_e2cd_6cd9_bc17_5283224b0ad6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -946,7 +946,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-routergroup-go-handle"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"32e87778:11d0:917e:5596:3c9ecb15835c","label":"handle","type":"Function","slug":"fn-routergroup-go-handle","lc":6,"lang":"go","cc":3,"cbc":10},{"id":"4f40b949:ffd0:22e3:8069:efd9154ea3aa","label":"calculateAbsolutePath","type":"Function","slug":"fn-routergroup-go-calculateabsolutepath","lc":3,"lang":"go","cbc":3},{"id":"0ee01cb4:048e:3b94:1647:9b917e1b519c","label":"combineHandlers","type":"Function","slug":"fn-routergroup-go-combinehandlers","lc":8,"lang":"go","cbc":2},{"id":"63f56aa2:94c0:90ce:5910:934980f5c1ef","label":"returnObj","type":"Function","slug":"fn-routergroup-go-returnobj","lc":6,"lang":"go","cbc":6},{"id":"fe2eb460:f587:0308:0aa2:4c091436777e","label":"Handle","type":"Function","slug":"fn-routergroup-go-handle-2","lc":6,"lang":"go","cc":1},{"id":"b56742b7:b3cc:addb:2490:ff2da80e220c","label":"POST","type":"Function","slug":"fn-routergroup-go-post","lc":3,"lang":"go","cc":1},{"id":"debe1d0b:6920:e4c5:feae:7588f76b8758","label":"GET","type":"Function","slug":"fn-routergroup-go-get","lc":3,"lang":"go","cc":1,"cbc":2},{"id":"7bb4c495:f1af:923a:f681:a3dadddcbfd9","label":"DELETE","type":"Function","slug":"fn-routergroup-go-delete","lc":3,"lang":"go","cc":1},{"id":"f6e76bd4:3ad2:9d14:98a4:068f9284e3b6","label":"PATCH","type":"Function","slug":"fn-routergroup-go-patch","lc":3,"lang":"go","cc":1},{"id":"8ad9af7c:790b:aed4:aeae:8c2c9ffeb8e8","label":"PUT","type":"Function","slug":"fn-routergroup-go-put","lc":3,"lang":"go","cc":1},{"id":"2d9528f6:05d4:81da:76d9:938b53591ca9","label":"OPTIONS","type":"Function","slug":"fn-routergroup-go-options","lc":3,"lang":"go","cc":1},{"id":"402fa494:2402:5e0c:532e:65422a8fce7b","label":"HEAD","type":"Function","slug":"fn-routergroup-go-head","lc":3,"lang":"go","cc":1,"cbc":2},{"id":"9c089ac7:4206:53dd:64ad:45a07d5f2613","label":"Any","type":"Function","slug":"fn-routergroup-go-any","lc":7,"lang":"go","cc":2},{"id":"8fc23ba9:89b8:e0da:0915:9bd1926a841a","label":"Match","type":"Function","slug":"fn-routergroup-go-match","lc":7,"lang":"go","cc":2},{"id":"domain:Engine","label":"Engine","type":"Domain","slug":"domain-engine"},{"id":"subdomain:Engine:Routing","label":"Routing","type":"Subdomain","slug":"subdomain-routing"}],"edges":[{"source":"32e87778:11d0:917e:5596:3c9ecb15835c","target":"4f40b949:ffd0:22e3:8069:efd9154ea3aa","type":"calls"},{"source":"32e87778:11d0:917e:5596:3c9ecb15835c","target":"0ee01cb4:048e:3b94:1647:9b917e1b519c","type":"calls"},{"source":"32e87778:11d0:917e:5596:3c9ecb15835c","target":"63f56aa2:94c0:90ce:5910:934980f5c1ef","type":"calls"},{"source":"fe2eb460:f587:0308:0aa2:4c091436777e","target":"32e87778:11d0:917e:5596:3c9ecb15835c","type":"calls"},{"source":"b56742b7:b3cc:addb:2490:ff2da80e220c","target":"32e87778:11d0:917e:5596:3c9ecb15835c","type":"calls"},{"source":"debe1d0b:6920:e4c5:feae:7588f76b8758","target":"32e87778:11d0:917e:5596:3c9ecb15835c","type":"calls"},{"source":"7bb4c495:f1af:923a:f681:a3dadddcbfd9","target":"32e87778:11d0:917e:5596:3c9ecb15835c","type":"calls"},{"source":"f6e76bd4:3ad2:9d14:98a4:068f9284e3b6","target":"32e87778:11d0:917e:5596:3c9ecb15835c","type":"calls"},{"source":"8ad9af7c:790b:aed4:aeae:8c2c9ffeb8e8","target":"32e87778:11d0:917e:5596:3c9ecb15835c","type":"calls"},{"source":"2d9528f6:05d4:81da:76d9:938b53591ca9","target":"32e87778:11d0:917e:5596:3c9ecb15835c","type":"calls"},{"source":"402fa494:2402:5e0c:532e:65422a8fce7b","target":"32e87778:11d0:917e:5596:3c9ecb15835c","type":"calls"},{"source":"9c089ac7:4206:53dd:64ad:45a07d5f2613","target":"32e87778:11d0:917e:5596:3c9ecb15835c","type":"calls"},{"source":"8fc23ba9:89b8:e0da:0915:9bd1926a841a","target":"32e87778:11d0:917e:5596:3c9ecb15835c","type":"calls"},{"source":"32e87778:11d0:917e:5596:3c9ecb15835c","target":"domain:Engine","type":"belongsTo"},{"source":"32e87778:11d0:917e:5596:3c9ecb15835c","target":"subdomain:Engine:Routing","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","label":"handle","type":"Function","slug":"fn-routergroup-go-handle","lc":6,"lang":"go","cc":3,"cbc":10},{"id":"2ddf306f:49ee:b2a4:2bc2:d2cd90c997b0","label":"calculateAbsolutePath","type":"Function","slug":"fn-routergroup-go-calculateabsolutepath","lc":3,"lang":"go","cbc":3},{"id":"deaf1e85:edb2:19c5:a9a3:bfb3bcf75aaf","label":"combineHandlers","type":"Function","slug":"fn-routergroup-go-combinehandlers","lc":8,"lang":"go","cbc":2},{"id":"d15eaf6d:1971:f039:df50:7b28a5de213a","label":"returnObj","type":"Function","slug":"fn-routergroup-go-returnobj","lc":6,"lang":"go","cbc":6},{"id":"e01ce676:f6b3:df49:bd6c:c58890368a45","label":"Handle","type":"Function","slug":"fn-routergroup-go-handle-2","lc":6,"lang":"go","cc":1},{"id":"c8daff07:177b:5389:a503:c83f0703afbc","label":"POST","type":"Function","slug":"fn-routergroup-go-post","lc":3,"lang":"go","cc":1},{"id":"29719207:5c82:b580:cd7a:4234208275dd","label":"GET","type":"Function","slug":"fn-routergroup-go-get","lc":3,"lang":"go","cc":1,"cbc":2},{"id":"59eaaf30:0826:e748:a1a4:9a6a8ec8d5dc","label":"DELETE","type":"Function","slug":"fn-routergroup-go-delete","lc":3,"lang":"go","cc":1},{"id":"b8fa1375:2be7:8255:9a0d:7ea1c5d0bde8","label":"PATCH","type":"Function","slug":"fn-routergroup-go-patch","lc":3,"lang":"go","cc":1},{"id":"08b256e8:6d11:ea75:5a53:e66c096cace2","label":"PUT","type":"Function","slug":"fn-routergroup-go-put","lc":3,"lang":"go","cc":1},{"id":"278ad4e7:9076:47ff:0428:2b88ef6620d1","label":"OPTIONS","type":"Function","slug":"fn-routergroup-go-options","lc":3,"lang":"go","cc":1},{"id":"8a24dc44:6a90:527a:8587:da357fd90bbc","label":"HEAD","type":"Function","slug":"fn-routergroup-go-head","lc":3,"lang":"go","cc":1,"cbc":2},{"id":"f14fc815:c954:0227:2ba1:5b938e0da608","label":"Any","type":"Function","slug":"fn-routergroup-go-any","lc":7,"lang":"go","cc":2},{"id":"0bc81caa:8b72:8424:fe12:a8bf8490315f","label":"Match","type":"Function","slug":"fn-routergroup-go-match","lc":7,"lang":"go","cc":2},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Engine","label":"Engine","type":"Subdomain","slug":"subdomain-engine"}],"edges":[{"source":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","target":"2ddf306f:49ee:b2a4:2bc2:d2cd90c997b0","type":"calls"},{"source":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","target":"deaf1e85:edb2:19c5:a9a3:bfb3bcf75aaf","type":"calls"},{"source":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","target":"d15eaf6d:1971:f039:df50:7b28a5de213a","type":"calls"},{"source":"e01ce676:f6b3:df49:bd6c:c58890368a45","target":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","type":"calls"},{"source":"c8daff07:177b:5389:a503:c83f0703afbc","target":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","type":"calls"},{"source":"29719207:5c82:b580:cd7a:4234208275dd","target":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","type":"calls"},{"source":"59eaaf30:0826:e748:a1a4:9a6a8ec8d5dc","target":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","type":"calls"},{"source":"b8fa1375:2be7:8255:9a0d:7ea1c5d0bde8","target":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","type":"calls"},{"source":"08b256e8:6d11:ea75:5a53:e66c096cace2","target":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","type":"calls"},{"source":"278ad4e7:9076:47ff:0428:2b88ef6620d1","target":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","type":"calls"},{"source":"8a24dc44:6a90:527a:8587:da357fd90bbc","target":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","type":"calls"},{"source":"f14fc815:c954:0227:2ba1:5b938e0da608","target":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","type":"calls"},{"source":"0bc81caa:8b72:8424:fe12:a8bf8490315f","target":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","type":"calls"},{"source":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","target":"domain:GinCore","type":"belongsTo"},{"source":"1eefb55b:e2cd:6cd9:bc17:5283224b0ad6","target":"subdomain:GinCore:Engine","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -973,14 +973,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-engine.html">Engine</a></li></ul>
+      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-routing.html">Routing</a></li></ul>
+      <ul><li><a href="/subdomain-engine.html">Engine</a></li></ul>
     </div>
     
 

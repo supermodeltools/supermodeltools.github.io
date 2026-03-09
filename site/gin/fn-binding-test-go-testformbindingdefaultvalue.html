@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
         <a href="/domain/binding.html" class="pill pill-green">Binding</a>
-        <a href="/subdomain/formmapping.html" class="pill pill-orange">FormMapping</a>
+        <a href="/subdomain/multipart.html" class="pill pill-orange">Multipart</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"testFormBindingDefaultValue","slug":"fn-binding-test-go-testformbindingdefaultvalue","type":"Function"},"subdomain":{"name":"FormMapping","slug":"subdomain-formmapping"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"testFormBindingDefaultValue","slug":"fn-binding-test-go-testformbindingdefaultvalue","type":"Function"},"subdomain":{"name":"Multipart","slug":"subdomain-multipart"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/binding.html">Binding</a><span class="arch-sep">&rarr;</span>
-            <a href="/formmapping.html">FormMapping</a><span class="arch-sep">&rarr;</span>
+            <a href="/multipart.html">Multipart</a><span class="arch-sep">&rarr;</span>
             <span>testFormBindingDefaultValue() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  5c79958e_3919_8faf_e3b5_3fe7d688bf32["testFormBindingDefaultValue()"]
-  5017e455_de62_61fa_2a6c_9d74530010aa["TestBindingFormDefaultValue()"]
-  5017e455_de62_61fa_2a6c_9d74530010aa -->|calls| 5c79958e_3919_8faf_e3b5_3fe7d688bf32
-  db2962f0_a7f9_d967_5af2_0b7ed5303482["TestBindingFormDefaultValue2()"]
-  db2962f0_a7f9_d967_5af2_0b7ed5303482 -->|calls| 5c79958e_3919_8faf_e3b5_3fe7d688bf32
-  7e812603_fc55_9819_3937_9de1831f31c4["requestWithBody()"]
-  5c79958e_3919_8faf_e3b5_3fe7d688bf32 -->|calls| 7e812603_fc55_9819_3937_9de1831f31c4
-  style 5c79958e_3919_8faf_e3b5_3fe7d688bf32 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  f77ffb94_9587_98be_131f_8213c5162694["testFormBindingDefaultValue()"]
+  4827070d_4077_7293_07be_68bb348f0ce8["TestBindingFormDefaultValue()"]
+  4827070d_4077_7293_07be_68bb348f0ce8 -->|calls| f77ffb94_9587_98be_131f_8213c5162694
+  4ec04ae2_50af_1497_e91a_c985fa9f1e38["TestBindingFormDefaultValue2()"]
+  4ec04ae2_50af_1497_e91a_c985fa9f1e38 -->|calls| f77ffb94_9587_98be_131f_8213c5162694
+  c4cb7cb9_8818_f923_d55f_a54d8f2a48c6["requestWithBody()"]
+  f77ffb94_9587_98be_131f_8213c5162694 -->|calls| c4cb7cb9_8818_f923_d55f_a54d8f2a48c6
+  style f77ffb94_9587_98be_131f_8213c5162694 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-binding-test-go-testformbindingdefaultvalue"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"5c79958e:3919:8faf:e3b5:3fe7d688bf32","label":"testFormBindingDefaultValue","type":"Function","slug":"fn-binding-test-go-testformbindingdefaultvalue","lc":19,"lang":"go","cc":1,"cbc":2},{"id":"7e812603:fc55:9819:3937:9de1831f31c4","label":"requestWithBody","type":"Function","slug":"fn-binding-test-go-requestwithbody","lc":4,"lang":"go","cbc":32},{"id":"5017e455:de62:61fa:2a6c:9d74530010aa","label":"TestBindingFormDefaultValue","type":"Function","slug":"fn-binding-test-go-testbindingformdefaultvalue","lc":5,"lang":"go","cc":1},{"id":"db2962f0:a7f9:d967:5af2:0b7ed5303482","label":"TestBindingFormDefaultValue2","type":"Function","slug":"fn-binding-test-go-testbindingformdefaultvalue2","lc":5,"lang":"go","cc":1},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:FormMapping","label":"FormMapping","type":"Subdomain","slug":"subdomain-formmapping"}],"edges":[{"source":"5c79958e:3919:8faf:e3b5:3fe7d688bf32","target":"7e812603:fc55:9819:3937:9de1831f31c4","type":"calls"},{"source":"5017e455:de62:61fa:2a6c:9d74530010aa","target":"5c79958e:3919:8faf:e3b5:3fe7d688bf32","type":"calls"},{"source":"db2962f0:a7f9:d967:5af2:0b7ed5303482","target":"5c79958e:3919:8faf:e3b5:3fe7d688bf32","type":"calls"},{"source":"5c79958e:3919:8faf:e3b5:3fe7d688bf32","target":"domain:Binding","type":"belongsTo"},{"source":"5c79958e:3919:8faf:e3b5:3fe7d688bf32","target":"subdomain:Binding:FormMapping","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"f77ffb94:9587:98be:131f:8213c5162694","label":"testFormBindingDefaultValue","type":"Function","slug":"fn-binding-test-go-testformbindingdefaultvalue","lc":19,"lang":"go","cc":1,"cbc":2},{"id":"c4cb7cb9:8818:f923:d55f:a54d8f2a48c6","label":"requestWithBody","type":"Function","slug":"fn-binding-test-go-requestwithbody","lc":4,"lang":"go","cbc":32},{"id":"4827070d:4077:7293:07be:68bb348f0ce8","label":"TestBindingFormDefaultValue","type":"Function","slug":"fn-binding-test-go-testbindingformdefaultvalue","lc":5,"lang":"go","cc":1},{"id":"4ec04ae2:50af:1497:e91a:c985fa9f1e38","label":"TestBindingFormDefaultValue2","type":"Function","slug":"fn-binding-test-go-testbindingformdefaultvalue2","lc":5,"lang":"go","cc":1},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:Multipart","label":"Multipart","type":"Subdomain","slug":"subdomain-multipart"}],"edges":[{"source":"f77ffb94:9587:98be:131f:8213c5162694","target":"c4cb7cb9:8818:f923:d55f:a54d8f2a48c6","type":"calls"},{"source":"4827070d:4077:7293:07be:68bb348f0ce8","target":"f77ffb94:9587:98be:131f:8213c5162694","type":"calls"},{"source":"4ec04ae2:50af:1497:e91a:c985fa9f1e38","target":"f77ffb94:9587:98be:131f:8213c5162694","type":"calls"},{"source":"f77ffb94:9587:98be:131f:8213c5162694","target":"domain:Binding","type":"belongsTo"},{"source":"f77ffb94:9587:98be:131f:8213c5162694","target":"subdomain:Binding:Multipart","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -973,7 +973,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-formmapping.html">FormMapping</a></li></ul>
+      <ul><li><a href="/subdomain-multipart.html">Multipart</a></li></ul>
     </div>
     
 

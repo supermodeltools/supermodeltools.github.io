@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  45bddf95_c497_ee86_0df2_4f2bc05c104f["testQueryBinding()"]
-  b381975b_9d67_436e_99bb_34f232d66bd8["TestBindingQuery()"]
-  b381975b_9d67_436e_99bb_34f232d66bd8 -->|calls| 45bddf95_c497_ee86_0df2_4f2bc05c104f
-  bf9aebb5_c689_28fe_1007_0217cb368242["TestBindingQuery2()"]
-  bf9aebb5_c689_28fe_1007_0217cb368242 -->|calls| 45bddf95_c497_ee86_0df2_4f2bc05c104f
-  7e812603_fc55_9819_3937_9de1831f31c4["requestWithBody()"]
-  45bddf95_c497_ee86_0df2_4f2bc05c104f -->|calls| 7e812603_fc55_9819_3937_9de1831f31c4
-  style 45bddf95_c497_ee86_0df2_4f2bc05c104f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  c23dc67f_ec85_fb8b_64d7_cdbba5fea4b6["testQueryBinding()"]
+  fd816dbb_452d_05c0_b413_903cc472b9ee["TestBindingQuery()"]
+  fd816dbb_452d_05c0_b413_903cc472b9ee -->|calls| c23dc67f_ec85_fb8b_64d7_cdbba5fea4b6
+  c6030228_209f_916a_2ba9_4c3022f4e9ff["TestBindingQuery2()"]
+  c6030228_209f_916a_2ba9_4c3022f4e9ff -->|calls| c23dc67f_ec85_fb8b_64d7_cdbba5fea4b6
+  c4cb7cb9_8818_f923_d55f_a54d8f2a48c6["requestWithBody()"]
+  c23dc67f_ec85_fb8b_64d7_cdbba5fea4b6 -->|calls| c4cb7cb9_8818_f923_d55f_a54d8f2a48c6
+  style c23dc67f_ec85_fb8b_64d7_cdbba5fea4b6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-binding-test-go-testquerybinding"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"45bddf95:c497:ee86:0df2:4f2bc05c104f","label":"testQueryBinding","type":"Function","slug":"fn-binding-test-go-testquerybinding","lc":14,"lang":"go","cc":1,"cbc":2},{"id":"7e812603:fc55:9819:3937:9de1831f31c4","label":"requestWithBody","type":"Function","slug":"fn-binding-test-go-requestwithbody","lc":4,"lang":"go","cbc":32},{"id":"b381975b:9d67:436e:99bb:34f232d66bd8","label":"TestBindingQuery","type":"Function","slug":"fn-binding-test-go-testbindingquery","lc":5,"lang":"go","cc":1},{"id":"bf9aebb5:c689:28fe:1007:0217cb368242","label":"TestBindingQuery2","type":"Function","slug":"fn-binding-test-go-testbindingquery2","lc":5,"lang":"go","cc":1},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:Validation","label":"Validation","type":"Subdomain","slug":"subdomain-validation"}],"edges":[{"source":"45bddf95:c497:ee86:0df2:4f2bc05c104f","target":"7e812603:fc55:9819:3937:9de1831f31c4","type":"calls"},{"source":"b381975b:9d67:436e:99bb:34f232d66bd8","target":"45bddf95:c497:ee86:0df2:4f2bc05c104f","type":"calls"},{"source":"bf9aebb5:c689:28fe:1007:0217cb368242","target":"45bddf95:c497:ee86:0df2:4f2bc05c104f","type":"calls"},{"source":"45bddf95:c497:ee86:0df2:4f2bc05c104f","target":"domain:Binding","type":"belongsTo"},{"source":"45bddf95:c497:ee86:0df2:4f2bc05c104f","target":"subdomain:Binding:Validation","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"c23dc67f:ec85:fb8b:64d7:cdbba5fea4b6","label":"testQueryBinding","type":"Function","slug":"fn-binding-test-go-testquerybinding","lc":14,"lang":"go","cc":1,"cbc":2},{"id":"c4cb7cb9:8818:f923:d55f:a54d8f2a48c6","label":"requestWithBody","type":"Function","slug":"fn-binding-test-go-requestwithbody","lc":4,"lang":"go","cbc":32},{"id":"fd816dbb:452d:05c0:b413:903cc472b9ee","label":"TestBindingQuery","type":"Function","slug":"fn-binding-test-go-testbindingquery","lc":5,"lang":"go","cc":1},{"id":"c6030228:209f:916a:2ba9:4c3022f4e9ff","label":"TestBindingQuery2","type":"Function","slug":"fn-binding-test-go-testbindingquery2","lc":5,"lang":"go","cc":1},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:Validation","label":"Validation","type":"Subdomain","slug":"subdomain-validation"}],"edges":[{"source":"c23dc67f:ec85:fb8b:64d7:cdbba5fea4b6","target":"c4cb7cb9:8818:f923:d55f:a54d8f2a48c6","type":"calls"},{"source":"fd816dbb:452d:05c0:b413:903cc472b9ee","target":"c23dc67f:ec85:fb8b:64d7:cdbba5fea4b6","type":"calls"},{"source":"c6030228:209f:916a:2ba9:4c3022f4e9ff","target":"c23dc67f:ec85:fb8b:64d7:cdbba5fea4b6","type":"calls"},{"source":"c23dc67f:ec85:fb8b:64d7:cdbba5fea4b6","target":"domain:Binding","type":"belongsTo"},{"source":"c23dc67f:ec85:fb8b:64d7:cdbba5fea4b6","target":"subdomain:Binding:Validation","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         

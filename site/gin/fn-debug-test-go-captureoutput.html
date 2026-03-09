@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/engine.html" class="pill pill-green">Engine</a>
-        <a href="/subdomain/middleware.html" class="pill pill-orange">Middleware</a>
+        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
+        <a href="/subdomain/router.html" class="pill pill-orange">Router</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Engine","slug":"domain-engine"},"entity":{"name":"captureOutput","slug":"fn-debug-test-go-captureoutput","type":"Function"},"subdomain":{"name":"Middleware","slug":"subdomain-middleware"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"captureOutput","slug":"fn-debug-test-go-captureoutput","type":"Function"},"subdomain":{"name":"Router","slug":"subdomain-router"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/engine.html">Engine</a><span class="arch-sep">&rarr;</span>
-            <a href="/middleware.html">Middleware</a><span class="arch-sep">&rarr;</span>
+            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/router.html">Router</a><span class="arch-sep">&rarr;</span>
             <span>captureOutput() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,28 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  a41d8a50_da40_a2c8_e24d_4cd63fdb6bed["captureOutput()"]
-  52f5daca_56ca_d0f2_8149_d78e7b84d834["TestDebugPrint()"]
-  52f5daca_56ca_d0f2_8149_d78e7b84d834 -->|calls| a41d8a50_da40_a2c8_e24d_4cd63fdb6bed
-  5adb8f31_06e7_c09b_be14_5cc3544c79ed["TestDebugPrintFunc()"]
-  5adb8f31_06e7_c09b_be14_5cc3544c79ed -->|calls| a41d8a50_da40_a2c8_e24d_4cd63fdb6bed
-  5a074815_a08d_24fb_7426_9f64ff908bfb["TestDebugPrintError()"]
-  5a074815_a08d_24fb_7426_9f64ff908bfb -->|calls| a41d8a50_da40_a2c8_e24d_4cd63fdb6bed
-  ad8b8bb3_6e81_5882_9533_3a3e76a1eac1["TestDebugPrintRoutes()"]
-  ad8b8bb3_6e81_5882_9533_3a3e76a1eac1 -->|calls| a41d8a50_da40_a2c8_e24d_4cd63fdb6bed
-  75987a6e_fdfc_ce83_1ac4_42373bacd723["TestDebugPrintRouteFunc()"]
-  75987a6e_fdfc_ce83_1ac4_42373bacd723 -->|calls| a41d8a50_da40_a2c8_e24d_4cd63fdb6bed
-  a7967a47_9b61_e014_5e88_a7c12802c4e5["TestDebugPrintLoadTemplate()"]
-  a7967a47_9b61_e014_5e88_a7c12802c4e5 -->|calls| a41d8a50_da40_a2c8_e24d_4cd63fdb6bed
-  f6b082b2_a583_4f8f_e81b_fa36bf191597["TestDebugPrintWARNINGSetHTMLTemplate()"]
-  f6b082b2_a583_4f8f_e81b_fa36bf191597 -->|calls| a41d8a50_da40_a2c8_e24d_4cd63fdb6bed
-  bea6767e_f4b6_6f75_fd02_a9e0d2282caa["TestDebugPrintWARNINGDefault()"]
-  bea6767e_f4b6_6f75_fd02_a9e0d2282caa -->|calls| a41d8a50_da40_a2c8_e24d_4cd63fdb6bed
-  665dc17d_1114_7867_dfd1_d298208222d9["TestDebugPrintWARNINGDefaultWithUnsupportedVersion()"]
-  665dc17d_1114_7867_dfd1_d298208222d9 -->|calls| a41d8a50_da40_a2c8_e24d_4cd63fdb6bed
-  2b7d73da_e15b_e2de_7786_d9df7b14b73c["TestDebugPrintWARNINGNew()"]
-  2b7d73da_e15b_e2de_7786_d9df7b14b73c -->|calls| a41d8a50_da40_a2c8_e24d_4cd63fdb6bed
-  style a41d8a50_da40_a2c8_e24d_4cd63fdb6bed fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  85172428_957c_ef5b_6206_f76445010650["captureOutput()"]
+  bb33a9b6_0d12_ab61_03d1_99552723ace0["TestDebugPrint()"]
+  bb33a9b6_0d12_ab61_03d1_99552723ace0 -->|calls| 85172428_957c_ef5b_6206_f76445010650
+  aab04310_25d4_7f3e_3f62_fd24b491d232["TestDebugPrintFunc()"]
+  aab04310_25d4_7f3e_3f62_fd24b491d232 -->|calls| 85172428_957c_ef5b_6206_f76445010650
+  d4c2c089_d032_aab0_22a3_cabfe52d4cd0["TestDebugPrintError()"]
+  d4c2c089_d032_aab0_22a3_cabfe52d4cd0 -->|calls| 85172428_957c_ef5b_6206_f76445010650
+  88fb5ad4_e68e_325b_3454_bd6d2b5497a7["TestDebugPrintRoutes()"]
+  88fb5ad4_e68e_325b_3454_bd6d2b5497a7 -->|calls| 85172428_957c_ef5b_6206_f76445010650
+  c9f7d1d7_affe_a40d_f85a_eb8aa31eb18e["TestDebugPrintRouteFunc()"]
+  c9f7d1d7_affe_a40d_f85a_eb8aa31eb18e -->|calls| 85172428_957c_ef5b_6206_f76445010650
+  f6c49051_e470_2205_9261_f87d95bc9b7a["TestDebugPrintLoadTemplate()"]
+  f6c49051_e470_2205_9261_f87d95bc9b7a -->|calls| 85172428_957c_ef5b_6206_f76445010650
+  63c216f0_9fac_f732_a7d5_f78ed2a6f9f8["TestDebugPrintWARNINGSetHTMLTemplate()"]
+  63c216f0_9fac_f732_a7d5_f78ed2a6f9f8 -->|calls| 85172428_957c_ef5b_6206_f76445010650
+  e37474ab_f71c_f693_e382_f693cccef428["TestDebugPrintWARNINGDefault()"]
+  e37474ab_f71c_f693_e382_f693cccef428 -->|calls| 85172428_957c_ef5b_6206_f76445010650
+  1e4f9f72_debb_34f7_3564_2cb3e17dbd68["TestDebugPrintWARNINGDefaultWithUnsupportedVersion()"]
+  1e4f9f72_debb_34f7_3564_2cb3e17dbd68 -->|calls| 85172428_957c_ef5b_6206_f76445010650
+  2cbee5d7_5b9e_61fb_eb22_41022efc4199["TestDebugPrintWARNINGNew()"]
+  2cbee5d7_5b9e_61fb_eb22_41022efc4199 -->|calls| 85172428_957c_ef5b_6206_f76445010650
+  style 85172428_957c_ef5b_6206_f76445010650 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -940,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-debug-test-go-captureoutput"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","label":"captureOutput","type":"Function","slug":"fn-debug-test-go-captureoutput","lc":30,"lang":"go","cbc":10},{"id":"52f5daca:56ca:d0f2:8149:d78e7b84d834","label":"TestDebugPrint","type":"Function","slug":"fn-debug-test-go-testdebugprint","lc":13,"lang":"go","cc":1},{"id":"5adb8f31:06e7:c09b:be14:5cc3544c79ed","label":"TestDebugPrintFunc","type":"Function","slug":"fn-debug-test-go-testdebugprintfunc","lc":11,"lang":"go","cc":1},{"id":"5a074815:a08d:24fb:7426:9f64ff908bfb","label":"TestDebugPrintError","type":"Function","slug":"fn-debug-test-go-testdebugprinterror","lc":9,"lang":"go","cc":1},{"id":"ad8b8bb3:6e81:5882:9533:3a3e76a1eac1","label":"TestDebugPrintRoutes","type":"Function","slug":"fn-debug-test-go-testdebugprintroutes","lc":8,"lang":"go","cc":1},{"id":"75987a6e:fdfc:ce83:1ac4:42373bacd723","label":"TestDebugPrintRouteFunc","type":"Function","slug":"fn-debug-test-go-testdebugprintroutefunc","lc":11,"lang":"go","cc":1},{"id":"a7967a47:9b61:e014:5e88:a7c12802c4e5","label":"TestDebugPrintLoadTemplate","type":"Function","slug":"fn-debug-test-go-testdebugprintloadtemplate","lc":9,"lang":"go","cc":1},{"id":"f6b082b2:a583:4f8f:e81b:fa36bf191597","label":"TestDebugPrintWARNINGSetHTMLTemplate","type":"Function","slug":"fn-debug-test-go-testdebugprintwarningsethtmltemplate","lc":8,"lang":"go","cc":1},{"id":"bea6767e:f4b6:6f75:fd02:a9e0d2282caa","label":"TestDebugPrintWARNINGDefault","type":"Function","slug":"fn-debug-test-go-testdebugprintwarningdefault","lc":8,"lang":"go","cc":1},{"id":"665dc17d:1114:7867:dfd1:d298208222d9","label":"TestDebugPrintWARNINGDefaultWithUnsupportedVersion","type":"Function","slug":"fn-debug-test-go-testdebugprintwarningdefaultwithunsupportedversion","lc":9,"lang":"go","cc":1},{"id":"2b7d73da:e15b:e2de:7786:d9df7b14b73c","label":"TestDebugPrintWARNINGNew","type":"Function","slug":"fn-debug-test-go-testdebugprintwarningnew","lc":8,"lang":"go","cc":1},{"id":"domain:Engine","label":"Engine","type":"Domain","slug":"domain-engine"},{"id":"subdomain:Engine:Middleware","label":"Middleware","type":"Subdomain","slug":"subdomain-middleware"}],"edges":[{"source":"52f5daca:56ca:d0f2:8149:d78e7b84d834","target":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","type":"calls"},{"source":"5adb8f31:06e7:c09b:be14:5cc3544c79ed","target":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","type":"calls"},{"source":"5a074815:a08d:24fb:7426:9f64ff908bfb","target":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","type":"calls"},{"source":"ad8b8bb3:6e81:5882:9533:3a3e76a1eac1","target":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","type":"calls"},{"source":"75987a6e:fdfc:ce83:1ac4:42373bacd723","target":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","type":"calls"},{"source":"a7967a47:9b61:e014:5e88:a7c12802c4e5","target":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","type":"calls"},{"source":"f6b082b2:a583:4f8f:e81b:fa36bf191597","target":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","type":"calls"},{"source":"bea6767e:f4b6:6f75:fd02:a9e0d2282caa","target":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","type":"calls"},{"source":"665dc17d:1114:7867:dfd1:d298208222d9","target":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","type":"calls"},{"source":"2b7d73da:e15b:e2de:7786:d9df7b14b73c","target":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","type":"calls"},{"source":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","target":"domain:Engine","type":"belongsTo"},{"source":"a41d8a50:da40:a2c8:e24d:4cd63fdb6bed","target":"subdomain:Engine:Middleware","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"85172428:957c:ef5b:6206:f76445010650","label":"captureOutput","type":"Function","slug":"fn-debug-test-go-captureoutput","lc":30,"lang":"go","cbc":10},{"id":"bb33a9b6:0d12:ab61:03d1:99552723ace0","label":"TestDebugPrint","type":"Function","slug":"fn-debug-test-go-testdebugprint","lc":13,"lang":"go","cc":1},{"id":"aab04310:25d4:7f3e:3f62:fd24b491d232","label":"TestDebugPrintFunc","type":"Function","slug":"fn-debug-test-go-testdebugprintfunc","lc":11,"lang":"go","cc":1},{"id":"d4c2c089:d032:aab0:22a3:cabfe52d4cd0","label":"TestDebugPrintError","type":"Function","slug":"fn-debug-test-go-testdebugprinterror","lc":9,"lang":"go","cc":1},{"id":"88fb5ad4:e68e:325b:3454:bd6d2b5497a7","label":"TestDebugPrintRoutes","type":"Function","slug":"fn-debug-test-go-testdebugprintroutes","lc":8,"lang":"go","cc":1},{"id":"c9f7d1d7:affe:a40d:f85a:eb8aa31eb18e","label":"TestDebugPrintRouteFunc","type":"Function","slug":"fn-debug-test-go-testdebugprintroutefunc","lc":11,"lang":"go","cc":1},{"id":"f6c49051:e470:2205:9261:f87d95bc9b7a","label":"TestDebugPrintLoadTemplate","type":"Function","slug":"fn-debug-test-go-testdebugprintloadtemplate","lc":9,"lang":"go","cc":1},{"id":"63c216f0:9fac:f732:a7d5:f78ed2a6f9f8","label":"TestDebugPrintWARNINGSetHTMLTemplate","type":"Function","slug":"fn-debug-test-go-testdebugprintwarningsethtmltemplate","lc":8,"lang":"go","cc":1},{"id":"e37474ab:f71c:f693:e382:f693cccef428","label":"TestDebugPrintWARNINGDefault","type":"Function","slug":"fn-debug-test-go-testdebugprintwarningdefault","lc":8,"lang":"go","cc":1},{"id":"1e4f9f72:debb:34f7:3564:2cb3e17dbd68","label":"TestDebugPrintWARNINGDefaultWithUnsupportedVersion","type":"Function","slug":"fn-debug-test-go-testdebugprintwarningdefaultwithunsupportedversion","lc":9,"lang":"go","cc":1},{"id":"2cbee5d7:5b9e:61fb:eb22:41022efc4199","label":"TestDebugPrintWARNINGNew","type":"Function","slug":"fn-debug-test-go-testdebugprintwarningnew","lc":8,"lang":"go","cc":1},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Router","label":"Router","type":"Subdomain","slug":"subdomain-router"}],"edges":[{"source":"bb33a9b6:0d12:ab61:03d1:99552723ace0","target":"85172428:957c:ef5b:6206:f76445010650","type":"calls"},{"source":"aab04310:25d4:7f3e:3f62:fd24b491d232","target":"85172428:957c:ef5b:6206:f76445010650","type":"calls"},{"source":"d4c2c089:d032:aab0:22a3:cabfe52d4cd0","target":"85172428:957c:ef5b:6206:f76445010650","type":"calls"},{"source":"88fb5ad4:e68e:325b:3454:bd6d2b5497a7","target":"85172428:957c:ef5b:6206:f76445010650","type":"calls"},{"source":"c9f7d1d7:affe:a40d:f85a:eb8aa31eb18e","target":"85172428:957c:ef5b:6206:f76445010650","type":"calls"},{"source":"f6c49051:e470:2205:9261:f87d95bc9b7a","target":"85172428:957c:ef5b:6206:f76445010650","type":"calls"},{"source":"63c216f0:9fac:f732:a7d5:f78ed2a6f9f8","target":"85172428:957c:ef5b:6206:f76445010650","type":"calls"},{"source":"e37474ab:f71c:f693:e382:f693cccef428","target":"85172428:957c:ef5b:6206:f76445010650","type":"calls"},{"source":"1e4f9f72:debb:34f7:3564:2cb3e17dbd68","target":"85172428:957c:ef5b:6206:f76445010650","type":"calls"},{"source":"2cbee5d7:5b9e:61fb:eb22:41022efc4199","target":"85172428:957c:ef5b:6206:f76445010650","type":"calls"},{"source":"85172428:957c:ef5b:6206:f76445010650","target":"domain:GinCore","type":"belongsTo"},{"source":"85172428:957c:ef5b:6206:f76445010650","target":"subdomain:GinCore:Router","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -991,14 +991,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-engine.html">Engine</a></li></ul>
+      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-middleware.html">Middleware</a></li></ul>
+      <ul><li><a href="/subdomain-router.html">Router</a></li></ul>
     </div>
     
 

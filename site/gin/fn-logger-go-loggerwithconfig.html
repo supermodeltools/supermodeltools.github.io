@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/engine.html" class="pill pill-green">Engine</a>
-        <a href="/subdomain/middleware.html" class="pill pill-orange">Middleware</a>
+        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
+        <a href="/subdomain/router.html" class="pill pill-orange">Router</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Engine","slug":"domain-engine"},"entity":{"name":"LoggerWithConfig","slug":"fn-logger-go-loggerwithconfig","type":"Function"},"subdomain":{"name":"Middleware","slug":"subdomain-middleware"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"LoggerWithConfig","slug":"fn-logger-go-loggerwithconfig","type":"Function"},"subdomain":{"name":"Router","slug":"subdomain-router"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/engine.html">Engine</a><span class="arch-sep">&rarr;</span>
-            <a href="/middleware.html">Middleware</a><span class="arch-sep">&rarr;</span>
+            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/router.html">Router</a><span class="arch-sep">&rarr;</span>
             <span>LoggerWithConfig() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  9d961389_c39a_ba91_60f7_62f3e0d0812c["LoggerWithConfig()"]
-  c92932be_ced1_688b_0255_936d8e92ae36["Logger()"]
-  c92932be_ced1_688b_0255_936d8e92ae36 -->|calls| 9d961389_c39a_ba91_60f7_62f3e0d0812c
-  9ff0b527_01a6_46d9_eaa0_3d991c5c8b59["LoggerWithFormatter()"]
-  9ff0b527_01a6_46d9_eaa0_3d991c5c8b59 -->|calls| 9d961389_c39a_ba91_60f7_62f3e0d0812c
-  870b7e76_8c13_e13c_229d_26cae3f9db53["LoggerWithWriter()"]
-  870b7e76_8c13_e13c_229d_26cae3f9db53 -->|calls| 9d961389_c39a_ba91_60f7_62f3e0d0812c
-  style 9d961389_c39a_ba91_60f7_62f3e0d0812c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d811017a_10ea_1eed_cc9a_e375e065b9c3["LoggerWithConfig()"]
+  cfd27c3f_7ced_e325_6929_a35b57eb89e9["Logger()"]
+  cfd27c3f_7ced_e325_6929_a35b57eb89e9 -->|calls| d811017a_10ea_1eed_cc9a_e375e065b9c3
+  4f68154f_ee31_10e6_f686_8de7a21b00a2["LoggerWithFormatter()"]
+  4f68154f_ee31_10e6_f686_8de7a21b00a2 -->|calls| d811017a_10ea_1eed_cc9a_e375e065b9c3
+  0a943484_5573_f7a7_128c_218da54caa4b["LoggerWithWriter()"]
+  0a943484_5573_f7a7_128c_218da54caa4b -->|calls| d811017a_10ea_1eed_cc9a_e375e065b9c3
+  style d811017a_10ea_1eed_cc9a_e375e065b9c3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-logger-go-loggerwithconfig"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"9d961389:c39a:ba91:60f7:62f3e0d0812c","label":"LoggerWithConfig","type":"Function","slug":"fn-logger-go-loggerwithconfig","lc":70,"lang":"go","cbc":3},{"id":"c92932be:ced1:688b:0255:936d8e92ae36","label":"Logger","type":"Function","slug":"fn-logger-go-logger","lc":3,"lang":"go","cc":1},{"id":"9ff0b527:01a6:46d9:eaa0:3d991c5c8b59","label":"LoggerWithFormatter","type":"Function","slug":"fn-logger-go-loggerwithformatter","lc":5,"lang":"go","cc":1},{"id":"870b7e76:8c13:e13c:229d:26cae3f9db53","label":"LoggerWithWriter","type":"Function","slug":"fn-logger-go-loggerwithwriter","lc":6,"lang":"go","cc":1},{"id":"domain:Engine","label":"Engine","type":"Domain","slug":"domain-engine"},{"id":"subdomain:Engine:Middleware","label":"Middleware","type":"Subdomain","slug":"subdomain-middleware"}],"edges":[{"source":"c92932be:ced1:688b:0255:936d8e92ae36","target":"9d961389:c39a:ba91:60f7:62f3e0d0812c","type":"calls"},{"source":"9ff0b527:01a6:46d9:eaa0:3d991c5c8b59","target":"9d961389:c39a:ba91:60f7:62f3e0d0812c","type":"calls"},{"source":"870b7e76:8c13:e13c:229d:26cae3f9db53","target":"9d961389:c39a:ba91:60f7:62f3e0d0812c","type":"calls"},{"source":"9d961389:c39a:ba91:60f7:62f3e0d0812c","target":"domain:Engine","type":"belongsTo"},{"source":"9d961389:c39a:ba91:60f7:62f3e0d0812c","target":"subdomain:Engine:Middleware","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d811017a:10ea:1eed:cc9a:e375e065b9c3","label":"LoggerWithConfig","type":"Function","slug":"fn-logger-go-loggerwithconfig","lc":70,"lang":"go","cbc":3},{"id":"cfd27c3f:7ced:e325:6929:a35b57eb89e9","label":"Logger","type":"Function","slug":"fn-logger-go-logger","lc":3,"lang":"go","cc":1},{"id":"4f68154f:ee31:10e6:f686:8de7a21b00a2","label":"LoggerWithFormatter","type":"Function","slug":"fn-logger-go-loggerwithformatter","lc":5,"lang":"go","cc":1},{"id":"0a943484:5573:f7a7:128c:218da54caa4b","label":"LoggerWithWriter","type":"Function","slug":"fn-logger-go-loggerwithwriter","lc":6,"lang":"go","cc":1},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Router","label":"Router","type":"Subdomain","slug":"subdomain-router"}],"edges":[{"source":"cfd27c3f:7ced:e325:6929:a35b57eb89e9","target":"d811017a:10ea:1eed:cc9a:e375e065b9c3","type":"calls"},{"source":"4f68154f:ee31:10e6:f686:8de7a21b00a2","target":"d811017a:10ea:1eed:cc9a:e375e065b9c3","type":"calls"},{"source":"0a943484:5573:f7a7:128c:218da54caa4b","target":"d811017a:10ea:1eed:cc9a:e375e065b9c3","type":"calls"},{"source":"d811017a:10ea:1eed:cc9a:e375e065b9c3","target":"domain:GinCore","type":"belongsTo"},{"source":"d811017a:10ea:1eed:cc9a:e375e065b9c3","target":"subdomain:GinCore:Router","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1017,14 +1017,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-engine.html">Engine</a></li></ul>
+      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-middleware.html">Middleware</a></li></ul>
+      <ul><li><a href="/subdomain-router.html">Router</a></li></ul>
     </div>
     
 

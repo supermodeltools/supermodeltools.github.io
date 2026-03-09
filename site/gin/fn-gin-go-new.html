@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/engine.html" class="pill pill-green">Engine</a>
-        <a href="/subdomain/routing.html" class="pill pill-orange">Routing</a>
+        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
+        <a href="/subdomain/engine.html" class="pill pill-orange">Engine</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Engine","slug":"domain-engine"},"entity":{"name":"New","slug":"fn-gin-go-new","type":"Function"},"subdomain":{"name":"Routing","slug":"subdomain-routing"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"New","slug":"fn-gin-go-new","type":"Function"},"subdomain":{"name":"Engine","slug":"subdomain-engine"}}</script>
         <noscript>
           <div class="arch-map-fallback">
+            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
             <a href="/engine.html">Engine</a><span class="arch-sep">&rarr;</span>
-            <a href="/routing.html">Routing</a><span class="arch-sep">&rarr;</span>
             <span>New() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  8f387343_b2f8_13b3_8a26_4c68ea04fbc4["New()"]
-  5e33b0f2_ce15_6ca1_07d5_26247fcd2a53["allocateContext()"]
-  8f387343_b2f8_13b3_8a26_4c68ea04fbc4 -->|calls| 5e33b0f2_ce15_6ca1_07d5_26247fcd2a53
-  style 8f387343_b2f8_13b3_8a26_4c68ea04fbc4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  ece7f937_138f_72fb_f2c9_fd01aafdb2b9["New()"]
+  dfae3dea_aa27_2117_60f6_a043bd88176c["allocateContext()"]
+  ece7f937_138f_72fb_f2c9_fd01aafdb2b9 -->|calls| dfae3dea_aa27_2117_60f6_a043bd88176c
+  style ece7f937_138f_72fb_f2c9_fd01aafdb2b9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-gin-go-new"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"8f387343:b2f8:13b3:8a26:4c68ea04fbc4","label":"New","type":"Function","slug":"fn-gin-go-new","lc":32,"lang":"go","cc":1},{"id":"5e33b0f2:ce15:6ca1:07d5:26247fcd2a53","label":"allocateContext","type":"Function","slug":"fn-gin-go-allocatecontext","lc":5,"lang":"go","cbc":1},{"id":"domain:Engine","label":"Engine","type":"Domain","slug":"domain-engine"},{"id":"subdomain:Engine:Routing","label":"Routing","type":"Subdomain","slug":"subdomain-routing"}],"edges":[{"source":"8f387343:b2f8:13b3:8a26:4c68ea04fbc4","target":"5e33b0f2:ce15:6ca1:07d5:26247fcd2a53","type":"calls"},{"source":"8f387343:b2f8:13b3:8a26:4c68ea04fbc4","target":"domain:Engine","type":"belongsTo"},{"source":"8f387343:b2f8:13b3:8a26:4c68ea04fbc4","target":"subdomain:Engine:Routing","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"ece7f937:138f:72fb:f2c9:fd01aafdb2b9","label":"New","type":"Function","slug":"fn-gin-go-new","lc":32,"lang":"go","cc":1},{"id":"dfae3dea:aa27:2117:60f6:a043bd88176c","label":"allocateContext","type":"Function","slug":"fn-gin-go-allocatecontext","lc":5,"lang":"go","cbc":1},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Engine","label":"Engine","type":"Subdomain","slug":"subdomain-engine"}],"edges":[{"source":"ece7f937:138f:72fb:f2c9:fd01aafdb2b9","target":"dfae3dea:aa27:2117:60f6:a043bd88176c","type":"calls"},{"source":"ece7f937:138f:72fb:f2c9:fd01aafdb2b9","target":"domain:GinCore","type":"belongsTo"},{"source":"ece7f937:138f:72fb:f2c9:fd01aafdb2b9","target":"subdomain:GinCore:Engine","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -975,14 +975,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-engine.html">Engine</a></li></ul>
+      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-routing.html">Routing</a></li></ul>
+      <ul><li><a href="/subdomain-engine.html">Engine</a></li></ul>
     </div>
     
 

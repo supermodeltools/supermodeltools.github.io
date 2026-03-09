@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
         <a href="/domain/binding.html" class="pill pill-green">Binding</a>
-        <a href="/subdomain/formmapping.html" class="pill pill-orange">FormMapping</a>
+        <a href="/subdomain/multipart.html" class="pill pill-orange">Multipart</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"TestFormMultipartBindingBindTwoFiles","slug":"fn-multipart-form-mapping-test-go-testformmultipartbindingbindtwofiles","type":"Function"},"subdomain":{"name":"FormMapping","slug":"subdomain-formmapping"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"Binding","slug":"domain-binding"},"entity":{"name":"TestFormMultipartBindingBindTwoFiles","slug":"fn-multipart-form-mapping-test-go-testformmultipartbindingbindtwofiles","type":"Function"},"subdomain":{"name":"Multipart","slug":"subdomain-multipart"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/binding.html">Binding</a><span class="arch-sep">&rarr;</span>
-            <a href="/formmapping.html">FormMapping</a><span class="arch-sep">&rarr;</span>
+            <a href="/multipart.html">Multipart</a><span class="arch-sep">&rarr;</span>
             <span>TestFormMultipartBindingBindTwoFiles() — gin Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  fbf3de3f_ed6d_3fdb_763a_6b4bbbbac380["TestFormMultipartBindingBindTwoFiles()"]
-  3b3ef13f_d085_ee62_9fb2_521d72f4ccd3["createRequestMultipartFiles()"]
-  fbf3de3f_ed6d_3fdb_763a_6b4bbbbac380 -->|calls| 3b3ef13f_d085_ee62_9fb2_521d72f4ccd3
-  58994998_9b76_7932_23dd_b8a8db5d7781["assertMultipartFileHeader()"]
-  fbf3de3f_ed6d_3fdb_763a_6b4bbbbac380 -->|calls| 58994998_9b76_7932_23dd_b8a8db5d7781
-  style fbf3de3f_ed6d_3fdb_763a_6b4bbbbac380 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a09e0013_5efb_56f8_482e_07b88e13ff83["TestFormMultipartBindingBindTwoFiles()"]
+  d59b265d_e548_ab9a_2acc_5029f1ff9c8a["createRequestMultipartFiles()"]
+  a09e0013_5efb_56f8_482e_07b88e13ff83 -->|calls| d59b265d_e548_ab9a_2acc_5029f1ff9c8a
+  df6a8219_52ac_c513_40da_ebcc9d3da01d["assertMultipartFileHeader()"]
+  a09e0013_5efb_56f8_482e_07b88e13ff83 -->|calls| df6a8219_52ac_c513_40da_ebcc9d3da01d
+  style a09e0013_5efb_56f8_482e_07b88e13ff83 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-multipart-form-mapping-test-go-testformmultipartbindingbindtwofiles"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"fbf3de3f:ed6d:3fdb:763a:6b4bbbbac380","label":"TestFormMultipartBindingBindTwoFiles","type":"Function","slug":"fn-multipart-form-mapping-test-go-testformmultipartbindingbindtwofiles","lc":28,"lang":"go","cc":2},{"id":"3b3ef13f:d085:ee62:9fb2:521d72f4ccd3","label":"createRequestMultipartFiles","type":"Function","slug":"fn-multipart-form-mapping-test-go-createrequestmultipartfiles","lc":21,"lang":"go","cbc":3},{"id":"58994998:9b76:7932:23dd:b8a8db5d7781","label":"assertMultipartFileHeader","type":"Function","slug":"fn-multipart-form-mapping-test-go-assertmultipartfileheader","lc":14,"lang":"go","cbc":2},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:FormMapping","label":"FormMapping","type":"Subdomain","slug":"subdomain-formmapping"}],"edges":[{"source":"fbf3de3f:ed6d:3fdb:763a:6b4bbbbac380","target":"3b3ef13f:d085:ee62:9fb2:521d72f4ccd3","type":"calls"},{"source":"fbf3de3f:ed6d:3fdb:763a:6b4bbbbac380","target":"58994998:9b76:7932:23dd:b8a8db5d7781","type":"calls"},{"source":"fbf3de3f:ed6d:3fdb:763a:6b4bbbbac380","target":"domain:Binding","type":"belongsTo"},{"source":"fbf3de3f:ed6d:3fdb:763a:6b4bbbbac380","target":"subdomain:Binding:FormMapping","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a09e0013:5efb:56f8:482e:07b88e13ff83","label":"TestFormMultipartBindingBindTwoFiles","type":"Function","slug":"fn-multipart-form-mapping-test-go-testformmultipartbindingbindtwofiles","lc":28,"lang":"go","cc":2},{"id":"d59b265d:e548:ab9a:2acc:5029f1ff9c8a","label":"createRequestMultipartFiles","type":"Function","slug":"fn-multipart-form-mapping-test-go-createrequestmultipartfiles","lc":21,"lang":"go","cbc":3},{"id":"df6a8219:52ac:c513:40da:ebcc9d3da01d","label":"assertMultipartFileHeader","type":"Function","slug":"fn-multipart-form-mapping-test-go-assertmultipartfileheader","lc":14,"lang":"go","cbc":2},{"id":"domain:Binding","label":"Binding","type":"Domain","slug":"domain-binding"},{"id":"subdomain:Binding:Multipart","label":"Multipart","type":"Subdomain","slug":"subdomain-multipart"}],"edges":[{"source":"a09e0013:5efb:56f8:482e:07b88e13ff83","target":"d59b265d:e548:ab9a:2acc:5029f1ff9c8a","type":"calls"},{"source":"a09e0013:5efb:56f8:482e:07b88e13ff83","target":"df6a8219:52ac:c513:40da:ebcc9d3da01d","type":"calls"},{"source":"a09e0013:5efb:56f8:482e:07b88e13ff83","target":"domain:Binding","type":"belongsTo"},{"source":"a09e0013:5efb:56f8:482e:07b88e13ff83","target":"subdomain:Binding:Multipart","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -980,7 +980,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-formmapping.html">FormMapping</a></li></ul>
+      <ul><li><a href="/subdomain-multipart.html">Multipart</a></li></ul>
     </div>
     
 

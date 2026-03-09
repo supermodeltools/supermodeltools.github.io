@@ -869,7 +869,7 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/go.html" class="pill pill-blue">go</a>
-        <a href="/domain/engine.html" class="pill pill-green">Engine</a>
+        <a href="/domain/gincore.html" class="pill pill-green">GinCore</a>
         <a href="/subdomain/context.html" class="pill pill-orange">Context</a>
         
         
@@ -894,10 +894,10 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"Engine","slug":"domain-engine"},"entity":{"name":"GetPostFormArray","slug":"fn-context-go-getpostformarray","type":"Function"},"subdomain":{"name":"Context","slug":"subdomain-context"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GinCore","slug":"domain-gincore"},"entity":{"name":"GetPostFormArray","slug":"fn-context-go-getpostformarray","type":"Function"},"subdomain":{"name":"Context","slug":"subdomain-context"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/engine.html">Engine</a><span class="arch-sep">&rarr;</span>
+            <a href="/gincore.html">GinCore</a><span class="arch-sep">&rarr;</span>
             <a href="/context.html">Context</a><span class="arch-sep">&rarr;</span>
             <span>GetPostFormArray() — gin Function Reference</span>
           </div>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  2a8b9e5f_722f_cd18_c9ea_e878139d611f["GetPostFormArray()"]
-  a3f805dc_c948_729e_6a99_4504062e4844["GetPostForm()"]
-  a3f805dc_c948_729e_6a99_4504062e4844 -->|calls| 2a8b9e5f_722f_cd18_c9ea_e878139d611f
-  8af20d9f_9f8f_a967_114b_cbafcf9a4b67["PostFormArray()"]
-  8af20d9f_9f8f_a967_114b_cbafcf9a4b67 -->|calls| 2a8b9e5f_722f_cd18_c9ea_e878139d611f
-  3c029076_f742_dedf_00a9_08e3903347ce["initFormCache()"]
-  2a8b9e5f_722f_cd18_c9ea_e878139d611f -->|calls| 3c029076_f742_dedf_00a9_08e3903347ce
-  style 2a8b9e5f_722f_cd18_c9ea_e878139d611f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  601545a8_7f17_b0d6_affd_9dd1e3a7509b["GetPostFormArray()"]
+  3f105da6_9de3_999c_abe9_42e43c6578bd["GetPostForm()"]
+  3f105da6_9de3_999c_abe9_42e43c6578bd -->|calls| 601545a8_7f17_b0d6_affd_9dd1e3a7509b
+  fb5d8627_9bcc_07d6_4aed_68e47594c916["PostFormArray()"]
+  fb5d8627_9bcc_07d6_4aed_68e47594c916 -->|calls| 601545a8_7f17_b0d6_affd_9dd1e3a7509b
+  78ce05aa_e2eb_fd51_ce7b_2fea1631ac00["initFormCache()"]
+  601545a8_7f17_b0d6_affd_9dd1e3a7509b -->|calls| 78ce05aa_e2eb_fd51_ce7b_2fea1631ac00
+  style 601545a8_7f17_b0d6_affd_9dd1e3a7509b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-context-go-getpostformarray"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"2a8b9e5f:722f:cd18:c9ea:e878139d611f","label":"GetPostFormArray","type":"Function","slug":"fn-context-go-getpostformarray","lc":5,"lang":"go","cc":1,"cbc":2},{"id":"3c029076:f742:dedf:00a9:08e3903347ce","label":"initFormCache","type":"Function","slug":"fn-context-go-initformcache","lc":12,"lang":"go","cbc":2},{"id":"a3f805dc:c948:729e:6a99:4504062e4844","label":"GetPostForm","type":"Function","slug":"fn-context-go-getpostform","lc":6,"lang":"go","cc":1,"cbc":2},{"id":"8af20d9f:9f8f:a967:114b:cbafcf9a4b67","label":"PostFormArray","type":"Function","slug":"fn-context-go-postformarray","lc":4,"lang":"go","cc":1},{"id":"domain:Engine","label":"Engine","type":"Domain","slug":"domain-engine"},{"id":"subdomain:Engine:Context","label":"Context","type":"Subdomain","slug":"subdomain-context"}],"edges":[{"source":"2a8b9e5f:722f:cd18:c9ea:e878139d611f","target":"3c029076:f742:dedf:00a9:08e3903347ce","type":"calls"},{"source":"a3f805dc:c948:729e:6a99:4504062e4844","target":"2a8b9e5f:722f:cd18:c9ea:e878139d611f","type":"calls"},{"source":"8af20d9f:9f8f:a967:114b:cbafcf9a4b67","target":"2a8b9e5f:722f:cd18:c9ea:e878139d611f","type":"calls"},{"source":"2a8b9e5f:722f:cd18:c9ea:e878139d611f","target":"domain:Engine","type":"belongsTo"},{"source":"2a8b9e5f:722f:cd18:c9ea:e878139d611f","target":"subdomain:Engine:Context","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"601545a8:7f17:b0d6:affd:9dd1e3a7509b","label":"GetPostFormArray","type":"Function","slug":"fn-context-go-getpostformarray","lc":5,"lang":"go","cc":1,"cbc":2},{"id":"78ce05aa:e2eb:fd51:ce7b:2fea1631ac00","label":"initFormCache","type":"Function","slug":"fn-context-go-initformcache","lc":12,"lang":"go","cbc":2},{"id":"3f105da6:9de3:999c:abe9:42e43c6578bd","label":"GetPostForm","type":"Function","slug":"fn-context-go-getpostform","lc":6,"lang":"go","cc":1,"cbc":2},{"id":"fb5d8627:9bcc:07d6:4aed:68e47594c916","label":"PostFormArray","type":"Function","slug":"fn-context-go-postformarray","lc":4,"lang":"go","cc":1},{"id":"domain:GinCore","label":"GinCore","type":"Domain","slug":"domain-gincore"},{"id":"subdomain:GinCore:Context","label":"Context","type":"Subdomain","slug":"subdomain-context"}],"edges":[{"source":"601545a8:7f17:b0d6:affd:9dd1e3a7509b","target":"78ce05aa:e2eb:fd51:ce7b:2fea1631ac00","type":"calls"},{"source":"3f105da6:9de3:999c:abe9:42e43c6578bd","target":"601545a8:7f17:b0d6:affd:9dd1e3a7509b","type":"calls"},{"source":"fb5d8627:9bcc:07d6:4aed:68e47594c916","target":"601545a8:7f17:b0d6:affd:9dd1e3a7509b","type":"calls"},{"source":"601545a8:7f17:b0d6:affd:9dd1e3a7509b","target":"domain:GinCore","type":"belongsTo"},{"source":"601545a8:7f17:b0d6:affd:9dd1e3a7509b","target":"subdomain:GinCore:Context","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -952,7 +952,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-engine.html">Engine</a></li></ul>
+      <ul><li><a href="/domain-gincore.html">GinCore</a></li></ul>
     </div>
     
 
