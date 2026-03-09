@@ -51,20 +51,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: read
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -72,15 +63,29 @@ jobs:
         id: docs
         with:
           supermodel-api-key: ${{ secrets.SUPERMODEL_API_KEY }}
+          base-url: https://repos.supermodeltools.com
 
-      - uses: actions/configure-pages@v5
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./arch-docs-output
-
-      - uses: actions/deploy-pages@v4
-        id: deploy'
+      - name: Deploy to central site
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          REPO_NAME: ${{ github.event.repository.name }}
+        run: |
+          git config --global user.name "supermodel-bot"
+          git config --global user.email "bot@supermodeltools.com"
+          git clone https://x-access-token:${BOT_TOKEN}@github.com/GraphTechnologyDevelopers/graphtechnologydevelopers.github.io.git central-site
+          rm -rf central-site/site/${REPO_NAME}
+          mkdir -p central-site/site/${REPO_NAME}
+          cp -r arch-docs-output/. central-site/site/${REPO_NAME}/
+          cd central-site
+          git add site/${REPO_NAME}/
+          git diff --staged --quiet && echo "No changes" && exit 0
+          git commit -m "Deploy arch-docs for ${REPO_NAME}"
+          for i in 1 2 3 4 5; do
+            git push && break
+            echo "Push failed, retrying in ${i}0s..."
+            sleep $((i * 10))
+            git pull --rebase origin main
+          done'
 
 for UPSTREAM in "${REPOS[@]}"; do
   REPO_NAME="${UPSTREAM##*/}"

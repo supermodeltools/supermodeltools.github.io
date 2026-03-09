@@ -3,7 +3,13 @@ name: Build Index
 on:
   push:
     branches: [main]
-    paths: [repos.yaml, generate-index.go, go.mod, go.sum, .github/workflows/build-index.yml]
+    paths:
+      - repos.yaml
+      - generate-index.go
+      - go.mod
+      - go.sum
+      - .github/workflows/build-index.yml
+      - site/**
   workflow_dispatch:
 
 permissions:
