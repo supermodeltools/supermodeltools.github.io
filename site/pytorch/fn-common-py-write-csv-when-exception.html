@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
         <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/resultreporting.html" class="pill pill-orange">ResultReporting</a>
+        <a href="/subdomain/microbenchmarks.html" class="pill pill-orange">Microbenchmarks</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"write_csv_when_exception","slug":"fn-common-py-write-csv-when-exception","type":"Function"},"subdomain":{"name":"ResultReporting","slug":"subdomain-resultreporting"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"write_csv_when_exception","slug":"fn-common-py-write-csv-when-exception","type":"Function"},"subdomain":{"name":"Microbenchmarks","slug":"subdomain-microbenchmarks"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/resultreporting.html">ResultReporting</a><span class="arch-sep">&rarr;</span>
+            <a href="/microbenchmarks.html">Microbenchmarks</a><span class="arch-sep">&rarr;</span>
             <span>write_csv_when_exception() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  e09be26b_1c26_6a04_ba2b_663df1bd7a27["write_csv_when_exception()"]
-  204eb07a_b91b_2cc7_d56e_8992251c6fe2["run_performance_test_non_alternate()"]
-  204eb07a_b91b_2cc7_d56e_8992251c6fe2 -->|calls| e09be26b_1c26_6a04_ba2b_663df1bd7a27
-  e6d48ffd_f459_3906_79d1_00adaa82d169["run_performance_test()"]
-  e6d48ffd_f459_3906_79d1_00adaa82d169 -->|calls| e09be26b_1c26_6a04_ba2b_663df1bd7a27
-  0c353b9a_7a4c_185e_bb39_3780c88d9223["run()"]
-  0c353b9a_7a4c_185e_bb39_3780c88d9223 -->|calls| e09be26b_1c26_6a04_ba2b_663df1bd7a27
-  989cd917_4a75_5941_44ea_0550065aacfc["write_outputs()"]
-  e09be26b_1c26_6a04_ba2b_663df1bd7a27 -->|calls| 989cd917_4a75_5941_44ea_0550065aacfc
-  style e09be26b_1c26_6a04_ba2b_663df1bd7a27 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  b8976e90_6129_dc37_f6b1_c3d7c2cc6b5e["write_csv_when_exception()"]
+  06004a1a_4473_0196_1025_6edc3956b15e["run_performance_test_non_alternate()"]
+  06004a1a_4473_0196_1025_6edc3956b15e -->|calls| b8976e90_6129_dc37_f6b1_c3d7c2cc6b5e
+  8b2dbca5_38c1_1ef3_3295_59470789cbe4["run_performance_test()"]
+  8b2dbca5_38c1_1ef3_3295_59470789cbe4 -->|calls| b8976e90_6129_dc37_f6b1_c3d7c2cc6b5e
+  63c7deff_7896_c47c_ba46_c9fb2be3cc90["run()"]
+  63c7deff_7896_c47c_ba46_c9fb2be3cc90 -->|calls| b8976e90_6129_dc37_f6b1_c3d7c2cc6b5e
+  deeb306f_80ad_30d1_ae91_461b0e22b876["write_outputs()"]
+  b8976e90_6129_dc37_f6b1_c3d7c2cc6b5e -->|calls| deeb306f_80ad_30d1_ae91_461b0e22b876
+  style b8976e90_6129_dc37_f6b1_c3d7c2cc6b5e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-common-py-write-csv-when-exception"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"e09be26b:1c26:6a04:ba2b:663df1bd7a27","label":"write_csv_when_exception","type":"Function","slug":"fn-common-py-write-csv-when-exception","lc":16,"lang":"python","cc":1,"cbc":3},{"id":"989cd917:4a75:5941:44ea:0550065aacfc","label":"write_outputs","type":"Function","slug":"fn-common-py-write-outputs","lc":11,"lang":"python","cc":2,"cbc":11},{"id":"204eb07a:b91b:2cc7:d56e:8992251c6fe2","label":"run_performance_test_non_alternate","type":"Function","slug":"fn-common-py-run-performance-test-non-alternate","lc":167,"lang":"python","cc":12,"cbc":1},{"id":"e6d48ffd:f459:3906:79d1:00adaa82d169","label":"run_performance_test","type":"Function","slug":"fn-common-py-run-performance-test","lc":202,"lang":"python","cc":11,"cbc":1},{"id":"0c353b9a:7a4c:185e:bb39:3780c88d9223","label":"run","type":"Function","slug":"fn-common-py-run","lc":700,"lang":"python","cc":16,"cbc":4},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:ResultReporting","label":"ResultReporting","type":"Subdomain","slug":"subdomain-resultreporting"}],"edges":[{"source":"e09be26b:1c26:6a04:ba2b:663df1bd7a27","target":"989cd917:4a75:5941:44ea:0550065aacfc","type":"calls"},{"source":"204eb07a:b91b:2cc7:d56e:8992251c6fe2","target":"e09be26b:1c26:6a04:ba2b:663df1bd7a27","type":"calls"},{"source":"e6d48ffd:f459:3906:79d1:00adaa82d169","target":"e09be26b:1c26:6a04:ba2b:663df1bd7a27","type":"calls"},{"source":"0c353b9a:7a4c:185e:bb39:3780c88d9223","target":"e09be26b:1c26:6a04:ba2b:663df1bd7a27","type":"calls"},{"source":"e09be26b:1c26:6a04:ba2b:663df1bd7a27","target":"domain:DynamoBench","type":"belongsTo"},{"source":"e09be26b:1c26:6a04:ba2b:663df1bd7a27","target":"subdomain:DynamoBench:ResultReporting","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"b8976e90:6129:dc37:f6b1:c3d7c2cc6b5e","label":"write_csv_when_exception","type":"Function","slug":"fn-common-py-write-csv-when-exception","lc":16,"lang":"python","cc":1,"cbc":3},{"id":"deeb306f:80ad:30d1:ae91:461b0e22b876","label":"write_outputs","type":"Function","slug":"fn-common-py-write-outputs","lc":11,"lang":"python","cc":2,"cbc":11},{"id":"06004a1a:4473:0196:1025:6edc3956b15e","label":"run_performance_test_non_alternate","type":"Function","slug":"fn-common-py-run-performance-test-non-alternate","lc":167,"lang":"python","cc":12,"cbc":1},{"id":"8b2dbca5:38c1:1ef3:3295:59470789cbe4","label":"run_performance_test","type":"Function","slug":"fn-common-py-run-performance-test","lc":202,"lang":"python","cc":11,"cbc":1},{"id":"63c7deff:7896:c47c:ba46:c9fb2be3cc90","label":"run","type":"Function","slug":"fn-common-py-run","lc":700,"lang":"python","cc":16,"cbc":4},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:Microbenchmarks","label":"Microbenchmarks","type":"Subdomain","slug":"subdomain-microbenchmarks"}],"edges":[{"source":"b8976e90:6129:dc37:f6b1:c3d7c2cc6b5e","target":"deeb306f:80ad:30d1:ae91:461b0e22b876","type":"calls"},{"source":"06004a1a:4473:0196:1025:6edc3956b15e","target":"b8976e90:6129:dc37:f6b1:c3d7c2cc6b5e","type":"calls"},{"source":"8b2dbca5:38c1:1ef3:3295:59470789cbe4","target":"b8976e90:6129:dc37:f6b1:c3d7c2cc6b5e","type":"calls"},{"source":"63c7deff:7896:c47c:ba46:c9fb2be3cc90","target":"b8976e90:6129:dc37:f6b1:c3d7c2cc6b5e","type":"calls"},{"source":"b8976e90:6129:dc37:f6b1:c3d7c2cc6b5e","target":"domain:DynamoBench","type":"belongsTo"},{"source":"b8976e90:6129:dc37:f6b1:c3d7c2cc6b5e","target":"subdomain:DynamoBench:Microbenchmarks","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -972,7 +972,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-resultreporting.html">ResultReporting</a></li></ul>
+      <ul><li><a href="/subdomain-microbenchmarks.html">Microbenchmarks</a></li></ul>
     </div>
     
 

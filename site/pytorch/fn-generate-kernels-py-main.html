@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/atennative.html" class="pill pill-green">AtenNative</a>
-        <a href="/subdomain/quantizedkernels.html" class="pill pill-orange">QuantizedKernels</a>
+        <a href="/domain/aten.html" class="pill pill-green">ATen</a>
+        <a href="/subdomain/dispatcher.html" class="pill pill-orange">Dispatcher</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AtenNative","slug":"domain-atennative"},"entity":{"name":"main","slug":"fn-generate-kernels-py-main","type":"Function"},"subdomain":{"name":"QuantizedKernels","slug":"subdomain-quantizedkernels"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATen","slug":"domain-aten"},"entity":{"name":"main","slug":"fn-generate-kernels-py-main","type":"Function"},"subdomain":{"name":"Dispatcher","slug":"subdomain-dispatcher"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/atennative.html">AtenNative</a><span class="arch-sep">&rarr;</span>
-            <a href="/quantizedkernels.html">QuantizedKernels</a><span class="arch-sep">&rarr;</span>
+            <a href="/aten.html">ATen</a><span class="arch-sep">&rarr;</span>
+            <a href="/dispatcher.html">Dispatcher</a><span class="arch-sep">&rarr;</span>
             <span>main() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3f898528_79ed_027e_4d3f_4f29fb86b0c7["main()"]
-  93b47d64_6f96_7e3c_2b04_878728fdc3b4["parser()"]
-  93b47d64_6f96_7e3c_2b04_878728fdc3b4 -->|calls| 3f898528_79ed_027e_4d3f_4f29fb86b0c7
-  0f534b44_c720_9a82_38ce_84eef6b5d54a["write_decl_impl()"]
-  3f898528_79ed_027e_4d3f_4f29fb86b0c7 -->|calls| 0f534b44_c720_9a82_38ce_84eef6b5d54a
-  14132560_894b_2756_734a_c5799e78cc4a["get_all()"]
-  3f898528_79ed_027e_4d3f_4f29fb86b0c7 -->|calls| 14132560_894b_2756_734a_c5799e78cc4a
-  style 3f898528_79ed_027e_4d3f_4f29fb86b0c7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  ca8215eb_8724_a8b1_4b47_1628f42bb4b4["main()"]
+  dee2ad86_45b7_8a0e_fbf8_2c18c61ac799["parser()"]
+  dee2ad86_45b7_8a0e_fbf8_2c18c61ac799 -->|calls| ca8215eb_8724_a8b1_4b47_1628f42bb4b4
+  5875cd87_8465_69a8_4cc6_f3efd28486e7["write_decl_impl()"]
+  ca8215eb_8724_a8b1_4b47_1628f42bb4b4 -->|calls| 5875cd87_8465_69a8_4cc6_f3efd28486e7
+  1934fec3_b2ae_941a_202a_1d177429ba22["get_all()"]
+  ca8215eb_8724_a8b1_4b47_1628f42bb4b4 -->|calls| 1934fec3_b2ae_941a_202a_1d177429ba22
+  style ca8215eb_8724_a8b1_4b47_1628f42bb4b4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-generate-kernels-py-main"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3f898528:79ed:027e:4d3f:4f29fb86b0c7","label":"main","type":"Function","slug":"fn-generate-kernels-py-main","lc":17,"lang":"python","cc":2,"cbc":1},{"id":"0f534b44:c720:9a82:38ce:84eef6b5d54a","label":"write_decl_impl","type":"Function","slug":"fn-generate-kernels-py-write-decl-impl","lc":73,"lang":"python","cbc":1},{"id":"14132560:894b:2756:734a:c5799e78cc4a","label":"get_all","type":"Function","slug":"fn-generate-kernels-py-get-all","lc":27,"lang":"python","cc":1,"cbc":2},{"id":"93b47d64:6f96:7e3c:2b04:878728fdc3b4","label":"parser","type":"Function","slug":"fn-generate-kernels-py-parser","lc":14,"lang":"python","cc":1},{"id":"domain:AtenNative","label":"AtenNative","type":"Domain","slug":"domain-atennative"},{"id":"subdomain:AtenNative:QuantizedKernels","label":"QuantizedKernels","type":"Subdomain","slug":"subdomain-quantizedkernels"}],"edges":[{"source":"3f898528:79ed:027e:4d3f:4f29fb86b0c7","target":"0f534b44:c720:9a82:38ce:84eef6b5d54a","type":"calls"},{"source":"3f898528:79ed:027e:4d3f:4f29fb86b0c7","target":"14132560:894b:2756:734a:c5799e78cc4a","type":"calls"},{"source":"93b47d64:6f96:7e3c:2b04:878728fdc3b4","target":"3f898528:79ed:027e:4d3f:4f29fb86b0c7","type":"calls"},{"source":"3f898528:79ed:027e:4d3f:4f29fb86b0c7","target":"domain:AtenNative","type":"belongsTo"},{"source":"3f898528:79ed:027e:4d3f:4f29fb86b0c7","target":"subdomain:AtenNative:QuantizedKernels","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"ca8215eb:8724:a8b1:4b47:1628f42bb4b4","label":"main","type":"Function","slug":"fn-generate-kernels-py-main","lc":17,"lang":"python","cc":2,"cbc":1},{"id":"5875cd87:8465:69a8:4cc6:f3efd28486e7","label":"write_decl_impl","type":"Function","slug":"fn-generate-kernels-py-write-decl-impl","lc":73,"lang":"python","cbc":1},{"id":"1934fec3:b2ae:941a:202a:1d177429ba22","label":"get_all","type":"Function","slug":"fn-generate-kernels-py-get-all","lc":27,"lang":"python","cc":1,"cbc":2},{"id":"dee2ad86:45b7:8a0e:fbf8:2c18c61ac799","label":"parser","type":"Function","slug":"fn-generate-kernels-py-parser","lc":14,"lang":"python","cc":1},{"id":"domain:ATen","label":"ATen","type":"Domain","slug":"domain-aten"},{"id":"subdomain:ATen:Dispatcher","label":"Dispatcher","type":"Subdomain","slug":"subdomain-dispatcher"}],"edges":[{"source":"ca8215eb:8724:a8b1:4b47:1628f42bb4b4","target":"5875cd87:8465:69a8:4cc6:f3efd28486e7","type":"calls"},{"source":"ca8215eb:8724:a8b1:4b47:1628f42bb4b4","target":"1934fec3:b2ae:941a:202a:1d177429ba22","type":"calls"},{"source":"dee2ad86:45b7:8a0e:fbf8:2c18c61ac799","target":"ca8215eb:8724:a8b1:4b47:1628f42bb4b4","type":"calls"},{"source":"ca8215eb:8724:a8b1:4b47:1628f42bb4b4","target":"domain:ATen","type":"belongsTo"},{"source":"ca8215eb:8724:a8b1:4b47:1628f42bb4b4","target":"subdomain:ATen:Dispatcher","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -964,14 +964,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-atennative.html">AtenNative</a></li></ul>
+      <ul><li><a href="/domain-aten.html">ATen</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-quantizedkernels.html">QuantizedKernels</a></li></ul>
+      <ul><li><a href="/subdomain-dispatcher.html">Dispatcher</a></li></ul>
     </div>
     
 

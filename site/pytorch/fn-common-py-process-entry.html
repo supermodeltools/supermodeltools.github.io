@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
         <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/resultreporting.html" class="pill pill-orange">ResultReporting</a>
+        <a href="/subdomain/backendeval.html" class="pill pill-orange">BackendEval</a>
         
         
         <span class="pill">calls 3</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"process_entry","slug":"fn-common-py-process-entry","type":"Function"},"subdomain":{"name":"ResultReporting","slug":"subdomain-resultreporting"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"process_entry","slug":"fn-common-py-process-entry","type":"Function"},"subdomain":{"name":"BackendEval","slug":"subdomain-backendeval"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/resultreporting.html">ResultReporting</a><span class="arch-sep">&rarr;</span>
+            <a href="/backendeval.html">BackendEval</a><span class="arch-sep">&rarr;</span>
             <span>process_entry() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  88eefcbc_7140_7000_42c3_74067a911f1b["process_entry()"]
-  4437651d_bfa9_f51f_8b48_3f1508d73761["main()"]
-  4437651d_bfa9_f51f_8b48_3f1508d73761 -->|calls| 88eefcbc_7140_7000_42c3_74067a911f1b
-  7bdc48ef_ad34_2b65_6810_a581abdb4014["maybe_init_distributed()"]
-  88eefcbc_7140_7000_42c3_74067a911f1b -->|calls| 7bdc48ef_ad34_2b65_6810_a581abdb4014
-  0c353b9a_7a4c_185e_bb39_3780c88d9223["run()"]
-  88eefcbc_7140_7000_42c3_74067a911f1b -->|calls| 0c353b9a_7a4c_185e_bb39_3780c88d9223
-  7106cb92_6678_2d2e_4397_cabf5dcb8cee["process_caching_precompile()"]
-  88eefcbc_7140_7000_42c3_74067a911f1b -->|calls| 7106cb92_6678_2d2e_4397_cabf5dcb8cee
-  style 88eefcbc_7140_7000_42c3_74067a911f1b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  22546fd8_2718_6c69_fbe7_b0dc375fe1a6["process_entry()"]
+  8ae1090a_bfd8_3ae6_7780_fe15bcfa730d["main()"]
+  8ae1090a_bfd8_3ae6_7780_fe15bcfa730d -->|calls| 22546fd8_2718_6c69_fbe7_b0dc375fe1a6
+  19798e9e_eeb7_35c0_2572_a84d200cfcc1["maybe_init_distributed()"]
+  22546fd8_2718_6c69_fbe7_b0dc375fe1a6 -->|calls| 19798e9e_eeb7_35c0_2572_a84d200cfcc1
+  63c7deff_7896_c47c_ba46_c9fb2be3cc90["run()"]
+  22546fd8_2718_6c69_fbe7_b0dc375fe1a6 -->|calls| 63c7deff_7896_c47c_ba46_c9fb2be3cc90
+  515baa1f_7681_9adc_105f_16d27b0d70f2["process_caching_precompile()"]
+  22546fd8_2718_6c69_fbe7_b0dc375fe1a6 -->|calls| 515baa1f_7681_9adc_105f_16d27b0d70f2
+  style 22546fd8_2718_6c69_fbe7_b0dc375fe1a6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-common-py-process-entry"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"88eefcbc:7140:7000:42c3:74067a911f1b","label":"process_entry","type":"Function","slug":"fn-common-py-process-entry","lc":12,"lang":"python","cc":3,"cbc":1},{"id":"7bdc48ef:ad34:2b65:6810:a581abdb4014","label":"maybe_init_distributed","type":"Function","slug":"fn-common-py-maybe-init-distributed","lc":13,"lang":"python","cbc":1},{"id":"0c353b9a:7a4c:185e:bb39:3780c88d9223","label":"run","type":"Function","slug":"fn-common-py-run","lc":700,"lang":"python","cc":16,"cbc":4},{"id":"7106cb92:6678:2d2e:4397:cabf5dcb8cee","label":"process_caching_precompile","type":"Function","slug":"fn-common-py-process-caching-precompile","lc":14,"lang":"python","cbc":1},{"id":"4437651d:bfa9:f51f:8b48:3f1508d73761","label":"main","type":"Function","slug":"fn-common-py-main","lc":60,"lang":"python","cc":5,"cbc":1},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:ResultReporting","label":"ResultReporting","type":"Subdomain","slug":"subdomain-resultreporting"}],"edges":[{"source":"88eefcbc:7140:7000:42c3:74067a911f1b","target":"7bdc48ef:ad34:2b65:6810:a581abdb4014","type":"calls"},{"source":"88eefcbc:7140:7000:42c3:74067a911f1b","target":"0c353b9a:7a4c:185e:bb39:3780c88d9223","type":"calls"},{"source":"88eefcbc:7140:7000:42c3:74067a911f1b","target":"7106cb92:6678:2d2e:4397:cabf5dcb8cee","type":"calls"},{"source":"4437651d:bfa9:f51f:8b48:3f1508d73761","target":"88eefcbc:7140:7000:42c3:74067a911f1b","type":"calls"},{"source":"88eefcbc:7140:7000:42c3:74067a911f1b","target":"domain:DynamoBench","type":"belongsTo"},{"source":"88eefcbc:7140:7000:42c3:74067a911f1b","target":"subdomain:DynamoBench:ResultReporting","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"22546fd8:2718:6c69:fbe7:b0dc375fe1a6","label":"process_entry","type":"Function","slug":"fn-common-py-process-entry","lc":12,"lang":"python","cc":3,"cbc":1},{"id":"19798e9e:eeb7:35c0:2572:a84d200cfcc1","label":"maybe_init_distributed","type":"Function","slug":"fn-common-py-maybe-init-distributed","lc":13,"lang":"python","cbc":1},{"id":"63c7deff:7896:c47c:ba46:c9fb2be3cc90","label":"run","type":"Function","slug":"fn-common-py-run","lc":700,"lang":"python","cc":16,"cbc":4},{"id":"515baa1f:7681:9adc:105f:16d27b0d70f2","label":"process_caching_precompile","type":"Function","slug":"fn-common-py-process-caching-precompile","lc":14,"lang":"python","cbc":1},{"id":"8ae1090a:bfd8:3ae6:7780:fe15bcfa730d","label":"main","type":"Function","slug":"fn-common-py-main","lc":60,"lang":"python","cc":5,"cbc":1},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:BackendEval","label":"BackendEval","type":"Subdomain","slug":"subdomain-backendeval"}],"edges":[{"source":"22546fd8:2718:6c69:fbe7:b0dc375fe1a6","target":"19798e9e:eeb7:35c0:2572:a84d200cfcc1","type":"calls"},{"source":"22546fd8:2718:6c69:fbe7:b0dc375fe1a6","target":"63c7deff:7896:c47c:ba46:c9fb2be3cc90","type":"calls"},{"source":"22546fd8:2718:6c69:fbe7:b0dc375fe1a6","target":"515baa1f:7681:9adc:105f:16d27b0d70f2","type":"calls"},{"source":"8ae1090a:bfd8:3ae6:7780:fe15bcfa730d","target":"22546fd8:2718:6c69:fbe7:b0dc375fe1a6","type":"calls"},{"source":"22546fd8:2718:6c69:fbe7:b0dc375fe1a6","target":"domain:DynamoBench","type":"belongsTo"},{"source":"22546fd8:2718:6c69:fbe7:b0dc375fe1a6","target":"subdomain:DynamoBench:BackendEval","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -968,7 +968,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-resultreporting.html">ResultReporting</a></li></ul>
+      <ul><li><a href="/subdomain-backendeval.html">BackendEval</a></li></ul>
     </div>
     
 

@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
         <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/microbenchmarking.html" class="pill pill-orange">Microbenchmarking</a>
+        <a href="/subdomain/microbenchmarks.html" class="pill pill-orange">Microbenchmarks</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"time_with_torch_timer","slug":"fn-benchmark-helper-py-time-with-torch-timer","type":"Function"},"subdomain":{"name":"Microbenchmarking","slug":"subdomain-microbenchmarking"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"time_with_torch_timer","slug":"fn-benchmark-helper-py-time-with-torch-timer","type":"Function"},"subdomain":{"name":"Microbenchmarks","slug":"subdomain-microbenchmarks"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/microbenchmarking.html">Microbenchmarking</a><span class="arch-sep">&rarr;</span>
+            <a href="/microbenchmarks.html">Microbenchmarks</a><span class="arch-sep">&rarr;</span>
             <span>time_with_torch_timer() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  e5cf2c18_aac9_bf7b_ffb9_2203730c72fc["time_with_torch_timer()"]
-  67270947_6b99_ab97_7dcb_8c571ee334b6["test_total_time()"]
-  67270947_6b99_ab97_7dcb_8c571ee334b6 -->|calls| e5cf2c18_aac9_bf7b_ffb9_2203730c72fc
-  9c58d7ff_92a6_52ae_05d8_124b3c1e9689["test_total_time()"]
-  9c58d7ff_92a6_52ae_05d8_124b3c1e9689 -->|calls| e5cf2c18_aac9_bf7b_ffb9_2203730c72fc
-  971ef9a4_1c0c_6058_629e_c6d75297f1a8["test_total_time()"]
-  971ef9a4_1c0c_6058_629e_c6d75297f1a8 -->|calls| e5cf2c18_aac9_bf7b_ffb9_2203730c72fc
-  6916a25f_8177_916f_a580_ad7587c5572a["a_shapes()"]
-  6916a25f_8177_916f_a580_ad7587c5572a -->|calls| e5cf2c18_aac9_bf7b_ffb9_2203730c72fc
-  style e5cf2c18_aac9_bf7b_ffb9_2203730c72fc fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  1df8b28f_d301_0790_11ab_449796641213["time_with_torch_timer()"]
+  1bc759cf_ffd8_61a1_3f3c_6f75579b1873["test_total_time()"]
+  1bc759cf_ffd8_61a1_3f3c_6f75579b1873 -->|calls| 1df8b28f_d301_0790_11ab_449796641213
+  3a8a8148_d231_05a2_3f33_9e7a42b0b557["test_total_time()"]
+  3a8a8148_d231_05a2_3f33_9e7a42b0b557 -->|calls| 1df8b28f_d301_0790_11ab_449796641213
+  2292e4cb_8846_3700_9382_7b44a2c6b65b["test_total_time()"]
+  2292e4cb_8846_3700_9382_7b44a2c6b65b -->|calls| 1df8b28f_d301_0790_11ab_449796641213
+  2fda11bb_83c1_994f_c140_62a34bf97ce2["a_shapes()"]
+  2fda11bb_83c1_994f_c140_62a34bf97ce2 -->|calls| 1df8b28f_d301_0790_11ab_449796641213
+  style 1df8b28f_d301_0790_11ab_449796641213 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-benchmark-helper-py-time-with-torch-timer"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"e5cf2c18:aac9:bf7b:ffb9:2203730c72fc","label":"time_with_torch_timer","type":"Function","slug":"fn-benchmark-helper-py-time-with-torch-timer","lc":10,"lang":"python","cbc":4},{"id":"67270947:6b99:ab97:7dcb:8c571ee334b6","label":"test_total_time","type":"Function","slug":"fn-inductor-bmm-py-test-total-time","lc":23,"lang":"python","cc":3,"cbc":1},{"id":"9c58d7ff:92a6:52ae:05d8:124b3c1e9689","label":"test_total_time","type":"Function","slug":"fn-inductor-cpu-atomic-py-test-total-time","lc":39,"lang":"python","cc":3,"cbc":1},{"id":"971ef9a4:1c0c:6058:629e:c6d75297f1a8","label":"test_total_time","type":"Function","slug":"fn-inductor-mm-py-test-total-time","lc":27,"lang":"python","cc":3,"cbc":1},{"id":"6916a25f:8177:916f:a580:ad7587c5572a","label":"a_shapes","type":"Function","slug":"fn-matmul-relu-py-a-shapes","lc":33,"lang":"python","cc":1},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:Microbenchmarking","label":"Microbenchmarking","type":"Subdomain","slug":"subdomain-microbenchmarking"}],"edges":[{"source":"67270947:6b99:ab97:7dcb:8c571ee334b6","target":"e5cf2c18:aac9:bf7b:ffb9:2203730c72fc","type":"calls"},{"source":"9c58d7ff:92a6:52ae:05d8:124b3c1e9689","target":"e5cf2c18:aac9:bf7b:ffb9:2203730c72fc","type":"calls"},{"source":"971ef9a4:1c0c:6058:629e:c6d75297f1a8","target":"e5cf2c18:aac9:bf7b:ffb9:2203730c72fc","type":"calls"},{"source":"6916a25f:8177:916f:a580:ad7587c5572a","target":"e5cf2c18:aac9:bf7b:ffb9:2203730c72fc","type":"calls"},{"source":"e5cf2c18:aac9:bf7b:ffb9:2203730c72fc","target":"domain:DynamoBench","type":"belongsTo"},{"source":"e5cf2c18:aac9:bf7b:ffb9:2203730c72fc","target":"subdomain:DynamoBench:Microbenchmarking","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"1df8b28f:d301:0790:11ab:449796641213","label":"time_with_torch_timer","type":"Function","slug":"fn-benchmark-helper-py-time-with-torch-timer","lc":10,"lang":"python","cbc":4},{"id":"1bc759cf:ffd8:61a1:3f3c:6f75579b1873","label":"test_total_time","type":"Function","slug":"fn-inductor-bmm-py-test-total-time","lc":23,"lang":"python","cc":3,"cbc":1},{"id":"3a8a8148:d231:05a2:3f33:9e7a42b0b557","label":"test_total_time","type":"Function","slug":"fn-inductor-cpu-atomic-py-test-total-time","lc":39,"lang":"python","cc":3,"cbc":1},{"id":"2292e4cb:8846:3700:9382:7b44a2c6b65b","label":"test_total_time","type":"Function","slug":"fn-inductor-mm-py-test-total-time","lc":27,"lang":"python","cc":3,"cbc":1},{"id":"2fda11bb:83c1:994f:c140:62a34bf97ce2","label":"a_shapes","type":"Function","slug":"fn-matmul-relu-py-a-shapes","lc":33,"lang":"python","cc":1},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:Microbenchmarks","label":"Microbenchmarks","type":"Subdomain","slug":"subdomain-microbenchmarks"}],"edges":[{"source":"1bc759cf:ffd8:61a1:3f3c:6f75579b1873","target":"1df8b28f:d301:0790:11ab:449796641213","type":"calls"},{"source":"3a8a8148:d231:05a2:3f33:9e7a42b0b557","target":"1df8b28f:d301:0790:11ab:449796641213","type":"calls"},{"source":"2292e4cb:8846:3700:9382:7b44a2c6b65b","target":"1df8b28f:d301:0790:11ab:449796641213","type":"calls"},{"source":"2fda11bb:83c1:994f:c140:62a34bf97ce2","target":"1df8b28f:d301:0790:11ab:449796641213","type":"calls"},{"source":"1df8b28f:d301:0790:11ab:449796641213","target":"domain:DynamoBench","type":"belongsTo"},{"source":"1df8b28f:d301:0790:11ab:449796641213","target":"subdomain:DynamoBench:Microbenchmarks","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -966,7 +966,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-microbenchmarking.html">Microbenchmarking</a></li></ul>
+      <ul><li><a href="/subdomain-microbenchmarks.html">Microbenchmarks</a></li></ul>
     </div>
     
 

@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
         <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/resultreporting.html" class="pill pill-orange">ResultReporting</a>
+        <a href="/subdomain/backendeval.html" class="pill pill-orange">BackendEval</a>
         
         
         <span class="pill">calls 2</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"batch_size_finder","slug":"fn-common-py-batch-size-finder","type":"Function"},"subdomain":{"name":"ResultReporting","slug":"subdomain-resultreporting"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"batch_size_finder","slug":"fn-common-py-batch-size-finder","type":"Function"},"subdomain":{"name":"BackendEval","slug":"subdomain-backendeval"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/resultreporting.html">ResultReporting</a><span class="arch-sep">&rarr;</span>
+            <a href="/backendeval.html">BackendEval</a><span class="arch-sep">&rarr;</span>
             <span>batch_size_finder() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  04be1323_ada9_cd4e_12cc_15d1724e0300["batch_size_finder()"]
-  0c353b9a_7a4c_185e_bb39_3780c88d9223["run()"]
-  0c353b9a_7a4c_185e_bb39_3780c88d9223 -->|calls| 04be1323_ada9_cd4e_12cc_15d1724e0300
-  717f638e_1a53_9119_b0ff_ccb381e57407["decay_batch_exp()"]
-  04be1323_ada9_cd4e_12cc_15d1724e0300 -->|calls| 717f638e_1a53_9119_b0ff_ccb381e57407
-  4bdfb45e_5601_40ce_bee9_154703b099d6["empty_gpu_cache()"]
-  04be1323_ada9_cd4e_12cc_15d1724e0300 -->|calls| 4bdfb45e_5601_40ce_bee9_154703b099d6
-  style 04be1323_ada9_cd4e_12cc_15d1724e0300 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  cf6cf0d3_7132_7757_2f3f_7aabfa1e5fb6["batch_size_finder()"]
+  63c7deff_7896_c47c_ba46_c9fb2be3cc90["run()"]
+  63c7deff_7896_c47c_ba46_c9fb2be3cc90 -->|calls| cf6cf0d3_7132_7757_2f3f_7aabfa1e5fb6
+  e20b4b81_2e0b_4525_8085_8e130982cd52["decay_batch_exp()"]
+  cf6cf0d3_7132_7757_2f3f_7aabfa1e5fb6 -->|calls| e20b4b81_2e0b_4525_8085_8e130982cd52
+  1b449a63_22ec_f6f4_5d15_b3f44efc8822["empty_gpu_cache()"]
+  cf6cf0d3_7132_7757_2f3f_7aabfa1e5fb6 -->|calls| 1b449a63_22ec_f6f4_5d15_b3f44efc8822
+  style cf6cf0d3_7132_7757_2f3f_7aabfa1e5fb6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-common-py-batch-size-finder"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"04be1323:ada9:cd4e:12cc:15d1724e0300","label":"batch_size_finder","type":"Function","slug":"fn-common-py-batch-size-finder","lc":18,"lang":"python","cc":2,"cbc":1},{"id":"717f638e:1a53:9119:b0ff:ccb381e57407","label":"decay_batch_exp","type":"Function","slug":"fn-common-py-decay-batch-exp","lc":7,"lang":"python","cbc":1},{"id":"4bdfb45e:5601:40ce:bee9:154703b099d6","label":"empty_gpu_cache","type":"Function","slug":"fn-common-py-empty-gpu-cache","lc":13,"lang":"python","cbc":6},{"id":"0c353b9a:7a4c:185e:bb39:3780c88d9223","label":"run","type":"Function","slug":"fn-common-py-run","lc":700,"lang":"python","cc":16,"cbc":4},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:ResultReporting","label":"ResultReporting","type":"Subdomain","slug":"subdomain-resultreporting"}],"edges":[{"source":"04be1323:ada9:cd4e:12cc:15d1724e0300","target":"717f638e:1a53:9119:b0ff:ccb381e57407","type":"calls"},{"source":"04be1323:ada9:cd4e:12cc:15d1724e0300","target":"4bdfb45e:5601:40ce:bee9:154703b099d6","type":"calls"},{"source":"0c353b9a:7a4c:185e:bb39:3780c88d9223","target":"04be1323:ada9:cd4e:12cc:15d1724e0300","type":"calls"},{"source":"04be1323:ada9:cd4e:12cc:15d1724e0300","target":"domain:DynamoBench","type":"belongsTo"},{"source":"04be1323:ada9:cd4e:12cc:15d1724e0300","target":"subdomain:DynamoBench:ResultReporting","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"cf6cf0d3:7132:7757:2f3f:7aabfa1e5fb6","label":"batch_size_finder","type":"Function","slug":"fn-common-py-batch-size-finder","lc":18,"lang":"python","cc":2,"cbc":1},{"id":"e20b4b81:2e0b:4525:8085:8e130982cd52","label":"decay_batch_exp","type":"Function","slug":"fn-common-py-decay-batch-exp","lc":7,"lang":"python","cbc":1},{"id":"1b449a63:22ec:f6f4:5d15:b3f44efc8822","label":"empty_gpu_cache","type":"Function","slug":"fn-common-py-empty-gpu-cache","lc":13,"lang":"python","cbc":6},{"id":"63c7deff:7896:c47c:ba46:c9fb2be3cc90","label":"run","type":"Function","slug":"fn-common-py-run","lc":700,"lang":"python","cc":16,"cbc":4},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:BackendEval","label":"BackendEval","type":"Subdomain","slug":"subdomain-backendeval"}],"edges":[{"source":"cf6cf0d3:7132:7757:2f3f:7aabfa1e5fb6","target":"e20b4b81:2e0b:4525:8085:8e130982cd52","type":"calls"},{"source":"cf6cf0d3:7132:7757:2f3f:7aabfa1e5fb6","target":"1b449a63:22ec:f6f4:5d15:b3f44efc8822","type":"calls"},{"source":"63c7deff:7896:c47c:ba46:c9fb2be3cc90","target":"cf6cf0d3:7132:7757:2f3f:7aabfa1e5fb6","type":"calls"},{"source":"cf6cf0d3:7132:7757:2f3f:7aabfa1e5fb6","target":"domain:DynamoBench","type":"belongsTo"},{"source":"cf6cf0d3:7132:7757:2f3f:7aabfa1e5fb6","target":"subdomain:DynamoBench:BackendEval","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -972,7 +972,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-resultreporting.html">ResultReporting</a></li></ul>
+      <ul><li><a href="/subdomain-backendeval.html">BackendEval</a></li></ul>
     </div>
     
 

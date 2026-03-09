@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
         <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/resultreporting.html" class="pill pill-orange">ResultReporting</a>
+        <a href="/subdomain/microbenchmarks.html" class="pill pill-orange">Microbenchmarks</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"test_GPU_time","slug":"fn-inductor-mm-py-test-gpu-time","type":"Function"},"subdomain":{"name":"ResultReporting","slug":"subdomain-resultreporting"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"test_GPU_time","slug":"fn-inductor-mm-py-test-gpu-time","type":"Function"},"subdomain":{"name":"Microbenchmarks","slug":"subdomain-microbenchmarks"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/resultreporting.html">ResultReporting</a><span class="arch-sep">&rarr;</span>
+            <a href="/microbenchmarks.html">Microbenchmarks</a><span class="arch-sep">&rarr;</span>
             <span>test_GPU_time() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,18 +911,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  c13a77b0_bb2c_00b1_8fb1_675113a24c17["test_GPU_time()"]
-  c25fc91b_acf5_19f1_52db_a2652a0a756d["shapes()"]
-  c25fc91b_acf5_19f1_52db_a2652a0a756d -->|calls| c13a77b0_bb2c_00b1_8fb1_675113a24c17
-  58a2b64d_da79_2ff7_5e5c_d41b51725213["inductor_aten_mm()"]
-  c13a77b0_bb2c_00b1_8fb1_675113a24c17 -->|calls| 58a2b64d_da79_2ff7_5e5c_d41b51725213
-  b9dd022a_b6d9_c941_fb22_7c308314da03["inductor_triton_mm()"]
-  c13a77b0_bb2c_00b1_8fb1_675113a24c17 -->|calls| b9dd022a_b6d9_c941_fb22_7c308314da03
-  456da5e8_7dda_60b3_1f1a_9a8e0cd20eba["torch_mm()"]
-  c13a77b0_bb2c_00b1_8fb1_675113a24c17 -->|calls| 456da5e8_7dda_60b3_1f1a_9a8e0cd20eba
-  bc6ed679_5554_f297_e33b_4a513477a966["triton_mm()"]
-  c13a77b0_bb2c_00b1_8fb1_675113a24c17 -->|calls| bc6ed679_5554_f297_e33b_4a513477a966
-  style c13a77b0_bb2c_00b1_8fb1_675113a24c17 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  ba96b6fc_7f04_c242_cf94_e52a38408103["test_GPU_time()"]
+  86089608_e53f_5a48_3eda_0cc6d924df06["shapes()"]
+  86089608_e53f_5a48_3eda_0cc6d924df06 -->|calls| ba96b6fc_7f04_c242_cf94_e52a38408103
+  f740e25c_c158_b853_bce4_ca53d966b648["inductor_aten_mm()"]
+  ba96b6fc_7f04_c242_cf94_e52a38408103 -->|calls| f740e25c_c158_b853_bce4_ca53d966b648
+  5b07bd5d_ed07_e100_6361_55a75b9b5b79["inductor_triton_mm()"]
+  ba96b6fc_7f04_c242_cf94_e52a38408103 -->|calls| 5b07bd5d_ed07_e100_6361_55a75b9b5b79
+  3246a357_d119_3bf1_b52e_19db3e312bf2["torch_mm()"]
+  ba96b6fc_7f04_c242_cf94_e52a38408103 -->|calls| 3246a357_d119_3bf1_b52e_19db3e312bf2
+  80be5158_1981_0dd9_20aa_15a5ca887273["triton_mm()"]
+  ba96b6fc_7f04_c242_cf94_e52a38408103 -->|calls| 80be5158_1981_0dd9_20aa_15a5ca887273
+  style ba96b6fc_7f04_c242_cf94_e52a38408103 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -930,7 +930,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-inductor-mm-py-test-gpu-time"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"c13a77b0:bb2c:00b1:8fb1:675113a24c17","label":"test_GPU_time","type":"Function","slug":"fn-inductor-mm-py-test-gpu-time","lc":23,"lang":"python","cc":4,"cbc":1},{"id":"58a2b64d:da79:2ff7:5e5c:d41b51725213","label":"inductor_aten_mm","type":"Function","slug":"fn-inductor-mm-py-inductor-aten-mm","lc":2,"lang":"python","cbc":2},{"id":"b9dd022a:b6d9:c941:fb22:7c308314da03","label":"inductor_triton_mm","type":"Function","slug":"fn-inductor-mm-py-inductor-triton-mm","lc":2,"lang":"python","cbc":2},{"id":"456da5e8:7dda:60b3:1f1a:9a8e0cd20eba","label":"torch_mm","type":"Function","slug":"fn-inductor-mm-py-torch-mm","lc":2,"lang":"python","cbc":1},{"id":"bc6ed679:5554:f297:e33b:4a513477a966","label":"triton_mm","type":"Function","slug":"fn-inductor-mm-py-triton-mm","lc":2,"lang":"python","cbc":1},{"id":"c25fc91b:acf5:19f1:52db:a2652a0a756d","label":"shapes","type":"Function","slug":"fn-inductor-mm-py-shapes","lc":20,"lang":"python","cc":2},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:ResultReporting","label":"ResultReporting","type":"Subdomain","slug":"subdomain-resultreporting"}],"edges":[{"source":"c13a77b0:bb2c:00b1:8fb1:675113a24c17","target":"58a2b64d:da79:2ff7:5e5c:d41b51725213","type":"calls"},{"source":"c13a77b0:bb2c:00b1:8fb1:675113a24c17","target":"b9dd022a:b6d9:c941:fb22:7c308314da03","type":"calls"},{"source":"c13a77b0:bb2c:00b1:8fb1:675113a24c17","target":"456da5e8:7dda:60b3:1f1a:9a8e0cd20eba","type":"calls"},{"source":"c13a77b0:bb2c:00b1:8fb1:675113a24c17","target":"bc6ed679:5554:f297:e33b:4a513477a966","type":"calls"},{"source":"c25fc91b:acf5:19f1:52db:a2652a0a756d","target":"c13a77b0:bb2c:00b1:8fb1:675113a24c17","type":"calls"},{"source":"c13a77b0:bb2c:00b1:8fb1:675113a24c17","target":"domain:DynamoBench","type":"belongsTo"},{"source":"c13a77b0:bb2c:00b1:8fb1:675113a24c17","target":"subdomain:DynamoBench:ResultReporting","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"ba96b6fc:7f04:c242:cf94:e52a38408103","label":"test_GPU_time","type":"Function","slug":"fn-inductor-mm-py-test-gpu-time","lc":23,"lang":"python","cc":4,"cbc":1},{"id":"f740e25c:c158:b853:bce4:ca53d966b648","label":"inductor_aten_mm","type":"Function","slug":"fn-inductor-mm-py-inductor-aten-mm","lc":2,"lang":"python","cbc":2},{"id":"5b07bd5d:ed07:e100:6361:55a75b9b5b79","label":"inductor_triton_mm","type":"Function","slug":"fn-inductor-mm-py-inductor-triton-mm","lc":2,"lang":"python","cbc":2},{"id":"3246a357:d119:3bf1:b52e:19db3e312bf2","label":"torch_mm","type":"Function","slug":"fn-inductor-mm-py-torch-mm","lc":2,"lang":"python","cbc":1},{"id":"80be5158:1981:0dd9:20aa:15a5ca887273","label":"triton_mm","type":"Function","slug":"fn-inductor-mm-py-triton-mm","lc":2,"lang":"python","cbc":1},{"id":"86089608:e53f:5a48:3eda:0cc6d924df06","label":"shapes","type":"Function","slug":"fn-inductor-mm-py-shapes","lc":20,"lang":"python","cc":2},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:Microbenchmarks","label":"Microbenchmarks","type":"Subdomain","slug":"subdomain-microbenchmarks"}],"edges":[{"source":"ba96b6fc:7f04:c242:cf94:e52a38408103","target":"f740e25c:c158:b853:bce4:ca53d966b648","type":"calls"},{"source":"ba96b6fc:7f04:c242:cf94:e52a38408103","target":"5b07bd5d:ed07:e100:6361:55a75b9b5b79","type":"calls"},{"source":"ba96b6fc:7f04:c242:cf94:e52a38408103","target":"3246a357:d119:3bf1:b52e:19db3e312bf2","type":"calls"},{"source":"ba96b6fc:7f04:c242:cf94:e52a38408103","target":"80be5158:1981:0dd9:20aa:15a5ca887273","type":"calls"},{"source":"86089608:e53f:5a48:3eda:0cc6d924df06","target":"ba96b6fc:7f04:c242:cf94:e52a38408103","type":"calls"},{"source":"ba96b6fc:7f04:c242:cf94:e52a38408103","target":"domain:DynamoBench","type":"belongsTo"},{"source":"ba96b6fc:7f04:c242:cf94:e52a38408103","target":"subdomain:DynamoBench:Microbenchmarks","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -981,7 +981,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-resultreporting.html">ResultReporting</a></li></ul>
+      <ul><li><a href="/subdomain-microbenchmarks.html">Microbenchmarks</a></li></ul>
     </div>
     
 

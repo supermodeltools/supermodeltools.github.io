@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/java.html" class="pill pill-blue">java</a>
-        <a href="/domain/androidruntime.html" class="pill pill-green">AndroidRuntime</a>
-        <a href="/subdomain/deviceabstraction.html" class="pill pill-orange">DeviceAbstraction</a>
+        <a href="/domain/androidjni.html" class="pill pill-green">AndroidJNI</a>
+        <a href="/subdomain/literuntime.html" class="pill pill-orange">LiteRuntime</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AndroidRuntime","slug":"domain-androidruntime"},"entity":{"name":"toDoubleList","slug":"fn-ivalue-java-todoublelist","type":"Function"},"subdomain":{"name":"DeviceAbstraction","slug":"subdomain-deviceabstraction"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AndroidJNI","slug":"domain-androidjni"},"entity":{"name":"toDoubleList","slug":"fn-ivalue-java-todoublelist","type":"Function"},"subdomain":{"name":"LiteRuntime","slug":"subdomain-literuntime"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/androidruntime.html">AndroidRuntime</a><span class="arch-sep">&rarr;</span>
-            <a href="/deviceabstraction.html">DeviceAbstraction</a><span class="arch-sep">&rarr;</span>
+            <a href="/androidjni.html">AndroidJNI</a><span class="arch-sep">&rarr;</span>
+            <a href="/literuntime.html">LiteRuntime</a><span class="arch-sep">&rarr;</span>
             <span>toDoubleList() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  6f5207ad_90e7_d4d2_c886_70775d38a71a["toDoubleList()"]
-  0bd5bca4_2352_1a6d_ab13_b8bafbb3f8bd["preconditionType()"]
-  6f5207ad_90e7_d4d2_c886_70775d38a71a -->|calls| 0bd5bca4_2352_1a6d_ab13_b8bafbb3f8bd
-  style 6f5207ad_90e7_d4d2_c886_70775d38a71a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  c1267dd7_da63_fa2b_19f8_65e5b7340cb2["toDoubleList()"]
+  d643534a_6350_1fa3_d7c5_6493bc0f2b68["preconditionType()"]
+  c1267dd7_da63_fa2b_19f8_65e5b7340cb2 -->|calls| d643534a_6350_1fa3_d7c5_6493bc0f2b68
+  style c1267dd7_da63_fa2b_19f8_65e5b7340cb2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-ivalue-java-todoublelist"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"6f5207ad:90e7:d4d2:c886:70775d38a71a","label":"toDoubleList","type":"Function","slug":"fn-ivalue-java-todoublelist","lc":5,"lang":"java","cc":1},{"id":"0bd5bca4:2352:1a6d:ab13:b8bafbb3f8bd","label":"preconditionType","type":"Function","slug":"fn-ivalue-java-preconditiontype","lc":10,"lang":"java","cc":1,"cbc":13},{"id":"domain:AndroidRuntime","label":"AndroidRuntime","type":"Domain","slug":"domain-androidruntime"},{"id":"subdomain:AndroidRuntime:DeviceAbstraction","label":"DeviceAbstraction","type":"Subdomain","slug":"subdomain-deviceabstraction"}],"edges":[{"source":"6f5207ad:90e7:d4d2:c886:70775d38a71a","target":"0bd5bca4:2352:1a6d:ab13:b8bafbb3f8bd","type":"calls"},{"source":"6f5207ad:90e7:d4d2:c886:70775d38a71a","target":"domain:AndroidRuntime","type":"belongsTo"},{"source":"6f5207ad:90e7:d4d2:c886:70775d38a71a","target":"subdomain:AndroidRuntime:DeviceAbstraction","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"c1267dd7:da63:fa2b:19f8:65e5b7340cb2","label":"toDoubleList","type":"Function","slug":"fn-ivalue-java-todoublelist","lc":5,"lang":"java","cc":1},{"id":"d643534a:6350:1fa3:d7c5:6493bc0f2b68","label":"preconditionType","type":"Function","slug":"fn-ivalue-java-preconditiontype","lc":10,"lang":"java","cc":1,"cbc":13},{"id":"domain:AndroidJNI","label":"AndroidJNI","type":"Domain","slug":"domain-androidjni"},{"id":"subdomain:AndroidJNI:LiteRuntime","label":"LiteRuntime","type":"Subdomain","slug":"subdomain-literuntime"}],"edges":[{"source":"c1267dd7:da63:fa2b:19f8:65e5b7340cb2","target":"d643534a:6350:1fa3:d7c5:6493bc0f2b68","type":"calls"},{"source":"c1267dd7:da63:fa2b:19f8:65e5b7340cb2","target":"domain:AndroidJNI","type":"belongsTo"},{"source":"c1267dd7:da63:fa2b:19f8:65e5b7340cb2","target":"subdomain:AndroidJNI:LiteRuntime","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -948,14 +948,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-androidruntime.html">AndroidRuntime</a></li></ul>
+      <ul><li><a href="/domain-androidjni.html">AndroidJNI</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deviceabstraction.html">DeviceAbstraction</a></li></ul>
+      <ul><li><a href="/subdomain-literuntime.html">LiteRuntime</a></li></ul>
     </div>
     
 

@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
         <a href="/domain/dynamobench.html" class="pill pill-green">DynamoBench</a>
-        <a href="/subdomain/resultreporting.html" class="pill pill-orange">ResultReporting</a>
+        <a href="/subdomain/backendeval.html" class="pill pill-orange">BackendEval</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"RuntimeError","slug":"fn-common-py-runtimeerror","type":"Function"},"subdomain":{"name":"ResultReporting","slug":"subdomain-resultreporting"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DynamoBench","slug":"domain-dynamobench"},"entity":{"name":"RuntimeError","slug":"fn-common-py-runtimeerror","type":"Function"},"subdomain":{"name":"BackendEval","slug":"subdomain-backendeval"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/dynamobench.html">DynamoBench</a><span class="arch-sep">&rarr;</span>
-            <a href="/resultreporting.html">ResultReporting</a><span class="arch-sep">&rarr;</span>
+            <a href="/backendeval.html">BackendEval</a><span class="arch-sep">&rarr;</span>
             <span>RuntimeError() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,20 +911,20 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  62bd68e8_1c41_32ef_f3e5_fec2ce0c86f3["RuntimeError()"]
-  ac1c4b8c_ebd3_1c14_7bc9_3eca6a87344c["load_model_from_path()"]
-  ac1c4b8c_ebd3_1c14_7bc9_3eca6a87344c -->|calls| 62bd68e8_1c41_32ef_f3e5_fec2ce0c86f3
-  15d2b538_207b_a379_b4ed_2176907f8ca2["randomize_input()"]
-  15d2b538_207b_a379_b4ed_2176907f8ca2 -->|calls| 62bd68e8_1c41_32ef_f3e5_fec2ce0c86f3
-  f6eab9df_7d22_1c31_438a_269416a8233a["download_retry_decorator()"]
-  f6eab9df_7d22_1c31_438a_269416a8233a -->|calls| 62bd68e8_1c41_32ef_f3e5_fec2ce0c86f3
-  bc6867de_b3a5_053f_9b0d_5ddfed553578["read_batch_size_from_file()"]
-  bc6867de_b3a5_053f_9b0d_5ddfed553578 -->|calls| 62bd68e8_1c41_32ef_f3e5_fec2ce0c86f3
-  fd6ea546_6071_2669_8bef_86171229cf5d["validate_model()"]
-  fd6ea546_6071_2669_8bef_86171229cf5d -->|calls| 62bd68e8_1c41_32ef_f3e5_fec2ce0c86f3
-  4437651d_bfa9_f51f_8b48_3f1508d73761["main()"]
-  4437651d_bfa9_f51f_8b48_3f1508d73761 -->|calls| 62bd68e8_1c41_32ef_f3e5_fec2ce0c86f3
-  style 62bd68e8_1c41_32ef_f3e5_fec2ce0c86f3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  27f41c11_17bd_592c_e4b7_e4a9feb9acbf["RuntimeError()"]
+  69e36264_f294_8e8a_68a3_daffc551e86b["load_model_from_path()"]
+  69e36264_f294_8e8a_68a3_daffc551e86b -->|calls| 27f41c11_17bd_592c_e4b7_e4a9feb9acbf
+  94480f27_81da_f7ac_7b27_b196d6b96fbf["randomize_input()"]
+  94480f27_81da_f7ac_7b27_b196d6b96fbf -->|calls| 27f41c11_17bd_592c_e4b7_e4a9feb9acbf
+  8396b06e_02ea_a705_2ebc_492bf3e8909d["download_retry_decorator()"]
+  8396b06e_02ea_a705_2ebc_492bf3e8909d -->|calls| 27f41c11_17bd_592c_e4b7_e4a9feb9acbf
+  a7f0e1f7_4bef_0ea3_aa92_e84b2f89617c["read_batch_size_from_file()"]
+  a7f0e1f7_4bef_0ea3_aa92_e84b2f89617c -->|calls| 27f41c11_17bd_592c_e4b7_e4a9feb9acbf
+  45d9a40c_cfee_5611_aa5a_9dfdbe815acd["validate_model()"]
+  45d9a40c_cfee_5611_aa5a_9dfdbe815acd -->|calls| 27f41c11_17bd_592c_e4b7_e4a9feb9acbf
+  8ae1090a_bfd8_3ae6_7780_fe15bcfa730d["main()"]
+  8ae1090a_bfd8_3ae6_7780_fe15bcfa730d -->|calls| 27f41c11_17bd_592c_e4b7_e4a9feb9acbf
+  style 27f41c11_17bd_592c_e4b7_e4a9feb9acbf fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -932,7 +932,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-common-py-runtimeerror"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"62bd68e8:1c41:32ef:f3e5:fec2ce0c86f3","label":"RuntimeError","type":"Function","slug":"fn-common-py-runtimeerror","lc":3,"lang":"python","cbc":6},{"id":"ac1c4b8c:ebd3:1c14:7bc9:3eca6a87344c","label":"load_model_from_path","type":"Function","slug":"fn-common-py-load-model-from-path","lc":36,"lang":"python","cc":1,"cbc":1},{"id":"15d2b538:207b:a379:b4ed:2176907f8ca2","label":"randomize_input","type":"Function","slug":"fn-common-py-randomize-input","lc":22,"lang":"python","cc":1,"cbc":2},{"id":"f6eab9df:7d22:1c31:438a:269416a8233a","label":"download_retry_decorator","type":"Function","slug":"fn-common-py-download-retry-decorator","lc":35,"lang":"python","cc":1},{"id":"bc6867de:b3a5:053f:9b0d:5ddfed553578","label":"read_batch_size_from_file","type":"Function","slug":"fn-common-py-read-batch-size-from-file","lc":21,"lang":"python","cc":1,"cbc":1},{"id":"fd6ea546:6071:2669:8bef:86171229cf5d","label":"validate_model","type":"Function","slug":"fn-common-py-validate-model","lc":11,"lang":"python","cc":3,"cbc":1},{"id":"4437651d:bfa9:f51f:8b48:3f1508d73761","label":"main","type":"Function","slug":"fn-common-py-main","lc":60,"lang":"python","cc":5,"cbc":1},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:ResultReporting","label":"ResultReporting","type":"Subdomain","slug":"subdomain-resultreporting"}],"edges":[{"source":"ac1c4b8c:ebd3:1c14:7bc9:3eca6a87344c","target":"62bd68e8:1c41:32ef:f3e5:fec2ce0c86f3","type":"calls"},{"source":"15d2b538:207b:a379:b4ed:2176907f8ca2","target":"62bd68e8:1c41:32ef:f3e5:fec2ce0c86f3","type":"calls"},{"source":"f6eab9df:7d22:1c31:438a:269416a8233a","target":"62bd68e8:1c41:32ef:f3e5:fec2ce0c86f3","type":"calls"},{"source":"bc6867de:b3a5:053f:9b0d:5ddfed553578","target":"62bd68e8:1c41:32ef:f3e5:fec2ce0c86f3","type":"calls"},{"source":"fd6ea546:6071:2669:8bef:86171229cf5d","target":"62bd68e8:1c41:32ef:f3e5:fec2ce0c86f3","type":"calls"},{"source":"4437651d:bfa9:f51f:8b48:3f1508d73761","target":"62bd68e8:1c41:32ef:f3e5:fec2ce0c86f3","type":"calls"},{"source":"62bd68e8:1c41:32ef:f3e5:fec2ce0c86f3","target":"domain:DynamoBench","type":"belongsTo"},{"source":"62bd68e8:1c41:32ef:f3e5:fec2ce0c86f3","target":"subdomain:DynamoBench:ResultReporting","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"27f41c11:17bd:592c:e4b7:e4a9feb9acbf","label":"RuntimeError","type":"Function","slug":"fn-common-py-runtimeerror","lc":3,"lang":"python","cbc":6},{"id":"69e36264:f294:8e8a:68a3:daffc551e86b","label":"load_model_from_path","type":"Function","slug":"fn-common-py-load-model-from-path","lc":36,"lang":"python","cc":1,"cbc":1},{"id":"94480f27:81da:f7ac:7b27:b196d6b96fbf","label":"randomize_input","type":"Function","slug":"fn-common-py-randomize-input","lc":22,"lang":"python","cc":1,"cbc":2},{"id":"8396b06e:02ea:a705:2ebc:492bf3e8909d","label":"download_retry_decorator","type":"Function","slug":"fn-common-py-download-retry-decorator","lc":35,"lang":"python","cc":1},{"id":"a7f0e1f7:4bef:0ea3:aa92:e84b2f89617c","label":"read_batch_size_from_file","type":"Function","slug":"fn-common-py-read-batch-size-from-file","lc":21,"lang":"python","cc":1,"cbc":1},{"id":"45d9a40c:cfee:5611:aa5a:9dfdbe815acd","label":"validate_model","type":"Function","slug":"fn-common-py-validate-model","lc":11,"lang":"python","cc":3,"cbc":1},{"id":"8ae1090a:bfd8:3ae6:7780:fe15bcfa730d","label":"main","type":"Function","slug":"fn-common-py-main","lc":60,"lang":"python","cc":5,"cbc":1},{"id":"domain:DynamoBench","label":"DynamoBench","type":"Domain","slug":"domain-dynamobench"},{"id":"subdomain:DynamoBench:BackendEval","label":"BackendEval","type":"Subdomain","slug":"subdomain-backendeval"}],"edges":[{"source":"69e36264:f294:8e8a:68a3:daffc551e86b","target":"27f41c11:17bd:592c:e4b7:e4a9feb9acbf","type":"calls"},{"source":"94480f27:81da:f7ac:7b27:b196d6b96fbf","target":"27f41c11:17bd:592c:e4b7:e4a9feb9acbf","type":"calls"},{"source":"8396b06e:02ea:a705:2ebc:492bf3e8909d","target":"27f41c11:17bd:592c:e4b7:e4a9feb9acbf","type":"calls"},{"source":"a7f0e1f7:4bef:0ea3:aa92:e84b2f89617c","target":"27f41c11:17bd:592c:e4b7:e4a9feb9acbf","type":"calls"},{"source":"45d9a40c:cfee:5611:aa5a:9dfdbe815acd","target":"27f41c11:17bd:592c:e4b7:e4a9feb9acbf","type":"calls"},{"source":"8ae1090a:bfd8:3ae6:7780:fe15bcfa730d","target":"27f41c11:17bd:592c:e4b7:e4a9feb9acbf","type":"calls"},{"source":"27f41c11:17bd:592c:e4b7:e4a9feb9acbf","target":"domain:DynamoBench","type":"belongsTo"},{"source":"27f41c11:17bd:592c:e4b7:e4a9feb9acbf","target":"subdomain:DynamoBench:BackendEval","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -963,7 +963,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-resultreporting.html">ResultReporting</a></li></ul>
+      <ul><li><a href="/subdomain-backendeval.html">BackendEval</a></li></ul>
     </div>
     
 

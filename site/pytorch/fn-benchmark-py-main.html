@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/python.html" class="pill pill-blue">python</a>
-        <a href="/domain/androidruntime.html" class="pill pill-green">AndroidRuntime</a>
-        <a href="/subdomain/modelloading.html" class="pill pill-orange">ModelLoading</a>
+        <a href="/domain/aten.html" class="pill pill-green">ATen</a>
+        <a href="/subdomain/boxing.html" class="pill pill-orange">Boxing</a>
         
         
         <span class="pill">calls 3</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AndroidRuntime","slug":"domain-androidruntime"},"entity":{"name":"main","slug":"fn-benchmark-py-main","type":"Function"},"subdomain":{"name":"ModelLoading","slug":"subdomain-modelloading"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"ATen","slug":"domain-aten"},"entity":{"name":"main","slug":"fn-benchmark-py-main","type":"Function"},"subdomain":{"name":"Boxing","slug":"subdomain-boxing"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/androidruntime.html">AndroidRuntime</a><span class="arch-sep">&rarr;</span>
-            <a href="/modelloading.html">ModelLoading</a><span class="arch-sep">&rarr;</span>
+            <a href="/aten.html">ATen</a><span class="arch-sep">&rarr;</span>
+            <a href="/boxing.html">Boxing</a><span class="arch-sep">&rarr;</span>
             <span>main() — pytorch Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  9f97db42_9cf0_5f56_f2df_a716a5544cb0["main()"]
-  33cf5211_0a9a_cddc_bf15_f5190a384083["allgather_run()"]
-  9f97db42_9cf0_5f56_f2df_a716a5544cb0 -->|calls| 33cf5211_0a9a_cddc_bf15_f5190a384083
-  d0bae3a6_7652_6c45_0f64_3d005c645c9d["allequal()"]
-  9f97db42_9cf0_5f56_f2df_a716a5544cb0 -->|calls| d0bae3a6_7652_6c45_0f64_3d005c645c9d
-  7325dbae_0655_f550_9778_b4b001b30c78["sweep()"]
-  9f97db42_9cf0_5f56_f2df_a716a5544cb0 -->|calls| 7325dbae_0655_f550_9778_b4b001b30c78
-  style 9f97db42_9cf0_5f56_f2df_a716a5544cb0 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  5539d2a5_62f1_22e3_55bd_e4920fdac0b2["main()"]
+  9a39f289_cb87_97ae_8878_7d5b582011c8["allgather_run()"]
+  5539d2a5_62f1_22e3_55bd_e4920fdac0b2 -->|calls| 9a39f289_cb87_97ae_8878_7d5b582011c8
+  89da87ce_a675_b9f3_e130_a40862b56457["allequal()"]
+  5539d2a5_62f1_22e3_55bd_e4920fdac0b2 -->|calls| 89da87ce_a675_b9f3_e130_a40862b56457
+  1cfe0a38_ae61_a58a_1b16_fcc48c51458c["sweep()"]
+  5539d2a5_62f1_22e3_55bd_e4920fdac0b2 -->|calls| 1cfe0a38_ae61_a58a_1b16_fcc48c51458c
+  style 5539d2a5_62f1_22e3_55bd_e4920fdac0b2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-benchmark-py-main"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"9f97db42:9cf0:5f56:f2df:a716a5544cb0","label":"main","type":"Function","slug":"fn-benchmark-py-main","lc":98,"lang":"python","cc":3},{"id":"33cf5211:0a9a:cddc:bf15:f5190a384083","label":"allgather_run","type":"Function","slug":"fn-benchmark-py-allgather-run","lc":7,"lang":"python","cc":1,"cbc":1},{"id":"d0bae3a6:7652:6c45:0f64:3d005c645c9d","label":"allequal","type":"Function","slug":"fn-benchmark-py-allequal","lc":7,"lang":"python","cbc":1},{"id":"7325dbae:0655:f550:9778:b4b001b30c78","label":"sweep","type":"Function","slug":"fn-benchmark-py-sweep","lc":53,"lang":"python","cc":1,"cbc":1},{"id":"domain:AndroidRuntime","label":"AndroidRuntime","type":"Domain","slug":"domain-androidruntime"},{"id":"subdomain:AndroidRuntime:ModelLoading","label":"ModelLoading","type":"Subdomain","slug":"subdomain-modelloading"}],"edges":[{"source":"9f97db42:9cf0:5f56:f2df:a716a5544cb0","target":"33cf5211:0a9a:cddc:bf15:f5190a384083","type":"calls"},{"source":"9f97db42:9cf0:5f56:f2df:a716a5544cb0","target":"d0bae3a6:7652:6c45:0f64:3d005c645c9d","type":"calls"},{"source":"9f97db42:9cf0:5f56:f2df:a716a5544cb0","target":"7325dbae:0655:f550:9778:b4b001b30c78","type":"calls"},{"source":"9f97db42:9cf0:5f56:f2df:a716a5544cb0","target":"domain:AndroidRuntime","type":"belongsTo"},{"source":"9f97db42:9cf0:5f56:f2df:a716a5544cb0","target":"subdomain:AndroidRuntime:ModelLoading","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"5539d2a5:62f1:22e3:55bd:e4920fdac0b2","label":"main","type":"Function","slug":"fn-benchmark-py-main","lc":98,"lang":"python","cc":3},{"id":"9a39f289:cb87:97ae:8878:7d5b582011c8","label":"allgather_run","type":"Function","slug":"fn-benchmark-py-allgather-run","lc":7,"lang":"python","cc":1,"cbc":1},{"id":"89da87ce:a675:b9f3:e130:a40862b56457","label":"allequal","type":"Function","slug":"fn-benchmark-py-allequal","lc":7,"lang":"python","cbc":1},{"id":"1cfe0a38:ae61:a58a:1b16:fcc48c51458c","label":"sweep","type":"Function","slug":"fn-benchmark-py-sweep","lc":53,"lang":"python","cc":1,"cbc":1},{"id":"domain:ATen","label":"ATen","type":"Domain","slug":"domain-aten"},{"id":"subdomain:ATen:Boxing","label":"Boxing","type":"Subdomain","slug":"subdomain-boxing"}],"edges":[{"source":"5539d2a5:62f1:22e3:55bd:e4920fdac0b2","target":"9a39f289:cb87:97ae:8878:7d5b582011c8","type":"calls"},{"source":"5539d2a5:62f1:22e3:55bd:e4920fdac0b2","target":"89da87ce:a675:b9f3:e130:a40862b56457","type":"calls"},{"source":"5539d2a5:62f1:22e3:55bd:e4920fdac0b2","target":"1cfe0a38:ae61:a58a:1b16:fcc48c51458c","type":"calls"},{"source":"5539d2a5:62f1:22e3:55bd:e4920fdac0b2","target":"domain:ATen","type":"belongsTo"},{"source":"5539d2a5:62f1:22e3:55bd:e4920fdac0b2","target":"subdomain:ATen:Boxing","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1045,14 +1045,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-androidruntime.html">AndroidRuntime</a></li></ul>
+      <ul><li><a href="/domain-aten.html">ATen</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-modelloading.html">ModelLoading</a></li></ul>
+      <ul><li><a href="/subdomain-boxing.html">Boxing</a></li></ul>
     </div>
     
 
