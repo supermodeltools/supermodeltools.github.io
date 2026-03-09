@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>mcp Architecture Docs — Architecture Documentation</title>
+<meta name="description" content="Architecture documentation for the mcp codebase. Explore files, functions, classes, domains, and dependencies.">
+<link rel="canonical" href="https://repos.supermodeltools.com/">
+<meta property="og:title" content="mcp Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the mcp codebase. Explore files, functions, classes, domains, and dependencies.">
+<meta property="og:url" content="https://repos.supermodeltools.com/">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/homepage.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="mcp Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="mcp Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the mcp codebase. Explore files, functions, classes, domains, and dependencies.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/homepage.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","description":"Architecture documentation for the mcp codebase. Explore files, functions, classes, domains, and dependencies.","image":"https://repos.supermodeltools.com/images/share/homepage.svg","name":"mcp Architecture Docs","publisher":{"@type":"Organization","name":"mcp Architecture Docs","url":"https://repos.supermodeltools.com"},"url":"https://repos.supermodeltools.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","description":"Architecture documentation for the mcp codebase. Explore files, functions, classes, domains, and dependencies.","image":"https://repos.supermodeltools.com/images/share/homepage.svg","itemListElement":[{"@type":"ListItem","name":"GraphCache Class — mcp Architecture","position":1,"url":"https://repos.supermodeltools.com/class-graph-cache-ts-graphcache.html"},{"@type":"ListItem","name":"Server Class — mcp Architecture","position":2,"url":"https://repos.supermodeltools.com/class-server-ts-server.html"},{"@type":"ListItem","name":"src/cache/ — mcp Directory Structure","position":3,"url":"https://repos.supermodeltools.com/dir-src-cache.html"},{"@type":"ListItem","name":"src/tools/ — mcp Directory Structure","position":4,"url":"https://repos.supermodeltools.com/dir-src-tools.html"},{"@type":"ListItem","name":"src/utils/ — mcp Directory Structure","position":5,"url":"https://repos.supermodeltools.com/dir-src-utils.html"},{"@type":"ListItem","name":"src/ — mcp Directory Structure","position":6,"url":"https://repos.supermodeltools.com/dir-src.html"},{"@type":"ListItem","name":"AnalysisTools Domain — mcp Architecture","position":7,"url":"https://repos.supermodeltools.com/domain-analysistools.html"},{"@type":"ListItem","name":"GraphCache Domain — mcp Architecture","position":8,"url":"https://repos.supermodeltools.com/domain-graphcache.html"},{"@type":"ListItem","name":"McpServer Domain — mcp Architecture","position":9,"url":"https://repos.supermodeltools.com/domain-mcpserver.html"},{"@type":"ListItem","name":"RepositoryUtility Domain — mcp Architecture","position":10,"url":"https://repos.supermodeltools.com/domain-repositoryutility.html"},{"@type":"ListItem","name":"jest.config.js — mcp Source File","position":11,"url":"https://repos.supermodeltools.com/file-jest-config-js.html"},{"@type":"ListItem","name":"package.json — mcp Source File","position":12,"url":"https://repos.supermodeltools.com/file-package-json.html"},{"@type":"ListItem","name":"package-lock.json — mcp Source File","position":13,"url":"https://repos.supermodeltools.com/file-package-lock-json.html"},{"@type":"ListItem","name":"graph-cache.test.ts — mcp Source File","position":14,"url":"https://repos.supermodeltools.com/file-src-cache-graph-cache-test-ts.html"},{"@type":"ListItem","name":"graph-cache.ts — mcp Source File","position":15,"url":"https://repos.supermodeltools.com/file-src-cache-graph-cache-ts.html"},{"@type":"ListItem","name":"graph-types.ts — mcp Source File","position":16,"url":"https://repos.supermodeltools.com/file-src-cache-graph-types-ts.html"},{"@type":"ListItem","name":"constants.ts — mcp Source File","position":17,"url":"https://repos.supermodeltools.com/file-src-constants-ts.html"},{"@type":"ListItem","name":"index.ts — mcp Source File","position":18,"url":"https://repos.supermodeltools.com/file-src-index-ts.html"},{"@type":"ListItem","name":"server.integration.test.ts — mcp Source File","position":19,"url":"https://repos.supermodeltools.com/file-src-server-integration-test-ts.html"},{"@type":"ListItem","name":"server.test.ts — mcp Source File","position":20,"url":"https://repos.supermodeltools.com/file-src-server-test-ts.html"},{"@type":"ListItem","name":"server.ts — mcp Source File","position":21,"url":"https://repos.supermodeltools.com/file-src-server-ts.html"},{"@type":"ListItem","name":"explore-function.ts — mcp Source File","position":22,"url":"https://repos.supermodeltools.com/file-src-tools-explore-function-ts.html"},{"@type":"ListItem","name":"find-connections.ts — mcp Source File","position":23,"url":"https://repos.supermodeltools.com/file-src-tools-find-connections-ts.html"},{"@type":"ListItem","name":"overview.ts — mcp Source File","position":24,"url":"https://repos.supermodeltools.com/file-src-tools-overview-ts.html"},{"@type":"ListItem","name":"symbol-context.test.ts — mcp Source File","position":25,"url":"https://repos.supermodeltools.com/file-src-tools-symbol-context-test-ts.html"},{"@type":"ListItem","name":"symbol-context.ts — mcp Source File","position":26,"url":"https://repos.supermodeltools.com/file-src-tools-symbol-context-ts.html"},{"@type":"ListItem","name":"tool-variants.ts — mcp Source File","position":27,"url":"https://repos.supermodeltools.com/file-src-tools-tool-variants-ts.html"},{"@type":"ListItem","name":"types.ts — mcp Source File","position":28,"url":"https://repos.supermodeltools.com/file-src-types-ts.html"},{"@type":"ListItem","name":"api-helpers.ts — mcp Source File","position":29,"url":"https://repos.supermodeltools.com/file-src-utils-api-helpers-ts.html"},{"@type":"ListItem","name":"logger.ts — mcp Source File","position":30,"url":"https://repos.supermodeltools.com/file-src-utils-logger-ts.html"},{"@type":"ListItem","name":"zip-repository.test.ts — mcp Source File","position":31,"url":"https://repos.supermodeltools.com/file-src-utils-zip-repository-test-ts.html"},{"@type":"ListItem","name":"zip-repository.ts — mcp Source File","position":32,"url":"https://repos.supermodeltools.com/file-src-utils-zip-repository-ts.html"},{"@type":"ListItem","name":"tsconfig.json — mcp Source File","position":33,"url":"https://repos.supermodeltools.com/file-tsconfig-json.html"},{"@type":"ListItem","name":"classifyApiError() — mcp Function Reference","position":34,"url":"https://repos.supermodeltools.com/fn-api-helpers-ts-classifyapierror.html"},{"@type":"ListItem","name":"generateIdempotencyKey() — mcp Function Reference","position":35,"url":"https://repos.supermodeltools.com/fn-api-helpers-ts-generateidempotencykey.html"},{"@type":"ListItem","name":"buildSubdomainToParentMap() — mcp Function Reference","position":36,"url":"https://repos.supermodeltools.com/fn-explore-function-ts-buildsubdomaintoparentmap.html"},{"@type":"ListItem","name":"describeNode() — mcp Function Reference","position":37,"url":"https://repos.supermodeltools.com/fn-explore-function-ts-describenode.html"},{"@type":"ListItem","name":"handler() — mcp Function Reference","position":38,"url":"https://repos.supermodeltools.com/fn-explore-function-ts-handler.html"},{"@type":"ListItem","name":"resolveDomain() — mcp Function Reference","position":39,"url":"https://repos.supermodeltools.com/fn-explore-function-ts-resolvedomain.html"},{"@type":"ListItem","name":"collectDomainMembers() — mcp Function Reference","position":40,"url":"https://repos.supermodeltools.com/fn-find-connections-ts-collectdomainmembers.html"},{"@type":"ListItem","name":"handler() — mcp Function Reference","position":41,"url":"https://repos.supermodeltools.com/fn-find-connections-ts-handler.html"},{"@type":"ListItem","name":"createMockIndexedGraph() — mcp Function Reference","position":42,"url":"https://repos.supermodeltools.com/fn-graph-cache-test-ts-createmockindexedgraph.html"},{"@type":"ListItem","name":"buildIndexes() — mcp Function Reference","position":43,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-buildindexes.html"},{"@type":"ListItem","name":"constructor() — mcp Function Reference","position":44,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-constructor.html"},{"@type":"ListItem","name":"detectRepo() — mcp Function Reference","position":45,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-detectrepo.html"},{"@type":"ListItem","name":"detectRepoName() — mcp Function Reference","position":46,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-detectreponame.html"},{"@type":"ListItem","name":"evictOldest() — mcp Function Reference","position":47,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-evictoldest.html"},{"@type":"ListItem","name":"evictStale() — mcp Function Reference","position":48,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-evictstale.html"},{"@type":"ListItem","name":"get() — mcp Function Reference","position":49,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-get.html"},{"@type":"ListItem","name":"has() — mcp Function Reference","position":50,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-has.html"},{"@type":"ListItem","name":"loadCacheFromDisk() — mcp Function Reference","position":51,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-loadcachefromdisk.html"},{"@type":"ListItem","name":"normalizePath() — mcp Function Reference","position":52,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-normalizepath.html"},{"@type":"ListItem","name":"precacheForDirectory() — mcp Function Reference","position":53,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-precachefordirectory.html"},{"@type":"ListItem","name":"resolveOrFetchGraph() — mcp Function Reference","position":54,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-resolveorfetchgraph.html"},{"@type":"ListItem","name":"sanitizeFileName() — mcp Function Reference","position":55,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-sanitizefilename.html"},{"@type":"ListItem","name":"saveCacheToDisk() — mcp Function Reference","position":56,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-savecachetodisk.html"},{"@type":"ListItem","name":"set() — mcp Function Reference","position":57,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-set.html"},{"@type":"ListItem","name":"setNoApiFallback() — mcp Function Reference","position":58,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-setnoapifallback.html"},{"@type":"ListItem","name":"setRepoMap() — mcp Function Reference","position":59,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-setrepomap.html"},{"@type":"ListItem","name":"status() — mcp Function Reference","position":60,"url":"https://repos.supermodeltools.com/fn-graph-cache-ts-status.html"},{"@type":"ListItem","name":"handlePrecache() — mcp Function Reference","position":61,"url":"https://repos.supermodeltools.com/fn-index-ts-handleprecache.html"},{"@type":"ListItem","name":"main() — mcp Function Reference","position":62,"url":"https://repos.supermodeltools.com/fn-index-ts-main.html"},{"@type":"ListItem","name":"debug() — mcp Function Reference","position":63,"url":"https://repos.supermodeltools.com/fn-logger-ts-debug.html"},{"@type":"ListItem","name":"error() — mcp Function Reference","position":64,"url":"https://repos.supermodeltools.com/fn-logger-ts-error.html"},{"@type":"ListItem","name":"info() — mcp Function Reference","position":65,"url":"https://repos.supermodeltools.com/fn-logger-ts-info.html"},{"@type":"ListItem","name":"warn() — mcp Function Reference","position":66,"url":"https://repos.supermodeltools.com/fn-logger-ts-warn.html"},{"@type":"ListItem","name":"getHubFunctions() — mcp Function Reference","position":67,"url":"https://repos.supermodeltools.com/fn-overview-ts-gethubfunctions.html"},{"@type":"ListItem","name":"getKeyFilesForDomain() — mcp Function Reference","position":68,"url":"https://repos.supermodeltools.com/fn-overview-ts-getkeyfilesfordomain.html"},{"@type":"ListItem","name":"handler() — mcp Function Reference","position":69,"url":"https://repos.supermodeltools.com/fn-overview-ts-handler.html"},{"@type":"ListItem","name":"renderOverview() — mcp Function Reference","position":70,"url":"https://repos.supermodeltools.com/fn-overview-ts-renderoverview.html"},{"@type":"ListItem","name":"truncate() — mcp Function Reference","position":71,"url":"https://repos.supermodeltools.com/fn-overview-ts-truncate.html"},{"@type":"ListItem","name":"createServerFixture() — mcp Function Reference","position":72,"url":"https://repos.supermodeltools.com/fn-server-integration-test-ts-createserverfixture.html"},{"@type":"ListItem","name":"constructor() — mcp Function Reference","position":73,"url":"https://repos.supermodeltools.com/fn-server-ts-constructor.html"},{"@type":"ListItem","name":"fetchWithTimeout() — mcp Function Reference","position":74,"url":"https://repos.supermodeltools.com/fn-server-ts-fetchwithtimeout.html"},{"@type":"ListItem","name":"getTestHint() — mcp Function Reference","position":75,"url":"https://repos.supermodeltools.com/fn-server-ts-gettesthint.html"},{"@type":"ListItem","name":"injectOverviewInstructions() — mcp Function Reference","position":76,"url":"https://repos.supermodeltools.com/fn-server-ts-injectoverviewinstructions.html"},{"@type":"ListItem","name":"setupHandlers() — mcp Function Reference","position":77,"url":"https://repos.supermodeltools.com/fn-server-ts-setuphandlers.html"},{"@type":"ListItem","name":"start() — mcp Function Reference","position":78,"url":"https://repos.supermodeltools.com/fn-server-ts-start.html"},{"@type":"ListItem","name":"buildGraph() — mcp Function Reference","position":79,"url":"https://repos.supermodeltools.com/fn-symbol-context-test-ts-buildgraph.html"},{"@type":"ListItem","name":"callerCount() — mcp Function Reference","position":80,"url":"https://repos.supermodeltools.com/fn-symbol-context-ts-callercount.html"},{"@type":"ListItem","name":"findDomain() — mcp Function Reference","position":81,"url":"https://repos.supermodeltools.com/fn-symbol-context-ts-finddomain.html"},{"@type":"ListItem","name":"findSymbol() — mcp Function Reference","position":82,"url":"https://repos.supermodeltools.com/fn-symbol-context-ts-findsymbol.html"},{"@type":"ListItem","name":"handler() — mcp Function Reference","position":83,"url":"https://repos.supermodeltools.com/fn-symbol-context-ts-handler.html"},{"@type":"ListItem","name":"isCodeSymbol() — mcp Function Reference","position":84,"url":"https://repos.supermodeltools.com/fn-symbol-context-ts-iscodesymbol.html"},{"@type":"ListItem","name":"languageFromExtension() — mcp Function Reference","position":85,"url":"https://repos.supermodeltools.com/fn-symbol-context-ts-languagefromextension.html"},{"@type":"ListItem","name":"renderBriefSymbolContext() — mcp Function Reference","position":86,"url":"https://repos.supermodeltools.com/fn-symbol-context-ts-renderbriefsymbolcontext.html"},{"@type":"ListItem","name":"renderSymbolContext() — mcp Function Reference","position":87,"url":"https://repos.supermodeltools.com/fn-symbol-context-ts-rendersymbolcontext.html"},{"@type":"ListItem","name":"symbolPriority() — mcp Function Reference","position":88,"url":"https://repos.supermodeltools.com/fn-symbol-context-ts-symbolpriority.html"},{"@type":"ListItem","name":"annotateHandler() — mcp Function Reference","position":89,"url":"https://repos.supermodeltools.com/fn-tool-variants-ts-annotatehandler.html"},{"@type":"ListItem","name":"findDefinitionHandler() — mcp Function Reference","position":90,"url":"https://repos.supermodeltools.com/fn-tool-variants-ts-finddefinitionhandler.html"},{"@type":"ListItem","name":"searchSymbolHandler() — mcp Function Reference","position":91,"url":"https://repos.supermodeltools.com/fn-tool-variants-ts-searchsymbolhandler.html"},{"@type":"ListItem","name":"traceCallsHandler() — mcp Function Reference","position":92,"url":"https://repos.supermodeltools.com/fn-tool-variants-ts-tracecallshandler.html"},{"@type":"ListItem","name":"asErrorResult() — mcp Function Reference","position":93,"url":"https://repos.supermodeltools.com/fn-types-ts-aserrorresult.html"},{"@type":"ListItem","name":"asTextContentResult() — mcp Function Reference","position":94,"url":"https://repos.supermodeltools.com/fn-types-ts-astextcontentresult.html"},{"@type":"ListItem","name":"addFilesRecursively() — mcp Function Reference","position":95,"url":"https://repos.supermodeltools.com/fn-zip-repository-ts-addfilesrecursively.html"},{"@type":"ListItem","name":"buildIgnoreFilter() — mcp Function Reference","position":96,"url":"https://repos.supermodeltools.com/fn-zip-repository-ts-buildignorefilter.html"},{"@type":"ListItem","name":"cleanupOldZips() — mcp Function Reference","position":97,"url":"https://repos.supermodeltools.com/fn-zip-repository-ts-cleanupoldzips.html"},{"@type":"ListItem","name":"estimateDirectorySize() — mcp Function Reference","position":98,"url":"https://repos.supermodeltools.com/fn-zip-repository-ts-estimatedirectorysize.html"},{"@type":"ListItem","name":"findGitignoreFiles() — mcp Function Reference","position":99,"url":"https://repos.supermodeltools.com/fn-zip-repository-ts-findgitignorefiles.html"},{"@type":"ListItem","name":"formatBytes() — mcp Function Reference","position":100,"url":"https://repos.supermodeltools.com/fn-zip-repository-ts-formatbytes.html"},{"@type":"ListItem","name":"zipRepository() — mcp Function Reference","position":101,"url":"https://repos.supermodeltools.com/fn-zip-repository-ts-ziprepository.html"},{"@type":"ListItem","name":"ArchiveManager — mcp Architecture","position":102,"url":"https://repos.supermodeltools.com/subdomain-archivemanager.html"},{"@type":"ListItem","name":"CallGraphTraversal — mcp Architecture","position":103,"url":"https://repos.supermodeltools.com/subdomain-callgraphtraversal.html"},{"@type":"ListItem","name":"ErrorClassifier — mcp Architecture","position":104,"url":"https://repos.supermodeltools.com/subdomain-errorclassifier.html"},{"@type":"ListItem","name":"IdentityGenerator — mcp Architecture","position":105,"url":"https://repos.supermodeltools.com/subdomain-identitygenerator.html"},{"@type":"ListItem","name":"OverviewRenderer — mcp Architecture","position":106,"url":"https://repos.supermodeltools.com/subdomain-overviewrenderer.html"},{"@type":"ListItem","name":"PersistenceManager — mcp Architecture","position":107,"url":"https://repos.supermodeltools.com/subdomain-persistencemanager.html"},{"@type":"ListItem","name":"SessionContext — mcp Architecture","position":108,"url":"https://repos.supermodeltools.com/subdomain-sessioncontext.html"},{"@type":"ListItem","name":"SymbolFinder — mcp Architecture","position":109,"url":"https://repos.supermodeltools.com/subdomain-symbolfinder.html"},{"@type":"ListItem","name":"ToolRegistration — mcp Architecture","position":110,"url":"https://repos.supermodeltools.com/subdomain-toolregistration.html"},{"@type":"ListItem","name":"TransportLayer — mcp Architecture","position":111,"url":"https://repos.supermodeltools.com/subdomain-transportlayer.html"},{"@type":"ListItem","name":"DomainInfo Type — mcp Architecture","position":112,"url":"https://repos.supermodeltools.com/type-explore-function-ts-domaininfo.html"},{"@type":"ListItem","name":"AdjacencyList Type — mcp Architecture","position":113,"url":"https://repos.supermodeltools.com/type-graph-cache-ts-adjacencylist.html"},{"@type":"ListItem","name":"CacheEntry Type — mcp Architecture","position":114,"url":"https://repos.supermodeltools.com/type-graph-cache-ts-cacheentry.html"},{"@type":"ListItem","name":"IndexedGraph Type — mcp Architecture","position":115,"url":"https://repos.supermodeltools.com/type-graph-cache-ts-indexedgraph.html"},{"@type":"ListItem","name":"PathIndexEntry Type — mcp Architecture","position":116,"url":"https://repos.supermodeltools.com/type-graph-cache-ts-pathindexentry.html"},{"@type":"ListItem","name":"ServerOptions Type — mcp Architecture","position":117,"url":"https://repos.supermodeltools.com/type-server-ts-serveroptions.html"},{"@type":"ListItem","name":"ClientContext Type — mcp Architecture","position":118,"url":"https://repos.supermodeltools.com/type-types-ts-clientcontext.html"},{"@type":"ListItem","name":"ContentBlock Type — mcp Architecture","position":119,"url":"https://repos.supermodeltools.com/type-types-ts-contentblock.html"},{"@type":"ListItem","name":"Endpoint Type — mcp Architecture","position":120,"url":"https://repos.supermodeltools.com/type-types-ts-endpoint.html"},{"@type":"ListItem","name":"ErrorType Type — mcp Architecture","position":121,"url":"https://repos.supermodeltools.com/type-types-ts-errortype.html"},{"@type":"ListItem","name":"HandlerFunction Type — mcp Architecture","position":122,"url":"https://repos.supermodeltools.com/type-types-ts-handlerfunction.html"},{"@type":"ListItem","name":"StructuredError Type — mcp Architecture","position":123,"url":"https://repos.supermodeltools.com/type-types-ts-structurederror.html"},{"@type":"ListItem","name":"ToolCallResult Type — mcp Architecture","position":124,"url":"https://repos.supermodeltools.com/type-types-ts-toolcallresult.html"},{"@type":"ListItem","name":"ProgressState Type — mcp Architecture","position":125,"url":"https://repos.supermodeltools.com/type-zip-repository-ts-progressstate.html"},{"@type":"ListItem","name":"ZipOptions Type — mcp Architecture","position":126,"url":"https://repos.supermodeltools.com/type-zip-repository-ts-zipoptions.html"},{"@type":"ListItem","name":"ZipResult Type — mcp Architecture","position":127,"url":"https://repos.supermodeltools.com/type-zip-repository-ts-zipresult.html"}],"name":"mcp Architecture Docs","numberOfItems":127}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      mcp Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main id="main-content">
+  <div class="container">
+    <div class="hero">
+      <h1>mcp Architecture Docs</h1>
+      
+      <div class="hero-actions">
+        <a href="https://github.com/supermodeltools/mcp" class="hero-btn" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+        </a>
+        <a href="https://github.com/supermodeltools/mcp/stargazers" class="hero-btn hero-btn-star" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></svg>
+          Star
+        </a>
+        <a href="https://github.com/supermodeltools/mcp/fork" class="hero-btn hero-btn-fork" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"/></svg>
+          Fork
+        </a>
+      </div>
+      
+      <p>Architecture documentation generated from code analysis. Explore every file, function, class, and domain.</p>
+      <div class="hero-stats">
+        <a href="/all/index.html" class="hero-stat hero-stat-link">
+          <div class="num">127</div>
+          <div class="label">Total Entities</div>
+        </a>
+        
+        <a href="/node_type/index.html" class="hero-stat hero-stat-link">
+          <div class="num">7</div>
+          <div class="label">Node Types</div>
+        </a>
+        
+        <a href="/language/index.html" class="hero-stat hero-stat-link">
+          <div class="num">3</div>
+          <div class="label">Languages</div>
+        </a>
+        
+        <a href="/domain/index.html" class="hero-stat hero-stat-link">
+          <div class="num">4</div>
+          <div class="label">Domains</div>
+        </a>
+        
+        <a href="/subdomain/index.html" class="hero-stat hero-stat-link">
+          <div class="num">10</div>
+          <div class="label">Subdomains</div>
+        </a>
+        
+        <a href="/top_directory/index.html" class="hero-stat hero-stat-link">
+          <div class="num">1</div>
+          <div class="label">Top Directories</div>
+        </a>
+        
+        <a href="/extension/index.html" class="hero-stat hero-stat-link">
+          <div class="num">3</div>
+          <div class="label">File Extensions</div>
+        </a>
+        
+        <a href="/tags/index.html" class="hero-stat hero-stat-link">
+          <div class="num">12</div>
+          <div class="label">Tags</div>
+        </a>
+        
+      </div>
+    </div>
+
+    <div class="chart-panel arch-map-panel">
+      <h3>Architecture Overview</h3>
+      <div id="arch-overview"></div>
+      <script type="application/json" id="arch-overview-data">{"nodes":[{"id":"__root__","name":"mcp Architecture Docs","type":"root","count":127},{"id":"domain:analysistools","name":"AnalysisTools","type":"domain","count":35,"slug":"domain/analysistools"},{"id":"domain:graphcache","name":"GraphCache","type":"domain","count":25,"slug":"domain/graphcache"},{"id":"domain:mcpserver","name":"McpServer","type":"domain","count":21,"slug":"domain/mcpserver"},{"id":"domain:repositoryutility","name":"RepositoryUtility","type":"domain","count":21,"slug":"domain/repositoryutility"},{"id":"subdomain:archivemanager","name":"ArchiveManager","type":"subdomain","count":8,"slug":"subdomain/archivemanager"},{"id":"subdomain:callgraphtraversal","name":"CallGraphTraversal","type":"subdomain","count":8,"slug":"subdomain/callgraphtraversal"},{"id":"subdomain:errorclassifier","name":"ErrorClassifier","type":"subdomain","count":4,"slug":"subdomain/errorclassifier"},{"id":"subdomain:identitygenerator","name":"IdentityGenerator","type":"subdomain","count":4,"slug":"subdomain/identitygenerator"},{"id":"subdomain:overviewrenderer","name":"OverviewRenderer","type":"subdomain","count":8,"slug":"subdomain/overviewrenderer"},{"id":"subdomain:persistencemanager","name":"PersistenceManager","type":"subdomain","count":20,"slug":"subdomain/persistencemanager"},{"id":"subdomain:sessioncontext","name":"SessionContext","type":"subdomain","count":5,"slug":"subdomain/sessioncontext"},{"id":"subdomain:symbolfinder","name":"SymbolFinder","type":"subdomain","count":12,"slug":"subdomain/symbolfinder"},{"id":"subdomain:toolregistration","name":"ToolRegistration","type":"subdomain","count":5,"slug":"subdomain/toolregistration"},{"id":"subdomain:transportlayer","name":"TransportLayer","type":"subdomain","count":4,"slug":"subdomain/transportlayer"}],"links":[{"source":"__root__","target":"domain:analysistools"},{"source":"__root__","target":"domain:graphcache"},{"source":"__root__","target":"domain:mcpserver"},{"source":"__root__","target":"domain:repositoryutility"},{"source":"domain:repositoryutility","target":"subdomain:archivemanager"},{"source":"domain:analysistools","target":"subdomain:callgraphtraversal"},{"source":"domain:repositoryutility","target":"subdomain:errorclassifier"},{"source":"domain:repositoryutility","target":"subdomain:identitygenerator"},{"source":"domain:analysistools","target":"subdomain:overviewrenderer"},{"source":"domain:graphcache","target":"subdomain:persistencemanager"},{"source":"domain:mcpserver","target":"subdomain:sessioncontext"},{"source":"domain:analysistools","target":"subdomain:symbolfinder"},{"source":"domain:mcpserver","target":"subdomain:toolregistration"},{"source":"domain:mcpserver","target":"subdomain:transportlayer"}]}</script>
+    </div>
+
+    <div class="chart-panel">
+      <h3>Codebase Composition</h3>
+      <div id="homepage-chart"></div>
+      <script type="application/json" id="homepage-chart-data">{"taxonomies":[{"name":"Node Types","count":127,"slug":"node_type"},{"name":"Languages","count":109,"slug":"language"},{"name":"Domains","count":102,"slug":"domain"},{"name":"Subdomains","count":78,"slug":"subdomain"},{"name":"Top Directories","count":23,"slug":"top_directory"},{"name":"File Extensions","count":23,"slug":"extension"},{"name":"Tags","count":270,"slug":"tags"}],"totalEntities":127}</script>
+    </div>
+
+    
+    
+    <div class="section">
+      <h2 class="section-title">Node Types</h2>
+      <div class="tax-grid">
+        
+        <a href="/node_type/class.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Class</span>
+            
+          </div>
+          <span class="tax-count">2</span>
+        </a>
+        
+        <a href="/node_type/directory.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Directory</span>
+            
+          </div>
+          <span class="tax-count">4</span>
+        </a>
+        
+        <a href="/node_type/domain.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Domain</span>
+            
+          </div>
+          <span class="tax-count">4</span>
+        </a>
+        
+        <a href="/node_type/file.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>File</span>
+            
+          </div>
+          <span class="tax-count">23</span>
+        </a>
+        
+        <a href="/node_type/function.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Function</span>
+            
+          </div>
+          <span class="tax-count">68</span>
+        </a>
+        
+        <a href="/node_type/subdomain.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Subdomain</span>
+            
+          </div>
+          <span class="tax-count">10</span>
+        </a>
+        
+        <a href="/node_type/type.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Type</span>
+            
+          </div>
+          <span class="tax-count">16</span>
+        </a>
+        
+      </div>
+    </div>
+    
+    
+    <div class="section">
+      <h2 class="section-title">Languages</h2>
+      <div class="tax-grid">
+        
+        <a href="/language/javascript.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>javascript</span>
+            
+          </div>
+          <span class="tax-count">1</span>
+        </a>
+        
+        <a href="/language/json.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>json</span>
+            
+          </div>
+          <span class="tax-count">3</span>
+        </a>
+        
+        <a href="/language/typescript.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>typescript</span>
+            
+          </div>
+          <span class="tax-count">105</span>
+        </a>
+        
+      </div>
+    </div>
+    
+    
+    <div class="section">
+      <h2 class="section-title">Domains</h2>
+      <div class="tax-grid">
+        
+        <a href="/domain/analysistools.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>AnalysisTools</span>
+            
+          </div>
+          <span class="tax-count">35</span>
+        </a>
+        
+        <a href="/domain/graphcache.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>GraphCache</span>
+            
+          </div>
+          <span class="tax-count">25</span>
+        </a>
+        
+        <a href="/domain/mcpserver.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>McpServer</span>
+            
+          </div>
+          <span class="tax-count">21</span>
+        </a>
+        
+        <a href="/domain/repositoryutility.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>RepositoryUtility</span>
+            
+          </div>
+          <span class="tax-count">21</span>
+        </a>
+        
+      </div>
+    </div>
+    
+    
+    <div class="section">
+      <h2 class="section-title">Subdomains</h2>
+      <div class="tax-grid">
+        
+        <a href="/subdomain/archivemanager.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>ArchiveManager</span>
+            <span class="tax-domain-tag">RepositoryUtility</span>
+          </div>
+          <span class="tax-count">8</span>
+        </a>
+        
+        <a href="/subdomain/callgraphtraversal.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>CallGraphTraversal</span>
+            <span class="tax-domain-tag">AnalysisTools</span>
+          </div>
+          <span class="tax-count">8</span>
+        </a>
+        
+        <a href="/subdomain/errorclassifier.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>ErrorClassifier</span>
+            <span class="tax-domain-tag">RepositoryUtility</span>
+          </div>
+          <span class="tax-count">4</span>
+        </a>
+        
+        <a href="/subdomain/identitygenerator.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>IdentityGenerator</span>
+            <span class="tax-domain-tag">RepositoryUtility</span>
+          </div>
+          <span class="tax-count">4</span>
+        </a>
+        
+        <a href="/subdomain/overviewrenderer.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>OverviewRenderer</span>
+            <span class="tax-domain-tag">AnalysisTools</span>
+          </div>
+          <span class="tax-count">8</span>
+        </a>
+        
+        <a href="/subdomain/persistencemanager.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>PersistenceManager</span>
+            <span class="tax-domain-tag">GraphCache</span>
+          </div>
+          <span class="tax-count">20</span>
+        </a>
+        
+        <a href="/subdomain/sessioncontext.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>SessionContext</span>
+            <span class="tax-domain-tag">McpServer</span>
+          </div>
+          <span class="tax-count">5</span>
+        </a>
+        
+        <a href="/subdomain/symbolfinder.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>SymbolFinder</span>
+            <span class="tax-domain-tag">AnalysisTools</span>
+          </div>
+          <span class="tax-count">12</span>
+        </a>
+        
+        <a href="/subdomain/toolregistration.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>ToolRegistration</span>
+            <span class="tax-domain-tag">McpServer</span>
+          </div>
+          <span class="tax-count">5</span>
+        </a>
+        
+        <a href="/subdomain/transportlayer.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>TransportLayer</span>
+            <span class="tax-domain-tag">McpServer</span>
+          </div>
+          <span class="tax-count">4</span>
+        </a>
+        
+      </div>
+    </div>
+    
+    
+    <div class="section">
+      <h2 class="section-title">Top Directories</h2>
+      <div class="tax-grid">
+        
+        <a href="/top_directory/src.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>src</span>
+            
+          </div>
+          <span class="tax-count">23</span>
+        </a>
+        
+      </div>
+    </div>
+    
+    
+    <div class="section">
+      <h2 class="section-title">File Extensions</h2>
+      <div class="tax-grid">
+        
+        <a href="/extension/js.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>.js</span>
+            
+          </div>
+          <span class="tax-count">1</span>
+        </a>
+        
+        <a href="/extension/json.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>.json</span>
+            
+          </div>
+          <span class="tax-count">3</span>
+        </a>
+        
+        <a href="/extension/ts.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>.ts</span>
+            
+          </div>
+          <span class="tax-count">19</span>
+        </a>
+        
+      </div>
+    </div>
+    
+    
+    <div class="section">
+      <h2 class="section-title">Tags</h2>
+      <div class="tax-grid">
+        
+        <a href="/tags/class.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Class</span>
+            
+          </div>
+          <span class="tax-count">2</span>
+        </a>
+        
+        <a href="/tags/directory.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Directory</span>
+            
+          </div>
+          <span class="tax-count">4</span>
+        </a>
+        
+        <a href="/tags/domain.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Domain</span>
+            
+          </div>
+          <span class="tax-count">4</span>
+        </a>
+        
+        <a href="/tags/file.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>File</span>
+            
+          </div>
+          <span class="tax-count">23</span>
+        </a>
+        
+        <a href="/tags/function.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Function</span>
+            
+          </div>
+          <span class="tax-count">68</span>
+        </a>
+        
+        <a href="/tags/high-dependency.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>High-Dependency</span>
+            
+          </div>
+          <span class="tax-count">11</span>
+        </a>
+        
+        <a href="/tags/isolated.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Isolated</span>
+            
+          </div>
+          <span class="tax-count">23</span>
+        </a>
+        
+        <a href="/tags/javascript.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>javascript</span>
+            
+          </div>
+          <span class="tax-count">1</span>
+        </a>
+        
+        <a href="/tags/json.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>json</span>
+            
+          </div>
+          <span class="tax-count">3</span>
+        </a>
+        
+        <a href="/tags/subdomain.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Subdomain</span>
+            
+          </div>
+          <span class="tax-count">10</span>
+        </a>
+        
+        <a href="/tags/type.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>Type</span>
+            
+          </div>
+          <span class="tax-count">16</span>
+        </a>
+        
+        <a href="/tags/typescript.html" class="tax-entry">
+          <div class="tax-entry-left">
+            <span>typescript</span>
+            
+          </div>
+          <span class="tax-count">105</span>
+        </a>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  
+  <div class="cta-section">
+    <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+    <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+    <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+  </div>
+  
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>
