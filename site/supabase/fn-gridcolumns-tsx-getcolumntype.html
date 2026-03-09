@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/containerization.html" class="pill pill-orange">Containerization</a>
         
         
         <span class="pill">calls 12</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"getColumnType","slug":"fn-gridcolumns-tsx-getcolumntype","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"getColumnType","slug":"fn-gridcolumns-tsx-getcolumntype","type":"Function"},"subdomain":{"name":"Containerization","slug":"subdomain-containerization"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/containerization.html">Containerization</a><span class="arch-sep">&rarr;</span>
             <span>getColumnType() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,34 +911,34 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  61333ee8_2a63_4b37_482e_39b2bcf834ca["getColumnType()"]
-  5767d4b2_41c9_d7cd_940c_8c25bf5e8a05["getGridColumns()"]
-  5767d4b2_41c9_d7cd_940c_8c25bf5e8a05 -->|calls| 61333ee8_2a63_4b37_482e_39b2bcf834ca
-  82decaff_6a20_1896_beb0_a2396da9ae4c["isForeignKeyColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| 82decaff_6a20_1896_beb0_a2396da9ae4c
-  9b6285d4_ef8a_8733_0cf1_a74b73698a5f["isNumericalColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| 9b6285d4_ef8a_8733_0cf1_a74b73698a5f
-  237e2fec_22a4_945e_86a0_c2228993d374["isArrayColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| 237e2fec_22a4_945e_86a0_c2228993d374
-  6573f5bd_7257_57da_54b8_55ed6068d42c["isJsonColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| 6573f5bd_7257_57da_54b8_55ed6068d42c
-  5f10cee0_b552_82bd_6ca4_9fbbfba2b861["isTextColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| 5f10cee0_b552_82bd_6ca4_9fbbfba2b861
-  e7a8dd82_b4f3_5688_0d8d_0f6c634dfd1b["isCiTextColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| e7a8dd82_b4f3_5688_0d8d_0f6c634dfd1b
-  379bbbc2_5f4e_940e_26da_2e6aaa554e6f["isDateColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| 379bbbc2_5f4e_940e_26da_2e6aaa554e6f
-  e38c7688_9d1e_6d5e_6a79_f0e263308b0c["isTimeColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| e38c7688_9d1e_6d5e_6a79_f0e263308b0c
-  3b572865_a5e8_3ad0_8684_e08af00d37bb["isDateTimeColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| 3b572865_a5e8_3ad0_8684_e08af00d37bb
-  a862afad_f892_533c_7c80_ee7c3b9ef972["isBoolColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| a862afad_f892_533c_7c80_ee7c3b9ef972
-  d8b1ef61_0ded_be25_cb05_8e6569b7db4f["isEnumColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| d8b1ef61_0ded_be25_cb05_8e6569b7db4f
-  7016afb9_e832_f7fc_5dde_7dfe9901a8e1["isBinaryColumn()"]
-  61333ee8_2a63_4b37_482e_39b2bcf834ca -->|calls| 7016afb9_e832_f7fc_5dde_7dfe9901a8e1
-  style 61333ee8_2a63_4b37_482e_39b2bcf834ca fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  473795ad_842e_08fc_283c_bc0f5021b5db["getColumnType()"]
+  26b1e0fc_7348_8fe3_2f83_c12cf64dd300["getGridColumns()"]
+  26b1e0fc_7348_8fe3_2f83_c12cf64dd300 -->|calls| 473795ad_842e_08fc_283c_bc0f5021b5db
+  641f05b7_e3e6_b291_a84a_5f5d3264ad68["isForeignKeyColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| 641f05b7_e3e6_b291_a84a_5f5d3264ad68
+  4ba89d38_8f52_dcf4_7a2a_4b84668244cd["isNumericalColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| 4ba89d38_8f52_dcf4_7a2a_4b84668244cd
+  43e14d0e_9db1_9285_ea27_2a3d3e76ab03["isArrayColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| 43e14d0e_9db1_9285_ea27_2a3d3e76ab03
+  7457c11b_017d_cf08_bf46_11f1f2da291d["isJsonColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| 7457c11b_017d_cf08_bf46_11f1f2da291d
+  00a10f58_2fe9_8728_164c_1d9b7102daf5["isTextColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| 00a10f58_2fe9_8728_164c_1d9b7102daf5
+  e4e8ed57_5077_1983_c669_984ee2835eda["isCiTextColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| e4e8ed57_5077_1983_c669_984ee2835eda
+  e5b5ff19_5564_1012_e92f_580780ea3ba6["isDateColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| e5b5ff19_5564_1012_e92f_580780ea3ba6
+  c1ad170d_e24e_cd8b_a1ca_d01d74d4da62["isTimeColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| c1ad170d_e24e_cd8b_a1ca_d01d74d4da62
+  fd076b4c_0047_2faf_18ba_df6cb3c17fae["isDateTimeColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| fd076b4c_0047_2faf_18ba_df6cb3c17fae
+  b00e1885_dac9_4de0_0477_92b0aea0de3a["isBoolColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| b00e1885_dac9_4de0_0477_92b0aea0de3a
+  07a1016c_0b95_f693_2a49_f483e3ce6b5e["isEnumColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| 07a1016c_0b95_f693_2a49_f483e3ce6b5e
+  0b460eaa_4444_315a_9d37_6fc085aeb5df["isBinaryColumn()"]
+  473795ad_842e_08fc_283c_bc0f5021b5db -->|calls| 0b460eaa_4444_315a_9d37_6fc085aeb5df
+  style 473795ad_842e_08fc_283c_bc0f5021b5db fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -946,7 +946,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-gridcolumns-tsx-getcolumntype"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"61333ee8:2a63:4b37:482e:39b2bcf834ca","label":"getColumnType","type":"Function","slug":"fn-gridcolumns-tsx-getcolumntype","lc":27,"lang":"tsx","cc":12,"cbc":1},{"id":"82decaff:6a20:1896:beb0:a2396da9ae4c","label":"isForeignKeyColumn","type":"Function","slug":"fn-types-ts-isforeignkeycolumn","lc":4,"lang":"typescript","cbc":1},{"id":"9b6285d4:ef8a:8733:0cf1:a74b73698a5f","label":"isNumericalColumn","type":"Function","slug":"fn-types-ts-isnumericalcolumn","lc":3,"lang":"typescript","cbc":2},{"id":"237e2fec:22a4:945e:86a0:c2228993d374","label":"isArrayColumn","type":"Function","slug":"fn-types-ts-isarraycolumn","lc":3,"lang":"typescript","cbc":1},{"id":"6573f5bd:7257:57da:54b8:55ed6068d42c","label":"isJsonColumn","type":"Function","slug":"fn-types-ts-isjsoncolumn","lc":3,"lang":"typescript","cbc":1},{"id":"5f10cee0:b552:82bd:6ca4:9fbbfba2b861","label":"isTextColumn","type":"Function","slug":"fn-types-ts-istextcolumn","lc":3,"lang":"typescript","cbc":1},{"id":"e7a8dd82:b4f3:5688:0d8d:0f6c634dfd1b","label":"isCiTextColumn","type":"Function","slug":"fn-types-ts-iscitextcolumn","lc":3,"lang":"typescript","cbc":1},{"id":"379bbbc2:5f4e:940e:26da:2e6aaa554e6f","label":"isDateColumn","type":"Function","slug":"fn-types-ts-isdatecolumn","lc":3,"lang":"typescript","cbc":2},{"id":"e38c7688:9d1e:6d5e:6a79:f0e263308b0c","label":"isTimeColumn","type":"Function","slug":"fn-types-ts-istimecolumn","lc":3,"lang":"typescript","cbc":2},{"id":"3b572865:a5e8:3ad0:8684:e08af00d37bb","label":"isDateTimeColumn","type":"Function","slug":"fn-types-ts-isdatetimecolumn","lc":3,"lang":"typescript","cbc":2},{"id":"a862afad:f892:533c:7c80:ee7c3b9ef972","label":"isBoolColumn","type":"Function","slug":"fn-types-ts-isboolcolumn","lc":3,"lang":"typescript","cbc":2},{"id":"d8b1ef61:0ded:be25:cb05:8e6569b7db4f","label":"isEnumColumn","type":"Function","slug":"fn-types-ts-isenumcolumn","lc":3,"lang":"typescript","cbc":2},{"id":"7016afb9:e832:f7fc:5dde:7dfe9901a8e1","label":"isBinaryColumn","type":"Function","slug":"fn-types-ts-isbinarycolumn","lc":3,"lang":"typescript","cbc":1},{"id":"5767d4b2:41c9:d7cd:940c:8c25bf5e8a05","label":"getGridColumns","type":"Function","slug":"fn-gridcolumns-tsx-getgridcolumns","lc":73,"lang":"tsx","cc":4},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"82decaff:6a20:1896:beb0:a2396da9ae4c","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"9b6285d4:ef8a:8733:0cf1:a74b73698a5f","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"237e2fec:22a4:945e:86a0:c2228993d374","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"6573f5bd:7257:57da:54b8:55ed6068d42c","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"5f10cee0:b552:82bd:6ca4:9fbbfba2b861","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"e7a8dd82:b4f3:5688:0d8d:0f6c634dfd1b","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"379bbbc2:5f4e:940e:26da:2e6aaa554e6f","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"e38c7688:9d1e:6d5e:6a79:f0e263308b0c","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"3b572865:a5e8:3ad0:8684:e08af00d37bb","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"a862afad:f892:533c:7c80:ee7c3b9ef972","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"d8b1ef61:0ded:be25:cb05:8e6569b7db4f","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"7016afb9:e832:f7fc:5dde:7dfe9901a8e1","type":"calls"},{"source":"5767d4b2:41c9:d7cd:940c:8c25bf5e8a05","target":"61333ee8:2a63:4b37:482e:39b2bcf834ca","type":"calls"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"61333ee8:2a63:4b37:482e:39b2bcf834ca","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"473795ad:842e:08fc:283c:bc0f5021b5db","label":"getColumnType","type":"Function","slug":"fn-gridcolumns-tsx-getcolumntype","lc":27,"lang":"tsx","cc":12,"cbc":1},{"id":"641f05b7:e3e6:b291:a84a:5f5d3264ad68","label":"isForeignKeyColumn","type":"Function","slug":"fn-types-ts-isforeignkeycolumn","lc":4,"lang":"typescript","cbc":1},{"id":"4ba89d38:8f52:dcf4:7a2a:4b84668244cd","label":"isNumericalColumn","type":"Function","slug":"fn-types-ts-isnumericalcolumn","lc":3,"lang":"typescript","cbc":2},{"id":"43e14d0e:9db1:9285:ea27:2a3d3e76ab03","label":"isArrayColumn","type":"Function","slug":"fn-types-ts-isarraycolumn","lc":3,"lang":"typescript","cbc":1},{"id":"7457c11b:017d:cf08:bf46:11f1f2da291d","label":"isJsonColumn","type":"Function","slug":"fn-types-ts-isjsoncolumn","lc":3,"lang":"typescript","cbc":1},{"id":"00a10f58:2fe9:8728:164c:1d9b7102daf5","label":"isTextColumn","type":"Function","slug":"fn-types-ts-istextcolumn","lc":3,"lang":"typescript","cbc":1},{"id":"e4e8ed57:5077:1983:c669:984ee2835eda","label":"isCiTextColumn","type":"Function","slug":"fn-types-ts-iscitextcolumn","lc":3,"lang":"typescript","cbc":1},{"id":"e5b5ff19:5564:1012:e92f:580780ea3ba6","label":"isDateColumn","type":"Function","slug":"fn-types-ts-isdatecolumn","lc":3,"lang":"typescript","cbc":2},{"id":"c1ad170d:e24e:cd8b:a1ca:d01d74d4da62","label":"isTimeColumn","type":"Function","slug":"fn-types-ts-istimecolumn","lc":3,"lang":"typescript","cbc":2},{"id":"fd076b4c:0047:2faf:18ba:df6cb3c17fae","label":"isDateTimeColumn","type":"Function","slug":"fn-types-ts-isdatetimecolumn","lc":3,"lang":"typescript","cbc":2},{"id":"b00e1885:dac9:4de0:0477:92b0aea0de3a","label":"isBoolColumn","type":"Function","slug":"fn-types-ts-isboolcolumn","lc":3,"lang":"typescript","cbc":2},{"id":"07a1016c:0b95:f693:2a49:f483e3ce6b5e","label":"isEnumColumn","type":"Function","slug":"fn-types-ts-isenumcolumn","lc":3,"lang":"typescript","cbc":2},{"id":"0b460eaa:4444:315a:9d37:6fc085aeb5df","label":"isBinaryColumn","type":"Function","slug":"fn-types-ts-isbinarycolumn","lc":3,"lang":"typescript","cbc":1},{"id":"26b1e0fc:7348:8fe3:2f83:c12cf64dd300","label":"getGridColumns","type":"Function","slug":"fn-gridcolumns-tsx-getgridcolumns","lc":73,"lang":"tsx","cc":4},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:Containerization","label":"Containerization","type":"Subdomain","slug":"subdomain-containerization"}],"edges":[{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"641f05b7:e3e6:b291:a84a:5f5d3264ad68","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"4ba89d38:8f52:dcf4:7a2a:4b84668244cd","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"43e14d0e:9db1:9285:ea27:2a3d3e76ab03","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"7457c11b:017d:cf08:bf46:11f1f2da291d","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"00a10f58:2fe9:8728:164c:1d9b7102daf5","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"e4e8ed57:5077:1983:c669:984ee2835eda","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"e5b5ff19:5564:1012:e92f:580780ea3ba6","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"c1ad170d:e24e:cd8b:a1ca:d01d74d4da62","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"fd076b4c:0047:2faf:18ba:df6cb3c17fae","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"b00e1885:dac9:4de0:0477:92b0aea0de3a","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"07a1016c:0b95:f693:2a49:f483e3ce6b5e","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"0b460eaa:4444:315a:9d37:6fc085aeb5df","type":"calls"},{"source":"26b1e0fc:7348:8fe3:2f83:c12cf64dd300","target":"473795ad:842e:08fc:283c:bc0f5021b5db","type":"calls"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"473795ad:842e:08fc:283c:bc0f5021b5db","target":"subdomain:InfrastructureDeployment:Containerization","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -994,14 +994,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-containerization.html">Containerization</a></li></ul>
     </div>
     
 

@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/containerization.html" class="pill pill-orange">Containerization</a>
         
         
         <span class="pill">calls 3</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"generateEventTriggerCreateSQL","slug":"fn-eventtriggerlist-utils-ts-generateeventtriggercreatesql","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"generateEventTriggerCreateSQL","slug":"fn-eventtriggerlist-utils-ts-generateeventtriggercreatesql","type":"Function"},"subdomain":{"name":"Containerization","slug":"subdomain-containerization"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/containerization.html">Containerization</a><span class="arch-sep">&rarr;</span>
             <span>generateEventTriggerCreateSQL() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  deea3f6c_fb21_722a_f6b2_fd3d0be6d198["generateEventTriggerCreateSQL()"]
-  2a5976b4_2924_b9c8_97a7_ca90c3d09ff5["EventTriggersList()"]
-  2a5976b4_2924_b9c8_97a7_ca90c3d09ff5 -->|calls| deea3f6c_fb21_722a_f6b2_fd3d0be6d198
-  d4cf8145_79e7_c3fa_cf74_855c19824a59["ensureSemicolon()"]
-  deea3f6c_fb21_722a_f6b2_fd3d0be6d198 -->|calls| d4cf8145_79e7_c3fa_cf74_855c19824a59
-  8a78401a_990c_7970_db0c_1fc39f88999a["escapeIdentifier()"]
-  deea3f6c_fb21_722a_f6b2_fd3d0be6d198 -->|calls| 8a78401a_990c_7970_db0c_1fc39f88999a
-  c6075904_448a_a84d_3c9d_370efb24bd84["escapeLiteral()"]
-  deea3f6c_fb21_722a_f6b2_fd3d0be6d198 -->|calls| c6075904_448a_a84d_3c9d_370efb24bd84
-  style deea3f6c_fb21_722a_f6b2_fd3d0be6d198 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  dabcac87_b325_10ef_92ae_676adac8cba3["generateEventTriggerCreateSQL()"]
+  09d5dd40_cf06_be77_e62b_4c6c80a43ea0["EventTriggersList()"]
+  09d5dd40_cf06_be77_e62b_4c6c80a43ea0 -->|calls| dabcac87_b325_10ef_92ae_676adac8cba3
+  0c0b4bdc_774b_9787_5770_e72a053d5ffd["ensureSemicolon()"]
+  dabcac87_b325_10ef_92ae_676adac8cba3 -->|calls| 0c0b4bdc_774b_9787_5770_e72a053d5ffd
+  e699a8bc_44a8_b13d_ded5_6a0f0564c87e["escapeIdentifier()"]
+  dabcac87_b325_10ef_92ae_676adac8cba3 -->|calls| e699a8bc_44a8_b13d_ded5_6a0f0564c87e
+  37464d1c_f873_1635_15ed_a0cace930e92["escapeLiteral()"]
+  dabcac87_b325_10ef_92ae_676adac8cba3 -->|calls| 37464d1c_f873_1635_15ed_a0cace930e92
+  style dabcac87_b325_10ef_92ae_676adac8cba3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-eventtriggerlist-utils-ts-generateeventtriggercreatesql"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"deea3f6c:fb21:722a:f6b2:fd3d0be6d198","label":"generateEventTriggerCreateSQL","type":"Function","slug":"fn-eventtriggerlist-utils-ts-generateeventtriggercreatesql","lc":27,"lang":"typescript","cc":3,"cbc":1},{"id":"d4cf8145:79e7:c3fa:cf74:855c19824a59","label":"ensureSemicolon","type":"Function","slug":"fn-eventtriggerlist-utils-ts-ensuresemicolon","lc":4,"lang":"typescript","cbc":1},{"id":"8a78401a:990c:7970:db0c:1fc39f88999a","label":"escapeIdentifier","type":"Function","slug":"fn-eventtriggerlist-utils-ts-escapeidentifier","lc":1,"lang":"typescript","cbc":1},{"id":"c6075904:448a:a84d:3c9d:370efb24bd84","label":"escapeLiteral","type":"Function","slug":"fn-eventtriggerlist-utils-ts-escapeliteral","lc":1,"lang":"typescript","cbc":1},{"id":"2a5976b4:2924:b9c8:97a7:ca90c3d09ff5","label":"EventTriggersList","type":"Function","slug":"fn-eventtriggerslist-tsx-eventtriggerslist","lc":248,"lang":"tsx","cc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"deea3f6c:fb21:722a:f6b2:fd3d0be6d198","target":"d4cf8145:79e7:c3fa:cf74:855c19824a59","type":"calls"},{"source":"deea3f6c:fb21:722a:f6b2:fd3d0be6d198","target":"8a78401a:990c:7970:db0c:1fc39f88999a","type":"calls"},{"source":"deea3f6c:fb21:722a:f6b2:fd3d0be6d198","target":"c6075904:448a:a84d:3c9d:370efb24bd84","type":"calls"},{"source":"2a5976b4:2924:b9c8:97a7:ca90c3d09ff5","target":"deea3f6c:fb21:722a:f6b2:fd3d0be6d198","type":"calls"},{"source":"deea3f6c:fb21:722a:f6b2:fd3d0be6d198","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"deea3f6c:fb21:722a:f6b2:fd3d0be6d198","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"dabcac87:b325:10ef:92ae:676adac8cba3","label":"generateEventTriggerCreateSQL","type":"Function","slug":"fn-eventtriggerlist-utils-ts-generateeventtriggercreatesql","lc":27,"lang":"typescript","cc":3,"cbc":1},{"id":"0c0b4bdc:774b:9787:5770:e72a053d5ffd","label":"ensureSemicolon","type":"Function","slug":"fn-eventtriggerlist-utils-ts-ensuresemicolon","lc":4,"lang":"typescript","cbc":1},{"id":"e699a8bc:44a8:b13d:ded5:6a0f0564c87e","label":"escapeIdentifier","type":"Function","slug":"fn-eventtriggerlist-utils-ts-escapeidentifier","lc":1,"lang":"typescript","cbc":1},{"id":"37464d1c:f873:1635:15ed:a0cace930e92","label":"escapeLiteral","type":"Function","slug":"fn-eventtriggerlist-utils-ts-escapeliteral","lc":1,"lang":"typescript","cbc":1},{"id":"09d5dd40:cf06:be77:e62b:4c6c80a43ea0","label":"EventTriggersList","type":"Function","slug":"fn-eventtriggerslist-tsx-eventtriggerslist","lc":248,"lang":"tsx","cc":1},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:Containerization","label":"Containerization","type":"Subdomain","slug":"subdomain-containerization"}],"edges":[{"source":"dabcac87:b325:10ef:92ae:676adac8cba3","target":"0c0b4bdc:774b:9787:5770:e72a053d5ffd","type":"calls"},{"source":"dabcac87:b325:10ef:92ae:676adac8cba3","target":"e699a8bc:44a8:b13d:ded5:6a0f0564c87e","type":"calls"},{"source":"dabcac87:b325:10ef:92ae:676adac8cba3","target":"37464d1c:f873:1635:15ed:a0cace930e92","type":"calls"},{"source":"09d5dd40:cf06:be77:e62b:4c6c80a43ea0","target":"dabcac87:b325:10ef:92ae:676adac8cba3","type":"calls"},{"source":"dabcac87:b325:10ef:92ae:676adac8cba3","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"dabcac87:b325:10ef:92ae:676adac8cba3","target":"subdomain:InfrastructureDeployment:Containerization","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -976,14 +976,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-containerization.html">Containerization</a></li></ul>
     </div>
     
 

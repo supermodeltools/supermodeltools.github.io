@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/contentengine.html" class="pill pill-green">ContentEngine</a>
-        <a href="/subdomain/accesscontrol.html" class="pill pill-orange">AccessControl</a>
+        <a href="/domain/contentmanagement.html" class="pill pill-green">ContentManagement</a>
+        <a href="/subdomain/lifecyclehooks.html" class="pill pill-orange">LifecycleHooks</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"ContentEngine","slug":"domain-contentengine"},"entity":{"name":"getCurrentChapter","slug":"fn-get-current-chapter-ts-getcurrentchapter","type":"Function"},"subdomain":{"name":"AccessControl","slug":"subdomain-accesscontrol"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"ContentManagement","slug":"domain-contentmanagement"},"entity":{"name":"getCurrentChapter","slug":"fn-get-current-chapter-ts-getcurrentchapter","type":"Function"},"subdomain":{"name":"LifecycleHooks","slug":"subdomain-lifecyclehooks"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/contentengine.html">ContentEngine</a><span class="arch-sep">&rarr;</span>
-            <a href="/accesscontrol.html">AccessControl</a><span class="arch-sep">&rarr;</span>
+            <a href="/contentmanagement.html">ContentManagement</a><span class="arch-sep">&rarr;</span>
+            <a href="/lifecyclehooks.html">LifecycleHooks</a><span class="arch-sep">&rarr;</span>
             <span>getCurrentChapter() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  c57168b9_004e_2f57_2379_b06c9dc402b5["getCurrentChapter()"]
-  5d92c407_dac4_28ba_2222_663a36b9d6d2["DocPage()"]
-  5d92c407_dac4_28ba_2222_663a36b9d6d2 -->|calls| c57168b9_004e_2f57_2379_b06c9dc402b5
-  7162dded_559b_7c19_d7d2_eaca3f24c0a7["normalizeSlug()"]
-  c57168b9_004e_2f57_2379_b06c9dc402b5 -->|calls| 7162dded_559b_7c19_d7d2_eaca3f24c0a7
-  style c57168b9_004e_2f57_2379_b06c9dc402b5 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  fcb8e2e6_b4d1_9f5b_ed44_4a748f094876["getCurrentChapter()"]
+  bafd3b5d_689f_03e4_6c0f_9246ac35b151["DocPage()"]
+  bafd3b5d_689f_03e4_6c0f_9246ac35b151 -->|calls| fcb8e2e6_b4d1_9f5b_ed44_4a748f094876
+  6beed975_be76_e918_e1ab_8874270c1620["normalizeSlug()"]
+  fcb8e2e6_b4d1_9f5b_ed44_4a748f094876 -->|calls| 6beed975_be76_e918_e1ab_8874270c1620
+  style fcb8e2e6_b4d1_9f5b_ed44_4a748f094876 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-get-current-chapter-ts-getcurrentchapter"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"c57168b9:004e:2f57:2379:b06c9dc402b5","label":"getCurrentChapter","type":"Function","slug":"fn-get-current-chapter-ts-getcurrentchapter","lc":30,"lang":"typescript","cc":1,"cbc":1},{"id":"7162dded:559b:7c19:d7d2:eaca3f24c0a7","label":"normalizeSlug","type":"Function","slug":"fn-get-next-page-ts-normalizeslug","lc":3,"lang":"typescript","cbc":2},{"id":"5d92c407:dac4:28ba:2222:663a36b9d6d2","label":"DocPage","type":"Function","slug":"fn-page-tsx-docpage-2","lc":89,"lang":"tsx","cc":4},{"id":"domain:ContentEngine","label":"ContentEngine","type":"Domain","slug":"domain-contentengine"},{"id":"subdomain:ContentEngine:AccessControl","label":"AccessControl","type":"Subdomain","slug":"subdomain-accesscontrol"}],"edges":[{"source":"c57168b9:004e:2f57:2379:b06c9dc402b5","target":"7162dded:559b:7c19:d7d2:eaca3f24c0a7","type":"calls"},{"source":"5d92c407:dac4:28ba:2222:663a36b9d6d2","target":"c57168b9:004e:2f57:2379:b06c9dc402b5","type":"calls"},{"source":"c57168b9:004e:2f57:2379:b06c9dc402b5","target":"domain:ContentEngine","type":"belongsTo"},{"source":"c57168b9:004e:2f57:2379:b06c9dc402b5","target":"subdomain:ContentEngine:AccessControl","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"fcb8e2e6:b4d1:9f5b:ed44:4a748f094876","label":"getCurrentChapter","type":"Function","slug":"fn-get-current-chapter-ts-getcurrentchapter","lc":30,"lang":"typescript","cc":1,"cbc":1},{"id":"6beed975:be76:e918:e1ab:8874270c1620","label":"normalizeSlug","type":"Function","slug":"fn-get-next-page-ts-normalizeslug","lc":3,"lang":"typescript","cbc":2},{"id":"bafd3b5d:689f:03e4:6c0f:9246ac35b151","label":"DocPage","type":"Function","slug":"fn-page-tsx-docpage-2","lc":89,"lang":"tsx","cc":4},{"id":"domain:ContentManagement","label":"ContentManagement","type":"Domain","slug":"domain-contentmanagement"},{"id":"subdomain:ContentManagement:LifecycleHooks","label":"LifecycleHooks","type":"Subdomain","slug":"subdomain-lifecyclehooks"}],"edges":[{"source":"fcb8e2e6:b4d1:9f5b:ed44:4a748f094876","target":"6beed975:be76:e918:e1ab:8874270c1620","type":"calls"},{"source":"bafd3b5d:689f:03e4:6c0f:9246ac35b151","target":"fcb8e2e6:b4d1:9f5b:ed44:4a748f094876","type":"calls"},{"source":"fcb8e2e6:b4d1:9f5b:ed44:4a748f094876","target":"domain:ContentManagement","type":"belongsTo"},{"source":"fcb8e2e6:b4d1:9f5b:ed44:4a748f094876","target":"subdomain:ContentManagement:LifecycleHooks","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -975,14 +975,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-contentengine.html">ContentEngine</a></li></ul>
+      <ul><li><a href="/domain-contentmanagement.html">ContentManagement</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-accesscontrol.html">AccessControl</a></li></ul>
+      <ul><li><a href="/subdomain-lifecyclehooks.html">LifecycleHooks</a></li></ul>
     </div>
     
 

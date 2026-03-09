@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/containerization.html" class="pill pill-orange">Containerization</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"saveTableEditorStateToLocalStorage","slug":"fn-supabasegrid-utils-ts-savetableeditorstatetolocalstorage","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"saveTableEditorStateToLocalStorage","slug":"fn-supabasegrid-utils-ts-savetableeditorstatetolocalstorage","type":"Function"},"subdomain":{"name":"Containerization","slug":"subdomain-containerization"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/containerization.html">Containerization</a><span class="arch-sep">&rarr;</span>
             <span>saveTableEditorStateToLocalStorage() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  42dff0fa_1213_762f_bb4f_672e27786d18["saveTableEditorStateToLocalStorage()"]
-  bd94e812_1b46_1efc_e365_1f03897fe405["useSyncTableEditorStateFromLocalStorageWithUrl()"]
-  bd94e812_1b46_1efc_e365_1f03897fe405 -->|calls| 42dff0fa_1213_762f_bb4f_672e27786d18
-  4b01d98f_8609_4280_19c0_29a359e4451c["getStorageKey()"]
-  42dff0fa_1213_762f_bb4f_672e27786d18 -->|calls| 4b01d98f_8609_4280_19c0_29a359e4451c
-  style 42dff0fa_1213_762f_bb4f_672e27786d18 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  e8b616eb_d22b_937f_1d4c_e27f200981d2["saveTableEditorStateToLocalStorage()"]
+  3d714056_c76a_073d_8005_7f7017a819a9["useSyncTableEditorStateFromLocalStorageWithUrl()"]
+  3d714056_c76a_073d_8005_7f7017a819a9 -->|calls| e8b616eb_d22b_937f_1d4c_e27f200981d2
+  e640c149_21d8_9edc_3448_54e5dee8cd09["getStorageKey()"]
+  e8b616eb_d22b_937f_1d4c_e27f200981d2 -->|calls| e640c149_21d8_9edc_3448_54e5dee8cd09
+  style e8b616eb_d22b_937f_1d4c_e27f200981d2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-supabasegrid-utils-ts-savetableeditorstatetolocalstorage"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"42dff0fa:1213:762f:bb4f:672e27786d18","label":"saveTableEditorStateToLocalStorage","type":"Function","slug":"fn-supabasegrid-utils-ts-savetableeditorstatetolocalstorage","lc":34,"lang":"typescript","cc":1,"cbc":1},{"id":"4b01d98f:8609:4280:19c0:29a359e4451c","label":"getStorageKey","type":"Function","slug":"fn-supabasegrid-utils-ts-getstoragekey","lc":3,"lang":"typescript","cbc":2},{"id":"bd94e812:1b46:1efc:e365:1f03897fe405","label":"useSyncTableEditorStateFromLocalStorageWithUrl","type":"Function","slug":"fn-supabasegrid-utils-ts-usesynctableeditorstatefromlocalstoragewithurl","lc":41,"lang":"typescript","cc":2},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"42dff0fa:1213:762f:bb4f:672e27786d18","target":"4b01d98f:8609:4280:19c0:29a359e4451c","type":"calls"},{"source":"bd94e812:1b46:1efc:e365:1f03897fe405","target":"42dff0fa:1213:762f:bb4f:672e27786d18","type":"calls"},{"source":"42dff0fa:1213:762f:bb4f:672e27786d18","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"42dff0fa:1213:762f:bb4f:672e27786d18","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"e8b616eb:d22b:937f:1d4c:e27f200981d2","label":"saveTableEditorStateToLocalStorage","type":"Function","slug":"fn-supabasegrid-utils-ts-savetableeditorstatetolocalstorage","lc":34,"lang":"typescript","cc":1,"cbc":1},{"id":"e640c149:21d8:9edc:3448:54e5dee8cd09","label":"getStorageKey","type":"Function","slug":"fn-supabasegrid-utils-ts-getstoragekey","lc":3,"lang":"typescript","cbc":2},{"id":"3d714056:c76a:073d:8005:7f7017a819a9","label":"useSyncTableEditorStateFromLocalStorageWithUrl","type":"Function","slug":"fn-supabasegrid-utils-ts-usesynctableeditorstatefromlocalstoragewithurl","lc":41,"lang":"typescript","cc":2},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:Containerization","label":"Containerization","type":"Subdomain","slug":"subdomain-containerization"}],"edges":[{"source":"e8b616eb:d22b:937f:1d4c:e27f200981d2","target":"e640c149:21d8:9edc:3448:54e5dee8cd09","type":"calls"},{"source":"3d714056:c76a:073d:8005:7f7017a819a9","target":"e8b616eb:d22b:937f:1d4c:e27f200981d2","type":"calls"},{"source":"e8b616eb:d22b:937f:1d4c:e27f200981d2","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"e8b616eb:d22b:937f:1d4c:e27f200981d2","target":"subdomain:InfrastructureDeployment:Containerization","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -979,14 +979,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-containerization.html">Containerization</a></li></ul>
     </div>
     
 

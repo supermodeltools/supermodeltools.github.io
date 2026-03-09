@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/tooling.html" class="pill pill-orange">Tooling</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/buildorchestration.html" class="pill pill-orange">BuildOrchestration</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"ServiceStatus","slug":"fn-servicestatus-tsx-servicestatus","type":"Function"},"subdomain":{"name":"Tooling","slug":"subdomain-tooling"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"ServiceStatus","slug":"fn-servicestatus-tsx-servicestatus","type":"Function"},"subdomain":{"name":"BuildOrchestration","slug":"subdomain-buildorchestration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/tooling.html">Tooling</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildorchestration.html">BuildOrchestration</a><span class="arch-sep">&rarr;</span>
             <span>ServiceStatus() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  e82a4a54_267d_7e80_bbda_7a4db7180c8d["ServiceStatus()"]
-  8e02c722_2058_12a6_a75c_9c363f5aea28["extractDbSchema()"]
-  e82a4a54_267d_7e80_bbda_7a4db7180c8d -->|calls| 8e02c722_2058_12a6_a75c_9c363f5aea28
-  style e82a4a54_267d_7e80_bbda_7a4db7180c8d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  09a3dc7c_36e6_363b_af44_66a2a7b4e949["ServiceStatus()"]
+  1ff91be4_676a_5662_3e8c_21a722d69436["extractDbSchema()"]
+  09a3dc7c_36e6_363b_af44_66a2a7b4e949 -->|calls| 1ff91be4_676a_5662_3e8c_21a722d69436
+  style 09a3dc7c_36e6_363b_af44_66a2a7b4e949 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-servicestatus-tsx-servicestatus"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"e82a4a54:267d:7e80:bbda:7a4db7180c8d","label":"ServiceStatus","type":"Function","slug":"fn-servicestatus-tsx-servicestatus","lc":296,"lang":"tsx","cc":1},{"id":"8e02c722:2058:12a6:a75c:9c363f5aea28","label":"extractDbSchema","type":"Function","slug":"fn-servicestatus-tsx-extractdbschema","lc":6,"lang":"tsx","cbc":2},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Tooling","label":"Tooling","type":"Subdomain","slug":"subdomain-tooling"}],"edges":[{"source":"e82a4a54:267d:7e80:bbda:7a4db7180c8d","target":"8e02c722:2058:12a6:a75c:9c363f5aea28","type":"calls"},{"source":"e82a4a54:267d:7e80:bbda:7a4db7180c8d","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"e82a4a54:267d:7e80:bbda:7a4db7180c8d","target":"subdomain:BuildAutomation:Tooling","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"09a3dc7c:36e6:363b:af44:66a2a7b4e949","label":"ServiceStatus","type":"Function","slug":"fn-servicestatus-tsx-servicestatus","lc":296,"lang":"tsx","cc":1},{"id":"1ff91be4:676a:5662:3e8c:21a722d69436","label":"extractDbSchema","type":"Function","slug":"fn-servicestatus-tsx-extractdbschema","lc":6,"lang":"tsx","cbc":2},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:BuildOrchestration","label":"BuildOrchestration","type":"Subdomain","slug":"subdomain-buildorchestration"}],"edges":[{"source":"09a3dc7c:36e6:363b:af44:66a2a7b4e949","target":"1ff91be4:676a:5662:3e8c:21a722d69436","type":"calls"},{"source":"09a3dc7c:36e6:363b:af44:66a2a7b4e949","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"09a3dc7c:36e6:363b:af44:66a2a7b4e949","target":"subdomain:InfrastructureDeployment:BuildOrchestration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1239,14 +1239,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-tooling.html">Tooling</a></li></ul>
+      <ul><li><a href="/subdomain-buildorchestration.html">BuildOrchestration</a></li></ul>
     </div>
     
 

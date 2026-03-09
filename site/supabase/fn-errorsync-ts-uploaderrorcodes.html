@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/documentationportal.html" class="pill pill-green">DocumentationPortal</a>
+        <a href="/subdomain/referencegenerator.html" class="pill pill-orange">ReferenceGenerator</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"uploadErrorCodes","slug":"fn-errorsync-ts-uploaderrorcodes","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DocumentationPortal","slug":"domain-documentationportal"},"entity":{"name":"uploadErrorCodes","slug":"fn-errorsync-ts-uploaderrorcodes","type":"Function"},"subdomain":{"name":"ReferenceGenerator","slug":"subdomain-referencegenerator"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/documentationportal.html">DocumentationPortal</a><span class="arch-sep">&rarr;</span>
+            <a href="/referencegenerator.html">ReferenceGenerator</a><span class="arch-sep">&rarr;</span>
             <span>uploadErrorCodes() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,18 +911,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  a4afadbc_21ac_5ca3_f036_43934377d30e["uploadErrorCodes()"]
-  a91c4a5e_155c_686b_90fc_7015424faa66["syncErrorCodes()"]
-  a91c4a5e_155c_686b_90fc_7015424faa66 -->|calls| a4afadbc_21ac_5ca3_f036_43934377d30e
-  c1ede154_ee70_99ce_47e1_de039806c683["map()"]
-  a4afadbc_21ac_5ca3_f036_43934377d30e -->|calls| c1ede154_ee70_99ce_47e1_de039806c683
-  942d42b1_6240_53b9_cfb6_ba71c100a27f["supabaseAdmin()"]
-  a4afadbc_21ac_5ca3_f036_43934377d30e -->|calls| 942d42b1_6240_53b9_cfb6_ba71c100a27f
-  980ad14c_c6b2_bc71_c3b4_4b22653f2969["handleErrorCodeUploadErrors()"]
-  a4afadbc_21ac_5ca3_f036_43934377d30e -->|calls| 980ad14c_c6b2_bc71_c3b4_4b22653f2969
-  75a0ecf9_9365_3bb3_c9e9_863688e3d98c["extractMessageFromAnyError()"]
-  a4afadbc_21ac_5ca3_f036_43934377d30e -->|calls| 75a0ecf9_9365_3bb3_c9e9_863688e3d98c
-  style a4afadbc_21ac_5ca3_f036_43934377d30e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  7edbf9a3_911a_b6fd_fdca_495cb50d7cec["uploadErrorCodes()"]
+  9a2ae535_2f87_993f_4fae_594e488a276a["syncErrorCodes()"]
+  9a2ae535_2f87_993f_4fae_594e488a276a -->|calls| 7edbf9a3_911a_b6fd_fdca_495cb50d7cec
+  79e50140_e16a_1267_25b8_73bfc08c03e5["map()"]
+  7edbf9a3_911a_b6fd_fdca_495cb50d7cec -->|calls| 79e50140_e16a_1267_25b8_73bfc08c03e5
+  9644c389_4b45_379e_b4e7_d912eef4c473["supabaseAdmin()"]
+  7edbf9a3_911a_b6fd_fdca_495cb50d7cec -->|calls| 9644c389_4b45_379e_b4e7_d912eef4c473
+  2687416b_47db_0440_f2cc_3e78543f5ac1["handleErrorCodeUploadErrors()"]
+  7edbf9a3_911a_b6fd_fdca_495cb50d7cec -->|calls| 2687416b_47db_0440_f2cc_3e78543f5ac1
+  38ded1f7_e386_cd69_bda5_3940db6a46bd["extractMessageFromAnyError()"]
+  7edbf9a3_911a_b6fd_fdca_495cb50d7cec -->|calls| 38ded1f7_e386_cd69_bda5_3940db6a46bd
+  style 7edbf9a3_911a_b6fd_fdca_495cb50d7cec fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -930,7 +930,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-errorsync-ts-uploaderrorcodes"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"a4afadbc:21ac:5ca3:f036:43934377d30e","label":"uploadErrorCodes","type":"Function","slug":"fn-errorsync-ts-uploaderrorcodes","lc":14,"lang":"typescript","cc":4,"cbc":1},{"id":"c1ede154:ee70:99ce:47e1:de039806c683","label":"map","type":"Function","slug":"fn-helpers-fn-ts-map","lc":4,"lang":"typescript","cc":2,"cbc":15},{"id":"942d42b1:6240:53b9:cfb6:ba71c100a27f","label":"supabaseAdmin","type":"Function","slug":"fn-supabaseadmin-ts-supabaseadmin","lc":14,"lang":"typescript","cbc":2},{"id":"980ad14c:c6b2:bc71:c3b4:4b22653f2969","label":"handleErrorCodeUploadErrors","type":"Function","slug":"fn-errorsync-ts-handleerrorcodeuploaderrors","lc":27,"lang":"typescript","cc":1,"cbc":1},{"id":"75a0ecf9:9365:3bb3:c9e9:863688e3d98c","label":"extractMessageFromAnyError","type":"Function","slug":"fn-utils-ts-extractmessagefromanyerror","lc":6,"lang":"typescript","cc":1,"cbc":8},{"id":"a91c4a5e:155c:686b:90fc:7015424faa66","label":"syncErrorCodes","type":"Function","slug":"fn-errorsync-ts-syncerrorcodes","lc":43,"lang":"typescript","cc":7,"cbc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"a4afadbc:21ac:5ca3:f036:43934377d30e","target":"c1ede154:ee70:99ce:47e1:de039806c683","type":"calls"},{"source":"a4afadbc:21ac:5ca3:f036:43934377d30e","target":"942d42b1:6240:53b9:cfb6:ba71c100a27f","type":"calls"},{"source":"a4afadbc:21ac:5ca3:f036:43934377d30e","target":"980ad14c:c6b2:bc71:c3b4:4b22653f2969","type":"calls"},{"source":"a4afadbc:21ac:5ca3:f036:43934377d30e","target":"75a0ecf9:9365:3bb3:c9e9:863688e3d98c","type":"calls"},{"source":"a91c4a5e:155c:686b:90fc:7015424faa66","target":"a4afadbc:21ac:5ca3:f036:43934377d30e","type":"calls"},{"source":"a4afadbc:21ac:5ca3:f036:43934377d30e","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"a4afadbc:21ac:5ca3:f036:43934377d30e","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"7edbf9a3:911a:b6fd:fdca:495cb50d7cec","label":"uploadErrorCodes","type":"Function","slug":"fn-errorsync-ts-uploaderrorcodes","lc":14,"lang":"typescript","cc":4,"cbc":1},{"id":"79e50140:e16a:1267:25b8:73bfc08c03e5","label":"map","type":"Function","slug":"fn-helpers-fn-ts-map","lc":4,"lang":"typescript","cc":2,"cbc":15},{"id":"9644c389:4b45:379e:b4e7:d912eef4c473","label":"supabaseAdmin","type":"Function","slug":"fn-supabaseadmin-ts-supabaseadmin","lc":14,"lang":"typescript","cbc":2},{"id":"2687416b:47db:0440:f2cc:3e78543f5ac1","label":"handleErrorCodeUploadErrors","type":"Function","slug":"fn-errorsync-ts-handleerrorcodeuploaderrors","lc":27,"lang":"typescript","cc":1,"cbc":1},{"id":"38ded1f7:e386:cd69:bda5:3940db6a46bd","label":"extractMessageFromAnyError","type":"Function","slug":"fn-utils-ts-extractmessagefromanyerror","lc":6,"lang":"typescript","cc":1,"cbc":8},{"id":"9a2ae535:2f87:993f:4fae:594e488a276a","label":"syncErrorCodes","type":"Function","slug":"fn-errorsync-ts-syncerrorcodes","lc":43,"lang":"typescript","cc":7,"cbc":1},{"id":"domain:DocumentationPortal","label":"DocumentationPortal","type":"Domain","slug":"domain-documentationportal"},{"id":"subdomain:DocumentationPortal:ReferenceGenerator","label":"ReferenceGenerator","type":"Subdomain","slug":"subdomain-referencegenerator"}],"edges":[{"source":"7edbf9a3:911a:b6fd:fdca:495cb50d7cec","target":"79e50140:e16a:1267:25b8:73bfc08c03e5","type":"calls"},{"source":"7edbf9a3:911a:b6fd:fdca:495cb50d7cec","target":"9644c389:4b45:379e:b4e7:d912eef4c473","type":"calls"},{"source":"7edbf9a3:911a:b6fd:fdca:495cb50d7cec","target":"2687416b:47db:0440:f2cc:3e78543f5ac1","type":"calls"},{"source":"7edbf9a3:911a:b6fd:fdca:495cb50d7cec","target":"38ded1f7:e386:cd69:bda5:3940db6a46bd","type":"calls"},{"source":"9a2ae535:2f87:993f:4fae:594e488a276a","target":"7edbf9a3:911a:b6fd:fdca:495cb50d7cec","type":"calls"},{"source":"7edbf9a3:911a:b6fd:fdca:495cb50d7cec","target":"domain:DocumentationPortal","type":"belongsTo"},{"source":"7edbf9a3:911a:b6fd:fdca:495cb50d7cec","target":"subdomain:DocumentationPortal:ReferenceGenerator","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -965,14 +965,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-documentationportal.html">DocumentationPortal</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-referencegenerator.html">ReferenceGenerator</a></li></ul>
     </div>
     
 

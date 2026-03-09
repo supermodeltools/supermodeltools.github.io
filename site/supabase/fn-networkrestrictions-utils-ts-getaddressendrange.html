@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/containerization.html" class="pill pill-orange">Containerization</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"getAddressEndRange","slug":"fn-networkrestrictions-utils-ts-getaddressendrange","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"getAddressEndRange","slug":"fn-networkrestrictions-utils-ts-getaddressendrange","type":"Function"},"subdomain":{"name":"Containerization","slug":"subdomain-containerization"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/containerization.html">Containerization</a><span class="arch-sep">&rarr;</span>
             <span>getAddressEndRange() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  b5b5429d_c1af_af6f_fb72_476fdab7b8ea["getAddressEndRange()"]
-  e63dbbe1_5283_6976_8034_5b7efe032e99["AddRestrictionModal()"]
-  e63dbbe1_5283_6976_8034_5b7efe032e99 -->|calls| b5b5429d_c1af_af6f_fb72_476fdab7b8ea
-  style b5b5429d_c1af_af6f_fb72_476fdab7b8ea fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  6a6b02c5_7819_63ef_e916_9702ebcc2a2c["getAddressEndRange()"]
+  0f431884_321a_99dd_404a_61b9e8b465a4["AddRestrictionModal()"]
+  0f431884_321a_99dd_404a_61b9e8b465a4 -->|calls| 6a6b02c5_7819_63ef_e916_9702ebcc2a2c
+  style 6a6b02c5_7819_63ef_e916_9702ebcc2a2c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-networkrestrictions-utils-ts-getaddressendrange"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"b5b5429d:c1af:af6f:fb72:476fdab7b8ea","label":"getAddressEndRange","type":"Function","slug":"fn-networkrestrictions-utils-ts-getaddressendrange","lc":21,"lang":"typescript","cbc":1},{"id":"e63dbbe1:5283:6976:8034:5b7efe032e99","label":"AddRestrictionModal","type":"Function","slug":"fn-addrestrictionmodal-tsx-addrestrictionmodal","lc":232,"lang":"tsx","cc":4},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"e63dbbe1:5283:6976:8034:5b7efe032e99","target":"b5b5429d:c1af:af6f:fb72:476fdab7b8ea","type":"calls"},{"source":"b5b5429d:c1af:af6f:fb72:476fdab7b8ea","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"b5b5429d:c1af:af6f:fb72:476fdab7b8ea","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"6a6b02c5:7819:63ef:e916:9702ebcc2a2c","label":"getAddressEndRange","type":"Function","slug":"fn-networkrestrictions-utils-ts-getaddressendrange","lc":21,"lang":"typescript","cbc":1},{"id":"0f431884:321a:99dd:404a:61b9e8b465a4","label":"AddRestrictionModal","type":"Function","slug":"fn-addrestrictionmodal-tsx-addrestrictionmodal","lc":232,"lang":"tsx","cc":4},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:Containerization","label":"Containerization","type":"Subdomain","slug":"subdomain-containerization"}],"edges":[{"source":"0f431884:321a:99dd:404a:61b9e8b465a4","target":"6a6b02c5:7819:63ef:e916:9702ebcc2a2c","type":"calls"},{"source":"6a6b02c5:7819:63ef:e916:9702ebcc2a2c","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"6a6b02c5:7819:63ef:e916:9702ebcc2a2c","target":"subdomain:InfrastructureDeployment:Containerization","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -964,14 +964,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-containerization.html">Containerization</a></li></ul>
     </div>
     
 

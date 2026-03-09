@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/buildorchestration.html" class="pill pill-orange">BuildOrchestration</a>
         
         
         <span class="pill">calls 3</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"useSqlEditorDiff","slug":"fn-hooks-ts-usesqleditordiff","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"useSqlEditorDiff","slug":"fn-hooks-ts-usesqleditordiff","type":"Function"},"subdomain":{"name":"BuildOrchestration","slug":"subdomain-buildorchestration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildorchestration.html">BuildOrchestration</a><span class="arch-sep">&rarr;</span>
             <span>useSqlEditorDiff() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  1f1fde11_20a2_5831_9608_4656405589ec["useSqlEditorDiff()"]
-  72075fd8_bca0_04c6_9725_938cecf810ed["SQLEditor()"]
-  72075fd8_bca0_04c6_9725_938cecf810ed -->|calls| 1f1fde11_20a2_5831_9608_4656405589ec
-  cfc7a0c0_3534_93e4_9462_b8a05938838b["compareAsModification()"]
-  1f1fde11_20a2_5831_9608_4656405589ec -->|calls| cfc7a0c0_3534_93e4_9462_b8a05938838b
-  9f10b14e_b5d6_f131_c13f_7f7192365915["compareAsAddition()"]
-  1f1fde11_20a2_5831_9608_4656405589ec -->|calls| 9f10b14e_b5d6_f131_c13f_7f7192365915
-  27cf5008_8422_6dae_db63_5981ca3f403f["compareAsNewSnippet()"]
-  1f1fde11_20a2_5831_9608_4656405589ec -->|calls| 27cf5008_8422_6dae_db63_5981ca3f403f
-  style 1f1fde11_20a2_5831_9608_4656405589ec fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  b6585e7a_6da0_b0ce_1575_834502b67327["useSqlEditorDiff()"]
+  2dc488e1_263b_f548_e5cf_9cbfcc486767["SQLEditor()"]
+  2dc488e1_263b_f548_e5cf_9cbfcc486767 -->|calls| b6585e7a_6da0_b0ce_1575_834502b67327
+  38e1dca2_da3f_29f4_8325_01e0f9a6ce94["compareAsModification()"]
+  b6585e7a_6da0_b0ce_1575_834502b67327 -->|calls| 38e1dca2_da3f_29f4_8325_01e0f9a6ce94
+  0d51d385_066c_bb02_472a_daeabfad186a["compareAsAddition()"]
+  b6585e7a_6da0_b0ce_1575_834502b67327 -->|calls| 0d51d385_066c_bb02_472a_daeabfad186a
+  c3cc3cf6_75e4_3d23_35d1_3e4edde8e8b7["compareAsNewSnippet()"]
+  b6585e7a_6da0_b0ce_1575_834502b67327 -->|calls| c3cc3cf6_75e4_3d23_35d1_3e4edde8e8b7
+  style b6585e7a_6da0_b0ce_1575_834502b67327 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-hooks-ts-usesqleditordiff"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"1f1fde11:20a2:5831:9608:4656405589ec","label":"useSqlEditorDiff","type":"Function","slug":"fn-hooks-ts-usesqleditordiff","lc":41,"lang":"typescript","cc":3,"cbc":1},{"id":"cfc7a0c0:3534:93e4:9462:b8a05938838b","label":"compareAsModification","type":"Function","slug":"fn-sqleditor-utils-ts-compareasmodification","lc":8,"lang":"typescript","cbc":1},{"id":"9f10b14e:b5d6:f131:c13f:7f7192365915","label":"compareAsAddition","type":"Function","slug":"fn-sqleditor-utils-ts-compareasaddition","lc":10,"lang":"typescript","cbc":1},{"id":"27cf5008:8422:6dae:db63:5981ca3f403f","label":"compareAsNewSnippet","type":"Function","slug":"fn-sqleditor-utils-ts-compareasnewsnippet","lc":6,"lang":"typescript","cbc":1},{"id":"72075fd8:bca0:04c6:9725:938cecf810ed","label":"SQLEditor","type":"Function","slug":"fn-sqleditor-tsx-sqleditor","lc":897,"lang":"tsx","cc":9},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"1f1fde11:20a2:5831:9608:4656405589ec","target":"cfc7a0c0:3534:93e4:9462:b8a05938838b","type":"calls"},{"source":"1f1fde11:20a2:5831:9608:4656405589ec","target":"9f10b14e:b5d6:f131:c13f:7f7192365915","type":"calls"},{"source":"1f1fde11:20a2:5831:9608:4656405589ec","target":"27cf5008:8422:6dae:db63:5981ca3f403f","type":"calls"},{"source":"72075fd8:bca0:04c6:9725:938cecf810ed","target":"1f1fde11:20a2:5831:9608:4656405589ec","type":"calls"},{"source":"1f1fde11:20a2:5831:9608:4656405589ec","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"1f1fde11:20a2:5831:9608:4656405589ec","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"b6585e7a:6da0:b0ce:1575:834502b67327","label":"useSqlEditorDiff","type":"Function","slug":"fn-hooks-ts-usesqleditordiff","lc":41,"lang":"typescript","cc":3,"cbc":1},{"id":"38e1dca2:da3f:29f4:8325:01e0f9a6ce94","label":"compareAsModification","type":"Function","slug":"fn-sqleditor-utils-ts-compareasmodification","lc":8,"lang":"typescript","cbc":1},{"id":"0d51d385:066c:bb02:472a:daeabfad186a","label":"compareAsAddition","type":"Function","slug":"fn-sqleditor-utils-ts-compareasaddition","lc":10,"lang":"typescript","cbc":1},{"id":"c3cc3cf6:75e4:3d23:35d1:3e4edde8e8b7","label":"compareAsNewSnippet","type":"Function","slug":"fn-sqleditor-utils-ts-compareasnewsnippet","lc":6,"lang":"typescript","cbc":1},{"id":"2dc488e1:263b:f548:e5cf:9cbfcc486767","label":"SQLEditor","type":"Function","slug":"fn-sqleditor-tsx-sqleditor","lc":897,"lang":"tsx","cc":9},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:BuildOrchestration","label":"BuildOrchestration","type":"Subdomain","slug":"subdomain-buildorchestration"}],"edges":[{"source":"b6585e7a:6da0:b0ce:1575:834502b67327","target":"38e1dca2:da3f:29f4:8325:01e0f9a6ce94","type":"calls"},{"source":"b6585e7a:6da0:b0ce:1575:834502b67327","target":"0d51d385:066c:bb02:472a:daeabfad186a","type":"calls"},{"source":"b6585e7a:6da0:b0ce:1575:834502b67327","target":"c3cc3cf6:75e4:3d23:35d1:3e4edde8e8b7","type":"calls"},{"source":"2dc488e1:263b:f548:e5cf:9cbfcc486767","target":"b6585e7a:6da0:b0ce:1575:834502b67327","type":"calls"},{"source":"b6585e7a:6da0:b0ce:1575:834502b67327","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"b6585e7a:6da0:b0ce:1575:834502b67327","target":"subdomain:InfrastructureDeployment:BuildOrchestration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -990,14 +990,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-buildorchestration.html">BuildOrchestration</a></li></ul>
     </div>
     
 

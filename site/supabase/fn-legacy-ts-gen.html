@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/documentationportal.html" class="pill pill-green">DocumentationPortal</a>
+        <a href="/subdomain/referencegenerator.html" class="pill pill-orange">ReferenceGenerator</a>
         
         
         <span class="pill">calls 9</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"gen","slug":"fn-legacy-ts-gen","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DocumentationPortal","slug":"domain-documentationportal"},"entity":{"name":"gen","slug":"fn-legacy-ts-gen","type":"Function"},"subdomain":{"name":"ReferenceGenerator","slug":"subdomain-referencegenerator"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/documentationportal.html">DocumentationPortal</a><span class="arch-sep">&rarr;</span>
+            <a href="/referencegenerator.html">ReferenceGenerator</a><span class="arch-sep">&rarr;</span>
             <span>gen() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,26 +911,26 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  df0f8897_23fb_921f_a8ab_e4a14ce74201["gen()"]
-  953399dc_c763_f203_95d3_73045f52adfd["generateDocsIndexPage()"]
-  df0f8897_23fb_921f_a8ab_e4a14ce74201 -->|calls| 953399dc_c763_f203_95d3_73045f52adfd
-  ff60eaf7_6b6f_3935_0b5c_4fc05051deed["writeToDisk()"]
-  df0f8897_23fb_921f_a8ab_e4a14ce74201 -->|calls| ff60eaf7_6b6f_3935_0b5c_4fc05051deed
-  5594c1a9_35d0_8656_416e_51a1d8e45e07["extractTsDocNode()"]
-  df0f8897_23fb_921f_a8ab_e4a14ce74201 -->|calls| 5594c1a9_35d0_8656_416e_51a1d8e45e07
-  908fcc22_0a9c_1b15_0d17_d8d4156a9ac1["tsDocCommentToMdComment()"]
-  df0f8897_23fb_921f_a8ab_e4a14ce74201 -->|calls| 908fcc22_0a9c_1b15_0d17_d8d4156a9ac1
-  9f2ff167_2cf7_c80a_cd7a_daca1b56db51["getDescriptionFromDefinition()"]
-  df0f8897_23fb_921f_a8ab_e4a14ce74201 -->|calls| 9f2ff167_2cf7_c80a_cd7a_daca1b56db51
-  0af12614_8548_4bbb_964b_1c71dd86e3b3["Page()"]
-  df0f8897_23fb_921f_a8ab_e4a14ce74201 -->|calls| 0af12614_8548_4bbb_964b_1c71dd86e3b3
-  24ec444a_cf73_f108_a0ed_c66a8dcb769f["generateParameters()"]
-  df0f8897_23fb_921f_a8ab_e4a14ce74201 -->|calls| 24ec444a_cf73_f108_a0ed_c66a8dcb769f
-  9166d564_b20e_735e_752f_394781fb03b1["generateSpotlight()"]
-  df0f8897_23fb_921f_a8ab_e4a14ce74201 -->|calls| 9166d564_b20e_735e_752f_394781fb03b1
-  9650f1f7_5011_e363_d160_d9d2aba8679f["generateExamples()"]
-  df0f8897_23fb_921f_a8ab_e4a14ce74201 -->|calls| 9650f1f7_5011_e363_d160_d9d2aba8679f
-  style df0f8897_23fb_921f_a8ab_e4a14ce74201 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  1f318083_3795_82f6_2619_c9ffd5e53727["gen()"]
+  01cc0624_3b62_3d50_a490_8244e42b2259["generateDocsIndexPage()"]
+  1f318083_3795_82f6_2619_c9ffd5e53727 -->|calls| 01cc0624_3b62_3d50_a490_8244e42b2259
+  ce183bdb_9e9b_bade_597b_08109a9fea59["writeToDisk()"]
+  1f318083_3795_82f6_2619_c9ffd5e53727 -->|calls| ce183bdb_9e9b_bade_597b_08109a9fea59
+  9ffd1928_b925_924e_1d96_c86cdd51cc4e["extractTsDocNode()"]
+  1f318083_3795_82f6_2619_c9ffd5e53727 -->|calls| 9ffd1928_b925_924e_1d96_c86cdd51cc4e
+  82d418d1_f0b5_abd2_1383_68d252b9937c["tsDocCommentToMdComment()"]
+  1f318083_3795_82f6_2619_c9ffd5e53727 -->|calls| 82d418d1_f0b5_abd2_1383_68d252b9937c
+  038ee289_e35f_8d11_d18a_1d62a1e8b61a["getDescriptionFromDefinition()"]
+  1f318083_3795_82f6_2619_c9ffd5e53727 -->|calls| 038ee289_e35f_8d11_d18a_1d62a1e8b61a
+  90cd863d_9b99_a6fe_bc07_0e3254db4590["Page()"]
+  1f318083_3795_82f6_2619_c9ffd5e53727 -->|calls| 90cd863d_9b99_a6fe_bc07_0e3254db4590
+  cefe7baf_a1c6_a4ac_2470_5d25de293d4c["generateParameters()"]
+  1f318083_3795_82f6_2619_c9ffd5e53727 -->|calls| cefe7baf_a1c6_a4ac_2470_5d25de293d4c
+  3821f068_0ee1_fd44_e08e_7ea071d2a706["generateSpotlight()"]
+  1f318083_3795_82f6_2619_c9ffd5e53727 -->|calls| 3821f068_0ee1_fd44_e08e_7ea071d2a706
+  0233e141_e824_24f1_63f8_4f4c7492156a["generateExamples()"]
+  1f318083_3795_82f6_2619_c9ffd5e53727 -->|calls| 0233e141_e824_24f1_63f8_4f4c7492156a
+  style 1f318083_3795_82f6_2619_c9ffd5e53727 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -938,7 +938,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-legacy-ts-gen"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"df0f8897:23fb:921f:a8ab:e4a14ce74201","label":"gen","type":"Function","slug":"fn-legacy-ts-gen","lc":53,"lang":"typescript","cc":9},{"id":"953399dc:c763:f203:95d3:73045f52adfd","label":"generateDocsIndexPage","type":"Function","slug":"fn-legacy-ts-generatedocsindexpage","lc":9,"lang":"typescript","cc":2,"cbc":1},{"id":"ff60eaf7:6b6f:3935:0b5c:4fc05051deed","label":"writeToDisk","type":"Function","slug":"fn-helpers-ts-writetodisk-2","lc":8,"lang":"typescript","cbc":1},{"id":"5594c1a9:35d0:8656:416e:51a1d8e45e07","label":"extractTsDocNode","type":"Function","slug":"fn-legacy-ts-extracttsdocnode","lc":16,"lang":"typescript","cbc":1},{"id":"908fcc22:0a9c:1b15:0d17:d8d4156a9ac1","label":"tsDocCommentToMdComment","type":"Function","slug":"fn-helpers-ts-tsdoccommenttomdcomment","lc":7,"lang":"typescript","cbc":2},{"id":"9f2ff167:2cf7:c80a:cd7a:daca1b56db51","label":"getDescriptionFromDefinition","type":"Function","slug":"fn-legacy-ts-getdescriptionfromdefinition","lc":6,"lang":"typescript","cbc":1},{"id":"0af12614:8548:4bbb:964b:1c71dd86e3b3","label":"Page","type":"Function","slug":"fn-page-ts-page","lc":46,"lang":"typescript","cbc":2},{"id":"24ec444a:cf73:f108:a0ed:c66a8dcb769f","label":"generateParameters","type":"Function","slug":"fn-legacy-ts-generateparameters","lc":16,"lang":"typescript","cc":2,"cbc":1},{"id":"9166d564:b20e:735e:752f:394781fb03b1","label":"generateSpotlight","type":"Function","slug":"fn-legacy-ts-generatespotlight","lc":8,"lang":"typescript","cc":1,"cbc":1},{"id":"9650f1f7:5011:e363:d160:d9d2aba8679f","label":"generateExamples","type":"Function","slug":"fn-legacy-ts-generateexamples","lc":11,"lang":"typescript","cc":2,"cbc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"953399dc:c763:f203:95d3:73045f52adfd","type":"calls"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"ff60eaf7:6b6f:3935:0b5c:4fc05051deed","type":"calls"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"5594c1a9:35d0:8656:416e:51a1d8e45e07","type":"calls"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"908fcc22:0a9c:1b15:0d17:d8d4156a9ac1","type":"calls"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"9f2ff167:2cf7:c80a:cd7a:daca1b56db51","type":"calls"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"0af12614:8548:4bbb:964b:1c71dd86e3b3","type":"calls"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"24ec444a:cf73:f108:a0ed:c66a8dcb769f","type":"calls"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"9166d564:b20e:735e:752f:394781fb03b1","type":"calls"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"9650f1f7:5011:e363:d160:d9d2aba8679f","type":"calls"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"df0f8897:23fb:921f:a8ab:e4a14ce74201","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"1f318083:3795:82f6:2619:c9ffd5e53727","label":"gen","type":"Function","slug":"fn-legacy-ts-gen","lc":53,"lang":"typescript","cc":9},{"id":"01cc0624:3b62:3d50:a490:8244e42b2259","label":"generateDocsIndexPage","type":"Function","slug":"fn-legacy-ts-generatedocsindexpage","lc":9,"lang":"typescript","cc":2,"cbc":1},{"id":"ce183bdb:9e9b:bade:597b:08109a9fea59","label":"writeToDisk","type":"Function","slug":"fn-helpers-ts-writetodisk-2","lc":8,"lang":"typescript","cbc":1},{"id":"9ffd1928:b925:924e:1d96:c86cdd51cc4e","label":"extractTsDocNode","type":"Function","slug":"fn-legacy-ts-extracttsdocnode","lc":16,"lang":"typescript","cbc":1},{"id":"82d418d1:f0b5:abd2:1383:68d252b9937c","label":"tsDocCommentToMdComment","type":"Function","slug":"fn-helpers-ts-tsdoccommenttomdcomment","lc":7,"lang":"typescript","cbc":2},{"id":"038ee289:e35f:8d11:d18a:1d62a1e8b61a","label":"getDescriptionFromDefinition","type":"Function","slug":"fn-legacy-ts-getdescriptionfromdefinition","lc":6,"lang":"typescript","cbc":1},{"id":"90cd863d:9b99:a6fe:bc07:0e3254db4590","label":"Page","type":"Function","slug":"fn-page-ts-page","lc":46,"lang":"typescript","cbc":2},{"id":"cefe7baf:a1c6:a4ac:2470:5d25de293d4c","label":"generateParameters","type":"Function","slug":"fn-legacy-ts-generateparameters","lc":16,"lang":"typescript","cc":2,"cbc":1},{"id":"3821f068:0ee1:fd44:e08e:7ea071d2a706","label":"generateSpotlight","type":"Function","slug":"fn-legacy-ts-generatespotlight","lc":8,"lang":"typescript","cc":1,"cbc":1},{"id":"0233e141:e824:24f1:63f8:4f4c7492156a","label":"generateExamples","type":"Function","slug":"fn-legacy-ts-generateexamples","lc":11,"lang":"typescript","cc":2,"cbc":1},{"id":"domain:DocumentationPortal","label":"DocumentationPortal","type":"Domain","slug":"domain-documentationportal"},{"id":"subdomain:DocumentationPortal:ReferenceGenerator","label":"ReferenceGenerator","type":"Subdomain","slug":"subdomain-referencegenerator"}],"edges":[{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"01cc0624:3b62:3d50:a490:8244e42b2259","type":"calls"},{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"ce183bdb:9e9b:bade:597b:08109a9fea59","type":"calls"},{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"9ffd1928:b925:924e:1d96:c86cdd51cc4e","type":"calls"},{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"82d418d1:f0b5:abd2:1383:68d252b9937c","type":"calls"},{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"038ee289:e35f:8d11:d18a:1d62a1e8b61a","type":"calls"},{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"90cd863d:9b99:a6fe:bc07:0e3254db4590","type":"calls"},{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"cefe7baf:a1c6:a4ac:2470:5d25de293d4c","type":"calls"},{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"3821f068:0ee1:fd44:e08e:7ea071d2a706","type":"calls"},{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"0233e141:e824:24f1:63f8:4f4c7492156a","type":"calls"},{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"domain:DocumentationPortal","type":"belongsTo"},{"source":"1f318083:3795:82f6:2619:c9ffd5e53727","target":"subdomain:DocumentationPortal:ReferenceGenerator","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1012,14 +1012,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-documentationportal.html">DocumentationPortal</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-referencegenerator.html">ReferenceGenerator</a></li></ul>
     </div>
     
 

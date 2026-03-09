@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/containerization.html" class="pill pill-orange">Containerization</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"UsersSearch","slug":"fn-userssearch-tsx-userssearch","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"UsersSearch","slug":"fn-userssearch-tsx-userssearch","type":"Function"},"subdomain":{"name":"Containerization","slug":"subdomain-containerization"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/containerization.html">Containerization</a><span class="arch-sep">&rarr;</span>
             <span>UsersSearch() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  990262c2_eb36_32b2_a64a_d34d4c7ca75d["UsersSearch()"]
-  56523b2f_7251_c4f9_861d_e6026d88eaed["getSearchPlaceholder()"]
-  990262c2_eb36_32b2_a64a_d34d4c7ca75d -->|calls| 56523b2f_7251_c4f9_861d_e6026d88eaed
-  style 990262c2_eb36_32b2_a64a_d34d4c7ca75d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  61a0f682_1904_e178_8849_021d6276d306["UsersSearch()"]
+  a3855293_eb80_5902_aa1a_8a0eb1b2b4f9["getSearchPlaceholder()"]
+  61a0f682_1904_e178_8849_021d6276d306 -->|calls| a3855293_eb80_5902_aa1a_8a0eb1b2b4f9
+  style 61a0f682_1904_e178_8849_021d6276d306 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-userssearch-tsx-userssearch"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"990262c2:eb36:32b2:a64a:d34d4c7ca75d","label":"UsersSearch","type":"Function","slug":"fn-userssearch-tsx-userssearch","lc":138,"lang":"tsx","cc":1},{"id":"56523b2f:7251:c4f9:861d:e6026d88eaed","label":"getSearchPlaceholder","type":"Function","slug":"fn-userssearch-tsx-getsearchplaceholder","lc":16,"lang":"tsx","cbc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"990262c2:eb36:32b2:a64a:d34d4c7ca75d","target":"56523b2f:7251:c4f9:861d:e6026d88eaed","type":"calls"},{"source":"990262c2:eb36:32b2:a64a:d34d4c7ca75d","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"990262c2:eb36:32b2:a64a:d34d4c7ca75d","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"61a0f682:1904:e178:8849:021d6276d306","label":"UsersSearch","type":"Function","slug":"fn-userssearch-tsx-userssearch","lc":138,"lang":"tsx","cc":1},{"id":"a3855293:eb80:5902:aa1a:8a0eb1b2b4f9","label":"getSearchPlaceholder","type":"Function","slug":"fn-userssearch-tsx-getsearchplaceholder","lc":16,"lang":"tsx","cbc":1},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:Containerization","label":"Containerization","type":"Subdomain","slug":"subdomain-containerization"}],"edges":[{"source":"61a0f682:1904:e178:8849:021d6276d306","target":"a3855293:eb80:5902:aa1a:8a0eb1b2b4f9","type":"calls"},{"source":"61a0f682:1904:e178:8849:021d6276d306","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"61a0f682:1904:e178:8849:021d6276d306","target":"subdomain:InfrastructureDeployment:Containerization","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1081,14 +1081,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-containerization.html">Containerization</a></li></ul>
     </div>
     
 

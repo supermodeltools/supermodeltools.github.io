@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/buildorchestration.html" class="pill pill-orange">BuildOrchestration</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"buildQueryExplanationPrompt","slug":"fn-queryperformance-ai-ts-buildqueryexplanationprompt","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"buildQueryExplanationPrompt","slug":"fn-queryperformance-ai-ts-buildqueryexplanationprompt","type":"Function"},"subdomain":{"name":"BuildOrchestration","slug":"subdomain-buildorchestration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildorchestration.html">BuildOrchestration</a><span class="arch-sep">&rarr;</span>
             <span>buildQueryExplanationPrompt() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  9eab556a_ba28_0a14_7fc9_1b847f08d68b["buildQueryExplanationPrompt()"]
-  92076ef4_d66d_584c_a355_3d1c4c28bfaf["QueryDetail()"]
-  92076ef4_d66d_584c_a355_3d1c4c28bfaf -->|calls| 9eab556a_ba28_0a14_7fc9_1b847f08d68b
-  style 9eab556a_ba28_0a14_7fc9_1b847f08d68b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  8baf7ced_a154_7e9f_61cd_ee9b44da316b["buildQueryExplanationPrompt()"]
+  87216de4_b80e_2b6d_89a1_de02e3afaba6["QueryDetail()"]
+  87216de4_b80e_2b6d_89a1_de02e3afaba6 -->|calls| 8baf7ced_a154_7e9f_61cd_ee9b44da316b
+  style 8baf7ced_a154_7e9f_61cd_ee9b44da316b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-queryperformance-ai-ts-buildqueryexplanationprompt"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"9eab556a:ba28:0a14:7fc9:1b847f08d68b","label":"buildQueryExplanationPrompt","type":"Function","slug":"fn-queryperformance-ai-ts-buildqueryexplanationprompt","lc":42,"lang":"typescript","cbc":1},{"id":"92076ef4:d66d:584c:a355:3d1c4c28bfaf","label":"QueryDetail","type":"Function","slug":"fn-querydetail-tsx-querydetail","lc":224,"lang":"tsx","cc":2},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"92076ef4:d66d:584c:a355:3d1c4c28bfaf","target":"9eab556a:ba28:0a14:7fc9:1b847f08d68b","type":"calls"},{"source":"9eab556a:ba28:0a14:7fc9:1b847f08d68b","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"9eab556a:ba28:0a14:7fc9:1b847f08d68b","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"8baf7ced:a154:7e9f:61cd:ee9b44da316b","label":"buildQueryExplanationPrompt","type":"Function","slug":"fn-queryperformance-ai-ts-buildqueryexplanationprompt","lc":42,"lang":"typescript","cbc":1},{"id":"87216de4:b80e:2b6d:89a1:de02e3afaba6","label":"QueryDetail","type":"Function","slug":"fn-querydetail-tsx-querydetail","lc":224,"lang":"tsx","cc":2},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:BuildOrchestration","label":"BuildOrchestration","type":"Subdomain","slug":"subdomain-buildorchestration"}],"edges":[{"source":"87216de4:b80e:2b6d:89a1:de02e3afaba6","target":"8baf7ced:a154:7e9f:61cd:ee9b44da316b","type":"calls"},{"source":"8baf7ced:a154:7e9f:61cd:ee9b44da316b","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"8baf7ced:a154:7e9f:61cd:ee9b44da316b","target":"subdomain:InfrastructureDeployment:BuildOrchestration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -985,14 +985,14 @@ Keep your response concise and focused on actionable insights. We can continue t
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-buildorchestration.html">BuildOrchestration</a></li></ul>
     </div>
     
 

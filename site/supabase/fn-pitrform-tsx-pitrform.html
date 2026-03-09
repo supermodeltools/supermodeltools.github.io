@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/buildorchestration.html" class="pill pill-orange">BuildOrchestration</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"PITRForm","slug":"fn-pitrform-tsx-pitrform","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"PITRForm","slug":"fn-pitrform-tsx-pitrform","type":"Function"},"subdomain":{"name":"BuildOrchestration","slug":"subdomain-buildorchestration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildorchestration.html">BuildOrchestration</a><span class="arch-sep">&rarr;</span>
             <span>PITRForm() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,16 +911,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  cf9678b7_6b5f_afd8_de0c_6f0b229ce62a["PITRForm()"]
-  753e285f_c305_10a1_9f5a_7170183b9437["getClientTimezone()"]
-  cf9678b7_6b5f_afd8_de0c_6f0b229ce62a -->|calls| 753e285f_c305_10a1_9f5a_7170183b9437
-  0bbfaade_c75b_463e_195c_81c26e0ec173["getDatesBetweenRange()"]
-  cf9678b7_6b5f_afd8_de0c_6f0b229ce62a -->|calls| 0bbfaade_c75b_463e_195c_81c26e0ec173
-  b6e58748_f8d0_65bb_66c0_982ed8a7b6e5["constrainDateToRange()"]
-  cf9678b7_6b5f_afd8_de0c_6f0b229ce62a -->|calls| b6e58748_f8d0_65bb_66c0_982ed8a7b6e5
-  a85a96f8_dded_65b0_a9d9_319276b095ba["formatNumberToTwoDigits()"]
-  cf9678b7_6b5f_afd8_de0c_6f0b229ce62a -->|calls| a85a96f8_dded_65b0_a9d9_319276b095ba
-  style cf9678b7_6b5f_afd8_de0c_6f0b229ce62a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  253bc6b8_f5a9_1738_8825_27cce5a49022["PITRForm()"]
+  6916d12c_27c2_1fb6_59b0_fa952f748625["getClientTimezone()"]
+  253bc6b8_f5a9_1738_8825_27cce5a49022 -->|calls| 6916d12c_27c2_1fb6_59b0_fa952f748625
+  72d5bafd_f2b4_b0ba_0e20_3f3508a8c397["getDatesBetweenRange()"]
+  253bc6b8_f5a9_1738_8825_27cce5a49022 -->|calls| 72d5bafd_f2b4_b0ba_0e20_3f3508a8c397
+  3a55c5c1_e407_6e82_879a_45091b5bf500["constrainDateToRange()"]
+  253bc6b8_f5a9_1738_8825_27cce5a49022 -->|calls| 3a55c5c1_e407_6e82_879a_45091b5bf500
+  3309c638_dfce_41d3_3f2f_d7a36b855eab["formatNumberToTwoDigits()"]
+  253bc6b8_f5a9_1738_8825_27cce5a49022 -->|calls| 3309c638_dfce_41d3_3f2f_d7a36b855eab
+  style 253bc6b8_f5a9_1738_8825_27cce5a49022 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -928,7 +928,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-pitrform-tsx-pitrform"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"cf9678b7:6b5f:afd8:de0c:6f0b229ce62a","label":"PITRForm","type":"Function","slug":"fn-pitrform-tsx-pitrform","lc":213,"lang":"tsx","cc":4},{"id":"753e285f:c305:10a1:9f5a:7170183b9437","label":"getClientTimezone","type":"Function","slug":"fn-pitr-utils-ts-getclienttimezone","lc":9,"lang":"typescript","cbc":2},{"id":"0bbfaade:c75b:463e:195c:81c26e0ec173","label":"getDatesBetweenRange","type":"Function","slug":"fn-pitr-utils-ts-getdatesbetweenrange","lc":5,"lang":"typescript","cbc":1},{"id":"b6e58748:f8d0:65bb:66c0:982ed8a7b6e5","label":"constrainDateToRange","type":"Function","slug":"fn-pitr-utils-ts-constraindatetorange","lc":9,"lang":"typescript","cbc":1},{"id":"a85a96f8:dded:65b0:a9d9:319276b095ba","label":"formatNumberToTwoDigits","type":"Function","slug":"fn-pitr-utils-ts-formatnumbertotwodigits","lc":6,"lang":"typescript","cbc":3},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"cf9678b7:6b5f:afd8:de0c:6f0b229ce62a","target":"753e285f:c305:10a1:9f5a:7170183b9437","type":"calls"},{"source":"cf9678b7:6b5f:afd8:de0c:6f0b229ce62a","target":"0bbfaade:c75b:463e:195c:81c26e0ec173","type":"calls"},{"source":"cf9678b7:6b5f:afd8:de0c:6f0b229ce62a","target":"b6e58748:f8d0:65bb:66c0:982ed8a7b6e5","type":"calls"},{"source":"cf9678b7:6b5f:afd8:de0c:6f0b229ce62a","target":"a85a96f8:dded:65b0:a9d9:319276b095ba","type":"calls"},{"source":"cf9678b7:6b5f:afd8:de0c:6f0b229ce62a","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"cf9678b7:6b5f:afd8:de0c:6f0b229ce62a","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"253bc6b8:f5a9:1738:8825:27cce5a49022","label":"PITRForm","type":"Function","slug":"fn-pitrform-tsx-pitrform","lc":213,"lang":"tsx","cc":4},{"id":"6916d12c:27c2:1fb6:59b0:fa952f748625","label":"getClientTimezone","type":"Function","slug":"fn-pitr-utils-ts-getclienttimezone","lc":9,"lang":"typescript","cbc":2},{"id":"72d5bafd:f2b4:b0ba:0e20:3f3508a8c397","label":"getDatesBetweenRange","type":"Function","slug":"fn-pitr-utils-ts-getdatesbetweenrange","lc":5,"lang":"typescript","cbc":1},{"id":"3a55c5c1:e407:6e82:879a:45091b5bf500","label":"constrainDateToRange","type":"Function","slug":"fn-pitr-utils-ts-constraindatetorange","lc":9,"lang":"typescript","cbc":1},{"id":"3309c638:dfce:41d3:3f2f:d7a36b855eab","label":"formatNumberToTwoDigits","type":"Function","slug":"fn-pitr-utils-ts-formatnumbertotwodigits","lc":6,"lang":"typescript","cbc":3},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:BuildOrchestration","label":"BuildOrchestration","type":"Subdomain","slug":"subdomain-buildorchestration"}],"edges":[{"source":"253bc6b8:f5a9:1738:8825:27cce5a49022","target":"6916d12c:27c2:1fb6:59b0:fa952f748625","type":"calls"},{"source":"253bc6b8:f5a9:1738:8825:27cce5a49022","target":"72d5bafd:f2b4:b0ba:0e20:3f3508a8c397","type":"calls"},{"source":"253bc6b8:f5a9:1738:8825:27cce5a49022","target":"3a55c5c1:e407:6e82:879a:45091b5bf500","type":"calls"},{"source":"253bc6b8:f5a9:1738:8825:27cce5a49022","target":"3309c638:dfce:41d3:3f2f:d7a36b855eab","type":"calls"},{"source":"253bc6b8:f5a9:1738:8825:27cce5a49022","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"253bc6b8:f5a9:1738:8825:27cce5a49022","target":"subdomain:InfrastructureDeployment:BuildOrchestration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1162,14 +1162,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-buildorchestration.html">BuildOrchestration</a></li></ul>
     </div>
     
 

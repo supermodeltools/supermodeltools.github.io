@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/documentationportal.html" class="pill pill-green">DocumentationPortal</a>
+        <a href="/subdomain/referencegenerator.html" class="pill pill-orange">ReferenceGenerator</a>
         
         
         <span class="pill">calls 8</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"parseType","slug":"fn-reference-typespec-ts-parsetype","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DocumentationPortal","slug":"domain-documentationportal"},"entity":{"name":"parseType","slug":"fn-reference-typespec-ts-parsetype","type":"Function"},"subdomain":{"name":"ReferenceGenerator","slug":"subdomain-referencegenerator"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/documentationportal.html">DocumentationPortal</a><span class="arch-sep">&rarr;</span>
+            <a href="/referencegenerator.html">ReferenceGenerator</a><span class="arch-sep">&rarr;</span>
             <span>parseType() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,42 +911,42 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  92f7c9c3_abad_910b_f98a_ac38b5835c6a["parseType()"]
-  f35414c9_006f_7700_cd2b_cdbb15869154["parseVariable()"]
-  f35414c9_006f_7700_cd2b_cdbb15869154 -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  47a77874_1042_4b6e_7f78_08750707eb0e["parseSignature()"]
-  47a77874_1042_4b6e_7f78_08750707eb0e -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  37b0b6bb_b6b5_0148_25a5_bec245881a10["delegateParsing()"]
-  37b0b6bb_b6b5_0148_25a5_bec245881a10 -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  845dd85d_405a_7977_faf5_d2c9b6d03eda["parseConditionalType()"]
-  845dd85d_405a_7977_faf5_d2c9b6d03eda -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  e10eb961_e63b_6e1c_63e3_8f9aba4413c8["parseReferenceType()"]
-  e10eb961_e63b_6e1c_63e3_8f9aba4413c8 -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  96bdf6af_79b6_9df7_551f_ed7dc9e9354f["parseArrayType()"]
-  96bdf6af_79b6_9df7_551f_ed7dc9e9354f -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  efa41cea_576f_db17_99c0_0b2b4cb37730["parseUnionType()"]
-  efa41cea_576f_db17_99c0_0b2b4cb37730 -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  055b701d_eeb4_7465_c1c7_c78da1334298["parseRecordType()"]
-  055b701d_eeb4_7465_c1c7_c78da1334298 -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  9711f511_93ca_7fa4_0b13_20ee54acdf8e["parsePromiseType()"]
-  9711f511_93ca_7fa4_0b13_20ee54acdf8e -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  84f61968_ca0a_0dc9_62f8_cd3ac513890e["parsePickType()"]
-  84f61968_ca0a_0dc9_62f8_cd3ac513890e -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  74ed8949_900c_6a4b_0e6e_c8c78df8c89a["parseTypeLiteral()"]
-  74ed8949_900c_6a4b_0e6e_c8c78df8c89a -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  e89ea877_407f_1725_e647_072777cfb7b8["parseTypeOperatorType()"]
-  e89ea877_407f_1725_e647_072777cfb7b8 -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  151c90be_2144_433b_ad16_0f36d2e85a42["parseInternalProperty()"]
-  151c90be_2144_433b_ad16_0f36d2e85a42 -->|calls| 92f7c9c3_abad_910b_f98a_ac38b5835c6a
-  e10eb961_e63b_6e1c_63e3_8f9aba4413c8["parseReferenceType()"]
-  92f7c9c3_abad_910b_f98a_ac38b5835c6a -->|calls| e10eb961_e63b_6e1c_63e3_8f9aba4413c8
-  96bdf6af_79b6_9df7_551f_ed7dc9e9354f["parseArrayType()"]
-  92f7c9c3_abad_910b_f98a_ac38b5835c6a -->|calls| 96bdf6af_79b6_9df7_551f_ed7dc9e9354f
-  efa41cea_576f_db17_99c0_0b2b4cb37730["parseUnionType()"]
-  92f7c9c3_abad_910b_f98a_ac38b5835c6a -->|calls| efa41cea_576f_db17_99c0_0b2b4cb37730
-  95cf04f8_ae47_0cb8_8d6d_9d281a869c90["parseReflectionType()"]
-  92f7c9c3_abad_910b_f98a_ac38b5835c6a -->|calls| 95cf04f8_ae47_0cb8_8d6d_9d281a869c90
-  style 92f7c9c3_abad_910b_f98a_ac38b5835c6a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  6cdbb2f5_8d36_95c6_2564_09493fb8c237["parseType()"]
+  1017ef81_c990_633c_dc5f_da8c9aa9cece["parseVariable()"]
+  1017ef81_c990_633c_dc5f_da8c9aa9cece -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  7047cb45_5407_2f2e_c24a_e4eeecf16c10["parseSignature()"]
+  7047cb45_5407_2f2e_c24a_e4eeecf16c10 -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  2eba6860_75cb_a25c_1653_f9fa4a0ab783["delegateParsing()"]
+  2eba6860_75cb_a25c_1653_f9fa4a0ab783 -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  b5b7adee_473e_a705_f104_988fb4c4309e["parseConditionalType()"]
+  b5b7adee_473e_a705_f104_988fb4c4309e -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  c9ff8a54_794a_e9c2_454e_d6679e23efd0["parseReferenceType()"]
+  c9ff8a54_794a_e9c2_454e_d6679e23efd0 -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  e2cac376_5831_7fb9_93f0_9bd0301c0ede["parseArrayType()"]
+  e2cac376_5831_7fb9_93f0_9bd0301c0ede -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  cedc2db9_a3d0_d3a0_a3a8_5ff42b9ce7bb["parseUnionType()"]
+  cedc2db9_a3d0_d3a0_a3a8_5ff42b9ce7bb -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  af9a4dd2_2701_9a7e_a48d_145bb4d0858a["parseRecordType()"]
+  af9a4dd2_2701_9a7e_a48d_145bb4d0858a -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  9e09e348_de34_893f_6908_15ef9089fafb["parsePromiseType()"]
+  9e09e348_de34_893f_6908_15ef9089fafb -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  aef05c5a_1338_200c_4096_3732ec999b23["parsePickType()"]
+  aef05c5a_1338_200c_4096_3732ec999b23 -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  332911a0_352a_3eaa_fb02_ca2910b45c77["parseTypeLiteral()"]
+  332911a0_352a_3eaa_fb02_ca2910b45c77 -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  d36ddbb3_f5ca_ce81_0055_e8fac698c476["parseTypeOperatorType()"]
+  d36ddbb3_f5ca_ce81_0055_e8fac698c476 -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  7cc03cff_7f34_960a_78e1_f3b7d0d7c302["parseInternalProperty()"]
+  7cc03cff_7f34_960a_78e1_f3b7d0d7c302 -->|calls| 6cdbb2f5_8d36_95c6_2564_09493fb8c237
+  c9ff8a54_794a_e9c2_454e_d6679e23efd0["parseReferenceType()"]
+  6cdbb2f5_8d36_95c6_2564_09493fb8c237 -->|calls| c9ff8a54_794a_e9c2_454e_d6679e23efd0
+  e2cac376_5831_7fb9_93f0_9bd0301c0ede["parseArrayType()"]
+  6cdbb2f5_8d36_95c6_2564_09493fb8c237 -->|calls| e2cac376_5831_7fb9_93f0_9bd0301c0ede
+  cedc2db9_a3d0_d3a0_a3a8_5ff42b9ce7bb["parseUnionType()"]
+  6cdbb2f5_8d36_95c6_2564_09493fb8c237 -->|calls| cedc2db9_a3d0_d3a0_a3a8_5ff42b9ce7bb
+  971e7022_7d86_7fdd_4fb9_118180a96aa0["parseReflectionType()"]
+  6cdbb2f5_8d36_95c6_2564_09493fb8c237 -->|calls| 971e7022_7d86_7fdd_4fb9_118180a96aa0
+  style 6cdbb2f5_8d36_95c6_2564_09493fb8c237 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -954,7 +954,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-reference-typespec-ts-parsetype"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","label":"parseType","type":"Function","slug":"fn-reference-typespec-ts-parsetype","lc":38,"lang":"typescript","cc":8,"cbc":13},{"id":"e10eb961:e63b:6e1c:63e3:8f9aba4413c8","label":"parseReferenceType","type":"Function","slug":"fn-reference-typespec-ts-parsereferencetype","lc":90,"lang":"typescript","cc":8,"cbc":1},{"id":"96bdf6af:79b6:9df7:551f:ed7dc9e9354f","label":"parseArrayType","type":"Function","slug":"fn-reference-typespec-ts-parsearraytype","lc":14,"lang":"typescript","cc":2,"cbc":1},{"id":"efa41cea:576f:db17:99c0:0b2b4cb37730","label":"parseUnionType","type":"Function","slug":"fn-reference-typespec-ts-parseuniontype","lc":15,"lang":"typescript","cc":2,"cbc":2},{"id":"95cf04f8:ae47:0cb8:8d6d:9d281a869c90","label":"parseReflectionType","type":"Function","slug":"fn-reference-typespec-ts-parsereflectiontype","lc":23,"lang":"typescript","cc":1,"cbc":1},{"id":"3cc18ed7:91dd:307b:759c:a18b10e3e298","label":"parseIndexedAccessType","type":"Function","slug":"fn-reference-typespec-ts-parseindexedaccesstype","lc":11,"lang":"typescript","cbc":1},{"id":"e89ea877:407f:1725:e647:072777cfb7b8","label":"parseTypeOperatorType","type":"Function","slug":"fn-reference-typespec-ts-parsetypeoperatortype","lc":13,"lang":"typescript","cc":1,"cbc":1},{"id":"845dd85d:405a:7977:faf5:d2c9b6d03eda","label":"parseConditionalType","type":"Function","slug":"fn-reference-typespec-ts-parseconditionaltype","lc":36,"lang":"typescript","cc":1,"cbc":1},{"id":"2329dcd1:6953:7b5a:9120:151f3e469c3c","label":"parseInterface","type":"Function","slug":"fn-reference-typespec-ts-parseinterface","lc":11,"lang":"typescript","cc":2,"cbc":2},{"id":"f35414c9:006f:7700:cd2b:cdbb15869154","label":"parseVariable","type":"Function","slug":"fn-reference-typespec-ts-parsevariable","lc":20,"lang":"typescript","cc":3,"cbc":1},{"id":"47a77874:1042:4b6e:7f78:08750707eb0e","label":"parseSignature","type":"Function","slug":"fn-reference-typespec-ts-parsesignature","lc":43,"lang":"typescript","cc":3,"cbc":4},{"id":"37b0b6bb:b6b5:0148:25a5:bec245881a10","label":"delegateParsing","type":"Function","slug":"fn-reference-typespec-ts-delegateparsing","lc":27,"lang":"typescript","cc":3,"cbc":1},{"id":"055b701d:eeb4:7465:c1c7:c78da1334298","label":"parseRecordType","type":"Function","slug":"fn-reference-typespec-ts-parserecordtype","lc":10,"lang":"typescript","cc":2,"cbc":1},{"id":"9711f511:93ca:7fa4:0b13:20ee54acdf8e","label":"parsePromiseType","type":"Function","slug":"fn-reference-typespec-ts-parsepromisetype","lc":7,"lang":"typescript","cc":2,"cbc":1},{"id":"84f61968:ca0a:0dc9:62f8:cd3ac513890e","label":"parsePickType","type":"Function","slug":"fn-reference-typespec-ts-parsepicktype","lc":28,"lang":"typescript","cc":1,"cbc":1},{"id":"74ed8949:900c:6a4b:0e6e:c8c78df8c89a","label":"parseTypeLiteral","type":"Function","slug":"fn-reference-typespec-ts-parsetypeliteral","lc":44,"lang":"typescript","cc":4,"cbc":1},{"id":"151c90be:2144:433b:ad16:0f36d2e85a42","label":"parseInternalProperty","type":"Function","slug":"fn-reference-typespec-ts-parseinternalproperty","lc":23,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","target":"e10eb961:e63b:6e1c:63e3:8f9aba4413c8","type":"calls"},{"source":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","target":"96bdf6af:79b6:9df7:551f:ed7dc9e9354f","type":"calls"},{"source":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","target":"efa41cea:576f:db17:99c0:0b2b4cb37730","type":"calls"},{"source":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","target":"95cf04f8:ae47:0cb8:8d6d:9d281a869c90","type":"calls"},{"source":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","target":"3cc18ed7:91dd:307b:759c:a18b10e3e298","type":"calls"},{"source":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","target":"e89ea877:407f:1725:e647:072777cfb7b8","type":"calls"},{"source":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","target":"845dd85d:405a:7977:faf5:d2c9b6d03eda","type":"calls"},{"source":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","target":"2329dcd1:6953:7b5a:9120:151f3e469c3c","type":"calls"},{"source":"f35414c9:006f:7700:cd2b:cdbb15869154","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"47a77874:1042:4b6e:7f78:08750707eb0e","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"37b0b6bb:b6b5:0148:25a5:bec245881a10","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"845dd85d:405a:7977:faf5:d2c9b6d03eda","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"e10eb961:e63b:6e1c:63e3:8f9aba4413c8","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"96bdf6af:79b6:9df7:551f:ed7dc9e9354f","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"efa41cea:576f:db17:99c0:0b2b4cb37730","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"055b701d:eeb4:7465:c1c7:c78da1334298","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"9711f511:93ca:7fa4:0b13:20ee54acdf8e","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"84f61968:ca0a:0dc9:62f8:cd3ac513890e","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"74ed8949:900c:6a4b:0e6e:c8c78df8c89a","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"e89ea877:407f:1725:e647:072777cfb7b8","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"151c90be:2144:433b:ad16:0f36d2e85a42","target":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","type":"calls"},{"source":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"92f7c9c3:abad:910b:f98a:ac38b5835c6a","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","label":"parseType","type":"Function","slug":"fn-reference-typespec-ts-parsetype","lc":38,"lang":"typescript","cc":8,"cbc":13},{"id":"c9ff8a54:794a:e9c2:454e:d6679e23efd0","label":"parseReferenceType","type":"Function","slug":"fn-reference-typespec-ts-parsereferencetype","lc":90,"lang":"typescript","cc":8,"cbc":1},{"id":"e2cac376:5831:7fb9:93f0:9bd0301c0ede","label":"parseArrayType","type":"Function","slug":"fn-reference-typespec-ts-parsearraytype","lc":14,"lang":"typescript","cc":2,"cbc":1},{"id":"cedc2db9:a3d0:d3a0:a3a8:5ff42b9ce7bb","label":"parseUnionType","type":"Function","slug":"fn-reference-typespec-ts-parseuniontype","lc":15,"lang":"typescript","cc":2,"cbc":2},{"id":"971e7022:7d86:7fdd:4fb9:118180a96aa0","label":"parseReflectionType","type":"Function","slug":"fn-reference-typespec-ts-parsereflectiontype","lc":23,"lang":"typescript","cc":1,"cbc":1},{"id":"5dc3083d:3481:c266:7d1b:d08bf9ac40f1","label":"parseIndexedAccessType","type":"Function","slug":"fn-reference-typespec-ts-parseindexedaccesstype","lc":11,"lang":"typescript","cbc":1},{"id":"d36ddbb3:f5ca:ce81:0055:e8fac698c476","label":"parseTypeOperatorType","type":"Function","slug":"fn-reference-typespec-ts-parsetypeoperatortype","lc":13,"lang":"typescript","cc":1,"cbc":1},{"id":"b5b7adee:473e:a705:f104:988fb4c4309e","label":"parseConditionalType","type":"Function","slug":"fn-reference-typespec-ts-parseconditionaltype","lc":36,"lang":"typescript","cc":1,"cbc":1},{"id":"301fa205:9ebc:1d73:a346:f982db588513","label":"parseInterface","type":"Function","slug":"fn-reference-typespec-ts-parseinterface","lc":11,"lang":"typescript","cc":2,"cbc":2},{"id":"1017ef81:c990:633c:dc5f:da8c9aa9cece","label":"parseVariable","type":"Function","slug":"fn-reference-typespec-ts-parsevariable","lc":20,"lang":"typescript","cc":3,"cbc":1},{"id":"7047cb45:5407:2f2e:c24a:e4eeecf16c10","label":"parseSignature","type":"Function","slug":"fn-reference-typespec-ts-parsesignature","lc":43,"lang":"typescript","cc":3,"cbc":4},{"id":"2eba6860:75cb:a25c:1653:f9fa4a0ab783","label":"delegateParsing","type":"Function","slug":"fn-reference-typespec-ts-delegateparsing","lc":27,"lang":"typescript","cc":3,"cbc":1},{"id":"af9a4dd2:2701:9a7e:a48d:145bb4d0858a","label":"parseRecordType","type":"Function","slug":"fn-reference-typespec-ts-parserecordtype","lc":10,"lang":"typescript","cc":2,"cbc":1},{"id":"9e09e348:de34:893f:6908:15ef9089fafb","label":"parsePromiseType","type":"Function","slug":"fn-reference-typespec-ts-parsepromisetype","lc":7,"lang":"typescript","cc":2,"cbc":1},{"id":"aef05c5a:1338:200c:4096:3732ec999b23","label":"parsePickType","type":"Function","slug":"fn-reference-typespec-ts-parsepicktype","lc":28,"lang":"typescript","cc":1,"cbc":1},{"id":"332911a0:352a:3eaa:fb02:ca2910b45c77","label":"parseTypeLiteral","type":"Function","slug":"fn-reference-typespec-ts-parsetypeliteral","lc":44,"lang":"typescript","cc":4,"cbc":1},{"id":"7cc03cff:7f34:960a:78e1:f3b7d0d7c302","label":"parseInternalProperty","type":"Function","slug":"fn-reference-typespec-ts-parseinternalproperty","lc":23,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:DocumentationPortal","label":"DocumentationPortal","type":"Domain","slug":"domain-documentationportal"},{"id":"subdomain:DocumentationPortal:ReferenceGenerator","label":"ReferenceGenerator","type":"Subdomain","slug":"subdomain-referencegenerator"}],"edges":[{"source":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","target":"c9ff8a54:794a:e9c2:454e:d6679e23efd0","type":"calls"},{"source":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","target":"e2cac376:5831:7fb9:93f0:9bd0301c0ede","type":"calls"},{"source":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","target":"cedc2db9:a3d0:d3a0:a3a8:5ff42b9ce7bb","type":"calls"},{"source":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","target":"971e7022:7d86:7fdd:4fb9:118180a96aa0","type":"calls"},{"source":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","target":"5dc3083d:3481:c266:7d1b:d08bf9ac40f1","type":"calls"},{"source":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","target":"d36ddbb3:f5ca:ce81:0055:e8fac698c476","type":"calls"},{"source":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","target":"b5b7adee:473e:a705:f104:988fb4c4309e","type":"calls"},{"source":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","target":"301fa205:9ebc:1d73:a346:f982db588513","type":"calls"},{"source":"1017ef81:c990:633c:dc5f:da8c9aa9cece","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"7047cb45:5407:2f2e:c24a:e4eeecf16c10","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"2eba6860:75cb:a25c:1653:f9fa4a0ab783","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"b5b7adee:473e:a705:f104:988fb4c4309e","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"c9ff8a54:794a:e9c2:454e:d6679e23efd0","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"e2cac376:5831:7fb9:93f0:9bd0301c0ede","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"cedc2db9:a3d0:d3a0:a3a8:5ff42b9ce7bb","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"af9a4dd2:2701:9a7e:a48d:145bb4d0858a","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"9e09e348:de34:893f:6908:15ef9089fafb","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"aef05c5a:1338:200c:4096:3732ec999b23","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"332911a0:352a:3eaa:fb02:ca2910b45c77","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"d36ddbb3:f5ca:ce81:0055:e8fac698c476","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"7cc03cff:7f34:960a:78e1:f3b7d0d7c302","target":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","type":"calls"},{"source":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","target":"domain:DocumentationPortal","type":"belongsTo"},{"source":"6cdbb2f5:8d36:95c6:2564:09493fb8c237","target":"subdomain:DocumentationPortal:ReferenceGenerator","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1013,14 +1013,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-documentationportal.html">DocumentationPortal</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-referencegenerator.html">ReferenceGenerator</a></li></ul>
     </div>
     
 

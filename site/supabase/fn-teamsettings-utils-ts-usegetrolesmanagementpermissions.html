@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/buildorchestration.html" class="pill pill-orange">BuildOrchestration</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"useGetRolesManagementPermissions","slug":"fn-teamsettings-utils-ts-usegetrolesmanagementpermissions","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"useGetRolesManagementPermissions","slug":"fn-teamsettings-utils-ts-usegetrolesmanagementpermissions","type":"Function"},"subdomain":{"name":"BuildOrchestration","slug":"subdomain-buildorchestration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildorchestration.html">BuildOrchestration</a><span class="arch-sep">&rarr;</span>
             <span>useGetRolesManagementPermissions() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  bb151abc_7af3_02d3_c54d_abf733417d19["useGetRolesManagementPermissions()"]
-  053649a7_f459_d622_76e2_609c2f5c2986["InviteMemberButton()"]
-  053649a7_f459_d622_76e2_609c2f5c2986 -->|calls| bb151abc_7af3_02d3_c54d_abf733417d19
-  d647ec8e_a1d7_9946_85bd_463ce8845955["MemberActions()"]
-  d647ec8e_a1d7_9946_85bd_463ce8845955 -->|calls| bb151abc_7af3_02d3_c54d_abf733417d19
-  72c9bfa3_545a_b1ec_7ec8_728c41ffb0a3["UpdateRolesPanel()"]
-  72c9bfa3_545a_b1ec_7ec8_728c41ffb0a3 -->|calls| bb151abc_7af3_02d3_c54d_abf733417d19
-  style bb151abc_7af3_02d3_c54d_abf733417d19 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  966a89a9_6484_501a_b8ec_32108f72ed33["useGetRolesManagementPermissions()"]
+  f1c0ac25_99cb_ecbe_0f93_ea53331fc823["InviteMemberButton()"]
+  f1c0ac25_99cb_ecbe_0f93_ea53331fc823 -->|calls| 966a89a9_6484_501a_b8ec_32108f72ed33
+  66a82767_57c5_f20a_84df_2186090330d2["MemberActions()"]
+  66a82767_57c5_f20a_84df_2186090330d2 -->|calls| 966a89a9_6484_501a_b8ec_32108f72ed33
+  0c5936c4_2af4_4114_2542_bfa9587865fb["UpdateRolesPanel()"]
+  0c5936c4_2af4_4114_2542_bfa9587865fb -->|calls| 966a89a9_6484_501a_b8ec_32108f72ed33
+  style 966a89a9_6484_501a_b8ec_32108f72ed33 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-teamsettings-utils-ts-usegetrolesmanagementpermissions"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"bb151abc:7af3:02d3:c54d:abf733417d19","label":"useGetRolesManagementPermissions","type":"Function","slug":"fn-teamsettings-utils-ts-usegetrolesmanagementpermissions","lc":41,"lang":"typescript","cbc":3},{"id":"053649a7:f459:d622:76e2:609c2f5c2986","label":"InviteMemberButton","type":"Function","slug":"fn-invitememberbutton-tsx-invitememberbutton","lc":291,"lang":"tsx","cc":1},{"id":"d647ec8e:a1d7:9946:85bd:463ce8845955","label":"MemberActions","type":"Function","slug":"fn-memberactions-tsx-memberactions","lc":265,"lang":"tsx","cc":1},{"id":"72c9bfa3:545a:b1ec:7ec8:728c41ffb0a3","label":"UpdateRolesPanel","type":"Function","slug":"fn-updaterolespanel-tsx-updaterolespanel","lc":325,"lang":"tsx","cc":2},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"053649a7:f459:d622:76e2:609c2f5c2986","target":"bb151abc:7af3:02d3:c54d:abf733417d19","type":"calls"},{"source":"d647ec8e:a1d7:9946:85bd:463ce8845955","target":"bb151abc:7af3:02d3:c54d:abf733417d19","type":"calls"},{"source":"72c9bfa3:545a:b1ec:7ec8:728c41ffb0a3","target":"bb151abc:7af3:02d3:c54d:abf733417d19","type":"calls"},{"source":"bb151abc:7af3:02d3:c54d:abf733417d19","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"bb151abc:7af3:02d3:c54d:abf733417d19","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"966a89a9:6484:501a:b8ec:32108f72ed33","label":"useGetRolesManagementPermissions","type":"Function","slug":"fn-teamsettings-utils-ts-usegetrolesmanagementpermissions","lc":41,"lang":"typescript","cbc":3},{"id":"f1c0ac25:99cb:ecbe:0f93:ea53331fc823","label":"InviteMemberButton","type":"Function","slug":"fn-invitememberbutton-tsx-invitememberbutton","lc":291,"lang":"tsx","cc":1},{"id":"66a82767:57c5:f20a:84df:2186090330d2","label":"MemberActions","type":"Function","slug":"fn-memberactions-tsx-memberactions","lc":265,"lang":"tsx","cc":1},{"id":"0c5936c4:2af4:4114:2542:bfa9587865fb","label":"UpdateRolesPanel","type":"Function","slug":"fn-updaterolespanel-tsx-updaterolespanel","lc":325,"lang":"tsx","cc":2},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:BuildOrchestration","label":"BuildOrchestration","type":"Subdomain","slug":"subdomain-buildorchestration"}],"edges":[{"source":"f1c0ac25:99cb:ecbe:0f93:ea53331fc823","target":"966a89a9:6484:501a:b8ec:32108f72ed33","type":"calls"},{"source":"66a82767:57c5:f20a:84df:2186090330d2","target":"966a89a9:6484:501a:b8ec:32108f72ed33","type":"calls"},{"source":"0c5936c4:2af4:4114:2542:bfa9587865fb","target":"966a89a9:6484:501a:b8ec:32108f72ed33","type":"calls"},{"source":"966a89a9:6484:501a:b8ec:32108f72ed33","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"966a89a9:6484:501a:b8ec:32108f72ed33","target":"subdomain:InfrastructureDeployment:BuildOrchestration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -988,14 +988,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-buildorchestration.html">BuildOrchestration</a></li></ul>
     </div>
     
 

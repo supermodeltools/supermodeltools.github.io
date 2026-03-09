@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/buildorchestration.html" class="pill pill-orange">BuildOrchestration</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"getTheme","slug":"fn-monacothemeprovider-tsx-gettheme","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"getTheme","slug":"fn-monacothemeprovider-tsx-gettheme","type":"Function"},"subdomain":{"name":"BuildOrchestration","slug":"subdomain-buildorchestration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildorchestration.html">BuildOrchestration</a><span class="arch-sep">&rarr;</span>
             <span>getTheme() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  475cecbd_a10d_4052_d921_42111e5a134b["getTheme()"]
-  94cdb314_a7ae_a1e7_4110_13db3a1ae63e["MonacoThemeProvider()"]
-  94cdb314_a7ae_a1e7_4110_13db3a1ae63e -->|calls| 475cecbd_a10d_4052_d921_42111e5a134b
-  style 475cecbd_a10d_4052_d921_42111e5a134b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  06284ce4_fae3_5479_bd8d_1c674b9b7dc0["getTheme()"]
+  71938a96_6058_ac98_b45c_19c9f21140ee["MonacoThemeProvider()"]
+  71938a96_6058_ac98_b45c_19c9f21140ee -->|calls| 06284ce4_fae3_5479_bd8d_1c674b9b7dc0
+  style 06284ce4_fae3_5479_bd8d_1c674b9b7dc0 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-monacothemeprovider-tsx-gettheme"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"475cecbd:a10d:4052:d921:42111e5a134b","label":"getTheme","type":"Function","slug":"fn-monacothemeprovider-tsx-gettheme","lc":20,"lang":"tsx","cbc":1},{"id":"94cdb314:a7ae:a1e7:4110:13db3a1ae63e","label":"MonacoThemeProvider","type":"Function","slug":"fn-monacothemeprovider-tsx-monacothemeprovider","lc":15,"lang":"tsx","cc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"94cdb314:a7ae:a1e7:4110:13db3a1ae63e","target":"475cecbd:a10d:4052:d921:42111e5a134b","type":"calls"},{"source":"475cecbd:a10d:4052:d921:42111e5a134b","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"475cecbd:a10d:4052:d921:42111e5a134b","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"06284ce4:fae3:5479:bd8d:1c674b9b7dc0","label":"getTheme","type":"Function","slug":"fn-monacothemeprovider-tsx-gettheme","lc":20,"lang":"tsx","cbc":1},{"id":"71938a96:6058:ac98:b45c:19c9f21140ee","label":"MonacoThemeProvider","type":"Function","slug":"fn-monacothemeprovider-tsx-monacothemeprovider","lc":15,"lang":"tsx","cc":1},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:BuildOrchestration","label":"BuildOrchestration","type":"Subdomain","slug":"subdomain-buildorchestration"}],"edges":[{"source":"71938a96:6058:ac98:b45c:19c9f21140ee","target":"06284ce4:fae3:5479:bd8d:1c674b9b7dc0","type":"calls"},{"source":"06284ce4:fae3:5479:bd8d:1c674b9b7dc0","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"06284ce4:fae3:5479:bd8d:1c674b9b7dc0","target":"subdomain:InfrastructureDeployment:BuildOrchestration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -963,14 +963,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-buildorchestration.html">BuildOrchestration</a></li></ul>
     </div>
     
 

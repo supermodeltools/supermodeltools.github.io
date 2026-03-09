@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/documentationportal.html" class="pill pill-green">DocumentationPortal</a>
+        <a href="/subdomain/searchengine.html" class="pill pill-orange">SearchEngine</a>
         
         
         <span class="pill">calls 7</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"OrgProjectSelector","slug":"fn-projectconfigvariables-tsx-orgprojectselector","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DocumentationPortal","slug":"domain-documentationportal"},"entity":{"name":"OrgProjectSelector","slug":"fn-projectconfigvariables-tsx-orgprojectselector","type":"Function"},"subdomain":{"name":"SearchEngine","slug":"subdomain-searchengine"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/documentationportal.html">DocumentationPortal</a><span class="arch-sep">&rarr;</span>
+            <a href="/searchengine.html">SearchEngine</a><span class="arch-sep">&rarr;</span>
             <span>OrgProjectSelector() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,22 +911,22 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  1f126370_698a_5cef_a734_f3f2523911a9["OrgProjectSelector()"]
-  ac2ab561_a3aa_3c42_757b_c5248b86fa1d["useDebounce()"]
-  1f126370_698a_5cef_a734_f3f2523911a9 -->|calls| ac2ab561_a3aa_3c42_757b_c5248b86fa1d
-  ed7534d0_6a93_496b_ef8e_cc233bf9413c["useOrganizationsQuery()"]
-  1f126370_698a_5cef_a734_f3f2523911a9 -->|calls| ed7534d0_6a93_496b_ef8e_cc233bf9413c
-  35920a84_4a75_3b5e_9d9b_590f98229755["useProjectsInfiniteQuery()"]
-  1f126370_698a_5cef_a734_f3f2523911a9 -->|calls| 35920a84_4a75_3b5e_9d9b_590f98229755
-  885ba2d1_fe33_0725_8c6e_7ce7d5e5ddbb["toOrgProjectValue()"]
-  1f126370_698a_5cef_a734_f3f2523911a9 -->|calls| 885ba2d1_fe33_0725_8c6e_7ce7d5e5ddbb
-  84b9b179_0993_d02f_995a_aede44c46a4f["toDisplayNameOrgProject()"]
-  1f126370_698a_5cef_a734_f3f2523911a9 -->|calls| 84b9b179_0993_d02f_995a_aede44c46a4f
-  ea816226_8600_9727_4502_0ed718417e4d["retrieve()"]
-  1f126370_698a_5cef_a734_f3f2523911a9 -->|calls| ea816226_8600_9727_4502_0ed718417e4d
-  e17b4b94_c88e_9547_27b4_70fba251d986["fromOrgProjectValue()"]
-  1f126370_698a_5cef_a734_f3f2523911a9 -->|calls| e17b4b94_c88e_9547_27b4_70fba251d986
-  style 1f126370_698a_5cef_a734_f3f2523911a9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  fc1bf6ab_3624_ca10_e650_654d6a64f6bc["OrgProjectSelector()"]
+  45cf85f0_2a96_a1da_9ce4_74a69f2bbfa9["useDebounce()"]
+  fc1bf6ab_3624_ca10_e650_654d6a64f6bc -->|calls| 45cf85f0_2a96_a1da_9ce4_74a69f2bbfa9
+  d563c8c2_095d_caa8_bb09_b507bf79d9a0["useOrganizationsQuery()"]
+  fc1bf6ab_3624_ca10_e650_654d6a64f6bc -->|calls| d563c8c2_095d_caa8_bb09_b507bf79d9a0
+  9ba87c8f_1074_41d6_6483_886e047af3c6["useProjectsInfiniteQuery()"]
+  fc1bf6ab_3624_ca10_e650_654d6a64f6bc -->|calls| 9ba87c8f_1074_41d6_6483_886e047af3c6
+  e53849dd_a7b1_34b4_19f8_45cf57470f57["toOrgProjectValue()"]
+  fc1bf6ab_3624_ca10_e650_654d6a64f6bc -->|calls| e53849dd_a7b1_34b4_19f8_45cf57470f57
+  3d312efc_d23f_a322_3367_a37d3f68ca44["toDisplayNameOrgProject()"]
+  fc1bf6ab_3624_ca10_e650_654d6a64f6bc -->|calls| 3d312efc_d23f_a322_3367_a37d3f68ca44
+  a92cd7e8_38ba_98f9_2a05_5aa16daa6cc4["retrieve()"]
+  fc1bf6ab_3624_ca10_e650_654d6a64f6bc -->|calls| a92cd7e8_38ba_98f9_2a05_5aa16daa6cc4
+  abffa7c5_220c_501d_25d6_9d8a8a5c48c0["fromOrgProjectValue()"]
+  fc1bf6ab_3624_ca10_e650_654d6a64f6bc -->|calls| abffa7c5_220c_501d_25d6_9d8a8a5c48c0
+  style fc1bf6ab_3624_ca10_e650_654d6a64f6bc fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -934,7 +934,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-projectconfigvariables-tsx-orgprojectselector"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"1f126370:698a:5cef:a734:f3f2523911a9","label":"OrgProjectSelector","type":"Function","slug":"fn-projectconfigvariables-tsx-orgprojectselector","lc":123,"lang":"tsx","cc":7},{"id":"ac2ab561:a3aa:3c42:757b:c5248b86fa1d","label":"useDebounce","type":"Function","slug":"fn-usedebounce-tsx-usedebounce","lc":15,"lang":"tsx","cbc":2},{"id":"ed7534d0:6a93:496b:ef8e:cc233bf9413c","label":"useOrganizationsQuery","type":"Function","slug":"fn-organizations-ts-useorganizationsquery","lc":11,"lang":"typescript","cc":1,"cbc":1},{"id":"35920a84:4a75:3b5e:9d9b:590f98229755","label":"useProjectsInfiniteQuery","type":"Function","slug":"fn-projects-infinite-ts-useprojectsinfinitequery","lc":31,"lang":"typescript","cc":1,"cbc":2},{"id":"885ba2d1:fe33:0725:8c6e:7ce7d5e5ddbb","label":"toOrgProjectValue","type":"Function","slug":"fn-projectconfigvariables-utils-ts-toorgprojectvalue","lc":9,"lang":"typescript","cc":3,"cbc":1},{"id":"84b9b179:0993:d02f:995a:aede44c46a4f","label":"toDisplayNameOrgProject","type":"Function","slug":"fn-projectconfigvariables-utils-ts-todisplaynameorgproject","lc":6,"lang":"typescript","cbc":2},{"id":"ea816226:8600:9727:4502:0ed718417e4d","label":"retrieve","type":"Function","slug":"fn-storage-ts-retrieve","lc":5,"lang":"typescript","cc":1,"cbc":2},{"id":"e17b4b94:c88e:9547:27b4:70fba251d986","label":"fromOrgProjectValue","type":"Function","slug":"fn-projectconfigvariables-utils-ts-fromorgprojectvalue","lc":15,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"1f126370:698a:5cef:a734:f3f2523911a9","target":"ac2ab561:a3aa:3c42:757b:c5248b86fa1d","type":"calls"},{"source":"1f126370:698a:5cef:a734:f3f2523911a9","target":"ed7534d0:6a93:496b:ef8e:cc233bf9413c","type":"calls"},{"source":"1f126370:698a:5cef:a734:f3f2523911a9","target":"35920a84:4a75:3b5e:9d9b:590f98229755","type":"calls"},{"source":"1f126370:698a:5cef:a734:f3f2523911a9","target":"885ba2d1:fe33:0725:8c6e:7ce7d5e5ddbb","type":"calls"},{"source":"1f126370:698a:5cef:a734:f3f2523911a9","target":"84b9b179:0993:d02f:995a:aede44c46a4f","type":"calls"},{"source":"1f126370:698a:5cef:a734:f3f2523911a9","target":"ea816226:8600:9727:4502:0ed718417e4d","type":"calls"},{"source":"1f126370:698a:5cef:a734:f3f2523911a9","target":"e17b4b94:c88e:9547:27b4:70fba251d986","type":"calls"},{"source":"1f126370:698a:5cef:a734:f3f2523911a9","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"1f126370:698a:5cef:a734:f3f2523911a9","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"fc1bf6ab:3624:ca10:e650:654d6a64f6bc","label":"OrgProjectSelector","type":"Function","slug":"fn-projectconfigvariables-tsx-orgprojectselector","lc":123,"lang":"tsx","cc":7},{"id":"45cf85f0:2a96:a1da:9ce4:74a69f2bbfa9","label":"useDebounce","type":"Function","slug":"fn-usedebounce-tsx-usedebounce","lc":15,"lang":"tsx","cbc":2},{"id":"d563c8c2:095d:caa8:bb09:b507bf79d9a0","label":"useOrganizationsQuery","type":"Function","slug":"fn-organizations-ts-useorganizationsquery","lc":11,"lang":"typescript","cc":1,"cbc":1},{"id":"9ba87c8f:1074:41d6:6483:886e047af3c6","label":"useProjectsInfiniteQuery","type":"Function","slug":"fn-projects-infinite-ts-useprojectsinfinitequery","lc":31,"lang":"typescript","cc":1,"cbc":2},{"id":"e53849dd:a7b1:34b4:19f8:45cf57470f57","label":"toOrgProjectValue","type":"Function","slug":"fn-projectconfigvariables-utils-ts-toorgprojectvalue","lc":9,"lang":"typescript","cc":3,"cbc":1},{"id":"3d312efc:d23f:a322:3367:a37d3f68ca44","label":"toDisplayNameOrgProject","type":"Function","slug":"fn-projectconfigvariables-utils-ts-todisplaynameorgproject","lc":6,"lang":"typescript","cbc":2},{"id":"a92cd7e8:38ba:98f9:2a05:5aa16daa6cc4","label":"retrieve","type":"Function","slug":"fn-storage-ts-retrieve","lc":5,"lang":"typescript","cc":1,"cbc":2},{"id":"abffa7c5:220c:501d:25d6:9d8a8a5c48c0","label":"fromOrgProjectValue","type":"Function","slug":"fn-projectconfigvariables-utils-ts-fromorgprojectvalue","lc":15,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:DocumentationPortal","label":"DocumentationPortal","type":"Domain","slug":"domain-documentationportal"},{"id":"subdomain:DocumentationPortal:SearchEngine","label":"SearchEngine","type":"Subdomain","slug":"subdomain-searchengine"}],"edges":[{"source":"fc1bf6ab:3624:ca10:e650:654d6a64f6bc","target":"45cf85f0:2a96:a1da:9ce4:74a69f2bbfa9","type":"calls"},{"source":"fc1bf6ab:3624:ca10:e650:654d6a64f6bc","target":"d563c8c2:095d:caa8:bb09:b507bf79d9a0","type":"calls"},{"source":"fc1bf6ab:3624:ca10:e650:654d6a64f6bc","target":"9ba87c8f:1074:41d6:6483:886e047af3c6","type":"calls"},{"source":"fc1bf6ab:3624:ca10:e650:654d6a64f6bc","target":"e53849dd:a7b1:34b4:19f8:45cf57470f57","type":"calls"},{"source":"fc1bf6ab:3624:ca10:e650:654d6a64f6bc","target":"3d312efc:d23f:a322:3367:a37d3f68ca44","type":"calls"},{"source":"fc1bf6ab:3624:ca10:e650:654d6a64f6bc","target":"a92cd7e8:38ba:98f9:2a05:5aa16daa6cc4","type":"calls"},{"source":"fc1bf6ab:3624:ca10:e650:654d6a64f6bc","target":"abffa7c5:220c:501d:25d6:9d8a8a5c48c0","type":"calls"},{"source":"fc1bf6ab:3624:ca10:e650:654d6a64f6bc","target":"domain:DocumentationPortal","type":"belongsTo"},{"source":"fc1bf6ab:3624:ca10:e650:654d6a64f6bc","target":"subdomain:DocumentationPortal:SearchEngine","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1078,14 +1078,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-documentationportal.html">DocumentationPortal</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-searchengine.html">SearchEngine</a></li></ul>
     </div>
     
 

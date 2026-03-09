@@ -11,17 +11,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <title>AccessControl — supabase Architecture | supabase Architecture Docs</title>
-<meta name="description" content="Role-based visibility and mutation permissions (isAdmin, isAuthenticated) Architecture documentation for the AccessControl subdomain (part of ContentEngine domain) in the supabase codebase. Contains 0 source files.">
+<meta name="description" content="Implements permission logic for admin roles and read/write operations. Architecture documentation for the AccessControl subdomain (part of ContentManagement domain) in the supabase codebase. Contains 0 source files.">
 <link rel="canonical" href="https://repos.supermodeltools.com/subdomain-accesscontrol/">
 <meta property="og:title" content="AccessControl — supabase Architecture — supabase Architecture Docs">
-<meta property="og:description" content="Role-based visibility and mutation permissions (isAdmin, isAuthenticated) Architecture documentation for the AccessControl subdomain (part of ContentEngine domain) in the supabase codebase. Contains 0 source files.">
+<meta property="og:description" content="Implements permission logic for admin roles and read/write operations. Architecture documentation for the AccessControl subdomain (part of ContentManagement domain) in the supabase codebase. Contains 0 source files.">
 <meta property="og:url" content="https://repos.supermodeltools.com/subdomain-accesscontrol.html">
 <meta property="og:image" content="https://repos.supermodeltools.com/images/share/subdomain-accesscontrol.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="supabase Architecture Docs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AccessControl — supabase Architecture — supabase Architecture Docs">
-<meta name="twitter:description" content="Role-based visibility and mutation permissions (isAdmin, isAuthenticated) Architecture documentation for the AccessControl subdomain (part of ContentEngine domain) in the supabase codebase. Contains 0 source files.">
+<meta name="twitter:description" content="Implements permission logic for admin roles and read/write operations. Architecture documentation for the AccessControl subdomain (part of ContentManagement domain) in the supabase codebase. Contains 0 source files.">
 <meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/subdomain-accesscontrol.svg">
 
 <style>:root {
@@ -809,9 +809,9 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Role-based visibility and mutation permissions (isAdmin, isAuthenticated) Architecture documentation for the AccessControl subdomain (part of ContentEngine domain) in the supabase codebase. Contains 0 source files.","image":["https://repos.supermodeltools.com/images/share/subdomain-accesscontrol.svg"],"name":"AccessControl — supabase Architecture","url":"https://repos.supermodeltools.com/subdomain-accesscontrol.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Implements permission logic for admin roles and read/write operations. Architecture documentation for the AccessControl subdomain (part of ContentManagement domain) in the supabase codebase. Contains 0 source files.","image":["https://repos.supermodeltools.com/images/share/subdomain-accesscontrol.svg"],"name":"AccessControl — supabase Architecture","url":"https://repos.supermodeltools.com/subdomain-accesscontrol.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"AccessControl — supabase Architecture","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"AccessControl is a subdomain in the supabase codebase, part of the ContentEngine domain. Role-based visibility and mutation permissions (isAdmin, isAuthenticated) It contains 0 source files."},"name":"What is the AccessControl subdomain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"AccessControl belongs to the ContentEngine domain."},"name":"Which domain does AccessControl belong to?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The AccessControl subdomain contains 86 function(s): BannerBlock, BeforeLogin, CMSLink, COMMAND_ITEMS, Callout, Card, CardDescription, ChartComposedTable, and 78 more."},"name":"What functions are in AccessControl?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"AccessControl is a subdomain in the supabase codebase, part of the ContentManagement domain. Implements permission logic for admin roles and read/write operations. It contains 0 source files."},"name":"What is the AccessControl subdomain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"AccessControl belongs to the ContentManagement domain."},"name":"Which domain does AccessControl belong to?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The AccessControl subdomain contains 28 function(s): HorizontalGridLine, LinksProperties, NestedProperties, SlugComponent, ThemeProvider, ThemeProvider, down, flattenNavItems, and 20 more."},"name":"What functions are in AccessControl?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -869,7 +869,7 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/subdomain.html" class="pill pill-accent">Subdomain</a>
         
-        <a href="/domain/contentengine.html" class="pill pill-green">ContentEngine</a>
+        <a href="/domain/contentmanagement.html" class="pill pill-green">ContentManagement</a>
         <a href="/subdomain/accesscontrol.html" class="pill pill-orange">AccessControl</a>
         
         
@@ -882,7 +882,7 @@ a.pill:hover {
 
       
       <div class="entity-summary">
-        <p>Role-based visibility and mutation permissions (isAdmin, isAuthenticated)</p>
+        <p>Implements permission logic for admin roles and read/write operations.</p>
       </div>
       
     </div>
@@ -905,7 +905,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="subdomain-accesscontrol"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"subdomain:ContentEngine:AccessControl","label":"AccessControl","type":"Subdomain","slug":"subdomain-accesscontrol"},{"id":"domain:ContentEngine","label":"ContentEngine","type":"Domain","slug":"domain-contentengine"}],"edges":[{"source":"subdomain:ContentEngine:AccessControl","target":"domain:ContentEngine","type":"partOf"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"subdomain:ContentManagement:AccessControl","label":"AccessControl","type":"Subdomain","slug":"subdomain-accesscontrol"},{"id":"domain:ContentManagement","label":"ContentManagement","type":"Domain","slug":"domain-contentmanagement"}],"edges":[{"source":"subdomain:ContentManagement:AccessControl","target":"domain:ContentManagement","type":"partOf"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -921,7 +921,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-contentengine.html">ContentEngine</a></li></ul>
+      <ul><li><a href="/domain-contentmanagement.html">ContentManagement</a></li></ul>
     </div>
     
 
@@ -932,7 +932,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Functions</h2>
-      <ul><li><a href="/fn-component-tsx-bannerblock.html">BannerBlock()</a></li><li><a href="/fn-index-tsx-beforelogin.html">BeforeLogin()</a></li><li><a href="/fn-index-tsx-cmslink.html">CMSLink()</a></li><li><a href="/fn-docs-ts-command-items.html">COMMAND_ITEMS()</a></li><li><a href="/fn-callout-tsx-callout-2.html">Callout()</a></li><li><a href="/fn-card-tsx-card.html">Card()</a></li><li><a href="/fn-card-tsx-carddescription.html">CardDescription()</a></li><li><a href="/fn-chart-composed-table-tsx-chartcomposedtable-2.html">ChartComposedTable()</a></li><li><a href="/fn-checkbox-tsx-checkbox.html">Checkbox()</a></li><li><a href="/fn-class-label-tsx-classlabel.html">ClassLabel()</a></li><li><a href="/fn-component-tsx-codeblock.html">CodeBlock()</a></li><li><a href="/fn-colors-tsx-colors.html">Colors()</a></li><li><a href="/fn-command-tsx-command.html">Command()</a></li><li><a href="/fn-command-menu-tsx-commandmenu-2.html">CommandMenu()</a></li><li><a href="/fn-chart-bar-interactive-tsx-component-2.html">Component()</a></li><li><a href="/fn-component-props-tsx-componentprops.html">ComponentProps()</a></li><li><a href="/fn-chart-composed-demo-tsx-composedchartdemo-2.html">ComposedChartDemo()</a></li><li><a href="/fn-copy-button-tsx-copybutton.html">CopyButton()</a></li><li><a href="/fn-contentlayer-config-js-coursehero.html">CourseHero()</a></li><li><a href="/fn-framework-context-tsx-frameworkprovider.html">FrameworkProvider()</a></li><li><a href="/fn-grid-tsx-grid.html">Grid()</a></li><li><a href="/fn-index-tsx-headerthemeprovider.html">HeaderThemeProvider()</a></li><li><a href="/fn-page-tsx-homepage.html">HomePage()</a></li><li><a href="/fn-page-tsx-horizontalgridline.html">HorizontalGridLine()</a></li><li><a href="/fn-icons-tsx-icons.html">Icons()</a></li><li><a href="/fn-index-tsx-inittheme.html">InitTheme()</a></li><li><a href="/fn-layout-tsx-layout.html">Layout()</a></li><li><a href="/fn-contentlayer-config-js-linksproperties.html">LinksProperties()</a></li><li><a href="/fn-mdx-components-tsx-mdx-2.html">Mdx()</a></li><li><a href="/fn-component-tsx-mediablock.html">MediaBlock()</a></li><li><a href="/fn-mobile-menu-sheet-tsx-mobilemenusheet.html">MobileMenuSheet()</a></li><li><a href="/fn-not-found-tsx-notfound.html">NotFound()</a></li><li><a href="/fn-page-tsx-page.html">Page()</a></li><li><a href="/fn-index-tsx-pagerange.html">PageRange()</a></li><li><a href="/fn-pagination-tsx-pagination.html">Pagination()</a></li><li><a href="/fn-pagination-tsx-paginationellipsis.html">PaginationEllipsis()</a></li><li><a href="/fn-pagination-tsx-paginationlink.html">PaginationLink()</a></li><li><a href="/fn-layout-tsx-rootlayout.html">RootLayout()</a></li><li><a href="/fn-select-tsx-selectitem.html">SelectItem()</a></li><li><a href="/fn-select-tsx-selectscrolldownbutton.html">SelectScrollDownButton()</a></li><li><a href="/fn-side-navigation-tsx-sidenavigation-2.html">SideNavigation()</a></li><li><a href="/fn-site-footer-tsx-sitefooter.html">SiteFooter()</a></li><li><a href="/fn-tanstack-beta-tsx-tanstackbeta.html">TanStackBeta()</a></li><li><a href="/fn-providers-tsx-themeprovider-2.html">ThemeProvider()</a></li><li><a href="/fn-theme-switcher-dropdown-tsx-themeswitcherdropdown.html">ThemeSwitcherDropdown()</a></li><li><a href="/fn-index-tsx-title.html">Title()</a></li><li><a href="/fn-toc-tsx-tree.html">Tree()</a></li><li><a href="/fn-mdx-components-tsx-components-code-2.html">components.code()</a></li><li><a href="/fn-mdx-components-tsx-components-h3-2.html">components.h3()</a></li><li><a href="/fn-mdx-components-tsx-components-h6-2.html">components.h6()</a></li><li><a href="/fn-mdx-components-tsx-components-hr-2.html">components.hr()</a></li><li><a href="/fn-mdx-components-tsx-components-li-2.html">components.li()</a></li><li><a href="/fn-mdx-components-tsx-components-th-2.html">components.th()</a></li><li><a href="/fn-deepmerge-ts-deepmerge.html">deepMerge()</a></li><li><a href="/fn-build-llms-txt-ts-extractfrontmatter.html">extractFrontmatter()</a></li><li><a href="/fn-pager-tsx-flatten.html">flatten()</a></li><li><a href="/fn-get-next-page-ts-flattennavitems.html">flattenNavItems()</a></li><li><a href="/fn-toc-ts-flattennode-2.html">flattenNode()</a></li><li><a href="/fn-formatslug-ts-format.html">format()</a></li><li><a href="/fn-utils-ts-formatdate.html">formatDate()</a></li><li><a href="/fn-formatslug-ts-formatslug.html">formatSlug()</a></li><li><a href="/fn-generatemeta-ts-generatemeta.html">generateMeta()</a></li><li><a href="/fn-not-found-tsx-generatemetadata.html">generateMetadata()</a></li><li><a href="/fn-page-tsx-generatestaticparams-8.html">generateStaticParams()</a></li><li><a href="/fn-getdocument-ts-getcacheddocument.html">getCachedDocument()</a></li><li><a href="/fn-get-current-chapter-ts-getcurrentchapter.html">getCurrentChapter()</a></li><li><a href="/fn-explore-more-tsx-geticon.html">getIcon()</a></li><li><a href="/fn-toc-ts-getitems.html">getItems()</a></li><li><a href="/fn-getmeuser-ts-getmeuser.html">getMeUser()</a></li><li><a href="/fn-merge-internal-content-ts-getnavhrefsinsection.html">getNavHrefsInSection()</a></li><li><a href="/fn-toc-ts-gettableofcontents-2.html">getTableOfContents()</a></li><li><a href="/fn-isadmin-ts-isadmin.html">isAdmin()</a></li><li><a href="/fn-isadmin-ts-isadminfieldlevel.html">isAdminFieldLevel()</a></li><li><a href="/fn-isadminorself-ts-isadminorself.html">isAdminOrSelf()</a></li><li><a href="/fn-isanyone-ts-isanyone.html">isAnyone()</a></li><li><a href="/fn-isauthenticated-ts-isauthenticated.html">isAuthenticated()</a></li><li><a href="/fn-index-tsx-jsxconverters.html">jsxConverters()</a></li><li><a href="/fn-link-ts-link.html">link()</a></li><li><a href="/fn-mergeopengraph-ts-mergeopengraph.html">mergeOpenGraph()</a></li><li><a href="/fn-rehype-npm-command-ts-rehypenpmcommand.html">rehypeNpmCommand()</a></li><li><a href="/fn-revalidateredirects-ts-revalidateredirects.html">revalidateRedirects()</a></li><li><a href="/fn-types-ts-themeisvalid.html">themeIsValid()</a></li><li><a href="/fn-toc-tsx-useactiveitem-2.html">useActiveItem()</a></li><li><a href="/fn-useclickablecard-ts-useclickablecard.html">useClickableCard()</a></li><li><a href="/fn-use-config-ts-useconfig-2.html">useConfig()</a></li><li><a href="/fn-index-tsx-usetheme.html">useTheme()</a></li></ul>
+      <ul><li><a href="/fn-page-tsx-horizontalgridline.html">HorizontalGridLine()</a></li><li><a href="/fn-contentlayer-config-js-linksproperties-2.html">LinksProperties()</a></li><li><a href="/fn-contentlayer-config-js-nestedproperties-2.html">NestedProperties()</a></li><li><a href="/fn-slugcomponent-tsx-slugcomponent.html">SlugComponent()</a></li><li><a href="/fn-providers-tsx-themeprovider-2.html">ThemeProvider()</a></li><li><a href="/fn-index-tsx-themeprovider.html">ThemeProvider()</a></li><li><a href="/fn-20250902-112449-ts-down.html">down()</a></li><li><a href="/fn-get-next-page-ts-flattennavitems.html">flattenNavItems()</a></li><li><a href="/fn-formatslug-ts-formatslug.html">formatSlug()</a></li><li><a href="/fn-page-tsx-generatemetadata-30.html">generateMetadata()</a></li><li><a href="/fn-build-llms-txt-ts-getdocfiles.html">getDocFiles()</a></li><li><a href="/fn-shared-ts-getimplicitpreference.html">getImplicitPreference()</a></li><li><a href="/fn-toc-ts-gettoc-2.html">getToc()</a></li><li><a href="/fn-index-tsx-initialcontext-setheadertheme.html">initialContext.setHeaderTheme()</a></li><li><a href="/fn-isadmin-ts-isadmin.html">isAdmin()</a></li><li><a href="/fn-isadmin-ts-isadminfieldlevel.html">isAdminFieldLevel()</a></li><li><a href="/fn-isadminorself-ts-isadminorself.html">isAdminOrSelf()</a></li><li><a href="/fn-isanyone-ts-isanyone.html">isAnyone()</a></li><li><a href="/fn-isauthenticated-ts-isauthenticated.html">isAuthenticated()</a></li><li><a href="/fn-link-ts-link.html">link()</a></li><li><a href="/fn-linkgroup-ts-linkgroup.html">linkGroup()</a></li><li><a href="/fn-next-config-mjs-nextconfig-redirects-3.html">nextConfig.redirects()</a></li><li><a href="/fn-20250619-155345-ts-up.html">up()</a></li><li><a href="/fn-20250619-160549-ts-up.html">up()</a></li><li><a href="/fn-20250821-151248-ts-up.html">up()</a></li><li><a href="/fn-20250821-165446-ts-up.html">up()</a></li><li><a href="/fn-framework-context-tsx-usecourse.html">useCourse()</a></li><li><a href="/fn-telemetry-ts-usesendtelemetryevent-2.html">useSendTelemetryEvent()</a></li></ul>
     </div>
     
 
@@ -964,17 +964,17 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What is the AccessControl subdomain?</summary>
-        <div class="faq-answer">AccessControl is a subdomain in the supabase codebase, part of the ContentEngine domain. Role-based visibility and mutation permissions (isAdmin, isAuthenticated) It contains 0 source files.</div>
+        <div class="faq-answer">AccessControl is a subdomain in the supabase codebase, part of the ContentManagement domain. Implements permission logic for admin roles and read/write operations. It contains 0 source files.</div>
       </details>
       
       <details class="faq-item">
         <summary class="faq-question">Which domain does AccessControl belong to?</summary>
-        <div class="faq-answer">AccessControl belongs to the ContentEngine domain.</div>
+        <div class="faq-answer">AccessControl belongs to the ContentManagement domain.</div>
       </details>
       
       <details class="faq-item">
         <summary class="faq-question">What functions are in AccessControl?</summary>
-        <div class="faq-answer">The AccessControl subdomain contains 86 function(s): BannerBlock, BeforeLogin, CMSLink, COMMAND_ITEMS, Callout, Card, CardDescription, ChartComposedTable, and 78 more.</div>
+        <div class="faq-answer">The AccessControl subdomain contains 28 function(s): HorizontalGridLine, LinksProperties, NestedProperties, SlugComponent, ThemeProvider, ThemeProvider, down, flattenNavItems, and 20 more.</div>
       </details>
       
     </div>

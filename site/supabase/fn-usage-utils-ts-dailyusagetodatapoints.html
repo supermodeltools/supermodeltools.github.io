@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/tooling.html" class="pill pill-orange">Tooling</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/containerization.html" class="pill pill-orange">Containerization</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"dailyUsageToDataPoints","slug":"fn-usage-utils-ts-dailyusagetodatapoints","type":"Function"},"subdomain":{"name":"Tooling","slug":"subdomain-tooling"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"dailyUsageToDataPoints","slug":"fn-usage-utils-ts-dailyusagetodatapoints","type":"Function"},"subdomain":{"name":"Containerization","slug":"subdomain-containerization"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/tooling.html">Tooling</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/containerization.html">Containerization</a><span class="arch-sep">&rarr;</span>
             <span>dailyUsageToDataPoints() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,20 +911,20 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3853165d_73b6_a7ac_1191_1844f184557c["dailyUsageToDataPoints()"]
-  df66ccef_aff2_d1dc_6195_362ff4749691["ActiveCompute()"]
-  df66ccef_aff2_d1dc_6195_362ff4749691 -->|calls| 3853165d_73b6_a7ac_1191_1844f184557c
-  f7e7efac_e968_847a_39e4_2dcc2ab5f5e2["Activity()"]
-  f7e7efac_e968_847a_39e4_2dcc2ab5f5e2 -->|calls| 3853165d_73b6_a7ac_1191_1844f184557c
-  1cf6224a_cbfa_eee7_5851_710d51955148["Compute()"]
-  1cf6224a_cbfa_eee7_5851_710d51955148 -->|calls| 3853165d_73b6_a7ac_1191_1844f184557c
-  1a3c121d_c7e2_75c6_84a4_0f302d894a60["Egress()"]
-  1a3c121d_c7e2_75c6_84a4_0f302d894a60 -->|calls| 3853165d_73b6_a7ac_1191_1844f184557c
-  d5751e22_b1ca_2a60_6642_4bebed8e0ded["OrgLogUsage()"]
-  d5751e22_b1ca_2a60_6642_4bebed8e0ded -->|calls| 3853165d_73b6_a7ac_1191_1844f184557c
-  b4f158d5_d43b_b00f_cf56_150ce2cb868c["SizeAndCounts()"]
-  b4f158d5_d43b_b00f_cf56_150ce2cb868c -->|calls| 3853165d_73b6_a7ac_1191_1844f184557c
-  style 3853165d_73b6_a7ac_1191_1844f184557c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  464578be_9309_db8b_d824_91b605ecbbba["dailyUsageToDataPoints()"]
+  3fc7634b_7037_f49e_e2b6_51adfc2d39c3["ActiveCompute()"]
+  3fc7634b_7037_f49e_e2b6_51adfc2d39c3 -->|calls| 464578be_9309_db8b_d824_91b605ecbbba
+  0e9a0bc8_dde6_42ca_2096_ee14a9e1fafc["Activity()"]
+  0e9a0bc8_dde6_42ca_2096_ee14a9e1fafc -->|calls| 464578be_9309_db8b_d824_91b605ecbbba
+  4af6084f_0b2f_8a3f_7043_9ae8727d9276["Compute()"]
+  4af6084f_0b2f_8a3f_7043_9ae8727d9276 -->|calls| 464578be_9309_db8b_d824_91b605ecbbba
+  1867dbe6_76da_25cb_ff20_985ab9fbe7d8["Egress()"]
+  1867dbe6_76da_25cb_ff20_985ab9fbe7d8 -->|calls| 464578be_9309_db8b_d824_91b605ecbbba
+  39d999b3_884b_61ba_3739_17dda80d64bc["OrgLogUsage()"]
+  39d999b3_884b_61ba_3739_17dda80d64bc -->|calls| 464578be_9309_db8b_d824_91b605ecbbba
+  65da00c9_9a9f_3f49_f8a0_c7f0fb167b9c["SizeAndCounts()"]
+  65da00c9_9a9f_3f49_f8a0_c7f0fb167b9c -->|calls| 464578be_9309_db8b_d824_91b605ecbbba
+  style 464578be_9309_db8b_d824_91b605ecbbba fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -932,7 +932,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-usage-utils-ts-dailyusagetodatapoints"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3853165d:73b6:a7ac:1191:1844f184557c","label":"dailyUsageToDataPoints","type":"Function","slug":"fn-usage-utils-ts-dailyusagetodatapoints","lc":34,"lang":"typescript","cbc":6},{"id":"df66ccef:aff2:d1dc:6195:362ff4749691","label":"ActiveCompute","type":"Function","slug":"fn-activecompute-tsx-activecompute","lc":84,"lang":"tsx","cc":1},{"id":"f7e7efac:e968:847a:39e4:2dcc2ab5f5e2","label":"Activity","type":"Function","slug":"fn-activity-tsx-activity","lc":72,"lang":"tsx","cc":1},{"id":"1cf6224a:cbfa:eee7:5851:710d51955148","label":"Compute","type":"Function","slug":"fn-compute-tsx-compute","lc":127,"lang":"tsx","cc":1},{"id":"1a3c121d:c7e2:75c6:84a4:0f302d894a60","label":"Egress","type":"Function","slug":"fn-egress-tsx-egress","lc":41,"lang":"tsx","cc":1},{"id":"d5751e22:b1ca:2a60:6642:4bebed8e0ded","label":"OrgLogUsage","type":"Function","slug":"fn-orglogusage-tsx-orglogusage","lc":45,"lang":"tsx","cc":1},{"id":"b4f158d5:d43b:b00f:cf56:150ce2cb868c","label":"SizeAndCounts","type":"Function","slug":"fn-sizeandcounts-tsx-sizeandcounts","lc":44,"lang":"tsx","cc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Tooling","label":"Tooling","type":"Subdomain","slug":"subdomain-tooling"}],"edges":[{"source":"df66ccef:aff2:d1dc:6195:362ff4749691","target":"3853165d:73b6:a7ac:1191:1844f184557c","type":"calls"},{"source":"f7e7efac:e968:847a:39e4:2dcc2ab5f5e2","target":"3853165d:73b6:a7ac:1191:1844f184557c","type":"calls"},{"source":"1cf6224a:cbfa:eee7:5851:710d51955148","target":"3853165d:73b6:a7ac:1191:1844f184557c","type":"calls"},{"source":"1a3c121d:c7e2:75c6:84a4:0f302d894a60","target":"3853165d:73b6:a7ac:1191:1844f184557c","type":"calls"},{"source":"d5751e22:b1ca:2a60:6642:4bebed8e0ded","target":"3853165d:73b6:a7ac:1191:1844f184557c","type":"calls"},{"source":"b4f158d5:d43b:b00f:cf56:150ce2cb868c","target":"3853165d:73b6:a7ac:1191:1844f184557c","type":"calls"},{"source":"3853165d:73b6:a7ac:1191:1844f184557c","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"3853165d:73b6:a7ac:1191:1844f184557c","target":"subdomain:BuildAutomation:Tooling","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"464578be:9309:db8b:d824:91b605ecbbba","label":"dailyUsageToDataPoints","type":"Function","slug":"fn-usage-utils-ts-dailyusagetodatapoints","lc":34,"lang":"typescript","cbc":6},{"id":"3fc7634b:7037:f49e:e2b6:51adfc2d39c3","label":"ActiveCompute","type":"Function","slug":"fn-activecompute-tsx-activecompute","lc":84,"lang":"tsx","cc":1},{"id":"0e9a0bc8:dde6:42ca:2096:ee14a9e1fafc","label":"Activity","type":"Function","slug":"fn-activity-tsx-activity","lc":72,"lang":"tsx","cc":1},{"id":"4af6084f:0b2f:8a3f:7043:9ae8727d9276","label":"Compute","type":"Function","slug":"fn-compute-tsx-compute","lc":127,"lang":"tsx","cc":1},{"id":"1867dbe6:76da:25cb:ff20:985ab9fbe7d8","label":"Egress","type":"Function","slug":"fn-egress-tsx-egress","lc":41,"lang":"tsx","cc":1},{"id":"39d999b3:884b:61ba:3739:17dda80d64bc","label":"OrgLogUsage","type":"Function","slug":"fn-orglogusage-tsx-orglogusage","lc":45,"lang":"tsx","cc":1},{"id":"65da00c9:9a9f:3f49:f8a0:c7f0fb167b9c","label":"SizeAndCounts","type":"Function","slug":"fn-sizeandcounts-tsx-sizeandcounts","lc":44,"lang":"tsx","cc":1},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:Containerization","label":"Containerization","type":"Subdomain","slug":"subdomain-containerization"}],"edges":[{"source":"3fc7634b:7037:f49e:e2b6:51adfc2d39c3","target":"464578be:9309:db8b:d824:91b605ecbbba","type":"calls"},{"source":"0e9a0bc8:dde6:42ca:2096:ee14a9e1fafc","target":"464578be:9309:db8b:d824:91b605ecbbba","type":"calls"},{"source":"4af6084f:0b2f:8a3f:7043:9ae8727d9276","target":"464578be:9309:db8b:d824:91b605ecbbba","type":"calls"},{"source":"1867dbe6:76da:25cb:ff20:985ab9fbe7d8","target":"464578be:9309:db8b:d824:91b605ecbbba","type":"calls"},{"source":"39d999b3:884b:61ba:3739:17dda80d64bc","target":"464578be:9309:db8b:d824:91b605ecbbba","type":"calls"},{"source":"65da00c9:9a9f:3f49:f8a0:c7f0fb167b9c","target":"464578be:9309:db8b:d824:91b605ecbbba","type":"calls"},{"source":"464578be:9309:db8b:d824:91b605ecbbba","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"464578be:9309:db8b:d824:91b605ecbbba","target":"subdomain:InfrastructureDeployment:Containerization","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -987,14 +987,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-tooling.html">Tooling</a></li></ul>
+      <ul><li><a href="/subdomain-containerization.html">Containerization</a></li></ul>
     </div>
     
 

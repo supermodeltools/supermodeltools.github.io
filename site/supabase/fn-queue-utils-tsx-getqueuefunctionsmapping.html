@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/tooling.html" class="pill pill-orange">Tooling</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/containerization.html" class="pill pill-orange">Containerization</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"getQueueFunctionsMapping","slug":"fn-queue-utils-tsx-getqueuefunctionsmapping","type":"Function"},"subdomain":{"name":"Tooling","slug":"subdomain-tooling"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"getQueueFunctionsMapping","slug":"fn-queue-utils-tsx-getqueuefunctionsmapping","type":"Function"},"subdomain":{"name":"Containerization","slug":"subdomain-containerization"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/tooling.html">Tooling</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/containerization.html">Containerization</a><span class="arch-sep">&rarr;</span>
             <span>getQueueFunctionsMapping() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3cab67e8_9e3c_1d18_9b4a_86cdcbfb6f78["getQueueFunctionsMapping()"]
-  6dc106a9_30e8_5b61_23df_8d4f426d9929["QueueSettings()"]
-  6dc106a9_30e8_5b61_23df_8d4f426d9929 -->|calls| 3cab67e8_9e3c_1d18_9b4a_86cdcbfb6f78
-  style 3cab67e8_9e3c_1d18_9b4a_86cdcbfb6f78 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  cfb34b09_6d45_23a2_ee6e_0db797e1e9b4["getQueueFunctionsMapping()"]
+  00b834a3_33e9_f190_b232_871f85baea0e["QueueSettings()"]
+  00b834a3_33e9_f190_b232_871f85baea0e -->|calls| cfb34b09_6d45_23a2_ee6e_0db797e1e9b4
+  style cfb34b09_6d45_23a2_ee6e_0db797e1e9b4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-queue-utils-tsx-getqueuefunctionsmapping"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3cab67e8:9e3c:1d18:9b4a:86cdcbfb6f78","label":"getQueueFunctionsMapping","type":"Function","slug":"fn-queue-utils-tsx-getqueuefunctionsmapping","lc":14,"lang":"tsx","cbc":1},{"id":"6dc106a9:30e8:5b61:23df:8d4f426d9929","label":"QueueSettings","type":"Function","slug":"fn-queuesettings-tsx-queuesettings","lc":326,"lang":"tsx","cc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Tooling","label":"Tooling","type":"Subdomain","slug":"subdomain-tooling"}],"edges":[{"source":"6dc106a9:30e8:5b61:23df:8d4f426d9929","target":"3cab67e8:9e3c:1d18:9b4a:86cdcbfb6f78","type":"calls"},{"source":"3cab67e8:9e3c:1d18:9b4a:86cdcbfb6f78","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"3cab67e8:9e3c:1d18:9b4a:86cdcbfb6f78","target":"subdomain:BuildAutomation:Tooling","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"cfb34b09:6d45:23a2:ee6e:0db797e1e9b4","label":"getQueueFunctionsMapping","type":"Function","slug":"fn-queue-utils-tsx-getqueuefunctionsmapping","lc":14,"lang":"tsx","cbc":1},{"id":"00b834a3:33e9:f190:b232:871f85baea0e","label":"QueueSettings","type":"Function","slug":"fn-queuesettings-tsx-queuesettings","lc":326,"lang":"tsx","cc":1},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:Containerization","label":"Containerization","type":"Subdomain","slug":"subdomain-containerization"}],"edges":[{"source":"00b834a3:33e9:f190:b232:871f85baea0e","target":"cfb34b09:6d45:23a2:ee6e:0db797e1e9b4","type":"calls"},{"source":"cfb34b09:6d45:23a2:ee6e:0db797e1e9b4","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"cfb34b09:6d45:23a2:ee6e:0db797e1e9b4","target":"subdomain:InfrastructureDeployment:Containerization","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -957,14 +957,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-tooling.html">Tooling</a></li></ul>
+      <ul><li><a href="/subdomain-containerization.html">Containerization</a></li></ul>
     </div>
     
 

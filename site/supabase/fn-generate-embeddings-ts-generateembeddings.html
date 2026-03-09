@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/tooling.html" class="pill pill-orange">Tooling</a>
+        <a href="/domain/documentationportal.html" class="pill pill-green">DocumentationPortal</a>
+        <a href="/subdomain/searchengine.html" class="pill pill-orange">SearchEngine</a>
         
         
         <span class="pill">calls 9</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"generateEmbeddings","slug":"fn-generate-embeddings-ts-generateembeddings","type":"Function"},"subdomain":{"name":"Tooling","slug":"subdomain-tooling"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DocumentationPortal","slug":"domain-documentationportal"},"entity":{"name":"generateEmbeddings","slug":"fn-generate-embeddings-ts-generateembeddings","type":"Function"},"subdomain":{"name":"SearchEngine","slug":"subdomain-searchengine"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/tooling.html">Tooling</a><span class="arch-sep">&rarr;</span>
+            <a href="/documentationportal.html">DocumentationPortal</a><span class="arch-sep">&rarr;</span>
+            <a href="/searchengine.html">SearchEngine</a><span class="arch-sep">&rarr;</span>
             <span>generateEmbeddings() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,28 +911,28 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  71d65e4a_f882_0481_a106_261fefcec58f["generateEmbeddings()"]
-  06b0b61e_19c8_a359_83dd_f3f53be9468c["main()"]
-  06b0b61e_19c8_a359_83dd_f3f53be9468c -->|calls| 71d65e4a_f882_0481_a106_261fefcec58f
-  bfafd743_5179_3b15_616a_d79b698eedb2["isNimbusMode()"]
-  71d65e4a_f882_0481_a106_261fefcec58f -->|calls| bfafd743_5179_3b15_616a_d79b698eedb2
-  25592bea_8927_035d_fb59_685e1d871643["requireEnvOrThrow()"]
-  71d65e4a_f882_0481_a106_261fefcec58f -->|calls| 25592bea_8927_035d_fb59_685e1d871643
-  229b0ee6_0bb8_f14f_0d03_e36510176350["initSupabase()"]
-  71d65e4a_f882_0481_a106_261fefcec58f -->|calls| 229b0ee6_0bb8_f14f_0d03_e36510176350
-  cd0eb508_2fc0_2f9d_6f57_2035301c84a8["getPageTables()"]
-  71d65e4a_f882_0481_a106_261fefcec58f -->|calls| cd0eb508_2fc0_2f9d_6f57_2035301c84a8
-  3fe0d9ee_9c5b_bebc_bff3_1c3241b68c79["prepareSections()"]
-  71d65e4a_f882_0481_a106_261fefcec58f -->|calls| 3fe0d9ee_9c5b_bebc_bff3_1c3241b68c79
-  58f6022a_19a4_e44c_b381_a19c7676e5a8["processAndInsertEmbeddings()"]
-  71d65e4a_f882_0481_a106_261fefcec58f -->|calls| 58f6022a_19a4_e44c_b381_a19c7676e5a8
-  2875b391_3073_6506_6dd7_8a5187efecad["updateSuccessfulChecksums()"]
-  71d65e4a_f882_0481_a106_261fefcec58f -->|calls| 2875b391_3073_6506_6dd7_8a5187efecad
-  c3a7ccf0_71b2_44a0_dd72_f55269be8dc1["logFailedPages()"]
-  71d65e4a_f882_0481_a106_261fefcec58f -->|calls| c3a7ccf0_71b2_44a0_dd72_f55269be8dc1
-  753d6184_cf90_749b_0f45_caec85e34b27["purgeOldPages()"]
-  71d65e4a_f882_0481_a106_261fefcec58f -->|calls| 753d6184_cf90_749b_0f45_caec85e34b27
-  style 71d65e4a_f882_0481_a106_261fefcec58f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  f3467b9d_129f_97b5_e894_26225c7c2bf0["generateEmbeddings()"]
+  d074a0b2_c077_3004_e5db_f2c87d695533["main()"]
+  d074a0b2_c077_3004_e5db_f2c87d695533 -->|calls| f3467b9d_129f_97b5_e894_26225c7c2bf0
+  1378e18e_7cbe_7eb4_013e_bce89ea1e6c9["isNimbusMode()"]
+  f3467b9d_129f_97b5_e894_26225c7c2bf0 -->|calls| 1378e18e_7cbe_7eb4_013e_bce89ea1e6c9
+  1d6bfc79_7d9f_3622_6361_20a1f3212ac7["requireEnvOrThrow()"]
+  f3467b9d_129f_97b5_e894_26225c7c2bf0 -->|calls| 1d6bfc79_7d9f_3622_6361_20a1f3212ac7
+  312b6d11_3e53_7192_feff_494d9669cf88["initSupabase()"]
+  f3467b9d_129f_97b5_e894_26225c7c2bf0 -->|calls| 312b6d11_3e53_7192_feff_494d9669cf88
+  bc1afd0a_fea8_cfe5_5099_739e549e5056["getPageTables()"]
+  f3467b9d_129f_97b5_e894_26225c7c2bf0 -->|calls| bc1afd0a_fea8_cfe5_5099_739e549e5056
+  051fa106_de9b_14da_b420_987f4d99b9fb["prepareSections()"]
+  f3467b9d_129f_97b5_e894_26225c7c2bf0 -->|calls| 051fa106_de9b_14da_b420_987f4d99b9fb
+  be2af95b_1579_318c_9391_c1feef96d3ca["processAndInsertEmbeddings()"]
+  f3467b9d_129f_97b5_e894_26225c7c2bf0 -->|calls| be2af95b_1579_318c_9391_c1feef96d3ca
+  c2a6c8f6_cf31_f546_c13c_d454389fdd1d["updateSuccessfulChecksums()"]
+  f3467b9d_129f_97b5_e894_26225c7c2bf0 -->|calls| c2a6c8f6_cf31_f546_c13c_d454389fdd1d
+  097cd9f3_3d50_b1d6_fb65_d51ac51fd4fc["logFailedPages()"]
+  f3467b9d_129f_97b5_e894_26225c7c2bf0 -->|calls| 097cd9f3_3d50_b1d6_fb65_d51ac51fd4fc
+  a29ceadc_ed90_4fbf_2a21_07eae58694ae["purgeOldPages()"]
+  f3467b9d_129f_97b5_e894_26225c7c2bf0 -->|calls| a29ceadc_ed90_4fbf_2a21_07eae58694ae
+  style f3467b9d_129f_97b5_e894_26225c7c2bf0 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -940,7 +940,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-generate-embeddings-ts-generateembeddings"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"71d65e4a:f882:0481:a106:261fefcec58f","label":"generateEmbeddings","type":"Function","slug":"fn-generate-embeddings-ts-generateembeddings","lc":83,"lang":"typescript","cc":9,"cbc":1},{"id":"bfafd743:5179:3b15:616a:d79b698eedb2","label":"isNimbusMode","type":"Function","slug":"fn-generate-embeddings-ts-isnimbusmode","lc":3,"lang":"typescript","cbc":2},{"id":"25592bea:8927:035d:fb59:685e1d871643","label":"requireEnvOrThrow","type":"Function","slug":"fn-generate-embeddings-ts-requireenvorthrow","lc":8,"lang":"typescript","cbc":1},{"id":"229b0ee6:0bb8:f14f:0d03:e36510176350","label":"initSupabase","type":"Function","slug":"fn-generate-embeddings-ts-initsupabase","lc":5,"lang":"typescript","cbc":1},{"id":"cd0eb508:2fc0:2f9d:6f57:2035301c84a8","label":"getPageTables","type":"Function","slug":"fn-generate-embeddings-ts-getpagetables","lc":7,"lang":"typescript","cc":1,"cbc":1},{"id":"3fe0d9ee:9c5b:bebc:bff3:1c3241b68c79","label":"prepareSections","type":"Function","slug":"fn-generate-embeddings-ts-preparesections","lc":128,"lang":"typescript","cc":2,"cbc":1},{"id":"58f6022a:19a4:e44c:b381:a19c7676e5a8","label":"processAndInsertEmbeddings","type":"Function","slug":"fn-generate-embeddings-ts-processandinsertembeddings","lc":65,"lang":"typescript","cc":6,"cbc":1},{"id":"2875b391:3073:6506:6dd7:8a5187efecad","label":"updateSuccessfulChecksums","type":"Function","slug":"fn-generate-embeddings-ts-updatesuccessfulchecksums","lc":41,"lang":"typescript","cc":1,"cbc":1},{"id":"c3a7ccf0:71b2:44a0:dd72:f55269be8dc1","label":"logFailedPages","type":"Function","slug":"fn-generate-embeddings-ts-logfailedpages","lc":8,"lang":"typescript","cbc":1},{"id":"753d6184:cf90:749b:0f45:caec85e34b27","label":"purgeOldPages","type":"Function","slug":"fn-generate-embeddings-ts-purgeoldpages","lc":12,"lang":"typescript","cbc":1},{"id":"06b0b61e:19c8:a359:83dd:f3f53be9468c","label":"main","type":"Function","slug":"fn-generate-embeddings-ts-main","lc":3,"lang":"typescript","cc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Tooling","label":"Tooling","type":"Subdomain","slug":"subdomain-tooling"}],"edges":[{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"bfafd743:5179:3b15:616a:d79b698eedb2","type":"calls"},{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"25592bea:8927:035d:fb59:685e1d871643","type":"calls"},{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"229b0ee6:0bb8:f14f:0d03:e36510176350","type":"calls"},{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"cd0eb508:2fc0:2f9d:6f57:2035301c84a8","type":"calls"},{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"3fe0d9ee:9c5b:bebc:bff3:1c3241b68c79","type":"calls"},{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"58f6022a:19a4:e44c:b381:a19c7676e5a8","type":"calls"},{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"2875b391:3073:6506:6dd7:8a5187efecad","type":"calls"},{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"c3a7ccf0:71b2:44a0:dd72:f55269be8dc1","type":"calls"},{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"753d6184:cf90:749b:0f45:caec85e34b27","type":"calls"},{"source":"06b0b61e:19c8:a359:83dd:f3f53be9468c","target":"71d65e4a:f882:0481:a106:261fefcec58f","type":"calls"},{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"71d65e4a:f882:0481:a106:261fefcec58f","target":"subdomain:BuildAutomation:Tooling","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"f3467b9d:129f:97b5:e894:26225c7c2bf0","label":"generateEmbeddings","type":"Function","slug":"fn-generate-embeddings-ts-generateembeddings","lc":83,"lang":"typescript","cc":9,"cbc":1},{"id":"1378e18e:7cbe:7eb4:013e:bce89ea1e6c9","label":"isNimbusMode","type":"Function","slug":"fn-generate-embeddings-ts-isnimbusmode","lc":3,"lang":"typescript","cbc":2},{"id":"1d6bfc79:7d9f:3622:6361:20a1f3212ac7","label":"requireEnvOrThrow","type":"Function","slug":"fn-generate-embeddings-ts-requireenvorthrow","lc":8,"lang":"typescript","cbc":1},{"id":"312b6d11:3e53:7192:feff:494d9669cf88","label":"initSupabase","type":"Function","slug":"fn-generate-embeddings-ts-initsupabase","lc":5,"lang":"typescript","cbc":1},{"id":"bc1afd0a:fea8:cfe5:5099:739e549e5056","label":"getPageTables","type":"Function","slug":"fn-generate-embeddings-ts-getpagetables","lc":7,"lang":"typescript","cc":1,"cbc":1},{"id":"051fa106:de9b:14da:b420:987f4d99b9fb","label":"prepareSections","type":"Function","slug":"fn-generate-embeddings-ts-preparesections","lc":128,"lang":"typescript","cc":2,"cbc":1},{"id":"be2af95b:1579:318c:9391:c1feef96d3ca","label":"processAndInsertEmbeddings","type":"Function","slug":"fn-generate-embeddings-ts-processandinsertembeddings","lc":65,"lang":"typescript","cc":6,"cbc":1},{"id":"c2a6c8f6:cf31:f546:c13c:d454389fdd1d","label":"updateSuccessfulChecksums","type":"Function","slug":"fn-generate-embeddings-ts-updatesuccessfulchecksums","lc":41,"lang":"typescript","cc":1,"cbc":1},{"id":"097cd9f3:3d50:b1d6:fb65:d51ac51fd4fc","label":"logFailedPages","type":"Function","slug":"fn-generate-embeddings-ts-logfailedpages","lc":8,"lang":"typescript","cbc":1},{"id":"a29ceadc:ed90:4fbf:2a21:07eae58694ae","label":"purgeOldPages","type":"Function","slug":"fn-generate-embeddings-ts-purgeoldpages","lc":12,"lang":"typescript","cbc":1},{"id":"d074a0b2:c077:3004:e5db:f2c87d695533","label":"main","type":"Function","slug":"fn-generate-embeddings-ts-main","lc":3,"lang":"typescript","cc":1},{"id":"domain:DocumentationPortal","label":"DocumentationPortal","type":"Domain","slug":"domain-documentationportal"},{"id":"subdomain:DocumentationPortal:SearchEngine","label":"SearchEngine","type":"Subdomain","slug":"subdomain-searchengine"}],"edges":[{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"1378e18e:7cbe:7eb4:013e:bce89ea1e6c9","type":"calls"},{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"1d6bfc79:7d9f:3622:6361:20a1f3212ac7","type":"calls"},{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"312b6d11:3e53:7192:feff:494d9669cf88","type":"calls"},{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"bc1afd0a:fea8:cfe5:5099:739e549e5056","type":"calls"},{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"051fa106:de9b:14da:b420:987f4d99b9fb","type":"calls"},{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"be2af95b:1579:318c:9391:c1feef96d3ca","type":"calls"},{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"c2a6c8f6:cf31:f546:c13c:d454389fdd1d","type":"calls"},{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"097cd9f3:3d50:b1d6:fb65:d51ac51fd4fc","type":"calls"},{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"a29ceadc:ed90:4fbf:2a21:07eae58694ae","type":"calls"},{"source":"d074a0b2:c077:3004:e5db:f2c87d695533","target":"f3467b9d:129f:97b5:e894:26225c7c2bf0","type":"calls"},{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"domain:DocumentationPortal","type":"belongsTo"},{"source":"f3467b9d:129f:97b5:e894:26225c7c2bf0","target":"subdomain:DocumentationPortal:SearchEngine","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1044,14 +1044,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-documentationportal.html">DocumentationPortal</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-tooling.html">Tooling</a></li></ul>
+      <ul><li><a href="/subdomain-searchengine.html">SearchEngine</a></li></ul>
     </div>
     
 

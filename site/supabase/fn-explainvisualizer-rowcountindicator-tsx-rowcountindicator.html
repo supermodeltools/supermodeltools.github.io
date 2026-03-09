@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/tsx.html" class="pill pill-blue">tsx</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/buildorchestration.html" class="pill pill-orange">BuildOrchestration</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"RowCountIndicator","slug":"fn-explainvisualizer-rowcountindicator-tsx-rowcountindicator","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"RowCountIndicator","slug":"fn-explainvisualizer-rowcountindicator-tsx-rowcountindicator","type":"Function"},"subdomain":{"name":"BuildOrchestration","slug":"subdomain-buildorchestration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildorchestration.html">BuildOrchestration</a><span class="arch-sep">&rarr;</span>
             <span>RowCountIndicator() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  0b9185ee_d706_c8c3_14b0_eb43ca8cbfc2["RowCountIndicator()"]
-  1ecd78b8_36cd_6e92_6e1b_3999cad15ccd["formatRowCount()"]
-  0b9185ee_d706_c8c3_14b0_eb43ca8cbfc2 -->|calls| 1ecd78b8_36cd_6e92_6e1b_3999cad15ccd
-  style 0b9185ee_d706_c8c3_14b0_eb43ca8cbfc2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d8177d85_4471_beb5_b164_26a3544b27e7["RowCountIndicator()"]
+  cf6431cc_0219_3839_25e8_590dedbcc416["formatRowCount()"]
+  d8177d85_4471_beb5_b164_26a3544b27e7 -->|calls| cf6431cc_0219_3839_25e8_590dedbcc416
+  style d8177d85_4471_beb5_b164_26a3544b27e7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-explainvisualizer-rowcountindicator-tsx-rowcountindicator"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"0b9185ee:d706:c8c3:14b0:eb43ca8cbfc2","label":"RowCountIndicator","type":"Function","slug":"fn-explainvisualizer-rowcountindicator-tsx-rowcountindicator","lc":80,"lang":"tsx","cc":1},{"id":"1ecd78b8:36cd:6e92:6e1b:3999cad15ccd","label":"formatRowCount","type":"Function","slug":"fn-explainvisualizer-rowcountindicator-tsx-formatrowcount","lc":4,"lang":"tsx","cbc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"0b9185ee:d706:c8c3:14b0:eb43ca8cbfc2","target":"1ecd78b8:36cd:6e92:6e1b:3999cad15ccd","type":"calls"},{"source":"0b9185ee:d706:c8c3:14b0:eb43ca8cbfc2","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"0b9185ee:d706:c8c3:14b0:eb43ca8cbfc2","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d8177d85:4471:beb5:b164:26a3544b27e7","label":"RowCountIndicator","type":"Function","slug":"fn-explainvisualizer-rowcountindicator-tsx-rowcountindicator","lc":80,"lang":"tsx","cc":1},{"id":"cf6431cc:0219:3839:25e8:590dedbcc416","label":"formatRowCount","type":"Function","slug":"fn-explainvisualizer-rowcountindicator-tsx-formatrowcount","lc":4,"lang":"tsx","cbc":1},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:BuildOrchestration","label":"BuildOrchestration","type":"Subdomain","slug":"subdomain-buildorchestration"}],"edges":[{"source":"d8177d85:4471:beb5:b164:26a3544b27e7","target":"cf6431cc:0219:3839:25e8:590dedbcc416","type":"calls"},{"source":"d8177d85:4471:beb5:b164:26a3544b27e7","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"d8177d85:4471:beb5:b164:26a3544b27e7","target":"subdomain:InfrastructureDeployment:BuildOrchestration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1023,14 +1023,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-buildorchestration.html">BuildOrchestration</a></li></ul>
     </div>
     
 

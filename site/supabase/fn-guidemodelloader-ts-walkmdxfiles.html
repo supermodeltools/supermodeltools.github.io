@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/documentationportal.html" class="pill pill-green">DocumentationPortal</a>
+        <a href="/subdomain/spectransformation.html" class="pill pill-orange">SpecTransformation</a>
         
         
         <span class="pill">calls 6</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"walkMdxFiles","slug":"fn-guidemodelloader-ts-walkmdxfiles","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"DocumentationPortal","slug":"domain-documentationportal"},"entity":{"name":"walkMdxFiles","slug":"fn-guidemodelloader-ts-walkmdxfiles","type":"Function"},"subdomain":{"name":"SpecTransformation","slug":"subdomain-spectransformation"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/documentationportal.html">DocumentationPortal</a><span class="arch-sep">&rarr;</span>
+            <a href="/spectransformation.html">SpecTransformation</a><span class="arch-sep">&rarr;</span>
             <span>walkMdxFiles() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,22 +911,22 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  2771b9b4_8228_b3ff_88d6_2e687540e502["walkMdxFiles()"]
-  5af0937e_a3a6_4f10_80f1_2d67d60c6ffd["allFromFs()"]
-  5af0937e_a3a6_4f10_80f1_2d67d60c6ffd -->|calls| 2771b9b4_8228_b3ff_88d6_2e687540e502
-  4cb32370_ebe2_d508_e650_df03e2694bdb["tryCatch()"]
-  2771b9b4_8228_b3ff_88d6_2e687540e502 -->|calls| 4cb32370_ebe2_d508_e650_df03e2694bdb
-  f9952b8d_f6a2_40e3_dbcf_0c0e4ad35dcc["isHiddenFile()"]
-  2771b9b4_8228_b3ff_88d6_2e687540e502 -->|calls| f9952b8d_f6a2_40e3_dbcf_0c0e4ad35dcc
-  c093ab9c_8939_6189_102a_89a0bf23ad65["isDisabledGuide()"]
-  2771b9b4_8228_b3ff_88d6_2e687540e502 -->|calls| c093ab9c_8939_6189_102a_89a0bf23ad65
-  0bac3008_310c_7eee_c73f_047dd2c1cb03["join()"]
-  2771b9b4_8228_b3ff_88d6_2e687540e502 -->|calls| 0bac3008_310c_7eee_c73f_047dd2c1cb03
-  4024f230_2814_72ed_4bd6_f4fb3b09b164["appendError()"]
-  2771b9b4_8228_b3ff_88d6_2e687540e502 -->|calls| 4024f230_2814_72ed_4bd6_f4fb3b09b164
-  75a0ecf9_9365_3bb3_c9e9_863688e3d98c["extractMessageFromAnyError()"]
-  2771b9b4_8228_b3ff_88d6_2e687540e502 -->|calls| 75a0ecf9_9365_3bb3_c9e9_863688e3d98c
-  style 2771b9b4_8228_b3ff_88d6_2e687540e502 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  88ae74db_eb57_9b2d_dc8e_26fde7eac31b["walkMdxFiles()"]
+  0240e68c_40c2_d664_7ed9_37626750c94a["allFromFs()"]
+  0240e68c_40c2_d664_7ed9_37626750c94a -->|calls| 88ae74db_eb57_9b2d_dc8e_26fde7eac31b
+  5c844a72_ed33_07a6_59e3_723101b5fd9c["tryCatch()"]
+  88ae74db_eb57_9b2d_dc8e_26fde7eac31b -->|calls| 5c844a72_ed33_07a6_59e3_723101b5fd9c
+  2548cf31_cdf0_2f42_bf2b_fdb03a295ab1["isHiddenFile()"]
+  88ae74db_eb57_9b2d_dc8e_26fde7eac31b -->|calls| 2548cf31_cdf0_2f42_bf2b_fdb03a295ab1
+  777b31c3_2198_4247_940f_195ab030827f["isDisabledGuide()"]
+  88ae74db_eb57_9b2d_dc8e_26fde7eac31b -->|calls| 777b31c3_2198_4247_940f_195ab030827f
+  81be0b2d_0fc4_a9a9_5d15_5deb3b261c58["join()"]
+  88ae74db_eb57_9b2d_dc8e_26fde7eac31b -->|calls| 81be0b2d_0fc4_a9a9_5d15_5deb3b261c58
+  5e408feb_6ed1_fd8c_213d_2ad90456081d["appendError()"]
+  88ae74db_eb57_9b2d_dc8e_26fde7eac31b -->|calls| 5e408feb_6ed1_fd8c_213d_2ad90456081d
+  38ded1f7_e386_cd69_bda5_3940db6a46bd["extractMessageFromAnyError()"]
+  88ae74db_eb57_9b2d_dc8e_26fde7eac31b -->|calls| 38ded1f7_e386_cd69_bda5_3940db6a46bd
+  style 88ae74db_eb57_9b2d_dc8e_26fde7eac31b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -934,7 +934,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-guidemodelloader-ts-walkmdxfiles"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"2771b9b4:8228:b3ff:88d6:2e687540e502","label":"walkMdxFiles","type":"Function","slug":"fn-guidemodelloader-ts-walkmdxfiles","lc":39,"lang":"typescript","cc":6,"cbc":1},{"id":"4cb32370:ebe2:d508:e650:df03e2694bdb","label":"tryCatch","type":"Function","slug":"fn-helpers-fn-ts-trycatch","lc":11,"lang":"typescript","cc":2,"cbc":3},{"id":"f9952b8d:f6a2:40e3:dbcf:0c0e4ad35dcc","label":"isHiddenFile","type":"Function","slug":"fn-guidemodelloader-ts-ishiddenfile","lc":3,"lang":"typescript","cbc":1},{"id":"c093ab9c:8939:6189:102a:89a0bf23ad65","label":"isDisabledGuide","type":"Function","slug":"fn-guidemodelloader-ts-isdisabledguide","lc":10,"lang":"typescript","cc":1,"cbc":1},{"id":"0bac3008:310c:7eee:c73f:047dd2c1cb03","label":"join","type":"Function","slug":"fn-helpers-fn-ts-join","lc":10,"lang":"typescript","cc":3,"cbc":15},{"id":"4024f230:2814:72ed:4bd6:f4fb3b09b164","label":"appendError","type":"Function","slug":"fn-utils-ts-appenderror","lc":5,"lang":"typescript","cbc":4},{"id":"75a0ecf9:9365:3bb3:c9e9:863688e3d98c","label":"extractMessageFromAnyError","type":"Function","slug":"fn-utils-ts-extractmessagefromanyerror","lc":6,"lang":"typescript","cc":1,"cbc":8},{"id":"5af0937e:a3a6:4f10:80f1:2d67d60c6ffd","label":"allFromFs","type":"Function","slug":"fn-guidemodelloader-ts-allfromfs","lc":12,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"2771b9b4:8228:b3ff:88d6:2e687540e502","target":"4cb32370:ebe2:d508:e650:df03e2694bdb","type":"calls"},{"source":"2771b9b4:8228:b3ff:88d6:2e687540e502","target":"f9952b8d:f6a2:40e3:dbcf:0c0e4ad35dcc","type":"calls"},{"source":"2771b9b4:8228:b3ff:88d6:2e687540e502","target":"c093ab9c:8939:6189:102a:89a0bf23ad65","type":"calls"},{"source":"2771b9b4:8228:b3ff:88d6:2e687540e502","target":"0bac3008:310c:7eee:c73f:047dd2c1cb03","type":"calls"},{"source":"2771b9b4:8228:b3ff:88d6:2e687540e502","target":"4024f230:2814:72ed:4bd6:f4fb3b09b164","type":"calls"},{"source":"2771b9b4:8228:b3ff:88d6:2e687540e502","target":"75a0ecf9:9365:3bb3:c9e9:863688e3d98c","type":"calls"},{"source":"5af0937e:a3a6:4f10:80f1:2d67d60c6ffd","target":"2771b9b4:8228:b3ff:88d6:2e687540e502","type":"calls"},{"source":"2771b9b4:8228:b3ff:88d6:2e687540e502","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"2771b9b4:8228:b3ff:88d6:2e687540e502","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"88ae74db:eb57:9b2d:dc8e:26fde7eac31b","label":"walkMdxFiles","type":"Function","slug":"fn-guidemodelloader-ts-walkmdxfiles","lc":39,"lang":"typescript","cc":6,"cbc":1},{"id":"5c844a72:ed33:07a6:59e3:723101b5fd9c","label":"tryCatch","type":"Function","slug":"fn-helpers-fn-ts-trycatch","lc":11,"lang":"typescript","cc":2,"cbc":3},{"id":"2548cf31:cdf0:2f42:bf2b:fdb03a295ab1","label":"isHiddenFile","type":"Function","slug":"fn-guidemodelloader-ts-ishiddenfile","lc":3,"lang":"typescript","cbc":1},{"id":"777b31c3:2198:4247:940f:195ab030827f","label":"isDisabledGuide","type":"Function","slug":"fn-guidemodelloader-ts-isdisabledguide","lc":10,"lang":"typescript","cc":1,"cbc":1},{"id":"81be0b2d:0fc4:a9a9:5d15:5deb3b261c58","label":"join","type":"Function","slug":"fn-helpers-fn-ts-join","lc":10,"lang":"typescript","cc":3,"cbc":15},{"id":"5e408feb:6ed1:fd8c:213d:2ad90456081d","label":"appendError","type":"Function","slug":"fn-utils-ts-appenderror","lc":5,"lang":"typescript","cbc":4},{"id":"38ded1f7:e386:cd69:bda5:3940db6a46bd","label":"extractMessageFromAnyError","type":"Function","slug":"fn-utils-ts-extractmessagefromanyerror","lc":6,"lang":"typescript","cc":1,"cbc":8},{"id":"0240e68c:40c2:d664:7ed9:37626750c94a","label":"allFromFs","type":"Function","slug":"fn-guidemodelloader-ts-allfromfs","lc":12,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:DocumentationPortal","label":"DocumentationPortal","type":"Domain","slug":"domain-documentationportal"},{"id":"subdomain:DocumentationPortal:SpecTransformation","label":"SpecTransformation","type":"Subdomain","slug":"subdomain-spectransformation"}],"edges":[{"source":"88ae74db:eb57:9b2d:dc8e:26fde7eac31b","target":"5c844a72:ed33:07a6:59e3:723101b5fd9c","type":"calls"},{"source":"88ae74db:eb57:9b2d:dc8e:26fde7eac31b","target":"2548cf31:cdf0:2f42:bf2b:fdb03a295ab1","type":"calls"},{"source":"88ae74db:eb57:9b2d:dc8e:26fde7eac31b","target":"777b31c3:2198:4247:940f:195ab030827f","type":"calls"},{"source":"88ae74db:eb57:9b2d:dc8e:26fde7eac31b","target":"81be0b2d:0fc4:a9a9:5d15:5deb3b261c58","type":"calls"},{"source":"88ae74db:eb57:9b2d:dc8e:26fde7eac31b","target":"5e408feb:6ed1:fd8c:213d:2ad90456081d","type":"calls"},{"source":"88ae74db:eb57:9b2d:dc8e:26fde7eac31b","target":"38ded1f7:e386:cd69:bda5:3940db6a46bd","type":"calls"},{"source":"0240e68c:40c2:d664:7ed9:37626750c94a","target":"88ae74db:eb57:9b2d:dc8e:26fde7eac31b","type":"calls"},{"source":"88ae74db:eb57:9b2d:dc8e:26fde7eac31b","target":"domain:DocumentationPortal","type":"belongsTo"},{"source":"88ae74db:eb57:9b2d:dc8e:26fde7eac31b","target":"subdomain:DocumentationPortal:SpecTransformation","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -994,14 +994,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-documentationportal.html">DocumentationPortal</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-spectransformation.html">SpecTransformation</a></li></ul>
     </div>
     
 

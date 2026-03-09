@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/buildorchestration.html" class="pill pill-orange">BuildOrchestration</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"convertArgumentTypes","slug":"fn-functions-utils-ts-convertargumenttypes","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"convertArgumentTypes","slug":"fn-functions-utils-ts-convertargumenttypes","type":"Function"},"subdomain":{"name":"BuildOrchestration","slug":"subdomain-buildorchestration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/buildorchestration.html">BuildOrchestration</a><span class="arch-sep">&rarr;</span>
             <span>convertArgumentTypes() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  40ad2f68_f427_5d28_b500_4cdf31699f9b["convertArgumentTypes()"]
-  f3561cdc_a983_2729_a088_323dbe91c658["CreateFunction()"]
-  f3561cdc_a983_2729_a088_323dbe91c658 -->|calls| 40ad2f68_f427_5d28_b500_4cdf31699f9b
-  style 40ad2f68_f427_5d28_b500_4cdf31699f9b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a6be49ce_0312_7a7e_5244_ac6f3786dcd2["convertArgumentTypes()"]
+  c75cf4ff_ae54_5064_cdd9_f91cc9e49d2b["CreateFunction()"]
+  c75cf4ff_ae54_5064_cdd9_f91cc9e49d2b -->|calls| a6be49ce_0312_7a7e_5244_ac6f3786dcd2
+  style a6be49ce_0312_7a7e_5244_ac6f3786dcd2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-functions-utils-ts-convertargumenttypes"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"40ad2f68:f427:5d28:b500:4cdf31699f9b","label":"convertArgumentTypes","type":"Function","slug":"fn-functions-utils-ts-convertargumenttypes","lc":28,"lang":"typescript","cbc":1},{"id":"f3561cdc:a983:2729:a088:323dbe91c658","label":"CreateFunction","type":"Function","slug":"fn-index-tsx-createfunction","lc":337,"lang":"tsx","cc":2},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"f3561cdc:a983:2729:a088:323dbe91c658","target":"40ad2f68:f427:5d28:b500:4cdf31699f9b","type":"calls"},{"source":"40ad2f68:f427:5d28:b500:4cdf31699f9b","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"40ad2f68:f427:5d28:b500:4cdf31699f9b","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a6be49ce:0312:7a7e:5244:ac6f3786dcd2","label":"convertArgumentTypes","type":"Function","slug":"fn-functions-utils-ts-convertargumenttypes","lc":28,"lang":"typescript","cbc":1},{"id":"c75cf4ff:ae54:5064:cdd9:f91cc9e49d2b","label":"CreateFunction","type":"Function","slug":"fn-index-tsx-createfunction","lc":337,"lang":"tsx","cc":2},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:BuildOrchestration","label":"BuildOrchestration","type":"Subdomain","slug":"subdomain-buildorchestration"}],"edges":[{"source":"c75cf4ff:ae54:5064:cdd9:f91cc9e49d2b","target":"a6be49ce:0312:7a7e:5244:ac6f3786dcd2","type":"calls"},{"source":"a6be49ce:0312:7a7e:5244:ac6f3786dcd2","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"a6be49ce:0312:7a7e:5244:ac6f3786dcd2","target":"subdomain:InfrastructureDeployment:BuildOrchestration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -971,14 +971,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-buildorchestration.html">BuildOrchestration</a></li></ul>
     </div>
     
 

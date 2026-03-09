@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/buildautomation.html" class="pill pill-green">BuildAutomation</a>
-        <a href="/subdomain/deployment.html" class="pill pill-orange">Deployment</a>
+        <a href="/domain/infrastructuredeployment.html" class="pill pill-green">InfrastructureDeployment</a>
+        <a href="/subdomain/containerization.html" class="pill pill-orange">Containerization</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"BuildAutomation","slug":"domain-buildautomation"},"entity":{"name":"isValidHook","slug":"fn-hooks-utils-ts-isvalidhook","type":"Function"},"subdomain":{"name":"Deployment","slug":"subdomain-deployment"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"InfrastructureDeployment","slug":"domain-infrastructuredeployment"},"entity":{"name":"isValidHook","slug":"fn-hooks-utils-ts-isvalidhook","type":"Function"},"subdomain":{"name":"Containerization","slug":"subdomain-containerization"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/buildautomation.html">BuildAutomation</a><span class="arch-sep">&rarr;</span>
-            <a href="/deployment.html">Deployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/infrastructuredeployment.html">InfrastructureDeployment</a><span class="arch-sep">&rarr;</span>
+            <a href="/containerization.html">Containerization</a><span class="arch-sep">&rarr;</span>
             <span>isValidHook() — supabase Function Reference</span>
           </div>
         </noscript>
@@ -911,14 +911,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  faa298b3_ca35_1d10_9451_9f2784d23344["isValidHook()"]
-  a95e9ec8_1b90_4b68_88af_0ffd3c845864["AddHookDropdown()"]
-  a95e9ec8_1b90_4b68_88af_0ffd3c845864 -->|calls| faa298b3_ca35_1d10_9451_9f2784d23344
-  a08f2c33_c53d_ab41_3e71_a481b6e8736c["CreateHookSheet()"]
-  a08f2c33_c53d_ab41_3e71_a481b6e8736c -->|calls| faa298b3_ca35_1d10_9451_9f2784d23344
-  1dafddfc_f7b1_e920_1137_2d34cfa65236["HooksListing()"]
-  1dafddfc_f7b1_e920_1137_2d34cfa65236 -->|calls| faa298b3_ca35_1d10_9451_9f2784d23344
-  style faa298b3_ca35_1d10_9451_9f2784d23344 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a018b2f5_39e3_d956_2a88_29cf73b71bcd["isValidHook()"]
+  b4bc5258_23b7_e40c_8271_99fac618c3f2["AddHookDropdown()"]
+  b4bc5258_23b7_e40c_8271_99fac618c3f2 -->|calls| a018b2f5_39e3_d956_2a88_29cf73b71bcd
+  301052d7_55f2_cb93_a563_e9806c0f1d6f["CreateHookSheet()"]
+  301052d7_55f2_cb93_a563_e9806c0f1d6f -->|calls| a018b2f5_39e3_d956_2a88_29cf73b71bcd
+  4792bace_8d68_10ee_e029_14896c63feed["HooksListing()"]
+  4792bace_8d68_10ee_e029_14896c63feed -->|calls| a018b2f5_39e3_d956_2a88_29cf73b71bcd
+  style a018b2f5_39e3_d956_2a88_29cf73b71bcd fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -926,7 +926,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-hooks-utils-ts-isvalidhook"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"faa298b3:ca35:1d10:9451:9f2784d23344","label":"isValidHook","type":"Function","slug":"fn-hooks-utils-ts-isvalidhook","lc":8,"lang":"typescript","cbc":3},{"id":"a95e9ec8:1b90:4b68:88af:0ffd3c845864","label":"AddHookDropdown","type":"Function","slug":"fn-addhookdropdown-tsx-addhookdropdown","lc":95,"lang":"tsx","cc":2},{"id":"a08f2c33:c53d:ab41:3e71:a481b6e8736c","label":"CreateHookSheet","type":"Function","slug":"fn-createhooksheet-tsx-createhooksheet","lc":405,"lang":"tsx","cc":4},{"id":"1dafddfc:f7b1:e920:1137:2d34cfa65236","label":"HooksListing","type":"Function","slug":"fn-hookslisting-tsx-hookslisting","lc":184,"lang":"tsx","cc":3},{"id":"domain:BuildAutomation","label":"BuildAutomation","type":"Domain","slug":"domain-buildautomation"},{"id":"subdomain:BuildAutomation:Deployment","label":"Deployment","type":"Subdomain","slug":"subdomain-deployment"}],"edges":[{"source":"a95e9ec8:1b90:4b68:88af:0ffd3c845864","target":"faa298b3:ca35:1d10:9451:9f2784d23344","type":"calls"},{"source":"a08f2c33:c53d:ab41:3e71:a481b6e8736c","target":"faa298b3:ca35:1d10:9451:9f2784d23344","type":"calls"},{"source":"1dafddfc:f7b1:e920:1137:2d34cfa65236","target":"faa298b3:ca35:1d10:9451:9f2784d23344","type":"calls"},{"source":"faa298b3:ca35:1d10:9451:9f2784d23344","target":"domain:BuildAutomation","type":"belongsTo"},{"source":"faa298b3:ca35:1d10:9451:9f2784d23344","target":"subdomain:BuildAutomation:Deployment","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a018b2f5:39e3:d956:2a88:29cf73b71bcd","label":"isValidHook","type":"Function","slug":"fn-hooks-utils-ts-isvalidhook","lc":8,"lang":"typescript","cbc":3},{"id":"b4bc5258:23b7:e40c:8271:99fac618c3f2","label":"AddHookDropdown","type":"Function","slug":"fn-addhookdropdown-tsx-addhookdropdown","lc":95,"lang":"tsx","cc":2},{"id":"301052d7:55f2:cb93:a563:e9806c0f1d6f","label":"CreateHookSheet","type":"Function","slug":"fn-createhooksheet-tsx-createhooksheet","lc":405,"lang":"tsx","cc":4},{"id":"4792bace:8d68:10ee:e029:14896c63feed","label":"HooksListing","type":"Function","slug":"fn-hookslisting-tsx-hookslisting","lc":184,"lang":"tsx","cc":3},{"id":"domain:InfrastructureDeployment","label":"InfrastructureDeployment","type":"Domain","slug":"domain-infrastructuredeployment"},{"id":"subdomain:InfrastructureDeployment:Containerization","label":"Containerization","type":"Subdomain","slug":"subdomain-containerization"}],"edges":[{"source":"b4bc5258:23b7:e40c:8271:99fac618c3f2","target":"a018b2f5:39e3:d956:2a88:29cf73b71bcd","type":"calls"},{"source":"301052d7:55f2:cb93:a563:e9806c0f1d6f","target":"a018b2f5:39e3:d956:2a88:29cf73b71bcd","type":"calls"},{"source":"4792bace:8d68:10ee:e029:14896c63feed","target":"a018b2f5:39e3:d956:2a88:29cf73b71bcd","type":"calls"},{"source":"a018b2f5:39e3:d956:2a88:29cf73b71bcd","target":"domain:InfrastructureDeployment","type":"belongsTo"},{"source":"a018b2f5:39e3:d956:2a88:29cf73b71bcd","target":"subdomain:InfrastructureDeployment:Containerization","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -955,14 +955,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-buildautomation.html">BuildAutomation</a></li></ul>
+      <ul><li><a href="/domain-infrastructuredeployment.html">InfrastructureDeployment</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-deployment.html">Deployment</a></li></ul>
+      <ul><li><a href="/subdomain-containerization.html">Containerization</a></li></ul>
     </div>
     
 
