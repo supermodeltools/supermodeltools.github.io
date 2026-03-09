@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>Vectorized Class — pytorch Architecture | pytorch Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the Vectorized class in vec512_float.h from the pytorch codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/class-vec512-float-h-vectorized/">
+<meta property="og:title" content="Vectorized Class — pytorch Architecture — pytorch Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the Vectorized class in vec512_float.h from the pytorch codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/class-vec512-float-h-vectorized.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/class-vec512-float-h-vectorized.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="pytorch Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vectorized Class — pytorch Architecture — pytorch Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the Vectorized class in vec512_float.h from the pytorch codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/class-vec512-float-h-vectorized.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the Vectorized class in vec512_float.h from the pytorch codebase.","image":["https://repos.supermodeltools.com/images/share/class-vec512-float-h-vectorized.svg"],"name":"Vectorized Class — pytorch Architecture","url":"https://repos.supermodeltools.com/class-vec512-float-h-vectorized.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"Vectorized Class — pytorch Architecture","position":2}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      pytorch Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/class.html">Class</a><span class="sep">/</span>
+        <span>Vectorized Class — pytorch Architecture</span>
+      </div>
+      <h1 class="entity-title">Vectorized Class — pytorch Architecture</h1>
+      <p class="entity-desc">Architecture documentation for the Vectorized class in vec512_float.h from the pytorch codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/class.html" class="pill pill-accent">Class</a>
+        <a href="/language/c.html" class="pill pill-blue">c</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"el":588,"lc":566,"sl":23}</script>
+    </div>
+
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">aten/src/ATen/cpu/vec/vec512/vec512_float.h lines 23–588</p>
+      <pre class="source-code"><code class="language-c">template &lt;&gt;
+class Vectorized&lt;float&gt; {
+ private:
+  static constexpr __m512i zero_vec{0, 0, 0, 0, 0, 0, 0, 0};
+
+ public:
+  __m512 values;
+  using value_type = float;
+  using size_type = int;
+  static constexpr size_type size() {
+    return 16;
+  }
+  Vectorized() {
+    values = _mm512_setzero_ps();
+  }
+  Vectorized(__m512 v) : values(v) {}
+  Vectorized(float val) {
+    values = _mm512_set1_ps(val);
+  }
+  Vectorized(
+      float val1,
+      float val2,
+      float val3,
+      float val4,
+      float val5,
+      float val6,
+      float val7,
+      float val8,
+      float val9,
+      float val10,
+      float val11,
+      float val12,
+      float val13,
+      float val14,
+      float val15,
+      float val16) {
+    values = _mm512_setr_ps(
+        val1,
+        val2,
+        val3,
+        val4,
+        val5,
+        val6,
+        val7,
+        val8,
+        val9,
+        val10,
+        val11,
+        val12,
+        val13,
+        val14,
+        val15,
+        val16);
+  }
+  Vectorized(const float (&amp;arr)[16])
+      : Vectorized(
+            arr[0],
+            arr[1],
+            arr[2],
+            arr[3],
+            arr[4],
+            arr[5],
+            arr[6],
+            arr[7],
+            arr[8],
+            arr[9],
+            arr[10],
+            arr[11],
+            arr[12],
+            arr[13],
+            arr[14],
+            arr[15]) {}
+  operator __m512() const {
+    return values;
+  }
+  template &lt;int64_t mask&gt;
+  static Vectorized&lt;float&gt; blend(
+      const Vectorized&lt;float&gt;&amp; a,
+      const Vectorized&lt;float&gt;&amp; b) {
+    return _mm512_mask_blend_ps(mask, a.values, b.values);
+  }
+  static Vectorized&lt;float&gt; blendv(
+      const Vectorized&lt;float&gt;&amp; a,
+      const Vectorized&lt;float&gt;&amp; b,
+      const Vectorized&lt;float&gt;&amp; mask) {
+    auto all_ones = _mm512_set1_epi32(0xFFFFFFFF);
+    auto mmask = _mm512_cmp_epi32_mask(
+        _mm512_castps_si512(mask.values), all_ones, _MM_CMPINT_EQ);
+    return _mm512_mask_blend_ps(mmask, a.values, b.values);
+  }
+  template &lt;typename step_t&gt;
+  static Vectorized&lt;float&gt; arange(
+      float base = 0.f,
+      step_t step = static_cast&lt;step_t&gt;(1)) {
+    return Vectorized&lt;float&gt;(
+        base,
+        base &#43; step,
+        base &#43; 2 * step,
+        base &#43; 3 * step,
+        base &#43; 4 * step,
+        base &#43; 5 * step,
+        base &#43; 6 * step,
+        base &#43; 7 * step,
+        base &#43; 8 * step,
+        base &#43; 9 * step,
+        base &#43; 10 * step,
+        base &#43; 11 * step,
+        base &#43; 12 * step,
+        base &#43; 13 * step,
+        base &#43; 14 * step,
+        base &#43; 15 * step);
+  }
+  static Vectorized&lt;float&gt; set(
+      const Vectorized&lt;float&gt;&amp; a,
+      const Vectorized&lt;float&gt;&amp; b,
+      int64_t count = size()) {
+    switch (count) {
+      case 0:
+        return a;
+      case 1:
+        return blend&lt;1&gt;(a, b);
+      case 2:
+        return blend&lt;3&gt;(a, b);
+      case 3:
+        return blend&lt;7&gt;(a, b);
+      case 4:
+        return blend&lt;15&gt;(a, b);
+      case 5:
+        return blend&lt;31&gt;(a, b);
+      case 6:
+        return blend&lt;63&gt;(a, b);
+      case 7:
+        return blend&lt;127&gt;(a, b);
+      case 8:
+        return blend&lt;255&gt;(a, b);
+      case 9:
+        return blend&lt;511&gt;(a, b);
+      case 10:
+        return blend&lt;1023&gt;(a, b);
+      case 11:
+        return blend&lt;2047&gt;(a, b);
+      case 12:
+        return blend&lt;4095&gt;(a, b);
+      case 13:
+        return blend&lt;8191&gt;(a, b);
+      case 14:
+        return blend&lt;16383&gt;(a, b);
+      case 15:
+        return blend&lt;32767&gt;(a, b);
+    }
+    return b;
+  }
+  static Vectorized&lt;float&gt; loadu(const void* ptr, int64_t count = size()) {
+    if (count == size())
+      return _mm512_loadu_ps(reinterpret_cast&lt;const float*&gt;(ptr));
+
+    __mmask16 mask = (1ULL &lt;&lt; count) - 1;
+    return _mm512_maskz_loadu_ps(mask, ptr);
+  }
+  void store(void* ptr, int64_t count = size()) const {
+    if (count == size()) {
+      _mm512_storeu_ps(reinterpret_cast&lt;float*&gt;(ptr), values);
+    } else if (count &gt; 0) {
+      __mmask16 mask = (1ULL &lt;&lt; count) - 1;
+      _mm512_mask_storeu_ps(reinterpret_cast&lt;float*&gt;(ptr), mask, values);
+    }
+  }
+  const float&amp; operator[](int idx) const = delete;
+  float&amp; operator[](int idx) = delete;
+  int zero_mask() const {
+    // returns an integer mask where all zero elements are translated to 1-bit
+    // and others are translated to 0-bit
+    __mmask16 cmp = _mm512_cmp_ps_mask(values, _mm512_set1_ps(0.0), _CMP_EQ_OQ);
+    return static_cast&lt;int32_t&gt;(cmp);
+  }
+  Vectorized&lt;float&gt; isnan() const {
+    auto mask = _mm512_cmp_ps_mask(values, _mm512_set1_ps(0.0), _CMP_UNORD_Q);
+    return _mm512_castsi512_ps(
+        _mm512_mask_set1_epi32(zero_vec, mask, 0xFFFFFFFF));
+  }
+  bool has_inf_nan() const {
+    __m512 self_sub = _mm512_sub_ps(values, values);
+    return (_mm512_movepi8_mask(_mm512_castps_si512(self_sub)) &amp;
+            0x7777777777777777) != 0;
+  }
+  Vectorized&lt;float&gt; map(float (*const f)(float)) const {
+    __at_align__ float tmp[size()];
+    store(tmp);
+    for (const auto i : c10::irange(size())) {
+      tmp[i] = f(tmp[i]);
+    }
+    return loadu(tmp);
+  }
+  Vectorized&lt;float&gt; abs() const {
+    auto mask = _mm512_set1_ps(-0.f);
+    return _mm512_andnot_ps(mask, values);
+  }
+  Vectorized&lt;float&gt; angle() const {
+    __m512 zero_vec = _mm512_set1_ps(0.f);
+    const auto nan_vec = _mm512_set1_ps(NAN);
+    const auto not_nan_mask = _mm512_cmp_ps_mask(values, values, _CMP_EQ_OQ);
+    const auto not_nan_vec = _mm512_mask_set1_epi32(
+        _mm512_castps_si512(zero_vec), not_nan_mask, 0xFFFFFFFF);
+    const auto nan_mask = _mm512_cmp_ps_mask(
+        _mm512_castsi512_ps(not_nan_vec), zero_vec, _CMP_EQ_OQ);
+    const auto pi = _mm512_set1_ps(c10::pi&lt;double&gt;);
+
+    const auto neg_mask = _mm512_cmp_ps_mask(values, zero_vec, _CMP_LT_OQ);
+    auto angle = _mm512_mask_blend_ps(neg_mask, zero_vec, pi);
+    angle = _mm512_mask_blend_ps(nan_mask, angle, nan_vec);
+    return angle;
+  }
+  Vectorized&lt;float&gt; real() const {
+    return *this;
+  }
+  Vectorized&lt;float&gt; imag() const {
+    return _mm512_set1_ps(0);
+  }
+  Vectorized&lt;float&gt; conj() const {
+    return *this;
+  }
+  Vectorized&lt;float&gt; acos() const {
+    return Vectorized&lt;float&gt;(Sleef_acosf16_u10(values));
+  }
+  Vectorized&lt;float&gt; acosh() const {
+    return Vectorized&lt;float&gt;(Sleef_acoshf16_u10(values));
+  }
+  Vectorized&lt;float&gt; asin() const {
+    return Vectorized&lt;float&gt;(Sleef_asinf16_u10(values));
+  }
+  Vectorized&lt;float&gt; asinh() const {
+    return Vectorized&lt;float&gt;(Sleef_asinhf16_u10(values));
+  }
+  Vectorized&lt;float&gt; atan() const {
+    return Vectorized&lt;float&gt;(Sleef_atanf16_u10(values));
+  }
+  Vectorized&lt;float&gt; atanh() const {
+    return Vectorized&lt;float&gt;(Sleef_atanhf16_u10(values));
+  }
+  Vectorized&lt;float&gt; atan2(const Vectorized&lt;float&gt;&amp; b) const {
+    return Vectorized&lt;float&gt;(Sleef_atan2f16_u10(values, b));
+  }
+  Vectorized&lt;float&gt; copysign(const Vectorized&lt;float&gt;&amp; sign) const {
+    return Vectorized&lt;float&gt;(Sleef_copysignf16(values, sign));
+  }
+  Vectorized&lt;float&gt; erf() const {
+    // constants
+    const auto neg_zero_vec = _mm512_set1_ps(-0.f);
+    const auto one_vec = _mm512_set1_ps(1.0f);
+    const auto p = _mm512_set1_ps(0.3275911f);
+    const auto p1 = _mm512_set1_ps(0.254829592f);
+    const auto p2 = _mm512_set1_ps(-0.284496736f);
+    const auto p3 = _mm512_set1_ps(1.421413741f);
+    const auto p4 = _mm512_set1_ps(-1.453152027f);
+    const auto p5 = _mm512_set1_ps(1.061405429f);
+    // sign(x)
+    auto sign_mask = _mm512_and_ps(neg_zero_vec, values);
+    auto abs_vec = _mm512_abs_ps(values);
+    // t = 1 / (p * abs(x) &#43; 1)
+    auto tmp0 = _mm512_fmadd_ps(p, abs_vec, one_vec);
+    auto t = _mm512_div_ps(one_vec, tmp0);
+    // r = p5 * t ^ 4 &#43; p4 * t ^ 3 &#43; p3 * t ^ 2 &#43; p2 * t &#43; p1
+    auto tmp1 = _mm512_fmadd_ps(p5, t, p4);
+    auto tmp2 = _mm512_fmadd_ps(tmp1, t, p3);
+    auto tmp3 = _mm512_fmadd_ps(tmp2, t, p2);
+    auto r = _mm512_fmadd_ps(tmp3, t, p1);
+    // - exp(- x * x)
+    auto pow_2 = _mm512_mul_ps(values, values);
+    auto neg_pow_2 = _mm512_xor_ps(neg_zero_vec, pow_2);
+    // auto tmp4 = exp(neg_pow_2);
+    auto tmp4 = Vectorized&lt;float&gt;(Sleef_expf16_u10(neg_pow_2));
+    auto tmp5 = _mm512_xor_ps(neg_zero_vec, tmp4);
+    // erf(x) = sign(x) * (1 - r * t * exp(- x * x))
+    auto tmp6 = _mm512_mul_ps(tmp5, t);
+    auto tmp7 = _mm512_fmadd_ps(tmp6, r, one_vec);
+    return _mm512_xor_ps(sign_mask, tmp7);
+  }
+  Vectorized&lt;float&gt; erfc() const {
+    return Vectorized&lt;float&gt;(Sleef_erfcf16_u15(values));
+  }
+  Vectorized&lt;float&gt; erfinv() const {
+    return map(calc_erfinv);
+  }
+  Vectorized&lt;float&gt; exp() const {
+    return Vectorized&lt;float&gt;(Sleef_expf16_u10(values));
+  }
+  Vectorized&lt;float&gt; exp2() const {
+    return Vectorized&lt;float&gt;(Sleef_exp2f16_u10(values));
+  }
+  Vectorized&lt;float&gt; expm1() const {
+    return Vectorized&lt;float&gt;(Sleef_expm1f16_u10(values));
+  }
+  Vectorized&lt;float&gt; fexp_u20() const {
+    const __m512 vec_c0 = _mm512_set1_ps(0.00010703434948458272f);
+    const __m512 vec_c1 = _mm512_set1_ps(0.30354260500649682f);
+    const __m512 vec_c2 = _mm512_set1_ps(-0.22433836478672356);
+    const __m512 vec_c3 = _mm512_set1_ps(-0.079204240219773236);
+
+    const __m512 vec_exp_log2ef =
+        _mm512_castsi512_ps(_mm512_set1_epi32(0x3fb8aa3b)); // log2(e)
+
+    const __m512 vec_a = _mm512_set1_ps(std::pow(2, 23) / std::log2(2));
+    const __m512 vec_b = _mm512_set1_ps(std::pow(2, 23) * 127.f);
+
+    const __m512 vec_ln_flt_min =
+        _mm512_castsi512_ps(_mm512_set1_epi32(0xc2aeac50));
+    const __m512 vec_ln_flt_max =
+        _mm512_castsi512_ps(_mm512_set1_epi32(0x42b17218));
+    __m512i vec_infinity = _mm512_set1_epi32(0x7F800000);
+    __m512i vec_zero = _mm512_setzero_epi32();
+
+    // Fast Exponential Computation on SIMD Architectures
+    // A. Cristiano I. Malossi, Yves Ineichen, Costas Bekas, and Alessandro
+    // Curioni exp(x) = 2**(x * log2(e))
+    //        = 2**xi * 2**xf   - TIPS we are using  the EEEE floating point
+    //        representation with identification to the exponent and the
+    //        mentissa
+    //  2**xf will be approximated to a polynomial of degree 3 computed with
+    //  Horner method
+    // mask for the boundary condition
+    auto min_mask = _mm512_cmp_ps_mask(values, vec_ln_flt_min, _CMP_LT_OS);
+    auto max_mask = _mm512_cmp_ps_mask(values, vec_ln_flt_max, _CMP_GT_OS);
+
+    // transformation with log2(e)
+    auto vec_src = _mm512_mul_ps(values, vec_exp_log2ef);
+    auto vec_fractional = _mm512_sub_ps(vec_src, _mm512_floor_ps(vec_src));
+
+    // compute polynomial using Horner Scheme, for superscalar processor
+    auto vec_res = _mm512_fmadd_ps(vec_fractional, vec_c3, vec_c2);
+    vec_res = _mm512_fmadd_ps(vec_fractional, vec_res, vec_c1);
+    vec_res = _mm512_fmadd_ps(vec_fractional, vec_res, vec_c0);
+
+    vec_src = _mm512_sub_ps(vec_src, vec_res);
+    // the tips is here, headache in perspective
+    auto tmp = _mm512_fmadd_ps(vec_a, vec_src, vec_b);
+    // headache bis - we loose precision with the cast but it &#34;fits&#34;, but ok
+    // after f32 -&gt; f16 later
+    __m512i casted_integer = _mm512_cvttps_epi32(tmp);
+    // boundary condition, lower than the min -&gt; 0
+    casted_integer = _mm512_mask_mov_epi32(casted_integer, min_mask, vec_zero);
+    // boundary condition, larger than the max -&gt; &#43;oo
+    casted_integer =
+        _mm512_mask_mov_epi32(casted_integer, max_mask, vec_infinity);
+    // final interpretation to float
+    return _mm512_castsi512_ps(casted_integer);
+  }
+  Vectorized&lt;float&gt; exp_u20() const {
+    // A faster version of exp with ULP=20
+    const __m512 vec_factorial_1 =
+        _mm512_set1_ps(0.999999701f); // 1/factorial(1)
+    const __m512 vec_factorial_2 =
+        _mm512_set1_ps(0.499991506f); // 1/factorial(2)
+    const __m512 vec_factorial_3 =
+        _mm512_set1_ps(0.166676521f); // 1/factorial(3)
+    const __m512 vec_factorial_4 =
+        _mm512_set1_ps(0.0418978221f); // 1/factorial(4)
+    const __m512 vec_factorial_5 =
+        _mm512_set1_ps(0.00828929059f); // 1/factorial(5)
+    const __m512 vec_exp_log2ef =
+        _mm512_castsi512_ps(_mm512_set1_epi32(0x3fb8aa3b)); // log2(e)
+    const __m512 vec_half = _mm512_set1_ps(0.5f);
+    const __m512 vec_one = _mm512_set1_ps(1.f);
+    const __m512 vec_zero = _mm512_set1_ps(0.f);
+    const __m512 vec_two = _mm512_set1_ps(2.f);
+    const __m512 vec_ln2f =
+        _mm512_castsi512_ps(_mm512_set1_epi32(0x3f317218)); // ln(2)
+    const __m512 vec_ln_flt_min =
+        _mm512_castsi512_ps(_mm512_set1_epi32(0xc2aeac50));
+    const __m512 vec_ln_flt_max =
+        _mm512_castsi512_ps(_mm512_set1_epi32(0x42b17218));
+    const __m512i vec_127 = _mm512_set1_epi32(0x0000007f);
+    const int n_mantissa_bits = 23;
+
+    // exp(x) =
+    // = exp(n * ln(2) &#43; r) // divide x by ln(2) and get quot and rem
+    // = 2^n * exp(r) // simplify the exp(n*ln(2)) expression
+
+    auto less_ln_flt_min_mask =
+        _mm512_cmp_ps_mask(values, vec_ln_flt_min, 1 /*_CMP_LT_OS*/);
+    auto vec_src = _mm512_min_ps(values, vec_ln_flt_max);
+    vec_src = _mm512_max_ps(vec_src, vec_ln_flt_min);
+
+    // fx = floorf(x * log2ef &#43; 0.5)
+    auto vec_fx = _mm512_fmadd_ps(vec_src, vec_exp_log2ef, vec_half);
+    auto vec_fx_i = _mm512_cvt_roundps_epi32(
+        vec_fx, _MM_FROUND_TO_NEG_INF | _MM_FROUND_NO_EXC);
+    vec_fx = _mm512_cvtepi32_ps(vec_fx_i);
+
+    // x = x - fx * ln2
+    auto vec_exp_poly = _mm512_fnmadd_ps(vec_fx, vec_ln2f, vec_src);
+
+    // compute polynomial
+    auto vec_res =
+        _mm512_fmadd_ps(vec_exp_poly, vec_factorial_5, vec_factorial_4);
+    vec_res = _mm512_fmadd_ps(vec_exp_poly, vec_res, vec_factorial_3);
+    vec_res = _mm512_fmadd_ps(vec_exp_poly, vec_res, vec_factorial_2);
+    vec_res = _mm512_fmadd_ps(vec_exp_poly, vec_res, vec_factorial_1);
+    vec_res = _mm512_fmadd_ps(vec_exp_poly, vec_res, vec_one);
+
+    // compute 2^(n-1)
+    auto vec_exp_number = _mm512_sub_ps(vec_fx, vec_one);
+    auto vec_exp_number_i = _mm512_cvtps_epi32(vec_exp_number);
+    auto vec_two_pow_n_i = _mm512_add_epi32(vec_exp_number_i, vec_127);
+    vec_two_pow_n_i = _mm512_slli_epi32(vec_two_pow_n_i, n_mantissa_bits);
+    auto vec_two_pow_n = _mm512_castsi512_ps(vec_two_pow_n_i);
+    vec_two_pow_n =
+        _mm512_mask_blend_ps(less_ln_flt_min_mask, vec_two_pow_n, vec_zero);
+
+    // y = y * 2^n
+    vec_res = _mm512_mul_ps(vec_res, vec_two_pow_n);
+    vec_res = _mm512_mul_ps(vec_res, vec_two);
+    return vec_res;
+  }
+  Vectorized&lt;float&gt; fmod(const Vectorized&lt;float&gt;&amp; q) const {
+    return Vectorized&lt;float&gt;(Sleef_fmodf16(values, q));
+  }
+  Vectorized&lt;float&gt; log() const {
+    return Vectorized&lt;float&gt;(Sleef_logf16_u10(values));
+  }
+  Vectorized&lt;float&gt; log2() const {
+    return Vectorized&lt;float&gt;(Sleef_log2f16_u10(values));
+  }
+  Vectorized&lt;float&gt; log10() const {
+    return Vectorized&lt;float&gt;(Sleef_log10f16_u10(values));
+  }
+  Vectorized&lt;float&gt; log1p() const {
+    return Vectorized&lt;float&gt;(Sleef_log1pf16_u10(values));
+  }
+  Vectorized&lt;float&gt; frac() const;
+  Vectorized&lt;float&gt; sin() const {
+    return Vectorized&lt;float&gt;(Sleef_sinf16_u35(values));
+  }
+  Vectorized&lt;float&gt; sinh() const {
+    return Vectorized&lt;float&gt;(Sleef_sinhf16_u10(values));
+  }
+  Vectorized&lt;float&gt; cos() const {
+    return Vectorized&lt;float&gt;(Sleef_cosf16_u35(values));
+  }
+  Vectorized&lt;float&gt; cosh() const {
+    return Vectorized&lt;float&gt;(Sleef_coshf16_u10(values));
+  }
+  Vectorized&lt;float&gt; ceil() const {
+    return _mm512_ceil_ps(values);
+  }
+  Vectorized&lt;float&gt; floor() const {
+    return _mm512_floor_ps(values);
+  }
+  Vectorized&lt;float&gt; hypot(const Vectorized&lt;float&gt;&amp; b) const {
+    return Vectorized&lt;float&gt;(Sleef_hypotf16_u05(values, b));
+  }
+  Vectorized&lt;float&gt; i0() const {
+    return map(calc_i0);
+  }
+  Vectorized&lt;float&gt; i0e() const {
+    return map(calc_i0e);
+  }
+  Vectorized&lt;float&gt; digamma() const {
+    return map(calc_digamma);
+  }
+  Vectorized&lt;float&gt; igamma(const Vectorized&lt;float&gt;&amp; x) const {
+    __at_align__ float tmp[size()];
+    __at_align__ float tmp_x[size()];
+    store(tmp);
+    x.store(tmp_x);
+    for (const auto i : c10::irange(size())) {
+      tmp[i] = calc_igamma(tmp[i], tmp_x[i]);
+    }
+    return loadu(tmp);
+  }
+  Vectorized&lt;float&gt; igammac(const Vectorized&lt;float&gt;&amp; x) const {
+    __at_align__ float tmp[size()];
+    __at_align__ float tmp_x[size()];
+    store(tmp);
+    x.store(tmp_x);
+    for (const auto i : c10::irange(size())) {
+      tmp[i] = calc_igammac(tmp[i], tmp_x[i]);
+    }
+    return loadu(tmp);
+  }
+  Vectorized&lt;float&gt; neg() const {
+    return _mm512_xor_ps(_mm512_set1_ps(-0.f), values);
+  }
+  Vectorized&lt;float&gt; nextafter(const Vectorized&lt;float&gt;&amp; b) const {
+    return Vectorized&lt;float&gt;(Sleef_nextafterf16(values, b));
+  }
+  Vectorized&lt;float&gt; round() const {
+    return _mm512_roundscale_ps(
+        values, (_MM_FROUND_TO_NEAREST_INT | _MM_FROUND_NO_EXC));
+  }
+  Vectorized&lt;float&gt; tan() const {
+    return Vectorized&lt;float&gt;(Sleef_tanf16_u10(values));
+  }
+  Vectorized&lt;float&gt; tanh() const {
+    return Vectorized&lt;float&gt;(Sleef_tanhf16_u10(values));
+  }
+  Vectorized&lt;float&gt; trunc() const {
+    return _mm512_roundscale_ps(
+        values, (_MM_FROUND_TO_ZERO | _MM_FROUND_NO_EXC));
+  }
+  Vectorized&lt;float&gt; lgamma() const {
+    return Vectorized&lt;float&gt;(Sleef_lgammaf16_u10(values));
+  }
+  Vectorized&lt;float&gt; sqrt() const {
+    return _mm512_sqrt_ps(values);
+  }
+  Vectorized&lt;float&gt; reciprocal() const {
+    return _mm512_div_ps(_mm512_set1_ps(1), values);
+  }
+  Vectorized&lt;float&gt; rsqrt() const {
+    return _mm512_div_ps(_mm512_set1_ps(1), _mm512_sqrt_ps(values));
+  }
+  Vectorized&lt;float&gt; pow(const Vectorized&lt;float&gt;&amp; b) const {
+    return Vectorized&lt;float&gt;(Sleef_powf16_u10(values, b));
+  }
+  float reduce_add() const {
+    return _mm512_reduce_add_ps(values);
+  }
+  float reduce_max() const {
+    return _mm512_reduce_max_ps(values);
+  }
+  // Comparison using the _CMP_**_OQ predicate.
+  //   `O`: get false if an operand is NaN
+  //   `Q`: do not raise if an operand is NaN
+  Vectorized&lt;float&gt; operator==(const Vectorized&lt;float&gt;&amp; other) const {
+    auto mask = _mm512_cmp_ps_mask(values, other.values, _CMP_EQ_OQ);
+    return _mm512_castsi512_ps(
+        _mm512_mask_set1_epi32(zero_vec, mask, 0xFFFFFFFF));
+  }
+
+  Vectorized&lt;float&gt; operator!=(const Vectorized&lt;float&gt;&amp; other) const {
+    auto mask = _mm512_cmp_ps_mask(values, other.values, _CMP_NEQ_UQ);
+    return _mm512_castsi512_ps(
+        _mm512_mask_set1_epi32(zero_vec, mask, 0xFFFFFFFF));
+  }
+
+  Vectorized&lt;float&gt; operator&lt;(const Vectorized&lt;float&gt;&amp; other) const {
+    auto mask = _mm512_cmp_ps_mask(values, other.values, _CMP_LT_OQ);
+    return _mm512_castsi512_ps(
+        _mm512_mask_set1_epi32(zero_vec, mask, 0xFFFFFFFF));
+  }
+
+  Vectorized&lt;float&gt; operator&lt;=(const Vectorized&lt;float&gt;&amp; other) const {
+    auto mask = _mm512_cmp_ps_mask(values, other.values, _CMP_LE_OQ);
+    return _mm512_castsi512_ps(
+        _mm512_mask_set1_epi32(zero_vec, mask, 0xFFFFFFFF));
+  }
+
+  Vectorized&lt;float&gt; operator&gt;(const Vectorized&lt;float&gt;&amp; other) const {
+    auto mask = _mm512_cmp_ps_mask(values, other.values, _CMP_GT_OQ);
+    return _mm512_castsi512_ps(
+        _mm512_mask_set1_epi32(zero_vec, mask, 0xFFFFFFFF));
+  }
+
+  Vectorized&lt;float&gt; operator&gt;=(const Vectorized&lt;float&gt;&amp; other) const {
+    auto mask = _mm512_cmp_ps_mask(values, other.values, _CMP_GE_OQ);
+    return _mm512_castsi512_ps(
+        _mm512_mask_set1_epi32(zero_vec, mask, 0xFFFFFFFF));
+  }
+
+  Vectorized&lt;float&gt; eq(const Vectorized&lt;float&gt;&amp; other) const;
+  Vectorized&lt;float&gt; ne(const Vectorized&lt;float&gt;&amp; other) const;
+  Vectorized&lt;float&gt; gt(const Vectorized&lt;float&gt;&amp; other) const;
+  Vectorized&lt;float&gt; ge(const Vectorized&lt;float&gt;&amp; other) const;
+  Vectorized&lt;float&gt; lt(const Vectorized&lt;float&gt;&amp; other) const;
+  Vectorized&lt;float&gt; le(const Vectorized&lt;float&gt;&amp; other) const;
+};</code></pre>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/pytorch/blob/main/aten/src/ATen/cpu/vec/vec512/vec512_float.h#L23">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

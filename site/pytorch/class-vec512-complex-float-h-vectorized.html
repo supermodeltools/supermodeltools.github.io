@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<title>Vectorized Class — pytorch Architecture | pytorch Architecture Docs</title>
+<meta name="description" content="Architecture documentation for the Vectorized class in vec512_complex_float.h from the pytorch codebase.">
+<link rel="canonical" href="https://repos.supermodeltools.com/class-vec512-complex-float-h-vectorized/">
+<meta property="og:title" content="Vectorized Class — pytorch Architecture — pytorch Architecture Docs">
+<meta property="og:description" content="Architecture documentation for the Vectorized class in vec512_complex_float.h from the pytorch codebase.">
+<meta property="og:url" content="https://repos.supermodeltools.com/class-vec512-complex-float-h-vectorized.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/class-vec512-complex-float-h-vectorized.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="pytorch Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vectorized Class — pytorch Architecture — pytorch Architecture Docs">
+<meta name="twitter:description" content="Architecture documentation for the Vectorized class in vec512_complex_float.h from the pytorch codebase.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/class-vec512-complex-float-h-vectorized.svg">
+
+<style>:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --max-w: 1200px;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; color: var(--accent-light); }
+.site-brand svg { width: 24px; height: 24px; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: white;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #0d0f14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e4e4e7;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the Vectorized class in vec512_complex_float.h from the pytorch codebase.","image":["https://repos.supermodeltools.com/images/share/class-vec512-complex-float-h-vectorized.svg"],"name":"Vectorized Class — pytorch Architecture","url":"https://repos.supermodeltools.com/class-vec512-complex-float-h-vectorized.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"Vectorized Class — pytorch Architecture","position":2}]}</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">
+      <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+      </svg>
+      pytorch Architecture Docs
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/node_type/index.html">By Type</a>
+      <a href="/domain/index.html">Domains</a>
+      <a href="/language/index.html">Languages</a>
+      <a href="/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/node_type/class.html">Class</a><span class="sep">/</span>
+        <span>Vectorized Class — pytorch Architecture</span>
+      </div>
+      <h1 class="entity-title">Vectorized Class — pytorch Architecture</h1>
+      <p class="entity-desc">Architecture documentation for the Vectorized class in vec512_complex_float.h from the pytorch codebase.</p>
+
+      <div class="entity-meta">
+        <a href="/node_type/class.html" class="pill pill-accent">Class</a>
+        <a href="/language/c.html" class="pill pill-blue">c</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"el":1020,"lc":996,"sl":25}</script>
+    </div>
+
+    
+
+    
+    <div class="entity-section source-code-section">
+      <h2>Source Code</h2>
+      <p class="source-location">aten/src/ATen/cpu/vec/vec512/vec512_complex_float.h lines 25–1020</p>
+      <pre class="source-code"><code class="language-c">template &lt;&gt;
+class Vectorized&lt;c10::complex&lt;float&gt;&gt; {
+ private:
+  __m512 values;
+  static constexpr __m512i zero_vector{0, 0, 0, 0, 0, 0, 0, 0};
+
+ public:
+  using value_type = c10::complex&lt;float&gt;;
+  using size_type = int;
+  static constexpr size_type size() {
+    return 8;
+  }
+  Vectorized() {
+    values = _mm512_setzero_ps();
+  }
+  Vectorized(__m512 v) : values(v) {}
+  Vectorized(c10::complex&lt;float&gt; val) {
+    float real_value = val.real();
+    float imag_value = val.imag();
+    values = _mm512_setr_ps(
+        real_value,
+        imag_value,
+        real_value,
+        imag_value,
+        real_value,
+        imag_value,
+        real_value,
+        imag_value,
+        real_value,
+        imag_value,
+        real_value,
+        imag_value,
+        real_value,
+        imag_value,
+        real_value,
+        imag_value);
+  }
+  Vectorized(
+      c10::complex&lt;float&gt; val1,
+      c10::complex&lt;float&gt; val2,
+      c10::complex&lt;float&gt; val3,
+      c10::complex&lt;float&gt; val4,
+      c10::complex&lt;float&gt; val5,
+      c10::complex&lt;float&gt; val6,
+      c10::complex&lt;float&gt; val7,
+      c10::complex&lt;float&gt; val8) {
+    values = _mm512_setr_ps(
+        val1.real(),
+        val1.imag(),
+        val2.real(),
+        val2.imag(),
+        val3.real(),
+        val3.imag(),
+        val4.real(),
+        val4.imag(),
+        val5.real(),
+        val5.imag(),
+        val6.real(),
+        val6.imag(),
+        val7.real(),
+        val7.imag(),
+        val8.real(),
+        val8.imag());
+  }
+  operator __m512() const {
+    return values;
+  }
+  template &lt;int64_t mask&gt;
+  static Vectorized&lt;c10::complex&lt;float&gt;&gt; blend(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; a,
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; b) {
+    // convert c10::complex&lt;V&gt; index mask to V index mask: xy -&gt; xxyy
+    static_assert(mask &gt; -1 &amp;&amp; mask &lt; 256, &#34;Unexpected mask value&#34;);
+    // The compiler would hopefully convert this switch condition
+    // into a jump table
+    switch (mask) {
+      case 0:
+        return a;
+      case 1:
+        return _mm512_mask_blend_ps(0x03, a.values, b.values);
+      case 2:
+        return _mm512_mask_blend_ps(0x0C, a.values, b.values);
+      case 3:
+        return _mm512_mask_blend_ps(0x0F, a.values, b.values);
+      case 4:
+        return _mm512_mask_blend_ps(0x30, a.values, b.values);
+      case 5:
+        return _mm512_mask_blend_ps(0x33, a.values, b.values);
+      case 6:
+        return _mm512_mask_blend_ps(0x3C, a.values, b.values);
+      case 7:
+        return _mm512_mask_blend_ps(0x3F, a.values, b.values);
+      case 8:
+        return _mm512_mask_blend_ps(0xC0, a.values, b.values);
+      case 9:
+        return _mm512_mask_blend_ps(0xC3, a.values, b.values);
+      case 10:
+        return _mm512_mask_blend_ps(0xCC, a.values, b.values);
+      case 11:
+        return _mm512_mask_blend_ps(0xCF, a.values, b.values);
+      case 12:
+        return _mm512_mask_blend_ps(0xF0, a.values, b.values);
+      case 13:
+        return _mm512_mask_blend_ps(0xF3, a.values, b.values);
+      case 14:
+        return _mm512_mask_blend_ps(0xFC, a.values, b.values);
+      case 15:
+        return _mm512_mask_blend_ps(0xFF, a.values, b.values);
+      case 16:
+        return _mm512_mask_blend_ps(0x300, a.values, b.values);
+      case 17:
+        return _mm512_mask_blend_ps(0x303, a.values, b.values);
+      case 18:
+        return _mm512_mask_blend_ps(0x30C, a.values, b.values);
+      case 19:
+        return _mm512_mask_blend_ps(0x30F, a.values, b.values);
+      case 20:
+        return _mm512_mask_blend_ps(0x330, a.values, b.values);
+      case 21:
+        return _mm512_mask_blend_ps(0x333, a.values, b.values);
+      case 22:
+        return _mm512_mask_blend_ps(0x33C, a.values, b.values);
+      case 23:
+        return _mm512_mask_blend_ps(0x33F, a.values, b.values);
+      case 24:
+        return _mm512_mask_blend_ps(0x3C0, a.values, b.values);
+      case 25:
+        return _mm512_mask_blend_ps(0x3C3, a.values, b.values);
+      case 26:
+        return _mm512_mask_blend_ps(0x3CC, a.values, b.values);
+      case 27:
+        return _mm512_mask_blend_ps(0x3CF, a.values, b.values);
+      case 28:
+        return _mm512_mask_blend_ps(0x3F0, a.values, b.values);
+      case 29:
+        return _mm512_mask_blend_ps(0x3F3, a.values, b.values);
+      case 30:
+        return _mm512_mask_blend_ps(0x3FC, a.values, b.values);
+      case 31:
+        return _mm512_mask_blend_ps(0x3FF, a.values, b.values);
+      case 32:
+        return _mm512_mask_blend_ps(0xC00, a.values, b.values);
+      case 33:
+        return _mm512_mask_blend_ps(0xC03, a.values, b.values);
+      case 34:
+        return _mm512_mask_blend_ps(0xC0C, a.values, b.values);
+      case 35:
+        return _mm512_mask_blend_ps(0xC0F, a.values, b.values);
+      case 36:
+        return _mm512_mask_blend_ps(0xC30, a.values, b.values);
+      case 37:
+        return _mm512_mask_blend_ps(0xC33, a.values, b.values);
+      case 38:
+        return _mm512_mask_blend_ps(0xC3C, a.values, b.values);
+      case 39:
+        return _mm512_mask_blend_ps(0xC3F, a.values, b.values);
+      case 40:
+        return _mm512_mask_blend_ps(0xCC0, a.values, b.values);
+      case 41:
+        return _mm512_mask_blend_ps(0xCC3, a.values, b.values);
+      case 42:
+        return _mm512_mask_blend_ps(0xCCC, a.values, b.values);
+      case 43:
+        return _mm512_mask_blend_ps(0xCCF, a.values, b.values);
+      case 44:
+        return _mm512_mask_blend_ps(0xCF0, a.values, b.values);
+      case 45:
+        return _mm512_mask_blend_ps(0xCF3, a.values, b.values);
+      case 46:
+        return _mm512_mask_blend_ps(0xCFC, a.values, b.values);
+      case 47:
+        return _mm512_mask_blend_ps(0xCFF, a.values, b.values);
+      case 48:
+        return _mm512_mask_blend_ps(0xF00, a.values, b.values);
+      case 49:
+        return _mm512_mask_blend_ps(0xF03, a.values, b.values);
+      case 50:
+        return _mm512_mask_blend_ps(0xF0C, a.values, b.values);
+      case 51:
+        return _mm512_mask_blend_ps(0xF0F, a.values, b.values);
+      case 52:
+        return _mm512_mask_blend_ps(0xF30, a.values, b.values);
+      case 53:
+        return _mm512_mask_blend_ps(0xF33, a.values, b.values);
+      case 54:
+        return _mm512_mask_blend_ps(0xF3C, a.values, b.values);
+      case 55:
+        return _mm512_mask_blend_ps(0xF3F, a.values, b.values);
+      case 56:
+        return _mm512_mask_blend_ps(0xFC0, a.values, b.values);
+      case 57:
+        return _mm512_mask_blend_ps(0xFC3, a.values, b.values);
+      case 58:
+        return _mm512_mask_blend_ps(0xFCC, a.values, b.values);
+      case 59:
+        return _mm512_mask_blend_ps(0xFCF, a.values, b.values);
+      case 60:
+        return _mm512_mask_blend_ps(0xFF0, a.values, b.values);
+      case 61:
+        return _mm512_mask_blend_ps(0xFF3, a.values, b.values);
+      case 62:
+        return _mm512_mask_blend_ps(0xFFC, a.values, b.values);
+      case 63:
+        return _mm512_mask_blend_ps(0xFFF, a.values, b.values);
+      case 64:
+        return _mm512_mask_blend_ps(0x3000, a.values, b.values);
+      case 65:
+        return _mm512_mask_blend_ps(0x3003, a.values, b.values);
+      case 66:
+        return _mm512_mask_blend_ps(0x300C, a.values, b.values);
+      case 67:
+        return _mm512_mask_blend_ps(0x300F, a.values, b.values);
+      case 68:
+        return _mm512_mask_blend_ps(0x3030, a.values, b.values);
+      case 69:
+        return _mm512_mask_blend_ps(0x3033, a.values, b.values);
+      case 70:
+        return _mm512_mask_blend_ps(0x303C, a.values, b.values);
+      case 71:
+        return _mm512_mask_blend_ps(0x303F, a.values, b.values);
+      case 72:
+        return _mm512_mask_blend_ps(0x30C0, a.values, b.values);
+      case 73:
+        return _mm512_mask_blend_ps(0X30C3, a.values, b.values);
+      case 74:
+        return _mm512_mask_blend_ps(0x30CC, a.values, b.values);
+      case 75:
+        return _mm512_mask_blend_ps(0x30CF, a.values, b.values);
+      case 76:
+        return _mm512_mask_blend_ps(0x30F0, a.values, b.values);
+      case 77:
+        return _mm512_mask_blend_ps(0x30F3, a.values, b.values);
+      case 78:
+        return _mm512_mask_blend_ps(0x30FC, a.values, b.values);
+      case 79:
+        return _mm512_mask_blend_ps(0x30FF, a.values, b.values);
+      case 80:
+        return _mm512_mask_blend_ps(0x3300, a.values, b.values);
+      case 81:
+        return _mm512_mask_blend_ps(0X3303, a.values, b.values);
+      case 82:
+        return _mm512_mask_blend_ps(0x330C, a.values, b.values);
+      case 83:
+        return _mm512_mask_blend_ps(0x330F, a.values, b.values);
+      case 84:
+        return _mm512_mask_blend_ps(0x3330, a.values, b.values);
+      case 85:
+        return _mm512_mask_blend_ps(0x3333, a.values, b.values);
+      case 86:
+        return _mm512_mask_blend_ps(0x333C, a.values, b.values);
+      case 87:
+        return _mm512_mask_blend_ps(0X333F, a.values, b.values);
+      case 88:
+        return _mm512_mask_blend_ps(0x33C0, a.values, b.values);
+      case 89:
+        return _mm512_mask_blend_ps(0x33C3, a.values, b.values);
+      case 90:
+        return _mm512_mask_blend_ps(0x33CC, a.values, b.values);
+      case 91:
+        return _mm512_mask_blend_ps(0x33CF, a.values, b.values);
+      case 92:
+        return _mm512_mask_blend_ps(0x33F0, a.values, b.values);
+      case 93:
+        return _mm512_mask_blend_ps(0x33F3, a.values, b.values);
+      case 94:
+        return _mm512_mask_blend_ps(0x33FC, a.values, b.values);
+      case 95:
+        return _mm512_mask_blend_ps(0x33FF, a.values, b.values);
+      case 96:
+        return _mm512_mask_blend_ps(0X3C00, a.values, b.values);
+      case 97:
+        return _mm512_mask_blend_ps(0x3C03, a.values, b.values);
+      case 98:
+        return _mm512_mask_blend_ps(0x3C0C, a.values, b.values);
+      case 99:
+        return _mm512_mask_blend_ps(0x3C0F, a.values, b.values);
+      case 100:
+        return _mm512_mask_blend_ps(0x3C30, a.values, b.values);
+      case 101:
+        return _mm512_mask_blend_ps(0x3C33, a.values, b.values);
+      case 102:
+        return _mm512_mask_blend_ps(0x3C3C, a.values, b.values);
+      case 103:
+        return _mm512_mask_blend_ps(0x3C3F, a.values, b.values);
+      case 104:
+        return _mm512_mask_blend_ps(0x3CC0, a.values, b.values);
+      case 105:
+        return _mm512_mask_blend_ps(0x3CC3, a.values, b.values);
+      case 106:
+        return _mm512_mask_blend_ps(0x3CCC, a.values, b.values);
+      case 107:
+        return _mm512_mask_blend_ps(0x3CCF, a.values, b.values);
+      case 108:
+        return _mm512_mask_blend_ps(0x3CF0, a.values, b.values);
+      case 109:
+        return _mm512_mask_blend_ps(0x3CF3, a.values, b.values);
+      case 110:
+        return _mm512_mask_blend_ps(0x3CFC, a.values, b.values);
+      case 111:
+        return _mm512_mask_blend_ps(0x3CFF, a.values, b.values);
+      case 112:
+        return _mm512_mask_blend_ps(0x3F00, a.values, b.values);
+      case 113:
+        return _mm512_mask_blend_ps(0x3F03, a.values, b.values);
+      case 114:
+        return _mm512_mask_blend_ps(0x3F0C, a.values, b.values);
+      case 115:
+        return _mm512_mask_blend_ps(0x3F0F, a.values, b.values);
+      case 116:
+        return _mm512_mask_blend_ps(0x3F30, a.values, b.values);
+      case 117:
+        return _mm512_mask_blend_ps(0x3F33, a.values, b.values);
+      case 118:
+        return _mm512_mask_blend_ps(0x3F3C, a.values, b.values);
+      case 119:
+        return _mm512_mask_blend_ps(0x3F3F, a.values, b.values);
+      case 120:
+        return _mm512_mask_blend_ps(0x3FC0, a.values, b.values);
+      case 121:
+        return _mm512_mask_blend_ps(0x3FC3, a.values, b.values);
+      case 122:
+        return _mm512_mask_blend_ps(0x3FCC, a.values, b.values);
+      case 123:
+        return _mm512_mask_blend_ps(0x3FCF, a.values, b.values);
+      case 124:
+        return _mm512_mask_blend_ps(0x3FF0, a.values, b.values);
+      case 125:
+        return _mm512_mask_blend_ps(0x3FF3, a.values, b.values);
+      case 126:
+        return _mm512_mask_blend_ps(0x3FFC, a.values, b.values);
+      case 127:
+        return _mm512_mask_blend_ps(0x3FFF, a.values, b.values);
+      case 128:
+        return _mm512_mask_blend_ps(0xC000, a.values, b.values);
+      case 129:
+        return _mm512_mask_blend_ps(0xC003, a.values, b.values);
+      case 130:
+        return _mm512_mask_blend_ps(0xC00C, a.values, b.values);
+      case 131:
+        return _mm512_mask_blend_ps(0xC00F, a.values, b.values);
+      case 132:
+        return _mm512_mask_blend_ps(0xC030, a.values, b.values);
+      case 133:
+        return _mm512_mask_blend_ps(0xC033, a.values, b.values);
+      case 134:
+        return _mm512_mask_blend_ps(0xC03C, a.values, b.values);
+      case 135:
+        return _mm512_mask_blend_ps(0xC03F, a.values, b.values);
+      case 136:
+        return _mm512_mask_blend_ps(0xC0C0, a.values, b.values);
+      case 137:
+        return _mm512_mask_blend_ps(0xC0C3, a.values, b.values);
+      case 138:
+        return _mm512_mask_blend_ps(0xC0CC, a.values, b.values);
+      case 139:
+        return _mm512_mask_blend_ps(0xC0CF, a.values, b.values);
+      case 140:
+        return _mm512_mask_blend_ps(0xC0F0, a.values, b.values);
+      case 141:
+        return _mm512_mask_blend_ps(0xC0F3, a.values, b.values);
+      case 142:
+        return _mm512_mask_blend_ps(0xC0FC, a.values, b.values);
+      case 143:
+        return _mm512_mask_blend_ps(0xC0FF, a.values, b.values);
+      case 144:
+        return _mm512_mask_blend_ps(0xC300, a.values, b.values);
+      case 145:
+        return _mm512_mask_blend_ps(0xC303, a.values, b.values);
+      case 146:
+        return _mm512_mask_blend_ps(0xC30C, a.values, b.values);
+      case 147:
+        return _mm512_mask_blend_ps(0xC30F, a.values, b.values);
+      case 148:
+        return _mm512_mask_blend_ps(0xC330, a.values, b.values);
+      case 149:
+        return _mm512_mask_blend_ps(0xC333, a.values, b.values);
+      case 150:
+        return _mm512_mask_blend_ps(0xC33C, a.values, b.values);
+      case 151:
+        return _mm512_mask_blend_ps(0xC33F, a.values, b.values);
+      case 152:
+        return _mm512_mask_blend_ps(0xC3C0, a.values, b.values);
+      case 153:
+        return _mm512_mask_blend_ps(0xC3C3, a.values, b.values);
+      case 154:
+        return _mm512_mask_blend_ps(0xC3CC, a.values, b.values);
+      case 155:
+        return _mm512_mask_blend_ps(0xC3CF, a.values, b.values);
+      case 156:
+        return _mm512_mask_blend_ps(0xC3F0, a.values, b.values);
+      case 157:
+        return _mm512_mask_blend_ps(0xC3F3, a.values, b.values);
+      case 158:
+        return _mm512_mask_blend_ps(0xC3FC, a.values, b.values);
+      case 159:
+        return _mm512_mask_blend_ps(0xC3FF, a.values, b.values);
+      case 160:
+        return _mm512_mask_blend_ps(0xCC00, a.values, b.values);
+      case 161:
+        return _mm512_mask_blend_ps(0xCC03, a.values, b.values);
+      case 162:
+        return _mm512_mask_blend_ps(0xCC0C, a.values, b.values);
+      case 163:
+        return _mm512_mask_blend_ps(0xCC0F, a.values, b.values);
+      case 164:
+        return _mm512_mask_blend_ps(0xCC30, a.values, b.values);
+      case 165:
+        return _mm512_mask_blend_ps(0xCC33, a.values, b.values);
+      case 166:
+        return _mm512_mask_blend_ps(0xCC3C, a.values, b.values);
+      case 167:
+        return _mm512_mask_blend_ps(0xCC3F, a.values, b.values);
+      case 168:
+        return _mm512_mask_blend_ps(0xCCC0, a.values, b.values);
+      case 169:
+        return _mm512_mask_blend_ps(0xCCC3, a.values, b.values);
+      case 170:
+        return _mm512_mask_blend_ps(0xCCCC, a.values, b.values);
+      case 171:
+        return _mm512_mask_blend_ps(0xCCCF, a.values, b.values);
+      case 172:
+        return _mm512_mask_blend_ps(0xCCF0, a.values, b.values);
+      case 173:
+        return _mm512_mask_blend_ps(0xCCF3, a.values, b.values);
+      case 174:
+        return _mm512_mask_blend_ps(0xCCFC, a.values, b.values);
+      case 175:
+        return _mm512_mask_blend_ps(0xCCFF, a.values, b.values);
+      case 176:
+        return _mm512_mask_blend_ps(0xCF00, a.values, b.values);
+      case 177:
+        return _mm512_mask_blend_ps(0xCF03, a.values, b.values);
+      case 178:
+        return _mm512_mask_blend_ps(0xCF0C, a.values, b.values);
+      case 179:
+        return _mm512_mask_blend_ps(0xCF0F, a.values, b.values);
+      case 180:
+        return _mm512_mask_blend_ps(0xCF30, a.values, b.values);
+      case 181:
+        return _mm512_mask_blend_ps(0xCF33, a.values, b.values);
+      case 182:
+        return _mm512_mask_blend_ps(0xCF3C, a.values, b.values);
+      case 183:
+        return _mm512_mask_blend_ps(0xCF3F, a.values, b.values);
+      case 184:
+        return _mm512_mask_blend_ps(0xCFC0, a.values, b.values);
+      case 185:
+        return _mm512_mask_blend_ps(0xCFC3, a.values, b.values);
+      case 186:
+        return _mm512_mask_blend_ps(0xCFCC, a.values, b.values);
+      case 187:
+        return _mm512_mask_blend_ps(0xCFCF, a.values, b.values);
+      case 188:
+        return _mm512_mask_blend_ps(0xCFF0, a.values, b.values);
+      case 189:
+        return _mm512_mask_blend_ps(0xCFF3, a.values, b.values);
+      case 190:
+        return _mm512_mask_blend_ps(0xCFFC, a.values, b.values);
+      case 191:
+        return _mm512_mask_blend_ps(0xCFFF, a.values, b.values);
+      case 192:
+        return _mm512_mask_blend_ps(0xF000, a.values, b.values);
+      case 193:
+        return _mm512_mask_blend_ps(0xF003, a.values, b.values);
+      case 194:
+        return _mm512_mask_blend_ps(0xF00C, a.values, b.values);
+      case 195:
+        return _mm512_mask_blend_ps(0xF00F, a.values, b.values);
+      case 196:
+        return _mm512_mask_blend_ps(0xF030, a.values, b.values);
+      case 197:
+        return _mm512_mask_blend_ps(0xF033, a.values, b.values);
+      case 198:
+        return _mm512_mask_blend_ps(0xF03C, a.values, b.values);
+      case 199:
+        return _mm512_mask_blend_ps(0xF03F, a.values, b.values);
+      case 200:
+        return _mm512_mask_blend_ps(0XF0C0, a.values, b.values);
+      case 201:
+        return _mm512_mask_blend_ps(0xF0C3, a.values, b.values);
+      case 202:
+        return _mm512_mask_blend_ps(0xF0CC, a.values, b.values);
+      case 203:
+        return _mm512_mask_blend_ps(0xF0CF, a.values, b.values);
+      case 204:
+        return _mm512_mask_blend_ps(0xF0F0, a.values, b.values);
+      case 205:
+        return _mm512_mask_blend_ps(0xF0F3, a.values, b.values);
+      case 206:
+        return _mm512_mask_blend_ps(0xF0FC, a.values, b.values);
+      case 207:
+        return _mm512_mask_blend_ps(0xF0FF, a.values, b.values);
+      case 208:
+        return _mm512_mask_blend_ps(0XF300, a.values, b.values);
+      case 209:
+        return _mm512_mask_blend_ps(0xF303, a.values, b.values);
+      case 210:
+        return _mm512_mask_blend_ps(0xF30C, a.values, b.values);
+      case 211:
+        return _mm512_mask_blend_ps(0xF30F, a.values, b.values);
+      case 212:
+        return _mm512_mask_blend_ps(0xF330, a.values, b.values);
+      case 213:
+        return _mm512_mask_blend_ps(0xF333, a.values, b.values);
+      case 214:
+        return _mm512_mask_blend_ps(0XF33C, a.values, b.values);
+      case 215:
+        return _mm512_mask_blend_ps(0xF33F, a.values, b.values);
+      case 216:
+        return _mm512_mask_blend_ps(0xF3C0, a.values, b.values);
+      case 217:
+        return _mm512_mask_blend_ps(0xF3C3, a.values, b.values);
+      case 218:
+        return _mm512_mask_blend_ps(0xF3CC, a.values, b.values);
+      case 219:
+        return _mm512_mask_blend_ps(0xF3CF, a.values, b.values);
+      case 220:
+        return _mm512_mask_blend_ps(0xF3F0, a.values, b.values);
+      case 221:
+        return _mm512_mask_blend_ps(0xF3F3, a.values, b.values);
+      case 222:
+        return _mm512_mask_blend_ps(0xF3FC, a.values, b.values);
+      case 223:
+        return _mm512_mask_blend_ps(0XF3FF, a.values, b.values);
+      case 224:
+        return _mm512_mask_blend_ps(0xFC00, a.values, b.values);
+      case 225:
+        return _mm512_mask_blend_ps(0xFC03, a.values, b.values);
+      case 226:
+        return _mm512_mask_blend_ps(0xFC0C, a.values, b.values);
+      case 227:
+        return _mm512_mask_blend_ps(0xFC0F, a.values, b.values);
+      case 228:
+        return _mm512_mask_blend_ps(0xFC30, a.values, b.values);
+      case 229:
+        return _mm512_mask_blend_ps(0xFC33, a.values, b.values);
+      case 230:
+        return _mm512_mask_blend_ps(0xFC3C, a.values, b.values);
+      case 231:
+        return _mm512_mask_blend_ps(0xFC3F, a.values, b.values);
+      case 232:
+        return _mm512_mask_blend_ps(0xFCC0, a.values, b.values);
+      case 233:
+        return _mm512_mask_blend_ps(0xFCC3, a.values, b.values);
+      case 234:
+        return _mm512_mask_blend_ps(0xFCCC, a.values, b.values);
+      case 235:
+        return _mm512_mask_blend_ps(0xFCCF, a.values, b.values);
+      case 236:
+        return _mm512_mask_blend_ps(0xFCF0, a.values, b.values);
+      case 237:
+        return _mm512_mask_blend_ps(0xFCF3, a.values, b.values);
+      case 238:
+        return _mm512_mask_blend_ps(0xFCFC, a.values, b.values);
+      case 239:
+        return _mm512_mask_blend_ps(0xFCFF, a.values, b.values);
+      case 240:
+        return _mm512_mask_blend_ps(0xFF00, a.values, b.values);
+      case 241:
+        return _mm512_mask_blend_ps(0xFF03, a.values, b.values);
+      case 242:
+        return _mm512_mask_blend_ps(0xFF0C, a.values, b.values);
+      case 243:
+        return _mm512_mask_blend_ps(0xFF0F, a.values, b.values);
+      case 244:
+        return _mm512_mask_blend_ps(0xFF30, a.values, b.values);
+      case 245:
+        return _mm512_mask_blend_ps(0xFF33, a.values, b.values);
+      case 246:
+        return _mm512_mask_blend_ps(0xFF3C, a.values, b.values);
+      case 247:
+        return _mm512_mask_blend_ps(0xFF3F, a.values, b.values);
+      case 248:
+        return _mm512_mask_blend_ps(0xFFC0, a.values, b.values);
+      case 249:
+        return _mm512_mask_blend_ps(0xFFC3, a.values, b.values);
+      case 250:
+        return _mm512_mask_blend_ps(0xFFCC, a.values, b.values);
+      case 251:
+        return _mm512_mask_blend_ps(0xFFCF, a.values, b.values);
+      case 252:
+        return _mm512_mask_blend_ps(0xFFF0, a.values, b.values);
+      case 253:
+        return _mm512_mask_blend_ps(0xFFF3, a.values, b.values);
+      case 254:
+        return _mm512_mask_blend_ps(0xFFFC, a.values, b.values);
+      default:
+        break;
+    }
+    return b;
+  }
+  static Vectorized&lt;c10::complex&lt;float&gt;&gt; blendv(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; a,
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; b,
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; mask) {
+    // convert c10::complex&lt;V&gt; index mask to V index mask: xy -&gt; xxyy
+    auto mask_ = _mm512_unpacklo_ps(mask.values, mask.values);
+    auto all_ones = _mm512_set1_epi32(0xFFFFFFFF);
+    auto mmask = _mm512_cmp_epi32_mask(
+        _mm512_castps_si512(mask_), all_ones, _MM_CMPINT_EQ);
+    return _mm512_mask_blend_ps(mmask, a.values, b.values);
+  }
+  template &lt;typename step_t&gt;
+  static Vectorized&lt;c10::complex&lt;float&gt;&gt; arange(
+      c10::complex&lt;float&gt; base = 0.,
+      step_t step = static_cast&lt;step_t&gt;(1)) {
+    return Vectorized&lt;c10::complex&lt;float&gt;&gt;(
+        base,
+        base &#43; step,
+        base &#43; c10::complex&lt;float&gt;(2) * step,
+        base &#43; c10::complex&lt;float&gt;(3) * step,
+        base &#43; c10::complex&lt;float&gt;(4) * step,
+        base &#43; c10::complex&lt;float&gt;(5) * step,
+        base &#43; c10::complex&lt;float&gt;(6) * step,
+        base &#43; c10::complex&lt;float&gt;(7) * step);
+  }
+  static Vectorized&lt;c10::complex&lt;float&gt;&gt; set(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; a,
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; b,
+      int64_t count = size()) {
+    switch (count) {
+      case 0:
+        return a;
+      case 1:
+        return blend&lt;1&gt;(a, b);
+      case 2:
+        return blend&lt;3&gt;(a, b);
+      case 3:
+        return blend&lt;7&gt;(a, b);
+      case 4:
+        return blend&lt;15&gt;(a, b);
+      case 5:
+        return blend&lt;31&gt;(a, b);
+      case 6:
+        return blend&lt;63&gt;(a, b);
+      case 7:
+        return blend&lt;127&gt;(a, b);
+    }
+    return b;
+  }
+  static Vectorized&lt;c10::complex&lt;float&gt;&gt; loadu(
+      const void* ptr,
+      int64_t count = size()) {
+    if (count == size())
+      return _mm512_loadu_ps(reinterpret_cast&lt;const float*&gt;(ptr));
+
+    __at_align__ float tmp_values[2 * size()];
+    // Ensure uninitialized memory does not change the output value See
+    // https://github.com/pytorch/pytorch/issues/32502 for more details. We do
+    // not initialize arrays to zero using &#34;={0}&#34; because gcc would compile it
+    // to two instructions while a loop would be compiled to one instruction.
+    for (const auto i : c10::irange(2 * size())) {
+      tmp_values[i] = 0.0;
+    }
+    std::memcpy(
+        tmp_values,
+        reinterpret_cast&lt;const float*&gt;(ptr),
+        count * sizeof(c10::complex&lt;float&gt;));
+    return _mm512_load_ps(tmp_values);
+  }
+  void store(void* ptr, int count = size()) const {
+    if (count == size()) {
+      _mm512_storeu_ps(reinterpret_cast&lt;float*&gt;(ptr), values);
+    } else if (count &gt; 0) {
+      float tmp_values[2 * size()];
+      _mm512_storeu_ps(reinterpret_cast&lt;float*&gt;(tmp_values), values);
+      std::memcpy(ptr, tmp_values, count * sizeof(c10::complex&lt;float&gt;));
+    }
+  }
+  // AVX512 doesn&#39;t have horizontal add &amp; horizontal sub instructions.
+  // TODO: hadd_pd() &amp; hsub_pd() may have scope for improvement.
+  static inline __m512 hadd_ps(__m512 a, __m512 b) {
+    __m512i idx1 = _mm512_set_epi32(
+        30, 14, 28, 12, 26, 10, 24, 8, 22, 6, 20, 4, 18, 2, 16, 0);
+    __m512i idx2 = _mm512_set_epi32(
+        31, 15, 29, 13, 27, 11, 25, 9, 23, 7, 21, 5, 19, 3, 17, 1);
+    return _mm512_add_ps(
+        _mm512_mask_permutex2var_ps(a, 0xffff, idx1, b),
+        _mm512_mask_permutex2var_ps(a, 0xffff, idx2, b));
+  }
+  static inline __m512 hsub_ps(__m512 a, __m512 b) {
+    __m512i idx1 = _mm512_set_epi32(
+        30, 14, 28, 12, 26, 10, 24, 8, 22, 6, 20, 4, 18, 2, 16, 0);
+    __m512i idx2 = _mm512_set_epi32(
+        31, 15, 29, 13, 27, 11, 25, 9, 23, 7, 21, 5, 19, 3, 17, 1);
+    return _mm512_sub_ps(
+        _mm512_mask_permutex2var_ps(a, 0xffff, idx1, b),
+        _mm512_mask_permutex2var_ps(a, 0xffff, idx2, b));
+  }
+  const c10::complex&lt;float&gt;&amp; operator[](int idx) const = delete;
+  c10::complex&lt;float&gt;&amp; operator[](int idx) = delete;
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; map(
+      c10::complex&lt;float&gt; (*const f)(const c10::complex&lt;float&gt;&amp;)) const {
+    __at_align__ c10::complex&lt;float&gt; tmp[size()];
+    store(tmp);
+    for (const auto i : c10::irange(size())) {
+      tmp[i] = f(tmp[i]);
+    }
+    return loadu(tmp);
+  }
+  __m512 abs_2_() const {
+    auto val_2 = _mm512_mul_ps(values, values); // a*a     b*b
+    auto ret = hadd_ps(val_2, val_2); // a*a&#43;b*b a*a&#43;b*b
+    return ret;
+  }
+  __m512 abs_() const {
+    auto real = _mm512_moveldup_ps(values); // real real
+    auto imag = _mm512_movehdup_ps(values); // imag imag
+    return Sleef_hypotf16_u05(real, imag); // abs  abs
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; abs() const {
+    const __m512 real_mask = _mm512_castsi512_ps(_mm512_setr_epi32(
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000));
+    return _mm512_and_ps(abs_(), real_mask); // abs     0
+  }
+  __m512 angle_() const {
+    // angle = atan2(b/a)
+    auto b_a = _mm512_permute_ps(values, 0xB1); // b        a
+    return Sleef_atan2f16_u10(values, b_a); // 90-angle angle
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; angle() const {
+    const __m512 real_mask = _mm512_castsi512_ps(_mm512_setr_epi32(
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000));
+    auto angle = _mm512_permute_ps(angle_(), 0xB1); // angle    90-angle
+    return _mm512_and_ps(angle, real_mask); // angle    0
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; sgn() const {
+    auto abs = abs_();
+    auto zero = _mm512_setzero_ps();
+    auto mask = _mm512_cmp_ps_mask(abs, zero, _CMP_EQ_OQ);
+    auto div = _mm512_div_ps(values, abs);
+    return _mm512_mask_blend_ps(mask, div, zero);
+  }
+  __m512 real_() const {
+    const __m512 real_mask = _mm512_castsi512_ps(_mm512_setr_epi32(
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000));
+    return _mm512_and_ps(values, real_mask);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; real() const {
+    return real_();
+  }
+  __m512 imag_() const {
+    const __m512 imag_mask = _mm512_castsi512_ps(_mm512_setr_epi32(
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF,
+        0x00000000,
+        0xFFFFFFFF));
+    return _mm512_and_ps(values, imag_mask);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; imag() const {
+    return _mm512_permute_ps(imag_(), 0xB1); // b        a
+  }
+  __m512 conj_() const {
+    const __m512 sign_mask = _mm512_setr_ps(
+        0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0);
+    return _mm512_xor_ps(values, sign_mask); // a       -b
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; conj() const {
+    return conj_();
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; log() const {
+    // Most trigonomic ops use the log() op to improve complex number
+    // performance.
+    return map(std::log);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; log2() const {
+    const __m512 log2_ = _mm512_set1_ps(std::log(2));
+    return _mm512_div_ps(log(), log2_);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; log10() const {
+    const __m512 log10_ = _mm512_set1_ps(std::log(10));
+    return _mm512_div_ps(log(), log10_);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; log1p() const {
+    return map(std::log1p);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; asin() const {
+    // TODO: The vectorized implementation requires special handling for the
+    // case where real number/imag number is 0/Inf/NaN.
+    // // asin(x)
+    // // = -i*ln(iz &#43; sqrt(1 -z^2))
+    // // = -i*ln((ai - b) &#43; sqrt(1 - (a &#43; bi)*(a &#43; bi)))
+    // // = -i*ln((-b &#43; ai) &#43; sqrt(1 - (a**2 - b**2) - 2*abi))
+    // const __m512 one = _mm512_set1_ps(1);
+
+    // auto conj = conj_();
+    // auto b_a = _mm512_permute_ps(conj, 0xB1);                         //-b a
+    // auto ab = _mm512_mul_ps(conj, b_a);                               //-ab
+    // -ab auto im = _mm512_add_ps(ab, ab); //-2ab      -2ab
+
+    // auto val_2 = _mm512_mul_ps(values, values);                       // a*a
+    // b*b auto re = hsub_ps(val_2, _mm512_permute_ps(val_2, 0xB1));  // a*a-b*b
+    // b*b-a*a re = _mm512_sub_ps(one, re);
+
+    // auto root = Vectorized(_mm512_mask_blend_ps(0xAAAA, re, im)).sqrt();
+    // //sqrt(re &#43; i*im) auto ln = Vectorized(_mm512_add_ps(b_a, root)).log();
+    // //ln(iz &#43; sqrt()) return Vectorized(_mm512_permute_ps(ln.values,
+    // 0xB1)).conj();         //-i*ln()
+    return map(std::asin);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; acos() const {
+    return map(std::acos);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; atan() const;
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; atanh() const {
+    return map(std::atanh);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; exp() const {
+    // TODO: The vectorized implementation requires special handling for the
+    // case where real number/imag number is 0/Inf/NaN.
+    // //exp(a &#43; bi)
+    // // = exp(a)*(cos(b) &#43; sin(b)i)
+    // auto exp = Sleef_expf16_u10(values); //exp(a)           exp(b) exp =
+    // _mm512_mask_blend_ps(0xAAAA, exp, _mm512_permute_ps(exp, 0xB1)); //exp(a)
+    // exp(a)
+
+    // auto sin_cos = Sleef_sincosf16_u10(values); //[sin(a), cos(a)] [sin(b),
+    // cos(b)] auto cos_sin = _mm512_mask_blend_ps(0xAAAA,
+    // _mm512_permute_ps(sin_cos.y, 0xB1),
+    //                                sin_cos.x);                  //cos(b)
+    //                                sin(b)
+    // return _mm512_mul_ps(exp, cos_sin);
+    return map(std::exp);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; exp2() const {
+    // Use identity 2**x = exp(log(2) * x)
+    const __m512 ln_2 = _mm512_set1_ps(c10::ln_2&lt;float&gt;);
+    Vectorized&lt;c10::complex&lt;float&gt;&gt; scaled_values = _mm512_mul_ps(values, ln_2);
+    return scaled_values.exp();
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; expm1() const {
+    return map(std::expm1);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; sin() const {
+    return map(std::sin);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; sinh() const {
+    return map(std::sinh);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; cos() const {
+    return map(std::cos);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; cosh() const {
+    return map(std::cosh);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; ceil() const {
+    return _mm512_ceil_ps(values);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; floor() const {
+    return _mm512_floor_ps(values);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; neg() const {
+    auto zero = _mm512_setzero_ps();
+    return _mm512_sub_ps(zero, values);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; round() const {
+    return _mm512_roundscale_ps(
+        values, (_MM_FROUND_TO_NEAREST_INT | _MM_FROUND_NO_EXC));
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; tan() const {
+    return map(std::tan);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; tanh() const {
+    return map(std::tanh);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; trunc() const {
+    return _mm512_roundscale_ps(
+        values, (_MM_FROUND_TO_ZERO | _MM_FROUND_NO_EXC));
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; sqrt() const {
+    return map(std::sqrt);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; reciprocal() const;
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; rsqrt() const {
+    return sqrt().reciprocal();
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; pow(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; exp) const {
+    __at_align__ c10::complex&lt;float&gt; x_tmp[size()];
+    __at_align__ c10::complex&lt;float&gt; y_tmp[size()];
+    store(x_tmp);
+    exp.store(y_tmp);
+    for (const auto i : c10::irange(size())) {
+      x_tmp[i] = std::pow(x_tmp[i], y_tmp[i]);
+    }
+    return loadu(x_tmp);
+  }
+  // Comparison using the _CMP_**_OQ predicate.
+  //   `O`: get false if an operand is NaN
+  //   `Q`: do not raise if an operand is NaN
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; operator==(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; other) const {
+    auto mask = _mm512_cmp_ps_mask(values, other.values, _CMP_EQ_OQ);
+    return _mm512_castsi512_ps(
+        _mm512_mask_set1_epi32(zero_vector, mask, 0xFFFFFFFF));
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; operator!=(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; other) const {
+    auto mask = _mm512_cmp_ps_mask(values, other.values, _CMP_NEQ_UQ);
+    return _mm512_castsi512_ps(
+        _mm512_mask_set1_epi32(zero_vector, mask, 0xFFFFFFFF));
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; operator&lt;(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; other [[maybe_unused]]) const {
+    TORCH_CHECK(false, &#34;not supported for complex numbers&#34;);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; operator&lt;=(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; other [[maybe_unused]]) const {
+    TORCH_CHECK(false, &#34;not supported for complex numbers&#34;);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; operator&gt;(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; other [[maybe_unused]]) const {
+    TORCH_CHECK(false, &#34;not supported for complex numbers&#34;);
+  }
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; operator&gt;=(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; other [[maybe_unused]]) const {
+    TORCH_CHECK(false, &#34;not supported for complex numbers&#34;);
+  }
+
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; eq(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; other) const;
+  Vectorized&lt;c10::complex&lt;float&gt;&gt; ne(
+      const Vectorized&lt;c10::complex&lt;float&gt;&gt;&amp; other) const;
+};</code></pre>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="https://github.com/GraphTechnologyDevelopers/pytorch/blob/main/aten/src/ATen/cpu/vec/vec512/vec512_complex_float.h#L25">View on GitHub</a></li></ul>
+    </div>
+    
+
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>
