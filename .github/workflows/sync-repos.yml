@@ -96,8 +96,8 @@ jobs:
                 "name": env(REPO_NAME),
                 "upstream": env(UPSTREAM),
                 "description": env(DESCRIPTION),
-                "pill": env(PILL),
-                "pill_class": env(PILL_CLASS)
+                "pill": strenv(PILL),
+                "pill_class": strenv(PILL_CLASS)
               }]' repos.yaml
             else
               # Append to Supermodel Open Source category (index 0)
@@ -108,8 +108,8 @@ jobs:
               yq -i '.categories[0].repos += [{
                 "name": env(REPO_NAME),
                 "description": env(DESCRIPTION),
-                "pill": env(PILL),
-                "pill_class": env(PILL_CLASS)
+                "pill": strenv(PILL),
+                "pill_class": strenv(PILL_CLASS)
               }]' repos.yaml
             fi
 

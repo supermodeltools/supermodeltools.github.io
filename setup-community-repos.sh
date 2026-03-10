@@ -4,45 +4,33 @@
 # Fork community repos into supermodeltools org, set up arch-docs workflow,
 # enable GitHub Pages, and trigger the first build.
 #
+# Community repos deploy arch-docs to GitHub Pages at supermodeltools.github.io/{repo}/
+# The central site proxies those paths via Cloudflare Pages _redirects.
+#
 # Prerequisites:
 #   - gh CLI authenticated with supermodeltools org admin access
-#   - SUPERMODEL_API_KEY environment variable set
+#   - SUPERMODEL_API_KEY is available as an org-level secret (no local env needed)
 #
 # Usage:
-#   SUPERMODEL_API_KEY=sk-... ./setup-community-repos.sh
+#   ./setup-community-repos.sh
 
 set -euo pipefail
 
-if [ -z "${SUPERMODEL_API_KEY:-}" ]; then
-  echo "Error: SUPERMODEL_API_KEY environment variable is required"
-  exit 1
-fi
-
 ORG="supermodeltools"
 
+# Community repos from repos.yaml (upstream → fork name)
 REPOS=(
-  "facebook/react"
-  "vercel/next.js"
   "vuejs/vue"
-  "sveltejs/svelte"
-  "expressjs/express"
-  "fastify/fastify"
-  "pallets/flask"
-  "django/django"
-  "golang/go"
-  "rust-lang/rust"
-  "denoland/deno"
   "oven-sh/bun"
-  "langchain-ai/langchain"
-  "huggingface/transformers"
-  "anthropics/anthropic-sdk-python"
+  "tiangolo/fastapi"
+  "gin-gonic/gin"
+  "spring-projects/spring-boot"
+  "pytorch/pytorch"
   "supabase/supabase"
-  "drizzle-team/drizzle-orm"
   "tailwindlabs/tailwindcss"
-  "shadcn-ui/ui"
-  "astro-build/astro"
 )
 
+# GitHub Pages deployment workflow (no BOT_TOKEN needed)
 WORKFLOW_CONTENT='name: Architecture Docs
 
 on:
@@ -52,10 +40,19 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -65,27 +62,14 @@ jobs:
           supermodel-api-key: ${{ secrets.SUPERMODEL_API_KEY }}
           base-url: https://repos.supermodeltools.com
 
-      - name: Deploy to central site
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          REPO_NAME: ${{ github.event.repository.name }}
-        run: |
-          git config --global user.name "supermodel-bot"
-          git config --global user.email "bot@supermodeltools.com"
-          git clone https://x-access-token:${BOT_TOKEN}@github.com/GraphTechnologyDevelopers/graphtechnologydevelopers.github.io.git central-site
-          rm -rf central-site/site/${REPO_NAME}
-          mkdir -p central-site/site/${REPO_NAME}
-          cp -r arch-docs-output/. central-site/site/${REPO_NAME}/
-          cd central-site
-          git add site/${REPO_NAME}/
-          git diff --staged --quiet && echo "No changes" && exit 0
-          git commit -m "Deploy arch-docs for ${REPO_NAME}"
-          for i in 1 2 3 4 5; do
-            git push && break
-            echo "Push failed, retrying in ${i}0s..."
-            sleep $((i * 10))
-            git pull --rebase origin main
-          done'
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./arch-docs-output
+
+      - uses: actions/deploy-pages@v4
+        id: deploy'
 
 for UPSTREAM in "${REPOS[@]}"; do
   REPO_NAME="${UPSTREAM##*/}"
@@ -99,20 +83,16 @@ for UPSTREAM in "${REPOS[@]}"; do
   else
     echo "  Forking ${UPSTREAM} into ${ORG}..."
     gh repo fork "${UPSTREAM}" --org "${ORG}" --clone=false
-    sleep 2
+    sleep 3
   fi
 
-  # 2. Set the SUPERMODEL_API_KEY secret
-  echo "  Setting SUPERMODEL_API_KEY secret..."
-  gh secret set SUPERMODEL_API_KEY --repo "${FORK}" --body "${SUPERMODEL_API_KEY}"
-
-  # 3. Detect default branch
+  # 2. Detect default branch
   DEFAULT_BRANCH=$(gh api "repos/${FORK}" --jq '.default_branch')
   echo "  Default branch: ${DEFAULT_BRANCH}"
 
-  # 4. Push the arch-docs workflow file
+  # 3. Push the arch-docs workflow file
   echo "  Creating arch-docs workflow..."
-  ENCODED=$(echo -n "${WORKFLOW_CONTENT}" | base64)
+  ENCODED=$(printf '%s' "${WORKFLOW_CONTENT}" | base64 | tr -d '\n')
 
   # Check if workflow already exists
   EXISTING_SHA=$(gh api "repos/${FORK}/contents/.github/workflows/arch-docs.yml" --jq '.sha' 2>/dev/null || echo "")
@@ -132,7 +112,7 @@ for UPSTREAM in "${REPOS[@]}"; do
       --silent
   fi
 
-  # 5. Enable GitHub Pages with Actions as source
+  # 4. Enable GitHub Pages with Actions as source
   echo "  Enabling GitHub Pages..."
   gh api --method POST "repos/${FORK}/pages" \
     -f build_type="workflow" \
@@ -142,14 +122,16 @@ for UPSTREAM in "${REPOS[@]}"; do
     --silent 2>/dev/null || \
   echo "  (Pages may already be configured)"
 
-  # 6. Trigger the workflow
+  # 5. Trigger the workflow
   echo "  Triggering arch-docs workflow..."
+  sleep 2  # brief pause for workflow file to propagate
   gh workflow run arch-docs.yml --repo "${FORK}" --ref "${DEFAULT_BRANCH}" 2>/dev/null || \
-    echo "  (Workflow trigger may need a moment, try manually if needed)"
+    echo "  (Workflow trigger may need a moment — trigger manually if needed)"
 
   echo "  Done: ${FORK}"
   echo ""
 done
 
 echo "=== All community repos set up! ==="
-echo "Docs will deploy at repos.supermodeltools.com/{repo}/ as workflows complete."
+echo "Arch-docs will deploy to supermodeltools.github.io/{repo}/ as workflows complete."
+echo "The central site at repos.supermodeltools.com/{repo}/ will proxy there via _redirects."

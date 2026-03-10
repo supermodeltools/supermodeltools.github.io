@@ -59,6 +59,13 @@ func main() {
 		os.Exit(1)
 	}
 
+	// generateRedirects must run before generateRepoPages so placeholder
+	// index.html files don't exist yet when we check for local arch-docs.
+	if err := generateRedirects(cfg); err != nil {
+		fmt.Fprintf(os.Stderr, "Error generating _redirects: %v\n", err)
+		os.Exit(1)
+	}
+
 	if err := generateRepoPages(cfg); err != nil {
 		fmt.Fprintf(os.Stderr, "Error generating repo pages: %v\n", err)
 		os.Exit(1)
@@ -139,6 +146,27 @@ func generateRepoPages(cfg Config) error {
 		}
 	}
 	return nil
+}
+
+func generateRedirects(cfg Config) error {
+	var b strings.Builder
+	for _, cat := range cfg.Categories {
+		for _, repo := range cat.Repos {
+			if repo.Upstream == "" {
+				continue // supermodel repos use centralized site/ subdirectories
+			}
+			// Check if arch-docs are already deployed locally (centralized approach)
+			if _, err := os.Stat(fmt.Sprintf("site/%s/index.html", url.PathEscape(repo.Name))); err == nil {
+				continue // has local arch-docs, no proxy needed
+			}
+			b.WriteString(fmt.Sprintf("/%s/* https://supermodeltools.github.io/%s/:splat 200\n",
+				url.PathEscape(repo.Name), url.PathEscape(repo.Name)))
+		}
+	}
+	if b.Len() == 0 {
+		return nil
+	}
+	return os.WriteFile("site/_redirects", []byte(b.String()), 0644)
 }
 
 func generateIndex(cfg Config) error {
