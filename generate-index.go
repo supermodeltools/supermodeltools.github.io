@@ -163,7 +163,7 @@ func generateRedirects(cfg Config) error {
 			if _, err := os.Stat(fmt.Sprintf("site/%s/index.html", url.PathEscape(repo.Name))); err == nil {
 				continue // has local arch-docs, no proxy needed
 			}
-			b.WriteString(fmt.Sprintf("/%s/* https://graphtechnologydevelopers.github.io/%s/:splat 200\n",
+			b.WriteString(fmt.Sprintf("/%s/* https://graphtechnologydevelopers.github.io/%s/:splat 302\n",
 				url.PathEscape(repo.Name), url.PathEscape(repo.Name)))
 		}
 	}
