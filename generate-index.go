@@ -117,7 +117,7 @@ func generateRepoPages(cfg Config) error {
 			return fmt.Sprintf("https://img.shields.io/github/stars/%s?style=flat&logo=github&color=818cf8&labelColor=1a1d27", upstream)
 		},
 		"archDocsURL": func(name string) string {
-			return fmt.Sprintf("https://supermodeltools.github.io/%s/", url.PathEscape(name))
+			return fmt.Sprintf("https://graphtechnologydevelopers.github.io/%s/", url.PathEscape(name))
 		},
 	}).Parse(repoTemplate)
 	if err != nil {
@@ -159,7 +159,7 @@ func generateRedirects(cfg Config) error {
 			if _, err := os.Stat(fmt.Sprintf("site/%s/index.html", url.PathEscape(repo.Name))); err == nil {
 				continue // has local arch-docs, no proxy needed
 			}
-			b.WriteString(fmt.Sprintf("/%s/* https://supermodeltools.github.io/%s/:splat 200\n",
+			b.WriteString(fmt.Sprintf("/%s/* https://graphtechnologydevelopers.github.io/%s/:splat 200\n",
 				url.PathEscape(repo.Name), url.PathEscape(repo.Name)))
 		}
 	}
