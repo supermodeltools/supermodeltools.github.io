@@ -127,6 +127,10 @@ func generateRepoPages(cfg Config) error {
 	for _, cat := range cfg.Categories {
 		for _, repo := range cat.Repos {
 			dir := fmt.Sprintf("site/%s", url.PathEscape(repo.Name))
+			// Skip community repos that have proxy rules in _redirects (upstream set)
+			if repo.Upstream != "" {
+				continue
+			}
 			// Skip if arch-docs have already been deployed to this directory
 			if _, err := os.Stat(fmt.Sprintf("%s/index.html", dir)); err == nil {
 				continue
