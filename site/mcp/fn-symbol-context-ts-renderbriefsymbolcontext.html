@@ -4,25 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow">
-<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
-<link rel="manifest" href="/manifest.json">
+<link rel="alternate" type="application/rss+xml" title="" href="/mcp/feed.xml">
+<link rel="manifest" href="/mcp/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
 
 <title>renderBriefSymbolContext() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the renderBriefSymbolContext() function in symbol-context.ts from the mcp codebase.">
-<link rel="canonical" href="https://repos.supermodeltools.com/fn-symbol-context-ts-renderbriefsymbolcontext/">
+<link rel="canonical" href="https://repos.supermodeltools.com/mcp/fn-symbol-context-ts-renderbriefsymbolcontext/">
 <meta property="og:title" content="renderBriefSymbolContext() — mcp Function Reference — mcp Architecture Docs">
 <meta property="og:description" content="Architecture documentation for the renderBriefSymbolContext() function in symbol-context.ts from the mcp codebase.">
-<meta property="og:url" content="https://repos.supermodeltools.com/fn-symbol-context-ts-renderbriefsymbolcontext.html">
-<meta property="og:image" content="https://repos.supermodeltools.com/images/share/fn-symbol-context-ts-renderbriefsymbolcontext.svg">
+<meta property="og:url" content="https://repos.supermodeltools.com/mcp/fn-symbol-context-ts-renderbriefsymbolcontext.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/mcp/images/share/fn-symbol-context-ts-renderbriefsymbolcontext.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="mcp Architecture Docs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="renderBriefSymbolContext() — mcp Function Reference — mcp Architecture Docs">
 <meta name="twitter:description" content="Architecture documentation for the renderBriefSymbolContext() function in symbol-context.ts from the mcp codebase.">
-<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-symbol-context-ts-renderbriefsymbolcontext.svg">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/mcp/images/share/fn-symbol-context-ts-renderbriefsymbolcontext.svg">
 
 <style>:root {
   --bg: #000000;
@@ -856,15 +856,15 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the renderBriefSymbolContext() function in symbol-context.ts from the mcp codebase.","image":["https://repos.supermodeltools.com/images/share/fn-symbol-context-ts-renderbriefsymbolcontext.svg"],"name":"renderBriefSymbolContext() — mcp Function Reference","url":"https://repos.supermodeltools.com/fn-symbol-context-ts-renderbriefsymbolcontext.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"renderBriefSymbolContext() — mcp Function Reference","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for the renderBriefSymbolContext() function in symbol-context.ts from the mcp codebase.","image":["https://repos.supermodeltools.com/mcp/images/share/fn-symbol-context-ts-renderbriefsymbolcontext.svg"],"name":"renderBriefSymbolContext() — mcp Function Reference","url":"https://repos.supermodeltools.com/mcp/fn-symbol-context-ts-renderbriefsymbolcontext.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/mcp/","name":"Home","position":1},{"@type":"ListItem","name":"renderBriefSymbolContext() — mcp Function Reference","position":2}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"renderBriefSymbolContext() is a function in the mcp codebase."},"name":"What does renderBriefSymbolContext() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"renderBriefSymbolContext() calls 3 function(s): findDomain, get, normalizePath."},"name":"What does renderBriefSymbolContext() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"renderBriefSymbolContext() is called by 3 function(s): annotateHandler, handler, searchSymbolHandler."},"name":"What calls renderBriefSymbolContext()?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
-    <a href="/" class="site-brand">
+    <a href="/mcp/" class="site-brand">
       <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
       </svg>
@@ -872,10 +872,10 @@ a.pill:hover {
     </a>
     <nav class="site-nav">
       <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
-      <a href="/node_type/index.html">By Type</a>
-      <a href="/domain/index.html">Domains</a>
-      <a href="/language/index.html">Languages</a>
-      <a href="/tags/index.html">Tags</a>
+      <a href="/mcp/node_type/index.html">By Type</a>
+      <a href="/mcp/domain/index.html">Domains</a>
+      <a href="/mcp/language/index.html">Languages</a>
+      <a href="/mcp/tags/index.html">Tags</a>
       <button class="search-toggle" aria-label="Search" type="button">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         <kbd class="search-kbd">/</kbd>
@@ -905,19 +905,19 @@ a.pill:hover {
   <div class="container">
     <div class="entity-header">
       <div class="entity-breadcrumb">
-        <a href="/">Home</a>
+        <a href="/mcp/">Home</a>
         <span class="sep">/</span>
-        <a href="/node_type/function.html">Function</a><span class="sep">/</span>
+        <a href="/mcp/node_type/function.html">Function</a><span class="sep">/</span>
         <span>renderBriefSymbolContext() — mcp Function Reference</span>
       </div>
       <h1 class="entity-title">renderBriefSymbolContext() — mcp Function Reference</h1>
       <p class="entity-desc">Architecture documentation for the renderBriefSymbolContext() function in symbol-context.ts from the mcp codebase.</p>
 
       <div class="entity-meta">
-        <a href="/node_type/function.html" class="pill pill-accent">Function</a>
-        <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
-        <a href="/subdomain/symbolresolver.html" class="pill pill-orange">SymbolResolver</a>
+        <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
+        <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
+        <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
+        <a href="/mcp/subdomain/symbolfinder.html" class="pill pill-orange">SymbolFinder</a>
         
         
         <span class="pill">calls 3</span>
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"renderBriefSymbolContext","slug":"fn-symbol-context-ts-renderbriefsymbolcontext","type":"Function"},"subdomain":{"name":"SymbolResolver","slug":"subdomain-symbolresolver"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"renderBriefSymbolContext","slug":"fn-symbol-context-ts-renderbriefsymbolcontext","type":"Function"},"subdomain":{"name":"SymbolFinder","slug":"subdomain-symbolfinder"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/symbolresolver.html">SymbolResolver</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/symbolfinder.html">SymbolFinder</a><span class="arch-sep">&rarr;</span>
             <span>renderBriefSymbolContext() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,20 +958,20 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3c2b8095_89ae_acde_d8c4_d9dab5903600["renderBriefSymbolContext()"]
-  2a595b44_25c7_795b_510d_9c9ee7ac4347["handler()"]
-  2a595b44_25c7_795b_510d_9c9ee7ac4347 -->|calls| 3c2b8095_89ae_acde_d8c4_d9dab5903600
-  5786725b_034c_5237_5799_9987d81d1610["searchSymbolHandler()"]
-  5786725b_034c_5237_5799_9987d81d1610 -->|calls| 3c2b8095_89ae_acde_d8c4_d9dab5903600
-  a564be20_edc5_3974_ff53_308e1f964add["annotateHandler()"]
-  a564be20_edc5_3974_ff53_308e1f964add -->|calls| 3c2b8095_89ae_acde_d8c4_d9dab5903600
-  af48a3ca_1a69_78d6_2fe9_f31111024322["normalizePath()"]
-  3c2b8095_89ae_acde_d8c4_d9dab5903600 -->|calls| af48a3ca_1a69_78d6_2fe9_f31111024322
-  a5991db7_226e_e22d_ec7c_a19a47dee236["findDomain()"]
-  3c2b8095_89ae_acde_d8c4_d9dab5903600 -->|calls| a5991db7_226e_e22d_ec7c_a19a47dee236
-  01688032_19ea_4a31_0b07_71cfbcd9d2f7["get()"]
-  3c2b8095_89ae_acde_d8c4_d9dab5903600 -->|calls| 01688032_19ea_4a31_0b07_71cfbcd9d2f7
-  style 3c2b8095_89ae_acde_d8c4_d9dab5903600 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a2b602b5_8e4f_929d_3901_0be076dbe176["renderBriefSymbolContext()"]
+  f462cbf5_0dcc_1fcc_1ea8_ee917b60f51c["handler()"]
+  f462cbf5_0dcc_1fcc_1ea8_ee917b60f51c -->|calls| a2b602b5_8e4f_929d_3901_0be076dbe176
+  97beea66_6da7_6648_911d_e0866cf7cebd["searchSymbolHandler()"]
+  97beea66_6da7_6648_911d_e0866cf7cebd -->|calls| a2b602b5_8e4f_929d_3901_0be076dbe176
+  fc81b391_637d_3250_d934_3e2071411ef3["annotateHandler()"]
+  fc81b391_637d_3250_d934_3e2071411ef3 -->|calls| a2b602b5_8e4f_929d_3901_0be076dbe176
+  4737e74b_41b9_f756_3670_dc736965e0c9["normalizePath()"]
+  a2b602b5_8e4f_929d_3901_0be076dbe176 -->|calls| 4737e74b_41b9_f756_3670_dc736965e0c9
+  c696de39_aa66_bc1b_7daf_ef97ef514be2["findDomain()"]
+  a2b602b5_8e4f_929d_3901_0be076dbe176 -->|calls| c696de39_aa66_bc1b_7daf_ef97ef514be2
+  f91c0231_081d_e8d8_a233_ddd0694115fd["get()"]
+  a2b602b5_8e4f_929d_3901_0be076dbe176 -->|calls| f91c0231_081d_e8d8_a233_ddd0694115fd
+  style a2b602b5_8e4f_929d_3901_0be076dbe176 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -979,7 +979,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-symbol-context-ts-renderbriefsymbolcontext"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3c2b8095:89ae:acde:d8c4:d9dab5903600","label":"renderBriefSymbolContext","type":"Function","slug":"fn-symbol-context-ts-renderbriefsymbolcontext","lc":45,"lang":"typescript","cc":3,"cbc":3},{"id":"af48a3ca:1a69:78d6:2fe9:f31111024322","label":"normalizePath","type":"Function","slug":"fn-graph-cache-ts-normalizepath","lc":3,"lang":"typescript","cbc":10},{"id":"a5991db7:226e:e22d:ec7c:a19a47dee236","label":"findDomain","type":"Function","slug":"fn-symbol-context-ts-finddomain","lc":8,"lang":"typescript","cbc":2},{"id":"01688032:19ea:4a31:0b07:71cfbcd9d2f7","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"2a595b44:25c7:795b:510d:9c9ee7ac4347","label":"handler","type":"Function","slug":"fn-symbol-context-ts-handler","lc":80,"lang":"typescript","cc":7,"cbc":1},{"id":"5786725b:034c:5237:5799:9987d81d1610","label":"searchSymbolHandler","type":"Function","slug":"fn-tool-variants-ts-searchsymbolhandler","lc":35,"lang":"typescript","cc":5},{"id":"a564be20:edc5:3974:ff53:308e1f964add","label":"annotateHandler","type":"Function","slug":"fn-tool-variants-ts-annotatehandler","lc":33,"lang":"typescript","cc":5},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:SymbolResolver","label":"SymbolResolver","type":"Subdomain","slug":"subdomain-symbolresolver"}],"edges":[{"source":"3c2b8095:89ae:acde:d8c4:d9dab5903600","target":"af48a3ca:1a69:78d6:2fe9:f31111024322","type":"calls"},{"source":"3c2b8095:89ae:acde:d8c4:d9dab5903600","target":"a5991db7:226e:e22d:ec7c:a19a47dee236","type":"calls"},{"source":"3c2b8095:89ae:acde:d8c4:d9dab5903600","target":"01688032:19ea:4a31:0b07:71cfbcd9d2f7","type":"calls"},{"source":"2a595b44:25c7:795b:510d:9c9ee7ac4347","target":"3c2b8095:89ae:acde:d8c4:d9dab5903600","type":"calls"},{"source":"5786725b:034c:5237:5799:9987d81d1610","target":"3c2b8095:89ae:acde:d8c4:d9dab5903600","type":"calls"},{"source":"a564be20:edc5:3974:ff53:308e1f964add","target":"3c2b8095:89ae:acde:d8c4:d9dab5903600","type":"calls"},{"source":"3c2b8095:89ae:acde:d8c4:d9dab5903600","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"3c2b8095:89ae:acde:d8c4:d9dab5903600","target":"subdomain:AnalysisTools:SymbolResolver","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a2b602b5:8e4f:929d:3901:0be076dbe176","label":"renderBriefSymbolContext","type":"Function","slug":"fn-symbol-context-ts-renderbriefsymbolcontext","lc":45,"lang":"typescript","cc":3,"cbc":3},{"id":"4737e74b:41b9:f756:3670:dc736965e0c9","label":"normalizePath","type":"Function","slug":"fn-graph-cache-ts-normalizepath","lc":3,"lang":"typescript","cbc":10},{"id":"c696de39:aa66:bc1b:7daf:ef97ef514be2","label":"findDomain","type":"Function","slug":"fn-symbol-context-ts-finddomain","lc":8,"lang":"typescript","cbc":2},{"id":"f91c0231:081d:e8d8:a233:ddd0694115fd","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"f462cbf5:0dcc:1fcc:1ea8:ee917b60f51c","label":"handler","type":"Function","slug":"fn-symbol-context-ts-handler","lc":80,"lang":"typescript","cc":7,"cbc":1},{"id":"97beea66:6da7:6648:911d:e0866cf7cebd","label":"searchSymbolHandler","type":"Function","slug":"fn-tool-variants-ts-searchsymbolhandler","lc":35,"lang":"typescript","cc":5},{"id":"fc81b391:637d:3250:d934:3e2071411ef3","label":"annotateHandler","type":"Function","slug":"fn-tool-variants-ts-annotatehandler","lc":33,"lang":"typescript","cc":5},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:SymbolFinder","label":"SymbolFinder","type":"Subdomain","slug":"subdomain-symbolfinder"}],"edges":[{"source":"a2b602b5:8e4f:929d:3901:0be076dbe176","target":"4737e74b:41b9:f756:3670:dc736965e0c9","type":"calls"},{"source":"a2b602b5:8e4f:929d:3901:0be076dbe176","target":"c696de39:aa66:bc1b:7daf:ef97ef514be2","type":"calls"},{"source":"a2b602b5:8e4f:929d:3901:0be076dbe176","target":"f91c0231:081d:e8d8:a233:ddd0694115fd","type":"calls"},{"source":"f462cbf5:0dcc:1fcc:1ea8:ee917b60f51c","target":"a2b602b5:8e4f:929d:3901:0be076dbe176","type":"calls"},{"source":"97beea66:6da7:6648:911d:e0866cf7cebd","target":"a2b602b5:8e4f:929d:3901:0be076dbe176","type":"calls"},{"source":"fc81b391:637d:3250:d934:3e2071411ef3","target":"a2b602b5:8e4f:929d:3901:0be076dbe176","type":"calls"},{"source":"a2b602b5:8e4f:929d:3901:0be076dbe176","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"a2b602b5:8e4f:929d:3901:0be076dbe176","target":"subdomain:AnalysisTools:SymbolFinder","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1045,14 +1045,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-analysistools.html">AnalysisTools</a></li></ul>
+      <ul><li><a href="/mcp/domain-analysistools.html">AnalysisTools</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-symbolresolver.html">SymbolResolver</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-symbolfinder.html">SymbolFinder</a></li></ul>
     </div>
     
 
@@ -1071,14 +1071,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Calls</h2>
-      <ul><li><a href="/fn-symbol-context-ts-finddomain.html">findDomain()</a></li><li><a href="/fn-graph-cache-ts-get.html">get()</a></li><li><a href="/fn-graph-cache-ts-normalizepath.html">normalizePath()</a></li></ul>
+      <ul><li><a href="/mcp/fn-symbol-context-ts-finddomain.html">findDomain()</a></li><li><a href="/mcp/fn-graph-cache-ts-get.html">get()</a></li><li><a href="/mcp/fn-graph-cache-ts-normalizepath.html">normalizePath()</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Called By</h2>
-      <ul><li><a href="/fn-tool-variants-ts-annotatehandler.html">annotateHandler()</a></li><li><a href="/fn-symbol-context-ts-handler.html">handler()</a></li><li><a href="/fn-tool-variants-ts-searchsymbolhandler.html">searchSymbolHandler()</a></li></ul>
+      <ul><li><a href="/mcp/fn-tool-variants-ts-annotatehandler.html">annotateHandler()</a></li><li><a href="/mcp/fn-symbol-context-ts-handler.html">handler()</a></li><li><a href="/mcp/fn-tool-variants-ts-searchsymbolhandler.html">searchSymbolHandler()</a></li></ul>
     </div>
     
 
@@ -1138,6 +1138,6 @@ a.pill:hover {
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-<script src="/main.js"></script>
+<script src="/mcp/main.js"></script>
 </body>
 </html>
