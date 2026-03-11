@@ -916,8 +916,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/analysismodels.html" class="pill pill-green">AnalysisModels</a>
-        <a href="/typescript-sdk/subdomain/metadatasummary.html" class="pill pill-orange">MetadataSummary</a>
+        <a href="/typescript-sdk/domain/codegraphstore.html" class="pill pill-green">CodeGraphStore</a>
+        <a href="/typescript-sdk/subdomain/graphnodes.html" class="pill pill-orange">GraphNodes</a>
         
         
         <span class="pill">calls 1</span>
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisModels","slug":"domain-analysismodels"},"entity":{"name":"UntestedFunctionFromJSONTyped","slug":"fn-untestedfunction-ts-untestedfunctionfromjsontyped","type":"Function"},"subdomain":{"name":"MetadataSummary","slug":"subdomain-metadatasummary"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeGraphStore","slug":"domain-codegraphstore"},"entity":{"name":"UntestedFunctionFromJSONTyped","slug":"fn-untestedfunction-ts-untestedfunctionfromjsontyped","type":"Function"},"subdomain":{"name":"GraphNodes","slug":"subdomain-graphnodes"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/analysismodels.html">AnalysisModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/metadatasummary.html">MetadataSummary</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/codegraphstore.html">CodeGraphStore</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/graphnodes.html">GraphNodes</a><span class="arch-sep">&rarr;</span>
             <span>UntestedFunctionFromJSONTyped() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -958,12 +958,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  7d4c4bb2_be08_4278_a3b0_03d7d7308fae["UntestedFunctionFromJSONTyped()"]
-  89a739ac_2125_c4c8_6d50_c9b58172629b["UntestedFunctionFromJSON()"]
-  89a739ac_2125_c4c8_6d50_c9b58172629b -->|calls| 7d4c4bb2_be08_4278_a3b0_03d7d7308fae
-  78b2bf12_5482_ad44_928e_00bf81942096["NearestTestedCallerFromJSON()"]
-  7d4c4bb2_be08_4278_a3b0_03d7d7308fae -->|calls| 78b2bf12_5482_ad44_928e_00bf81942096
-  style 7d4c4bb2_be08_4278_a3b0_03d7d7308fae fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  96820d70_2e1d_6476_4154_24d9abc8056b["UntestedFunctionFromJSONTyped()"]
+  e22e7703_9764_d058_5677_1a2f0b183733["UntestedFunctionFromJSON()"]
+  e22e7703_9764_d058_5677_1a2f0b183733 -->|calls| 96820d70_2e1d_6476_4154_24d9abc8056b
+  f9f2cb2a_6801_0be0_9f73_cce7d7465979["NearestTestedCallerFromJSON()"]
+  96820d70_2e1d_6476_4154_24d9abc8056b -->|calls| f9f2cb2a_6801_0be0_9f73_cce7d7465979
+  style 96820d70_2e1d_6476_4154_24d9abc8056b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -971,7 +971,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-untestedfunction-ts-untestedfunctionfromjsontyped"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"7d4c4bb2:be08:4278:a3b0:03d7d7308fae","label":"UntestedFunctionFromJSONTyped","type":"Function","slug":"fn-untestedfunction-ts-untestedfunctionfromjsontyped","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"78b2bf12:5482:ad44:928e:00bf81942096","label":"NearestTestedCallerFromJSON","type":"Function","slug":"fn-nearesttestedcaller-ts-nearesttestedcallerfromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"89a739ac:2125:c4c8:6d50:c9b58172629b","label":"UntestedFunctionFromJSON","type":"Function","slug":"fn-untestedfunction-ts-untestedfunctionfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:AnalysisModels","label":"AnalysisModels","type":"Domain","slug":"domain-analysismodels"},{"id":"subdomain:AnalysisModels:MetadataSummary","label":"MetadataSummary","type":"Subdomain","slug":"subdomain-metadatasummary"}],"edges":[{"source":"7d4c4bb2:be08:4278:a3b0:03d7d7308fae","target":"78b2bf12:5482:ad44:928e:00bf81942096","type":"calls"},{"source":"89a739ac:2125:c4c8:6d50:c9b58172629b","target":"7d4c4bb2:be08:4278:a3b0:03d7d7308fae","type":"calls"},{"source":"7d4c4bb2:be08:4278:a3b0:03d7d7308fae","target":"domain:AnalysisModels","type":"belongsTo"},{"source":"7d4c4bb2:be08:4278:a3b0:03d7d7308fae","target":"subdomain:AnalysisModels:MetadataSummary","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"96820d70:2e1d:6476:4154:24d9abc8056b","label":"UntestedFunctionFromJSONTyped","type":"Function","slug":"fn-untestedfunction-ts-untestedfunctionfromjsontyped","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"f9f2cb2a:6801:0be0:9f73:cce7d7465979","label":"NearestTestedCallerFromJSON","type":"Function","slug":"fn-nearesttestedcaller-ts-nearesttestedcallerfromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"e22e7703:9764:d058:5677:1a2f0b183733","label":"UntestedFunctionFromJSON","type":"Function","slug":"fn-untestedfunction-ts-untestedfunctionfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:CodeGraphStore","label":"CodeGraphStore","type":"Domain","slug":"domain-codegraphstore"},{"id":"subdomain:CodeGraphStore:GraphNodes","label":"GraphNodes","type":"Subdomain","slug":"subdomain-graphnodes"}],"edges":[{"source":"96820d70:2e1d:6476:4154:24d9abc8056b","target":"f9f2cb2a:6801:0be0:9f73:cce7d7465979","type":"calls"},{"source":"e22e7703:9764:d058:5677:1a2f0b183733","target":"96820d70:2e1d:6476:4154:24d9abc8056b","type":"calls"},{"source":"96820d70:2e1d:6476:4154:24d9abc8056b","target":"domain:CodeGraphStore","type":"belongsTo"},{"source":"96820d70:2e1d:6476:4154:24d9abc8056b","target":"subdomain:CodeGraphStore:GraphNodes","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1009,14 +1009,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-analysismodels.html">AnalysisModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-codegraphstore.html">CodeGraphStore</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-metadatasummary.html">MetadataSummary</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-graphnodes.html">GraphNodes</a></li></ul>
     </div>
     
 
