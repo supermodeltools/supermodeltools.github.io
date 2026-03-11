@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/domain/graphcache.html" class="pill pill-green">GraphCache</a>
-        <a href="/subdomain/persistencemanager.html" class="pill pill-orange">PersistenceManager</a>
+        <a href="/subdomain/lrumanager.html" class="pill pill-orange">LRUManager</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"sanitizeFileName","slug":"fn-graph-cache-ts-sanitizefilename","type":"Function"},"subdomain":{"name":"PersistenceManager","slug":"subdomain-persistencemanager"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"sanitizeFileName","slug":"fn-graph-cache-ts-sanitizefilename","type":"Function"},"subdomain":{"name":"LRUManager","slug":"subdomain-lrumanager"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/graphcache.html">GraphCache</a><span class="arch-sep">&rarr;</span>
-            <a href="/persistencemanager.html">PersistenceManager</a><span class="arch-sep">&rarr;</span>
+            <a href="/lrumanager.html">LRUManager</a><span class="arch-sep">&rarr;</span>
             <span>sanitizeFileName() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  1a0d8f63_8b6d_228a_8a0c_2c61f9a7c844["sanitizeFileName()"]
-  8c01972e_1735_f575_3bea_791e39e4efe5["saveCacheToDisk()"]
-  8c01972e_1735_f575_3bea_791e39e4efe5 -->|calls| 1a0d8f63_8b6d_228a_8a0c_2c61f9a7c844
-  style 1a0d8f63_8b6d_228a_8a0c_2c61f9a7c844 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  e1650d69_56a6_94f3_b859_66d3ead9111d["sanitizeFileName()"]
+  ba1756db_dcbf_3406_486a_1122ab533dfa["saveCacheToDisk()"]
+  ba1756db_dcbf_3406_486a_1122ab533dfa -->|calls| e1650d69_56a6_94f3_b859_66d3ead9111d
+  style e1650d69_56a6_94f3_b859_66d3ead9111d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-sanitizefilename"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"1a0d8f63:8b6d:228a:8a0c:2c61f9a7c844","label":"sanitizeFileName","type":"Function","slug":"fn-graph-cache-ts-sanitizefilename","lc":3,"lang":"typescript","cbc":1},{"id":"8c01972e:1735:f575:3bea:791e39e4efe5","label":"saveCacheToDisk","type":"Function","slug":"fn-graph-cache-ts-savecachetodisk","lc":22,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:PersistenceManager","label":"PersistenceManager","type":"Subdomain","slug":"subdomain-persistencemanager"}],"edges":[{"source":"8c01972e:1735:f575:3bea:791e39e4efe5","target":"1a0d8f63:8b6d:228a:8a0c:2c61f9a7c844","type":"calls"},{"source":"1a0d8f63:8b6d:228a:8a0c:2c61f9a7c844","target":"domain:GraphCache","type":"belongsTo"},{"source":"1a0d8f63:8b6d:228a:8a0c:2c61f9a7c844","target":"subdomain:GraphCache:PersistenceManager","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"e1650d69:56a6:94f3:b859:66d3ead9111d","label":"sanitizeFileName","type":"Function","slug":"fn-graph-cache-ts-sanitizefilename","lc":3,"lang":"typescript","cbc":1},{"id":"ba1756db:dcbf:3406:486a:1122ab533dfa","label":"saveCacheToDisk","type":"Function","slug":"fn-graph-cache-ts-savecachetodisk","lc":22,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:LRUManager","label":"LRUManager","type":"Subdomain","slug":"subdomain-lrumanager"}],"edges":[{"source":"ba1756db:dcbf:3406:486a:1122ab533dfa","target":"e1650d69:56a6:94f3:b859:66d3ead9111d","type":"calls"},{"source":"e1650d69:56a6:94f3:b859:66d3ead9111d","target":"domain:GraphCache","type":"belongsTo"},{"source":"e1650d69:56a6:94f3:b859:66d3ead9111d","target":"subdomain:GraphCache:LRUManager","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -953,7 +953,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-persistencemanager.html">PersistenceManager</a></li></ul>
+      <ul><li><a href="/subdomain-lrumanager.html">LRUManager</a></li></ul>
     </div>
     
 

@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/repositoryutility.html" class="pill pill-green">RepositoryUtility</a>
-        <a href="/subdomain/archivemanager.html" class="pill pill-orange">ArchiveManager</a>
+        <a href="/domain/utilityservices.html" class="pill pill-green">UtilityServices</a>
+        <a href="/subdomain/repositoryarchiver.html" class="pill pill-orange">RepositoryArchiver</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtility","slug":"domain-repositoryutility"},"entity":{"name":"findGitignoreFiles","slug":"fn-zip-repository-ts-findgitignorefiles","type":"Function"},"subdomain":{"name":"ArchiveManager","slug":"subdomain-archivemanager"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"UtilityServices","slug":"domain-utilityservices"},"entity":{"name":"findGitignoreFiles","slug":"fn-zip-repository-ts-findgitignorefiles","type":"Function"},"subdomain":{"name":"RepositoryArchiver","slug":"subdomain-repositoryarchiver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/repositoryutility.html">RepositoryUtility</a><span class="arch-sep">&rarr;</span>
-            <a href="/archivemanager.html">ArchiveManager</a><span class="arch-sep">&rarr;</span>
+            <a href="/utilityservices.html">UtilityServices</a><span class="arch-sep">&rarr;</span>
+            <a href="/repositoryarchiver.html">RepositoryArchiver</a><span class="arch-sep">&rarr;</span>
             <span>findGitignoreFiles() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  685adf16_c6bb_93ad_7bef_4c9f12c5ec41["findGitignoreFiles()"]
-  a776435f_7af5_3230_478d_0b70ee170e96["buildIgnoreFilter()"]
-  a776435f_7af5_3230_478d_0b70ee170e96 -->|calls| 685adf16_c6bb_93ad_7bef_4c9f12c5ec41
-  2d8fd831_ef22_a2af_1f46_db8930694497["warn()"]
-  685adf16_c6bb_93ad_7bef_4c9f12c5ec41 -->|calls| 2d8fd831_ef22_a2af_1f46_db8930694497
-  style 685adf16_c6bb_93ad_7bef_4c9f12c5ec41 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  39aba30f_2500_823b_6f16_a6c7a91fd7c1["findGitignoreFiles()"]
+  9a0a6bd6_8800_60e6_1745_549bc8981ddb["buildIgnoreFilter()"]
+  9a0a6bd6_8800_60e6_1745_549bc8981ddb -->|calls| 39aba30f_2500_823b_6f16_a6c7a91fd7c1
+  b5deedc6_2595_e9c3_5633_70cebb717326["warn()"]
+  39aba30f_2500_823b_6f16_a6c7a91fd7c1 -->|calls| b5deedc6_2595_e9c3_5633_70cebb717326
+  style 39aba30f_2500_823b_6f16_a6c7a91fd7c1 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-zip-repository-ts-findgitignorefiles"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"685adf16:c6bb:93ad:7bef:4c9f12c5ec41","label":"findGitignoreFiles","type":"Function","slug":"fn-zip-repository-ts-findgitignorefiles","lc":54,"lang":"typescript","cc":1,"cbc":1},{"id":"2d8fd831:ef22:a2af:1f46:db8930694497","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"a776435f:7af5:3230:478d:0b70ee170e96","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:RepositoryUtility","label":"RepositoryUtility","type":"Domain","slug":"domain-repositoryutility"},{"id":"subdomain:RepositoryUtility:ArchiveManager","label":"ArchiveManager","type":"Subdomain","slug":"subdomain-archivemanager"}],"edges":[{"source":"685adf16:c6bb:93ad:7bef:4c9f12c5ec41","target":"2d8fd831:ef22:a2af:1f46:db8930694497","type":"calls"},{"source":"a776435f:7af5:3230:478d:0b70ee170e96","target":"685adf16:c6bb:93ad:7bef:4c9f12c5ec41","type":"calls"},{"source":"685adf16:c6bb:93ad:7bef:4c9f12c5ec41","target":"domain:RepositoryUtility","type":"belongsTo"},{"source":"685adf16:c6bb:93ad:7bef:4c9f12c5ec41","target":"subdomain:RepositoryUtility:ArchiveManager","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"39aba30f:2500:823b:6f16:a6c7a91fd7c1","label":"findGitignoreFiles","type":"Function","slug":"fn-zip-repository-ts-findgitignorefiles","lc":54,"lang":"typescript","cc":1,"cbc":1},{"id":"b5deedc6:2595:e9c3:5633:70cebb717326","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"9a0a6bd6:8800:60e6:1745:549bc8981ddb","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:UtilityServices","label":"UtilityServices","type":"Domain","slug":"domain-utilityservices"},{"id":"subdomain:UtilityServices:RepositoryArchiver","label":"RepositoryArchiver","type":"Subdomain","slug":"subdomain-repositoryarchiver"}],"edges":[{"source":"39aba30f:2500:823b:6f16:a6c7a91fd7c1","target":"b5deedc6:2595:e9c3:5633:70cebb717326","type":"calls"},{"source":"9a0a6bd6:8800:60e6:1745:549bc8981ddb","target":"39aba30f:2500:823b:6f16:a6c7a91fd7c1","type":"calls"},{"source":"39aba30f:2500:823b:6f16:a6c7a91fd7c1","target":"domain:UtilityServices","type":"belongsTo"},{"source":"39aba30f:2500:823b:6f16:a6c7a91fd7c1","target":"subdomain:UtilityServices:RepositoryArchiver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -999,14 +999,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-repositoryutility.html">RepositoryUtility</a></li></ul>
+      <ul><li><a href="/domain-utilityservices.html">UtilityServices</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-archivemanager.html">ArchiveManager</a></li></ul>
+      <ul><li><a href="/subdomain-repositoryarchiver.html">RepositoryArchiver</a></li></ul>
     </div>
     
 

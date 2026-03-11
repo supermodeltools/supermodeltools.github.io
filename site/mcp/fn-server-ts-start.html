@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/domain/mcpserver.html" class="pill pill-green">McpServer</a>
-        <a href="/subdomain/transportlayer.html" class="pill pill-orange">TransportLayer</a>
+        <a href="/subdomain/transport.html" class="pill pill-orange">Transport</a>
         
         
         <span class="pill">calls 9</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"start","slug":"fn-server-ts-start","type":"Function"},"subdomain":{"name":"TransportLayer","slug":"subdomain-transportlayer"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"start","slug":"fn-server-ts-start","type":"Function"},"subdomain":{"name":"Transport","slug":"subdomain-transport"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcpserver.html">McpServer</a><span class="arch-sep">&rarr;</span>
-            <a href="/transportlayer.html">TransportLayer</a><span class="arch-sep">&rarr;</span>
+            <a href="/transport.html">Transport</a><span class="arch-sep">&rarr;</span>
             <span>start() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -911,30 +911,30 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  274a149e_a3c2_1dea_116d_4924ea480116["start()"]
-  bd53a07b_0019_a895_fbb2_c185ac0720af["main()"]
-  bd53a07b_0019_a895_fbb2_c185ac0720af -->|calls| 274a149e_a3c2_1dea_116d_4924ea480116
-  472cfd3e_5b7f_b606_d2e7_e39d996553da["constructor()"]
-  472cfd3e_5b7f_b606_d2e7_e39d996553da -->|calls| 274a149e_a3c2_1dea_116d_4924ea480116
-  de801650_ed00_9af5_0a83_b774dacca92e["injectOverviewInstructions()"]
-  274a149e_a3c2_1dea_116d_4924ea480116 -->|calls| de801650_ed00_9af5_0a83_b774dacca92e
-  c98aef6b_75aa_9379_3aff_6d25423de6f8["cleanupOldZips()"]
-  274a149e_a3c2_1dea_116d_4924ea480116 -->|calls| c98aef6b_75aa_9379_3aff_6d25423de6f8
-  83fe17ff_6efd_a500_2b13_8ae3e7c2af4f["debug()"]
-  274a149e_a3c2_1dea_116d_4924ea480116 -->|calls| 83fe17ff_6efd_a500_2b13_8ae3e7c2af4f
-  c00c6a2e_46e6_2a7e_ae4e_f42ef08abb40["loadCacheFromDisk()"]
-  274a149e_a3c2_1dea_116d_4924ea480116 -->|calls| c00c6a2e_46e6_2a7e_ae4e_f42ef08abb40
-  3ced35b6_fe50_e00f_51e1_b2b04468ece8["setRepoMap()"]
-  274a149e_a3c2_1dea_116d_4924ea480116 -->|calls| 3ced35b6_fe50_e00f_51e1_b2b04468ece8
-  2d8fd831_ef22_a2af_1f46_db8930694497["warn()"]
-  274a149e_a3c2_1dea_116d_4924ea480116 -->|calls| 2d8fd831_ef22_a2af_1f46_db8930694497
-  07861f71_0f38_1f01_c22b_ecd3cd8e7bb3["info()"]
-  274a149e_a3c2_1dea_116d_4924ea480116 -->|calls| 07861f71_0f38_1f01_c22b_ecd3cd8e7bb3
-  8cbd0ce7_684c_1eb5_2fad_fa4cf2e72d2f["precacheForDirectory()"]
-  274a149e_a3c2_1dea_116d_4924ea480116 -->|calls| 8cbd0ce7_684c_1eb5_2fad_fa4cf2e72d2f
-  bf74699e_c287_4cb0_e722_d074bc65c7d8["setNoApiFallback()"]
-  274a149e_a3c2_1dea_116d_4924ea480116 -->|calls| bf74699e_c287_4cb0_e722_d074bc65c7d8
-  style 274a149e_a3c2_1dea_116d_4924ea480116 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077["start()"]
+  05d216c6_23f8_bf79_1e05_386861a7fc92["main()"]
+  05d216c6_23f8_bf79_1e05_386861a7fc92 -->|calls| 02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077
+  f7dad1e2_9c28_444d_09a0_090ea67ae4bc["constructor()"]
+  f7dad1e2_9c28_444d_09a0_090ea67ae4bc -->|calls| 02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077
+  bd707836_72ae_7f44_1804_a3fb833de21d["injectOverviewInstructions()"]
+  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| bd707836_72ae_7f44_1804_a3fb833de21d
+  b5cf190c_a9c6_13c3_083c_4f4cc3acafef["cleanupOldZips()"]
+  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| b5cf190c_a9c6_13c3_083c_4f4cc3acafef
+  34884085_9104_538c_6ab5_ed46d5c8b65b["debug()"]
+  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| 34884085_9104_538c_6ab5_ed46d5c8b65b
+  3f3a6258_87ac_8121_4b30_59beb6033d82["loadCacheFromDisk()"]
+  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| 3f3a6258_87ac_8121_4b30_59beb6033d82
+  511f726b_d545_98b8_fa10_be107fc19880["setRepoMap()"]
+  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| 511f726b_d545_98b8_fa10_be107fc19880
+  b5deedc6_2595_e9c3_5633_70cebb717326["warn()"]
+  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| b5deedc6_2595_e9c3_5633_70cebb717326
+  a9d4710c_1973_744a_44fb_836740a97a7d["info()"]
+  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| a9d4710c_1973_744a_44fb_836740a97a7d
+  b47a33d2_5f89_eeaf_463d_8c66dba4c173["precacheForDirectory()"]
+  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| b47a33d2_5f89_eeaf_463d_8c66dba4c173
+  8212f4d6_9505_9f3c_3141_ae34b10fa784["setNoApiFallback()"]
+  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| 8212f4d6_9505_9f3c_3141_ae34b10fa784
+  style 02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -942,7 +942,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-server-ts-start"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"274a149e:a3c2:1dea:116d:4924ea480116","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"de801650:ed00:9af5:0a83:b774dacca92e","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"c98aef6b:75aa:9379:3aff:6d25423de6f8","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"83fe17ff:6efd:a500:2b13:8ae3e7c2af4f","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"c00c6a2e:46e6:2a7e:ae4e:f42ef08abb40","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"3ced35b6:fe50:e00f:51e1:b2b04468ece8","label":"setRepoMap","type":"Function","slug":"fn-graph-cache-ts-setrepomap","lc":3,"lang":"typescript","cbc":1},{"id":"2d8fd831:ef22:a2af:1f46:db8930694497","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"07861f71:0f38:1f01:c22b:ecd3cd8e7bb3","label":"info","type":"Function","slug":"fn-logger-ts-info","lc":3,"lang":"typescript","cbc":2},{"id":"8cbd0ce7:684c:1eb5:2fad:fa4cf2e72d2f","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"bf74699e:c287:4cb0:e722:d074bc65c7d8","label":"setNoApiFallback","type":"Function","slug":"fn-graph-cache-ts-setnoapifallback","lc":3,"lang":"typescript","cbc":1},{"id":"bd53a07b:0019:a895:fbb2:c185ac0720af","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"472cfd3e:5b7f:b606:d2e7:e39d996553da","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:TransportLayer","label":"TransportLayer","type":"Subdomain","slug":"subdomain-transportlayer"}],"edges":[{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"de801650:ed00:9af5:0a83:b774dacca92e","type":"calls"},{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"c98aef6b:75aa:9379:3aff:6d25423de6f8","type":"calls"},{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"83fe17ff:6efd:a500:2b13:8ae3e7c2af4f","type":"calls"},{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"c00c6a2e:46e6:2a7e:ae4e:f42ef08abb40","type":"calls"},{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"3ced35b6:fe50:e00f:51e1:b2b04468ece8","type":"calls"},{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"2d8fd831:ef22:a2af:1f46:db8930694497","type":"calls"},{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"07861f71:0f38:1f01:c22b:ecd3cd8e7bb3","type":"calls"},{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"8cbd0ce7:684c:1eb5:2fad:fa4cf2e72d2f","type":"calls"},{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"bf74699e:c287:4cb0:e722:d074bc65c7d8","type":"calls"},{"source":"bd53a07b:0019:a895:fbb2:c185ac0720af","target":"274a149e:a3c2:1dea:116d:4924ea480116","type":"calls"},{"source":"472cfd3e:5b7f:b606:d2e7:e39d996553da","target":"274a149e:a3c2:1dea:116d:4924ea480116","type":"calls"},{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"domain:McpServer","type":"belongsTo"},{"source":"274a149e:a3c2:1dea:116d:4924ea480116","target":"subdomain:McpServer:TransportLayer","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"bd707836:72ae:7f44:1804:a3fb833de21d","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"b5cf190c:a9c6:13c3:083c:4f4cc3acafef","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"34884085:9104:538c:6ab5:ed46d5c8b65b","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"3f3a6258:87ac:8121:4b30:59beb6033d82","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"511f726b:d545:98b8:fa10:be107fc19880","label":"setRepoMap","type":"Function","slug":"fn-graph-cache-ts-setrepomap","lc":3,"lang":"typescript","cbc":1},{"id":"b5deedc6:2595:e9c3:5633:70cebb717326","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"a9d4710c:1973:744a:44fb:836740a97a7d","label":"info","type":"Function","slug":"fn-logger-ts-info","lc":3,"lang":"typescript","cbc":2},{"id":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"8212f4d6:9505:9f3c:3141:ae34b10fa784","label":"setNoApiFallback","type":"Function","slug":"fn-graph-cache-ts-setnoapifallback","lc":3,"lang":"typescript","cbc":1},{"id":"05d216c6:23f8:bf79:1e05:386861a7fc92","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"f7dad1e2:9c28:444d:09a0:090ea67ae4bc","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:Transport","label":"Transport","type":"Subdomain","slug":"subdomain-transport"}],"edges":[{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"bd707836:72ae:7f44:1804:a3fb833de21d","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"b5cf190c:a9c6:13c3:083c:4f4cc3acafef","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"34884085:9104:538c:6ab5:ed46d5c8b65b","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"3f3a6258:87ac:8121:4b30:59beb6033d82","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"511f726b:d545:98b8:fa10:be107fc19880","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"b5deedc6:2595:e9c3:5633:70cebb717326","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"a9d4710c:1973:744a:44fb:836740a97a7d","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"8212f4d6:9505:9f3c:3141:ae34b10fa784","type":"calls"},{"source":"05d216c6:23f8:bf79:1e05:386861a7fc92","target":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","type":"calls"},{"source":"f7dad1e2:9c28:444d:09a0:090ea67ae4bc","target":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"domain:McpServer","type":"belongsTo"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"subdomain:McpServer:Transport","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1011,7 +1011,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-transportlayer.html">TransportLayer</a></li></ul>
+      <ul><li><a href="/subdomain-transport.html">Transport</a></li></ul>
     </div>
     
 

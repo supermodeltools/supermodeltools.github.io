@@ -870,7 +870,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
-        <a href="/subdomain/callgraphtraversal.html" class="pill pill-orange">CallGraphTraversal</a>
+        <a href="/subdomain/callgraph.html" class="pill pill-orange">CallGraph</a>
         
         
         <span class="pill">calls 6</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"traceCallsHandler","slug":"fn-tool-variants-ts-tracecallshandler","type":"Function"},"subdomain":{"name":"CallGraphTraversal","slug":"subdomain-callgraphtraversal"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"traceCallsHandler","slug":"fn-tool-variants-ts-tracecallshandler","type":"Function"},"subdomain":{"name":"CallGraph","slug":"subdomain-callgraph"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/callgraphtraversal.html">CallGraphTraversal</a><span class="arch-sep">&rarr;</span>
+            <a href="/callgraph.html">CallGraph</a><span class="arch-sep">&rarr;</span>
             <span>traceCallsHandler() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -911,20 +911,20 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  45ca9431_da02_f241_b606_42188b570f66["traceCallsHandler()"]
-  d9514d39_56af_1a82_d002_7be91b738f0e["asErrorResult()"]
-  45ca9431_da02_f241_b606_42188b570f66 -->|calls| d9514d39_56af_1a82_d002_7be91b738f0e
-  cf63d189_1ada_2b4a_f40b_337acc7482f7["resolveOrFetchGraph()"]
-  45ca9431_da02_f241_b606_42188b570f66 -->|calls| cf63d189_1ada_2b4a_f40b_337acc7482f7
-  74e8a797_9aa5_37d9_f952_419120090570["findSymbol()"]
-  45ca9431_da02_f241_b606_42188b570f66 -->|calls| 74e8a797_9aa5_37d9_f952_419120090570
-  458fde6f_b3d1_a565_4c2a_ac9e28cf876b["asTextContentResult()"]
-  45ca9431_da02_f241_b606_42188b570f66 -->|calls| 458fde6f_b3d1_a565_4c2a_ac9e28cf876b
-  6cf9685a_f153_bb9d_85e7_2442090bf2ac["get()"]
-  45ca9431_da02_f241_b606_42188b570f66 -->|calls| 6cf9685a_f153_bb9d_85e7_2442090bf2ac
-  1637f466_126a_8a2e_98b3_fe6d30f9f8ca["normalizePath()"]
-  45ca9431_da02_f241_b606_42188b570f66 -->|calls| 1637f466_126a_8a2e_98b3_fe6d30f9f8ca
-  style 45ca9431_da02_f241_b606_42188b570f66 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  bf646eaf_ef6e_1105_9023_7f2b33475dc8["traceCallsHandler()"]
+  5c7f1642_dc30_1665_391e_69fd28fd80b0["asErrorResult()"]
+  bf646eaf_ef6e_1105_9023_7f2b33475dc8 -->|calls| 5c7f1642_dc30_1665_391e_69fd28fd80b0
+  49842e2f_8e70_fae8_ea70_73bac1e24543["resolveOrFetchGraph()"]
+  bf646eaf_ef6e_1105_9023_7f2b33475dc8 -->|calls| 49842e2f_8e70_fae8_ea70_73bac1e24543
+  0887bd10_cee9_c25c_a399_ccf9e3de54fa["findSymbol()"]
+  bf646eaf_ef6e_1105_9023_7f2b33475dc8 -->|calls| 0887bd10_cee9_c25c_a399_ccf9e3de54fa
+  07923954_f5e5_f2cb_e5ce_7eda02840833["asTextContentResult()"]
+  bf646eaf_ef6e_1105_9023_7f2b33475dc8 -->|calls| 07923954_f5e5_f2cb_e5ce_7eda02840833
+  40c303d9_126a_175f_b216_32de630c3c23["get()"]
+  bf646eaf_ef6e_1105_9023_7f2b33475dc8 -->|calls| 40c303d9_126a_175f_b216_32de630c3c23
+  f15941bd_17e4_a05e_1369_894fe94a5d27["normalizePath()"]
+  bf646eaf_ef6e_1105_9023_7f2b33475dc8 -->|calls| f15941bd_17e4_a05e_1369_894fe94a5d27
+  style bf646eaf_ef6e_1105_9023_7f2b33475dc8 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -932,7 +932,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-tool-variants-ts-tracecallshandler"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"45ca9431:da02:f241:b606:42188b570f66","label":"traceCallsHandler","type":"Function","slug":"fn-tool-variants-ts-tracecallshandler","lc":61,"lang":"typescript","cc":6},{"id":"d9514d39:56af:1a82:d002:7be91b738f0e","label":"asErrorResult","type":"Function","slug":"fn-types-ts-aserrorresult","lc":15,"lang":"typescript","cbc":8},{"id":"cf63d189:1ada:2b4a:f40b:337acc7482f7","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"74e8a797:9aa5:37d9:f952:419120090570","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"458fde6f:b3d1:a565:4c2a:ac9e28cf876b","label":"asTextContentResult","type":"Function","slug":"fn-types-ts-astextcontentresult","lc":11,"lang":"typescript","cbc":8},{"id":"6cf9685a:f153:bb9d:85e7:2442090bf2ac","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"1637f466:126a:8a2e:98b3:fe6d30f9f8ca","label":"normalizePath","type":"Function","slug":"fn-graph-cache-ts-normalizepath","lc":3,"lang":"typescript","cbc":10},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:CallGraphTraversal","label":"CallGraphTraversal","type":"Subdomain","slug":"subdomain-callgraphtraversal"}],"edges":[{"source":"45ca9431:da02:f241:b606:42188b570f66","target":"d9514d39:56af:1a82:d002:7be91b738f0e","type":"calls"},{"source":"45ca9431:da02:f241:b606:42188b570f66","target":"cf63d189:1ada:2b4a:f40b:337acc7482f7","type":"calls"},{"source":"45ca9431:da02:f241:b606:42188b570f66","target":"74e8a797:9aa5:37d9:f952:419120090570","type":"calls"},{"source":"45ca9431:da02:f241:b606:42188b570f66","target":"458fde6f:b3d1:a565:4c2a:ac9e28cf876b","type":"calls"},{"source":"45ca9431:da02:f241:b606:42188b570f66","target":"6cf9685a:f153:bb9d:85e7:2442090bf2ac","type":"calls"},{"source":"45ca9431:da02:f241:b606:42188b570f66","target":"1637f466:126a:8a2e:98b3:fe6d30f9f8ca","type":"calls"},{"source":"45ca9431:da02:f241:b606:42188b570f66","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"45ca9431:da02:f241:b606:42188b570f66","target":"subdomain:AnalysisTools:CallGraphTraversal","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"bf646eaf:ef6e:1105:9023:7f2b33475dc8","label":"traceCallsHandler","type":"Function","slug":"fn-tool-variants-ts-tracecallshandler","lc":61,"lang":"typescript","cc":6},{"id":"5c7f1642:dc30:1665:391e:69fd28fd80b0","label":"asErrorResult","type":"Function","slug":"fn-types-ts-aserrorresult","lc":15,"lang":"typescript","cbc":8},{"id":"49842e2f:8e70:fae8:ea70:73bac1e24543","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"0887bd10:cee9:c25c:a399:ccf9e3de54fa","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"07923954:f5e5:f2cb:e5ce:7eda02840833","label":"asTextContentResult","type":"Function","slug":"fn-types-ts-astextcontentresult","lc":11,"lang":"typescript","cbc":8},{"id":"40c303d9:126a:175f:b216:32de630c3c23","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"f15941bd:17e4:a05e:1369:894fe94a5d27","label":"normalizePath","type":"Function","slug":"fn-graph-cache-ts-normalizepath","lc":3,"lang":"typescript","cbc":10},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:CallGraph","label":"CallGraph","type":"Subdomain","slug":"subdomain-callgraph"}],"edges":[{"source":"bf646eaf:ef6e:1105:9023:7f2b33475dc8","target":"5c7f1642:dc30:1665:391e:69fd28fd80b0","type":"calls"},{"source":"bf646eaf:ef6e:1105:9023:7f2b33475dc8","target":"49842e2f:8e70:fae8:ea70:73bac1e24543","type":"calls"},{"source":"bf646eaf:ef6e:1105:9023:7f2b33475dc8","target":"0887bd10:cee9:c25c:a399:ccf9e3de54fa","type":"calls"},{"source":"bf646eaf:ef6e:1105:9023:7f2b33475dc8","target":"07923954:f5e5:f2cb:e5ce:7eda02840833","type":"calls"},{"source":"bf646eaf:ef6e:1105:9023:7f2b33475dc8","target":"40c303d9:126a:175f:b216:32de630c3c23","type":"calls"},{"source":"bf646eaf:ef6e:1105:9023:7f2b33475dc8","target":"f15941bd:17e4:a05e:1369:894fe94a5d27","type":"calls"},{"source":"bf646eaf:ef6e:1105:9023:7f2b33475dc8","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"bf646eaf:ef6e:1105:9023:7f2b33475dc8","target":"subdomain:AnalysisTools:CallGraph","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1021,7 +1021,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-callgraphtraversal.html">CallGraphTraversal</a></li></ul>
+      <ul><li><a href="/subdomain-callgraph.html">CallGraph</a></li></ul>
     </div>
     
 

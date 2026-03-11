@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/repositoryutility.html" class="pill pill-green">RepositoryUtility</a>
-        <a href="/subdomain/archivemanager.html" class="pill pill-orange">ArchiveManager</a>
+        <a href="/domain/utilityservices.html" class="pill pill-green">UtilityServices</a>
+        <a href="/subdomain/repositoryarchiver.html" class="pill pill-orange">RepositoryArchiver</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtility","slug":"domain-repositoryutility"},"entity":{"name":"estimateDirectorySize","slug":"fn-zip-repository-ts-estimatedirectorysize","type":"Function"},"subdomain":{"name":"ArchiveManager","slug":"subdomain-archivemanager"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"UtilityServices","slug":"domain-utilityservices"},"entity":{"name":"estimateDirectorySize","slug":"fn-zip-repository-ts-estimatedirectorysize","type":"Function"},"subdomain":{"name":"RepositoryArchiver","slug":"subdomain-repositoryarchiver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/repositoryutility.html">RepositoryUtility</a><span class="arch-sep">&rarr;</span>
-            <a href="/archivemanager.html">ArchiveManager</a><span class="arch-sep">&rarr;</span>
+            <a href="/utilityservices.html">UtilityServices</a><span class="arch-sep">&rarr;</span>
+            <a href="/repositoryarchiver.html">RepositoryArchiver</a><span class="arch-sep">&rarr;</span>
             <span>estimateDirectorySize() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  90d5d52a_0fe7_ef6f_e0a6_424700fbdc1a["estimateDirectorySize()"]
-  0fb26577_3856_c219_b960_a7b0801af13d["zipRepository()"]
-  0fb26577_3856_c219_b960_a7b0801af13d -->|calls| 90d5d52a_0fe7_ef6f_e0a6_424700fbdc1a
-  2d8fd831_ef22_a2af_1f46_db8930694497["warn()"]
-  90d5d52a_0fe7_ef6f_e0a6_424700fbdc1a -->|calls| 2d8fd831_ef22_a2af_1f46_db8930694497
-  style 90d5d52a_0fe7_ef6f_e0a6_424700fbdc1a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  eacfbed5_1467_1f0d_b087_da565bba8e90["estimateDirectorySize()"]
+  21975680_f824_1d44_2d3d_f21b55b8d19b["zipRepository()"]
+  21975680_f824_1d44_2d3d_f21b55b8d19b -->|calls| eacfbed5_1467_1f0d_b087_da565bba8e90
+  b5deedc6_2595_e9c3_5633_70cebb717326["warn()"]
+  eacfbed5_1467_1f0d_b087_da565bba8e90 -->|calls| b5deedc6_2595_e9c3_5633_70cebb717326
+  style eacfbed5_1467_1f0d_b087_da565bba8e90 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-zip-repository-ts-estimatedirectorysize"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"90d5d52a:0fe7:ef6f:e0a6:424700fbdc1a","label":"estimateDirectorySize","type":"Function","slug":"fn-zip-repository-ts-estimatedirectorysize","lc":68,"lang":"typescript","cc":1,"cbc":1},{"id":"2d8fd831:ef22:a2af:1f46:db8930694497","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"0fb26577:3856:c219:b960:a7b0801af13d","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"domain:RepositoryUtility","label":"RepositoryUtility","type":"Domain","slug":"domain-repositoryutility"},{"id":"subdomain:RepositoryUtility:ArchiveManager","label":"ArchiveManager","type":"Subdomain","slug":"subdomain-archivemanager"}],"edges":[{"source":"90d5d52a:0fe7:ef6f:e0a6:424700fbdc1a","target":"2d8fd831:ef22:a2af:1f46:db8930694497","type":"calls"},{"source":"0fb26577:3856:c219:b960:a7b0801af13d","target":"90d5d52a:0fe7:ef6f:e0a6:424700fbdc1a","type":"calls"},{"source":"90d5d52a:0fe7:ef6f:e0a6:424700fbdc1a","target":"domain:RepositoryUtility","type":"belongsTo"},{"source":"90d5d52a:0fe7:ef6f:e0a6:424700fbdc1a","target":"subdomain:RepositoryUtility:ArchiveManager","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"eacfbed5:1467:1f0d:b087:da565bba8e90","label":"estimateDirectorySize","type":"Function","slug":"fn-zip-repository-ts-estimatedirectorysize","lc":68,"lang":"typescript","cc":1,"cbc":1},{"id":"b5deedc6:2595:e9c3:5633:70cebb717326","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"21975680:f824:1d44:2d3d:f21b55b8d19b","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"domain:UtilityServices","label":"UtilityServices","type":"Domain","slug":"domain-utilityservices"},{"id":"subdomain:UtilityServices:RepositoryArchiver","label":"RepositoryArchiver","type":"Subdomain","slug":"subdomain-repositoryarchiver"}],"edges":[{"source":"eacfbed5:1467:1f0d:b087:da565bba8e90","target":"b5deedc6:2595:e9c3:5633:70cebb717326","type":"calls"},{"source":"21975680:f824:1d44:2d3d:f21b55b8d19b","target":"eacfbed5:1467:1f0d:b087:da565bba8e90","type":"calls"},{"source":"eacfbed5:1467:1f0d:b087:da565bba8e90","target":"domain:UtilityServices","type":"belongsTo"},{"source":"eacfbed5:1467:1f0d:b087:da565bba8e90","target":"subdomain:UtilityServices:RepositoryArchiver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1013,14 +1013,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-repositoryutility.html">RepositoryUtility</a></li></ul>
+      <ul><li><a href="/domain-utilityservices.html">UtilityServices</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-archivemanager.html">ArchiveManager</a></li></ul>
+      <ul><li><a href="/subdomain-repositoryarchiver.html">RepositoryArchiver</a></li></ul>
     </div>
     
 
