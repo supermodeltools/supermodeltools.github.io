@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/supermodelsdk.html" class="pill pill-green">SupermodelSDK</a>
-        <a href="/subdomain/asyncoperations.html" class="pill pill-orange">AsyncOperations</a>
+        <a href="/domain/supermodelclient.html" class="pill pill-green">SupermodelClient</a>
+        <a href="/subdomain/pollingservice.html" class="pill pill-orange">PollingService</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelSDK","slug":"domain-supermodelsdk"},"entity":{"name":"sleepWithAbort","slug":"fn-async-ts-sleepwithabort","type":"Function"},"subdomain":{"name":"AsyncOperations","slug":"subdomain-asyncoperations"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelClient","slug":"domain-supermodelclient"},"entity":{"name":"sleepWithAbort","slug":"fn-async-ts-sleepwithabort","type":"Function"},"subdomain":{"name":"PollingService","slug":"subdomain-pollingservice"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/supermodelsdk.html">SupermodelSDK</a><span class="arch-sep">&rarr;</span>
-            <a href="/asyncoperations.html">AsyncOperations</a><span class="arch-sep">&rarr;</span>
+            <a href="/supermodelclient.html">SupermodelClient</a><span class="arch-sep">&rarr;</span>
+            <a href="/pollingservice.html">PollingService</a><span class="arch-sep">&rarr;</span>
             <span>sleepWithAbort() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  1916eafb_b87d_e735_cc4e_f209ad5faf36["sleepWithAbort()"]
-  019087db_7859_910f_d020_8b0c25582c97["pollUntilComplete()"]
-  019087db_7859_910f_d020_8b0c25582c97 -->|calls| 1916eafb_b87d_e735_cc4e_f209ad5faf36
-  style 1916eafb_b87d_e735_cc4e_f209ad5faf36 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  2bd07971_f177_458e_87c4_f5bff3d3f00c["sleepWithAbort()"]
+  f18b9a6b_cea8_c1bf_1cd2_17771623b677["pollUntilComplete()"]
+  f18b9a6b_cea8_c1bf_1cd2_17771623b677 -->|calls| 2bd07971_f177_458e_87c4_f5bff3d3f00c
+  style 2bd07971_f177_458e_87c4_f5bff3d3f00c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-async-ts-sleepwithabort"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"1916eafb:b87d:e735:cc4e:f209ad5faf36","label":"sleepWithAbort","type":"Function","slug":"fn-async-ts-sleepwithabort","lc":29,"lang":"typescript","cbc":1},{"id":"019087db:7859:910f:d020:8b0c25582c97","label":"pollUntilComplete","type":"Function","slug":"fn-async-ts-polluntilcomplete","lc":69,"lang":"typescript","cc":1},{"id":"domain:SupermodelSDK","label":"SupermodelSDK","type":"Domain","slug":"domain-supermodelsdk"},{"id":"subdomain:SupermodelSDK:AsyncOperations","label":"AsyncOperations","type":"Subdomain","slug":"subdomain-asyncoperations"}],"edges":[{"source":"019087db:7859:910f:d020:8b0c25582c97","target":"1916eafb:b87d:e735:cc4e:f209ad5faf36","type":"calls"},{"source":"1916eafb:b87d:e735:cc4e:f209ad5faf36","target":"domain:SupermodelSDK","type":"belongsTo"},{"source":"1916eafb:b87d:e735:cc4e:f209ad5faf36","target":"subdomain:SupermodelSDK:AsyncOperations","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"2bd07971:f177:458e:87c4:f5bff3d3f00c","label":"sleepWithAbort","type":"Function","slug":"fn-async-ts-sleepwithabort","lc":29,"lang":"typescript","cbc":1},{"id":"f18b9a6b:cea8:c1bf:1cd2:17771623b677","label":"pollUntilComplete","type":"Function","slug":"fn-async-ts-polluntilcomplete","lc":69,"lang":"typescript","cc":1},{"id":"domain:SupermodelClient","label":"SupermodelClient","type":"Domain","slug":"domain-supermodelclient"},{"id":"subdomain:SupermodelClient:PollingService","label":"PollingService","type":"Subdomain","slug":"subdomain-pollingservice"}],"edges":[{"source":"f18b9a6b:cea8:c1bf:1cd2:17771623b677","target":"2bd07971:f177:458e:87c4:f5bff3d3f00c","type":"calls"},{"source":"2bd07971:f177:458e:87c4:f5bff3d3f00c","target":"domain:SupermodelClient","type":"belongsTo"},{"source":"2bd07971:f177:458e:87c4:f5bff3d3f00c","target":"subdomain:SupermodelClient:PollingService","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -972,14 +972,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-supermodelsdk.html">SupermodelSDK</a></li></ul>
+      <ul><li><a href="/domain-supermodelclient.html">SupermodelClient</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-asyncoperations.html">AsyncOperations</a></li></ul>
+      <ul><li><a href="/subdomain-pollingservice.html">PollingService</a></li></ul>
     </div>
     
 

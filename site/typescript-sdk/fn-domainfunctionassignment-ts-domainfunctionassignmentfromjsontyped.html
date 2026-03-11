@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/codemodels.html" class="pill pill-green">CodeModels</a>
-        <a href="/subdomain/circulardependencies.html" class="pill pill-orange">CircularDependencies</a>
+        <a href="/domain/codeanalysismodels.html" class="pill pill-green">CodeAnalysisModels</a>
+        <a href="/subdomain/structuralanalysis.html" class="pill pill-orange">StructuralAnalysis</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeModels","slug":"domain-codemodels"},"entity":{"name":"DomainFunctionAssignmentFromJSONTyped","slug":"fn-domainfunctionassignment-ts-domainfunctionassignmentfromjsontyped","type":"Function"},"subdomain":{"name":"CircularDependencies","slug":"subdomain-circulardependencies"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisModels","slug":"domain-codeanalysismodels"},"entity":{"name":"DomainFunctionAssignmentFromJSONTyped","slug":"fn-domainfunctionassignment-ts-domainfunctionassignmentfromjsontyped","type":"Function"},"subdomain":{"name":"StructuralAnalysis","slug":"subdomain-structuralanalysis"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/codemodels.html">CodeModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/circulardependencies.html">CircularDependencies</a><span class="arch-sep">&rarr;</span>
+            <a href="/codeanalysismodels.html">CodeAnalysisModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/structuralanalysis.html">StructuralAnalysis</a><span class="arch-sep">&rarr;</span>
             <span>DomainFunctionAssignmentFromJSONTyped() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  8eba180b_3678_4737_35be_064e0c42fc4a["DomainFunctionAssignmentFromJSONTyped()"]
-  513441ca_2d8c_a1ba_021d_33184a5ba04e["DomainFunctionAssignmentFromJSON()"]
-  513441ca_2d8c_a1ba_021d_33184a5ba04e -->|calls| 8eba180b_3678_4737_35be_064e0c42fc4a
-  style 8eba180b_3678_4737_35be_064e0c42fc4a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d98f9a11_88b3_9e96_18a6_7c2925b607b3["DomainFunctionAssignmentFromJSONTyped()"]
+  7adfd215_197a_477a_b967_54beef3bbb1f["DomainFunctionAssignmentFromJSON()"]
+  7adfd215_197a_477a_b967_54beef3bbb1f -->|calls| d98f9a11_88b3_9e96_18a6_7c2925b607b3
+  style d98f9a11_88b3_9e96_18a6_7c2925b607b3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-domainfunctionassignment-ts-domainfunctionassignmentfromjsontyped"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"8eba180b:3678:4737:35be:064e0c42fc4a","label":"DomainFunctionAssignmentFromJSONTyped","type":"Function","slug":"fn-domainfunctionassignment-ts-domainfunctionassignmentfromjsontyped","lc":11,"lang":"typescript","cbc":1},{"id":"513441ca:2d8c:a1ba:021d:33184a5ba04e","label":"DomainFunctionAssignmentFromJSON","type":"Function","slug":"fn-domainfunctionassignment-ts-domainfunctionassignmentfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:CodeModels","label":"CodeModels","type":"Domain","slug":"domain-codemodels"},{"id":"subdomain:CodeModels:CircularDependencies","label":"CircularDependencies","type":"Subdomain","slug":"subdomain-circulardependencies"}],"edges":[{"source":"513441ca:2d8c:a1ba:021d:33184a5ba04e","target":"8eba180b:3678:4737:35be:064e0c42fc4a","type":"calls"},{"source":"8eba180b:3678:4737:35be:064e0c42fc4a","target":"domain:CodeModels","type":"belongsTo"},{"source":"8eba180b:3678:4737:35be:064e0c42fc4a","target":"subdomain:CodeModels:CircularDependencies","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d98f9a11:88b3:9e96:18a6:7c2925b607b3","label":"DomainFunctionAssignmentFromJSONTyped","type":"Function","slug":"fn-domainfunctionassignment-ts-domainfunctionassignmentfromjsontyped","lc":11,"lang":"typescript","cbc":1},{"id":"7adfd215:197a:477a:b967:54beef3bbb1f","label":"DomainFunctionAssignmentFromJSON","type":"Function","slug":"fn-domainfunctionassignment-ts-domainfunctionassignmentfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:CodeAnalysisModels","label":"CodeAnalysisModels","type":"Domain","slug":"domain-codeanalysismodels"},{"id":"subdomain:CodeAnalysisModels:StructuralAnalysis","label":"StructuralAnalysis","type":"Subdomain","slug":"subdomain-structuralanalysis"}],"edges":[{"source":"7adfd215:197a:477a:b967:54beef3bbb1f","target":"d98f9a11:88b3:9e96:18a6:7c2925b607b3","type":"calls"},{"source":"d98f9a11:88b3:9e96:18a6:7c2925b607b3","target":"domain:CodeAnalysisModels","type":"belongsTo"},{"source":"d98f9a11:88b3:9e96:18a6:7c2925b607b3","target":"subdomain:CodeAnalysisModels:StructuralAnalysis","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -954,14 +954,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-codemodels.html">CodeModels</a></li></ul>
+      <ul><li><a href="/domain-codeanalysismodels.html">CodeAnalysisModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-circulardependencies.html">CircularDependencies</a></li></ul>
+      <ul><li><a href="/subdomain-structuralanalysis.html">StructuralAnalysis</a></li></ul>
     </div>
     
 

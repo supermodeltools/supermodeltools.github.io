@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/codemodels.html" class="pill pill-green">CodeModels</a>
-        <a href="/subdomain/circulardependencies.html" class="pill pill-orange">CircularDependencies</a>
+        <a href="/domain/codeanalysismodels.html" class="pill pill-green">CodeAnalysisModels</a>
+        <a href="/subdomain/structuralanalysis.html" class="pill pill-orange">StructuralAnalysis</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeModels","slug":"domain-codemodels"},"entity":{"name":"CodeGraphStatsToJSON","slug":"fn-codegraphstats-ts-codegraphstatstojson","type":"Function"},"subdomain":{"name":"CircularDependencies","slug":"subdomain-circulardependencies"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisModels","slug":"domain-codeanalysismodels"},"entity":{"name":"CodeGraphStatsToJSON","slug":"fn-codegraphstats-ts-codegraphstatstojson","type":"Function"},"subdomain":{"name":"StructuralAnalysis","slug":"subdomain-structuralanalysis"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/codemodels.html">CodeModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/circulardependencies.html">CircularDependencies</a><span class="arch-sep">&rarr;</span>
+            <a href="/codeanalysismodels.html">CodeAnalysisModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/structuralanalysis.html">StructuralAnalysis</a><span class="arch-sep">&rarr;</span>
             <span>CodeGraphStatsToJSON() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  1d9898f0_78d6_b125_3840_f098a4ccf6d6["CodeGraphStatsToJSON()"]
-  5c1528e9_dc52_9d79_d1e8_81e081f3af0a["CodeGraphEnvelopeToJSON()"]
-  5c1528e9_dc52_9d79_d1e8_81e081f3af0a -->|calls| 1d9898f0_78d6_b125_3840_f098a4ccf6d6
-  style 1d9898f0_78d6_b125_3840_f098a4ccf6d6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  24d9e37f_1daf_59d4_1b9c_04fef886d786["CodeGraphStatsToJSON()"]
+  7e967eae_64c4_b6cb_79e0_cf1c9a95bad0["CodeGraphEnvelopeToJSON()"]
+  7e967eae_64c4_b6cb_79e0_cf1c9a95bad0 -->|calls| 24d9e37f_1daf_59d4_1b9c_04fef886d786
+  style 24d9e37f_1daf_59d4_1b9c_04fef886d786 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-codegraphstats-ts-codegraphstatstojson"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"1d9898f0:78d6:b125:3840:f098a4ccf6d6","label":"CodeGraphStatsToJSON","type":"Function","slug":"fn-codegraphstats-ts-codegraphstatstojson","lc":17,"lang":"typescript","cbc":1},{"id":"5c1528e9:dc52:9d79:d1e8:81e081f3af0a","label":"CodeGraphEnvelopeToJSON","type":"Function","slug":"fn-codegraphenvelope-ts-codegraphenvelopetojson","lc":13,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:CodeModels","label":"CodeModels","type":"Domain","slug":"domain-codemodels"},{"id":"subdomain:CodeModels:CircularDependencies","label":"CircularDependencies","type":"Subdomain","slug":"subdomain-circulardependencies"}],"edges":[{"source":"5c1528e9:dc52:9d79:d1e8:81e081f3af0a","target":"1d9898f0:78d6:b125:3840:f098a4ccf6d6","type":"calls"},{"source":"1d9898f0:78d6:b125:3840:f098a4ccf6d6","target":"domain:CodeModels","type":"belongsTo"},{"source":"1d9898f0:78d6:b125:3840:f098a4ccf6d6","target":"subdomain:CodeModels:CircularDependencies","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"24d9e37f:1daf:59d4:1b9c:04fef886d786","label":"CodeGraphStatsToJSON","type":"Function","slug":"fn-codegraphstats-ts-codegraphstatstojson","lc":17,"lang":"typescript","cbc":1},{"id":"7e967eae:64c4:b6cb:79e0:cf1c9a95bad0","label":"CodeGraphEnvelopeToJSON","type":"Function","slug":"fn-codegraphenvelope-ts-codegraphenvelopetojson","lc":13,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:CodeAnalysisModels","label":"CodeAnalysisModels","type":"Domain","slug":"domain-codeanalysismodels"},{"id":"subdomain:CodeAnalysisModels:StructuralAnalysis","label":"StructuralAnalysis","type":"Subdomain","slug":"subdomain-structuralanalysis"}],"edges":[{"source":"7e967eae:64c4:b6cb:79e0:cf1c9a95bad0","target":"24d9e37f:1daf:59d4:1b9c:04fef886d786","type":"calls"},{"source":"24d9e37f:1daf:59d4:1b9c:04fef886d786","target":"domain:CodeAnalysisModels","type":"belongsTo"},{"source":"24d9e37f:1daf:59d4:1b9c:04fef886d786","target":"subdomain:CodeAnalysisModels:StructuralAnalysis","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -960,14 +960,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-codemodels.html">CodeModels</a></li></ul>
+      <ul><li><a href="/domain-codeanalysismodels.html">CodeAnalysisModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-circulardependencies.html">CircularDependencies</a></li></ul>
+      <ul><li><a href="/subdomain-structuralanalysis.html">StructuralAnalysis</a></li></ul>
     </div>
     
 

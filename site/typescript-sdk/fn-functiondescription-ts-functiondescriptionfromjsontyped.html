@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/codemodels.html" class="pill pill-green">CodeModels</a>
-        <a href="/subdomain/circulardependencies.html" class="pill pill-orange">CircularDependencies</a>
+        <a href="/domain/codeanalysismodels.html" class="pill pill-green">CodeAnalysisModels</a>
+        <a href="/subdomain/impactanalysis.html" class="pill pill-orange">ImpactAnalysis</a>
         
         
         
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeModels","slug":"domain-codemodels"},"entity":{"name":"FunctionDescriptionFromJSONTyped","slug":"fn-functiondescription-ts-functiondescriptionfromjsontyped","type":"Function"},"subdomain":{"name":"CircularDependencies","slug":"subdomain-circulardependencies"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisModels","slug":"domain-codeanalysismodels"},"entity":{"name":"FunctionDescriptionFromJSONTyped","slug":"fn-functiondescription-ts-functiondescriptionfromjsontyped","type":"Function"},"subdomain":{"name":"ImpactAnalysis","slug":"subdomain-impactanalysis"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/codemodels.html">CodeModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/circulardependencies.html">CircularDependencies</a><span class="arch-sep">&rarr;</span>
+            <a href="/codeanalysismodels.html">CodeAnalysisModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/impactanalysis.html">ImpactAnalysis</a><span class="arch-sep">&rarr;</span>
             <span>FunctionDescriptionFromJSONTyped() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -911,10 +911,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  0d6eac9e_5994_dc1a_c9ce_7b911292092d["FunctionDescriptionFromJSONTyped()"]
-  6082c144_90dc_da5f_8658_f7d63bc9c2b3["FunctionDescriptionFromJSON()"]
-  6082c144_90dc_da5f_8658_f7d63bc9c2b3 -->|calls| 0d6eac9e_5994_dc1a_c9ce_7b911292092d
-  style 0d6eac9e_5994_dc1a_c9ce_7b911292092d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  34dcc34d_93d0_0692_61b1_9242ff868eb6["FunctionDescriptionFromJSONTyped()"]
+  d37dbe39_8694_ea0b_b204_15f7e817876d["FunctionDescriptionFromJSON()"]
+  d37dbe39_8694_ea0b_b204_15f7e817876d -->|calls| 34dcc34d_93d0_0692_61b1_9242ff868eb6
+  style 34dcc34d_93d0_0692_61b1_9242ff868eb6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -922,7 +922,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-functiondescription-ts-functiondescriptionfromjsontyped"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"0d6eac9e:5994:dc1a:c9ce:7b911292092d","label":"FunctionDescriptionFromJSONTyped","type":"Function","slug":"fn-functiondescription-ts-functiondescriptionfromjsontyped","lc":11,"lang":"typescript","cbc":1},{"id":"6082c144:90dc:da5f:8658:f7d63bc9c2b3","label":"FunctionDescriptionFromJSON","type":"Function","slug":"fn-functiondescription-ts-functiondescriptionfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:CodeModels","label":"CodeModels","type":"Domain","slug":"domain-codemodels"},{"id":"subdomain:CodeModels:CircularDependencies","label":"CircularDependencies","type":"Subdomain","slug":"subdomain-circulardependencies"}],"edges":[{"source":"6082c144:90dc:da5f:8658:f7d63bc9c2b3","target":"0d6eac9e:5994:dc1a:c9ce:7b911292092d","type":"calls"},{"source":"0d6eac9e:5994:dc1a:c9ce:7b911292092d","target":"domain:CodeModels","type":"belongsTo"},{"source":"0d6eac9e:5994:dc1a:c9ce:7b911292092d","target":"subdomain:CodeModels:CircularDependencies","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"34dcc34d:93d0:0692:61b1:9242ff868eb6","label":"FunctionDescriptionFromJSONTyped","type":"Function","slug":"fn-functiondescription-ts-functiondescriptionfromjsontyped","lc":11,"lang":"typescript","cbc":1},{"id":"d37dbe39:8694:ea0b:b204:15f7e817876d","label":"FunctionDescriptionFromJSON","type":"Function","slug":"fn-functiondescription-ts-functiondescriptionfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:CodeAnalysisModels","label":"CodeAnalysisModels","type":"Domain","slug":"domain-codeanalysismodels"},{"id":"subdomain:CodeAnalysisModels:ImpactAnalysis","label":"ImpactAnalysis","type":"Subdomain","slug":"subdomain-impactanalysis"}],"edges":[{"source":"d37dbe39:8694:ea0b:b204:15f7e817876d","target":"34dcc34d:93d0:0692:61b1:9242ff868eb6","type":"calls"},{"source":"34dcc34d:93d0:0692:61b1:9242ff868eb6","target":"domain:CodeAnalysisModels","type":"belongsTo"},{"source":"34dcc34d:93d0:0692:61b1:9242ff868eb6","target":"subdomain:CodeAnalysisModels:ImpactAnalysis","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -954,14 +954,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-codemodels.html">CodeModels</a></li></ul>
+      <ul><li><a href="/domain-codeanalysismodels.html">CodeAnalysisModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-circulardependencies.html">CircularDependencies</a></li></ul>
+      <ul><li><a href="/subdomain-impactanalysis.html">ImpactAnalysis</a></li></ul>
     </div>
     
 

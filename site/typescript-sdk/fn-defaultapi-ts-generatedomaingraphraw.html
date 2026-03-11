@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/analysisapi.html" class="pill pill-green">AnalysisAPI</a>
-        <a href="/subdomain/graphgeneration.html" class="pill pill-orange">GraphGeneration</a>
+        <a href="/domain/openapiserver.html" class="pill pill-green">OpenApiServer</a>
+        <a href="/subdomain/fetchruntime.html" class="pill pill-orange">FetchRuntime</a>
         
         
         <span class="pill">calls 4</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisAPI","slug":"domain-analysisapi"},"entity":{"name":"generateDomainGraphRaw","slug":"fn-defaultapi-ts-generatedomaingraphraw","type":"Function"},"subdomain":{"name":"GraphGeneration","slug":"subdomain-graphgeneration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"OpenApiServer","slug":"domain-openapiserver"},"entity":{"name":"generateDomainGraphRaw","slug":"fn-defaultapi-ts-generatedomaingraphraw","type":"Function"},"subdomain":{"name":"FetchRuntime","slug":"subdomain-fetchruntime"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/analysisapi.html">AnalysisAPI</a><span class="arch-sep">&rarr;</span>
-            <a href="/graphgeneration.html">GraphGeneration</a><span class="arch-sep">&rarr;</span>
+            <a href="/openapiserver.html">OpenApiServer</a><span class="arch-sep">&rarr;</span>
+            <a href="/fetchruntime.html">FetchRuntime</a><span class="arch-sep">&rarr;</span>
             <span>generateDomainGraphRaw() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -911,18 +911,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  d2f7c62e_e0c9_b018_c67a_664031cda24c["generateDomainGraphRaw()"]
-  e166e623_eedb_2ce9_15cc_ebb4430c8c2e["generateDomainGraph()"]
-  e166e623_eedb_2ce9_15cc_ebb4430c8c2e -->|calls| d2f7c62e_e0c9_b018_c67a_664031cda24c
-  84e87dd4_c60e_dacc_2e85_6576e17b9324["request()"]
-  d2f7c62e_e0c9_b018_c67a_664031cda24c -->|calls| 84e87dd4_c60e_dacc_2e85_6576e17b9324
-  e166e623_eedb_2ce9_15cc_ebb4430c8c2e["generateDomainGraph()"]
-  d2f7c62e_e0c9_b018_c67a_664031cda24c -->|calls| e166e623_eedb_2ce9_15cc_ebb4430c8c2e
-  22c88b01_70c1_5820_2b9c_0baaaf06bd86["apiKey()"]
-  d2f7c62e_e0c9_b018_c67a_664031cda24c -->|calls| 22c88b01_70c1_5820_2b9c_0baaaf06bd86
-  b23712ae_83cc_fcf0_1407_69f473cf0a5a["canConsumeForm()"]
-  d2f7c62e_e0c9_b018_c67a_664031cda24c -->|calls| b23712ae_83cc_fcf0_1407_69f473cf0a5a
-  style d2f7c62e_e0c9_b018_c67a_664031cda24c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d3d7aad3_bd60_4a43_895d_1b9e2bdef205["generateDomainGraphRaw()"]
+  41a009aa_6904_4df9_1f9e_4563d9546aae["generateDomainGraph()"]
+  41a009aa_6904_4df9_1f9e_4563d9546aae -->|calls| d3d7aad3_bd60_4a43_895d_1b9e2bdef205
+  43701446_77df_8401_39a7_52a39aa22578["request()"]
+  d3d7aad3_bd60_4a43_895d_1b9e2bdef205 -->|calls| 43701446_77df_8401_39a7_52a39aa22578
+  41a009aa_6904_4df9_1f9e_4563d9546aae["generateDomainGraph()"]
+  d3d7aad3_bd60_4a43_895d_1b9e2bdef205 -->|calls| 41a009aa_6904_4df9_1f9e_4563d9546aae
+  fc4bd3ca_ed93_f4a0_772d_bcc225cc8dae["apiKey()"]
+  d3d7aad3_bd60_4a43_895d_1b9e2bdef205 -->|calls| fc4bd3ca_ed93_f4a0_772d_bcc225cc8dae
+  234e5eb5_df7b_2995_a501_45654d468a08["canConsumeForm()"]
+  d3d7aad3_bd60_4a43_895d_1b9e2bdef205 -->|calls| 234e5eb5_df7b_2995_a501_45654d468a08
+  style d3d7aad3_bd60_4a43_895d_1b9e2bdef205 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -930,7 +930,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-defaultapi-ts-generatedomaingraphraw"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"d2f7c62e:e0c9:b018:c67a:664031cda24c","label":"generateDomainGraphRaw","type":"Function","slug":"fn-defaultapi-ts-generatedomaingraphraw","lc":57,"lang":"typescript","cc":4,"cbc":1},{"id":"84e87dd4:c60e:dacc:2e85:6576e17b9324","label":"request","type":"Function","slug":"fn-runtime-ts-request","lc":8,"lang":"typescript","cc":2,"cbc":9},{"id":"e166e623:eedb:2ce9:15cc:ebb4430c8c2e","label":"generateDomainGraph","type":"Function","slug":"fn-defaultapi-ts-generatedomaingraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"22c88b01:70c1:5820:2b9c:0baaaf06bd86","label":"apiKey","type":"Function","slug":"fn-runtime-ts-apikey","lc":7,"lang":"typescript","cbc":9},{"id":"b23712ae:83cc:fcf0:1407:69f473cf0a5a","label":"canConsumeForm","type":"Function","slug":"fn-runtime-ts-canconsumeform","lc":8,"lang":"typescript","cbc":9},{"id":"domain:AnalysisAPI","label":"AnalysisAPI","type":"Domain","slug":"domain-analysisapi"},{"id":"subdomain:AnalysisAPI:GraphGeneration","label":"GraphGeneration","type":"Subdomain","slug":"subdomain-graphgeneration"}],"edges":[{"source":"d2f7c62e:e0c9:b018:c67a:664031cda24c","target":"84e87dd4:c60e:dacc:2e85:6576e17b9324","type":"calls"},{"source":"d2f7c62e:e0c9:b018:c67a:664031cda24c","target":"e166e623:eedb:2ce9:15cc:ebb4430c8c2e","type":"calls"},{"source":"d2f7c62e:e0c9:b018:c67a:664031cda24c","target":"22c88b01:70c1:5820:2b9c:0baaaf06bd86","type":"calls"},{"source":"d2f7c62e:e0c9:b018:c67a:664031cda24c","target":"b23712ae:83cc:fcf0:1407:69f473cf0a5a","type":"calls"},{"source":"e166e623:eedb:2ce9:15cc:ebb4430c8c2e","target":"d2f7c62e:e0c9:b018:c67a:664031cda24c","type":"calls"},{"source":"d2f7c62e:e0c9:b018:c67a:664031cda24c","target":"domain:AnalysisAPI","type":"belongsTo"},{"source":"d2f7c62e:e0c9:b018:c67a:664031cda24c","target":"subdomain:AnalysisAPI:GraphGeneration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d3d7aad3:bd60:4a43:895d:1b9e2bdef205","label":"generateDomainGraphRaw","type":"Function","slug":"fn-defaultapi-ts-generatedomaingraphraw","lc":57,"lang":"typescript","cc":4,"cbc":1},{"id":"43701446:77df:8401:39a7:52a39aa22578","label":"request","type":"Function","slug":"fn-runtime-ts-request","lc":8,"lang":"typescript","cc":2,"cbc":9},{"id":"41a009aa:6904:4df9:1f9e:4563d9546aae","label":"generateDomainGraph","type":"Function","slug":"fn-defaultapi-ts-generatedomaingraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"fc4bd3ca:ed93:f4a0:772d:bcc225cc8dae","label":"apiKey","type":"Function","slug":"fn-runtime-ts-apikey","lc":7,"lang":"typescript","cbc":9},{"id":"234e5eb5:df7b:2995:a501:45654d468a08","label":"canConsumeForm","type":"Function","slug":"fn-runtime-ts-canconsumeform","lc":8,"lang":"typescript","cbc":9},{"id":"domain:OpenApiServer","label":"OpenApiServer","type":"Domain","slug":"domain-openapiserver"},{"id":"subdomain:OpenApiServer:FetchRuntime","label":"FetchRuntime","type":"Subdomain","slug":"subdomain-fetchruntime"}],"edges":[{"source":"d3d7aad3:bd60:4a43:895d:1b9e2bdef205","target":"43701446:77df:8401:39a7:52a39aa22578","type":"calls"},{"source":"d3d7aad3:bd60:4a43:895d:1b9e2bdef205","target":"41a009aa:6904:4df9:1f9e:4563d9546aae","type":"calls"},{"source":"d3d7aad3:bd60:4a43:895d:1b9e2bdef205","target":"fc4bd3ca:ed93:f4a0:772d:bcc225cc8dae","type":"calls"},{"source":"d3d7aad3:bd60:4a43:895d:1b9e2bdef205","target":"234e5eb5:df7b:2995:a501:45654d468a08","type":"calls"},{"source":"41a009aa:6904:4df9:1f9e:4563d9546aae","target":"d3d7aad3:bd60:4a43:895d:1b9e2bdef205","type":"calls"},{"source":"d3d7aad3:bd60:4a43:895d:1b9e2bdef205","target":"domain:OpenApiServer","type":"belongsTo"},{"source":"d3d7aad3:bd60:4a43:895d:1b9e2bdef205","target":"subdomain:OpenApiServer:FetchRuntime","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1008,14 +1008,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-analysisapi.html">AnalysisAPI</a></li></ul>
+      <ul><li><a href="/domain-openapiserver.html">OpenApiServer</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-graphgeneration.html">GraphGeneration</a></li></ul>
+      <ul><li><a href="/subdomain-fetchruntime.html">FetchRuntime</a></li></ul>
     </div>
     
 

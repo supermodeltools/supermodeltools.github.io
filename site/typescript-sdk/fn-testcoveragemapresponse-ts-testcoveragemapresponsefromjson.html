@@ -869,8 +869,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/codemodels.html" class="pill pill-green">CodeModels</a>
-        <a href="/subdomain/circulardependencies.html" class="pill pill-orange">CircularDependencies</a>
+        <a href="/domain/codeanalysismodels.html" class="pill pill-green">CodeAnalysisModels</a>
+        <a href="/subdomain/impactanalysis.html" class="pill pill-orange">ImpactAnalysis</a>
         
         
         <span class="pill">calls 1</span>
@@ -894,11 +894,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeModels","slug":"domain-codemodels"},"entity":{"name":"TestCoverageMapResponseFromJSON","slug":"fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjson","type":"Function"},"subdomain":{"name":"CircularDependencies","slug":"subdomain-circulardependencies"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisModels","slug":"domain-codeanalysismodels"},"entity":{"name":"TestCoverageMapResponseFromJSON","slug":"fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjson","type":"Function"},"subdomain":{"name":"ImpactAnalysis","slug":"subdomain-impactanalysis"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/codemodels.html">CodeModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/circulardependencies.html">CircularDependencies</a><span class="arch-sep">&rarr;</span>
+            <a href="/codeanalysismodels.html">CodeAnalysisModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/impactanalysis.html">ImpactAnalysis</a><span class="arch-sep">&rarr;</span>
             <span>TestCoverageMapResponseFromJSON() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -911,12 +911,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  f7931593_0bf9_155c_d6d2_07cbf87c30b2["TestCoverageMapResponseFromJSON()"]
-  ed22660d_c64f_e90f_0f04_6a85e3d7ee16["TestCoverageMapResponseAsyncFromJSONTyped()"]
-  ed22660d_c64f_e90f_0f04_6a85e3d7ee16 -->|calls| f7931593_0bf9_155c_d6d2_07cbf87c30b2
-  fe88242b_3df6_8238_0cfd_fb8f30b8f90f["TestCoverageMapResponseFromJSONTyped()"]
-  f7931593_0bf9_155c_d6d2_07cbf87c30b2 -->|calls| fe88242b_3df6_8238_0cfd_fb8f30b8f90f
-  style f7931593_0bf9_155c_d6d2_07cbf87c30b2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d2d6e004_72d1_0911_6519_c26514c32607["TestCoverageMapResponseFromJSON()"]
+  4c0da786_5eb1_81bc_d6da_3b109b526c36["TestCoverageMapResponseAsyncFromJSONTyped()"]
+  4c0da786_5eb1_81bc_d6da_3b109b526c36 -->|calls| d2d6e004_72d1_0911_6519_c26514c32607
+  02234c92_baaa_c22c_f10d_e2abcda8deea["TestCoverageMapResponseFromJSONTyped()"]
+  d2d6e004_72d1_0911_6519_c26514c32607 -->|calls| 02234c92_baaa_c22c_f10d_e2abcda8deea
+  style d2d6e004_72d1_0911_6519_c26514c32607 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -924,7 +924,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjson"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"f7931593:0bf9:155c:d6d2:07cbf87c30b2","label":"TestCoverageMapResponseFromJSON","type":"Function","slug":"fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"fe88242b:3df6:8238:0cfd:fb8f30b8f90f","label":"TestCoverageMapResponseFromJSONTyped","type":"Function","slug":"fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjsontyped","lc":14,"lang":"typescript","cc":1,"cbc":1},{"id":"ed22660d:c64f:e90f:0f04:6a85e3d7ee16","label":"TestCoverageMapResponseAsyncFromJSONTyped","type":"Function","slug":"fn-testcoveragemapresponseasync-ts-testcoveragemapresponseasyncfromjsontyped","lc":13,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:CodeModels","label":"CodeModels","type":"Domain","slug":"domain-codemodels"},{"id":"subdomain:CodeModels:CircularDependencies","label":"CircularDependencies","type":"Subdomain","slug":"subdomain-circulardependencies"}],"edges":[{"source":"f7931593:0bf9:155c:d6d2:07cbf87c30b2","target":"fe88242b:3df6:8238:0cfd:fb8f30b8f90f","type":"calls"},{"source":"ed22660d:c64f:e90f:0f04:6a85e3d7ee16","target":"f7931593:0bf9:155c:d6d2:07cbf87c30b2","type":"calls"},{"source":"f7931593:0bf9:155c:d6d2:07cbf87c30b2","target":"domain:CodeModels","type":"belongsTo"},{"source":"f7931593:0bf9:155c:d6d2:07cbf87c30b2","target":"subdomain:CodeModels:CircularDependencies","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d2d6e004:72d1:0911:6519:c26514c32607","label":"TestCoverageMapResponseFromJSON","type":"Function","slug":"fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"02234c92:baaa:c22c:f10d:e2abcda8deea","label":"TestCoverageMapResponseFromJSONTyped","type":"Function","slug":"fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjsontyped","lc":14,"lang":"typescript","cc":1,"cbc":1},{"id":"4c0da786:5eb1:81bc:d6da:3b109b526c36","label":"TestCoverageMapResponseAsyncFromJSONTyped","type":"Function","slug":"fn-testcoveragemapresponseasync-ts-testcoveragemapresponseasyncfromjsontyped","lc":13,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:CodeAnalysisModels","label":"CodeAnalysisModels","type":"Domain","slug":"domain-codeanalysismodels"},{"id":"subdomain:CodeAnalysisModels:ImpactAnalysis","label":"ImpactAnalysis","type":"Subdomain","slug":"subdomain-impactanalysis"}],"edges":[{"source":"d2d6e004:72d1:0911:6519:c26514c32607","target":"02234c92:baaa:c22c:f10d:e2abcda8deea","type":"calls"},{"source":"4c0da786:5eb1:81bc:d6da:3b109b526c36","target":"d2d6e004:72d1:0911:6519:c26514c32607","type":"calls"},{"source":"d2d6e004:72d1:0911:6519:c26514c32607","target":"domain:CodeAnalysisModels","type":"belongsTo"},{"source":"d2d6e004:72d1:0911:6519:c26514c32607","target":"subdomain:CodeAnalysisModels:ImpactAnalysis","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -948,14 +948,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-codemodels.html">CodeModels</a></li></ul>
+      <ul><li><a href="/domain-codeanalysismodels.html">CodeAnalysisModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-circulardependencies.html">CircularDependencies</a></li></ul>
+      <ul><li><a href="/subdomain-impactanalysis.html">ImpactAnalysis</a></li></ul>
     </div>
     
 
