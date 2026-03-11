@@ -8,40 +8,40 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
 
 <title>Subdomain — Node Types | mcp Architecture Docs</title>
 <meta name="description" content="Browse all Subdomain entities in the mcp Architecture Docs architecture documentation.">
 <link rel="canonical" href="https://repos.supermodeltools.com/node_type/subdomain.html">
 
 <meta property="og:title" content="Subdomain — Node Types — mcp Architecture Docs">
-<meta property="og:description" content="Browse 10 Subdomain Node Type recipes on mcp Architecture Docs.">
+<meta property="og:description" content="Browse 11 Subdomain Node Type recipes on mcp Architecture Docs.">
 <meta property="og:url" content="https://repos.supermodeltools.com/node_type/subdomain.html">
 <meta property="og:image" content="https://repos.supermodeltools.com/images/share/node_type-subdomain.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="mcp Architecture Docs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Subdomain — Node Types — mcp Architecture Docs">
-<meta name="twitter:description" content="Browse 10 Subdomain Node Type recipes on mcp Architecture Docs.">
+<meta name="twitter:description" content="Browse 11 Subdomain Node Type recipes on mcp Architecture Docs.">
 <meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/node_type-subdomain.svg">
 
 <style>:root {
-  --bg: #0f1117;
-  --bg-card: #1a1d27;
-  --bg-hover: #22263a;
-  --border: #2a2e3e;
-  --text: #e4e4e7;
-  --text-muted: #9ca3af;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --green: #22c55e;
-  --orange: #f59e0b;
-  --red: #ef4444;
-  --blue: #3b82f6;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --bg: #000000;
+  --bg-card: #161616;
+  --bg-hover: #08191C;
+  --border: #202020;
+  --text: #FFFFFF;
+  --text-muted: #808080;
+  --accent: #71B9BC;
+  --accent-light: #8CC6C9;
+  --green: #7CCE86;
+  --orange: #D0A27D;
+  --red: #E589C6;
+  --blue: #8E8CE9;
+  --font: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: 'Martian Mono', "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --max-w: 1200px;
-  --radius: 8px;
+  --radius: 0px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,7 +52,9 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: 0em;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -61,7 +63,7 @@ a { color: var(--accent-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
 
-.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #000; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
 .skip-link:focus { top: 12px; }
 
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
@@ -83,7 +85,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 }
 .site-brand {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text);
   display: flex;
   align-items: center;
@@ -94,7 +96,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .site-brand:hover { text-decoration: none; color: var(--accent-light); }
 .site-brand svg { width: 24px; height: 24px; }
 .site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a { color: var(--text-muted); font-size: 0.68rem; font-weight: 300; font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
 .site-nav a:hover { color: var(--text); text-decoration: none; }
 .nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
 .nav-all-repos:hover { color: var(--text) !important; }
@@ -126,8 +128,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .entity-breadcrumb .sep { opacity: 0.4; }
 .entity-title {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1.3;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -171,7 +174,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
   border-radius: 20px;
   font-size: 12px;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 400;
+  font-family: var(--mono);
   text-decoration: none;
 }
 a.pill:hover {
@@ -189,7 +193,8 @@ a.pill:hover {
 }
 .entity-section h2 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   margin-bottom: 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
@@ -234,6 +239,7 @@ a.pill:hover {
 .card-title {
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: 6px;
   overflow-wrap: break-word;
@@ -261,7 +267,8 @@ a.pill:hover {
 }
 .hero h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 200;
+  letter-spacing: -0.04em;
   margin-bottom: 12px;
 }
 .hero p {
@@ -297,19 +304,21 @@ a.pill:hover {
 }
 .hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 .hero-btn-star { border-color: var(--orange); color: var(--orange); }
-.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-star:hover { background: rgba(208, 162, 125, 0.1); }
 .hero-btn-fork { border-color: var(--blue); color: var(--blue); }
-.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-btn-fork:hover { background: rgba(142, 140, 233, 0.1); }
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px 32px;
   margin-top: 32px;
 }
 .hero-stat { text-align: center; }
 .hero-stat .num {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   color: var(--accent-light);
 }
 .hero-stat .label {
@@ -330,7 +339,8 @@ a.pill:hover {
 
 .section-title {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 .section-subtitle {
@@ -348,7 +358,8 @@ a.pill:hover {
 }
 .hub-header h1 {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 .hub-desc {
   color: var(--text-muted);
@@ -389,7 +400,7 @@ a.pill:hover {
 }
 .pagination .current {
   background: var(--accent);
-  color: white;
+  color: #000;
 }
 
  
@@ -458,11 +469,12 @@ a.pill:hover {
   gap: 12px;
 }
 .visuals-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 8px 0;
   padding: 0;
   border: none;
@@ -548,7 +560,7 @@ a.pill:hover {
 
  
 .cta-section {
-  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, #08191C 100%);
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   padding: 40px 32px;
@@ -558,7 +570,8 @@ a.pill:hover {
 }
 .cta-heading {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   border-bottom: none !important;
   padding-bottom: 0 !important;
@@ -573,7 +586,7 @@ a.pill:hover {
   display: inline-block;
   padding: 12px 28px;
   background: var(--accent);
-  color: #fff;
+  color: #000;
   font-size: 15px;
   font-weight: 600;
   border-radius: 6px;
@@ -593,11 +606,12 @@ a.pill:hover {
   margin-bottom: 32px;
 }
 .chart-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 12px 0;
 }
 .chart-panel-compact {
@@ -634,7 +648,7 @@ a.pill:hover {
   margin: 0 0 8px 0;
 }
 .source-code {
-  background: #0d0f14;
+  background: #161616;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
@@ -647,11 +661,44 @@ a.pill:hover {
 .source-code code {
   font-family: var(--mono);
   font-size: 13px;
-  color: #e4e4e7;
+  color: #FFFFFF;
   white-space: pre;
   tab-size: 2;
   margin-bottom: 0;
 }
+ 
+.hp-composition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  height: 200px;
+}
+.hp-comp-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 12px;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+.hp-comp-item:hover { opacity: 1; text-decoration: none; }
+.hp-comp-name {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  white-space: nowrap;
+}
+.hp-comp-count {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-family: var(--mono);
+  margin-top: 2px;
+}
+
 #homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
 #homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
   width: 100%;
@@ -689,7 +736,7 @@ a.pill:hover {
 }
 .letter-active {
   background: var(--accent);
-  color: #fff;
+  color: #000;
   border-color: var(--accent);
 }
 
@@ -742,7 +789,7 @@ a.pill:hover {
   .hero p { font-size: 15px; }
   .hero-actions { gap: 8px; }
   .hero-btn { padding: 6px 12px; font-size: 12px; }
-  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stats { gap: 8px 16px; }
   .hero-stat .num { font-size: 22px; }
   .hero-stat .label { font-size: 12px; }
   .hero-stat-link { padding: 8px 12px; }
@@ -810,7 +857,7 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","description":"Subdomain Node Type recipes","image":"https://repos.supermodeltools.com/images/share/node_type-subdomain.svg","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","name":"ApiIntegration — mcp Architecture","position":1,"url":"https://repos.supermodeltools.com/subdomain-apiintegration.html"},{"@type":"ListItem","name":"CallGraph — mcp Architecture","position":2,"url":"https://repos.supermodeltools.com/subdomain-callgraph.html"},{"@type":"ListItem","name":"ExperimentManager — mcp Architecture","position":3,"url":"https://repos.supermodeltools.com/subdomain-experimentmanager.html"},{"@type":"ListItem","name":"Logging — mcp Architecture","position":4,"url":"https://repos.supermodeltools.com/subdomain-logging.html"},{"@type":"ListItem","name":"LRUManager — mcp Architecture","position":5,"url":"https://repos.supermodeltools.com/subdomain-lrumanager.html"},{"@type":"ListItem","name":"Reporting — mcp Architecture","position":6,"url":"https://repos.supermodeltools.com/subdomain-reporting.html"},{"@type":"ListItem","name":"RepositoryArchiver — mcp Architecture","position":7,"url":"https://repos.supermodeltools.com/subdomain-repositoryarchiver.html"},{"@type":"ListItem","name":"RequestHandling — mcp Architecture","position":8,"url":"https://repos.supermodeltools.com/subdomain-requesthandling.html"},{"@type":"ListItem","name":"SymbolLocator — mcp Architecture","position":9,"url":"https://repos.supermodeltools.com/subdomain-symbollocator.html"},{"@type":"ListItem","name":"Transport — mcp Architecture","position":10,"url":"https://repos.supermodeltools.com/subdomain-transport.html"}],"numberOfItems":10},"name":"Subdomain","url":"https://repos.supermodeltools.com/node_type/subdomain.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","description":"Subdomain Node Type recipes","image":"https://repos.supermodeltools.com/images/share/node_type-subdomain.svg","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","name":"ApiClient — mcp Architecture","position":1,"url":"https://repos.supermodeltools.com/subdomain-apiclient.html"},{"@type":"ListItem","name":"ArchitecturalMapper — mcp Architecture","position":2,"url":"https://repos.supermodeltools.com/subdomain-architecturalmapper.html"},{"@type":"ListItem","name":"CallTracer — mcp Architecture","position":3,"url":"https://repos.supermodeltools.com/subdomain-calltracer.html"},{"@type":"ListItem","name":"Configuration — mcp Architecture","position":4,"url":"https://repos.supermodeltools.com/subdomain-configuration.html"},{"@type":"ListItem","name":"Idempotency — mcp Architecture","position":5,"url":"https://repos.supermodeltools.com/subdomain-idempotency.html"},{"@type":"ListItem","name":"IndexingEngine — mcp Architecture","position":6,"url":"https://repos.supermodeltools.com/subdomain-indexingengine.html"},{"@type":"ListItem","name":"InstructionManager — mcp Architecture","position":7,"url":"https://repos.supermodeltools.com/subdomain-instructionmanager.html"},{"@type":"ListItem","name":"LruManager — mcp Architecture","position":8,"url":"https://repos.supermodeltools.com/subdomain-lrumanager.html"},{"@type":"ListItem","name":"SymbolResolver — mcp Architecture","position":9,"url":"https://repos.supermodeltools.com/subdomain-symbolresolver.html"},{"@type":"ListItem","name":"Transport — mcp Architecture","position":10,"url":"https://repos.supermodeltools.com/subdomain-transport.html"},{"@type":"ListItem","name":"ZipProcessor — mcp Architecture","position":11,"url":"https://repos.supermodeltools.com/subdomain-zipprocessor.html"}],"numberOfItems":11},"name":"Subdomain","url":"https://repos.supermodeltools.com/node_type/subdomain.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://repos.supermodeltools.com/node_type/","name":"Node Types","position":2},{"@type":"ListItem","name":"Subdomain","position":3}]}</script>
 </head>
 <body>
@@ -865,47 +912,74 @@ a.pill:hover {
         <span>Subdomain</span>
       </div>
       <h1>Subdomain</h1>
-      <p class="hub-desc">Browse all 10 node type entities categorized under Subdomain in the mcp Architecture Docs architecture documentation.</p>
-      <p class="hub-meta">10 entities &middot; Page 1 of 1</p>
+      <p class="hub-desc">Browse all 11 node type entities categorized under Subdomain in the mcp Architecture Docs architecture documentation.</p>
+      <p class="hub-meta">11 entities &middot; Page 1 of 1</p>
       <div class="chart-panel chart-panel-compact hub-charts">
         <div class="hub-chart-cell" id="hub-chart"></div>
         <div class="hub-chart-cell" id="hub-chart-secondary"></div>
-        <script type="application/json" id="hub-chart-data">{"entryName":"Subdomain","totalEntities":10,"typeDistribution":null}</script>
+        <script type="application/json" id="hub-chart-data">{"entryName":"Subdomain","totalEntities":11,"typeDistribution":null}</script>
       </div>
     </div>
 
     <div class="card-grid">
       
-      <a href="/subdomain-apiintegration.html" class="card">
-        <div class="card-title">ApiIntegration — mcp Architecture</div>
-        <div class="card-desc">Manages communication with the remote Supermodel SDK and classifies its responses. Architecture documentation for the ApiIntegration subdomain (part of UtilityServices domain) in the mcp codebase. Contains 0 source files.</div>
+      <a href="/subdomain-apiclient.html" class="card">
+        <div class="card-title">ApiClient — mcp Architecture</div>
+        <div class="card-desc">Handles authenticated HTTP requests to the Supermodel graph service. Architecture documentation for the ApiClient subdomain (part of SupermodelSDK domain) in the mcp codebase. Contains 0 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Subdomain</span>
           
         </div>
       </a>
       
-      <a href="/subdomain-callgraph.html" class="card">
-        <div class="card-title">CallGraph — mcp Architecture</div>
-        <div class="card-desc">Navigates function calls and callers to visualize code execution paths. Architecture documentation for the CallGraph subdomain (part of AnalysisTools domain) in the mcp codebase. Contains 0 source files.</div>
+      <a href="/subdomain-architecturalmapper.html" class="card">
+        <div class="card-title">ArchitecturalMapper — mcp Architecture</div>
+        <div class="card-desc">Aggregates domain-level metadata to provide high-level abstractions. Architecture documentation for the ArchitecturalMapper subdomain (part of AnalysisTools domain) in the mcp codebase. Contains 0 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Subdomain</span>
           
         </div>
       </a>
       
-      <a href="/subdomain-experimentmanager.html" class="card">
-        <div class="card-title">ExperimentManager — mcp Architecture</div>
-        <div class="card-desc">Controls tool availability and system instructions based on environment-driven experiment variants. Architecture documentation for the ExperimentManager subdomain (part of McpServer domain) in the mcp codebase. Contains 0 source files.</div>
+      <a href="/subdomain-calltracer.html" class="card">
+        <div class="card-title">CallTracer — mcp Architecture</div>
+        <div class="card-desc">Traverses upstream and downstream relationships in the graph. Architecture documentation for the CallTracer subdomain (part of AnalysisTools domain) in the mcp codebase. Contains 0 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Subdomain</span>
           
         </div>
       </a>
       
-      <a href="/subdomain-logging.html" class="card">
-        <div class="card-title">Logging — mcp Architecture</div>
-        <div class="card-desc">Provides diagnostic stderr output controllable via environment variables. Architecture documentation for the Logging subdomain (part of UtilityServices domain) in the mcp codebase. Contains 0 source files.</div>
+      <a href="/subdomain-configuration.html" class="card">
+        <div class="card-title">Configuration — mcp Architecture</div>
+        <div class="card-desc">Manages environment variables and SDK authentication. Architecture documentation for the Configuration subdomain (part of McpServer domain) in the mcp codebase. Contains 0 source files.</div>
+        <div class="card-meta">
+          <span class="pill pill-accent">Subdomain</span>
+          
+        </div>
+      </a>
+      
+      <a href="/subdomain-idempotency.html" class="card">
+        <div class="card-title">Idempotency — mcp Architecture</div>
+        <div class="card-desc">Generates unique keys based on git status and file system paths. Architecture documentation for the Idempotency subdomain (part of SupermodelSDK domain) in the mcp codebase. Contains 0 source files.</div>
+        <div class="card-meta">
+          <span class="pill pill-accent">Subdomain</span>
+          
+        </div>
+      </a>
+      
+      <a href="/subdomain-indexingengine.html" class="card">
+        <div class="card-title">IndexingEngine — mcp Architecture</div>
+        <div class="card-desc">Converts raw IR into optimized adjacency lists and name indexes. Architecture documentation for the IndexingEngine subdomain (part of GraphCache domain) in the mcp codebase. Contains 0 source files.</div>
+        <div class="card-meta">
+          <span class="pill pill-accent">Subdomain</span>
+          
+        </div>
+      </a>
+      
+      <a href="/subdomain-instructionmanager.html" class="card">
+        <div class="card-title">InstructionManager — mcp Architecture</div>
+        <div class="card-desc">Injects dynamic architectural context into the LLM system prompt. Architecture documentation for the InstructionManager subdomain (part of McpServer domain) in the mcp codebase. Contains 0 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Subdomain</span>
           
@@ -913,44 +987,17 @@ a.pill:hover {
       </a>
       
       <a href="/subdomain-lrumanager.html" class="card">
-        <div class="card-title">LRUManager — mcp Architecture</div>
-        <div class="card-desc">Tracks graph age and node counts to prevent memory overflows. Architecture documentation for the LRUManager subdomain (part of GraphCache domain) in the mcp codebase. Contains 0 source files.</div>
+        <div class="card-title">LruManager — mcp Architecture</div>
+        <div class="card-desc">Tracks memory pressure and evicts graphs based on node counts. Architecture documentation for the LruManager subdomain (part of GraphCache domain) in the mcp codebase. Contains 0 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Subdomain</span>
           
         </div>
       </a>
       
-      <a href="/subdomain-reporting.html" class="card">
-        <div class="card-title">Reporting — mcp Architecture</div>
-        <div class="card-desc">Formats analytical results into Markdown suitable for LLM consumption. Architecture documentation for the Reporting subdomain (part of AnalysisTools domain) in the mcp codebase. Contains 0 source files.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Subdomain</span>
-          
-        </div>
-      </a>
-      
-      <a href="/subdomain-repositoryarchiver.html" class="card">
-        <div class="card-title">RepositoryArchiver — mcp Architecture</div>
-        <div class="card-desc">Compresses code source with strict filtering for security and performance. Architecture documentation for the RepositoryArchiver subdomain (part of UtilityServices domain) in the mcp codebase. Contains 0 source files.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Subdomain</span>
-          
-        </div>
-      </a>
-      
-      <a href="/subdomain-requesthandling.html" class="card">
-        <div class="card-title">RequestHandling — mcp Architecture</div>
-        <div class="card-desc">Maps incoming JSON-RPC tool calls to specific handler functions. Architecture documentation for the RequestHandling subdomain (part of McpServer domain) in the mcp codebase. Contains 0 source files.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Subdomain</span>
-          
-        </div>
-      </a>
-      
-      <a href="/subdomain-symbollocator.html" class="card">
-        <div class="card-title">SymbolLocator — mcp Architecture</div>
-        <div class="card-desc">Uses name and path indexes to find specific code nodes quickly. Architecture documentation for the SymbolLocator subdomain (part of AnalysisTools domain) in the mcp codebase. Contains 0 source files.</div>
+      <a href="/subdomain-symbolresolver.html" class="card">
+        <div class="card-title">SymbolResolver — mcp Architecture</div>
+        <div class="card-desc">Identifies code entities using Class.method or partial matching syntax. Architecture documentation for the SymbolResolver subdomain (part of AnalysisTools domain) in the mcp codebase. Contains 0 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Subdomain</span>
           
@@ -959,7 +1006,16 @@ a.pill:hover {
       
       <a href="/subdomain-transport.html" class="card">
         <div class="card-title">Transport — mcp Architecture</div>
-        <div class="card-desc">Handles Stdio-based communication between the MCP client and server. Architecture documentation for the Transport subdomain (part of McpServer domain) in the mcp codebase. Contains 0 source files.</div>
+        <div class="card-desc">Handles Stdio-based communication with the MCP client. Architecture documentation for the Transport subdomain (part of McpServer domain) in the mcp codebase. Contains 0 source files.</div>
+        <div class="card-meta">
+          <span class="pill pill-accent">Subdomain</span>
+          
+        </div>
+      </a>
+      
+      <a href="/subdomain-zipprocessor.html" class="card">
+        <div class="card-title">ZipProcessor — mcp Architecture</div>
+        <div class="card-desc">Recursively archives files with security-aware exclusions. Architecture documentation for the ZipProcessor subdomain (part of SupermodelSDK domain) in the mcp codebase. Contains 0 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Subdomain</span>
           

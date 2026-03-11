@@ -8,7 +8,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
 
 <title>start() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the start() function in server.ts from the mcp codebase.">
@@ -25,22 +25,22 @@
 <meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-server-ts-start.svg">
 
 <style>:root {
-  --bg: #0f1117;
-  --bg-card: #1a1d27;
-  --bg-hover: #22263a;
-  --border: #2a2e3e;
-  --text: #e4e4e7;
-  --text-muted: #9ca3af;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --green: #22c55e;
-  --orange: #f59e0b;
-  --red: #ef4444;
-  --blue: #3b82f6;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --bg: #000000;
+  --bg-card: #161616;
+  --bg-hover: #08191C;
+  --border: #202020;
+  --text: #FFFFFF;
+  --text-muted: #808080;
+  --accent: #71B9BC;
+  --accent-light: #8CC6C9;
+  --green: #7CCE86;
+  --orange: #D0A27D;
+  --red: #E589C6;
+  --blue: #8E8CE9;
+  --font: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: 'Martian Mono', "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --max-w: 1200px;
-  --radius: 8px;
+  --radius: 0px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,7 +51,9 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: 0em;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -60,7 +62,7 @@ a { color: var(--accent-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
 
-.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #000; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
 .skip-link:focus { top: 12px; }
 
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
@@ -82,7 +84,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 }
 .site-brand {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text);
   display: flex;
   align-items: center;
@@ -93,7 +95,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .site-brand:hover { text-decoration: none; color: var(--accent-light); }
 .site-brand svg { width: 24px; height: 24px; }
 .site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a { color: var(--text-muted); font-size: 0.68rem; font-weight: 300; font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
 .site-nav a:hover { color: var(--text); text-decoration: none; }
 .nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
 .nav-all-repos:hover { color: var(--text) !important; }
@@ -125,8 +127,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .entity-breadcrumb .sep { opacity: 0.4; }
 .entity-title {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1.3;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -170,7 +173,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
   border-radius: 20px;
   font-size: 12px;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 400;
+  font-family: var(--mono);
   text-decoration: none;
 }
 a.pill:hover {
@@ -188,7 +192,8 @@ a.pill:hover {
 }
 .entity-section h2 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   margin-bottom: 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
@@ -233,6 +238,7 @@ a.pill:hover {
 .card-title {
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: 6px;
   overflow-wrap: break-word;
@@ -260,7 +266,8 @@ a.pill:hover {
 }
 .hero h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 200;
+  letter-spacing: -0.04em;
   margin-bottom: 12px;
 }
 .hero p {
@@ -296,19 +303,21 @@ a.pill:hover {
 }
 .hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 .hero-btn-star { border-color: var(--orange); color: var(--orange); }
-.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-star:hover { background: rgba(208, 162, 125, 0.1); }
 .hero-btn-fork { border-color: var(--blue); color: var(--blue); }
-.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-btn-fork:hover { background: rgba(142, 140, 233, 0.1); }
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px 32px;
   margin-top: 32px;
 }
 .hero-stat { text-align: center; }
 .hero-stat .num {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   color: var(--accent-light);
 }
 .hero-stat .label {
@@ -329,7 +338,8 @@ a.pill:hover {
 
 .section-title {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 .section-subtitle {
@@ -347,7 +357,8 @@ a.pill:hover {
 }
 .hub-header h1 {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 .hub-desc {
   color: var(--text-muted);
@@ -388,7 +399,7 @@ a.pill:hover {
 }
 .pagination .current {
   background: var(--accent);
-  color: white;
+  color: #000;
 }
 
  
@@ -457,11 +468,12 @@ a.pill:hover {
   gap: 12px;
 }
 .visuals-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 8px 0;
   padding: 0;
   border: none;
@@ -547,7 +559,7 @@ a.pill:hover {
 
  
 .cta-section {
-  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, #08191C 100%);
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   padding: 40px 32px;
@@ -557,7 +569,8 @@ a.pill:hover {
 }
 .cta-heading {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   border-bottom: none !important;
   padding-bottom: 0 !important;
@@ -572,7 +585,7 @@ a.pill:hover {
   display: inline-block;
   padding: 12px 28px;
   background: var(--accent);
-  color: #fff;
+  color: #000;
   font-size: 15px;
   font-weight: 600;
   border-radius: 6px;
@@ -592,11 +605,12 @@ a.pill:hover {
   margin-bottom: 32px;
 }
 .chart-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 12px 0;
 }
 .chart-panel-compact {
@@ -633,7 +647,7 @@ a.pill:hover {
   margin: 0 0 8px 0;
 }
 .source-code {
-  background: #0d0f14;
+  background: #161616;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
@@ -646,11 +660,44 @@ a.pill:hover {
 .source-code code {
   font-family: var(--mono);
   font-size: 13px;
-  color: #e4e4e7;
+  color: #FFFFFF;
   white-space: pre;
   tab-size: 2;
   margin-bottom: 0;
 }
+ 
+.hp-composition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  height: 200px;
+}
+.hp-comp-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 12px;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+.hp-comp-item:hover { opacity: 1; text-decoration: none; }
+.hp-comp-name {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  white-space: nowrap;
+}
+.hp-comp-count {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-family: var(--mono);
+  margin-top: 2px;
+}
+
 #homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
 #homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
   width: 100%;
@@ -688,7 +735,7 @@ a.pill:hover {
 }
 .letter-active {
   background: var(--accent);
-  color: #fff;
+  color: #000;
   border-color: var(--accent);
 }
 
@@ -741,7 +788,7 @@ a.pill:hover {
   .hero p { font-size: 15px; }
   .hero-actions { gap: 8px; }
   .hero-btn { padding: 6px 12px; font-size: 12px; }
-  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stats { gap: 8px 16px; }
   .hero-stat .num { font-size: 22px; }
   .hero-stat .label { font-size: 12px; }
   .hero-stat-link { padding: 8px 12px; }
@@ -870,7 +917,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/domain/mcpserver.html" class="pill pill-green">McpServer</a>
-        <a href="/subdomain/transport.html" class="pill pill-orange">Transport</a>
+        <a href="/subdomain/instructionmanager.html" class="pill pill-orange">InstructionManager</a>
         
         
         <span class="pill">calls 9</span>
@@ -894,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"start","slug":"fn-server-ts-start","type":"Function"},"subdomain":{"name":"Transport","slug":"subdomain-transport"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"start","slug":"fn-server-ts-start","type":"Function"},"subdomain":{"name":"InstructionManager","slug":"subdomain-instructionmanager"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcpserver.html">McpServer</a><span class="arch-sep">&rarr;</span>
-            <a href="/transport.html">Transport</a><span class="arch-sep">&rarr;</span>
+            <a href="/instructionmanager.html">InstructionManager</a><span class="arch-sep">&rarr;</span>
             <span>start() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -911,30 +958,30 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077["start()"]
-  05d216c6_23f8_bf79_1e05_386861a7fc92["main()"]
-  05d216c6_23f8_bf79_1e05_386861a7fc92 -->|calls| 02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077
-  f7dad1e2_9c28_444d_09a0_090ea67ae4bc["constructor()"]
-  f7dad1e2_9c28_444d_09a0_090ea67ae4bc -->|calls| 02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077
-  bd707836_72ae_7f44_1804_a3fb833de21d["injectOverviewInstructions()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| bd707836_72ae_7f44_1804_a3fb833de21d
-  b5cf190c_a9c6_13c3_083c_4f4cc3acafef["cleanupOldZips()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| b5cf190c_a9c6_13c3_083c_4f4cc3acafef
-  34884085_9104_538c_6ab5_ed46d5c8b65b["debug()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| 34884085_9104_538c_6ab5_ed46d5c8b65b
-  3f3a6258_87ac_8121_4b30_59beb6033d82["loadCacheFromDisk()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| 3f3a6258_87ac_8121_4b30_59beb6033d82
-  511f726b_d545_98b8_fa10_be107fc19880["setRepoMap()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| 511f726b_d545_98b8_fa10_be107fc19880
-  b5deedc6_2595_e9c3_5633_70cebb717326["warn()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| b5deedc6_2595_e9c3_5633_70cebb717326
-  a9d4710c_1973_744a_44fb_836740a97a7d["info()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| a9d4710c_1973_744a_44fb_836740a97a7d
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173["precacheForDirectory()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| b47a33d2_5f89_eeaf_463d_8c66dba4c173
-  8212f4d6_9505_9f3c_3141_ae34b10fa784["setNoApiFallback()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| 8212f4d6_9505_9f3c_3141_ae34b10fa784
-  style 02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  ff932b7a_0f34_af34_92e9_afee8684c161["start()"]
+  1c4de135_2ecc_4fec_794b_e2ee63c23b01["main()"]
+  1c4de135_2ecc_4fec_794b_e2ee63c23b01 -->|calls| ff932b7a_0f34_af34_92e9_afee8684c161
+  6c9ae4a1_9068_4b70_c8f4_725900f84a98["constructor()"]
+  6c9ae4a1_9068_4b70_c8f4_725900f84a98 -->|calls| ff932b7a_0f34_af34_92e9_afee8684c161
+  ccd92028_708a_8c80_5945_5732960fb53b["injectOverviewInstructions()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161 -->|calls| ccd92028_708a_8c80_5945_5732960fb53b
+  20849a82_407f_dbeb_2e07_b424ddd66f75["cleanupOldZips()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161 -->|calls| 20849a82_407f_dbeb_2e07_b424ddd66f75
+  ee94700d_a1f3_530e_f707_1f94bfa777cc["debug()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161 -->|calls| ee94700d_a1f3_530e_f707_1f94bfa777cc
+  0e450c17_2f22_74ad_f133_5b44a7f9484c["loadCacheFromDisk()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161 -->|calls| 0e450c17_2f22_74ad_f133_5b44a7f9484c
+  4122aae7_df74_aa66_b8c8_bf3b61e6cd12["setRepoMap()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161 -->|calls| 4122aae7_df74_aa66_b8c8_bf3b61e6cd12
+  10ba0958_e19d_0a99_764b_9ad38cbc50ea["warn()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161 -->|calls| 10ba0958_e19d_0a99_764b_9ad38cbc50ea
+  5140f063_fb28_95cb_064c_e6e4497d58cc["info()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161 -->|calls| 5140f063_fb28_95cb_064c_e6e4497d58cc
+  255337e7_1c00_03c9_f932_40af3d388271["precacheForDirectory()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161 -->|calls| 255337e7_1c00_03c9_f932_40af3d388271
+  14cf6e06_7422_6dac_db2c_6df7fd7ba3da["setNoApiFallback()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161 -->|calls| 14cf6e06_7422_6dac_db2c_6df7fd7ba3da
+  style ff932b7a_0f34_af34_92e9_afee8684c161 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -942,7 +989,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-server-ts-start"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"bd707836:72ae:7f44:1804:a3fb833de21d","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"b5cf190c:a9c6:13c3:083c:4f4cc3acafef","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"34884085:9104:538c:6ab5:ed46d5c8b65b","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"3f3a6258:87ac:8121:4b30:59beb6033d82","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"511f726b:d545:98b8:fa10:be107fc19880","label":"setRepoMap","type":"Function","slug":"fn-graph-cache-ts-setrepomap","lc":3,"lang":"typescript","cbc":1},{"id":"b5deedc6:2595:e9c3:5633:70cebb717326","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"a9d4710c:1973:744a:44fb:836740a97a7d","label":"info","type":"Function","slug":"fn-logger-ts-info","lc":3,"lang":"typescript","cbc":2},{"id":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"8212f4d6:9505:9f3c:3141:ae34b10fa784","label":"setNoApiFallback","type":"Function","slug":"fn-graph-cache-ts-setnoapifallback","lc":3,"lang":"typescript","cbc":1},{"id":"05d216c6:23f8:bf79:1e05:386861a7fc92","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"f7dad1e2:9c28:444d:09a0:090ea67ae4bc","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:Transport","label":"Transport","type":"Subdomain","slug":"subdomain-transport"}],"edges":[{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"bd707836:72ae:7f44:1804:a3fb833de21d","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"b5cf190c:a9c6:13c3:083c:4f4cc3acafef","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"34884085:9104:538c:6ab5:ed46d5c8b65b","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"3f3a6258:87ac:8121:4b30:59beb6033d82","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"511f726b:d545:98b8:fa10:be107fc19880","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"b5deedc6:2595:e9c3:5633:70cebb717326","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"a9d4710c:1973:744a:44fb:836740a97a7d","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"8212f4d6:9505:9f3c:3141:ae34b10fa784","type":"calls"},{"source":"05d216c6:23f8:bf79:1e05:386861a7fc92","target":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","type":"calls"},{"source":"f7dad1e2:9c28:444d:09a0:090ea67ae4bc","target":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"domain:McpServer","type":"belongsTo"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"subdomain:McpServer:Transport","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"ff932b7a:0f34:af34:92e9:afee8684c161","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"ccd92028:708a:8c80:5945:5732960fb53b","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"20849a82:407f:dbeb:2e07:b424ddd66f75","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"ee94700d:a1f3:530e:f707:1f94bfa777cc","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"0e450c17:2f22:74ad:f133:5b44a7f9484c","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"4122aae7:df74:aa66:b8c8:bf3b61e6cd12","label":"setRepoMap","type":"Function","slug":"fn-graph-cache-ts-setrepomap","lc":3,"lang":"typescript","cbc":1},{"id":"10ba0958:e19d:0a99:764b:9ad38cbc50ea","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"5140f063:fb28:95cb:064c:e6e4497d58cc","label":"info","type":"Function","slug":"fn-logger-ts-info","lc":3,"lang":"typescript","cbc":2},{"id":"255337e7:1c00:03c9:f932:40af3d388271","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"14cf6e06:7422:6dac:db2c:6df7fd7ba3da","label":"setNoApiFallback","type":"Function","slug":"fn-graph-cache-ts-setnoapifallback","lc":3,"lang":"typescript","cbc":1},{"id":"1c4de135:2ecc:4fec:794b:e2ee63c23b01","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"6c9ae4a1:9068:4b70:c8f4:725900f84a98","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:InstructionManager","label":"InstructionManager","type":"Subdomain","slug":"subdomain-instructionmanager"}],"edges":[{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"ccd92028:708a:8c80:5945:5732960fb53b","type":"calls"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"20849a82:407f:dbeb:2e07:b424ddd66f75","type":"calls"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"ee94700d:a1f3:530e:f707:1f94bfa777cc","type":"calls"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"0e450c17:2f22:74ad:f133:5b44a7f9484c","type":"calls"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"4122aae7:df74:aa66:b8c8:bf3b61e6cd12","type":"calls"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"10ba0958:e19d:0a99:764b:9ad38cbc50ea","type":"calls"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"5140f063:fb28:95cb:064c:e6e4497d58cc","type":"calls"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"255337e7:1c00:03c9:f932:40af3d388271","type":"calls"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"14cf6e06:7422:6dac:db2c:6df7fd7ba3da","type":"calls"},{"source":"1c4de135:2ecc:4fec:794b:e2ee63c23b01","target":"ff932b7a:0f34:af34:92e9:afee8684c161","type":"calls"},{"source":"6c9ae4a1:9068:4b70:c8f4:725900f84a98","target":"ff932b7a:0f34:af34:92e9:afee8684c161","type":"calls"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"domain:McpServer","type":"belongsTo"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"subdomain:McpServer:InstructionManager","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1011,7 +1058,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-transport.html">Transport</a></li></ul>
+      <ul><li><a href="/subdomain-instructionmanager.html">InstructionManager</a></li></ul>
     </div>
     
 

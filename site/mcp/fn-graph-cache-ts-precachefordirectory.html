@@ -8,7 +8,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
 
 <title>precacheForDirectory() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the precacheForDirectory() function in graph-cache.ts from the mcp codebase.">
@@ -25,22 +25,22 @@
 <meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/fn-graph-cache-ts-precachefordirectory.svg">
 
 <style>:root {
-  --bg: #0f1117;
-  --bg-card: #1a1d27;
-  --bg-hover: #22263a;
-  --border: #2a2e3e;
-  --text: #e4e4e7;
-  --text-muted: #9ca3af;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --green: #22c55e;
-  --orange: #f59e0b;
-  --red: #ef4444;
-  --blue: #3b82f6;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --bg: #000000;
+  --bg-card: #161616;
+  --bg-hover: #08191C;
+  --border: #202020;
+  --text: #FFFFFF;
+  --text-muted: #808080;
+  --accent: #71B9BC;
+  --accent-light: #8CC6C9;
+  --green: #7CCE86;
+  --orange: #D0A27D;
+  --red: #E589C6;
+  --blue: #8E8CE9;
+  --font: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: 'Martian Mono', "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --max-w: 1200px;
-  --radius: 8px;
+  --radius: 0px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,7 +51,9 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: 0em;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -60,7 +62,7 @@ a { color: var(--accent-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
 
-.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #000; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
 .skip-link:focus { top: 12px; }
 
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
@@ -82,7 +84,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 }
 .site-brand {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text);
   display: flex;
   align-items: center;
@@ -93,7 +95,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .site-brand:hover { text-decoration: none; color: var(--accent-light); }
 .site-brand svg { width: 24px; height: 24px; }
 .site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a { color: var(--text-muted); font-size: 0.68rem; font-weight: 300; font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
 .site-nav a:hover { color: var(--text); text-decoration: none; }
 .nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
 .nav-all-repos:hover { color: var(--text) !important; }
@@ -125,8 +127,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .entity-breadcrumb .sep { opacity: 0.4; }
 .entity-title {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1.3;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -170,7 +173,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
   border-radius: 20px;
   font-size: 12px;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 400;
+  font-family: var(--mono);
   text-decoration: none;
 }
 a.pill:hover {
@@ -188,7 +192,8 @@ a.pill:hover {
 }
 .entity-section h2 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   margin-bottom: 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
@@ -233,6 +238,7 @@ a.pill:hover {
 .card-title {
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: 6px;
   overflow-wrap: break-word;
@@ -260,7 +266,8 @@ a.pill:hover {
 }
 .hero h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 200;
+  letter-spacing: -0.04em;
   margin-bottom: 12px;
 }
 .hero p {
@@ -296,19 +303,21 @@ a.pill:hover {
 }
 .hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 .hero-btn-star { border-color: var(--orange); color: var(--orange); }
-.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-star:hover { background: rgba(208, 162, 125, 0.1); }
 .hero-btn-fork { border-color: var(--blue); color: var(--blue); }
-.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-btn-fork:hover { background: rgba(142, 140, 233, 0.1); }
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px 32px;
   margin-top: 32px;
 }
 .hero-stat { text-align: center; }
 .hero-stat .num {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   color: var(--accent-light);
 }
 .hero-stat .label {
@@ -329,7 +338,8 @@ a.pill:hover {
 
 .section-title {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 .section-subtitle {
@@ -347,7 +357,8 @@ a.pill:hover {
 }
 .hub-header h1 {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 .hub-desc {
   color: var(--text-muted);
@@ -388,7 +399,7 @@ a.pill:hover {
 }
 .pagination .current {
   background: var(--accent);
-  color: white;
+  color: #000;
 }
 
  
@@ -457,11 +468,12 @@ a.pill:hover {
   gap: 12px;
 }
 .visuals-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 8px 0;
   padding: 0;
   border: none;
@@ -547,7 +559,7 @@ a.pill:hover {
 
  
 .cta-section {
-  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, #08191C 100%);
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   padding: 40px 32px;
@@ -557,7 +569,8 @@ a.pill:hover {
 }
 .cta-heading {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   border-bottom: none !important;
   padding-bottom: 0 !important;
@@ -572,7 +585,7 @@ a.pill:hover {
   display: inline-block;
   padding: 12px 28px;
   background: var(--accent);
-  color: #fff;
+  color: #000;
   font-size: 15px;
   font-weight: 600;
   border-radius: 6px;
@@ -592,11 +605,12 @@ a.pill:hover {
   margin-bottom: 32px;
 }
 .chart-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 12px 0;
 }
 .chart-panel-compact {
@@ -633,7 +647,7 @@ a.pill:hover {
   margin: 0 0 8px 0;
 }
 .source-code {
-  background: #0d0f14;
+  background: #161616;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
@@ -646,11 +660,44 @@ a.pill:hover {
 .source-code code {
   font-family: var(--mono);
   font-size: 13px;
-  color: #e4e4e7;
+  color: #FFFFFF;
   white-space: pre;
   tab-size: 2;
   margin-bottom: 0;
 }
+ 
+.hp-composition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  height: 200px;
+}
+.hp-comp-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 12px;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+.hp-comp-item:hover { opacity: 1; text-decoration: none; }
+.hp-comp-name {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  white-space: nowrap;
+}
+.hp-comp-count {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-family: var(--mono);
+  margin-top: 2px;
+}
+
 #homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
 #homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
   width: 100%;
@@ -688,7 +735,7 @@ a.pill:hover {
 }
 .letter-active {
   background: var(--accent);
-  color: #fff;
+  color: #000;
   border-color: var(--accent);
 }
 
@@ -741,7 +788,7 @@ a.pill:hover {
   .hero p { font-size: 15px; }
   .hero-actions { gap: 8px; }
   .hero-btn { padding: 6px 12px; font-size: 12px; }
-  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stats { gap: 8px 16px; }
   .hero-stat .num { font-size: 22px; }
   .hero-stat .label { font-size: 12px; }
   .hero-stat-link { padding: 8px 12px; }
@@ -870,7 +917,7 @@ a.pill:hover {
         <a href="/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/domain/graphcache.html" class="pill pill-green">GraphCache</a>
-        <a href="/subdomain/lrumanager.html" class="pill pill-orange">LRUManager</a>
+        <a href="/subdomain/lrumanager.html" class="pill pill-orange">LruManager</a>
         
         
         <span class="pill">calls 11</span>
@@ -894,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"precacheForDirectory","slug":"fn-graph-cache-ts-precachefordirectory","type":"Function"},"subdomain":{"name":"LRUManager","slug":"subdomain-lrumanager"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"precacheForDirectory","slug":"fn-graph-cache-ts-precachefordirectory","type":"Function"},"subdomain":{"name":"LruManager","slug":"subdomain-lrumanager"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/graphcache.html">GraphCache</a><span class="arch-sep">&rarr;</span>
-            <a href="/lrumanager.html">LRUManager</a><span class="arch-sep">&rarr;</span>
+            <a href="/lrumanager.html">LruManager</a><span class="arch-sep">&rarr;</span>
             <span>precacheForDirectory() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -911,32 +958,32 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173["precacheForDirectory()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077["start()"]
-  02dd5f4a_8a2d_d94d_1e4b_8f075bcb0077 -->|calls| b47a33d2_5f89_eeaf_463d_8c66dba4c173
-  c230b161_0238_0663_612f_aee47c3482ae["detectRepo()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| c230b161_0238_0663_612f_aee47c3482ae
-  34884085_9104_538c_6ab5_ed46d5c8b65b["debug()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| 34884085_9104_538c_6ab5_ed46d5c8b65b
-  a9d4710c_1973_744a_44fb_836740a97a7d["info()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| a9d4710c_1973_744a_44fb_836740a97a7d
-  a814fafa_cd59_1123_b6aa_46555033995a["generateIdempotencyKey()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| a814fafa_cd59_1123_b6aa_46555033995a
-  46b5850b_8198_4f51_e5c1_eb2ab2bfd579["detectRepoName()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| 46b5850b_8198_4f51_e5c1_eb2ab2bfd579
-  21975680_f824_1d44_2d3d_f21b55b8d19b["zipRepository()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| 21975680_f824_1d44_2d3d_f21b55b8d19b
-  238e2383_713c_068b_86d2_8033eff5553e["buildIndexes()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| 238e2383_713c_068b_86d2_8033eff5553e
-  b65d89f7_8a80_88c0_143f_467b9bd264a1["set()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| b65d89f7_8a80_88c0_143f_467b9bd264a1
-  a02b01d8_30b2_5999_6ff9_11fe0dfbe70e["has()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| a02b01d8_30b2_5999_6ff9_11fe0dfbe70e
-  ba1756db_dcbf_3406_486a_1122ab533dfa["saveCacheToDisk()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| ba1756db_dcbf_3406_486a_1122ab533dfa
-  b5deedc6_2595_e9c3_5633_70cebb717326["warn()"]
-  b47a33d2_5f89_eeaf_463d_8c66dba4c173 -->|calls| b5deedc6_2595_e9c3_5633_70cebb717326
-  style b47a33d2_5f89_eeaf_463d_8c66dba4c173 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  255337e7_1c00_03c9_f932_40af3d388271["precacheForDirectory()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161["start()"]
+  ff932b7a_0f34_af34_92e9_afee8684c161 -->|calls| 255337e7_1c00_03c9_f932_40af3d388271
+  d8936a94_b781_4fb6_5447_34fea42fef3e["detectRepo()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| d8936a94_b781_4fb6_5447_34fea42fef3e
+  ee94700d_a1f3_530e_f707_1f94bfa777cc["debug()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| ee94700d_a1f3_530e_f707_1f94bfa777cc
+  5140f063_fb28_95cb_064c_e6e4497d58cc["info()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| 5140f063_fb28_95cb_064c_e6e4497d58cc
+  12cab5d6_8cb5_ab72_873b_05cf76cd5a14["generateIdempotencyKey()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| 12cab5d6_8cb5_ab72_873b_05cf76cd5a14
+  f760b476_241d_e7ba_c6ef_c479c76f354f["detectRepoName()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| f760b476_241d_e7ba_c6ef_c479c76f354f
+  088c4c4a_f604_5557_2e85_cc777da36b9f["zipRepository()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| 088c4c4a_f604_5557_2e85_cc777da36b9f
+  849824bb_f255_bb8c_856b_76e8a404899b["buildIndexes()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| 849824bb_f255_bb8c_856b_76e8a404899b
+  02d51137_5f69_7a72_7108_7a6892f9607d["set()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| 02d51137_5f69_7a72_7108_7a6892f9607d
+  e0611996_f69e_aeca_8159_4d9abc3a5539["has()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| e0611996_f69e_aeca_8159_4d9abc3a5539
+  33aef9ad_6d28_d899_7233_b89c7415b2b9["saveCacheToDisk()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| 33aef9ad_6d28_d899_7233_b89c7415b2b9
+  10ba0958_e19d_0a99_764b_9ad38cbc50ea["warn()"]
+  255337e7_1c00_03c9_f932_40af3d388271 -->|calls| 10ba0958_e19d_0a99_764b_9ad38cbc50ea
+  style 255337e7_1c00_03c9_f932_40af3d388271 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -944,7 +991,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-precachefordirectory"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"c230b161:0238:0663:612f:aee47c3482ae","label":"detectRepo","type":"Function","slug":"fn-graph-cache-ts-detectrepo","lc":75,"lang":"typescript","cc":2,"cbc":2},{"id":"34884085:9104:538c:6ab5:ed46d5c8b65b","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"a9d4710c:1973:744a:44fb:836740a97a7d","label":"info","type":"Function","slug":"fn-logger-ts-info","lc":3,"lang":"typescript","cbc":2},{"id":"a814fafa:cd59:1123:b6aa:46555033995a","label":"generateIdempotencyKey","type":"Function","slug":"fn-api-helpers-ts-generateidempotencykey","lc":37,"lang":"typescript","cbc":2},{"id":"46b5850b:8198:4f51:e5c1:eb2ab2bfd579","label":"detectRepoName","type":"Function","slug":"fn-graph-cache-ts-detectreponame","lc":15,"lang":"typescript","cbc":1},{"id":"21975680:f824:1d44:2d3d:f21b55b8d19b","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"238e2383:713c:068b:86d2:8033eff5553e","label":"buildIndexes","type":"Function","slug":"fn-graph-cache-ts-buildindexes","lc":177,"lang":"typescript","cc":4,"cbc":4},{"id":"b65d89f7:8a80:88c0:143f:467b9bd264a1","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"a02b01d8:30b2:5999:6ff9:11fe0dfbe70e","label":"has","type":"Function","slug":"fn-graph-cache-ts-has","lc":3,"lang":"typescript","cbc":8},{"id":"ba1756db:dcbf:3406:486a:1122ab533dfa","label":"saveCacheToDisk","type":"Function","slug":"fn-graph-cache-ts-savecachetodisk","lc":22,"lang":"typescript","cc":1,"cbc":1},{"id":"b5deedc6:2595:e9c3:5633:70cebb717326","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:LRUManager","label":"LRUManager","type":"Subdomain","slug":"subdomain-lrumanager"}],"edges":[{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"c230b161:0238:0663:612f:aee47c3482ae","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"34884085:9104:538c:6ab5:ed46d5c8b65b","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"a9d4710c:1973:744a:44fb:836740a97a7d","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"a814fafa:cd59:1123:b6aa:46555033995a","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"46b5850b:8198:4f51:e5c1:eb2ab2bfd579","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"21975680:f824:1d44:2d3d:f21b55b8d19b","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"238e2383:713c:068b:86d2:8033eff5553e","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"b65d89f7:8a80:88c0:143f:467b9bd264a1","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"a02b01d8:30b2:5999:6ff9:11fe0dfbe70e","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"ba1756db:dcbf:3406:486a:1122ab533dfa","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"b5deedc6:2595:e9c3:5633:70cebb717326","type":"calls"},{"source":"02dd5f4a:8a2d:d94d:1e4b:8f075bcb0077","target":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","type":"calls"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"domain:GraphCache","type":"belongsTo"},{"source":"b47a33d2:5f89:eeaf:463d:8c66dba4c173","target":"subdomain:GraphCache:LRUManager","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"255337e7:1c00:03c9:f932:40af3d388271","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"d8936a94:b781:4fb6:5447:34fea42fef3e","label":"detectRepo","type":"Function","slug":"fn-graph-cache-ts-detectrepo","lc":75,"lang":"typescript","cc":2,"cbc":2},{"id":"ee94700d:a1f3:530e:f707:1f94bfa777cc","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"5140f063:fb28:95cb:064c:e6e4497d58cc","label":"info","type":"Function","slug":"fn-logger-ts-info","lc":3,"lang":"typescript","cbc":2},{"id":"12cab5d6:8cb5:ab72:873b:05cf76cd5a14","label":"generateIdempotencyKey","type":"Function","slug":"fn-api-helpers-ts-generateidempotencykey","lc":37,"lang":"typescript","cbc":2},{"id":"f760b476:241d:e7ba:c6ef:c479c76f354f","label":"detectRepoName","type":"Function","slug":"fn-graph-cache-ts-detectreponame","lc":15,"lang":"typescript","cbc":1},{"id":"088c4c4a:f604:5557:2e85:cc777da36b9f","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"849824bb:f255:bb8c:856b:76e8a404899b","label":"buildIndexes","type":"Function","slug":"fn-graph-cache-ts-buildindexes","lc":177,"lang":"typescript","cc":4,"cbc":4},{"id":"02d51137:5f69:7a72:7108:7a6892f9607d","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"e0611996:f69e:aeca:8159:4d9abc3a5539","label":"has","type":"Function","slug":"fn-graph-cache-ts-has","lc":3,"lang":"typescript","cbc":8},{"id":"33aef9ad:6d28:d899:7233:b89c7415b2b9","label":"saveCacheToDisk","type":"Function","slug":"fn-graph-cache-ts-savecachetodisk","lc":22,"lang":"typescript","cc":1,"cbc":1},{"id":"10ba0958:e19d:0a99:764b:9ad38cbc50ea","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"ff932b7a:0f34:af34:92e9:afee8684c161","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:LruManager","label":"LruManager","type":"Subdomain","slug":"subdomain-lrumanager"}],"edges":[{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"d8936a94:b781:4fb6:5447:34fea42fef3e","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"ee94700d:a1f3:530e:f707:1f94bfa777cc","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"5140f063:fb28:95cb:064c:e6e4497d58cc","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"12cab5d6:8cb5:ab72:873b:05cf76cd5a14","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"f760b476:241d:e7ba:c6ef:c479c76f354f","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"088c4c4a:f604:5557:2e85:cc777da36b9f","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"849824bb:f255:bb8c:856b:76e8a404899b","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"02d51137:5f69:7a72:7108:7a6892f9607d","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"e0611996:f69e:aeca:8159:4d9abc3a5539","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"33aef9ad:6d28:d899:7233:b89c7415b2b9","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"10ba0958:e19d:0a99:764b:9ad38cbc50ea","type":"calls"},{"source":"ff932b7a:0f34:af34:92e9:afee8684c161","target":"255337e7:1c00:03c9:f932:40af3d388271","type":"calls"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"domain:GraphCache","type":"belongsTo"},{"source":"255337e7:1c00:03c9:f932:40af3d388271","target":"subdomain:GraphCache:LruManager","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1034,7 +1081,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/subdomain-lrumanager.html">LRUManager</a></li></ul>
+      <ul><li><a href="/subdomain-lrumanager.html">LruManager</a></li></ul>
     </div>
     
 

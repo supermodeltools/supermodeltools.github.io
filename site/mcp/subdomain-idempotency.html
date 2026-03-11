@@ -8,40 +8,39 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
 
-<title>Reporting — Subdomains | mcp Architecture Docs</title>
-<meta name="description" content="Browse all Reporting entities in the mcp Architecture Docs architecture documentation.">
-<link rel="canonical" href="https://repos.supermodeltools.com/subdomain/reporting.html">
-
-<meta property="og:title" content="Reporting — Subdomains — mcp Architecture Docs">
-<meta property="og:description" content="Browse 6 Reporting Subdomain recipes on mcp Architecture Docs.">
-<meta property="og:url" content="https://repos.supermodeltools.com/subdomain/reporting.html">
-<meta property="og:image" content="https://repos.supermodeltools.com/images/share/subdomain-reporting.svg">
+<title>Idempotency — mcp Architecture | mcp Architecture Docs</title>
+<meta name="description" content="Generates unique keys based on git status and file system paths. Architecture documentation for the Idempotency subdomain (part of SupermodelSDK domain) in the mcp codebase. Contains 0 source files.">
+<link rel="canonical" href="https://repos.supermodeltools.com/subdomain-idempotency/">
+<meta property="og:title" content="Idempotency — mcp Architecture — mcp Architecture Docs">
+<meta property="og:description" content="Generates unique keys based on git status and file system paths. Architecture documentation for the Idempotency subdomain (part of SupermodelSDK domain) in the mcp codebase. Contains 0 source files.">
+<meta property="og:url" content="https://repos.supermodeltools.com/subdomain-idempotency.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/subdomain-idempotency.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="mcp Architecture Docs">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Reporting — Subdomains — mcp Architecture Docs">
-<meta name="twitter:description" content="Browse 6 Reporting Subdomain recipes on mcp Architecture Docs.">
-<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/subdomain-reporting.svg">
+<meta name="twitter:title" content="Idempotency — mcp Architecture — mcp Architecture Docs">
+<meta name="twitter:description" content="Generates unique keys based on git status and file system paths. Architecture documentation for the Idempotency subdomain (part of SupermodelSDK domain) in the mcp codebase. Contains 0 source files.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/subdomain-idempotency.svg">
 
 <style>:root {
-  --bg: #0f1117;
-  --bg-card: #1a1d27;
-  --bg-hover: #22263a;
-  --border: #2a2e3e;
-  --text: #e4e4e7;
-  --text-muted: #9ca3af;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --green: #22c55e;
-  --orange: #f59e0b;
-  --red: #ef4444;
-  --blue: #3b82f6;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --bg: #000000;
+  --bg-card: #161616;
+  --bg-hover: #08191C;
+  --border: #202020;
+  --text: #FFFFFF;
+  --text-muted: #808080;
+  --accent: #71B9BC;
+  --accent-light: #8CC6C9;
+  --green: #7CCE86;
+  --orange: #D0A27D;
+  --red: #E589C6;
+  --blue: #8E8CE9;
+  --font: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: 'Martian Mono', "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --max-w: 1200px;
-  --radius: 8px;
+  --radius: 0px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,7 +51,9 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: 0em;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -61,7 +62,7 @@ a { color: var(--accent-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
 
-.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #000; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
 .skip-link:focus { top: 12px; }
 
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
@@ -83,7 +84,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 }
 .site-brand {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text);
   display: flex;
   align-items: center;
@@ -94,7 +95,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .site-brand:hover { text-decoration: none; color: var(--accent-light); }
 .site-brand svg { width: 24px; height: 24px; }
 .site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a { color: var(--text-muted); font-size: 0.68rem; font-weight: 300; font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
 .site-nav a:hover { color: var(--text); text-decoration: none; }
 .nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
 .nav-all-repos:hover { color: var(--text) !important; }
@@ -126,8 +127,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .entity-breadcrumb .sep { opacity: 0.4; }
 .entity-title {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1.3;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -171,7 +173,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
   border-radius: 20px;
   font-size: 12px;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 400;
+  font-family: var(--mono);
   text-decoration: none;
 }
 a.pill:hover {
@@ -189,7 +192,8 @@ a.pill:hover {
 }
 .entity-section h2 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   margin-bottom: 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
@@ -234,6 +238,7 @@ a.pill:hover {
 .card-title {
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: 6px;
   overflow-wrap: break-word;
@@ -261,7 +266,8 @@ a.pill:hover {
 }
 .hero h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 200;
+  letter-spacing: -0.04em;
   margin-bottom: 12px;
 }
 .hero p {
@@ -297,19 +303,21 @@ a.pill:hover {
 }
 .hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 .hero-btn-star { border-color: var(--orange); color: var(--orange); }
-.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-star:hover { background: rgba(208, 162, 125, 0.1); }
 .hero-btn-fork { border-color: var(--blue); color: var(--blue); }
-.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-btn-fork:hover { background: rgba(142, 140, 233, 0.1); }
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px 32px;
   margin-top: 32px;
 }
 .hero-stat { text-align: center; }
 .hero-stat .num {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   color: var(--accent-light);
 }
 .hero-stat .label {
@@ -330,7 +338,8 @@ a.pill:hover {
 
 .section-title {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 .section-subtitle {
@@ -348,7 +357,8 @@ a.pill:hover {
 }
 .hub-header h1 {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 .hub-desc {
   color: var(--text-muted);
@@ -389,7 +399,7 @@ a.pill:hover {
 }
 .pagination .current {
   background: var(--accent);
-  color: white;
+  color: #000;
 }
 
  
@@ -458,11 +468,12 @@ a.pill:hover {
   gap: 12px;
 }
 .visuals-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 8px 0;
   padding: 0;
   border: none;
@@ -548,7 +559,7 @@ a.pill:hover {
 
  
 .cta-section {
-  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, #08191C 100%);
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   padding: 40px 32px;
@@ -558,7 +569,8 @@ a.pill:hover {
 }
 .cta-heading {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   border-bottom: none !important;
   padding-bottom: 0 !important;
@@ -573,7 +585,7 @@ a.pill:hover {
   display: inline-block;
   padding: 12px 28px;
   background: var(--accent);
-  color: #fff;
+  color: #000;
   font-size: 15px;
   font-weight: 600;
   border-radius: 6px;
@@ -593,11 +605,12 @@ a.pill:hover {
   margin-bottom: 32px;
 }
 .chart-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 12px 0;
 }
 .chart-panel-compact {
@@ -634,7 +647,7 @@ a.pill:hover {
   margin: 0 0 8px 0;
 }
 .source-code {
-  background: #0d0f14;
+  background: #161616;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
@@ -647,11 +660,44 @@ a.pill:hover {
 .source-code code {
   font-family: var(--mono);
   font-size: 13px;
-  color: #e4e4e7;
+  color: #FFFFFF;
   white-space: pre;
   tab-size: 2;
   margin-bottom: 0;
 }
+ 
+.hp-composition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  height: 200px;
+}
+.hp-comp-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 12px;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+.hp-comp-item:hover { opacity: 1; text-decoration: none; }
+.hp-comp-name {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  white-space: nowrap;
+}
+.hp-comp-count {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-family: var(--mono);
+  margin-top: 2px;
+}
+
 #homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
 #homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
   width: 100%;
@@ -689,7 +735,7 @@ a.pill:hover {
 }
 .letter-active {
   background: var(--accent);
-  color: #fff;
+  color: #000;
   border-color: var(--accent);
 }
 
@@ -742,7 +788,7 @@ a.pill:hover {
   .hero p { font-size: 15px; }
   .hero-actions { gap: 8px; }
   .hero-btn { padding: 6px 12px; font-size: 12px; }
-  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stats { gap: 8px 16px; }
   .hero-stat .num { font-size: 22px; }
   .hero-stat .label { font-size: 12px; }
   .hero-stat-link { padding: 8px 12px; }
@@ -810,8 +856,9 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","description":"Reporting Subdomain recipes","image":"https://repos.supermodeltools.com/images/share/subdomain-reporting.svg","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","name":"getHubFunctions() — mcp Function Reference","position":1,"url":"https://repos.supermodeltools.com/fn-overview-ts-gethubfunctions.html"},{"@type":"ListItem","name":"getKeyFilesForDomain() — mcp Function Reference","position":2,"url":"https://repos.supermodeltools.com/fn-overview-ts-getkeyfilesfordomain.html"},{"@type":"ListItem","name":"handler() — mcp Function Reference","position":3,"url":"https://repos.supermodeltools.com/fn-overview-ts-handler.html"},{"@type":"ListItem","name":"renderOverview() — mcp Function Reference","position":4,"url":"https://repos.supermodeltools.com/fn-overview-ts-renderoverview.html"},{"@type":"ListItem","name":"truncate() — mcp Function Reference","position":5,"url":"https://repos.supermodeltools.com/fn-overview-ts-truncate.html"},{"@type":"ListItem","name":"Reporting — mcp Architecture","position":6,"url":"https://repos.supermodeltools.com/subdomain-reporting.html"}],"numberOfItems":6},"name":"Reporting","url":"https://repos.supermodeltools.com/subdomain/reporting.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://repos.supermodeltools.com/subdomain/","name":"Subdomains","position":2},{"@type":"ListItem","name":"Reporting","position":3}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Generates unique keys based on git status and file system paths. Architecture documentation for the Idempotency subdomain (part of SupermodelSDK domain) in the mcp codebase. Contains 0 source files.","image":["https://repos.supermodeltools.com/images/share/subdomain-idempotency.svg"],"name":"Idempotency — mcp Architecture","url":"https://repos.supermodeltools.com/subdomain-idempotency.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"Idempotency — mcp Architecture","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Idempotency is a subdomain in the mcp codebase, part of the SupermodelSDK domain. Generates unique keys based on git status and file system paths. It contains 0 source files."},"name":"What is the Idempotency subdomain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Idempotency belongs to the SupermodelSDK domain."},"name":"Which domain does Idempotency belong to?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The Idempotency subdomain contains 3 function(s): debug, error, info."},"name":"What functions are in Idempotency?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -854,94 +901,141 @@ a.pill:hover {
 </div>
 
 
-<main id="main-content">
+<main class="entity-page" id="main-content">
   <div class="container">
-    <div class="hub-header">
+    <div class="entity-header">
       <div class="entity-breadcrumb">
         <a href="/">Home</a>
         <span class="sep">/</span>
-        <a href="/subdomain/index.html">Subdomains</a>
-        <span class="sep">/</span>
-        <span>Reporting</span>
+        <a href="/node_type/subdomain.html">Subdomain</a><span class="sep">/</span>
+        <span>Idempotency — mcp Architecture</span>
       </div>
-      <h1>Reporting</h1>
-      <p class="hub-desc">Browse all 6 subdomain entities categorized under Reporting in the mcp Architecture Docs architecture documentation.</p>
-      <p class="hub-meta">6 entities &middot; Page 1 of 1</p>
-      <div class="chart-panel chart-panel-compact hub-charts">
-        <div class="hub-chart-cell" id="hub-chart"></div>
-        <div class="hub-chart-cell" id="hub-chart-secondary"></div>
-        <script type="application/json" id="hub-chart-data">{"entryName":"Reporting","totalEntities":6,"typeDistribution":null}</script>
+      <h1 class="entity-title">Idempotency — mcp Architecture</h1>
+      
+
+      <div class="entity-meta">
+        <a href="/node_type/subdomain.html" class="pill pill-accent">Subdomain</a>
+        
+        <a href="/domain/supermodelsdk.html" class="pill pill-green">SupermodelSDK</a>
+        <a href="/subdomain/idempotency.html" class="pill pill-orange">Idempotency</a>
+        
+        
+        
+        
+        
+        
+        
       </div>
+
+      
+      <div class="entity-summary">
+        <p>Generates unique keys based on git status and file system paths.</p>
+      </div>
+      
     </div>
 
-    <div class="card-grid">
-      
-      <a href="/fn-overview-ts-gethubfunctions.html" class="card">
-        <div class="card-title">getHubFunctions() — mcp Function Reference</div>
-        <div class="card-desc">Architecture documentation for the getHubFunctions() function in overview.ts from the mcp codebase.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Function</span>
-          <span class="pill pill-blue">typescript</span>
-        </div>
-      </a>
-      
-      <a href="/fn-overview-ts-getkeyfilesfordomain.html" class="card">
-        <div class="card-title">getKeyFilesForDomain() — mcp Function Reference</div>
-        <div class="card-desc">Architecture documentation for the getKeyFilesForDomain() function in overview.ts from the mcp codebase.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Function</span>
-          <span class="pill pill-blue">typescript</span>
-        </div>
-      </a>
-      
-      <a href="/fn-overview-ts-handler.html" class="card">
-        <div class="card-title">handler() — mcp Function Reference</div>
-        <div class="card-desc">Architecture documentation for the handler() function in overview.ts from the mcp codebase.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Function</span>
-          <span class="pill pill-blue">typescript</span>
-        </div>
-      </a>
-      
-      <a href="/fn-overview-ts-renderoverview.html" class="card">
-        <div class="card-title">renderOverview() — mcp Function Reference</div>
-        <div class="card-desc">Architecture documentation for the renderOverview() function in overview.ts from the mcp codebase.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Function</span>
-          <span class="pill pill-blue">typescript</span>
-        </div>
-      </a>
-      
-      <a href="/fn-overview-ts-truncate.html" class="card">
-        <div class="card-title">truncate() — mcp Function Reference</div>
-        <div class="card-desc">Architecture documentation for the truncate() function in overview.ts from the mcp codebase.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Function</span>
-          <span class="pill pill-blue">typescript</span>
-        </div>
-      </a>
-      
-      <a href="/subdomain-reporting.html" class="card">
-        <div class="card-title">Reporting — mcp Architecture</div>
-        <div class="card-desc">Formats analytical results into Markdown suitable for LLM consumption. Architecture documentation for the Reporting subdomain (part of AnalysisTools domain) in the mcp codebase. Contains 0 source files.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Subdomain</span>
-          
-        </div>
-      </a>
-      
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data"></script>
     </div>
 
     
-  </div>
+    <div class="visuals-panel">
+      
 
-  
-  <div class="cta-section">
-    <h2 class="cta-heading">Analyze Your Own Codebase</h2>
-    <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
-    <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+      
+      <div class="visuals-row">
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="subdomain-idempotency"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"subdomain:SupermodelSDK:Idempotency","label":"Idempotency","type":"Subdomain","slug":"subdomain-idempotency"},{"id":"domain:SupermodelSDK","label":"SupermodelSDK","type":"Domain","slug":"domain-supermodelsdk"}],"edges":[{"source":"subdomain:SupermodelSDK:Idempotency","target":"domain:SupermodelSDK","type":"partOf"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/domain-supermodelsdk.html">SupermodelSDK</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Functions</h2>
+      <ul><li><a href="/fn-logger-ts-debug.html">debug()</a></li><li><a href="/fn-logger-ts-error.html">error()</a></li><li><a href="/fn-logger-ts-info.html">info()</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What is the Idempotency subdomain?</summary>
+        <div class="faq-answer">Idempotency is a subdomain in the mcp codebase, part of the SupermodelSDK domain. Generates unique keys based on git status and file system paths. It contains 0 source files.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Which domain does Idempotency belong to?</summary>
+        <div class="faq-answer">Idempotency belongs to the SupermodelSDK domain.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What functions are in Idempotency?</summary>
+        <div class="faq-answer">The Idempotency subdomain contains 3 function(s): debug, error, info.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
   </div>
-  
 </main>
 
 <footer class="site-footer">
@@ -949,6 +1043,7 @@ a.pill:hover {
     <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
   </div>
 </footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script src="/main.js"></script>
