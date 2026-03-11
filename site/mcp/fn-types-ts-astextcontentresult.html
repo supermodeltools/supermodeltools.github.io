@@ -917,7 +917,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/mcpserver.html" class="pill pill-green">McpServer</a>
-        <a href="/mcp/subdomain/transport.html" class="pill pill-orange">Transport</a>
+        <a href="/mcp/subdomain/transportlayer.html" class="pill pill-orange">TransportLayer</a>
         
         
         
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"asTextContentResult","slug":"fn-types-ts-astextcontentresult","type":"Function"},"subdomain":{"name":"Transport","slug":"subdomain-transport"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"asTextContentResult","slug":"fn-types-ts-astextcontentresult","type":"Function"},"subdomain":{"name":"TransportLayer","slug":"subdomain-transportlayer"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/mcpserver.html">McpServer</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/transport.html">Transport</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/transportlayer.html">TransportLayer</a><span class="arch-sep">&rarr;</span>
             <span>asTextContentResult() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,24 +958,24 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ae157d9d_cabd_5977_1e44_ffb984210105["asTextContentResult()"]
-  3f913746_952d_fe09_54c5_37c9a946ae98["handler()"]
-  3f913746_952d_fe09_54c5_37c9a946ae98 -->|calls| ae157d9d_cabd_5977_1e44_ffb984210105
-  f071325a_6c04_4ef9_fdf8_e1b121b1bd51["handler()"]
-  f071325a_6c04_4ef9_fdf8_e1b121b1bd51 -->|calls| ae157d9d_cabd_5977_1e44_ffb984210105
-  5c9a8e8d_4cef_37d5_c51b_d57ba44a9271["handler()"]
-  5c9a8e8d_4cef_37d5_c51b_d57ba44a9271 -->|calls| ae157d9d_cabd_5977_1e44_ffb984210105
-  f462cbf5_0dcc_1fcc_1ea8_ee917b60f51c["handler()"]
-  f462cbf5_0dcc_1fcc_1ea8_ee917b60f51c -->|calls| ae157d9d_cabd_5977_1e44_ffb984210105
-  97beea66_6da7_6648_911d_e0866cf7cebd["searchSymbolHandler()"]
-  97beea66_6da7_6648_911d_e0866cf7cebd -->|calls| ae157d9d_cabd_5977_1e44_ffb984210105
-  0a087a61_6fc0_761b_0833_17f1e5400fc7["findDefinitionHandler()"]
-  0a087a61_6fc0_761b_0833_17f1e5400fc7 -->|calls| ae157d9d_cabd_5977_1e44_ffb984210105
-  56dab25c_7134_33e4_49db_67e5f30f4038["traceCallsHandler()"]
-  56dab25c_7134_33e4_49db_67e5f30f4038 -->|calls| ae157d9d_cabd_5977_1e44_ffb984210105
-  fc81b391_637d_3250_d934_3e2071411ef3["annotateHandler()"]
-  fc81b391_637d_3250_d934_3e2071411ef3 -->|calls| ae157d9d_cabd_5977_1e44_ffb984210105
-  style ae157d9d_cabd_5977_1e44_ffb984210105 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  092310ee_47ad_dd0d_1e05_6011bdc5ab96["asTextContentResult()"]
+  27cc9af4_1963_c0f4_fa14_78eba9ec6d09["handler()"]
+  27cc9af4_1963_c0f4_fa14_78eba9ec6d09 -->|calls| 092310ee_47ad_dd0d_1e05_6011bdc5ab96
+  5b03af74_120c_7a61_6f96_a6e49aae7699["handler()"]
+  5b03af74_120c_7a61_6f96_a6e49aae7699 -->|calls| 092310ee_47ad_dd0d_1e05_6011bdc5ab96
+  92b80dc0_cd54_2a2f_ab91_93ba7932dfa9["handler()"]
+  92b80dc0_cd54_2a2f_ab91_93ba7932dfa9 -->|calls| 092310ee_47ad_dd0d_1e05_6011bdc5ab96
+  0b755e03_87b5_3440_dd7c_960f4674c096["handler()"]
+  0b755e03_87b5_3440_dd7c_960f4674c096 -->|calls| 092310ee_47ad_dd0d_1e05_6011bdc5ab96
+  1bc80229_7e08_8264_0a24_002875e4b5e8["searchSymbolHandler()"]
+  1bc80229_7e08_8264_0a24_002875e4b5e8 -->|calls| 092310ee_47ad_dd0d_1e05_6011bdc5ab96
+  a4c0c6e7_bff3_f3de_a0bd_9578746605a8["findDefinitionHandler()"]
+  a4c0c6e7_bff3_f3de_a0bd_9578746605a8 -->|calls| 092310ee_47ad_dd0d_1e05_6011bdc5ab96
+  c489ec9b_f5a4_4e1c_bcd7_c3543d06ac39["traceCallsHandler()"]
+  c489ec9b_f5a4_4e1c_bcd7_c3543d06ac39 -->|calls| 092310ee_47ad_dd0d_1e05_6011bdc5ab96
+  03a0e907_8e97_ad19_f1a1_c5d6381407d6["annotateHandler()"]
+  03a0e907_8e97_ad19_f1a1_c5d6381407d6 -->|calls| 092310ee_47ad_dd0d_1e05_6011bdc5ab96
+  style 092310ee_47ad_dd0d_1e05_6011bdc5ab96 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -983,7 +983,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-types-ts-astextcontentresult"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ae157d9d:cabd:5977:1e44:ffb984210105","label":"asTextContentResult","type":"Function","slug":"fn-types-ts-astextcontentresult","lc":11,"lang":"typescript","cbc":8},{"id":"3f913746:952d:fe09:54c5:37c9a946ae98","label":"handler","type":"Function","slug":"fn-explore-function-ts-handler","lc":184,"lang":"typescript","cc":11},{"id":"f071325a:6c04:4ef9:fdf8:e1b121b1bd51","label":"handler","type":"Function","slug":"fn-find-connections-ts-handler","lc":95,"lang":"typescript","cc":8},{"id":"5c9a8e8d:4cef:37d5:c51b:d57ba44a9271","label":"handler","type":"Function","slug":"fn-overview-ts-handler","lc":21,"lang":"typescript","cc":5},{"id":"f462cbf5:0dcc:1fcc:1ea8:ee917b60f51c","label":"handler","type":"Function","slug":"fn-symbol-context-ts-handler","lc":80,"lang":"typescript","cc":7,"cbc":1},{"id":"97beea66:6da7:6648:911d:e0866cf7cebd","label":"searchSymbolHandler","type":"Function","slug":"fn-tool-variants-ts-searchsymbolhandler","lc":35,"lang":"typescript","cc":5},{"id":"0a087a61:6fc0:761b:0833:17f1e5400fc7","label":"findDefinitionHandler","type":"Function","slug":"fn-tool-variants-ts-finddefinitionhandler","lc":38,"lang":"typescript","cc":5},{"id":"56dab25c:7134:33e4:49db:67e5f30f4038","label":"traceCallsHandler","type":"Function","slug":"fn-tool-variants-ts-tracecallshandler","lc":61,"lang":"typescript","cc":6},{"id":"fc81b391:637d:3250:d934:3e2071411ef3","label":"annotateHandler","type":"Function","slug":"fn-tool-variants-ts-annotatehandler","lc":33,"lang":"typescript","cc":5},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:Transport","label":"Transport","type":"Subdomain","slug":"subdomain-transport"}],"edges":[{"source":"3f913746:952d:fe09:54c5:37c9a946ae98","target":"ae157d9d:cabd:5977:1e44:ffb984210105","type":"calls"},{"source":"f071325a:6c04:4ef9:fdf8:e1b121b1bd51","target":"ae157d9d:cabd:5977:1e44:ffb984210105","type":"calls"},{"source":"5c9a8e8d:4cef:37d5:c51b:d57ba44a9271","target":"ae157d9d:cabd:5977:1e44:ffb984210105","type":"calls"},{"source":"f462cbf5:0dcc:1fcc:1ea8:ee917b60f51c","target":"ae157d9d:cabd:5977:1e44:ffb984210105","type":"calls"},{"source":"97beea66:6da7:6648:911d:e0866cf7cebd","target":"ae157d9d:cabd:5977:1e44:ffb984210105","type":"calls"},{"source":"0a087a61:6fc0:761b:0833:17f1e5400fc7","target":"ae157d9d:cabd:5977:1e44:ffb984210105","type":"calls"},{"source":"56dab25c:7134:33e4:49db:67e5f30f4038","target":"ae157d9d:cabd:5977:1e44:ffb984210105","type":"calls"},{"source":"fc81b391:637d:3250:d934:3e2071411ef3","target":"ae157d9d:cabd:5977:1e44:ffb984210105","type":"calls"},{"source":"ae157d9d:cabd:5977:1e44:ffb984210105","target":"domain:McpServer","type":"belongsTo"},{"source":"ae157d9d:cabd:5977:1e44:ffb984210105","target":"subdomain:McpServer:Transport","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","label":"asTextContentResult","type":"Function","slug":"fn-types-ts-astextcontentresult","lc":11,"lang":"typescript","cbc":8},{"id":"27cc9af4:1963:c0f4:fa14:78eba9ec6d09","label":"handler","type":"Function","slug":"fn-explore-function-ts-handler","lc":184,"lang":"typescript","cc":11},{"id":"5b03af74:120c:7a61:6f96:a6e49aae7699","label":"handler","type":"Function","slug":"fn-find-connections-ts-handler","lc":95,"lang":"typescript","cc":8},{"id":"92b80dc0:cd54:2a2f:ab91:93ba7932dfa9","label":"handler","type":"Function","slug":"fn-overview-ts-handler","lc":21,"lang":"typescript","cc":5},{"id":"0b755e03:87b5:3440:dd7c:960f4674c096","label":"handler","type":"Function","slug":"fn-symbol-context-ts-handler","lc":80,"lang":"typescript","cc":7,"cbc":1},{"id":"1bc80229:7e08:8264:0a24:002875e4b5e8","label":"searchSymbolHandler","type":"Function","slug":"fn-tool-variants-ts-searchsymbolhandler","lc":35,"lang":"typescript","cc":5},{"id":"a4c0c6e7:bff3:f3de:a0bd:9578746605a8","label":"findDefinitionHandler","type":"Function","slug":"fn-tool-variants-ts-finddefinitionhandler","lc":38,"lang":"typescript","cc":5},{"id":"c489ec9b:f5a4:4e1c:bcd7:c3543d06ac39","label":"traceCallsHandler","type":"Function","slug":"fn-tool-variants-ts-tracecallshandler","lc":61,"lang":"typescript","cc":6},{"id":"03a0e907:8e97:ad19:f1a1:c5d6381407d6","label":"annotateHandler","type":"Function","slug":"fn-tool-variants-ts-annotatehandler","lc":33,"lang":"typescript","cc":5},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:TransportLayer","label":"TransportLayer","type":"Subdomain","slug":"subdomain-transportlayer"}],"edges":[{"source":"27cc9af4:1963:c0f4:fa14:78eba9ec6d09","target":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","type":"calls"},{"source":"5b03af74:120c:7a61:6f96:a6e49aae7699","target":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","type":"calls"},{"source":"92b80dc0:cd54:2a2f:ab91:93ba7932dfa9","target":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","type":"calls"},{"source":"0b755e03:87b5:3440:dd7c:960f4674c096","target":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","type":"calls"},{"source":"1bc80229:7e08:8264:0a24:002875e4b5e8","target":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","type":"calls"},{"source":"a4c0c6e7:bff3:f3de:a0bd:9578746605a8","target":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","type":"calls"},{"source":"c489ec9b:f5a4:4e1c:bcd7:c3543d06ac39","target":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","type":"calls"},{"source":"03a0e907:8e97:ad19:f1a1:c5d6381407d6","target":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","type":"calls"},{"source":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","target":"domain:McpServer","type":"belongsTo"},{"source":"092310ee:47ad:dd0d:1e05:6011bdc5ab96","target":"subdomain:McpServer:TransportLayer","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1022,7 +1022,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-transport.html">Transport</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-transportlayer.html">TransportLayer</a></li></ul>
     </div>
     
 
