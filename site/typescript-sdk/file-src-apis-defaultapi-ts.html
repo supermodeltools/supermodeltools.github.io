@@ -8,7 +8,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
 
 <title>DefaultApi.ts — typescript-sdk Source File | typescript-sdk Architecture Docs</title>
 <meta name="description" content="Architecture documentation for DefaultApi.ts, a typescript file in the typescript-sdk codebase.">
@@ -25,22 +25,22 @@
 <meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/file-src-apis-defaultapi-ts.svg">
 
 <style>:root {
-  --bg: #0f1117;
-  --bg-card: #1a1d27;
-  --bg-hover: #22263a;
-  --border: #2a2e3e;
-  --text: #e4e4e7;
-  --text-muted: #9ca3af;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --green: #22c55e;
-  --orange: #f59e0b;
-  --red: #ef4444;
-  --blue: #3b82f6;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --bg: #000000;
+  --bg-card: #161616;
+  --bg-hover: #08191C;
+  --border: #202020;
+  --text: #FFFFFF;
+  --text-muted: #808080;
+  --accent: #71B9BC;
+  --accent-light: #8CC6C9;
+  --green: #7CCE86;
+  --orange: #D0A27D;
+  --red: #E589C6;
+  --blue: #8E8CE9;
+  --font: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: 'Martian Mono', "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --max-w: 1200px;
-  --radius: 8px;
+  --radius: 0px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,7 +51,9 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: 0em;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -60,7 +62,7 @@ a { color: var(--accent-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
 
-.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #000; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
 .skip-link:focus { top: 12px; }
 
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
@@ -82,7 +84,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 }
 .site-brand {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text);
   display: flex;
   align-items: center;
@@ -93,7 +95,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .site-brand:hover { text-decoration: none; color: var(--accent-light); }
 .site-brand svg { width: 24px; height: 24px; }
 .site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a { color: var(--text-muted); font-size: 0.68rem; font-weight: 300; font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
 .site-nav a:hover { color: var(--text); text-decoration: none; }
 .nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
 .nav-all-repos:hover { color: var(--text) !important; }
@@ -125,8 +127,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .entity-breadcrumb .sep { opacity: 0.4; }
 .entity-title {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1.3;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -170,7 +173,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
   border-radius: 20px;
   font-size: 12px;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 400;
+  font-family: var(--mono);
   text-decoration: none;
 }
 a.pill:hover {
@@ -188,7 +192,8 @@ a.pill:hover {
 }
 .entity-section h2 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   margin-bottom: 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
@@ -233,6 +238,7 @@ a.pill:hover {
 .card-title {
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: 6px;
   overflow-wrap: break-word;
@@ -260,7 +266,8 @@ a.pill:hover {
 }
 .hero h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 200;
+  letter-spacing: -0.04em;
   margin-bottom: 12px;
 }
 .hero p {
@@ -296,19 +303,21 @@ a.pill:hover {
 }
 .hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 .hero-btn-star { border-color: var(--orange); color: var(--orange); }
-.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-star:hover { background: rgba(208, 162, 125, 0.1); }
 .hero-btn-fork { border-color: var(--blue); color: var(--blue); }
-.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-btn-fork:hover { background: rgba(142, 140, 233, 0.1); }
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px 32px;
   margin-top: 32px;
 }
 .hero-stat { text-align: center; }
 .hero-stat .num {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   color: var(--accent-light);
 }
 .hero-stat .label {
@@ -329,7 +338,8 @@ a.pill:hover {
 
 .section-title {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 .section-subtitle {
@@ -347,7 +357,8 @@ a.pill:hover {
 }
 .hub-header h1 {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 .hub-desc {
   color: var(--text-muted);
@@ -388,7 +399,7 @@ a.pill:hover {
 }
 .pagination .current {
   background: var(--accent);
-  color: white;
+  color: #000;
 }
 
  
@@ -457,11 +468,12 @@ a.pill:hover {
   gap: 12px;
 }
 .visuals-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 8px 0;
   padding: 0;
   border: none;
@@ -547,7 +559,7 @@ a.pill:hover {
 
  
 .cta-section {
-  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, #08191C 100%);
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   padding: 40px 32px;
@@ -557,7 +569,8 @@ a.pill:hover {
 }
 .cta-heading {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   border-bottom: none !important;
   padding-bottom: 0 !important;
@@ -572,7 +585,7 @@ a.pill:hover {
   display: inline-block;
   padding: 12px 28px;
   background: var(--accent);
-  color: #fff;
+  color: #000;
   font-size: 15px;
   font-weight: 600;
   border-radius: 6px;
@@ -592,11 +605,12 @@ a.pill:hover {
   margin-bottom: 32px;
 }
 .chart-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 12px 0;
 }
 .chart-panel-compact {
@@ -633,7 +647,7 @@ a.pill:hover {
   margin: 0 0 8px 0;
 }
 .source-code {
-  background: #0d0f14;
+  background: #161616;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
@@ -646,11 +660,44 @@ a.pill:hover {
 .source-code code {
   font-family: var(--mono);
   font-size: 13px;
-  color: #e4e4e7;
+  color: #FFFFFF;
   white-space: pre;
   tab-size: 2;
   margin-bottom: 0;
 }
+ 
+.hp-composition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  height: 200px;
+}
+.hp-comp-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 12px;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+.hp-comp-item:hover { opacity: 1; text-decoration: none; }
+.hp-comp-name {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  white-space: nowrap;
+}
+.hp-comp-count {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-family: var(--mono);
+  margin-top: 2px;
+}
+
 #homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
 #homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
   width: 100%;
@@ -688,7 +735,7 @@ a.pill:hover {
 }
 .letter-active {
   background: var(--accent);
-  color: #fff;
+  color: #000;
   border-color: var(--accent);
 }
 
@@ -741,7 +788,7 @@ a.pill:hover {
   .hero p { font-size: 15px; }
   .hero-actions { gap: 8px; }
   .hero-btn { padding: 6px 12px; font-size: 12px; }
-  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stats { gap: 8px 16px; }
   .hero-stat .num { font-size: 22px; }
   .hero-stat .label { font-size: 12px; }
   .hero-stat-link { padding: 8px 12px; }
@@ -811,7 +858,7 @@ a.pill:hover {
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Architecture documentation for DefaultApi.ts, a typescript file in the typescript-sdk codebase.","image":["https://repos.supermodeltools.com/images/share/file-src-apis-defaultapi-ts.svg"],"name":"DefaultApi.ts — typescript-sdk Source File","url":"https://repos.supermodeltools.com/file-src-apis-defaultapi-ts.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"DefaultApi.ts — typescript-sdk Source File","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"DefaultApi.ts is a source file in the typescript-sdk codebase, written in typescript. It belongs to the OpenApiServer domain."},"name":"What does DefaultApi.ts do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"DefaultApi.ts is located at src/apis/DefaultApi.ts (domain: OpenApiServer, directory: src/apis)."},"name":"Where is DefaultApi.ts in the architecture?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"DefaultApi.ts is a source file in the typescript-sdk codebase, written in typescript. It belongs to the SupermodelAPI domain."},"name":"What does DefaultApi.ts do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"DefaultApi.ts is located at src/apis/DefaultApi.ts (domain: SupermodelAPI, directory: src/apis)."},"name":"Where is DefaultApi.ts in the architecture?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -869,7 +916,7 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/node_type/file.html" class="pill pill-accent">File</a>
         <a href="/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/domain/openapiserver.html" class="pill pill-green">OpenApiServer</a>
+        <a href="/domain/supermodelapi.html" class="pill pill-green">SupermodelAPI</a>
         
         
         
@@ -894,10 +941,10 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"OpenApiServer","slug":"domain-openapiserver"},"entity":{"name":"DefaultApi.ts","slug":"file-src-apis-defaultapi-ts","type":"File"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelAPI","slug":"domain-supermodelapi"},"entity":{"name":"DefaultApi.ts","slug":"file-src-apis-defaultapi-ts","type":"File"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/openapiserver.html">OpenApiServer</a><span class="arch-sep">&rarr;</span>
+            <a href="/supermodelapi.html">SupermodelAPI</a><span class="arch-sep">&rarr;</span>
             
             <span>DefaultApi.ts — typescript-sdk Source File</span>
           </div>
@@ -913,7 +960,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="file-src-apis-defaultapi-ts"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"2dcc4dbc:cfc6:2d97:6062:b8a98fb04c58","label":"DefaultApi.ts","type":"File","slug":"file-src-apis-defaultapi-ts","lang":"typescript"},{"id":"domain:OpenApiServer","label":"OpenApiServer","type":"Domain","slug":"domain-openapiserver"}],"edges":[{"source":"2dcc4dbc:cfc6:2d97:6062:b8a98fb04c58","target":"domain:OpenApiServer","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"6a88de27:519a:f20c:5288:7af5026c081b","label":"DefaultApi.ts","type":"File","slug":"file-src-apis-defaultapi-ts","lang":"typescript"},{"id":"domain:SupermodelAPI","label":"SupermodelAPI","type":"Domain","slug":"domain-supermodelapi"}],"edges":[{"source":"6a88de27:519a:f20c:5288:7af5026c081b","target":"domain:SupermodelAPI","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -929,7 +976,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/domain-openapiserver.html">OpenApiServer</a></li></ul>
+      <ul><li><a href="/domain-supermodelapi.html">SupermodelAPI</a></li></ul>
     </div>
     
 
@@ -972,12 +1019,12 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What does DefaultApi.ts do?</summary>
-        <div class="faq-answer">DefaultApi.ts is a source file in the typescript-sdk codebase, written in typescript. It belongs to the OpenApiServer domain.</div>
+        <div class="faq-answer">DefaultApi.ts is a source file in the typescript-sdk codebase, written in typescript. It belongs to the SupermodelAPI domain.</div>
       </details>
       
       <details class="faq-item">
         <summary class="faq-question">Where is DefaultApi.ts in the architecture?</summary>
-        <div class="faq-answer">DefaultApi.ts is located at src/apis/DefaultApi.ts (domain: OpenApiServer, directory: src/apis).</div>
+        <div class="faq-answer">DefaultApi.ts is located at src/apis/DefaultApi.ts (domain: SupermodelAPI, directory: src/apis).</div>
       </details>
       
     </div>

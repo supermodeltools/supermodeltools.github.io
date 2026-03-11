@@ -8,39 +8,39 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
 
-<title>ImpactAnalysis — typescript-sdk Architecture | typescript-sdk Architecture Docs</title>
-<meta name="description" content="Models representing blast radius and affected entry points Architecture documentation for the ImpactAnalysis subdomain (part of CodeAnalysisModels domain) in the typescript-sdk codebase. Contains 0 source files.">
-<link rel="canonical" href="https://repos.supermodeltools.com/subdomain-impactanalysis/">
-<meta property="og:title" content="ImpactAnalysis — typescript-sdk Architecture — typescript-sdk Architecture Docs">
-<meta property="og:description" content="Models representing blast radius and affected entry points Architecture documentation for the ImpactAnalysis subdomain (part of CodeAnalysisModels domain) in the typescript-sdk codebase. Contains 0 source files.">
-<meta property="og:url" content="https://repos.supermodeltools.com/subdomain-impactanalysis.html">
-<meta property="og:image" content="https://repos.supermodeltools.com/images/share/subdomain-impactanalysis.svg">
+<title>SupermodelAPI Domain — typescript-sdk Architecture | typescript-sdk Architecture Docs</title>
+<meta name="description" content="The low-level API client domain responsible for raw HTTP communication and service interaction. Architectural overview of the SupermodelAPI domain in the typescript-sdk codebase. Contains 2 source files.">
+<link rel="canonical" href="https://repos.supermodeltools.com/domain-supermodelapi/">
+<meta property="og:title" content="SupermodelAPI Domain — typescript-sdk Architecture — typescript-sdk Architecture Docs">
+<meta property="og:description" content="The low-level API client domain responsible for raw HTTP communication and service interaction. Architectural overview of the SupermodelAPI domain in the typescript-sdk codebase. Contains 2 source files.">
+<meta property="og:url" content="https://repos.supermodeltools.com/domain-supermodelapi.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/images/share/domain-supermodelapi.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="typescript-sdk Architecture Docs">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ImpactAnalysis — typescript-sdk Architecture — typescript-sdk Architecture Docs">
-<meta name="twitter:description" content="Models representing blast radius and affected entry points Architecture documentation for the ImpactAnalysis subdomain (part of CodeAnalysisModels domain) in the typescript-sdk codebase. Contains 0 source files.">
-<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/subdomain-impactanalysis.svg">
+<meta name="twitter:title" content="SupermodelAPI Domain — typescript-sdk Architecture — typescript-sdk Architecture Docs">
+<meta name="twitter:description" content="The low-level API client domain responsible for raw HTTP communication and service interaction. Architectural overview of the SupermodelAPI domain in the typescript-sdk codebase. Contains 2 source files.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/images/share/domain-supermodelapi.svg">
 
 <style>:root {
-  --bg: #0f1117;
-  --bg-card: #1a1d27;
-  --bg-hover: #22263a;
-  --border: #2a2e3e;
-  --text: #e4e4e7;
-  --text-muted: #9ca3af;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --green: #22c55e;
-  --orange: #f59e0b;
-  --red: #ef4444;
-  --blue: #3b82f6;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --bg: #000000;
+  --bg-card: #161616;
+  --bg-hover: #08191C;
+  --border: #202020;
+  --text: #FFFFFF;
+  --text-muted: #808080;
+  --accent: #71B9BC;
+  --accent-light: #8CC6C9;
+  --green: #7CCE86;
+  --orange: #D0A27D;
+  --red: #E589C6;
+  --blue: #8E8CE9;
+  --font: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: 'Martian Mono', "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --max-w: 1200px;
-  --radius: 8px;
+  --radius: 0px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,7 +51,9 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: 0em;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -60,7 +62,7 @@ a { color: var(--accent-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
 
-.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #000; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
 .skip-link:focus { top: 12px; }
 
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
@@ -82,7 +84,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 }
 .site-brand {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text);
   display: flex;
   align-items: center;
@@ -93,7 +95,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .site-brand:hover { text-decoration: none; color: var(--accent-light); }
 .site-brand svg { width: 24px; height: 24px; }
 .site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a { color: var(--text-muted); font-size: 0.68rem; font-weight: 300; font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
 .site-nav a:hover { color: var(--text); text-decoration: none; }
 .nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
 .nav-all-repos:hover { color: var(--text) !important; }
@@ -125,8 +127,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 .entity-breadcrumb .sep { opacity: 0.4; }
 .entity-title {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1.3;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -170,7 +173,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
   border-radius: 20px;
   font-size: 12px;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 400;
+  font-family: var(--mono);
   text-decoration: none;
 }
 a.pill:hover {
@@ -188,7 +192,8 @@ a.pill:hover {
 }
 .entity-section h2 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   margin-bottom: 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
@@ -233,6 +238,7 @@ a.pill:hover {
 .card-title {
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: 6px;
   overflow-wrap: break-word;
@@ -260,7 +266,8 @@ a.pill:hover {
 }
 .hero h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 200;
+  letter-spacing: -0.04em;
   margin-bottom: 12px;
 }
 .hero p {
@@ -296,19 +303,21 @@ a.pill:hover {
 }
 .hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 .hero-btn-star { border-color: var(--orange); color: var(--orange); }
-.hero-btn-star:hover { background: rgba(245, 158, 11, 0.1); }
+.hero-btn-star:hover { background: rgba(208, 162, 125, 0.1); }
 .hero-btn-fork { border-color: var(--blue); color: var(--blue); }
-.hero-btn-fork:hover { background: rgba(59, 130, 246, 0.1); }
+.hero-btn-fork:hover { background: rgba(142, 140, 233, 0.1); }
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px 32px;
   margin-top: 32px;
 }
 .hero-stat { text-align: center; }
 .hero-stat .num {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   color: var(--accent-light);
 }
 .hero-stat .label {
@@ -329,7 +338,8 @@ a.pill:hover {
 
 .section-title {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 .section-subtitle {
@@ -347,7 +357,8 @@ a.pill:hover {
 }
 .hub-header h1 {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 .hub-desc {
   color: var(--text-muted);
@@ -388,7 +399,7 @@ a.pill:hover {
 }
 .pagination .current {
   background: var(--accent);
-  color: white;
+  color: #000;
 }
 
  
@@ -457,11 +468,12 @@ a.pill:hover {
   gap: 12px;
 }
 .visuals-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 8px 0;
   padding: 0;
   border: none;
@@ -547,7 +559,7 @@ a.pill:hover {
 
  
 .cta-section {
-  background: linear-gradient(135deg, var(--bg-card) 0%, #12141d 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, #08191C 100%);
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   padding: 40px 32px;
@@ -557,7 +569,8 @@ a.pill:hover {
 }
 .cta-heading {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
   border-bottom: none !important;
   padding-bottom: 0 !important;
@@ -572,7 +585,7 @@ a.pill:hover {
   display: inline-block;
   padding: 12px 28px;
   background: var(--accent);
-  color: #fff;
+  color: #000;
   font-size: 15px;
   font-weight: 600;
   border-radius: 6px;
@@ -592,11 +605,12 @@ a.pill:hover {
   margin-bottom: 32px;
 }
 .chart-panel h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   margin: 0 0 12px 0;
 }
 .chart-panel-compact {
@@ -633,7 +647,7 @@ a.pill:hover {
   margin: 0 0 8px 0;
 }
 .source-code {
-  background: #0d0f14;
+  background: #161616;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
@@ -646,11 +660,44 @@ a.pill:hover {
 .source-code code {
   font-family: var(--mono);
   font-size: 13px;
-  color: #e4e4e7;
+  color: #FFFFFF;
   white-space: pre;
   tab-size: 2;
   margin-bottom: 0;
 }
+ 
+.hp-composition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  height: 200px;
+}
+.hp-comp-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 12px;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+.hp-comp-item:hover { opacity: 1; text-decoration: none; }
+.hp-comp-name {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  white-space: nowrap;
+}
+.hp-comp-count {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-family: var(--mono);
+  margin-top: 2px;
+}
+
 #homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
 #homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
   width: 100%;
@@ -688,7 +735,7 @@ a.pill:hover {
 }
 .letter-active {
   background: var(--accent);
-  color: #fff;
+  color: #000;
   border-color: var(--accent);
 }
 
@@ -741,7 +788,7 @@ a.pill:hover {
   .hero p { font-size: 15px; }
   .hero-actions { gap: 8px; }
   .hero-btn { padding: 6px 12px; font-size: 12px; }
-  .hero-stats { flex-wrap: wrap; gap: 12px; }
+  .hero-stats { gap: 8px 16px; }
   .hero-stat .num { font-size: 22px; }
   .hero-stat .label { font-size: 12px; }
   .hero-stat-link { padding: 8px 12px; }
@@ -809,9 +856,9 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Models representing blast radius and affected entry points Architecture documentation for the ImpactAnalysis subdomain (part of CodeAnalysisModels domain) in the typescript-sdk codebase. Contains 0 source files.","image":["https://repos.supermodeltools.com/images/share/subdomain-impactanalysis.svg"],"name":"ImpactAnalysis — typescript-sdk Architecture","url":"https://repos.supermodeltools.com/subdomain-impactanalysis.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"ImpactAnalysis — typescript-sdk Architecture","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"ImpactAnalysis is a subdomain in the typescript-sdk codebase, part of the CodeAnalysisModels domain. Models representing blast radius and affected entry points It contains 0 source files."},"name":"What is the ImpactAnalysis subdomain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"ImpactAnalysis belongs to the CodeAnalysisModels domain."},"name":"Which domain does ImpactAnalysis belong to?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The ImpactAnalysis subdomain contains 132 function(s): AffectedEntryPointFromJSON, AffectedEntryPointFromJSONTyped, AffectedEntryPointToJSON, AffectedFileFromJSON, AffectedFileFromJSONTyped, AffectedFileToJSON, AffectedFunctionFromJSON, AffectedFunctionFromJSONTyped, and 124 more."},"name":"What functions are in ImpactAnalysis?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"The low-level API client domain responsible for raw HTTP communication and service interaction. Architectural overview of the SupermodelAPI domain in the typescript-sdk codebase. Contains 2 source files.","image":["https://repos.supermodeltools.com/images/share/domain-supermodelapi.svg"],"name":"SupermodelAPI Domain — typescript-sdk Architecture","url":"https://repos.supermodeltools.com/domain-supermodelapi.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/","name":"Home","position":1},{"@type":"ListItem","name":"SupermodelAPI Domain — typescript-sdk Architecture","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The SupermodelAPI domain is an architectural grouping in the typescript-sdk codebase. The low-level API client domain responsible for raw HTTP communication and service interaction. It contains 2 source files."},"name":"What is the SupermodelAPI domain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The SupermodelAPI domain contains 2 subdomain(s): EndpointDefinitions, NetworkRuntime."},"name":"What subdomains are in SupermodelAPI?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The SupermodelAPI domain contains 2 source files."},"name":"How many files are in SupermodelAPI?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -860,29 +907,29 @@ a.pill:hover {
       <div class="entity-breadcrumb">
         <a href="/">Home</a>
         <span class="sep">/</span>
-        <a href="/node_type/subdomain.html">Subdomain</a><span class="sep">/</span>
-        <span>ImpactAnalysis — typescript-sdk Architecture</span>
+        <a href="/node_type/domain.html">Domain</a><span class="sep">/</span>
+        <span>SupermodelAPI Domain — typescript-sdk Architecture</span>
       </div>
-      <h1 class="entity-title">ImpactAnalysis — typescript-sdk Architecture</h1>
+      <h1 class="entity-title">SupermodelAPI Domain — typescript-sdk Architecture</h1>
       
 
       <div class="entity-meta">
-        <a href="/node_type/subdomain.html" class="pill pill-accent">Subdomain</a>
+        <a href="/node_type/domain.html" class="pill pill-accent">Domain</a>
         
-        <a href="/domain/codeanalysismodels.html" class="pill pill-green">CodeAnalysisModels</a>
-        <a href="/subdomain/impactanalysis.html" class="pill pill-orange">ImpactAnalysis</a>
-        
+        <a href="/domain/supermodelapi.html" class="pill pill-green">SupermodelAPI</a>
         
         
         
         
         
         
+        
+        <span class="pill">2 files</span>
       </div>
 
       
       <div class="entity-summary">
-        <p>Models representing blast radius and affected entry points</p>
+        <p>The low-level API client domain responsible for raw HTTP communication and service interaction.</p>
       </div>
       
     </div>
@@ -890,7 +937,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data"></script>
+      <script type="application/json" id="entity-profile-data">{"fc":2}</script>
     </div>
 
     
@@ -900,12 +947,23 @@ a.pill:hover {
       
       <div class="visuals-row">
         
+        <div class="visuals-cell mermaid-container">
+          <h3>Dependency Diagram</h3>
+          <pre class="mermaid">graph TD
+  domain_SupermodelAPI["SupermodelAPI"]
+  subdomain_SupermodelAPI_NetworkRuntime["NetworkRuntime"]
+  domain_SupermodelAPI --> subdomain_SupermodelAPI_NetworkRuntime
+  subdomain_SupermodelAPI_EndpointDefinitions["EndpointDefinitions"]
+  domain_SupermodelAPI --> subdomain_SupermodelAPI_EndpointDefinitions
+  style domain_SupermodelAPI fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+        </div>
+        
 
         
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
-          <div id="force-graph" data-center="subdomain-impactanalysis"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"subdomain:CodeAnalysisModels:ImpactAnalysis","label":"ImpactAnalysis","type":"Subdomain","slug":"subdomain-impactanalysis"},{"id":"domain:CodeAnalysisModels","label":"CodeAnalysisModels","type":"Domain","slug":"domain-codeanalysismodels"}],"edges":[{"source":"subdomain:CodeAnalysisModels:ImpactAnalysis","target":"domain:CodeAnalysisModels","type":"partOf"}]}</script>
+          <div id="force-graph" data-center="domain-supermodelapi"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"domain:SupermodelAPI","label":"SupermodelAPI","type":"Domain","slug":"domain-supermodelapi"},{"id":"subdomain:SupermodelAPI:NetworkRuntime","label":"NetworkRuntime","type":"Subdomain","slug":"subdomain-networkruntime"},{"id":"subdomain:SupermodelAPI:EndpointDefinitions","label":"EndpointDefinitions","type":"Subdomain","slug":"subdomain-endpointdefinitions"}],"edges":[{"source":"domain:SupermodelAPI","target":"subdomain:SupermodelAPI:NetworkRuntime","type":"contains"},{"source":"domain:SupermodelAPI","target":"subdomain:SupermodelAPI:EndpointDefinitions","type":"contains"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -919,20 +977,11 @@ a.pill:hover {
     
 
     
-    <div class="entity-section">
-      <h2>Domain</h2>
-      <ul><li><a href="/domain-codeanalysismodels.html">CodeAnalysisModels</a></li></ul>
-    </div>
-    
-
-    
-
-    
 
     
     <div class="entity-section">
-      <h2>Functions</h2>
-      <ul><li><a href="/fn-affectedentrypoint-ts-affectedentrypointfromjson.html">AffectedEntryPointFromJSON()</a></li><li><a href="/fn-affectedentrypoint-ts-affectedentrypointfromjsontyped.html">AffectedEntryPointFromJSONTyped()</a></li><li><a href="/fn-affectedentrypoint-ts-affectedentrypointtojson.html">AffectedEntryPointToJSON()</a></li><li><a href="/fn-affectedfile-ts-affectedfilefromjson.html">AffectedFileFromJSON()</a></li><li><a href="/fn-affectedfile-ts-affectedfilefromjsontyped.html">AffectedFileFromJSONTyped()</a></li><li><a href="/fn-affectedfile-ts-affectedfiletojson.html">AffectedFileToJSON()</a></li><li><a href="/fn-affectedfunction-ts-affectedfunctionfromjson.html">AffectedFunctionFromJSON()</a></li><li><a href="/fn-affectedfunction-ts-affectedfunctionfromjsontyped.html">AffectedFunctionFromJSONTyped()</a></li><li><a href="/fn-affectedfunction-ts-affectedfunctiontojson.html">AffectedFunctionToJSON()</a></li><li><a href="/fn-blastradius-ts-blastradiusfromjson.html">BlastRadiusFromJSON()</a></li><li><a href="/fn-blastradius-ts-blastradiusfromjsontyped.html">BlastRadiusFromJSONTyped()</a></li><li><a href="/fn-blastradius-ts-blastradiustojson.html">BlastRadiusToJSON()</a></li><li><a href="/fn-coveragebyfile-ts-coveragebyfilefromjson.html">CoverageByFileFromJSON()</a></li><li><a href="/fn-coveragebyfile-ts-coveragebyfilefromjsontyped.html">CoverageByFileFromJSONTyped()</a></li><li><a href="/fn-coveragebyfile-ts-coveragebyfiletojson.html">CoverageByFileToJSON()</a></li><li><a href="/fn-criticalfile-ts-criticalfilefromjson.html">CriticalFileFromJSON()</a></li><li><a href="/fn-criticalfile-ts-criticalfilefromjsontyped.html">CriticalFileFromJSONTyped()</a></li><li><a href="/fn-criticalfile-ts-criticalfiletojson.html">CriticalFileToJSON()</a></li><li><a href="/fn-cycleedge-ts-cycleedgefromjson.html">CycleEdgeFromJSON()</a></li><li><a href="/fn-cycleedge-ts-cycleedgefromjsontyped.html">CycleEdgeFromJSONTyped()</a></li><li><a href="/fn-cycleedge-ts-cycleedgetojson.html">CycleEdgeToJSON()</a></li><li><a href="/fn-entrypoint-ts-entrypointfromjson.html">EntryPointFromJSON()</a></li><li><a href="/fn-entrypoint-ts-entrypointfromjsontyped.html">EntryPointFromJSONTyped()</a></li><li><a href="/fn-entrypoint-ts-entrypointtojson.html">EntryPointToJSON()</a></li><li><a href="/fn-errordetailsinner-ts-errordetailsinnerfromjson.html">ErrorDetailsInnerFromJSON()</a></li><li><a href="/fn-errordetailsinner-ts-errordetailsinnerfromjsontyped.html">ErrorDetailsInnerFromJSONTyped()</a></li><li><a href="/fn-errordetailsinner-ts-errordetailsinnertojson.html">ErrorDetailsInnerToJSON()</a></li><li><a href="/fn-functiondescription-ts-functiondescriptionfromjson.html">FunctionDescriptionFromJSON()</a></li><li><a href="/fn-functiondescription-ts-functiondescriptionfromjsontyped.html">FunctionDescriptionFromJSONTyped()</a></li><li><a href="/fn-functiondescription-ts-functiondescriptiontojson.html">FunctionDescriptionToJSON()</a></li><li><a href="/fn-impactanalysismetadata-ts-impactanalysismetadatafromjson.html">ImpactAnalysisMetadataFromJSON()</a></li><li><a href="/fn-impactanalysismetadata-ts-impactanalysismetadatafromjsontyped.html">ImpactAnalysisMetadataFromJSONTyped()</a></li><li><a href="/fn-impactanalysismetadata-ts-impactanalysismetadatatojson.html">ImpactAnalysisMetadataToJSON()</a></li><li><a href="/fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjson.html">ImpactAnalysisResponseAsyncFromJSON()</a></li><li><a href="/fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjsontyped.html">ImpactAnalysisResponseAsyncFromJSONTyped()</a></li><li><a href="/fn-impactanalysisresponseasync-ts-impactanalysisresponseasynctojson.html">ImpactAnalysisResponseAsyncToJSON()</a></li><li><a href="/fn-impactanalysisresponse-ts-impactanalysisresponsefromjson.html">ImpactAnalysisResponseFromJSON()</a></li><li><a href="/fn-impactanalysisresponse-ts-impactanalysisresponsefromjsontyped.html">ImpactAnalysisResponseFromJSONTyped()</a></li><li><a href="/fn-impactanalysisresponse-ts-impactanalysisresponsetojson.html">ImpactAnalysisResponseToJSON()</a></li><li><a href="/fn-impactglobalmetrics-ts-impactglobalmetricsfromjson.html">ImpactGlobalMetricsFromJSON()</a></li><li><a href="/fn-impactglobalmetrics-ts-impactglobalmetricsfromjsontyped.html">ImpactGlobalMetricsFromJSONTyped()</a></li><li><a href="/fn-impactglobalmetrics-ts-impactglobalmetricstojson.html">ImpactGlobalMetricsToJSON()</a></li><li><a href="/fn-impactresult-ts-impactresultfromjson.html">ImpactResultFromJSON()</a></li><li><a href="/fn-impactresult-ts-impactresultfromjsontyped.html">ImpactResultFromJSONTyped()</a></li><li><a href="/fn-impactresult-ts-impactresulttojson.html">ImpactResultToJSON()</a></li><li><a href="/fn-impacttarget-ts-impacttargetfromjson.html">ImpactTargetFromJSON()</a></li><li><a href="/fn-impacttarget-ts-impacttargetfromjsontyped.html">ImpactTargetFromJSONTyped()</a></li><li><a href="/fn-impacttarget-ts-impacttargettojson.html">ImpactTargetToJSON()</a></li><li><a href="/fn-jobstatus-ts-jobstatusfromjson.html">JobStatusFromJSON()</a></li><li><a href="/fn-jobstatus-ts-jobstatusfromjsontyped.html">JobStatusFromJSONTyped()</a></li><li><a href="/fn-jobstatus-ts-jobstatustojson.html">JobStatusToJSON()</a></li><li><a href="/fn-modelerror-ts-modelerrorfromjson.html">ModelErrorFromJSON()</a></li><li><a href="/fn-modelerror-ts-modelerrorfromjsontyped.html">ModelErrorFromJSONTyped()</a></li><li><a href="/fn-modelerror-ts-modelerrortojson.html">ModelErrorToJSON()</a></li><li><a href="/fn-nearesttestedcaller-ts-nearesttestedcallerfromjson.html">NearestTestedCallerFromJSON()</a></li><li><a href="/fn-nearesttestedcaller-ts-nearesttestedcallerfromjsontyped.html">NearestTestedCallerFromJSONTyped()</a></li><li><a href="/fn-nearesttestedcaller-ts-nearesttestedcallertojson.html">NearestTestedCallerToJSON()</a></li><li><a href="/fn-subdomainsummary-ts-subdomainsummaryfromjson.html">SubdomainSummaryFromJSON()</a></li><li><a href="/fn-subdomainsummary-ts-subdomainsummaryfromjsontyped.html">SubdomainSummaryFromJSONTyped()</a></li><li><a href="/fn-subdomainsummary-ts-subdomainsummarytojson.html">SubdomainSummaryToJSON()</a></li><li><a href="/fn-supermodelartifact-ts-supermodelartifactfromjson.html">SupermodelArtifactFromJSON()</a></li><li><a href="/fn-supermodelartifact-ts-supermodelartifactfromjsontyped.html">SupermodelArtifactFromJSONTyped()</a></li><li><a href="/fn-supermodelartifact-ts-supermodelartifacttojson.html">SupermodelArtifactToJSON()</a></li><li><a href="/fn-supermodelirasync-ts-supermodelirasyncfromjson.html">SupermodelIRAsyncFromJSON()</a></li><li><a href="/fn-supermodelirasync-ts-supermodelirasyncfromjsontyped.html">SupermodelIRAsyncFromJSONTyped()</a></li><li><a href="/fn-supermodelirasync-ts-supermodelirasynctojson.html">SupermodelIRAsyncToJSON()</a></li><li><a href="/fn-supermodelir-ts-supermodelirfromjson.html">SupermodelIRFromJSON()</a></li><li><a href="/fn-supermodelir-ts-supermodelirfromjsontyped.html">SupermodelIRFromJSONTyped()</a></li><li><a href="/fn-supermodelirgraph-ts-supermodelirgraphfromjson.html">SupermodelIRGraphFromJSON()</a></li><li><a href="/fn-supermodelirgraph-ts-supermodelirgraphfromjsontyped.html">SupermodelIRGraphFromJSONTyped()</a></li><li><a href="/fn-supermodelirgraph-ts-supermodelirgraphtojson.html">SupermodelIRGraphToJSON()</a></li><li><a href="/fn-supermodelirstats-ts-supermodelirstatsfromjson.html">SupermodelIRStatsFromJSON()</a></li><li><a href="/fn-supermodelirstats-ts-supermodelirstatsfromjsontyped.html">SupermodelIRStatsFromJSONTyped()</a></li><li><a href="/fn-supermodelirstats-ts-supermodelirstatstojson.html">SupermodelIRStatsToJSON()</a></li><li><a href="/fn-supermodelir-ts-supermodelirtojson.html">SupermodelIRToJSON()</a></li><li><a href="/fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjson.html">TestCoverageMapMetadataFromJSON()</a></li><li><a href="/fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjsontyped.html">TestCoverageMapMetadataFromJSONTyped()</a></li><li><a href="/fn-testcoveragemapmetadata-ts-testcoveragemapmetadatatojson.html">TestCoverageMapMetadataToJSON()</a></li><li><a href="/fn-testcoveragemapresponseasync-ts-testcoveragemapresponseasyncfromjson.html">TestCoverageMapResponseAsyncFromJSON()</a></li><li><a href="/fn-testcoveragemapresponseasync-ts-testcoveragemapresponseasyncfromjsontyped.html">TestCoverageMapResponseAsyncFromJSONTyped()</a></li><li><a href="/fn-testcoveragemapresponseasync-ts-testcoveragemapresponseasynctojson.html">TestCoverageMapResponseAsyncToJSON()</a></li><li><a href="/fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjson.html">TestCoverageMapResponseFromJSON()</a></li><li><a href="/fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjsontyped.html">TestCoverageMapResponseFromJSONTyped()</a></li><li><a href="/fn-testcoveragemapresponse-ts-testcoveragemapresponsetojson.html">TestCoverageMapResponseToJSON()</a></li><li><a href="/fn-testfileinfo-ts-testfileinfofromjson.html">TestFileInfoFromJSON()</a></li><li><a href="/fn-testfileinfo-ts-testfileinfofromjsontyped.html">TestFileInfoFromJSONTyped()</a></li><li><a href="/fn-testfileinfo-ts-testfileinfotojson.html">TestFileInfoToJSON()</a></li><li><a href="/fn-testedfunction-ts-testedfunctionfromjson.html">TestedFunctionFromJSON()</a></li><li><a href="/fn-testedfunction-ts-testedfunctionfromjsontyped.html">TestedFunctionFromJSONTyped()</a></li><li><a href="/fn-testedfunction-ts-testedfunctiontojson.html">TestedFunctionToJSON()</a></li><li><a href="/fn-testedsibling-ts-testedsiblingfromjson.html">TestedSiblingFromJSON()</a></li><li><a href="/fn-testedsibling-ts-testedsiblingfromjsontyped.html">TestedSiblingFromJSONTyped()</a></li><li><a href="/fn-testedsibling-ts-testedsiblingtojson.html">TestedSiblingToJSON()</a></li><li><a href="/fn-unassignedfunction-ts-unassignedfunctionfromjson.html">UnassignedFunctionFromJSON()</a></li><li><a href="/fn-unassignedfunction-ts-unassignedfunctionfromjsontyped.html">UnassignedFunctionFromJSONTyped()</a></li><li><a href="/fn-unassignedfunction-ts-unassignedfunctiontojson.html">UnassignedFunctionToJSON()</a></li><li><a href="/fn-untestedfunction-ts-untestedfunctionfromjson.html">UntestedFunctionFromJSON()</a></li><li><a href="/fn-untestedfunction-ts-untestedfunctionfromjsontyped.html">UntestedFunctionFromJSONTyped()</a></li><li><a href="/fn-untestedfunction-ts-untestedfunctiontojson.html">UntestedFunctionToJSON()</a></li><li><a href="/fn-affectedentrypoint-ts-instanceofaffectedentrypoint.html">instanceOfAffectedEntryPoint()</a></li><li><a href="/fn-affectedfile-ts-instanceofaffectedfile.html">instanceOfAffectedFile()</a></li><li><a href="/fn-affectedfunction-ts-instanceofaffectedfunction.html">instanceOfAffectedFunction()</a></li><li><a href="/fn-blastradius-ts-instanceofblastradius.html">instanceOfBlastRadius()</a></li><li><a href="/fn-coveragebyfile-ts-instanceofcoveragebyfile.html">instanceOfCoverageByFile()</a></li><li><a href="/fn-criticalfile-ts-instanceofcriticalfile.html">instanceOfCriticalFile()</a></li><li><a href="/fn-cycleedge-ts-instanceofcycleedge.html">instanceOfCycleEdge()</a></li><li><a href="/fn-entrypoint-ts-instanceofentrypoint.html">instanceOfEntryPoint()</a></li><li><a href="/fn-errordetailsinner-ts-instanceoferrordetailsinner.html">instanceOfErrorDetailsInner()</a></li><li><a href="/fn-functiondescription-ts-instanceoffunctiondescription.html">instanceOfFunctionDescription()</a></li><li><a href="/fn-impactanalysismetadata-ts-instanceofimpactanalysismetadata.html">instanceOfImpactAnalysisMetadata()</a></li><li><a href="/fn-impactanalysisresponse-ts-instanceofimpactanalysisresponse.html">instanceOfImpactAnalysisResponse()</a></li><li><a href="/fn-impactanalysisresponseasync-ts-instanceofimpactanalysisresponseasync.html">instanceOfImpactAnalysisResponseAsync()</a></li><li><a href="/fn-impactglobalmetrics-ts-instanceofimpactglobalmetrics.html">instanceOfImpactGlobalMetrics()</a></li><li><a href="/fn-impactresult-ts-instanceofimpactresult.html">instanceOfImpactResult()</a></li><li><a href="/fn-impacttarget-ts-instanceofimpacttarget.html">instanceOfImpactTarget()</a></li><li><a href="/fn-jobstatus-ts-instanceofjobstatus.html">instanceOfJobStatus()</a></li><li><a href="/fn-modelerror-ts-instanceofmodelerror.html">instanceOfModelError()</a></li><li><a href="/fn-nearesttestedcaller-ts-instanceofnearesttestedcaller.html">instanceOfNearestTestedCaller()</a></li><li><a href="/fn-subdomainsummary-ts-instanceofsubdomainsummary.html">instanceOfSubdomainSummary()</a></li><li><a href="/fn-supermodelartifact-ts-instanceofsupermodelartifact.html">instanceOfSupermodelArtifact()</a></li><li><a href="/fn-supermodelir-ts-instanceofsupermodelir.html">instanceOfSupermodelIR()</a></li><li><a href="/fn-supermodelirasync-ts-instanceofsupermodelirasync.html">instanceOfSupermodelIRAsync()</a></li><li><a href="/fn-supermodelirgraph-ts-instanceofsupermodelirgraph.html">instanceOfSupermodelIRGraph()</a></li><li><a href="/fn-supermodelirstats-ts-instanceofsupermodelirstats.html">instanceOfSupermodelIRStats()</a></li><li><a href="/fn-testcoveragemapmetadata-ts-instanceoftestcoveragemapmetadata.html">instanceOfTestCoverageMapMetadata()</a></li><li><a href="/fn-testcoveragemapresponse-ts-instanceoftestcoveragemapresponse.html">instanceOfTestCoverageMapResponse()</a></li><li><a href="/fn-testcoveragemapresponseasync-ts-instanceoftestcoveragemapresponseasync.html">instanceOfTestCoverageMapResponseAsync()</a></li><li><a href="/fn-testfileinfo-ts-instanceoftestfileinfo.html">instanceOfTestFileInfo()</a></li><li><a href="/fn-testedfunction-ts-instanceoftestedfunction.html">instanceOfTestedFunction()</a></li><li><a href="/fn-testedsibling-ts-instanceoftestedsibling.html">instanceOfTestedSibling()</a></li><li><a href="/fn-unassignedfunction-ts-instanceofunassignedfunction.html">instanceOfUnassignedFunction()</a></li><li><a href="/fn-untestedfunction-ts-instanceofuntestedfunction.html">instanceOfUntestedFunction()</a></li></ul>
+      <h2>Subdomains</h2>
+      <ul><li><a href="/subdomain-endpointdefinitions.html">EndpointDefinitions</a></li><li><a href="/subdomain-networkruntime.html">NetworkRuntime</a></li></ul>
     </div>
     
 
@@ -953,9 +1002,23 @@ a.pill:hover {
     
 
     
+    <div class="entity-section">
+      <h2>Source Files</h2>
+      <ul><li><a href="/file-src-apis-defaultapi-ts.html">src/apis/DefaultApi.ts</a></li><li><a href="/file-src-apis-index-ts.html">src/apis/index.ts</a></li></ul>
+    </div>
+    
 
     
 
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Source</h2>
+      <ul><li><a href="/file-src-apis-defaultapi-ts.html">src/apis/DefaultApi.ts</a></li><li><a href="/file-src-apis-index-ts.html">src/apis/index.ts</a></li></ul>
+    </div>
     
 
     
@@ -963,18 +1026,18 @@ a.pill:hover {
       <h2>Frequently Asked Questions</h2>
       
       <details class="faq-item">
-        <summary class="faq-question">What is the ImpactAnalysis subdomain?</summary>
-        <div class="faq-answer">ImpactAnalysis is a subdomain in the typescript-sdk codebase, part of the CodeAnalysisModels domain. Models representing blast radius and affected entry points It contains 0 source files.</div>
+        <summary class="faq-question">What is the SupermodelAPI domain?</summary>
+        <div class="faq-answer">The SupermodelAPI domain is an architectural grouping in the typescript-sdk codebase. The low-level API client domain responsible for raw HTTP communication and service interaction. It contains 2 source files.</div>
       </details>
       
       <details class="faq-item">
-        <summary class="faq-question">Which domain does ImpactAnalysis belong to?</summary>
-        <div class="faq-answer">ImpactAnalysis belongs to the CodeAnalysisModels domain.</div>
+        <summary class="faq-question">What subdomains are in SupermodelAPI?</summary>
+        <div class="faq-answer">The SupermodelAPI domain contains 2 subdomain(s): EndpointDefinitions, NetworkRuntime.</div>
       </details>
       
       <details class="faq-item">
-        <summary class="faq-question">What functions are in ImpactAnalysis?</summary>
-        <div class="faq-answer">The ImpactAnalysis subdomain contains 132 function(s): AffectedEntryPointFromJSON, AffectedEntryPointFromJSONTyped, AffectedEntryPointToJSON, AffectedFileFromJSON, AffectedFileFromJSONTyped, AffectedFileToJSON, AffectedFunctionFromJSON, AffectedFunctionFromJSONTyped, and 124 more.</div>
+        <summary class="faq-question">How many files are in SupermodelAPI?</summary>
+        <div class="faq-answer">The SupermodelAPI domain contains 2 source files.</div>
       </details>
       
     </div>
@@ -997,7 +1060,7 @@ a.pill:hover {
   </div>
 </footer>
 
-
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script src="/main.js"></script>
 </body>
