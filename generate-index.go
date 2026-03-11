@@ -114,7 +114,7 @@ func generateRepoPages(cfg Config) error {
 			if upstream == "" {
 				return ""
 			}
-			return fmt.Sprintf("https://img.shields.io/github/stars/%s?style=flat&logo=github&color=818cf8&labelColor=1a1d27", upstream)
+			return fmt.Sprintf("https://img.shields.io/github/stars/%s?style=flat&logo=github&color=8CC6C9&labelColor=161616", upstream)
 		},
 		"archDocsURL": func(name string) string {
 			return fmt.Sprintf("https://graphtechnologydevelopers.github.io/%s/", url.PathEscape(name))
@@ -187,7 +187,7 @@ func generateIndex(cfg Config) error {
 			if upstream == "" {
 				return ""
 			}
-			return fmt.Sprintf("https://img.shields.io/github/stars/%s?style=flat&logo=github&color=818cf8&labelColor=1a1d27", upstream)
+			return fmt.Sprintf("https://img.shields.io/github/stars/%s?style=flat&logo=github&color=8CC6C9&labelColor=161616", upstream)
 		},
 		"totalRepos": func() int {
 			total := 0
@@ -228,40 +228,40 @@ const repoTemplate = `<!DOCTYPE html>
   <meta name="twitter:description" content="{{escape .Desc}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
   <style>
 :root {
-  --bg: #0f1117;
-  --bg-card: #1a1d27;
-  --border: #2a2e3e;
-  --text: #e4e4e7;
-  --text-muted: #9ca3af;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --green: #22c55e;
-  --orange: #f59e0b;
-  --blue: #3b82f6;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg: #000000;
+  --bg-card: #161616;
+  --border: #202020;
+  --text: #FFFFFF;
+  --text-muted: #808080;
+  --accent: #71B9BC;
+  --accent-light: #8CC6C9;
+  --green: #7CCE86;
+  --orange: #D0A27D;
+  --blue: #8E8CE9;
+  --font: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --max-w: 1200px;
-  --radius: 8px;
+  --radius: 0px;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.5; font-weight: 300; -webkit-font-smoothing: antialiased; }
 a { color: var(--accent-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 .site-header { border-bottom: 1px solid var(--border); padding: 16px 0; position: sticky; top: 0; background: var(--bg); z-index: 100; }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.site-brand { font-size: 18px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; }
+.site-brand { font-size: 18px; font-weight: 400; color: var(--text); display: flex; align-items: center; gap: 8px; }
 .site-brand:hover { text-decoration: none; color: var(--accent-light); }
 .site-brand svg { width: 24px; height: 24px; }
 .site-nav { display: flex; gap: 16px; align-items: center; }
-.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; }
+.site-nav a { color: var(--text-muted); font-size: 0.68rem; font-weight: 300; font-family: 'Martian Mono', monospace; text-transform: uppercase; letter-spacing: .08em; }
 .site-nav a:hover { color: var(--text); text-decoration: none; }
 .breadcrumb { padding: 24px 0 0; font-size: 14px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
 .breadcrumb span { color: var(--border); }
 .entity-header { padding: 32px 0 48px; }
-.entity-header h1 { font-size: 32px; font-weight: 700; margin-bottom: 12px; font-family: 'JetBrains Mono', monospace; }
+.entity-header h1 { font-size: 32px; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 12px; font-family: var(--font); }
 .entity-header p { color: var(--text-muted); font-size: 16px; max-width: 600px; margin-bottom: 20px; }
 .card-meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 24px; }
 .pill { display: inline-flex; align-items: center; padding: 4px 10px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; font-size: 12px; color: var(--text-muted); font-weight: 500; }
@@ -272,7 +272,7 @@ a:hover { text-decoration: underline; }
 .star-badge { height: 20px; vertical-align: middle; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: var(--radius); font-size: 14px; font-weight: 600; transition: opacity 0.2s; }
 .btn:hover { opacity: 0.85; text-decoration: none; }
-.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary { background: var(--accent); color: #000; }
 .site-footer { border-top: 1px solid var(--border); padding: 32px 0; margin-top: 64px; color: var(--text-muted); font-size: 13px; text-align: center; }
   </style>
 </head>
@@ -331,25 +331,25 @@ const indexTemplate = `<!DOCTYPE html>
   <meta name="description" content="Architecture documentation for popular open source repositories. Browse code graphs, dependency diagrams, and codebase structure.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
   <style>
 :root {
-  --bg: #0f1117;
-  --bg-card: #1a1d27;
-  --bg-hover: #22263a;
-  --border: #2a2e3e;
-  --text: #e4e4e7;
-  --text-muted: #9ca3af;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --green: #22c55e;
-  --orange: #f59e0b;
-  --red: #ef4444;
-  --blue: #3b82f6;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --bg: #000000;
+  --bg-card: #161616;
+  --bg-hover: #08191C;
+  --border: #202020;
+  --text: #FFFFFF;
+  --text-muted: #808080;
+  --accent: #71B9BC;
+  --accent-light: #8CC6C9;
+  --green: #7CCE86;
+  --orange: #D0A27D;
+  --red: #E589C6;
+  --blue: #8E8CE9;
+  --font: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'Martian Mono', 'Fira Code', monospace;
   --max-w: 1200px;
-  --radius: 8px;
+  --radius: 0px;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { overflow-x: hidden; }
@@ -392,7 +392,7 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
 .site-brand:hover { text-decoration: none; color: var(--accent-light); }
 .site-brand svg { width: 24px; height: 24px; }
 .site-nav { display: flex; gap: 16px; align-items: center; }
-.site-nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.site-nav a { color: var(--text-muted); font-size: 0.68rem; font-weight: 300; font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
 .site-nav a:hover { color: var(--text); text-decoration: none; }
 .hero {
   padding: 64px 0 48px;
@@ -400,7 +400,8 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
 }
 .hero h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 200;
+  letter-spacing: -0.04em;
   margin-bottom: 12px;
 }
 .hero p {
@@ -412,13 +413,15 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px 32px;
   margin-top: 32px;
 }
 .hero-stat { text-align: center; }
 .hero-stat .num {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   color: var(--accent-light);
 }
 .hero-stat .label {
@@ -456,7 +459,8 @@ a:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; b
 }
 .section-title {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 .section { margin-bottom: 48px; }
