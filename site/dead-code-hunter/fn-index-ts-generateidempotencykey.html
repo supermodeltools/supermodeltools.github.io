@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
-<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>generateIdempotencyKey() — dead-code-hunter Function Reference | dead-code-hunter Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the generateIdempotencyKey() function in index.ts from the dead-code-hunter codebase.">
@@ -862,6 +861,7 @@ a.pill:hover {
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"generateIdempotencyKey() is a function in the dead-code-hunter codebase."},"name":"What does generateIdempotencyKey() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"generateIdempotencyKey() is called by 1 function(s): run."},"name":"What calls generateIdempotencyKey()?"}]}</script>
 </head>
 <body>
+<script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/dead-code-hunter").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/dead-code-hunter/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/dead-code-hunter/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/dead-code-hunter/domain/githubaction.html" class="pill pill-green">GitHubAction</a>
-        <a href="/dead-code-hunter/subdomain/outputreporting.html" class="pill pill-orange">OutputReporting</a>
+        <a href="/dead-code-hunter/subdomain/actionscore.html" class="pill pill-orange">ActionsCore</a>
         
         
         
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GitHubAction","slug":"domain-githubaction"},"entity":{"name":"generateIdempotencyKey","slug":"fn-index-ts-generateidempotencykey","type":"Function"},"subdomain":{"name":"OutputReporting","slug":"subdomain-outputreporting"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GitHubAction","slug":"domain-githubaction"},"entity":{"name":"generateIdempotencyKey","slug":"fn-index-ts-generateidempotencykey","type":"Function"},"subdomain":{"name":"ActionsCore","slug":"subdomain-actionscore"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/dead-code-hunter/githubaction.html">GitHubAction</a><span class="arch-sep">&rarr;</span>
-            <a href="/dead-code-hunter/outputreporting.html">OutputReporting</a><span class="arch-sep">&rarr;</span>
+            <a href="/dead-code-hunter/actionscore.html">ActionsCore</a><span class="arch-sep">&rarr;</span>
             <span>generateIdempotencyKey() — dead-code-hunter Function Reference</span>
           </div>
         </noscript>
@@ -959,10 +959,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  6ddc8549_c2f6_0c65_f48d_0e8c7bb7dfcd["generateIdempotencyKey()"]
-  9707382e_d141_391a_9107_ce501693c30c["run()"]
-  9707382e_d141_391a_9107_ce501693c30c -->|calls| 6ddc8549_c2f6_0c65_f48d_0e8c7bb7dfcd
-  style 6ddc8549_c2f6_0c65_f48d_0e8c7bb7dfcd fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a7a565ac_9291_b2d3_c39a_04a6815d6d1a["generateIdempotencyKey()"]
+  57c98114_e521_6d59_dbea_5d4476c2f781["run()"]
+  57c98114_e521_6d59_dbea_5d4476c2f781 -->|calls| a7a565ac_9291_b2d3_c39a_04a6815d6d1a
+  style a7a565ac_9291_b2d3_c39a_04a6815d6d1a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -970,7 +970,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-index-ts-generateidempotencykey"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"6ddc8549:c2f6:0c65:f48d:0e8c7bb7dfcd","label":"generateIdempotencyKey","type":"Function","slug":"fn-index-ts-generateidempotencykey","lc":17,"lang":"typescript","cbc":1},{"id":"9707382e:d141:391a:9107:ce501693c30c","label":"run","type":"Function","slug":"fn-index-ts-run","lc":177,"lang":"typescript","cc":9},{"id":"domain:GitHubAction","label":"GitHubAction","type":"Domain","slug":"domain-githubaction"},{"id":"subdomain:GitHubAction:OutputReporting","label":"OutputReporting","type":"Subdomain","slug":"subdomain-outputreporting"}],"edges":[{"source":"9707382e:d141:391a:9107:ce501693c30c","target":"6ddc8549:c2f6:0c65:f48d:0e8c7bb7dfcd","type":"calls"},{"source":"6ddc8549:c2f6:0c65:f48d:0e8c7bb7dfcd","target":"domain:GitHubAction","type":"belongsTo"},{"source":"6ddc8549:c2f6:0c65:f48d:0e8c7bb7dfcd","target":"subdomain:GitHubAction:OutputReporting","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a7a565ac:9291:b2d3:c39a:04a6815d6d1a","label":"generateIdempotencyKey","type":"Function","slug":"fn-index-ts-generateidempotencykey","lc":17,"lang":"typescript","cbc":1},{"id":"57c98114:e521:6d59:dbea:5d4476c2f781","label":"run","type":"Function","slug":"fn-index-ts-run","lc":177,"lang":"typescript","cc":9},{"id":"domain:GitHubAction","label":"GitHubAction","type":"Domain","slug":"domain-githubaction"},{"id":"subdomain:GitHubAction:ActionsCore","label":"ActionsCore","type":"Subdomain","slug":"subdomain-actionscore"}],"edges":[{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"a7a565ac:9291:b2d3:c39a:04a6815d6d1a","type":"calls"},{"source":"a7a565ac:9291:b2d3:c39a:04a6815d6d1a","target":"domain:GitHubAction","type":"belongsTo"},{"source":"a7a565ac:9291:b2d3:c39a:04a6815d6d1a","target":"subdomain:GitHubAction:ActionsCore","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1015,7 +1015,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/dead-code-hunter/subdomain-outputreporting.html">OutputReporting</a></li></ul>
+      <ul><li><a href="/dead-code-hunter/subdomain-actionscore.html">ActionsCore</a></li></ul>
     </div>
     
 
