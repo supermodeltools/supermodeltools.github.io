@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/dead-code-hunter/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/dead-code-hunter/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/dead-code-hunter/domain/githubaction.html" class="pill pill-green">GitHubAction</a>
-        <a href="/dead-code-hunter/subdomain/actionscore.html" class="pill pill-orange">ActionsCore</a>
+        <a href="/dead-code-hunter/subdomain/inputs.html" class="pill pill-orange">Inputs</a>
         
         
         <span class="pill">calls 9</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GitHubAction","slug":"domain-githubaction"},"entity":{"name":"run","slug":"fn-index-ts-run","type":"Function"},"subdomain":{"name":"ActionsCore","slug":"subdomain-actionscore"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GitHubAction","slug":"domain-githubaction"},"entity":{"name":"run","slug":"fn-index-ts-run","type":"Function"},"subdomain":{"name":"Inputs","slug":"subdomain-inputs"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/dead-code-hunter/githubaction.html">GitHubAction</a><span class="arch-sep">&rarr;</span>
-            <a href="/dead-code-hunter/actionscore.html">ActionsCore</a><span class="arch-sep">&rarr;</span>
+            <a href="/dead-code-hunter/inputs.html">Inputs</a><span class="arch-sep">&rarr;</span>
             <span>run() — dead-code-hunter Function Reference</span>
           </div>
         </noscript>
@@ -959,26 +959,26 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  57c98114_e521_6d59_dbea_5d4476c2f781["run()"]
-  0471073b_4ad5_0678_d813_b0d3cff02fd0["createZipArchive()"]
-  57c98114_e521_6d59_dbea_5d4476c2f781 -->|calls| 0471073b_4ad5_0678_d813_b0d3cff02fd0
-  a7a565ac_9291_b2d3_c39a_04a6815d6d1a["generateIdempotencyKey()"]
-  57c98114_e521_6d59_dbea_5d4476c2f781 -->|calls| a7a565ac_9291_b2d3_c39a_04a6815d6d1a
-  a71f3b0e_456b_d876_ade4_7d368a394fe7["pollForResult()"]
-  57c98114_e521_6d59_dbea_5d4476c2f781 -->|calls| a71f3b0e_456b_d876_ade4_7d368a394fe7
-  f000d08c_e6e0_ec77_f541_29576c9fd04f["filterByIgnorePatterns()"]
-  57c98114_e521_6d59_dbea_5d4476c2f781 -->|calls| f000d08c_e6e0_ec77_f541_29576c9fd04f
-  4cc3c6bb_e26f_aea9_8eca_a9f555858d15["getChangedFiles()"]
-  57c98114_e521_6d59_dbea_5d4476c2f781 -->|calls| 4cc3c6bb_e26f_aea9_8eca_a9f555858d15
-  342924a1_4b06_7d3e_bb74_6b23d481294e["filterByChangedFiles()"]
-  57c98114_e521_6d59_dbea_5d4476c2f781 -->|calls| 342924a1_4b06_7d3e_bb74_6b23d481294e
-  033e8732_a9f9_61ee_3605_371d27812f12["formatPrComment()"]
-  57c98114_e521_6d59_dbea_5d4476c2f781 -->|calls| 033e8732_a9f9_61ee_3605_371d27812f12
-  6b9a3ad1_d074_640a_4a14_036eff7a0d30["safeSerialize()"]
-  57c98114_e521_6d59_dbea_5d4476c2f781 -->|calls| 6b9a3ad1_d074_640a_4a14_036eff7a0d30
-  f675af4c_7662_3b62_267d_76af91ffa85f["redactSensitive()"]
-  57c98114_e521_6d59_dbea_5d4476c2f781 -->|calls| f675af4c_7662_3b62_267d_76af91ffa85f
-  style 57c98114_e521_6d59_dbea_5d4476c2f781 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a081cbad_582f_30ad_aea8_6e1ec283b19d["run()"]
+  3ac4b943_8b7f_2fb8_ebeb_4b15fbc4ddce["createZipArchive()"]
+  a081cbad_582f_30ad_aea8_6e1ec283b19d -->|calls| 3ac4b943_8b7f_2fb8_ebeb_4b15fbc4ddce
+  b83e04f2_16a8_26c5_5a95_53897e590683["generateIdempotencyKey()"]
+  a081cbad_582f_30ad_aea8_6e1ec283b19d -->|calls| b83e04f2_16a8_26c5_5a95_53897e590683
+  2754e143_6821_289b_8ae1_5817acbf9f41["pollForResult()"]
+  a081cbad_582f_30ad_aea8_6e1ec283b19d -->|calls| 2754e143_6821_289b_8ae1_5817acbf9f41
+  03154d3f_6118_5dce_d32f_38566038a1a9["filterByIgnorePatterns()"]
+  a081cbad_582f_30ad_aea8_6e1ec283b19d -->|calls| 03154d3f_6118_5dce_d32f_38566038a1a9
+  cd693bef_c239_def7_ccbb_c3c3c9f254b7["getChangedFiles()"]
+  a081cbad_582f_30ad_aea8_6e1ec283b19d -->|calls| cd693bef_c239_def7_ccbb_c3c3c9f254b7
+  97b65aa2_583b_f630_7dcc_519dba70a4da["filterByChangedFiles()"]
+  a081cbad_582f_30ad_aea8_6e1ec283b19d -->|calls| 97b65aa2_583b_f630_7dcc_519dba70a4da
+  56efb36e_c9fb_29bd_8c18_a391ebca52a6["formatPrComment()"]
+  a081cbad_582f_30ad_aea8_6e1ec283b19d -->|calls| 56efb36e_c9fb_29bd_8c18_a391ebca52a6
+  f5258d34_3fb1_6a0d_c0e5_96bfa41c7d91["safeSerialize()"]
+  a081cbad_582f_30ad_aea8_6e1ec283b19d -->|calls| f5258d34_3fb1_6a0d_c0e5_96bfa41c7d91
+  cf9382c1_9c92_20c5_8024_e9ee3c635fa6["redactSensitive()"]
+  a081cbad_582f_30ad_aea8_6e1ec283b19d -->|calls| cf9382c1_9c92_20c5_8024_e9ee3c635fa6
+  style a081cbad_582f_30ad_aea8_6e1ec283b19d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -986,7 +986,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-index-ts-run"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"57c98114:e521:6d59:dbea:5d4476c2f781","label":"run","type":"Function","slug":"fn-index-ts-run","lc":177,"lang":"typescript","cc":9},{"id":"0471073b:4ad5:0678:d813:b0d3cff02fd0","label":"createZipArchive","type":"Function","slug":"fn-index-ts-createziparchive","lc":14,"lang":"typescript","cbc":1},{"id":"a7a565ac:9291:b2d3:c39a:04a6815d6d1a","label":"generateIdempotencyKey","type":"Function","slug":"fn-index-ts-generateidempotencykey","lc":17,"lang":"typescript","cbc":1},{"id":"a71f3b0e:456b:d876:ade4:7d368a394fe7","label":"pollForResult","type":"Function","slug":"fn-index-ts-pollforresult","lc":33,"lang":"typescript","cc":1,"cbc":1},{"id":"f000d08c:e6e0:ec77:f541:29576c9fd04f","label":"filterByIgnorePatterns","type":"Function","slug":"fn-dead-code-ts-filterbyignorepatterns","lc":7,"lang":"typescript","cbc":1},{"id":"4cc3c6bb:e26f:aea9:8eca:a9f555858d15","label":"getChangedFiles","type":"Function","slug":"fn-index-ts-getchangedfiles","lc":26,"lang":"typescript","cbc":1},{"id":"342924a1:4b06:7d3e:bb74:6b23d481294e","label":"filterByChangedFiles","type":"Function","slug":"fn-dead-code-ts-filterbychangedfiles","lc":6,"lang":"typescript","cbc":1},{"id":"033e8732:a9f9:61ee:3605:371d27812f12","label":"formatPrComment","type":"Function","slug":"fn-dead-code-ts-formatprcomment","lc":52,"lang":"typescript","cc":1,"cbc":1},{"id":"6b9a3ad1:d074:640a:4a14:036eff7a0d30","label":"safeSerialize","type":"Function","slug":"fn-index-ts-safeserialize","lc":29,"lang":"typescript","cbc":1},{"id":"f675af4c:7662:3b62:267d:76af91ffa85f","label":"redactSensitive","type":"Function","slug":"fn-index-ts-redactsensitive","lc":15,"lang":"typescript","cbc":1},{"id":"domain:GitHubAction","label":"GitHubAction","type":"Domain","slug":"domain-githubaction"},{"id":"subdomain:GitHubAction:ActionsCore","label":"ActionsCore","type":"Subdomain","slug":"subdomain-actionscore"}],"edges":[{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"0471073b:4ad5:0678:d813:b0d3cff02fd0","type":"calls"},{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"a7a565ac:9291:b2d3:c39a:04a6815d6d1a","type":"calls"},{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"a71f3b0e:456b:d876:ade4:7d368a394fe7","type":"calls"},{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"f000d08c:e6e0:ec77:f541:29576c9fd04f","type":"calls"},{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"4cc3c6bb:e26f:aea9:8eca:a9f555858d15","type":"calls"},{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"342924a1:4b06:7d3e:bb74:6b23d481294e","type":"calls"},{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"033e8732:a9f9:61ee:3605:371d27812f12","type":"calls"},{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"6b9a3ad1:d074:640a:4a14:036eff7a0d30","type":"calls"},{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"f675af4c:7662:3b62:267d:76af91ffa85f","type":"calls"},{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"domain:GitHubAction","type":"belongsTo"},{"source":"57c98114:e521:6d59:dbea:5d4476c2f781","target":"subdomain:GitHubAction:ActionsCore","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a081cbad:582f:30ad:aea8:6e1ec283b19d","label":"run","type":"Function","slug":"fn-index-ts-run","lc":177,"lang":"typescript","cc":9},{"id":"3ac4b943:8b7f:2fb8:ebeb:4b15fbc4ddce","label":"createZipArchive","type":"Function","slug":"fn-index-ts-createziparchive","lc":14,"lang":"typescript","cbc":1},{"id":"b83e04f2:16a8:26c5:5a95:53897e590683","label":"generateIdempotencyKey","type":"Function","slug":"fn-index-ts-generateidempotencykey","lc":17,"lang":"typescript","cbc":1},{"id":"2754e143:6821:289b:8ae1:5817acbf9f41","label":"pollForResult","type":"Function","slug":"fn-index-ts-pollforresult","lc":33,"lang":"typescript","cc":1,"cbc":1},{"id":"03154d3f:6118:5dce:d32f:38566038a1a9","label":"filterByIgnorePatterns","type":"Function","slug":"fn-dead-code-ts-filterbyignorepatterns","lc":7,"lang":"typescript","cbc":1},{"id":"cd693bef:c239:def7:ccbb:c3c3c9f254b7","label":"getChangedFiles","type":"Function","slug":"fn-index-ts-getchangedfiles","lc":26,"lang":"typescript","cbc":1},{"id":"97b65aa2:583b:f630:7dcc:519dba70a4da","label":"filterByChangedFiles","type":"Function","slug":"fn-dead-code-ts-filterbychangedfiles","lc":6,"lang":"typescript","cbc":1},{"id":"56efb36e:c9fb:29bd:8c18:a391ebca52a6","label":"formatPrComment","type":"Function","slug":"fn-dead-code-ts-formatprcomment","lc":52,"lang":"typescript","cc":1,"cbc":1},{"id":"f5258d34:3fb1:6a0d:c0e5:96bfa41c7d91","label":"safeSerialize","type":"Function","slug":"fn-index-ts-safeserialize","lc":29,"lang":"typescript","cbc":1},{"id":"cf9382c1:9c92:20c5:8024:e9ee3c635fa6","label":"redactSensitive","type":"Function","slug":"fn-index-ts-redactsensitive","lc":15,"lang":"typescript","cbc":1},{"id":"domain:GitHubAction","label":"GitHubAction","type":"Domain","slug":"domain-githubaction"},{"id":"subdomain:GitHubAction:Inputs","label":"Inputs","type":"Subdomain","slug":"subdomain-inputs"}],"edges":[{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"3ac4b943:8b7f:2fb8:ebeb:4b15fbc4ddce","type":"calls"},{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"b83e04f2:16a8:26c5:5a95:53897e590683","type":"calls"},{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"2754e143:6821:289b:8ae1:5817acbf9f41","type":"calls"},{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"03154d3f:6118:5dce:d32f:38566038a1a9","type":"calls"},{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"cd693bef:c239:def7:ccbb:c3c3c9f254b7","type":"calls"},{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"97b65aa2:583b:f630:7dcc:519dba70a4da","type":"calls"},{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"56efb36e:c9fb:29bd:8c18:a391ebca52a6","type":"calls"},{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"f5258d34:3fb1:6a0d:c0e5:96bfa41c7d91","type":"calls"},{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"cf9382c1:9c92:20c5:8024:e9ee3c635fa6","type":"calls"},{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"domain:GitHubAction","type":"belongsTo"},{"source":"a081cbad:582f:30ad:aea8:6e1ec283b19d","target":"subdomain:GitHubAction:Inputs","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1191,7 +1191,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/dead-code-hunter/subdomain-actionscore.html">ActionsCore</a></li></ul>
+      <ul><li><a href="/dead-code-hunter/subdomain-inputs.html">Inputs</a></li></ul>
     </div>
     
 
