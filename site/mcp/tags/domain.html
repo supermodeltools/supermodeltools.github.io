@@ -857,7 +857,7 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","description":"Domain Tag recipes","image":"https://repos.supermodeltools.com/mcp/images/share/tags-domain.svg","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","name":"AnalysisTools Domain — mcp Architecture","position":1,"url":"https://repos.supermodeltools.com/mcp/domain-analysistools.html"},{"@type":"ListItem","name":"GraphCache Domain — mcp Architecture","position":2,"url":"https://repos.supermodeltools.com/mcp/domain-graphcache.html"},{"@type":"ListItem","name":"McpServer Domain — mcp Architecture","position":3,"url":"https://repos.supermodeltools.com/mcp/domain-mcpserver.html"},{"@type":"ListItem","name":"RepositoryUtilities Domain — mcp Architecture","position":4,"url":"https://repos.supermodeltools.com/mcp/domain-repositoryutilities.html"}],"numberOfItems":4},"name":"Domain","url":"https://repos.supermodeltools.com/mcp/tags/domain.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","description":"Domain Tag recipes","image":"https://repos.supermodeltools.com/mcp/images/share/tags-domain.svg","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","name":"AnalysisTools Domain — mcp Architecture","position":1,"url":"https://repos.supermodeltools.com/mcp/domain-analysistools.html"},{"@type":"ListItem","name":"McpServer Domain — mcp Architecture","position":2,"url":"https://repos.supermodeltools.com/mcp/domain-mcpserver.html"},{"@type":"ListItem","name":"RepositoryUtilities Domain — mcp Architecture","position":3,"url":"https://repos.supermodeltools.com/mcp/domain-repositoryutilities.html"},{"@type":"ListItem","name":"StructuralCache Domain — mcp Architecture","position":4,"url":"https://repos.supermodeltools.com/mcp/domain-structuralcache.html"}],"numberOfItems":4},"name":"Domain","url":"https://repos.supermodeltools.com/mcp/tags/domain.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/mcp/","name":"Home","position":1},{"@type":"ListItem","item":"https://repos.supermodeltools.com/mcp/tags/","name":"Tags","position":2},{"@type":"ListItem","name":"Domain","position":3}]}</script>
 </head>
 <body>
@@ -918,7 +918,7 @@ a.pill:hover {
       <div class="chart-panel chart-panel-compact hub-charts">
         <div class="hub-chart-cell" id="hub-chart"></div>
         <div class="hub-chart-cell" id="hub-chart-secondary"></div>
-        <script type="application/json" id="hub-chart-data">{"entryName":"Domain","totalEntities":4,"typeDistribution":null,"distributions":{"domain":[{"name":"GraphCache","count":1},{"name":"McpServer","count":1},{"name":"RepositoryUtilities","count":1},{"name":"AnalysisTools","count":1}],"node_type":[{"name":"Domain","count":4}]},"topEntities":null}</script>
+        <script type="application/json" id="hub-chart-data">{"entryName":"Domain","totalEntities":4,"typeDistribution":null,"distributions":{"domain":[{"name":"AnalysisTools","count":1},{"name":"McpServer","count":1},{"name":"RepositoryUtilities","count":1},{"name":"StructuralCache","count":1}],"node_type":[{"name":"Domain","count":4}]},"topEntities":null}</script>
       </div>
     </div>
 
@@ -926,16 +926,7 @@ a.pill:hover {
       
       <a href="/mcp/domain-analysistools.html" class="card">
         <div class="card-title">AnalysisTools Domain — mcp Architecture</div>
-        <div class="card-desc">Domain-specific logic for high-level code analysis tasks like BFS traversal and context rendering. Architectural overview of the AnalysisTools domain in the mcp codebase. Contains 6 source files.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Domain</span>
-          
-        </div>
-      </a>
-      
-      <a href="/mcp/domain-graphcache.html" class="card">
-        <div class="card-title">GraphCache Domain — mcp Architecture</div>
-        <div class="card-desc">A specialized LRU caching and indexing layer for Supermodel IR (Intermediate Representation) data. Architectural overview of the GraphCache domain in the mcp codebase. Contains 3 source files.</div>
+        <div class="card-desc">A suite of specific query handlers that traverse the code graph to extract architectural meaning. Architectural overview of the AnalysisTools domain in the mcp codebase. Contains 6 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Domain</span>
           
@@ -944,7 +935,7 @@ a.pill:hover {
       
       <a href="/mcp/domain-mcpserver.html" class="card">
         <div class="card-title">McpServer Domain — mcp Architecture</div>
-        <div class="card-desc">The entry point and communication layer that implements the Model Context Protocol to expose tools to AI clients. Architectural overview of the McpServer domain in the mcp codebase. Contains 5 source files.</div>
+        <div class="card-desc">The entry and execution layer implementing the Model Context Protocol to expose code analysis capabilities as AI-consumable tools. Architectural overview of the McpServer domain in the mcp codebase. Contains 5 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Domain</span>
           
@@ -953,7 +944,16 @@ a.pill:hover {
       
       <a href="/mcp/domain-repositoryutilities.html" class="card">
         <div class="card-title">RepositoryUtilities Domain — mcp Architecture</div>
-        <div class="card-desc">Handles filesystem and VCS operations required to prepare repositories for remote analysis. Architectural overview of the RepositoryUtilities domain in the mcp codebase. Contains 4 source files.</div>
+        <div class="card-desc">Foundation services for interacting with local files and preparing source data for remote analysis. Architectural overview of the RepositoryUtilities domain in the mcp codebase. Contains 4 source files.</div>
+        <div class="card-meta">
+          <span class="pill pill-accent">Domain</span>
+          
+        </div>
+      </a>
+      
+      <a href="/mcp/domain-structuralcache.html" class="card">
+        <div class="card-title">StructuralCache Domain — mcp Architecture</div>
+        <div class="card-desc">A high-performance LRU and disk-based storage system for indexed code graphs derived from source repositories. Architectural overview of the StructuralCache domain in the mcp codebase. Contains 3 source files.</div>
         <div class="card-meta">
           <span class="pill pill-accent">Domain</span>
           

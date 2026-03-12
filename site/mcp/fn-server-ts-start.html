@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/mcpserver.html" class="pill pill-green">McpServer</a>
-        <a href="/mcp/subdomain/instructions.html" class="pill pill-orange">Instructions</a>
+        <a href="/mcp/subdomain/toolregistration.html" class="pill pill-orange">ToolRegistration</a>
         
         
         <span class="pill">calls 9</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"start","slug":"fn-server-ts-start","type":"Function"},"subdomain":{"name":"Instructions","slug":"subdomain-instructions"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"start","slug":"fn-server-ts-start","type":"Function"},"subdomain":{"name":"ToolRegistration","slug":"subdomain-toolregistration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/mcpserver.html">McpServer</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/instructions.html">Instructions</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/toolregistration.html">ToolRegistration</a><span class="arch-sep">&rarr;</span>
             <span>start() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,30 +959,30 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca["start()"]
-  5d934ce7_2894_f928_ee41_3e234d932ade["main()"]
-  5d934ce7_2894_f928_ee41_3e234d932ade -->|calls| 12e4660d_fb9e_680a_3a58_b3022e4bb2ca
-  e1138fd5_3908_00ad_0338_b94fdc7f94d8["constructor()"]
-  e1138fd5_3908_00ad_0338_b94fdc7f94d8 -->|calls| 12e4660d_fb9e_680a_3a58_b3022e4bb2ca
-  48e7f84f_7763_1004_d289_5430ce3a387e["injectOverviewInstructions()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| 48e7f84f_7763_1004_d289_5430ce3a387e
-  d77f3b6c_4560_8a61_c1ce_94f90b52bcca["cleanupOldZips()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| d77f3b6c_4560_8a61_c1ce_94f90b52bcca
-  18c4fc45_1d12_b562_b3c0_bb43c42705e8["debug()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| 18c4fc45_1d12_b562_b3c0_bb43c42705e8
-  de95bc77_b2f5_7481_2de3_a7fa4ee1d1af["loadCacheFromDisk()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| de95bc77_b2f5_7481_2de3_a7fa4ee1d1af
-  9ec48dac_db7a_8dc5_f537_aeaf3effa3ff["setRepoMap()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| 9ec48dac_db7a_8dc5_f537_aeaf3effa3ff
-  fb96372e_2e32_c676_0a72_a84a0f83382f["warn()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| fb96372e_2e32_c676_0a72_a84a0f83382f
-  36f29408_6420_de8b_6c58_3ce87e99c1a6["info()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| 36f29408_6420_de8b_6c58_3ce87e99c1a6
-  f3e45789_13aa_e6fb_1d36_f57aed00708f["precacheForDirectory()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| f3e45789_13aa_e6fb_1d36_f57aed00708f
-  83695fef_64ae_b452_87fb_de0efe745548["setNoApiFallback()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| 83695fef_64ae_b452_87fb_de0efe745548
-  style 12e4660d_fb9e_680a_3a58_b3022e4bb2ca fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9["start()"]
+  813dcf1d_7355_fc3d_a3ea_003437fb88f7["main()"]
+  813dcf1d_7355_fc3d_a3ea_003437fb88f7 -->|calls| 4af13c5a_737b_b7b9_5e55_da10ab5bfbd9
+  e4c175c2_ec7f_2856_c13c_de478c5ea86a["constructor()"]
+  e4c175c2_ec7f_2856_c13c_de478c5ea86a -->|calls| 4af13c5a_737b_b7b9_5e55_da10ab5bfbd9
+  61753c4e_c49d_4915_c89a_9a18d650509e["injectOverviewInstructions()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 -->|calls| 61753c4e_c49d_4915_c89a_9a18d650509e
+  f11d21d2_124a_7c4b_2f8e_e7c11d35fbee["cleanupOldZips()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 -->|calls| f11d21d2_124a_7c4b_2f8e_e7c11d35fbee
+  f937916c_af51_fb15_bb8f_f6810429f129["debug()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 -->|calls| f937916c_af51_fb15_bb8f_f6810429f129
+  156b00dc_d27a_180c_b23b_31c621291700["loadCacheFromDisk()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 -->|calls| 156b00dc_d27a_180c_b23b_31c621291700
+  b07e6799_dad1_0ff5_b200_265e39fe26c6["setRepoMap()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 -->|calls| b07e6799_dad1_0ff5_b200_265e39fe26c6
+  ba969989_4520_414f_fb6c_9a82c7a83c6c["warn()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 -->|calls| ba969989_4520_414f_fb6c_9a82c7a83c6c
+  6b7c284c_73ac_1a5a_480a_8960173f723b["info()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 -->|calls| 6b7c284c_73ac_1a5a_480a_8960173f723b
+  c26f0bac_64d7_c799_1edb_01467b9ddf7f["precacheForDirectory()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 -->|calls| c26f0bac_64d7_c799_1edb_01467b9ddf7f
+  bc18669f_c886_d53a_5f4d_59a4e520589d["setNoApiFallback()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 -->|calls| bc18669f_c886_d53a_5f4d_59a4e520589d
+  style 4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -990,7 +990,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-server-ts-start"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"48e7f84f:7763:1004:d289:5430ce3a387e","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"d77f3b6c:4560:8a61:c1ce:94f90b52bcca","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"18c4fc45:1d12:b562:b3c0:bb43c42705e8","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"9ec48dac:db7a:8dc5:f537:aeaf3effa3ff","label":"setRepoMap","type":"Function","slug":"fn-graph-cache-ts-setrepomap","lc":3,"lang":"typescript","cbc":1},{"id":"fb96372e:2e32:c676:0a72:a84a0f83382f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"36f29408:6420:de8b:6c58:3ce87e99c1a6","label":"info","type":"Function","slug":"fn-logger-ts-info","lc":3,"lang":"typescript","cbc":2},{"id":"f3e45789:13aa:e6fb:1d36:f57aed00708f","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"83695fef:64ae:b452:87fb:de0efe745548","label":"setNoApiFallback","type":"Function","slug":"fn-graph-cache-ts-setnoapifallback","lc":3,"lang":"typescript","cbc":1},{"id":"5d934ce7:2894:f928:ee41:3e234d932ade","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"e1138fd5:3908:00ad:0338:b94fdc7f94d8","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:Instructions","label":"Instructions","type":"Subdomain","slug":"subdomain-instructions"}],"edges":[{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"48e7f84f:7763:1004:d289:5430ce3a387e","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"d77f3b6c:4560:8a61:c1ce:94f90b52bcca","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"18c4fc45:1d12:b562:b3c0:bb43c42705e8","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"9ec48dac:db7a:8dc5:f537:aeaf3effa3ff","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"fb96372e:2e32:c676:0a72:a84a0f83382f","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"36f29408:6420:de8b:6c58:3ce87e99c1a6","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"f3e45789:13aa:e6fb:1d36:f57aed00708f","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"83695fef:64ae:b452:87fb:de0efe745548","type":"calls"},{"source":"5d934ce7:2894:f928:ee41:3e234d932ade","target":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","type":"calls"},{"source":"e1138fd5:3908:00ad:0338:b94fdc7f94d8","target":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"domain:McpServer","type":"belongsTo"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"subdomain:McpServer:Instructions","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"61753c4e:c49d:4915:c89a:9a18d650509e","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"f11d21d2:124a:7c4b:2f8e:e7c11d35fbee","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"f937916c:af51:fb15:bb8f:f6810429f129","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"156b00dc:d27a:180c:b23b:31c621291700","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"b07e6799:dad1:0ff5:b200:265e39fe26c6","label":"setRepoMap","type":"Function","slug":"fn-graph-cache-ts-setrepomap","lc":3,"lang":"typescript","cbc":1},{"id":"ba969989:4520:414f:fb6c:9a82c7a83c6c","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"6b7c284c:73ac:1a5a:480a:8960173f723b","label":"info","type":"Function","slug":"fn-logger-ts-info","lc":3,"lang":"typescript","cbc":2},{"id":"c26f0bac:64d7:c799:1edb:01467b9ddf7f","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"bc18669f:c886:d53a:5f4d:59a4e520589d","label":"setNoApiFallback","type":"Function","slug":"fn-graph-cache-ts-setnoapifallback","lc":3,"lang":"typescript","cbc":1},{"id":"813dcf1d:7355:fc3d:a3ea:003437fb88f7","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"e4c175c2:ec7f:2856:c13c:de478c5ea86a","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:ToolRegistration","label":"ToolRegistration","type":"Subdomain","slug":"subdomain-toolregistration"}],"edges":[{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"61753c4e:c49d:4915:c89a:9a18d650509e","type":"calls"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"f11d21d2:124a:7c4b:2f8e:e7c11d35fbee","type":"calls"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"f937916c:af51:fb15:bb8f:f6810429f129","type":"calls"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"156b00dc:d27a:180c:b23b:31c621291700","type":"calls"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"b07e6799:dad1:0ff5:b200:265e39fe26c6","type":"calls"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"ba969989:4520:414f:fb6c:9a82c7a83c6c","type":"calls"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"6b7c284c:73ac:1a5a:480a:8960173f723b","type":"calls"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"c26f0bac:64d7:c799:1edb:01467b9ddf7f","type":"calls"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"bc18669f:c886:d53a:5f4d:59a4e520589d","type":"calls"},{"source":"813dcf1d:7355:fc3d:a3ea:003437fb88f7","target":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","type":"calls"},{"source":"e4c175c2:ec7f:2856:c13c:de478c5ea86a","target":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","type":"calls"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"domain:McpServer","type":"belongsTo"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"subdomain:McpServer:ToolRegistration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1059,7 +1059,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-instructions.html">Instructions</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-toolregistration.html">ToolRegistration</a></li></ul>
     </div>
     
 

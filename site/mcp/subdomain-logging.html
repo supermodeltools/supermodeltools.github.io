@@ -10,20 +10,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
 
-<title>ErrorHandling — Subdomains | mcp Architecture Docs</title>
-<meta name="description" content="Browse all ErrorHandling entities in the mcp Architecture Docs architecture documentation.">
-<link rel="canonical" href="https://repos.supermodeltools.com/mcp/subdomain/errorhandling.html">
-
-<meta property="og:title" content="ErrorHandling — Subdomains — mcp Architecture Docs">
-<meta property="og:description" content="Browse 5 ErrorHandling Subdomain recipes on mcp Architecture Docs.">
-<meta property="og:url" content="https://repos.supermodeltools.com/mcp/subdomain/errorhandling.html">
-<meta property="og:image" content="https://repos.supermodeltools.com/mcp/images/share/subdomain-errorhandling.svg">
+<title>Logging — mcp Architecture | mcp Architecture Docs</title>
+<meta name="description" content="Standardizes internal debug and error reporting Architecture documentation for the Logging subdomain (part of RepositoryUtilities domain) in the mcp codebase. Contains 0 source files.">
+<link rel="canonical" href="https://repos.supermodeltools.com/mcp/subdomain-logging/">
+<meta property="og:title" content="Logging — mcp Architecture — mcp Architecture Docs">
+<meta property="og:description" content="Standardizes internal debug and error reporting Architecture documentation for the Logging subdomain (part of RepositoryUtilities domain) in the mcp codebase. Contains 0 source files.">
+<meta property="og:url" content="https://repos.supermodeltools.com/mcp/subdomain-logging.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/mcp/images/share/subdomain-logging.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="mcp Architecture Docs">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ErrorHandling — Subdomains — mcp Architecture Docs">
-<meta name="twitter:description" content="Browse 5 ErrorHandling Subdomain recipes on mcp Architecture Docs.">
-<meta name="twitter:image" content="https://repos.supermodeltools.com/mcp/images/share/subdomain-errorhandling.svg">
+<meta name="twitter:title" content="Logging — mcp Architecture — mcp Architecture Docs">
+<meta name="twitter:description" content="Standardizes internal debug and error reporting Architecture documentation for the Logging subdomain (part of RepositoryUtilities domain) in the mcp codebase. Contains 0 source files.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/mcp/images/share/subdomain-logging.svg">
 
 <style>:root {
   --bg: #000000;
@@ -857,8 +856,9 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","description":"ErrorHandling Subdomain recipes","image":"https://repos.supermodeltools.com/mcp/images/share/subdomain-errorhandling.svg","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","name":"classifyApiError() — mcp Function Reference","position":1,"url":"https://repos.supermodeltools.com/mcp/fn-api-helpers-ts-classifyapierror.html"},{"@type":"ListItem","name":"error() — mcp Function Reference","position":2,"url":"https://repos.supermodeltools.com/mcp/fn-logger-ts-error.html"},{"@type":"ListItem","name":"buildIgnoreFilter() — mcp Function Reference","position":3,"url":"https://repos.supermodeltools.com/mcp/fn-zip-repository-ts-buildignorefilter.html"},{"@type":"ListItem","name":"formatBytes() — mcp Function Reference","position":4,"url":"https://repos.supermodeltools.com/mcp/fn-zip-repository-ts-formatbytes.html"},{"@type":"ListItem","name":"ErrorHandling — mcp Architecture","position":5,"url":"https://repos.supermodeltools.com/mcp/subdomain-errorhandling.html"}],"numberOfItems":5},"name":"ErrorHandling","url":"https://repos.supermodeltools.com/mcp/subdomain/errorhandling.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/mcp/","name":"Home","position":1},{"@type":"ListItem","item":"https://repos.supermodeltools.com/mcp/subdomain/","name":"Subdomains","position":2},{"@type":"ListItem","name":"ErrorHandling","position":3}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Standardizes internal debug and error reporting Architecture documentation for the Logging subdomain (part of RepositoryUtilities domain) in the mcp codebase. Contains 0 source files.","image":["https://repos.supermodeltools.com/mcp/images/share/subdomain-logging.svg"],"name":"Logging — mcp Architecture","url":"https://repos.supermodeltools.com/mcp/subdomain-logging.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/mcp/","name":"Home","position":1},{"@type":"ListItem","name":"Logging — mcp Architecture","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Logging is a subdomain in the mcp codebase, part of the RepositoryUtilities domain. Standardizes internal debug and error reporting It contains 0 source files."},"name":"What is the Logging subdomain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Logging belongs to the RepositoryUtilities domain."},"name":"Which domain does Logging belong to?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The Logging subdomain contains 4 function(s): debug, error, info, warn."},"name":"What functions are in Logging?"}]}</script>
 </head>
 <body>
 <script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/mcp").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
@@ -902,85 +902,141 @@ a.pill:hover {
 </div>
 
 
-<main id="main-content">
+<main class="entity-page" id="main-content">
   <div class="container">
-    <div class="hub-header">
+    <div class="entity-header">
       <div class="entity-breadcrumb">
         <a href="/mcp/">Home</a>
         <span class="sep">/</span>
-        <a href="/mcp/subdomain/index.html">Subdomains</a>
-        <span class="sep">/</span>
-        <span>ErrorHandling</span>
+        <a href="/mcp/node_type/subdomain.html">Subdomain</a><span class="sep">/</span>
+        <span>Logging — mcp Architecture</span>
       </div>
-      <h1>ErrorHandling</h1>
-      <p class="hub-desc">Browse all 5 subdomain entities categorized under ErrorHandling in the mcp Architecture Docs architecture documentation.</p>
-      <p class="hub-meta">5 entities &middot; Page 1 of 1</p>
-      <div class="chart-panel chart-panel-compact hub-charts">
-        <div class="hub-chart-cell" id="hub-chart"></div>
-        <div class="hub-chart-cell" id="hub-chart-secondary"></div>
-        <script type="application/json" id="hub-chart-data">{"entryName":"ErrorHandling","totalEntities":5,"typeDistribution":null,"distributions":{"domain":[{"name":"RepositoryUtilities","count":5}],"language":[{"name":"typescript","count":4}],"node_type":[{"name":"Function","count":4},{"name":"Subdomain","count":1}]},"topEntities":[{"name":"classifyApiError() — mcp Function Reference","type":"Function","lines":133,"slug":"fn-api-helpers-ts-classifyapierror"},{"name":"buildIgnoreFilter() — mcp Function Reference","type":"Function","lines":93,"slug":"fn-zip-repository-ts-buildignorefilter"},{"name":"formatBytes() — mcp Function Reference","type":"Function","lines":6,"slug":"fn-zip-repository-ts-formatbytes"},{"name":"error() — mcp Function Reference","type":"Function","lines":3,"slug":"fn-logger-ts-error"}]}</script>
+      <h1 class="entity-title">Logging — mcp Architecture</h1>
+      
+
+      <div class="entity-meta">
+        <a href="/mcp/node_type/subdomain.html" class="pill pill-accent">Subdomain</a>
+        
+        <a href="/mcp/domain/repositoryutilities.html" class="pill pill-green">RepositoryUtilities</a>
+        <a href="/mcp/subdomain/logging.html" class="pill pill-orange">Logging</a>
+        
+        
+        
+        
+        
+        
+        
       </div>
+
+      
+      <div class="entity-summary">
+        <p>Standardizes internal debug and error reporting</p>
+      </div>
+      
     </div>
 
-    <div class="card-grid">
-      
-      <a href="/mcp/fn-api-helpers-ts-classifyapierror.html" class="card">
-        <div class="card-title">classifyApiError() — mcp Function Reference</div>
-        <div class="card-desc">Architecture documentation for the classifyApiError() function in api-helpers.ts from the mcp codebase.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Function</span>
-          <span class="pill pill-blue">typescript</span>
-        </div>
-      </a>
-      
-      <a href="/mcp/fn-logger-ts-error.html" class="card">
-        <div class="card-title">error() — mcp Function Reference</div>
-        <div class="card-desc">Architecture documentation for the error() function in logger.ts from the mcp codebase.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Function</span>
-          <span class="pill pill-blue">typescript</span>
-        </div>
-      </a>
-      
-      <a href="/mcp/fn-zip-repository-ts-buildignorefilter.html" class="card">
-        <div class="card-title">buildIgnoreFilter() — mcp Function Reference</div>
-        <div class="card-desc">Architecture documentation for the buildIgnoreFilter() function in zip-repository.ts from the mcp codebase.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Function</span>
-          <span class="pill pill-blue">typescript</span>
-        </div>
-      </a>
-      
-      <a href="/mcp/fn-zip-repository-ts-formatbytes.html" class="card">
-        <div class="card-title">formatBytes() — mcp Function Reference</div>
-        <div class="card-desc">Architecture documentation for the formatBytes() function in zip-repository.ts from the mcp codebase.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Function</span>
-          <span class="pill pill-blue">typescript</span>
-        </div>
-      </a>
-      
-      <a href="/mcp/subdomain-errorhandling.html" class="card">
-        <div class="card-title">ErrorHandling — mcp Architecture</div>
-        <div class="card-desc">Translating HTTP errors into agent-recoverable instructions Architecture documentation for the ErrorHandling subdomain (part of RepositoryUtilities domain) in the mcp codebase. Contains 0 source files.</div>
-        <div class="card-meta">
-          <span class="pill pill-accent">Subdomain</span>
-          
-        </div>
-      </a>
-      
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"lc":0}</script>
     </div>
 
     
-  </div>
+    <div class="visuals-panel">
+      
 
-  
-  <div class="cta-section">
-    <h2 class="cta-heading">Analyze Your Own Codebase</h2>
-    <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
-    <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+      
+      <div class="visuals-row">
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="subdomain-logging"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"subdomain:RepositoryUtilities:Logging","label":"Logging","type":"Subdomain","slug":"subdomain-logging"},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"}],"edges":[{"source":"subdomain:RepositoryUtilities:Logging","target":"domain:RepositoryUtilities","type":"partOf"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/mcp/domain-repositoryutilities.html">RepositoryUtilities</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Functions</h2>
+      <ul><li><a href="/mcp/fn-logger-ts-debug.html">debug()</a></li><li><a href="/mcp/fn-logger-ts-error.html">error()</a></li><li><a href="/mcp/fn-logger-ts-info.html">info()</a></li><li><a href="/mcp/fn-logger-ts-warn.html">warn()</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What is the Logging subdomain?</summary>
+        <div class="faq-answer">Logging is a subdomain in the mcp codebase, part of the RepositoryUtilities domain. Standardizes internal debug and error reporting It contains 0 source files.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Which domain does Logging belong to?</summary>
+        <div class="faq-answer">Logging belongs to the RepositoryUtilities domain.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What functions are in Logging?</summary>
+        <div class="faq-answer">The Logging subdomain contains 4 function(s): debug, error, info, warn.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
   </div>
-  
 </main>
 
 <footer class="site-footer">
@@ -988,6 +1044,7 @@ a.pill:hover {
     <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
   </div>
 </footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script src="/mcp/main.js"></script>

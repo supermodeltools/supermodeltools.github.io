@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/graphcache.html" class="pill pill-green">GraphCache</a>
-        <a href="/mcp/subdomain/lru.html" class="pill pill-orange">LRU</a>
+        <a href="/mcp/domain/structuralcache.html" class="pill pill-green">StructuralCache</a>
+        <a href="/mcp/subdomain/lrumanager.html" class="pill pill-orange">LruManager</a>
         
         
         <span class="pill">calls 5</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"loadCacheFromDisk","slug":"fn-graph-cache-ts-loadcachefromdisk","type":"Function"},"subdomain":{"name":"LRU","slug":"subdomain-lru"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"StructuralCache","slug":"domain-structuralcache"},"entity":{"name":"loadCacheFromDisk","slug":"fn-graph-cache-ts-loadcachefromdisk","type":"Function"},"subdomain":{"name":"LruManager","slug":"subdomain-lrumanager"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/graphcache.html">GraphCache</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/lru.html">LRU</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/structuralcache.html">StructuralCache</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/lrumanager.html">LruManager</a><span class="arch-sep">&rarr;</span>
             <span>loadCacheFromDisk() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,20 +959,20 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  de95bc77_b2f5_7481_2de3_a7fa4ee1d1af["loadCacheFromDisk()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca["start()"]
-  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| de95bc77_b2f5_7481_2de3_a7fa4ee1d1af
-  18c4fc45_1d12_b562_b3c0_bb43c42705e8["debug()"]
-  de95bc77_b2f5_7481_2de3_a7fa4ee1d1af -->|calls| 18c4fc45_1d12_b562_b3c0_bb43c42705e8
-  fb96372e_2e32_c676_0a72_a84a0f83382f["warn()"]
-  de95bc77_b2f5_7481_2de3_a7fa4ee1d1af -->|calls| fb96372e_2e32_c676_0a72_a84a0f83382f
-  8b96a712_99b3_6d1b_9a23_7494e0cdf8a5["buildIndexes()"]
-  de95bc77_b2f5_7481_2de3_a7fa4ee1d1af -->|calls| 8b96a712_99b3_6d1b_9a23_7494e0cdf8a5
-  8fdbdd13_22af_38e2_6574_8c1d019c91c1["set()"]
-  de95bc77_b2f5_7481_2de3_a7fa4ee1d1af -->|calls| 8fdbdd13_22af_38e2_6574_8c1d019c91c1
-  57d132ec_eb42_e7e8_6401_a7725a980208["has()"]
-  de95bc77_b2f5_7481_2de3_a7fa4ee1d1af -->|calls| 57d132ec_eb42_e7e8_6401_a7725a980208
-  style de95bc77_b2f5_7481_2de3_a7fa4ee1d1af fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  156b00dc_d27a_180c_b23b_31c621291700["loadCacheFromDisk()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9["start()"]
+  4af13c5a_737b_b7b9_5e55_da10ab5bfbd9 -->|calls| 156b00dc_d27a_180c_b23b_31c621291700
+  f937916c_af51_fb15_bb8f_f6810429f129["debug()"]
+  156b00dc_d27a_180c_b23b_31c621291700 -->|calls| f937916c_af51_fb15_bb8f_f6810429f129
+  ba969989_4520_414f_fb6c_9a82c7a83c6c["warn()"]
+  156b00dc_d27a_180c_b23b_31c621291700 -->|calls| ba969989_4520_414f_fb6c_9a82c7a83c6c
+  cc45bf01_51d4_c77d_3d69_836ab517f46b["buildIndexes()"]
+  156b00dc_d27a_180c_b23b_31c621291700 -->|calls| cc45bf01_51d4_c77d_3d69_836ab517f46b
+  9423d954_de0c_f145_4796_38f9bfdce7b0["set()"]
+  156b00dc_d27a_180c_b23b_31c621291700 -->|calls| 9423d954_de0c_f145_4796_38f9bfdce7b0
+  2f211090_9385_3dd1_0ed7_9bf04977bcd0["has()"]
+  156b00dc_d27a_180c_b23b_31c621291700 -->|calls| 2f211090_9385_3dd1_0ed7_9bf04977bcd0
+  style 156b00dc_d27a_180c_b23b_31c621291700 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -980,7 +980,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-loadcachefromdisk"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"18c4fc45:1d12:b562:b3c0:bb43c42705e8","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"fb96372e:2e32:c676:0a72:a84a0f83382f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"8b96a712:99b3:6d1b:9a23:7494e0cdf8a5","label":"buildIndexes","type":"Function","slug":"fn-graph-cache-ts-buildindexes","lc":177,"lang":"typescript","cc":4,"cbc":4},{"id":"8fdbdd13:22af:38e2:6574:8c1d019c91c1","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"57d132ec:eb42:e7e8:6401:a7725a980208","label":"has","type":"Function","slug":"fn-graph-cache-ts-has","lc":3,"lang":"typescript","cbc":8},{"id":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:LRU","label":"LRU","type":"Subdomain","slug":"subdomain-lru"}],"edges":[{"source":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","target":"18c4fc45:1d12:b562:b3c0:bb43c42705e8","type":"calls"},{"source":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","target":"fb96372e:2e32:c676:0a72:a84a0f83382f","type":"calls"},{"source":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","target":"8b96a712:99b3:6d1b:9a23:7494e0cdf8a5","type":"calls"},{"source":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","target":"8fdbdd13:22af:38e2:6574:8c1d019c91c1","type":"calls"},{"source":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","target":"57d132ec:eb42:e7e8:6401:a7725a980208","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","type":"calls"},{"source":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","target":"domain:GraphCache","type":"belongsTo"},{"source":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","target":"subdomain:GraphCache:LRU","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"156b00dc:d27a:180c:b23b:31c621291700","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"f937916c:af51:fb15:bb8f:f6810429f129","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"ba969989:4520:414f:fb6c:9a82c7a83c6c","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"cc45bf01:51d4:c77d:3d69:836ab517f46b","label":"buildIndexes","type":"Function","slug":"fn-graph-cache-ts-buildindexes","lc":177,"lang":"typescript","cc":4,"cbc":4},{"id":"9423d954:de0c:f145:4796:38f9bfdce7b0","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"2f211090:9385:3dd1:0ed7:9bf04977bcd0","label":"has","type":"Function","slug":"fn-graph-cache-ts-has","lc":3,"lang":"typescript","cbc":8},{"id":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"domain:StructuralCache","label":"StructuralCache","type":"Domain","slug":"domain-structuralcache"},{"id":"subdomain:StructuralCache:LruManager","label":"LruManager","type":"Subdomain","slug":"subdomain-lrumanager"}],"edges":[{"source":"156b00dc:d27a:180c:b23b:31c621291700","target":"f937916c:af51:fb15:bb8f:f6810429f129","type":"calls"},{"source":"156b00dc:d27a:180c:b23b:31c621291700","target":"ba969989:4520:414f:fb6c:9a82c7a83c6c","type":"calls"},{"source":"156b00dc:d27a:180c:b23b:31c621291700","target":"cc45bf01:51d4:c77d:3d69:836ab517f46b","type":"calls"},{"source":"156b00dc:d27a:180c:b23b:31c621291700","target":"9423d954:de0c:f145:4796:38f9bfdce7b0","type":"calls"},{"source":"156b00dc:d27a:180c:b23b:31c621291700","target":"2f211090:9385:3dd1:0ed7:9bf04977bcd0","type":"calls"},{"source":"4af13c5a:737b:b7b9:5e55:da10ab5bfbd9","target":"156b00dc:d27a:180c:b23b:31c621291700","type":"calls"},{"source":"156b00dc:d27a:180c:b23b:31c621291700","target":"domain:StructuralCache","type":"belongsTo"},{"source":"156b00dc:d27a:180c:b23b:31c621291700","target":"subdomain:StructuralCache:LruManager","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1062,14 +1062,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-graphcache.html">GraphCache</a></li></ul>
+      <ul><li><a href="/mcp/domain-structuralcache.html">StructuralCache</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-lru.html">LRU</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-lrumanager.html">LruManager</a></li></ul>
     </div>
     
 
