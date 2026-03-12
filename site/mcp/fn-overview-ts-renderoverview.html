@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>renderOverview() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the renderOverview() function in overview.ts from the mcp codebase.">
@@ -916,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
-        <a href="/mcp/subdomain/markdownrendering.html" class="pill pill-orange">MarkdownRendering</a>
+        <a href="/mcp/domain/codeanalysistools.html" class="pill pill-green">CodeAnalysisTools</a>
+        <a href="/mcp/subdomain/rendering.html" class="pill pill-orange">Rendering</a>
         
         
         <span class="pill">calls 4</span>
@@ -941,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"renderOverview","slug":"fn-overview-ts-renderoverview","type":"Function"},"subdomain":{"name":"MarkdownRendering","slug":"subdomain-markdownrendering"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisTools","slug":"domain-codeanalysistools"},"entity":{"name":"renderOverview","slug":"fn-overview-ts-renderoverview","type":"Function"},"subdomain":{"name":"Rendering","slug":"subdomain-rendering"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/markdownrendering.html">MarkdownRendering</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/codeanalysistools.html">CodeAnalysisTools</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/rendering.html">Rendering</a><span class="arch-sep">&rarr;</span>
             <span>renderOverview() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,20 +959,20 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  4968582b_e759_28e3_16c5_c1a4822f70f0["renderOverview()"]
-  0fd28876_95d0_200f_c471_3245a60f3781["injectOverviewInstructions()"]
-  0fd28876_95d0_200f_c471_3245a60f3781 -->|calls| 4968582b_e759_28e3_16c5_c1a4822f70f0
-  551baf83_0247_a710_c970_1bf9f8212eaf["handler()"]
-  551baf83_0247_a710_c970_1bf9f8212eaf -->|calls| 4968582b_e759_28e3_16c5_c1a4822f70f0
-  d5f255b9_c7c4_13a2_8d55_041729b51aeb["getKeyFilesForDomain()"]
-  4968582b_e759_28e3_16c5_c1a4822f70f0 -->|calls| d5f255b9_c7c4_13a2_8d55_041729b51aeb
-  90f8f306_ba82_2894_1a47_5ba53a12ae3e["get()"]
-  4968582b_e759_28e3_16c5_c1a4822f70f0 -->|calls| 90f8f306_ba82_2894_1a47_5ba53a12ae3e
-  8c9cd647_b3cb_3feb_8eb0_85c73f84d74e["truncate()"]
-  4968582b_e759_28e3_16c5_c1a4822f70f0 -->|calls| 8c9cd647_b3cb_3feb_8eb0_85c73f84d74e
-  df543c75_156c_863f_0a79_89eedaf20869["getHubFunctions()"]
-  4968582b_e759_28e3_16c5_c1a4822f70f0 -->|calls| df543c75_156c_863f_0a79_89eedaf20869
-  style 4968582b_e759_28e3_16c5_c1a4822f70f0 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  40ffe29c_0dce_eece_aac4_7dfabd242579["renderOverview()"]
+  d44466aa_3cb4_fab6_5fff_9111eec110ec["injectOverviewInstructions()"]
+  d44466aa_3cb4_fab6_5fff_9111eec110ec -->|calls| 40ffe29c_0dce_eece_aac4_7dfabd242579
+  91134b77_24a4_bcae_5810_047cc6a9ecec["handler()"]
+  91134b77_24a4_bcae_5810_047cc6a9ecec -->|calls| 40ffe29c_0dce_eece_aac4_7dfabd242579
+  23c77af2_ec7c_b694_184f_f845993c29ac["getKeyFilesForDomain()"]
+  40ffe29c_0dce_eece_aac4_7dfabd242579 -->|calls| 23c77af2_ec7c_b694_184f_f845993c29ac
+  23cce284_5fbf_2a36_0b90_f74c81c759d9["get()"]
+  40ffe29c_0dce_eece_aac4_7dfabd242579 -->|calls| 23cce284_5fbf_2a36_0b90_f74c81c759d9
+  bb1cb817_6422_b639_7d5c_faa541762312["truncate()"]
+  40ffe29c_0dce_eece_aac4_7dfabd242579 -->|calls| bb1cb817_6422_b639_7d5c_faa541762312
+  5a721128_2dbd_cc9a_3a2d_0dad373462df["getHubFunctions()"]
+  40ffe29c_0dce_eece_aac4_7dfabd242579 -->|calls| 5a721128_2dbd_cc9a_3a2d_0dad373462df
+  style 40ffe29c_0dce_eece_aac4_7dfabd242579 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -979,7 +980,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-overview-ts-renderoverview"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"4968582b:e759:28e3:16c5:c1a4822f70f0","label":"renderOverview","type":"Function","slug":"fn-overview-ts-renderoverview","lc":60,"lang":"typescript","cc":4,"cbc":2},{"id":"d5f255b9:c7c4:13a2:8d55:041729b51aeb","label":"getKeyFilesForDomain","type":"Function","slug":"fn-overview-ts-getkeyfilesfordomain","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"90f8f306:ba82:2894:1a47:5ba53a12ae3e","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"8c9cd647:b3cb:3feb:8eb0:85c73f84d74e","label":"truncate","type":"Function","slug":"fn-overview-ts-truncate","lc":4,"lang":"typescript","cbc":1},{"id":"df543c75:156c:863f:0a79:89eedaf20869","label":"getHubFunctions","type":"Function","slug":"fn-overview-ts-gethubfunctions","lc":20,"lang":"typescript","cc":2,"cbc":1},{"id":"0fd28876:95d0:200f:c471:3245a60f3781","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"551baf83:0247:a710:c970:1bf9f8212eaf","label":"handler","type":"Function","slug":"fn-overview-ts-handler","lc":21,"lang":"typescript","cc":5},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:MarkdownRendering","label":"MarkdownRendering","type":"Subdomain","slug":"subdomain-markdownrendering"}],"edges":[{"source":"4968582b:e759:28e3:16c5:c1a4822f70f0","target":"d5f255b9:c7c4:13a2:8d55:041729b51aeb","type":"calls"},{"source":"4968582b:e759:28e3:16c5:c1a4822f70f0","target":"90f8f306:ba82:2894:1a47:5ba53a12ae3e","type":"calls"},{"source":"4968582b:e759:28e3:16c5:c1a4822f70f0","target":"8c9cd647:b3cb:3feb:8eb0:85c73f84d74e","type":"calls"},{"source":"4968582b:e759:28e3:16c5:c1a4822f70f0","target":"df543c75:156c:863f:0a79:89eedaf20869","type":"calls"},{"source":"0fd28876:95d0:200f:c471:3245a60f3781","target":"4968582b:e759:28e3:16c5:c1a4822f70f0","type":"calls"},{"source":"551baf83:0247:a710:c970:1bf9f8212eaf","target":"4968582b:e759:28e3:16c5:c1a4822f70f0","type":"calls"},{"source":"4968582b:e759:28e3:16c5:c1a4822f70f0","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"4968582b:e759:28e3:16c5:c1a4822f70f0","target":"subdomain:AnalysisTools:MarkdownRendering","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"40ffe29c:0dce:eece:aac4:7dfabd242579","label":"renderOverview","type":"Function","slug":"fn-overview-ts-renderoverview","lc":60,"lang":"typescript","cc":4,"cbc":2},{"id":"23c77af2:ec7c:b694:184f:f845993c29ac","label":"getKeyFilesForDomain","type":"Function","slug":"fn-overview-ts-getkeyfilesfordomain","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"23cce284:5fbf:2a36:0b90:f74c81c759d9","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"bb1cb817:6422:b639:7d5c:faa541762312","label":"truncate","type":"Function","slug":"fn-overview-ts-truncate","lc":4,"lang":"typescript","cbc":1},{"id":"5a721128:2dbd:cc9a:3a2d:0dad373462df","label":"getHubFunctions","type":"Function","slug":"fn-overview-ts-gethubfunctions","lc":20,"lang":"typescript","cc":2,"cbc":1},{"id":"d44466aa:3cb4:fab6:5fff:9111eec110ec","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"91134b77:24a4:bcae:5810:047cc6a9ecec","label":"handler","type":"Function","slug":"fn-overview-ts-handler","lc":21,"lang":"typescript","cc":5},{"id":"domain:CodeAnalysisTools","label":"CodeAnalysisTools","type":"Domain","slug":"domain-codeanalysistools"},{"id":"subdomain:CodeAnalysisTools:Rendering","label":"Rendering","type":"Subdomain","slug":"subdomain-rendering"}],"edges":[{"source":"40ffe29c:0dce:eece:aac4:7dfabd242579","target":"23c77af2:ec7c:b694:184f:f845993c29ac","type":"calls"},{"source":"40ffe29c:0dce:eece:aac4:7dfabd242579","target":"23cce284:5fbf:2a36:0b90:f74c81c759d9","type":"calls"},{"source":"40ffe29c:0dce:eece:aac4:7dfabd242579","target":"bb1cb817:6422:b639:7d5c:faa541762312","type":"calls"},{"source":"40ffe29c:0dce:eece:aac4:7dfabd242579","target":"5a721128:2dbd:cc9a:3a2d:0dad373462df","type":"calls"},{"source":"d44466aa:3cb4:fab6:5fff:9111eec110ec","target":"40ffe29c:0dce:eece:aac4:7dfabd242579","type":"calls"},{"source":"91134b77:24a4:bcae:5810:047cc6a9ecec","target":"40ffe29c:0dce:eece:aac4:7dfabd242579","type":"calls"},{"source":"40ffe29c:0dce:eece:aac4:7dfabd242579","target":"domain:CodeAnalysisTools","type":"belongsTo"},{"source":"40ffe29c:0dce:eece:aac4:7dfabd242579","target":"subdomain:CodeAnalysisTools:Rendering","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1060,14 +1061,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-analysistools.html">AnalysisTools</a></li></ul>
+      <ul><li><a href="/mcp/domain-codeanalysistools.html">CodeAnalysisTools</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-markdownrendering.html">MarkdownRendering</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-rendering.html">Rendering</a></li></ul>
     </div>
     
 

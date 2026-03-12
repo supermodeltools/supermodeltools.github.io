@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>start() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the start() function in server.ts from the mcp codebase.">
@@ -917,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/mcpserver.html" class="pill pill-green">McpServer</a>
-        <a href="/mcp/subdomain/contextmanagement.html" class="pill pill-orange">ContextManagement</a>
+        <a href="/mcp/subdomain/context.html" class="pill pill-orange">Context</a>
         
         
         <span class="pill">calls 9</span>
@@ -941,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"start","slug":"fn-server-ts-start","type":"Function"},"subdomain":{"name":"ContextManagement","slug":"subdomain-contextmanagement"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"start","slug":"fn-server-ts-start","type":"Function"},"subdomain":{"name":"Context","slug":"subdomain-context"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/mcpserver.html">McpServer</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/contextmanagement.html">ContextManagement</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/context.html">Context</a><span class="arch-sep">&rarr;</span>
             <span>start() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,30 +959,30 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  522792b7_7d35_4329_36df_c2b0d53826bd["start()"]
-  f0dfc030_608c_6e6b_6f18_74a0981882ef["main()"]
-  f0dfc030_608c_6e6b_6f18_74a0981882ef -->|calls| 522792b7_7d35_4329_36df_c2b0d53826bd
-  6b7cedf3_f97c_9c1a_a9f5_16baf6568cd4["constructor()"]
-  6b7cedf3_f97c_9c1a_a9f5_16baf6568cd4 -->|calls| 522792b7_7d35_4329_36df_c2b0d53826bd
-  0fd28876_95d0_200f_c471_3245a60f3781["injectOverviewInstructions()"]
-  522792b7_7d35_4329_36df_c2b0d53826bd -->|calls| 0fd28876_95d0_200f_c471_3245a60f3781
-  35278ee0_51fe_d01c_82b4_1f83cb44a1f9["cleanupOldZips()"]
-  522792b7_7d35_4329_36df_c2b0d53826bd -->|calls| 35278ee0_51fe_d01c_82b4_1f83cb44a1f9
-  011b02bd_d35c_a596_1d9d_5c965eb02672["debug()"]
-  522792b7_7d35_4329_36df_c2b0d53826bd -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  a8d5a14e_abe7_7e9d_8dd7_f8fd814ab3e9["loadCacheFromDisk()"]
-  522792b7_7d35_4329_36df_c2b0d53826bd -->|calls| a8d5a14e_abe7_7e9d_8dd7_f8fd814ab3e9
-  0f0f7893_0c67_625c_d653_7354d6686bcf["setRepoMap()"]
-  522792b7_7d35_4329_36df_c2b0d53826bd -->|calls| 0f0f7893_0c67_625c_d653_7354d6686bcf
-  37a84f71_4929_6bf2_dff7_7b0d3b52e467["warn()"]
-  522792b7_7d35_4329_36df_c2b0d53826bd -->|calls| 37a84f71_4929_6bf2_dff7_7b0d3b52e467
-  1e1689fe_e12f_3aa1_f8bc_78d83d7ffb7b["info()"]
-  522792b7_7d35_4329_36df_c2b0d53826bd -->|calls| 1e1689fe_e12f_3aa1_f8bc_78d83d7ffb7b
-  91383c57_49ef_f5a1_7de9_dfc9adb76d44["precacheForDirectory()"]
-  522792b7_7d35_4329_36df_c2b0d53826bd -->|calls| 91383c57_49ef_f5a1_7de9_dfc9adb76d44
-  6619854b_1477_9bbb_c6a0_ec700b357882["setNoApiFallback()"]
-  522792b7_7d35_4329_36df_c2b0d53826bd -->|calls| 6619854b_1477_9bbb_c6a0_ec700b357882
-  style 522792b7_7d35_4329_36df_c2b0d53826bd fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  0d2fd702_e000_063b_1046_e1f45fa672e7["start()"]
+  d5a3913b_3ea3_5f8e_e31b_cc2247e9f015["main()"]
+  d5a3913b_3ea3_5f8e_e31b_cc2247e9f015 -->|calls| 0d2fd702_e000_063b_1046_e1f45fa672e7
+  8954ac22_fe02_85f4_6d0c_852f088f8862["constructor()"]
+  8954ac22_fe02_85f4_6d0c_852f088f8862 -->|calls| 0d2fd702_e000_063b_1046_e1f45fa672e7
+  d44466aa_3cb4_fab6_5fff_9111eec110ec["injectOverviewInstructions()"]
+  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| d44466aa_3cb4_fab6_5fff_9111eec110ec
+  1fd1b222_4346_2593_6c13_970804546b52["cleanupOldZips()"]
+  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| 1fd1b222_4346_2593_6c13_970804546b52
+  23be1f7c_252b_6bcb_b8a7_ae3a93bf4201["debug()"]
+  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  9983086a_cf19_4d0d_1bfb_6e877bda015f["loadCacheFromDisk()"]
+  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| 9983086a_cf19_4d0d_1bfb_6e877bda015f
+  89c4f3f7_c0f2_995e_34d5_86db8cc3ec9f["setRepoMap()"]
+  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| 89c4f3f7_c0f2_995e_34d5_86db8cc3ec9f
+  ed43b594_d5aa_356b_8b83_c720787a6581["warn()"]
+  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
+  fa59d80a_e864_dc78_8224_307a4c3cdcf0["info()"]
+  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| fa59d80a_e864_dc78_8224_307a4c3cdcf0
+  7e758eb2_f104_480e_bde9_bd7a56014952["precacheForDirectory()"]
+  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| 7e758eb2_f104_480e_bde9_bd7a56014952
+  7a2312c3_0b89_be3b_ee63_db64cbce5818["setNoApiFallback()"]
+  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| 7a2312c3_0b89_be3b_ee63_db64cbce5818
+  style 0d2fd702_e000_063b_1046_e1f45fa672e7 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -989,7 +990,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-server-ts-start"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"522792b7:7d35:4329:36df:c2b0d53826bd","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"0fd28876:95d0:200f:c471:3245a60f3781","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"35278ee0:51fe:d01c:82b4:1f83cb44a1f9","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"011b02bd:d35c:a596:1d9d:5c965eb02672","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"a8d5a14e:abe7:7e9d:8dd7:f8fd814ab3e9","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"0f0f7893:0c67:625c:d653:7354d6686bcf","label":"setRepoMap","type":"Function","slug":"fn-graph-cache-ts-setrepomap","lc":3,"lang":"typescript","cbc":1},{"id":"37a84f71:4929:6bf2:dff7:7b0d3b52e467","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"1e1689fe:e12f:3aa1:f8bc:78d83d7ffb7b","label":"info","type":"Function","slug":"fn-logger-ts-info","lc":3,"lang":"typescript","cbc":2},{"id":"91383c57:49ef:f5a1:7de9:dfc9adb76d44","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"6619854b:1477:9bbb:c6a0:ec700b357882","label":"setNoApiFallback","type":"Function","slug":"fn-graph-cache-ts-setnoapifallback","lc":3,"lang":"typescript","cbc":1},{"id":"f0dfc030:608c:6e6b:6f18:74a0981882ef","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:ContextManagement","label":"ContextManagement","type":"Subdomain","slug":"subdomain-contextmanagement"}],"edges":[{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"0fd28876:95d0:200f:c471:3245a60f3781","type":"calls"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"35278ee0:51fe:d01c:82b4:1f83cb44a1f9","type":"calls"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"a8d5a14e:abe7:7e9d:8dd7:f8fd814ab3e9","type":"calls"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"0f0f7893:0c67:625c:d653:7354d6686bcf","type":"calls"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"37a84f71:4929:6bf2:dff7:7b0d3b52e467","type":"calls"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"1e1689fe:e12f:3aa1:f8bc:78d83d7ffb7b","type":"calls"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"91383c57:49ef:f5a1:7de9:dfc9adb76d44","type":"calls"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"6619854b:1477:9bbb:c6a0:ec700b357882","type":"calls"},{"source":"f0dfc030:608c:6e6b:6f18:74a0981882ef","target":"522792b7:7d35:4329:36df:c2b0d53826bd","type":"calls"},{"source":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","target":"522792b7:7d35:4329:36df:c2b0d53826bd","type":"calls"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"domain:McpServer","type":"belongsTo"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"subdomain:McpServer:ContextManagement","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"0d2fd702:e000:063b:1046:e1f45fa672e7","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"d44466aa:3cb4:fab6:5fff:9111eec110ec","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"1fd1b222:4346:2593:6c13:970804546b52","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"9983086a:cf19:4d0d:1bfb:6e877bda015f","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"89c4f3f7:c0f2:995e:34d5:86db8cc3ec9f","label":"setRepoMap","type":"Function","slug":"fn-graph-cache-ts-setrepomap","lc":3,"lang":"typescript","cbc":1},{"id":"ed43b594:d5aa:356b:8b83:c720787a6581","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"fa59d80a:e864:dc78:8224:307a4c3cdcf0","label":"info","type":"Function","slug":"fn-logger-ts-info","lc":3,"lang":"typescript","cbc":2},{"id":"7e758eb2:f104:480e:bde9:bd7a56014952","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"7a2312c3:0b89:be3b:ee63:db64cbce5818","label":"setNoApiFallback","type":"Function","slug":"fn-graph-cache-ts-setnoapifallback","lc":3,"lang":"typescript","cbc":1},{"id":"d5a3913b:3ea3:5f8e:e31b:cc2247e9f015","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"8954ac22:fe02:85f4:6d0c:852f088f8862","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:Context","label":"Context","type":"Subdomain","slug":"subdomain-context"}],"edges":[{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"d44466aa:3cb4:fab6:5fff:9111eec110ec","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"1fd1b222:4346:2593:6c13:970804546b52","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"9983086a:cf19:4d0d:1bfb:6e877bda015f","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"89c4f3f7:c0f2:995e:34d5:86db8cc3ec9f","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"fa59d80a:e864:dc78:8224:307a4c3cdcf0","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"7e758eb2:f104:480e:bde9:bd7a56014952","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"7a2312c3:0b89:be3b:ee63:db64cbce5818","type":"calls"},{"source":"d5a3913b:3ea3:5f8e:e31b:cc2247e9f015","target":"0d2fd702:e000:063b:1046:e1f45fa672e7","type":"calls"},{"source":"8954ac22:fe02:85f4:6d0c:852f088f8862","target":"0d2fd702:e000:063b:1046:e1f45fa672e7","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"domain:McpServer","type":"belongsTo"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"subdomain:McpServer:Context","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1058,7 +1059,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-contextmanagement.html">ContextManagement</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-context.html">Context</a></li></ul>
     </div>
     
 

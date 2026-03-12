@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>annotateHandler() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the annotateHandler() function in tool-variants.ts from the mcp codebase.">
@@ -916,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
-        <a href="/mcp/subdomain/graphtraversal.html" class="pill pill-orange">GraphTraversal</a>
+        <a href="/mcp/domain/codeanalysistools.html" class="pill pill-green">CodeAnalysisTools</a>
+        <a href="/mcp/subdomain/traversal.html" class="pill pill-orange">Traversal</a>
         
         
         <span class="pill">calls 5</span>
@@ -941,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"annotateHandler","slug":"fn-tool-variants-ts-annotatehandler","type":"Function"},"subdomain":{"name":"GraphTraversal","slug":"subdomain-graphtraversal"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisTools","slug":"domain-codeanalysistools"},"entity":{"name":"annotateHandler","slug":"fn-tool-variants-ts-annotatehandler","type":"Function"},"subdomain":{"name":"Traversal","slug":"subdomain-traversal"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/graphtraversal.html">GraphTraversal</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/codeanalysistools.html">CodeAnalysisTools</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/traversal.html">Traversal</a><span class="arch-sep">&rarr;</span>
             <span>annotateHandler() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,18 +959,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  b73434d6_f784_4561_6901_5ca92b219e2f["annotateHandler()"]
-  eb11034b_9263_3499_5bb6_6218ea90c4dc["asErrorResult()"]
-  b73434d6_f784_4561_6901_5ca92b219e2f -->|calls| eb11034b_9263_3499_5bb6_6218ea90c4dc
-  8161861f_81e1_6a38_8b14_7f7403bc6af2["resolveOrFetchGraph()"]
-  b73434d6_f784_4561_6901_5ca92b219e2f -->|calls| 8161861f_81e1_6a38_8b14_7f7403bc6af2
-  b895ad23_e85b_285c_5261_79b299236ee8["findSymbol()"]
-  b73434d6_f784_4561_6901_5ca92b219e2f -->|calls| b895ad23_e85b_285c_5261_79b299236ee8
-  f7d31eda_cc08_8a16_272b_ac7eb90406ac["asTextContentResult()"]
-  b73434d6_f784_4561_6901_5ca92b219e2f -->|calls| f7d31eda_cc08_8a16_272b_ac7eb90406ac
-  676649d4_d15d_253d_3901_f5d69eb4c617["renderBriefSymbolContext()"]
-  b73434d6_f784_4561_6901_5ca92b219e2f -->|calls| 676649d4_d15d_253d_3901_f5d69eb4c617
-  style b73434d6_f784_4561_6901_5ca92b219e2f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d7d4f029_00db_f309_f5ff_4250206b0c1c["annotateHandler()"]
+  a0ad0ac8_3f0d_ca65_dbcd_fed468b2ec5e["asErrorResult()"]
+  d7d4f029_00db_f309_f5ff_4250206b0c1c -->|calls| a0ad0ac8_3f0d_ca65_dbcd_fed468b2ec5e
+  82919817_4296_a56f_8a62_41ed2523a915["resolveOrFetchGraph()"]
+  d7d4f029_00db_f309_f5ff_4250206b0c1c -->|calls| 82919817_4296_a56f_8a62_41ed2523a915
+  8cb9eb2f_2a5d_d7a7_22f1_97fc51b810b9["findSymbol()"]
+  d7d4f029_00db_f309_f5ff_4250206b0c1c -->|calls| 8cb9eb2f_2a5d_d7a7_22f1_97fc51b810b9
+  a68fcf6e_5b68_8ec4_2789_1276e2b2a376["asTextContentResult()"]
+  d7d4f029_00db_f309_f5ff_4250206b0c1c -->|calls| a68fcf6e_5b68_8ec4_2789_1276e2b2a376
+  26e0f204_903d_5e86_f62d_bacab24798db["renderBriefSymbolContext()"]
+  d7d4f029_00db_f309_f5ff_4250206b0c1c -->|calls| 26e0f204_903d_5e86_f62d_bacab24798db
+  style d7d4f029_00db_f309_f5ff_4250206b0c1c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -977,7 +978,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-tool-variants-ts-annotatehandler"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"b73434d6:f784:4561:6901:5ca92b219e2f","label":"annotateHandler","type":"Function","slug":"fn-tool-variants-ts-annotatehandler","lc":33,"lang":"typescript","cc":5},{"id":"eb11034b:9263:3499:5bb6:6218ea90c4dc","label":"asErrorResult","type":"Function","slug":"fn-types-ts-aserrorresult","lc":15,"lang":"typescript","cbc":8},{"id":"8161861f:81e1:6a38:8b14:7f7403bc6af2","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"b895ad23:e85b:285c:5261:79b299236ee8","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"f7d31eda:cc08:8a16:272b:ac7eb90406ac","label":"asTextContentResult","type":"Function","slug":"fn-types-ts-astextcontentresult","lc":11,"lang":"typescript","cbc":8},{"id":"676649d4:d15d:253d:3901:f5d69eb4c617","label":"renderBriefSymbolContext","type":"Function","slug":"fn-symbol-context-ts-renderbriefsymbolcontext","lc":45,"lang":"typescript","cc":3,"cbc":3},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:GraphTraversal","label":"GraphTraversal","type":"Subdomain","slug":"subdomain-graphtraversal"}],"edges":[{"source":"b73434d6:f784:4561:6901:5ca92b219e2f","target":"eb11034b:9263:3499:5bb6:6218ea90c4dc","type":"calls"},{"source":"b73434d6:f784:4561:6901:5ca92b219e2f","target":"8161861f:81e1:6a38:8b14:7f7403bc6af2","type":"calls"},{"source":"b73434d6:f784:4561:6901:5ca92b219e2f","target":"b895ad23:e85b:285c:5261:79b299236ee8","type":"calls"},{"source":"b73434d6:f784:4561:6901:5ca92b219e2f","target":"f7d31eda:cc08:8a16:272b:ac7eb90406ac","type":"calls"},{"source":"b73434d6:f784:4561:6901:5ca92b219e2f","target":"676649d4:d15d:253d:3901:f5d69eb4c617","type":"calls"},{"source":"b73434d6:f784:4561:6901:5ca92b219e2f","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"b73434d6:f784:4561:6901:5ca92b219e2f","target":"subdomain:AnalysisTools:GraphTraversal","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d7d4f029:00db:f309:f5ff:4250206b0c1c","label":"annotateHandler","type":"Function","slug":"fn-tool-variants-ts-annotatehandler","lc":33,"lang":"typescript","cc":5},{"id":"a0ad0ac8:3f0d:ca65:dbcd:fed468b2ec5e","label":"asErrorResult","type":"Function","slug":"fn-types-ts-aserrorresult","lc":15,"lang":"typescript","cbc":8},{"id":"82919817:4296:a56f:8a62:41ed2523a915","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"8cb9eb2f:2a5d:d7a7:22f1:97fc51b810b9","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"a68fcf6e:5b68:8ec4:2789:1276e2b2a376","label":"asTextContentResult","type":"Function","slug":"fn-types-ts-astextcontentresult","lc":11,"lang":"typescript","cbc":8},{"id":"26e0f204:903d:5e86:f62d:bacab24798db","label":"renderBriefSymbolContext","type":"Function","slug":"fn-symbol-context-ts-renderbriefsymbolcontext","lc":45,"lang":"typescript","cc":3,"cbc":3},{"id":"domain:CodeAnalysisTools","label":"CodeAnalysisTools","type":"Domain","slug":"domain-codeanalysistools"},{"id":"subdomain:CodeAnalysisTools:Traversal","label":"Traversal","type":"Subdomain","slug":"subdomain-traversal"}],"edges":[{"source":"d7d4f029:00db:f309:f5ff:4250206b0c1c","target":"a0ad0ac8:3f0d:ca65:dbcd:fed468b2ec5e","type":"calls"},{"source":"d7d4f029:00db:f309:f5ff:4250206b0c1c","target":"82919817:4296:a56f:8a62:41ed2523a915","type":"calls"},{"source":"d7d4f029:00db:f309:f5ff:4250206b0c1c","target":"8cb9eb2f:2a5d:d7a7:22f1:97fc51b810b9","type":"calls"},{"source":"d7d4f029:00db:f309:f5ff:4250206b0c1c","target":"a68fcf6e:5b68:8ec4:2789:1276e2b2a376","type":"calls"},{"source":"d7d4f029:00db:f309:f5ff:4250206b0c1c","target":"26e0f204:903d:5e86:f62d:bacab24798db","type":"calls"},{"source":"d7d4f029:00db:f309:f5ff:4250206b0c1c","target":"domain:CodeAnalysisTools","type":"belongsTo"},{"source":"d7d4f029:00db:f309:f5ff:4250206b0c1c","target":"subdomain:CodeAnalysisTools:Traversal","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1031,14 +1032,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-analysistools.html">AnalysisTools</a></li></ul>
+      <ul><li><a href="/mcp/domain-codeanalysistools.html">CodeAnalysisTools</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-graphtraversal.html">GraphTraversal</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-traversal.html">Traversal</a></li></ul>
     </div>
     
 

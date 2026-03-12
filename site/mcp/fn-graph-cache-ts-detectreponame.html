@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>detectRepoName() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the detectRepoName() function in graph-cache.ts from the mcp codebase.">
@@ -917,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/graphcache.html" class="pill pill-green">GraphCache</a>
-        <a href="/mcp/subdomain/lrucache.html" class="pill pill-orange">LRUCache</a>
+        <a href="/mcp/subdomain/eviction.html" class="pill pill-orange">Eviction</a>
         
         
         
@@ -941,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"detectRepoName","slug":"fn-graph-cache-ts-detectreponame","type":"Function"},"subdomain":{"name":"LRUCache","slug":"subdomain-lrucache"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"detectRepoName","slug":"fn-graph-cache-ts-detectreponame","type":"Function"},"subdomain":{"name":"Eviction","slug":"subdomain-eviction"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/graphcache.html">GraphCache</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/lrucache.html">LRUCache</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/eviction.html">Eviction</a><span class="arch-sep">&rarr;</span>
             <span>detectRepoName() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,10 +959,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  4c3fddd7_1a6e_b15c_82c2_069b0ee9ca57["detectRepoName()"]
-  91383c57_49ef_f5a1_7de9_dfc9adb76d44["precacheForDirectory()"]
-  91383c57_49ef_f5a1_7de9_dfc9adb76d44 -->|calls| 4c3fddd7_1a6e_b15c_82c2_069b0ee9ca57
-  style 4c3fddd7_1a6e_b15c_82c2_069b0ee9ca57 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  6e34e1e2_389e_08d4_d1e2_bd72066ad587["detectRepoName()"]
+  7e758eb2_f104_480e_bde9_bd7a56014952["precacheForDirectory()"]
+  7e758eb2_f104_480e_bde9_bd7a56014952 -->|calls| 6e34e1e2_389e_08d4_d1e2_bd72066ad587
+  style 6e34e1e2_389e_08d4_d1e2_bd72066ad587 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -969,7 +970,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-detectreponame"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"4c3fddd7:1a6e:b15c:82c2:069b0ee9ca57","label":"detectRepoName","type":"Function","slug":"fn-graph-cache-ts-detectreponame","lc":15,"lang":"typescript","cbc":1},{"id":"91383c57:49ef:f5a1:7de9:dfc9adb76d44","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:LRUCache","label":"LRUCache","type":"Subdomain","slug":"subdomain-lrucache"}],"edges":[{"source":"91383c57:49ef:f5a1:7de9:dfc9adb76d44","target":"4c3fddd7:1a6e:b15c:82c2:069b0ee9ca57","type":"calls"},{"source":"4c3fddd7:1a6e:b15c:82c2:069b0ee9ca57","target":"domain:GraphCache","type":"belongsTo"},{"source":"4c3fddd7:1a6e:b15c:82c2:069b0ee9ca57","target":"subdomain:GraphCache:LRUCache","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"6e34e1e2:389e:08d4:d1e2:bd72066ad587","label":"detectRepoName","type":"Function","slug":"fn-graph-cache-ts-detectreponame","lc":15,"lang":"typescript","cbc":1},{"id":"7e758eb2:f104:480e:bde9:bd7a56014952","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Eviction","label":"Eviction","type":"Subdomain","slug":"subdomain-eviction"}],"edges":[{"source":"7e758eb2:f104:480e:bde9:bd7a56014952","target":"6e34e1e2:389e:08d4:d1e2:bd72066ad587","type":"calls"},{"source":"6e34e1e2:389e:08d4:d1e2:bd72066ad587","target":"domain:GraphCache","type":"belongsTo"},{"source":"6e34e1e2:389e:08d4:d1e2:bd72066ad587","target":"subdomain:GraphCache:Eviction","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1012,7 +1013,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-lrucache.html">LRUCache</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-eviction.html">Eviction</a></li></ul>
     </div>
     
 

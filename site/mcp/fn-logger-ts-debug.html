@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>debug() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the debug() function in logger.ts from the mcp codebase.">
@@ -916,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/repositoryutils.html" class="pill pill-green">RepositoryUtils</a>
-        <a href="/mcp/subdomain/archiver.html" class="pill pill-orange">Archiver</a>
+        <a href="/mcp/domain/repositoryutilities.html" class="pill pill-green">RepositoryUtilities</a>
+        <a href="/mcp/subdomain/logging.html" class="pill pill-orange">Logging</a>
         
         
         <span class="pill">calls 1</span>
@@ -941,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtils","slug":"domain-repositoryutils"},"entity":{"name":"debug","slug":"fn-logger-ts-debug","type":"Function"},"subdomain":{"name":"Archiver","slug":"subdomain-archiver"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"debug","slug":"fn-logger-ts-debug","type":"Function"},"subdomain":{"name":"Logging","slug":"subdomain-logging"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/repositoryutils.html">RepositoryUtils</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/archiver.html">Archiver</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/repositoryutilities.html">RepositoryUtilities</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/logging.html">Logging</a><span class="arch-sep">&rarr;</span>
             <span>debug() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,30 +959,30 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  011b02bd_d35c_a596_1d9d_5c965eb02672["debug()"]
-  a8d5a14e_abe7_7e9d_8dd7_f8fd814ab3e9["loadCacheFromDisk()"]
-  a8d5a14e_abe7_7e9d_8dd7_f8fd814ab3e9 -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  91383c57_49ef_f5a1_7de9_dfc9adb76d44["precacheForDirectory()"]
-  91383c57_49ef_f5a1_7de9_dfc9adb76d44 -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  f0dfc030_608c_6e6b_6f18_74a0981882ef["main()"]
-  f0dfc030_608c_6e6b_6f18_74a0981882ef -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  6b7cedf3_f97c_9c1a_a9f5_16baf6568cd4["constructor()"]
-  6b7cedf3_f97c_9c1a_a9f5_16baf6568cd4 -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  0fd28876_95d0_200f_c471_3245a60f3781["injectOverviewInstructions()"]
-  0fd28876_95d0_200f_c471_3245a60f3781 -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  522792b7_7d35_4329_36df_c2b0d53826bd["start()"]
-  522792b7_7d35_4329_36df_c2b0d53826bd -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  e7ee3880_1b45_10c2_c9e9_3b9fed792d24["zipRepository()"]
-  e7ee3880_1b45_10c2_c9e9_3b9fed792d24 -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  81dbd343_a42b_d77e_c1e7_14096d2e5d64["buildIgnoreFilter()"]
-  81dbd343_a42b_d77e_c1e7_14096d2e5d64 -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  17b360cf_c0af_004e_f43b_1ea5746d4f14["addFilesRecursively()"]
-  17b360cf_c0af_004e_f43b_1ea5746d4f14 -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  35278ee0_51fe_d01c_82b4_1f83cb44a1f9["cleanupOldZips()"]
-  35278ee0_51fe_d01c_82b4_1f83cb44a1f9 -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
-  eaa91290_13fe_bfe7_fb83_00e3e5a46ce2["error()"]
-  011b02bd_d35c_a596_1d9d_5c965eb02672 -->|calls| eaa91290_13fe_bfe7_fb83_00e3e5a46ce2
-  style 011b02bd_d35c_a596_1d9d_5c965eb02672 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  23be1f7c_252b_6bcb_b8a7_ae3a93bf4201["debug()"]
+  9983086a_cf19_4d0d_1bfb_6e877bda015f["loadCacheFromDisk()"]
+  9983086a_cf19_4d0d_1bfb_6e877bda015f -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  7e758eb2_f104_480e_bde9_bd7a56014952["precacheForDirectory()"]
+  7e758eb2_f104_480e_bde9_bd7a56014952 -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  d5a3913b_3ea3_5f8e_e31b_cc2247e9f015["main()"]
+  d5a3913b_3ea3_5f8e_e31b_cc2247e9f015 -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  8954ac22_fe02_85f4_6d0c_852f088f8862["constructor()"]
+  8954ac22_fe02_85f4_6d0c_852f088f8862 -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  d44466aa_3cb4_fab6_5fff_9111eec110ec["injectOverviewInstructions()"]
+  d44466aa_3cb4_fab6_5fff_9111eec110ec -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  0d2fd702_e000_063b_1046_e1f45fa672e7["start()"]
+  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  4905b422_2a9e_a1ff_e8ed_45ca8e89d1e3["zipRepository()"]
+  4905b422_2a9e_a1ff_e8ed_45ca8e89d1e3 -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  5589b899_91f1_5d39_417a_4f0b6db7ee32["buildIgnoreFilter()"]
+  5589b899_91f1_5d39_417a_4f0b6db7ee32 -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  74867b9b_5919_8bf0_0893_1cea26cb75f1["addFilesRecursively()"]
+  74867b9b_5919_8bf0_0893_1cea26cb75f1 -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  1fd1b222_4346_2593_6c13_970804546b52["cleanupOldZips()"]
+  1fd1b222_4346_2593_6c13_970804546b52 -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
+  a814ad56_0609_2390_1b77_478d9b8da708["error()"]
+  23be1f7c_252b_6bcb_b8a7_ae3a93bf4201 -->|calls| a814ad56_0609_2390_1b77_478d9b8da708
+  style 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -989,7 +990,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-logger-ts-debug"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"011b02bd:d35c:a596:1d9d:5c965eb02672","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"eaa91290:13fe:bfe7:fb83:00e3e5a46ce2","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"a8d5a14e:abe7:7e9d:8dd7:f8fd814ab3e9","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"91383c57:49ef:f5a1:7de9:dfc9adb76d44","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"f0dfc030:608c:6e6b:6f18:74a0981882ef","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"0fd28876:95d0:200f:c471:3245a60f3781","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"522792b7:7d35:4329:36df:c2b0d53826bd","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"e7ee3880:1b45:10c2:c9e9:3b9fed792d24","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"81dbd343:a42b:d77e:c1e7:14096d2e5d64","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"17b360cf:c0af:004e:f43b:1ea5746d4f14","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"35278ee0:51fe:d01c:82b4:1f83cb44a1f9","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"domain:RepositoryUtils","label":"RepositoryUtils","type":"Domain","slug":"domain-repositoryutils"},{"id":"subdomain:RepositoryUtils:Archiver","label":"Archiver","type":"Subdomain","slug":"subdomain-archiver"}],"edges":[{"source":"011b02bd:d35c:a596:1d9d:5c965eb02672","target":"eaa91290:13fe:bfe7:fb83:00e3e5a46ce2","type":"calls"},{"source":"a8d5a14e:abe7:7e9d:8dd7:f8fd814ab3e9","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"91383c57:49ef:f5a1:7de9:dfc9adb76d44","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"f0dfc030:608c:6e6b:6f18:74a0981882ef","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"0fd28876:95d0:200f:c471:3245a60f3781","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"522792b7:7d35:4329:36df:c2b0d53826bd","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"e7ee3880:1b45:10c2:c9e9:3b9fed792d24","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"81dbd343:a42b:d77e:c1e7:14096d2e5d64","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"17b360cf:c0af:004e:f43b:1ea5746d4f14","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"35278ee0:51fe:d01c:82b4:1f83cb44a1f9","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"011b02bd:d35c:a596:1d9d:5c965eb02672","target":"domain:RepositoryUtils","type":"belongsTo"},{"source":"011b02bd:d35c:a596:1d9d:5c965eb02672","target":"subdomain:RepositoryUtils:Archiver","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"a814ad56:0609:2390:1b77:478d9b8da708","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"9983086a:cf19:4d0d:1bfb:6e877bda015f","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"7e758eb2:f104:480e:bde9:bd7a56014952","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"d5a3913b:3ea3:5f8e:e31b:cc2247e9f015","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"8954ac22:fe02:85f4:6d0c:852f088f8862","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"d44466aa:3cb4:fab6:5fff:9111eec110ec","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"0d2fd702:e000:063b:1046:e1f45fa672e7","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"4905b422:2a9e:a1ff:e8ed:45ca8e89d1e3","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"5589b899:91f1:5d39:417a:4f0b6db7ee32","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"74867b9b:5919:8bf0:0893:1cea26cb75f1","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"1fd1b222:4346:2593:6c13:970804546b52","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Logging","label":"Logging","type":"Subdomain","slug":"subdomain-logging"}],"edges":[{"source":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","target":"a814ad56:0609:2390:1b77:478d9b8da708","type":"calls"},{"source":"9983086a:cf19:4d0d:1bfb:6e877bda015f","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"7e758eb2:f104:480e:bde9:bd7a56014952","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"d5a3913b:3ea3:5f8e:e31b:cc2247e9f015","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"8954ac22:fe02:85f4:6d0c:852f088f8862","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"d44466aa:3cb4:fab6:5fff:9111eec110ec","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"4905b422:2a9e:a1ff:e8ed:45ca8e89d1e3","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"5589b899:91f1:5d39:417a:4f0b6db7ee32","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"74867b9b:5919:8bf0:0893:1cea26cb75f1","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"1fd1b222:4346:2593:6c13:970804546b52","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","target":"subdomain:RepositoryUtilities:Logging","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1015,14 +1016,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-repositoryutils.html">RepositoryUtils</a></li></ul>
+      <ul><li><a href="/mcp/domain-repositoryutilities.html">RepositoryUtilities</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-archiver.html">Archiver</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-logging.html">Logging</a></li></ul>
     </div>
     
 

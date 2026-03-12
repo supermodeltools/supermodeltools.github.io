@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>resolveDomain() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the resolveDomain() function in explore-function.ts from the mcp codebase.">
@@ -916,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
-        <a href="/mcp/subdomain/markdownrendering.html" class="pill pill-orange">MarkdownRendering</a>
+        <a href="/mcp/domain/codeanalysistools.html" class="pill pill-green">CodeAnalysisTools</a>
+        <a href="/mcp/subdomain/discovery.html" class="pill pill-orange">Discovery</a>
         
         
         <span class="pill">calls 1</span>
@@ -941,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"resolveDomain","slug":"fn-explore-function-ts-resolvedomain","type":"Function"},"subdomain":{"name":"MarkdownRendering","slug":"subdomain-markdownrendering"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisTools","slug":"domain-codeanalysistools"},"entity":{"name":"resolveDomain","slug":"fn-explore-function-ts-resolvedomain","type":"Function"},"subdomain":{"name":"Discovery","slug":"subdomain-discovery"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/markdownrendering.html">MarkdownRendering</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/codeanalysistools.html">CodeAnalysisTools</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/discovery.html">Discovery</a><span class="arch-sep">&rarr;</span>
             <span>resolveDomain() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,14 +959,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  a17510cc_d7ea_7772_a9e5_36aa0e3c66bf["resolveDomain()"]
-  5aac0d8e_fcc0_31dd_fa65_e2a3da30f8a0["describeNode()"]
-  5aac0d8e_fcc0_31dd_fa65_e2a3da30f8a0 -->|calls| a17510cc_d7ea_7772_a9e5_36aa0e3c66bf
-  0077ddcc_aa05_a07a_adbf_93a852f4cd39["handler()"]
-  0077ddcc_aa05_a07a_adbf_93a852f4cd39 -->|calls| a17510cc_d7ea_7772_a9e5_36aa0e3c66bf
-  90f8f306_ba82_2894_1a47_5ba53a12ae3e["get()"]
-  a17510cc_d7ea_7772_a9e5_36aa0e3c66bf -->|calls| 90f8f306_ba82_2894_1a47_5ba53a12ae3e
-  style a17510cc_d7ea_7772_a9e5_36aa0e3c66bf fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  fc5cbac0_075d_7a17_65b9_e07d43f6dde0["resolveDomain()"]
+  7015318a_0b8c_6bd7_7f29_b298df16504d["describeNode()"]
+  7015318a_0b8c_6bd7_7f29_b298df16504d -->|calls| fc5cbac0_075d_7a17_65b9_e07d43f6dde0
+  b8894083_8714_2bbd_6926_8732aafa2c0c["handler()"]
+  b8894083_8714_2bbd_6926_8732aafa2c0c -->|calls| fc5cbac0_075d_7a17_65b9_e07d43f6dde0
+  23cce284_5fbf_2a36_0b90_f74c81c759d9["get()"]
+  fc5cbac0_075d_7a17_65b9_e07d43f6dde0 -->|calls| 23cce284_5fbf_2a36_0b90_f74c81c759d9
+  style fc5cbac0_075d_7a17_65b9_e07d43f6dde0 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -973,7 +974,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-explore-function-ts-resolvedomain"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"a17510cc:d7ea:7772:a9e5:36aa0e3c66bf","label":"resolveDomain","type":"Function","slug":"fn-explore-function-ts-resolvedomain","lc":35,"lang":"typescript","cc":1,"cbc":2},{"id":"90f8f306:ba82:2894:1a47:5ba53a12ae3e","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"5aac0d8e:fcc0:31dd:fa65:e2a3da30f8a0","label":"describeNode","type":"Function","slug":"fn-explore-function-ts-describenode","lc":29,"lang":"typescript","cc":3,"cbc":1},{"id":"0077ddcc:aa05:a07a:adbf:93a852f4cd39","label":"handler","type":"Function","slug":"fn-explore-function-ts-handler","lc":184,"lang":"typescript","cc":11},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:MarkdownRendering","label":"MarkdownRendering","type":"Subdomain","slug":"subdomain-markdownrendering"}],"edges":[{"source":"a17510cc:d7ea:7772:a9e5:36aa0e3c66bf","target":"90f8f306:ba82:2894:1a47:5ba53a12ae3e","type":"calls"},{"source":"5aac0d8e:fcc0:31dd:fa65:e2a3da30f8a0","target":"a17510cc:d7ea:7772:a9e5:36aa0e3c66bf","type":"calls"},{"source":"0077ddcc:aa05:a07a:adbf:93a852f4cd39","target":"a17510cc:d7ea:7772:a9e5:36aa0e3c66bf","type":"calls"},{"source":"a17510cc:d7ea:7772:a9e5:36aa0e3c66bf","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"a17510cc:d7ea:7772:a9e5:36aa0e3c66bf","target":"subdomain:AnalysisTools:MarkdownRendering","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","label":"resolveDomain","type":"Function","slug":"fn-explore-function-ts-resolvedomain","lc":35,"lang":"typescript","cc":1,"cbc":2},{"id":"23cce284:5fbf:2a36:0b90:f74c81c759d9","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"7015318a:0b8c:6bd7:7f29:b298df16504d","label":"describeNode","type":"Function","slug":"fn-explore-function-ts-describenode","lc":29,"lang":"typescript","cc":3,"cbc":1},{"id":"b8894083:8714:2bbd:6926:8732aafa2c0c","label":"handler","type":"Function","slug":"fn-explore-function-ts-handler","lc":184,"lang":"typescript","cc":11},{"id":"domain:CodeAnalysisTools","label":"CodeAnalysisTools","type":"Domain","slug":"domain-codeanalysistools"},{"id":"subdomain:CodeAnalysisTools:Discovery","label":"Discovery","type":"Subdomain","slug":"subdomain-discovery"}],"edges":[{"source":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","target":"23cce284:5fbf:2a36:0b90:f74c81c759d9","type":"calls"},{"source":"7015318a:0b8c:6bd7:7f29:b298df16504d","target":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","type":"calls"},{"source":"b8894083:8714:2bbd:6926:8732aafa2c0c","target":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","type":"calls"},{"source":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","target":"domain:CodeAnalysisTools","type":"belongsTo"},{"source":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","target":"subdomain:CodeAnalysisTools:Discovery","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1029,14 +1030,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-analysistools.html">AnalysisTools</a></li></ul>
+      <ul><li><a href="/mcp/domain-codeanalysistools.html">CodeAnalysisTools</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-markdownrendering.html">MarkdownRendering</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-discovery.html">Discovery</a></li></ul>
     </div>
     
 
