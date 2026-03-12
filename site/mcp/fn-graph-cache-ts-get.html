@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/graphcache.html" class="pill pill-green">GraphCache</a>
-        <a href="/mcp/subdomain/eviction.html" class="pill pill-orange">Eviction</a>
+        <a href="/mcp/subdomain/lru.html" class="pill pill-orange">LRU</a>
         
         
         
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"get","slug":"fn-graph-cache-ts-get","type":"Function"},"subdomain":{"name":"Eviction","slug":"subdomain-eviction"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"get","slug":"fn-graph-cache-ts-get","type":"Function"},"subdomain":{"name":"LRU","slug":"subdomain-lru"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/graphcache.html">GraphCache</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/eviction.html">Eviction</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/lru.html">LRU</a><span class="arch-sep">&rarr;</span>
             <span>get() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,36 +959,36 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  819d664d_2fbd_afd3_a18f_5f46a8d420cd["get()"]
-  abd62fb9_8ec7_5672_6aef_00d745ee4c5e["buildIndexes()"]
-  abd62fb9_8ec7_5672_6aef_00d745ee4c5e -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  d603265a_b8ef_bf1a_5c5b_c924f42673f4["evictOldest()"]
-  d603265a_b8ef_bf1a_5c5b_c924f42673f4 -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  d510b1b8_c814_d863_8c65_5b0900749cf6["evictStale()"]
-  d510b1b8_c814_d863_8c65_5b0900749cf6 -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  cddf7f27_5b35_c8a0_1dca_88153c64a776["detectRepo()"]
-  cddf7f27_5b35_c8a0_1dca_88153c64a776 -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  f588a176_91f8_2ea1_bfb8_d9940ec238cc["resolveOrFetchGraph()"]
-  f588a176_91f8_2ea1_bfb8_d9940ec238cc -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  54327fa2_16a5_e9a2_389a_564fecf26388["setupHandlers()"]
-  54327fa2_16a5_e9a2_389a_564fecf26388 -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  899d3567_51cf_08d0_01a9_17e066244739["buildSubdomainToParentMap()"]
-  899d3567_51cf_08d0_01a9_17e066244739 -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  0bca00f0_c63a_0f34_d33f_aff0e551346b["resolveDomain()"]
-  0bca00f0_c63a_0f34_d33f_aff0e551346b -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  9c4d9043_64a3_3a0f_232e_37244f45621f["describeNode()"]
-  9c4d9043_64a3_3a0f_232e_37244f45621f -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  b5aaaadf_12e0_bc04_55e2_f6ffc74377c7["handler()"]
-  b5aaaadf_12e0_bc04_55e2_f6ffc74377c7 -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  2dedddbc_ab07_7a55_5df2_ffc047a6608c["collectDomainMembers()"]
-  2dedddbc_ab07_7a55_5df2_ffc047a6608c -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  a61b4288_ba35_8e31_ab81_74f082740f6a["handler()"]
-  a61b4288_ba35_8e31_ab81_74f082740f6a -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  58239d66_45e0_6078_dad3_f183f6400edb["renderOverview()"]
-  58239d66_45e0_6078_dad3_f183f6400edb -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  4b712a4c_52f5_a6a0_46f8_09ffd5945c0b["getKeyFilesForDomain()"]
-  4b712a4c_52f5_a6a0_46f8_09ffd5945c0b -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  style 819d664d_2fbd_afd3_a18f_5f46a8d420cd fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  198e0e7b_f250_4ac6_8a59_3a4177bd203d["get()"]
+  8b96a712_99b3_6d1b_9a23_7494e0cdf8a5["buildIndexes()"]
+  8b96a712_99b3_6d1b_9a23_7494e0cdf8a5 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  3bb67e0d_5453_a03e_6219_2272c2866655["evictOldest()"]
+  3bb67e0d_5453_a03e_6219_2272c2866655 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  3d2b80f8_316f_ebd3_f644_5f1be7fa5c2a["evictStale()"]
+  3d2b80f8_316f_ebd3_f644_5f1be7fa5c2a -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  70dea605_f185_b68e_5a20_aa07a656af6f["detectRepo()"]
+  70dea605_f185_b68e_5a20_aa07a656af6f -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  a90349c4_4e67_fa83_b38a_e23a01c4a759["resolveOrFetchGraph()"]
+  a90349c4_4e67_fa83_b38a_e23a01c4a759 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  9f0bc6ca_f200_6e91_f865_0f7ef76808d2["setupHandlers()"]
+  9f0bc6ca_f200_6e91_f865_0f7ef76808d2 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  7c8a52fa_077a_4857_157b_cfd39bb0ea5d["buildSubdomainToParentMap()"]
+  7c8a52fa_077a_4857_157b_cfd39bb0ea5d -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  723ad298_5618_a904_806d_09b29963e037["resolveDomain()"]
+  723ad298_5618_a904_806d_09b29963e037 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  913ba265_bcdc_5af9_a945_ffd2d3018828["describeNode()"]
+  913ba265_bcdc_5af9_a945_ffd2d3018828 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  ff64c123_3ce8_2dfa_a51a_ec147e0450a4["handler()"]
+  ff64c123_3ce8_2dfa_a51a_ec147e0450a4 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  31ae9d85_997f_3119_b8db_eb1994e55869["collectDomainMembers()"]
+  31ae9d85_997f_3119_b8db_eb1994e55869 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  8265b6dc_d6e3_0f4a_3df9_98e72df035bb["handler()"]
+  8265b6dc_d6e3_0f4a_3df9_98e72df035bb -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  821c3ccb_73fb_58ab_58a5_319f6a051598["renderOverview()"]
+  821c3ccb_73fb_58ab_58a5_319f6a051598 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  d54829f1_81a2_7189_8509_42075c579061["getKeyFilesForDomain()"]
+  d54829f1_81a2_7189_8509_42075c579061 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  style 198e0e7b_f250_4ac6_8a59_3a4177bd203d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -996,7 +996,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-get"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"abd62fb9:8ec7:5672:6aef:00d745ee4c5e","label":"buildIndexes","type":"Function","slug":"fn-graph-cache-ts-buildindexes","lc":177,"lang":"typescript","cc":4,"cbc":4},{"id":"d603265a:b8ef:bf1a:5c5b:c924f42673f4","label":"evictOldest","type":"Function","slug":"fn-graph-cache-ts-evictoldest","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"d510b1b8:c814:d863:8c65:5b0900749cf6","label":"evictStale","type":"Function","slug":"fn-graph-cache-ts-evictstale","lc":20,"lang":"typescript","cc":1,"cbc":1},{"id":"cddf7f27:5b35:c8a0:1dca:88153c64a776","label":"detectRepo","type":"Function","slug":"fn-graph-cache-ts-detectrepo","lc":75,"lang":"typescript","cc":2,"cbc":2},{"id":"f588a176:91f8:2ea1:bfb8:d9940ec238cc","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"54327fa2:16a5:e9a2:389a:564fecf26388","label":"setupHandlers","type":"Function","slug":"fn-server-ts-setuphandlers","lc":52,"lang":"typescript","cc":4,"cbc":1},{"id":"899d3567:51cf:08d0:01a9:17e066244739","label":"buildSubdomainToParentMap","type":"Function","slug":"fn-explore-function-ts-buildsubdomaintoparentmap","lc":22,"lang":"typescript","cc":2,"cbc":1},{"id":"0bca00f0:c63a:0f34:d33f:aff0e551346b","label":"resolveDomain","type":"Function","slug":"fn-explore-function-ts-resolvedomain","lc":35,"lang":"typescript","cc":1,"cbc":2},{"id":"9c4d9043:64a3:3a0f:232e:37244f45621f","label":"describeNode","type":"Function","slug":"fn-explore-function-ts-describenode","lc":29,"lang":"typescript","cc":3,"cbc":1},{"id":"b5aaaadf:12e0:bc04:55e2:f6ffc74377c7","label":"handler","type":"Function","slug":"fn-explore-function-ts-handler","lc":184,"lang":"typescript","cc":11},{"id":"2dedddbc:ab07:7a55:5df2:ffc047a6608c","label":"collectDomainMembers","type":"Function","slug":"fn-find-connections-ts-collectdomainmembers","lc":19,"lang":"typescript","cc":1,"cbc":1},{"id":"a61b4288:ba35:8e31:ab81:74f082740f6a","label":"handler","type":"Function","slug":"fn-find-connections-ts-handler","lc":95,"lang":"typescript","cc":8},{"id":"58239d66:45e0:6078:dad3:f183f6400edb","label":"renderOverview","type":"Function","slug":"fn-overview-ts-renderoverview","lc":60,"lang":"typescript","cc":4,"cbc":2},{"id":"4b712a4c:52f5:a6a0:46f8:09ffd5945c0b","label":"getKeyFilesForDomain","type":"Function","slug":"fn-overview-ts-getkeyfilesfordomain","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"6103250e:e580:c563:43ea:1d6def52f9ed","label":"getHubFunctions","type":"Function","slug":"fn-overview-ts-gethubfunctions","lc":20,"lang":"typescript","cc":2,"cbc":1},{"id":"8dea0b79:a31d:d5c3:199a:c54786eb13c2","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"fb20728d:a589:96b2:6ab7:9e6b5d9835c4","label":"callerCount","type":"Function","slug":"fn-symbol-context-ts-callercount","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"6ccdf428:61a6:65c9:de67:9bdc4b1d0a19","label":"renderBriefSymbolContext","type":"Function","slug":"fn-symbol-context-ts-renderbriefsymbolcontext","lc":45,"lang":"typescript","cc":3,"cbc":3},{"id":"523bf93e:0a9e:a7be:751d:cdd667cc6b8b","label":"renderSymbolContext","type":"Function","slug":"fn-symbol-context-ts-rendersymbolcontext","lc":157,"lang":"typescript","cc":4,"cbc":1},{"id":"58860035:5805:1fd9:34cc:eabca2da06d4","label":"traceCallsHandler","type":"Function","slug":"fn-tool-variants-ts-tracecallshandler","lc":61,"lang":"typescript","cc":6},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Eviction","label":"Eviction","type":"Subdomain","slug":"subdomain-eviction"}],"edges":[{"source":"abd62fb9:8ec7:5672:6aef:00d745ee4c5e","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"d603265a:b8ef:bf1a:5c5b:c924f42673f4","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"d510b1b8:c814:d863:8c65:5b0900749cf6","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"cddf7f27:5b35:c8a0:1dca:88153c64a776","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"f588a176:91f8:2ea1:bfb8:d9940ec238cc","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"54327fa2:16a5:e9a2:389a:564fecf26388","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"899d3567:51cf:08d0:01a9:17e066244739","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"0bca00f0:c63a:0f34:d33f:aff0e551346b","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"9c4d9043:64a3:3a0f:232e:37244f45621f","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"b5aaaadf:12e0:bc04:55e2:f6ffc74377c7","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"2dedddbc:ab07:7a55:5df2:ffc047a6608c","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"a61b4288:ba35:8e31:ab81:74f082740f6a","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"58239d66:45e0:6078:dad3:f183f6400edb","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"4b712a4c:52f5:a6a0:46f8:09ffd5945c0b","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"6103250e:e580:c563:43ea:1d6def52f9ed","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"8dea0b79:a31d:d5c3:199a:c54786eb13c2","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"fb20728d:a589:96b2:6ab7:9e6b5d9835c4","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"6ccdf428:61a6:65c9:de67:9bdc4b1d0a19","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"523bf93e:0a9e:a7be:751d:cdd667cc6b8b","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"58860035:5805:1fd9:34cc:eabca2da06d4","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","target":"domain:GraphCache","type":"belongsTo"},{"source":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","target":"subdomain:GraphCache:Eviction","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"8b96a712:99b3:6d1b:9a23:7494e0cdf8a5","label":"buildIndexes","type":"Function","slug":"fn-graph-cache-ts-buildindexes","lc":177,"lang":"typescript","cc":4,"cbc":4},{"id":"3bb67e0d:5453:a03e:6219:2272c2866655","label":"evictOldest","type":"Function","slug":"fn-graph-cache-ts-evictoldest","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"3d2b80f8:316f:ebd3:f644:5f1be7fa5c2a","label":"evictStale","type":"Function","slug":"fn-graph-cache-ts-evictstale","lc":20,"lang":"typescript","cc":1,"cbc":1},{"id":"70dea605:f185:b68e:5a20:aa07a656af6f","label":"detectRepo","type":"Function","slug":"fn-graph-cache-ts-detectrepo","lc":75,"lang":"typescript","cc":2,"cbc":2},{"id":"a90349c4:4e67:fa83:b38a:e23a01c4a759","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"9f0bc6ca:f200:6e91:f865:0f7ef76808d2","label":"setupHandlers","type":"Function","slug":"fn-server-ts-setuphandlers","lc":52,"lang":"typescript","cc":4,"cbc":1},{"id":"7c8a52fa:077a:4857:157b:cfd39bb0ea5d","label":"buildSubdomainToParentMap","type":"Function","slug":"fn-explore-function-ts-buildsubdomaintoparentmap","lc":22,"lang":"typescript","cc":2,"cbc":1},{"id":"723ad298:5618:a904:806d:09b29963e037","label":"resolveDomain","type":"Function","slug":"fn-explore-function-ts-resolvedomain","lc":35,"lang":"typescript","cc":1,"cbc":2},{"id":"913ba265:bcdc:5af9:a945:ffd2d3018828","label":"describeNode","type":"Function","slug":"fn-explore-function-ts-describenode","lc":29,"lang":"typescript","cc":3,"cbc":1},{"id":"ff64c123:3ce8:2dfa:a51a:ec147e0450a4","label":"handler","type":"Function","slug":"fn-explore-function-ts-handler","lc":184,"lang":"typescript","cc":11},{"id":"31ae9d85:997f:3119:b8db:eb1994e55869","label":"collectDomainMembers","type":"Function","slug":"fn-find-connections-ts-collectdomainmembers","lc":19,"lang":"typescript","cc":1,"cbc":1},{"id":"8265b6dc:d6e3:0f4a:3df9:98e72df035bb","label":"handler","type":"Function","slug":"fn-find-connections-ts-handler","lc":95,"lang":"typescript","cc":8},{"id":"821c3ccb:73fb:58ab:58a5:319f6a051598","label":"renderOverview","type":"Function","slug":"fn-overview-ts-renderoverview","lc":60,"lang":"typescript","cc":4,"cbc":2},{"id":"d54829f1:81a2:7189:8509:42075c579061","label":"getKeyFilesForDomain","type":"Function","slug":"fn-overview-ts-getkeyfilesfordomain","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"b6708058:ff21:e2cd:250e:646eb6e990b8","label":"getHubFunctions","type":"Function","slug":"fn-overview-ts-gethubfunctions","lc":20,"lang":"typescript","cc":2,"cbc":1},{"id":"e5958d66:0b6a:a42e:afb7:e5bc63306e68","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"4560adce:2825:0c8c:9038:a1bcece37a02","label":"callerCount","type":"Function","slug":"fn-symbol-context-ts-callercount","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"508fcd16:0d4e:d6b3:d7d7:74c5d88e6eff","label":"renderBriefSymbolContext","type":"Function","slug":"fn-symbol-context-ts-renderbriefsymbolcontext","lc":45,"lang":"typescript","cc":3,"cbc":3},{"id":"94ea1a1f:9bc8:b894:56de:5b5aecee5ed6","label":"renderSymbolContext","type":"Function","slug":"fn-symbol-context-ts-rendersymbolcontext","lc":157,"lang":"typescript","cc":4,"cbc":1},{"id":"ff81abfb:61c5:63f9:7004:80c74cce739d","label":"traceCallsHandler","type":"Function","slug":"fn-tool-variants-ts-tracecallshandler","lc":61,"lang":"typescript","cc":6},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:LRU","label":"LRU","type":"Subdomain","slug":"subdomain-lru"}],"edges":[{"source":"8b96a712:99b3:6d1b:9a23:7494e0cdf8a5","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"3bb67e0d:5453:a03e:6219:2272c2866655","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"3d2b80f8:316f:ebd3:f644:5f1be7fa5c2a","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"70dea605:f185:b68e:5a20:aa07a656af6f","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"a90349c4:4e67:fa83:b38a:e23a01c4a759","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"9f0bc6ca:f200:6e91:f865:0f7ef76808d2","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"7c8a52fa:077a:4857:157b:cfd39bb0ea5d","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"723ad298:5618:a904:806d:09b29963e037","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"913ba265:bcdc:5af9:a945:ffd2d3018828","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"ff64c123:3ce8:2dfa:a51a:ec147e0450a4","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"31ae9d85:997f:3119:b8db:eb1994e55869","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"8265b6dc:d6e3:0f4a:3df9:98e72df035bb","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"821c3ccb:73fb:58ab:58a5:319f6a051598","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"d54829f1:81a2:7189:8509:42075c579061","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"b6708058:ff21:e2cd:250e:646eb6e990b8","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"e5958d66:0b6a:a42e:afb7:e5bc63306e68","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"4560adce:2825:0c8c:9038:a1bcece37a02","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"508fcd16:0d4e:d6b3:d7d7:74c5d88e6eff","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"94ea1a1f:9bc8:b894:56de:5b5aecee5ed6","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"ff81abfb:61c5:63f9:7004:80c74cce739d","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","target":"domain:GraphCache","type":"belongsTo"},{"source":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","target":"subdomain:GraphCache:LRU","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1033,7 +1033,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-eviction.html">Eviction</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-lru.html">LRU</a></li></ul>
     </div>
     
 

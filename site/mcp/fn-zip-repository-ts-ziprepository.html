@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/repositoryutilities.html" class="pill pill-green">RepositoryUtilities</a>
-        <a href="/mcp/subdomain/archiving.html" class="pill pill-orange">Archiving</a>
+        <a href="/mcp/subdomain/archiver.html" class="pill pill-orange">Archiver</a>
         
         
         <span class="pill">calls 7</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"zipRepository","slug":"fn-zip-repository-ts-ziprepository","type":"Function"},"subdomain":{"name":"Archiving","slug":"subdomain-archiving"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"zipRepository","slug":"fn-zip-repository-ts-ziprepository","type":"Function"},"subdomain":{"name":"Archiver","slug":"subdomain-archiver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/repositoryutilities.html">RepositoryUtilities</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/archiving.html">Archiving</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/archiver.html">Archiver</a><span class="arch-sep">&rarr;</span>
             <span>zipRepository() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,26 +959,26 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  494911e9_db6e_4156_53ef_f63f2296be95["zipRepository()"]
-  f588a176_91f8_2ea1_bfb8_d9940ec238cc["resolveOrFetchGraph()"]
-  f588a176_91f8_2ea1_bfb8_d9940ec238cc -->|calls| 494911e9_db6e_4156_53ef_f63f2296be95
-  10367152_acb1_0c31_6651_65c3833f576f["precacheForDirectory()"]
-  10367152_acb1_0c31_6651_65c3833f576f -->|calls| 494911e9_db6e_4156_53ef_f63f2296be95
-  13074885_8019_6780_20c7_4e9dc440c169["error()"]
-  494911e9_db6e_4156_53ef_f63f2296be95 -->|calls| 13074885_8019_6780_20c7_4e9dc440c169
-  1b15ff22_ff33_9d79_6356_9486e669a430["buildIgnoreFilter()"]
-  494911e9_db6e_4156_53ef_f63f2296be95 -->|calls| 1b15ff22_ff33_9d79_6356_9486e669a430
-  b2a9f2d9_d668_db1a_e703_9b0175b70af0["debug()"]
-  494911e9_db6e_4156_53ef_f63f2296be95 -->|calls| b2a9f2d9_d668_db1a_e703_9b0175b70af0
-  542506c2_5282_97fb_f737_804a349088b6["estimateDirectorySize()"]
-  494911e9_db6e_4156_53ef_f63f2296be95 -->|calls| 542506c2_5282_97fb_f737_804a349088b6
-  559e7279_1f9d_45b6_f942_8d7a307880b0["formatBytes()"]
-  494911e9_db6e_4156_53ef_f63f2296be95 -->|calls| 559e7279_1f9d_45b6_f942_8d7a307880b0
-  4665b3ca_c2a3_6346_1a8c_4d9a2163645f["warn()"]
-  494911e9_db6e_4156_53ef_f63f2296be95 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
-  05fe6421_4c82_8feb_b120_d2059a4b31f9["addFilesRecursively()"]
-  494911e9_db6e_4156_53ef_f63f2296be95 -->|calls| 05fe6421_4c82_8feb_b120_d2059a4b31f9
-  style 494911e9_db6e_4156_53ef_f63f2296be95 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  72d0c76f_5a47_583e_022e_cb8e10837a0b["zipRepository()"]
+  a90349c4_4e67_fa83_b38a_e23a01c4a759["resolveOrFetchGraph()"]
+  a90349c4_4e67_fa83_b38a_e23a01c4a759 -->|calls| 72d0c76f_5a47_583e_022e_cb8e10837a0b
+  f3e45789_13aa_e6fb_1d36_f57aed00708f["precacheForDirectory()"]
+  f3e45789_13aa_e6fb_1d36_f57aed00708f -->|calls| 72d0c76f_5a47_583e_022e_cb8e10837a0b
+  0e56a415_e920_2486_ad78_a4df681e4c59["error()"]
+  72d0c76f_5a47_583e_022e_cb8e10837a0b -->|calls| 0e56a415_e920_2486_ad78_a4df681e4c59
+  9ced3c5b_7f8f_a702_9b11_67b85a8c8dcf["buildIgnoreFilter()"]
+  72d0c76f_5a47_583e_022e_cb8e10837a0b -->|calls| 9ced3c5b_7f8f_a702_9b11_67b85a8c8dcf
+  18c4fc45_1d12_b562_b3c0_bb43c42705e8["debug()"]
+  72d0c76f_5a47_583e_022e_cb8e10837a0b -->|calls| 18c4fc45_1d12_b562_b3c0_bb43c42705e8
+  6ca16306_2d79_9f24_6766_355d411d0279["estimateDirectorySize()"]
+  72d0c76f_5a47_583e_022e_cb8e10837a0b -->|calls| 6ca16306_2d79_9f24_6766_355d411d0279
+  86d3f9db_2cdf_896e_51d6_6422e034dd50["formatBytes()"]
+  72d0c76f_5a47_583e_022e_cb8e10837a0b -->|calls| 86d3f9db_2cdf_896e_51d6_6422e034dd50
+  fb96372e_2e32_c676_0a72_a84a0f83382f["warn()"]
+  72d0c76f_5a47_583e_022e_cb8e10837a0b -->|calls| fb96372e_2e32_c676_0a72_a84a0f83382f
+  6fee871f_58b1_7e28_4f0e_6e771638515e["addFilesRecursively()"]
+  72d0c76f_5a47_583e_022e_cb8e10837a0b -->|calls| 6fee871f_58b1_7e28_4f0e_6e771638515e
+  style 72d0c76f_5a47_583e_022e_cb8e10837a0b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -986,7 +986,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-zip-repository-ts-ziprepository"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"494911e9:db6e:4156:53ef:f63f2296be95","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"13074885:8019:6780:20c7:4e9dc440c169","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"1b15ff22:ff33:9d79:6356:9486e669a430","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"b2a9f2d9:d668:db1a:e703:9b0175b70af0","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"542506c2:5282:97fb:f737:804a349088b6","label":"estimateDirectorySize","type":"Function","slug":"fn-zip-repository-ts-estimatedirectorysize","lc":68,"lang":"typescript","cc":1,"cbc":1},{"id":"559e7279:1f9d:45b6:f942:8d7a307880b0","label":"formatBytes","type":"Function","slug":"fn-zip-repository-ts-formatbytes","lc":6,"lang":"typescript","cbc":2},{"id":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"05fe6421:4c82:8feb:b120:d2059a4b31f9","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"f588a176:91f8:2ea1:bfb8:d9940ec238cc","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"10367152:acb1:0c31:6651:65c3833f576f","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Archiving","label":"Archiving","type":"Subdomain","slug":"subdomain-archiving"}],"edges":[{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"13074885:8019:6780:20c7:4e9dc440c169","type":"calls"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"1b15ff22:ff33:9d79:6356:9486e669a430","type":"calls"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"b2a9f2d9:d668:db1a:e703:9b0175b70af0","type":"calls"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"542506c2:5282:97fb:f737:804a349088b6","type":"calls"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"559e7279:1f9d:45b6:f942:8d7a307880b0","type":"calls"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"05fe6421:4c82:8feb:b120:d2059a4b31f9","type":"calls"},{"source":"f588a176:91f8:2ea1:bfb8:d9940ec238cc","target":"494911e9:db6e:4156:53ef:f63f2296be95","type":"calls"},{"source":"10367152:acb1:0c31:6651:65c3833f576f","target":"494911e9:db6e:4156:53ef:f63f2296be95","type":"calls"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"subdomain:RepositoryUtilities:Archiving","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"72d0c76f:5a47:583e:022e:cb8e10837a0b","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"0e56a415:e920:2486:ad78:a4df681e4c59","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"9ced3c5b:7f8f:a702:9b11:67b85a8c8dcf","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"18c4fc45:1d12:b562:b3c0:bb43c42705e8","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"6ca16306:2d79:9f24:6766:355d411d0279","label":"estimateDirectorySize","type":"Function","slug":"fn-zip-repository-ts-estimatedirectorysize","lc":68,"lang":"typescript","cc":1,"cbc":1},{"id":"86d3f9db:2cdf:896e:51d6:6422e034dd50","label":"formatBytes","type":"Function","slug":"fn-zip-repository-ts-formatbytes","lc":6,"lang":"typescript","cbc":2},{"id":"fb96372e:2e32:c676:0a72:a84a0f83382f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"6fee871f:58b1:7e28:4f0e:6e771638515e","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"a90349c4:4e67:fa83:b38a:e23a01c4a759","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"f3e45789:13aa:e6fb:1d36:f57aed00708f","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Archiver","label":"Archiver","type":"Subdomain","slug":"subdomain-archiver"}],"edges":[{"source":"72d0c76f:5a47:583e:022e:cb8e10837a0b","target":"0e56a415:e920:2486:ad78:a4df681e4c59","type":"calls"},{"source":"72d0c76f:5a47:583e:022e:cb8e10837a0b","target":"9ced3c5b:7f8f:a702:9b11:67b85a8c8dcf","type":"calls"},{"source":"72d0c76f:5a47:583e:022e:cb8e10837a0b","target":"18c4fc45:1d12:b562:b3c0:bb43c42705e8","type":"calls"},{"source":"72d0c76f:5a47:583e:022e:cb8e10837a0b","target":"6ca16306:2d79:9f24:6766:355d411d0279","type":"calls"},{"source":"72d0c76f:5a47:583e:022e:cb8e10837a0b","target":"86d3f9db:2cdf:896e:51d6:6422e034dd50","type":"calls"},{"source":"72d0c76f:5a47:583e:022e:cb8e10837a0b","target":"fb96372e:2e32:c676:0a72:a84a0f83382f","type":"calls"},{"source":"72d0c76f:5a47:583e:022e:cb8e10837a0b","target":"6fee871f:58b1:7e28:4f0e:6e771638515e","type":"calls"},{"source":"a90349c4:4e67:fa83:b38a:e23a01c4a759","target":"72d0c76f:5a47:583e:022e:cb8e10837a0b","type":"calls"},{"source":"f3e45789:13aa:e6fb:1d36:f57aed00708f","target":"72d0c76f:5a47:583e:022e:cb8e10837a0b","type":"calls"},{"source":"72d0c76f:5a47:583e:022e:cb8e10837a0b","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"72d0c76f:5a47:583e:022e:cb8e10837a0b","target":"subdomain:RepositoryUtilities:Archiver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1179,7 +1179,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-archiving.html">Archiving</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-archiver.html">Archiver</a></li></ul>
     </div>
     
 

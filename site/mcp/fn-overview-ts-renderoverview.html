@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
-        <a href="/mcp/subdomain/overview.html" class="pill pill-orange">Overview</a>
+        <a href="/mcp/subdomain/callgraph.html" class="pill pill-orange">CallGraph</a>
         
         
         <span class="pill">calls 4</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"renderOverview","slug":"fn-overview-ts-renderoverview","type":"Function"},"subdomain":{"name":"Overview","slug":"subdomain-overview"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"renderOverview","slug":"fn-overview-ts-renderoverview","type":"Function"},"subdomain":{"name":"CallGraph","slug":"subdomain-callgraph"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/overview.html">Overview</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/callgraph.html">CallGraph</a><span class="arch-sep">&rarr;</span>
             <span>renderOverview() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,20 +959,20 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  58239d66_45e0_6078_dad3_f183f6400edb["renderOverview()"]
-  9128a5ec_c6ee_081f_12c3_e4530888f5f9["injectOverviewInstructions()"]
-  9128a5ec_c6ee_081f_12c3_e4530888f5f9 -->|calls| 58239d66_45e0_6078_dad3_f183f6400edb
-  aef6f2e0_9edd_63ba_5a6b_45cf358125ca["handler()"]
-  aef6f2e0_9edd_63ba_5a6b_45cf358125ca -->|calls| 58239d66_45e0_6078_dad3_f183f6400edb
-  4b712a4c_52f5_a6a0_46f8_09ffd5945c0b["getKeyFilesForDomain()"]
-  58239d66_45e0_6078_dad3_f183f6400edb -->|calls| 4b712a4c_52f5_a6a0_46f8_09ffd5945c0b
-  819d664d_2fbd_afd3_a18f_5f46a8d420cd["get()"]
-  58239d66_45e0_6078_dad3_f183f6400edb -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
-  fa8ead96_a475_fc04_45ff_bf11b99cd111["truncate()"]
-  58239d66_45e0_6078_dad3_f183f6400edb -->|calls| fa8ead96_a475_fc04_45ff_bf11b99cd111
-  6103250e_e580_c563_43ea_1d6def52f9ed["getHubFunctions()"]
-  58239d66_45e0_6078_dad3_f183f6400edb -->|calls| 6103250e_e580_c563_43ea_1d6def52f9ed
-  style 58239d66_45e0_6078_dad3_f183f6400edb fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  821c3ccb_73fb_58ab_58a5_319f6a051598["renderOverview()"]
+  48e7f84f_7763_1004_d289_5430ce3a387e["injectOverviewInstructions()"]
+  48e7f84f_7763_1004_d289_5430ce3a387e -->|calls| 821c3ccb_73fb_58ab_58a5_319f6a051598
+  09960775_289a_d0eb_9ff4_b4615ca150fb["handler()"]
+  09960775_289a_d0eb_9ff4_b4615ca150fb -->|calls| 821c3ccb_73fb_58ab_58a5_319f6a051598
+  d54829f1_81a2_7189_8509_42075c579061["getKeyFilesForDomain()"]
+  821c3ccb_73fb_58ab_58a5_319f6a051598 -->|calls| d54829f1_81a2_7189_8509_42075c579061
+  198e0e7b_f250_4ac6_8a59_3a4177bd203d["get()"]
+  821c3ccb_73fb_58ab_58a5_319f6a051598 -->|calls| 198e0e7b_f250_4ac6_8a59_3a4177bd203d
+  b250125b_53c1_be26_403d_e3a821db3da7["truncate()"]
+  821c3ccb_73fb_58ab_58a5_319f6a051598 -->|calls| b250125b_53c1_be26_403d_e3a821db3da7
+  b6708058_ff21_e2cd_250e_646eb6e990b8["getHubFunctions()"]
+  821c3ccb_73fb_58ab_58a5_319f6a051598 -->|calls| b6708058_ff21_e2cd_250e_646eb6e990b8
+  style 821c3ccb_73fb_58ab_58a5_319f6a051598 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -980,7 +980,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-overview-ts-renderoverview"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"58239d66:45e0:6078:dad3:f183f6400edb","label":"renderOverview","type":"Function","slug":"fn-overview-ts-renderoverview","lc":60,"lang":"typescript","cc":4,"cbc":2},{"id":"4b712a4c:52f5:a6a0:46f8:09ffd5945c0b","label":"getKeyFilesForDomain","type":"Function","slug":"fn-overview-ts-getkeyfilesfordomain","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"fa8ead96:a475:fc04:45ff:bf11b99cd111","label":"truncate","type":"Function","slug":"fn-overview-ts-truncate","lc":4,"lang":"typescript","cbc":1},{"id":"6103250e:e580:c563:43ea:1d6def52f9ed","label":"getHubFunctions","type":"Function","slug":"fn-overview-ts-gethubfunctions","lc":20,"lang":"typescript","cc":2,"cbc":1},{"id":"9128a5ec:c6ee:081f:12c3:e4530888f5f9","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"aef6f2e0:9edd:63ba:5a6b:45cf358125ca","label":"handler","type":"Function","slug":"fn-overview-ts-handler","lc":21,"lang":"typescript","cc":5},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:Overview","label":"Overview","type":"Subdomain","slug":"subdomain-overview"}],"edges":[{"source":"58239d66:45e0:6078:dad3:f183f6400edb","target":"4b712a4c:52f5:a6a0:46f8:09ffd5945c0b","type":"calls"},{"source":"58239d66:45e0:6078:dad3:f183f6400edb","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"58239d66:45e0:6078:dad3:f183f6400edb","target":"fa8ead96:a475:fc04:45ff:bf11b99cd111","type":"calls"},{"source":"58239d66:45e0:6078:dad3:f183f6400edb","target":"6103250e:e580:c563:43ea:1d6def52f9ed","type":"calls"},{"source":"9128a5ec:c6ee:081f:12c3:e4530888f5f9","target":"58239d66:45e0:6078:dad3:f183f6400edb","type":"calls"},{"source":"aef6f2e0:9edd:63ba:5a6b:45cf358125ca","target":"58239d66:45e0:6078:dad3:f183f6400edb","type":"calls"},{"source":"58239d66:45e0:6078:dad3:f183f6400edb","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"58239d66:45e0:6078:dad3:f183f6400edb","target":"subdomain:AnalysisTools:Overview","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"821c3ccb:73fb:58ab:58a5:319f6a051598","label":"renderOverview","type":"Function","slug":"fn-overview-ts-renderoverview","lc":60,"lang":"typescript","cc":4,"cbc":2},{"id":"d54829f1:81a2:7189:8509:42075c579061","label":"getKeyFilesForDomain","type":"Function","slug":"fn-overview-ts-getkeyfilesfordomain","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"b250125b:53c1:be26:403d:e3a821db3da7","label":"truncate","type":"Function","slug":"fn-overview-ts-truncate","lc":4,"lang":"typescript","cbc":1},{"id":"b6708058:ff21:e2cd:250e:646eb6e990b8","label":"getHubFunctions","type":"Function","slug":"fn-overview-ts-gethubfunctions","lc":20,"lang":"typescript","cc":2,"cbc":1},{"id":"48e7f84f:7763:1004:d289:5430ce3a387e","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"09960775:289a:d0eb:9ff4:b4615ca150fb","label":"handler","type":"Function","slug":"fn-overview-ts-handler","lc":21,"lang":"typescript","cc":5},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:CallGraph","label":"CallGraph","type":"Subdomain","slug":"subdomain-callgraph"}],"edges":[{"source":"821c3ccb:73fb:58ab:58a5:319f6a051598","target":"d54829f1:81a2:7189:8509:42075c579061","type":"calls"},{"source":"821c3ccb:73fb:58ab:58a5:319f6a051598","target":"198e0e7b:f250:4ac6:8a59:3a4177bd203d","type":"calls"},{"source":"821c3ccb:73fb:58ab:58a5:319f6a051598","target":"b250125b:53c1:be26:403d:e3a821db3da7","type":"calls"},{"source":"821c3ccb:73fb:58ab:58a5:319f6a051598","target":"b6708058:ff21:e2cd:250e:646eb6e990b8","type":"calls"},{"source":"48e7f84f:7763:1004:d289:5430ce3a387e","target":"821c3ccb:73fb:58ab:58a5:319f6a051598","type":"calls"},{"source":"09960775:289a:d0eb:9ff4:b4615ca150fb","target":"821c3ccb:73fb:58ab:58a5:319f6a051598","type":"calls"},{"source":"821c3ccb:73fb:58ab:58a5:319f6a051598","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"821c3ccb:73fb:58ab:58a5:319f6a051598","target":"subdomain:AnalysisTools:CallGraph","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1068,7 +1068,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-overview.html">Overview</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-callgraph.html">CallGraph</a></li></ul>
     </div>
     
 

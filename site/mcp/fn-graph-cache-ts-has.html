@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/graphcache.html" class="pill pill-green">GraphCache</a>
-        <a href="/mcp/subdomain/eviction.html" class="pill pill-orange">Eviction</a>
+        <a href="/mcp/subdomain/lru.html" class="pill pill-orange">LRU</a>
         
         
         
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"has","slug":"fn-graph-cache-ts-has","type":"Function"},"subdomain":{"name":"Eviction","slug":"subdomain-eviction"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"has","slug":"fn-graph-cache-ts-has","type":"Function"},"subdomain":{"name":"LRU","slug":"subdomain-lru"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/graphcache.html">GraphCache</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/eviction.html">Eviction</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/lru.html">LRU</a><span class="arch-sep">&rarr;</span>
             <span>has() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,24 +959,24 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  c1534170_9fd8_bd42_375e_2f62d98d9d66["has()"]
-  abd62fb9_8ec7_5672_6aef_00d745ee4c5e["buildIndexes()"]
-  abd62fb9_8ec7_5672_6aef_00d745ee4c5e -->|calls| c1534170_9fd8_bd42_375e_2f62d98d9d66
-  06d9528a_7c97_f5ef_66b6_bc582941d213["loadCacheFromDisk()"]
-  06d9528a_7c97_f5ef_66b6_bc582941d213 -->|calls| c1534170_9fd8_bd42_375e_2f62d98d9d66
-  cddf7f27_5b35_c8a0_1dca_88153c64a776["detectRepo()"]
-  cddf7f27_5b35_c8a0_1dca_88153c64a776 -->|calls| c1534170_9fd8_bd42_375e_2f62d98d9d66
-  10367152_acb1_0c31_6651_65c3833f576f["precacheForDirectory()"]
-  10367152_acb1_0c31_6651_65c3833f576f -->|calls| c1534170_9fd8_bd42_375e_2f62d98d9d66
-  54327fa2_16a5_e9a2_389a_564fecf26388["setupHandlers()"]
-  54327fa2_16a5_e9a2_389a_564fecf26388 -->|calls| c1534170_9fd8_bd42_375e_2f62d98d9d66
-  b5aaaadf_12e0_bc04_55e2_f6ffc74377c7["handler()"]
-  b5aaaadf_12e0_bc04_55e2_f6ffc74377c7 -->|calls| c1534170_9fd8_bd42_375e_2f62d98d9d66
-  a61b4288_ba35_8e31_ab81_74f082740f6a["handler()"]
-  a61b4288_ba35_8e31_ab81_74f082740f6a -->|calls| c1534170_9fd8_bd42_375e_2f62d98d9d66
-  8dea0b79_a31d_d5c3_199a_c54786eb13c2["findSymbol()"]
-  8dea0b79_a31d_d5c3_199a_c54786eb13c2 -->|calls| c1534170_9fd8_bd42_375e_2f62d98d9d66
-  style c1534170_9fd8_bd42_375e_2f62d98d9d66 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  57d132ec_eb42_e7e8_6401_a7725a980208["has()"]
+  8b96a712_99b3_6d1b_9a23_7494e0cdf8a5["buildIndexes()"]
+  8b96a712_99b3_6d1b_9a23_7494e0cdf8a5 -->|calls| 57d132ec_eb42_e7e8_6401_a7725a980208
+  de95bc77_b2f5_7481_2de3_a7fa4ee1d1af["loadCacheFromDisk()"]
+  de95bc77_b2f5_7481_2de3_a7fa4ee1d1af -->|calls| 57d132ec_eb42_e7e8_6401_a7725a980208
+  70dea605_f185_b68e_5a20_aa07a656af6f["detectRepo()"]
+  70dea605_f185_b68e_5a20_aa07a656af6f -->|calls| 57d132ec_eb42_e7e8_6401_a7725a980208
+  f3e45789_13aa_e6fb_1d36_f57aed00708f["precacheForDirectory()"]
+  f3e45789_13aa_e6fb_1d36_f57aed00708f -->|calls| 57d132ec_eb42_e7e8_6401_a7725a980208
+  9f0bc6ca_f200_6e91_f865_0f7ef76808d2["setupHandlers()"]
+  9f0bc6ca_f200_6e91_f865_0f7ef76808d2 -->|calls| 57d132ec_eb42_e7e8_6401_a7725a980208
+  ff64c123_3ce8_2dfa_a51a_ec147e0450a4["handler()"]
+  ff64c123_3ce8_2dfa_a51a_ec147e0450a4 -->|calls| 57d132ec_eb42_e7e8_6401_a7725a980208
+  8265b6dc_d6e3_0f4a_3df9_98e72df035bb["handler()"]
+  8265b6dc_d6e3_0f4a_3df9_98e72df035bb -->|calls| 57d132ec_eb42_e7e8_6401_a7725a980208
+  e5958d66_0b6a_a42e_afb7_e5bc63306e68["findSymbol()"]
+  e5958d66_0b6a_a42e_afb7_e5bc63306e68 -->|calls| 57d132ec_eb42_e7e8_6401_a7725a980208
+  style 57d132ec_eb42_e7e8_6401_a7725a980208 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -984,7 +984,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-has"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"c1534170:9fd8:bd42:375e:2f62d98d9d66","label":"has","type":"Function","slug":"fn-graph-cache-ts-has","lc":3,"lang":"typescript","cbc":8},{"id":"abd62fb9:8ec7:5672:6aef:00d745ee4c5e","label":"buildIndexes","type":"Function","slug":"fn-graph-cache-ts-buildindexes","lc":177,"lang":"typescript","cc":4,"cbc":4},{"id":"06d9528a:7c97:f5ef:66b6:bc582941d213","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"cddf7f27:5b35:c8a0:1dca:88153c64a776","label":"detectRepo","type":"Function","slug":"fn-graph-cache-ts-detectrepo","lc":75,"lang":"typescript","cc":2,"cbc":2},{"id":"10367152:acb1:0c31:6651:65c3833f576f","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"54327fa2:16a5:e9a2:389a:564fecf26388","label":"setupHandlers","type":"Function","slug":"fn-server-ts-setuphandlers","lc":52,"lang":"typescript","cc":4,"cbc":1},{"id":"b5aaaadf:12e0:bc04:55e2:f6ffc74377c7","label":"handler","type":"Function","slug":"fn-explore-function-ts-handler","lc":184,"lang":"typescript","cc":11},{"id":"a61b4288:ba35:8e31:ab81:74f082740f6a","label":"handler","type":"Function","slug":"fn-find-connections-ts-handler","lc":95,"lang":"typescript","cc":8},{"id":"8dea0b79:a31d:d5c3:199a:c54786eb13c2","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Eviction","label":"Eviction","type":"Subdomain","slug":"subdomain-eviction"}],"edges":[{"source":"abd62fb9:8ec7:5672:6aef:00d745ee4c5e","target":"c1534170:9fd8:bd42:375e:2f62d98d9d66","type":"calls"},{"source":"06d9528a:7c97:f5ef:66b6:bc582941d213","target":"c1534170:9fd8:bd42:375e:2f62d98d9d66","type":"calls"},{"source":"cddf7f27:5b35:c8a0:1dca:88153c64a776","target":"c1534170:9fd8:bd42:375e:2f62d98d9d66","type":"calls"},{"source":"10367152:acb1:0c31:6651:65c3833f576f","target":"c1534170:9fd8:bd42:375e:2f62d98d9d66","type":"calls"},{"source":"54327fa2:16a5:e9a2:389a:564fecf26388","target":"c1534170:9fd8:bd42:375e:2f62d98d9d66","type":"calls"},{"source":"b5aaaadf:12e0:bc04:55e2:f6ffc74377c7","target":"c1534170:9fd8:bd42:375e:2f62d98d9d66","type":"calls"},{"source":"a61b4288:ba35:8e31:ab81:74f082740f6a","target":"c1534170:9fd8:bd42:375e:2f62d98d9d66","type":"calls"},{"source":"8dea0b79:a31d:d5c3:199a:c54786eb13c2","target":"c1534170:9fd8:bd42:375e:2f62d98d9d66","type":"calls"},{"source":"c1534170:9fd8:bd42:375e:2f62d98d9d66","target":"domain:GraphCache","type":"belongsTo"},{"source":"c1534170:9fd8:bd42:375e:2f62d98d9d66","target":"subdomain:GraphCache:Eviction","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"57d132ec:eb42:e7e8:6401:a7725a980208","label":"has","type":"Function","slug":"fn-graph-cache-ts-has","lc":3,"lang":"typescript","cbc":8},{"id":"8b96a712:99b3:6d1b:9a23:7494e0cdf8a5","label":"buildIndexes","type":"Function","slug":"fn-graph-cache-ts-buildindexes","lc":177,"lang":"typescript","cc":4,"cbc":4},{"id":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"70dea605:f185:b68e:5a20:aa07a656af6f","label":"detectRepo","type":"Function","slug":"fn-graph-cache-ts-detectrepo","lc":75,"lang":"typescript","cc":2,"cbc":2},{"id":"f3e45789:13aa:e6fb:1d36:f57aed00708f","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"9f0bc6ca:f200:6e91:f865:0f7ef76808d2","label":"setupHandlers","type":"Function","slug":"fn-server-ts-setuphandlers","lc":52,"lang":"typescript","cc":4,"cbc":1},{"id":"ff64c123:3ce8:2dfa:a51a:ec147e0450a4","label":"handler","type":"Function","slug":"fn-explore-function-ts-handler","lc":184,"lang":"typescript","cc":11},{"id":"8265b6dc:d6e3:0f4a:3df9:98e72df035bb","label":"handler","type":"Function","slug":"fn-find-connections-ts-handler","lc":95,"lang":"typescript","cc":8},{"id":"e5958d66:0b6a:a42e:afb7:e5bc63306e68","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:LRU","label":"LRU","type":"Subdomain","slug":"subdomain-lru"}],"edges":[{"source":"8b96a712:99b3:6d1b:9a23:7494e0cdf8a5","target":"57d132ec:eb42:e7e8:6401:a7725a980208","type":"calls"},{"source":"de95bc77:b2f5:7481:2de3:a7fa4ee1d1af","target":"57d132ec:eb42:e7e8:6401:a7725a980208","type":"calls"},{"source":"70dea605:f185:b68e:5a20:aa07a656af6f","target":"57d132ec:eb42:e7e8:6401:a7725a980208","type":"calls"},{"source":"f3e45789:13aa:e6fb:1d36:f57aed00708f","target":"57d132ec:eb42:e7e8:6401:a7725a980208","type":"calls"},{"source":"9f0bc6ca:f200:6e91:f865:0f7ef76808d2","target":"57d132ec:eb42:e7e8:6401:a7725a980208","type":"calls"},{"source":"ff64c123:3ce8:2dfa:a51a:ec147e0450a4","target":"57d132ec:eb42:e7e8:6401:a7725a980208","type":"calls"},{"source":"8265b6dc:d6e3:0f4a:3df9:98e72df035bb","target":"57d132ec:eb42:e7e8:6401:a7725a980208","type":"calls"},{"source":"e5958d66:0b6a:a42e:afb7:e5bc63306e68","target":"57d132ec:eb42:e7e8:6401:a7725a980208","type":"calls"},{"source":"57d132ec:eb42:e7e8:6401:a7725a980208","target":"domain:GraphCache","type":"belongsTo"},{"source":"57d132ec:eb42:e7e8:6401:a7725a980208","target":"subdomain:GraphCache:LRU","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1015,7 +1015,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-eviction.html">Eviction</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-lru.html">LRU</a></li></ul>
     </div>
     
 

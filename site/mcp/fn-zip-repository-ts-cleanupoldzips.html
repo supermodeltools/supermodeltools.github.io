@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/repositoryutilities.html" class="pill pill-green">RepositoryUtilities</a>
-        <a href="/mcp/subdomain/archiving.html" class="pill pill-orange">Archiving</a>
+        <a href="/mcp/subdomain/archiver.html" class="pill pill-orange">Archiver</a>
         
         
         <span class="pill">calls 2</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"cleanupOldZips","slug":"fn-zip-repository-ts-cleanupoldzips","type":"Function"},"subdomain":{"name":"Archiving","slug":"subdomain-archiving"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"cleanupOldZips","slug":"fn-zip-repository-ts-cleanupoldzips","type":"Function"},"subdomain":{"name":"Archiver","slug":"subdomain-archiver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/repositoryutilities.html">RepositoryUtilities</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/archiving.html">Archiving</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/archiver.html">Archiver</a><span class="arch-sep">&rarr;</span>
             <span>cleanupOldZips() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,14 +959,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  8933f648_926d_aa2f_504a_ede3b91dcbd3["cleanupOldZips()"]
-  417fac38_8596_98a9_c716_a9fd1c03ff10["start()"]
-  417fac38_8596_98a9_c716_a9fd1c03ff10 -->|calls| 8933f648_926d_aa2f_504a_ede3b91dcbd3
-  4665b3ca_c2a3_6346_1a8c_4d9a2163645f["warn()"]
-  8933f648_926d_aa2f_504a_ede3b91dcbd3 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
-  b2a9f2d9_d668_db1a_e703_9b0175b70af0["debug()"]
-  8933f648_926d_aa2f_504a_ede3b91dcbd3 -->|calls| b2a9f2d9_d668_db1a_e703_9b0175b70af0
-  style 8933f648_926d_aa2f_504a_ede3b91dcbd3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d77f3b6c_4560_8a61_c1ce_94f90b52bcca["cleanupOldZips()"]
+  12e4660d_fb9e_680a_3a58_b3022e4bb2ca["start()"]
+  12e4660d_fb9e_680a_3a58_b3022e4bb2ca -->|calls| d77f3b6c_4560_8a61_c1ce_94f90b52bcca
+  fb96372e_2e32_c676_0a72_a84a0f83382f["warn()"]
+  d77f3b6c_4560_8a61_c1ce_94f90b52bcca -->|calls| fb96372e_2e32_c676_0a72_a84a0f83382f
+  18c4fc45_1d12_b562_b3c0_bb43c42705e8["debug()"]
+  d77f3b6c_4560_8a61_c1ce_94f90b52bcca -->|calls| 18c4fc45_1d12_b562_b3c0_bb43c42705e8
+  style d77f3b6c_4560_8a61_c1ce_94f90b52bcca fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -974,7 +974,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-zip-repository-ts-cleanupoldzips"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"8933f648:926d:aa2f:504a:ede3b91dcbd3","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"b2a9f2d9:d668:db1a:e703:9b0175b70af0","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"417fac38:8596:98a9:c716:a9fd1c03ff10","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Archiving","label":"Archiving","type":"Subdomain","slug":"subdomain-archiving"}],"edges":[{"source":"8933f648:926d:aa2f:504a:ede3b91dcbd3","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"8933f648:926d:aa2f:504a:ede3b91dcbd3","target":"b2a9f2d9:d668:db1a:e703:9b0175b70af0","type":"calls"},{"source":"417fac38:8596:98a9:c716:a9fd1c03ff10","target":"8933f648:926d:aa2f:504a:ede3b91dcbd3","type":"calls"},{"source":"8933f648:926d:aa2f:504a:ede3b91dcbd3","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"8933f648:926d:aa2f:504a:ede3b91dcbd3","target":"subdomain:RepositoryUtilities:Archiving","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d77f3b6c:4560:8a61:c1ce:94f90b52bcca","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"fb96372e:2e32:c676:0a72:a84a0f83382f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"18c4fc45:1d12:b562:b3c0:bb43c42705e8","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Archiver","label":"Archiver","type":"Subdomain","slug":"subdomain-archiver"}],"edges":[{"source":"d77f3b6c:4560:8a61:c1ce:94f90b52bcca","target":"fb96372e:2e32:c676:0a72:a84a0f83382f","type":"calls"},{"source":"d77f3b6c:4560:8a61:c1ce:94f90b52bcca","target":"18c4fc45:1d12:b562:b3c0:bb43c42705e8","type":"calls"},{"source":"12e4660d:fb9e:680a:3a58:b3022e4bb2ca","target":"d77f3b6c:4560:8a61:c1ce:94f90b52bcca","type":"calls"},{"source":"d77f3b6c:4560:8a61:c1ce:94f90b52bcca","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"d77f3b6c:4560:8a61:c1ce:94f90b52bcca","target":"subdomain:RepositoryUtilities:Archiver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1041,7 +1041,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-archiving.html">Archiving</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-archiver.html">Archiver</a></li></ul>
     </div>
     
 

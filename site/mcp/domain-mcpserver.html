@@ -11,17 +11,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
 
 <title>McpServer Domain — mcp Architecture | mcp Architecture Docs</title>
-<meta name="description" content="The core orchestration layer that implements the Model Context Protocol and manages tool registration and execution. Architectural overview of the McpServer domain in the mcp codebase. Contains 5 source files.">
+<meta name="description" content="The entry point and communication layer that implements the Model Context Protocol to expose tools to AI clients. Architectural overview of the McpServer domain in the mcp codebase. Contains 5 source files.">
 <link rel="canonical" href="https://repos.supermodeltools.com/mcp/domain-mcpserver/">
 <meta property="og:title" content="McpServer Domain — mcp Architecture — mcp Architecture Docs">
-<meta property="og:description" content="The core orchestration layer that implements the Model Context Protocol and manages tool registration and execution. Architectural overview of the McpServer domain in the mcp codebase. Contains 5 source files.">
+<meta property="og:description" content="The entry point and communication layer that implements the Model Context Protocol to expose tools to AI clients. Architectural overview of the McpServer domain in the mcp codebase. Contains 5 source files.">
 <meta property="og:url" content="https://repos.supermodeltools.com/mcp/domain-mcpserver.html">
 <meta property="og:image" content="https://repos.supermodeltools.com/mcp/images/share/domain-mcpserver.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="mcp Architecture Docs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="McpServer Domain — mcp Architecture — mcp Architecture Docs">
-<meta name="twitter:description" content="The core orchestration layer that implements the Model Context Protocol and manages tool registration and execution. Architectural overview of the McpServer domain in the mcp codebase. Contains 5 source files.">
+<meta name="twitter:description" content="The entry point and communication layer that implements the Model Context Protocol to expose tools to AI clients. Architectural overview of the McpServer domain in the mcp codebase. Contains 5 source files.">
 <meta name="twitter:image" content="https://repos.supermodeltools.com/mcp/images/share/domain-mcpserver.svg">
 
 <style>:root {
@@ -856,9 +856,9 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"The core orchestration layer that implements the Model Context Protocol and manages tool registration and execution. Architectural overview of the McpServer domain in the mcp codebase. Contains 5 source files.","image":["https://repos.supermodeltools.com/mcp/images/share/domain-mcpserver.svg"],"name":"McpServer Domain — mcp Architecture","url":"https://repos.supermodeltools.com/mcp/domain-mcpserver.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"The entry point and communication layer that implements the Model Context Protocol to expose tools to AI clients. Architectural overview of the McpServer domain in the mcp codebase. Contains 5 source files.","image":["https://repos.supermodeltools.com/mcp/images/share/domain-mcpserver.svg"],"name":"McpServer Domain — mcp Architecture","url":"https://repos.supermodeltools.com/mcp/domain-mcpserver.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/mcp/","name":"Home","position":1},{"@type":"ListItem","name":"McpServer Domain — mcp Architecture","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The McpServer domain is an architectural grouping in the mcp codebase. The core orchestration layer that implements the Model Context Protocol and manages tool registration and execution. It contains 5 source files."},"name":"What is the McpServer domain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The McpServer domain contains 3 subdomain(s): Configuration, ToolRegistry, Transport."},"name":"What subdomains are in McpServer?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The McpServer domain contains 5 source files."},"name":"How many files are in McpServer?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The McpServer domain is an architectural grouping in the mcp codebase. The entry point and communication layer that implements the Model Context Protocol to expose tools to AI clients. It contains 5 source files."},"name":"What is the McpServer domain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The McpServer domain contains 3 subdomain(s): Instructions, ToolRegistry, Transport."},"name":"What subdomains are in McpServer?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The McpServer domain contains 5 source files."},"name":"How many files are in McpServer?"}]}</script>
 </head>
 <body>
 <script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/mcp").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
@@ -930,7 +930,7 @@ a.pill:hover {
 
       
       <div class="entity-summary">
-        <p>The core orchestration layer that implements the Model Context Protocol and manages tool registration and execution.</p>
+        <p>The entry point and communication layer that implements the Model Context Protocol to expose tools to AI clients.</p>
       </div>
       
     </div>
@@ -954,10 +954,10 @@ a.pill:hover {
   domain_McpServer["McpServer"]
   subdomain_McpServer_Transport["Transport"]
   domain_McpServer --> subdomain_McpServer_Transport
-  subdomain_McpServer_Configuration["Configuration"]
-  domain_McpServer --> subdomain_McpServer_Configuration
   subdomain_McpServer_ToolRegistry["ToolRegistry"]
   domain_McpServer --> subdomain_McpServer_ToolRegistry
+  subdomain_McpServer_Instructions["Instructions"]
+  domain_McpServer --> subdomain_McpServer_Instructions
   style domain_McpServer fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
@@ -966,7 +966,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="domain-mcpserver"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:Transport","label":"Transport","type":"Subdomain","slug":"subdomain-transport"},{"id":"subdomain:McpServer:Configuration","label":"Configuration","type":"Subdomain","slug":"subdomain-configuration"},{"id":"subdomain:McpServer:ToolRegistry","label":"ToolRegistry","type":"Subdomain","slug":"subdomain-toolregistry"}],"edges":[{"source":"domain:McpServer","target":"subdomain:McpServer:Transport","type":"contains"},{"source":"domain:McpServer","target":"subdomain:McpServer:Configuration","type":"contains"},{"source":"domain:McpServer","target":"subdomain:McpServer:ToolRegistry","type":"contains"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:Transport","label":"Transport","type":"Subdomain","slug":"subdomain-transport"},{"id":"subdomain:McpServer:ToolRegistry","label":"ToolRegistry","type":"Subdomain","slug":"subdomain-toolregistry"},{"id":"subdomain:McpServer:Instructions","label":"Instructions","type":"Subdomain","slug":"subdomain-instructions"}],"edges":[{"source":"domain:McpServer","target":"subdomain:McpServer:Transport","type":"contains"},{"source":"domain:McpServer","target":"subdomain:McpServer:ToolRegistry","type":"contains"},{"source":"domain:McpServer","target":"subdomain:McpServer:Instructions","type":"contains"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -984,7 +984,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-configuration.html">Configuration</a></li><li><a href="/mcp/subdomain-toolregistry.html">ToolRegistry</a></li><li><a href="/mcp/subdomain-transport.html">Transport</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-instructions.html">Instructions</a></li><li><a href="/mcp/subdomain-toolregistry.html">ToolRegistry</a></li><li><a href="/mcp/subdomain-transport.html">Transport</a></li></ul>
     </div>
     
 
@@ -1030,12 +1030,12 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What is the McpServer domain?</summary>
-        <div class="faq-answer">The McpServer domain is an architectural grouping in the mcp codebase. The core orchestration layer that implements the Model Context Protocol and manages tool registration and execution. It contains 5 source files.</div>
+        <div class="faq-answer">The McpServer domain is an architectural grouping in the mcp codebase. The entry point and communication layer that implements the Model Context Protocol to expose tools to AI clients. It contains 5 source files.</div>
       </details>
       
       <details class="faq-item">
         <summary class="faq-question">What subdomains are in McpServer?</summary>
-        <div class="faq-answer">The McpServer domain contains 3 subdomain(s): Configuration, ToolRegistry, Transport.</div>
+        <div class="faq-answer">The McpServer domain contains 3 subdomain(s): Instructions, ToolRegistry, Transport.</div>
       </details>
       
       <details class="faq-item">
