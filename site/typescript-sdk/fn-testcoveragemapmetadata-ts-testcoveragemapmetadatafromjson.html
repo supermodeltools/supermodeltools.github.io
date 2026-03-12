@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/datamodels.html" class="pill pill-green">DataModels</a>
-        <a href="/typescript-sdk/subdomain/impactmodels.html" class="pill pill-orange">ImpactModels</a>
+        <a href="/typescript-sdk/domain/analysismodels.html" class="pill pill-green">AnalysisModels</a>
+        <a href="/typescript-sdk/subdomain/impactmetrics.html" class="pill pill-orange">ImpactMetrics</a>
         
         
         <span class="pill">calls 1</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DataModels","slug":"domain-datamodels"},"entity":{"name":"TestCoverageMapMetadataFromJSON","slug":"fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjson","type":"Function"},"subdomain":{"name":"ImpactModels","slug":"subdomain-impactmodels"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisModels","slug":"domain-analysismodels"},"entity":{"name":"TestCoverageMapMetadataFromJSON","slug":"fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjson","type":"Function"},"subdomain":{"name":"ImpactMetrics","slug":"subdomain-impactmetrics"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/datamodels.html">DataModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/impactmodels.html">ImpactModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/analysismodels.html">AnalysisModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/impactmetrics.html">ImpactMetrics</a><span class="arch-sep">&rarr;</span>
             <span>TestCoverageMapMetadataFromJSON() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,12 +959,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  84bba23c_bbed_874f_a04f_4da215fa0872["TestCoverageMapMetadataFromJSON()"]
-  0aff6bc0_9f52_5090_0842_4755b280e5ec["TestCoverageMapResponseFromJSONTyped()"]
-  0aff6bc0_9f52_5090_0842_4755b280e5ec -->|calls| 84bba23c_bbed_874f_a04f_4da215fa0872
-  fd0ffa9f_4f57_5c22_50e0_95109efb3c50["TestCoverageMapMetadataFromJSONTyped()"]
-  84bba23c_bbed_874f_a04f_4da215fa0872 -->|calls| fd0ffa9f_4f57_5c22_50e0_95109efb3c50
-  style 84bba23c_bbed_874f_a04f_4da215fa0872 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  e78b211c_7ed2_e404_01a2_a17cb1d16b32["TestCoverageMapMetadataFromJSON()"]
+  d52d5f54_2e94_2315_efaf_8635b4b3fccc["TestCoverageMapResponseFromJSONTyped()"]
+  d52d5f54_2e94_2315_efaf_8635b4b3fccc -->|calls| e78b211c_7ed2_e404_01a2_a17cb1d16b32
+  7a8f9282_e1d6_31d2_9b19_917172cf78bf["TestCoverageMapMetadataFromJSONTyped()"]
+  e78b211c_7ed2_e404_01a2_a17cb1d16b32 -->|calls| 7a8f9282_e1d6_31d2_9b19_917172cf78bf
+  style e78b211c_7ed2_e404_01a2_a17cb1d16b32 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -972,7 +972,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjson"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"84bba23c:bbed:874f:a04f:4da215fa0872","label":"TestCoverageMapMetadataFromJSON","type":"Function","slug":"fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"fd0ffa9f:4f57:5c22:50e0:95109efb3c50","label":"TestCoverageMapMetadataFromJSONTyped","type":"Function","slug":"fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjsontyped","lc":18,"lang":"typescript","cbc":1},{"id":"0aff6bc0:9f52:5090:0842:4755b280e5ec","label":"TestCoverageMapResponseFromJSONTyped","type":"Function","slug":"fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjsontyped","lc":14,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:DataModels","label":"DataModels","type":"Domain","slug":"domain-datamodels"},{"id":"subdomain:DataModels:ImpactModels","label":"ImpactModels","type":"Subdomain","slug":"subdomain-impactmodels"}],"edges":[{"source":"84bba23c:bbed:874f:a04f:4da215fa0872","target":"fd0ffa9f:4f57:5c22:50e0:95109efb3c50","type":"calls"},{"source":"0aff6bc0:9f52:5090:0842:4755b280e5ec","target":"84bba23c:bbed:874f:a04f:4da215fa0872","type":"calls"},{"source":"84bba23c:bbed:874f:a04f:4da215fa0872","target":"domain:DataModels","type":"belongsTo"},{"source":"84bba23c:bbed:874f:a04f:4da215fa0872","target":"subdomain:DataModels:ImpactModels","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"e78b211c:7ed2:e404:01a2:a17cb1d16b32","label":"TestCoverageMapMetadataFromJSON","type":"Function","slug":"fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"7a8f9282:e1d6:31d2:9b19:917172cf78bf","label":"TestCoverageMapMetadataFromJSONTyped","type":"Function","slug":"fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjsontyped","lc":18,"lang":"typescript","cbc":1},{"id":"d52d5f54:2e94:2315:efaf:8635b4b3fccc","label":"TestCoverageMapResponseFromJSONTyped","type":"Function","slug":"fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjsontyped","lc":14,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:AnalysisModels","label":"AnalysisModels","type":"Domain","slug":"domain-analysismodels"},{"id":"subdomain:AnalysisModels:ImpactMetrics","label":"ImpactMetrics","type":"Subdomain","slug":"subdomain-impactmetrics"}],"edges":[{"source":"e78b211c:7ed2:e404:01a2:a17cb1d16b32","target":"7a8f9282:e1d6:31d2:9b19:917172cf78bf","type":"calls"},{"source":"d52d5f54:2e94:2315:efaf:8635b4b3fccc","target":"e78b211c:7ed2:e404:01a2:a17cb1d16b32","type":"calls"},{"source":"e78b211c:7ed2:e404:01a2:a17cb1d16b32","target":"domain:AnalysisModels","type":"belongsTo"},{"source":"e78b211c:7ed2:e404:01a2:a17cb1d16b32","target":"subdomain:AnalysisModels:ImpactMetrics","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -996,14 +996,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-datamodels.html">DataModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-analysismodels.html">AnalysisModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-impactmodels.html">ImpactModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-impactmetrics.html">ImpactMetrics</a></li></ul>
     </div>
     
 

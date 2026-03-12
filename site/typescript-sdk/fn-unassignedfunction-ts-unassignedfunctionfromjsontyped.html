@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/datamodels.html" class="pill pill-green">DataModels</a>
-        <a href="/typescript-sdk/subdomain/impactmodels.html" class="pill pill-orange">ImpactModels</a>
+        <a href="/typescript-sdk/domain/analysismodels.html" class="pill pill-green">AnalysisModels</a>
+        <a href="/typescript-sdk/subdomain/impactmetrics.html" class="pill pill-orange">ImpactMetrics</a>
         
         
         
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DataModels","slug":"domain-datamodels"},"entity":{"name":"UnassignedFunctionFromJSONTyped","slug":"fn-unassignedfunction-ts-unassignedfunctionfromjsontyped","type":"Function"},"subdomain":{"name":"ImpactModels","slug":"subdomain-impactmodels"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisModels","slug":"domain-analysismodels"},"entity":{"name":"UnassignedFunctionFromJSONTyped","slug":"fn-unassignedfunction-ts-unassignedfunctionfromjsontyped","type":"Function"},"subdomain":{"name":"ImpactMetrics","slug":"subdomain-impactmetrics"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/datamodels.html">DataModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/impactmodels.html">ImpactModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/analysismodels.html">AnalysisModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/impactmetrics.html">ImpactMetrics</a><span class="arch-sep">&rarr;</span>
             <span>UnassignedFunctionFromJSONTyped() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,10 +959,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  a40a6576_624f_d760_b6bb_86c9616f8b75["UnassignedFunctionFromJSONTyped()"]
-  9732187d_c475_eca1_e195_30173f05cd17["UnassignedFunctionFromJSON()"]
-  9732187d_c475_eca1_e195_30173f05cd17 -->|calls| a40a6576_624f_d760_b6bb_86c9616f8b75
-  style a40a6576_624f_d760_b6bb_86c9616f8b75 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  43a3e322_becb_97a2_eedb_4000b5d45d95["UnassignedFunctionFromJSONTyped()"]
+  b3ed838f_1b60_5ac8_7ae2_d3ba1f0b4550["UnassignedFunctionFromJSON()"]
+  b3ed838f_1b60_5ac8_7ae2_d3ba1f0b4550 -->|calls| 43a3e322_becb_97a2_eedb_4000b5d45d95
+  style 43a3e322_becb_97a2_eedb_4000b5d45d95 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -970,7 +970,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-unassignedfunction-ts-unassignedfunctionfromjsontyped"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"a40a6576:624f:d760:b6bb:86c9616f8b75","label":"UnassignedFunctionFromJSONTyped","type":"Function","slug":"fn-unassignedfunction-ts-unassignedfunctionfromjsontyped","lc":10,"lang":"typescript","cbc":1},{"id":"9732187d:c475:eca1:e195:30173f05cd17","label":"UnassignedFunctionFromJSON","type":"Function","slug":"fn-unassignedfunction-ts-unassignedfunctionfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:DataModels","label":"DataModels","type":"Domain","slug":"domain-datamodels"},{"id":"subdomain:DataModels:ImpactModels","label":"ImpactModels","type":"Subdomain","slug":"subdomain-impactmodels"}],"edges":[{"source":"9732187d:c475:eca1:e195:30173f05cd17","target":"a40a6576:624f:d760:b6bb:86c9616f8b75","type":"calls"},{"source":"a40a6576:624f:d760:b6bb:86c9616f8b75","target":"domain:DataModels","type":"belongsTo"},{"source":"a40a6576:624f:d760:b6bb:86c9616f8b75","target":"subdomain:DataModels:ImpactModels","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"43a3e322:becb:97a2:eedb:4000b5d45d95","label":"UnassignedFunctionFromJSONTyped","type":"Function","slug":"fn-unassignedfunction-ts-unassignedfunctionfromjsontyped","lc":10,"lang":"typescript","cbc":1},{"id":"b3ed838f:1b60:5ac8:7ae2:d3ba1f0b4550","label":"UnassignedFunctionFromJSON","type":"Function","slug":"fn-unassignedfunction-ts-unassignedfunctionfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:AnalysisModels","label":"AnalysisModels","type":"Domain","slug":"domain-analysismodels"},{"id":"subdomain:AnalysisModels:ImpactMetrics","label":"ImpactMetrics","type":"Subdomain","slug":"subdomain-impactmetrics"}],"edges":[{"source":"b3ed838f:1b60:5ac8:7ae2:d3ba1f0b4550","target":"43a3e322:becb:97a2:eedb:4000b5d45d95","type":"calls"},{"source":"43a3e322:becb:97a2:eedb:4000b5d45d95","target":"domain:AnalysisModels","type":"belongsTo"},{"source":"43a3e322:becb:97a2:eedb:4000b5d45d95","target":"subdomain:AnalysisModels:ImpactMetrics","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1001,14 +1001,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-datamodels.html">DataModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-analysismodels.html">AnalysisModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-impactmodels.html">ImpactModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-impactmetrics.html">ImpactMetrics</a></li></ul>
     </div>
     
 

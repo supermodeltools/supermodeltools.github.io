@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/supermodelsdk.html" class="pill pill-green">SupermodelSDK</a>
-        <a href="/typescript-sdk/subdomain/asyncclient.html" class="pill pill-orange">AsyncClient</a>
+        <a href="/typescript-sdk/domain/supermodelapi.html" class="pill pill-green">SupermodelAPI</a>
+        <a href="/typescript-sdk/subdomain/dependencyanalysis.html" class="pill pill-orange">DependencyAnalysis</a>
         
         
         
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelSDK","slug":"domain-supermodelsdk"},"entity":{"name":"sleepWithAbort","slug":"fn-async-ts-sleepwithabort","type":"Function"},"subdomain":{"name":"AsyncClient","slug":"subdomain-asyncclient"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelAPI","slug":"domain-supermodelapi"},"entity":{"name":"sleepWithAbort","slug":"fn-async-ts-sleepwithabort","type":"Function"},"subdomain":{"name":"DependencyAnalysis","slug":"subdomain-dependencyanalysis"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/supermodelsdk.html">SupermodelSDK</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/asyncclient.html">AsyncClient</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/supermodelapi.html">SupermodelAPI</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/dependencyanalysis.html">DependencyAnalysis</a><span class="arch-sep">&rarr;</span>
             <span>sleepWithAbort() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,10 +959,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  b360438e_7e9b_4364_da3f_64c45f270350["sleepWithAbort()"]
-  91a48afc_cee2_70c8_3a40_b3eae703c596["pollUntilComplete()"]
-  91a48afc_cee2_70c8_3a40_b3eae703c596 -->|calls| b360438e_7e9b_4364_da3f_64c45f270350
-  style b360438e_7e9b_4364_da3f_64c45f270350 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  802df12c_bd3a_f8c1_56d0_beef7ffccdac["sleepWithAbort()"]
+  6ee22827_9a7b_3cb3_8e73_2c18c7619074["pollUntilComplete()"]
+  6ee22827_9a7b_3cb3_8e73_2c18c7619074 -->|calls| 802df12c_bd3a_f8c1_56d0_beef7ffccdac
+  style 802df12c_bd3a_f8c1_56d0_beef7ffccdac fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -970,7 +970,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-async-ts-sleepwithabort"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"b360438e:7e9b:4364:da3f:64c45f270350","label":"sleepWithAbort","type":"Function","slug":"fn-async-ts-sleepwithabort","lc":29,"lang":"typescript","cbc":1},{"id":"91a48afc:cee2:70c8:3a40:b3eae703c596","label":"pollUntilComplete","type":"Function","slug":"fn-async-ts-polluntilcomplete","lc":69,"lang":"typescript","cc":1},{"id":"domain:SupermodelSDK","label":"SupermodelSDK","type":"Domain","slug":"domain-supermodelsdk"},{"id":"subdomain:SupermodelSDK:AsyncClient","label":"AsyncClient","type":"Subdomain","slug":"subdomain-asyncclient"}],"edges":[{"source":"91a48afc:cee2:70c8:3a40:b3eae703c596","target":"b360438e:7e9b:4364:da3f:64c45f270350","type":"calls"},{"source":"b360438e:7e9b:4364:da3f:64c45f270350","target":"domain:SupermodelSDK","type":"belongsTo"},{"source":"b360438e:7e9b:4364:da3f:64c45f270350","target":"subdomain:SupermodelSDK:AsyncClient","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"802df12c:bd3a:f8c1:56d0:beef7ffccdac","label":"sleepWithAbort","type":"Function","slug":"fn-async-ts-sleepwithabort","lc":29,"lang":"typescript","cbc":1},{"id":"6ee22827:9a7b:3cb3:8e73:2c18c7619074","label":"pollUntilComplete","type":"Function","slug":"fn-async-ts-polluntilcomplete","lc":69,"lang":"typescript","cc":1},{"id":"domain:SupermodelAPI","label":"SupermodelAPI","type":"Domain","slug":"domain-supermodelapi"},{"id":"subdomain:SupermodelAPI:DependencyAnalysis","label":"DependencyAnalysis","type":"Subdomain","slug":"subdomain-dependencyanalysis"}],"edges":[{"source":"6ee22827:9a7b:3cb3:8e73:2c18c7619074","target":"802df12c:bd3a:f8c1:56d0:beef7ffccdac","type":"calls"},{"source":"802df12c:bd3a:f8c1:56d0:beef7ffccdac","target":"domain:SupermodelAPI","type":"belongsTo"},{"source":"802df12c:bd3a:f8c1:56d0:beef7ffccdac","target":"subdomain:SupermodelAPI:DependencyAnalysis","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1020,14 +1020,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-supermodelsdk.html">SupermodelSDK</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-supermodelapi.html">SupermodelAPI</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-asyncclient.html">AsyncClient</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-dependencyanalysis.html">DependencyAnalysis</a></li></ul>
     </div>
     
 

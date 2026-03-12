@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/datamodels.html" class="pill pill-green">DataModels</a>
-        <a href="/typescript-sdk/subdomain/impactmodels.html" class="pill pill-orange">ImpactModels</a>
+        <a href="/typescript-sdk/domain/analysismodels.html" class="pill pill-green">AnalysisModels</a>
+        <a href="/typescript-sdk/subdomain/impactmetrics.html" class="pill pill-orange">ImpactMetrics</a>
         
         
         <span class="pill">calls 1</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DataModels","slug":"domain-datamodels"},"entity":{"name":"NearestTestedCallerFromJSON","slug":"fn-nearesttestedcaller-ts-nearesttestedcallerfromjson","type":"Function"},"subdomain":{"name":"ImpactModels","slug":"subdomain-impactmodels"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisModels","slug":"domain-analysismodels"},"entity":{"name":"NearestTestedCallerFromJSON","slug":"fn-nearesttestedcaller-ts-nearesttestedcallerfromjson","type":"Function"},"subdomain":{"name":"ImpactMetrics","slug":"subdomain-impactmetrics"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/datamodels.html">DataModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/impactmodels.html">ImpactModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/analysismodels.html">AnalysisModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/impactmetrics.html">ImpactMetrics</a><span class="arch-sep">&rarr;</span>
             <span>NearestTestedCallerFromJSON() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,12 +959,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  7c4028aa_f10d_0182_24f9_f8128817136f["NearestTestedCallerFromJSON()"]
-  201d2d30_4165_55c9_02f7_1ce4c86d9d50["UntestedFunctionFromJSONTyped()"]
-  201d2d30_4165_55c9_02f7_1ce4c86d9d50 -->|calls| 7c4028aa_f10d_0182_24f9_f8128817136f
-  b38e580b_57b9_4b6c_ffbb_9c523cb8ffa5["NearestTestedCallerFromJSONTyped()"]
-  7c4028aa_f10d_0182_24f9_f8128817136f -->|calls| b38e580b_57b9_4b6c_ffbb_9c523cb8ffa5
-  style 7c4028aa_f10d_0182_24f9_f8128817136f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  4d0cb7e0_bcc0_bab8_7665_f05b12c30721["NearestTestedCallerFromJSON()"]
+  36b0166f_bba1_cca7_fbc5_e083afeccf64["UntestedFunctionFromJSONTyped()"]
+  36b0166f_bba1_cca7_fbc5_e083afeccf64 -->|calls| 4d0cb7e0_bcc0_bab8_7665_f05b12c30721
+  16ecaa1a_13a5_aece_4278_723b676d2039["NearestTestedCallerFromJSONTyped()"]
+  4d0cb7e0_bcc0_bab8_7665_f05b12c30721 -->|calls| 16ecaa1a_13a5_aece_4278_723b676d2039
+  style 4d0cb7e0_bcc0_bab8_7665_f05b12c30721 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -972,7 +972,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-nearesttestedcaller-ts-nearesttestedcallerfromjson"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"7c4028aa:f10d:0182:24f9:f8128817136f","label":"NearestTestedCallerFromJSON","type":"Function","slug":"fn-nearesttestedcaller-ts-nearesttestedcallerfromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"b38e580b:57b9:4b6c:ffbb:9c523cb8ffa5","label":"NearestTestedCallerFromJSONTyped","type":"Function","slug":"fn-nearesttestedcaller-ts-nearesttestedcallerfromjsontyped","lc":11,"lang":"typescript","cbc":1},{"id":"201d2d30:4165:55c9:02f7:1ce4c86d9d50","label":"UntestedFunctionFromJSONTyped","type":"Function","slug":"fn-untestedfunction-ts-untestedfunctionfromjsontyped","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:DataModels","label":"DataModels","type":"Domain","slug":"domain-datamodels"},{"id":"subdomain:DataModels:ImpactModels","label":"ImpactModels","type":"Subdomain","slug":"subdomain-impactmodels"}],"edges":[{"source":"7c4028aa:f10d:0182:24f9:f8128817136f","target":"b38e580b:57b9:4b6c:ffbb:9c523cb8ffa5","type":"calls"},{"source":"201d2d30:4165:55c9:02f7:1ce4c86d9d50","target":"7c4028aa:f10d:0182:24f9:f8128817136f","type":"calls"},{"source":"7c4028aa:f10d:0182:24f9:f8128817136f","target":"domain:DataModels","type":"belongsTo"},{"source":"7c4028aa:f10d:0182:24f9:f8128817136f","target":"subdomain:DataModels:ImpactModels","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"4d0cb7e0:bcc0:bab8:7665:f05b12c30721","label":"NearestTestedCallerFromJSON","type":"Function","slug":"fn-nearesttestedcaller-ts-nearesttestedcallerfromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"16ecaa1a:13a5:aece:4278:723b676d2039","label":"NearestTestedCallerFromJSONTyped","type":"Function","slug":"fn-nearesttestedcaller-ts-nearesttestedcallerfromjsontyped","lc":11,"lang":"typescript","cbc":1},{"id":"36b0166f:bba1:cca7:fbc5:e083afeccf64","label":"UntestedFunctionFromJSONTyped","type":"Function","slug":"fn-untestedfunction-ts-untestedfunctionfromjsontyped","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:AnalysisModels","label":"AnalysisModels","type":"Domain","slug":"domain-analysismodels"},{"id":"subdomain:AnalysisModels:ImpactMetrics","label":"ImpactMetrics","type":"Subdomain","slug":"subdomain-impactmetrics"}],"edges":[{"source":"4d0cb7e0:bcc0:bab8:7665:f05b12c30721","target":"16ecaa1a:13a5:aece:4278:723b676d2039","type":"calls"},{"source":"36b0166f:bba1:cca7:fbc5:e083afeccf64","target":"4d0cb7e0:bcc0:bab8:7665:f05b12c30721","type":"calls"},{"source":"4d0cb7e0:bcc0:bab8:7665:f05b12c30721","target":"domain:AnalysisModels","type":"belongsTo"},{"source":"4d0cb7e0:bcc0:bab8:7665:f05b12c30721","target":"subdomain:AnalysisModels:ImpactMetrics","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -996,14 +996,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-datamodels.html">DataModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-analysismodels.html">AnalysisModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-impactmodels.html">ImpactModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-impactmetrics.html">ImpactMetrics</a></li></ul>
     </div>
     
 

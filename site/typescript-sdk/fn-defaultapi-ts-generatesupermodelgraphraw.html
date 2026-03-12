@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/analysisapi.html" class="pill pill-green">AnalysisAPI</a>
-        <a href="/typescript-sdk/subdomain/callgraph.html" class="pill pill-orange">CallGraph</a>
+        <a href="/typescript-sdk/domain/supermodelapi.html" class="pill pill-green">SupermodelAPI</a>
+        <a href="/typescript-sdk/subdomain/graphgeneration.html" class="pill pill-orange">GraphGeneration</a>
         
         
         <span class="pill">calls 4</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisAPI","slug":"domain-analysisapi"},"entity":{"name":"generateSupermodelGraphRaw","slug":"fn-defaultapi-ts-generatesupermodelgraphraw","type":"Function"},"subdomain":{"name":"CallGraph","slug":"subdomain-callgraph"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelAPI","slug":"domain-supermodelapi"},"entity":{"name":"generateSupermodelGraphRaw","slug":"fn-defaultapi-ts-generatesupermodelgraphraw","type":"Function"},"subdomain":{"name":"GraphGeneration","slug":"subdomain-graphgeneration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/analysisapi.html">AnalysisAPI</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/callgraph.html">CallGraph</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/supermodelapi.html">SupermodelAPI</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/graphgeneration.html">GraphGeneration</a><span class="arch-sep">&rarr;</span>
             <span>generateSupermodelGraphRaw() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,18 +959,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  27af3bc1_fc0c_e510_19ff_49ae16683215["generateSupermodelGraphRaw()"]
-  b128df6d_fa70_65ad_2df9_a18e6bef0983["generateSupermodelGraph()"]
-  b128df6d_fa70_65ad_2df9_a18e6bef0983 -->|calls| 27af3bc1_fc0c_e510_19ff_49ae16683215
-  a2bc51f9_c8bf_dcc0_5568_729072e46d90["request()"]
-  27af3bc1_fc0c_e510_19ff_49ae16683215 -->|calls| a2bc51f9_c8bf_dcc0_5568_729072e46d90
-  b128df6d_fa70_65ad_2df9_a18e6bef0983["generateSupermodelGraph()"]
-  27af3bc1_fc0c_e510_19ff_49ae16683215 -->|calls| b128df6d_fa70_65ad_2df9_a18e6bef0983
-  db588e68_7c12_a901_441d_64b9156b1312["apiKey()"]
-  27af3bc1_fc0c_e510_19ff_49ae16683215 -->|calls| db588e68_7c12_a901_441d_64b9156b1312
-  c5d42654_746c_081e_fe53_c67bca57ee72["canConsumeForm()"]
-  27af3bc1_fc0c_e510_19ff_49ae16683215 -->|calls| c5d42654_746c_081e_fe53_c67bca57ee72
-  style 27af3bc1_fc0c_e510_19ff_49ae16683215 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  5ee1195f_0ca6_1dfd_804d_b582fdbd7489["generateSupermodelGraphRaw()"]
+  7dce0da8_a276_1346_7bdb_388aa26a7054["generateSupermodelGraph()"]
+  7dce0da8_a276_1346_7bdb_388aa26a7054 -->|calls| 5ee1195f_0ca6_1dfd_804d_b582fdbd7489
+  4cddfc34_af70_e619_0e25_50c3512134d8["request()"]
+  5ee1195f_0ca6_1dfd_804d_b582fdbd7489 -->|calls| 4cddfc34_af70_e619_0e25_50c3512134d8
+  7dce0da8_a276_1346_7bdb_388aa26a7054["generateSupermodelGraph()"]
+  5ee1195f_0ca6_1dfd_804d_b582fdbd7489 -->|calls| 7dce0da8_a276_1346_7bdb_388aa26a7054
+  8fcbe179_edef_3658_18a3_ad43a85e1bde["apiKey()"]
+  5ee1195f_0ca6_1dfd_804d_b582fdbd7489 -->|calls| 8fcbe179_edef_3658_18a3_ad43a85e1bde
+  29158857_1256_c446_d8a2_55af8a6659cc["canConsumeForm()"]
+  5ee1195f_0ca6_1dfd_804d_b582fdbd7489 -->|calls| 29158857_1256_c446_d8a2_55af8a6659cc
+  style 5ee1195f_0ca6_1dfd_804d_b582fdbd7489 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -978,7 +978,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-defaultapi-ts-generatesupermodelgraphraw"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"27af3bc1:fc0c:e510:19ff:49ae16683215","label":"generateSupermodelGraphRaw","type":"Function","slug":"fn-defaultapi-ts-generatesupermodelgraphraw","lc":57,"lang":"typescript","cc":4,"cbc":1},{"id":"a2bc51f9:c8bf:dcc0:5568:729072e46d90","label":"request","type":"Function","slug":"fn-runtime-ts-request","lc":8,"lang":"typescript","cc":2,"cbc":9},{"id":"b128df6d:fa70:65ad:2df9:a18e6bef0983","label":"generateSupermodelGraph","type":"Function","slug":"fn-defaultapi-ts-generatesupermodelgraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"db588e68:7c12:a901:441d:64b9156b1312","label":"apiKey","type":"Function","slug":"fn-runtime-ts-apikey","lc":7,"lang":"typescript","cbc":9},{"id":"c5d42654:746c:081e:fe53:c67bca57ee72","label":"canConsumeForm","type":"Function","slug":"fn-runtime-ts-canconsumeform","lc":8,"lang":"typescript","cbc":9},{"id":"domain:AnalysisAPI","label":"AnalysisAPI","type":"Domain","slug":"domain-analysisapi"},{"id":"subdomain:AnalysisAPI:CallGraph","label":"CallGraph","type":"Subdomain","slug":"subdomain-callgraph"}],"edges":[{"source":"27af3bc1:fc0c:e510:19ff:49ae16683215","target":"a2bc51f9:c8bf:dcc0:5568:729072e46d90","type":"calls"},{"source":"27af3bc1:fc0c:e510:19ff:49ae16683215","target":"b128df6d:fa70:65ad:2df9:a18e6bef0983","type":"calls"},{"source":"27af3bc1:fc0c:e510:19ff:49ae16683215","target":"db588e68:7c12:a901:441d:64b9156b1312","type":"calls"},{"source":"27af3bc1:fc0c:e510:19ff:49ae16683215","target":"c5d42654:746c:081e:fe53:c67bca57ee72","type":"calls"},{"source":"b128df6d:fa70:65ad:2df9:a18e6bef0983","target":"27af3bc1:fc0c:e510:19ff:49ae16683215","type":"calls"},{"source":"27af3bc1:fc0c:e510:19ff:49ae16683215","target":"domain:AnalysisAPI","type":"belongsTo"},{"source":"27af3bc1:fc0c:e510:19ff:49ae16683215","target":"subdomain:AnalysisAPI:CallGraph","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"5ee1195f:0ca6:1dfd:804d:b582fdbd7489","label":"generateSupermodelGraphRaw","type":"Function","slug":"fn-defaultapi-ts-generatesupermodelgraphraw","lc":57,"lang":"typescript","cc":4,"cbc":1},{"id":"4cddfc34:af70:e619:0e25:50c3512134d8","label":"request","type":"Function","slug":"fn-runtime-ts-request","lc":8,"lang":"typescript","cc":2,"cbc":9},{"id":"7dce0da8:a276:1346:7bdb:388aa26a7054","label":"generateSupermodelGraph","type":"Function","slug":"fn-defaultapi-ts-generatesupermodelgraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"8fcbe179:edef:3658:18a3:ad43a85e1bde","label":"apiKey","type":"Function","slug":"fn-runtime-ts-apikey","lc":7,"lang":"typescript","cbc":9},{"id":"29158857:1256:c446:d8a2:55af8a6659cc","label":"canConsumeForm","type":"Function","slug":"fn-runtime-ts-canconsumeform","lc":8,"lang":"typescript","cbc":9},{"id":"domain:SupermodelAPI","label":"SupermodelAPI","type":"Domain","slug":"domain-supermodelapi"},{"id":"subdomain:SupermodelAPI:GraphGeneration","label":"GraphGeneration","type":"Subdomain","slug":"subdomain-graphgeneration"}],"edges":[{"source":"5ee1195f:0ca6:1dfd:804d:b582fdbd7489","target":"4cddfc34:af70:e619:0e25:50c3512134d8","type":"calls"},{"source":"5ee1195f:0ca6:1dfd:804d:b582fdbd7489","target":"7dce0da8:a276:1346:7bdb:388aa26a7054","type":"calls"},{"source":"5ee1195f:0ca6:1dfd:804d:b582fdbd7489","target":"8fcbe179:edef:3658:18a3:ad43a85e1bde","type":"calls"},{"source":"5ee1195f:0ca6:1dfd:804d:b582fdbd7489","target":"29158857:1256:c446:d8a2:55af8a6659cc","type":"calls"},{"source":"7dce0da8:a276:1346:7bdb:388aa26a7054","target":"5ee1195f:0ca6:1dfd:804d:b582fdbd7489","type":"calls"},{"source":"5ee1195f:0ca6:1dfd:804d:b582fdbd7489","target":"domain:SupermodelAPI","type":"belongsTo"},{"source":"5ee1195f:0ca6:1dfd:804d:b582fdbd7489","target":"subdomain:SupermodelAPI:GraphGeneration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1056,14 +1056,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-analysisapi.html">AnalysisAPI</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-supermodelapi.html">SupermodelAPI</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-callgraph.html">CallGraph</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-graphgeneration.html">GraphGeneration</a></li></ul>
     </div>
     
 

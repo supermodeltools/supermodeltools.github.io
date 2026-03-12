@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/datamodels.html" class="pill pill-green">DataModels</a>
-        <a href="/typescript-sdk/subdomain/domainclassification.html" class="pill pill-orange">DomainClassification</a>
+        <a href="/typescript-sdk/domain/analysismodels.html" class="pill pill-green">AnalysisModels</a>
+        <a href="/typescript-sdk/subdomain/deadcodemetrics.html" class="pill pill-orange">DeadCodeMetrics</a>
         
         
         <span class="pill">calls 1</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"DataModels","slug":"domain-datamodels"},"entity":{"name":"DeadCodeAnalysisResponseAsyncFromJSONTyped","slug":"fn-deadcodeanalysisresponseasync-ts-deadcodeanalysisresponseasyncfromjsontyped","type":"Function"},"subdomain":{"name":"DomainClassification","slug":"subdomain-domainclassification"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisModels","slug":"domain-analysismodels"},"entity":{"name":"DeadCodeAnalysisResponseAsyncFromJSONTyped","slug":"fn-deadcodeanalysisresponseasync-ts-deadcodeanalysisresponseasyncfromjsontyped","type":"Function"},"subdomain":{"name":"DeadCodeMetrics","slug":"subdomain-deadcodemetrics"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/datamodels.html">DataModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/domainclassification.html">DomainClassification</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/analysismodels.html">AnalysisModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/deadcodemetrics.html">DeadCodeMetrics</a><span class="arch-sep">&rarr;</span>
             <span>DeadCodeAnalysisResponseAsyncFromJSONTyped() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,12 +959,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ed97d926_c0aa_81bf_274d_924bd54e4954["DeadCodeAnalysisResponseAsyncFromJSONTyped()"]
-  ed2e1074_28af_eb25_a3b0_9a85eda1fafb["DeadCodeAnalysisResponseAsyncFromJSON()"]
-  ed2e1074_28af_eb25_a3b0_9a85eda1fafb -->|calls| ed97d926_c0aa_81bf_274d_924bd54e4954
-  debfc5cd_4012_2b84_871b_bce4015d799e["DeadCodeAnalysisResponseFromJSON()"]
-  ed97d926_c0aa_81bf_274d_924bd54e4954 -->|calls| debfc5cd_4012_2b84_871b_bce4015d799e
-  style ed97d926_c0aa_81bf_274d_924bd54e4954 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d08fe428_e350_f193_4df6_f8313dbe622c["DeadCodeAnalysisResponseAsyncFromJSONTyped()"]
+  801e7be5_c146_8050_1cfa_eb3f4e160d63["DeadCodeAnalysisResponseAsyncFromJSON()"]
+  801e7be5_c146_8050_1cfa_eb3f4e160d63 -->|calls| d08fe428_e350_f193_4df6_f8313dbe622c
+  8c27450d_a642_5180_04e5_47a336796d71["DeadCodeAnalysisResponseFromJSON()"]
+  d08fe428_e350_f193_4df6_f8313dbe622c -->|calls| 8c27450d_a642_5180_04e5_47a336796d71
+  style d08fe428_e350_f193_4df6_f8313dbe622c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -972,7 +972,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-deadcodeanalysisresponseasync-ts-deadcodeanalysisresponseasyncfromjsontyped"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ed97d926:c0aa:81bf:274d:924bd54e4954","label":"DeadCodeAnalysisResponseAsyncFromJSONTyped","type":"Function","slug":"fn-deadcodeanalysisresponseasync-ts-deadcodeanalysisresponseasyncfromjsontyped","lc":13,"lang":"typescript","cc":1,"cbc":1},{"id":"debfc5cd:4012:2b84:871b:bce4015d799e","label":"DeadCodeAnalysisResponseFromJSON","type":"Function","slug":"fn-deadcodeanalysisresponse-ts-deadcodeanalysisresponsefromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"ed2e1074:28af:eb25:a3b0:9a85eda1fafb","label":"DeadCodeAnalysisResponseAsyncFromJSON","type":"Function","slug":"fn-deadcodeanalysisresponseasync-ts-deadcodeanalysisresponseasyncfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:DataModels","label":"DataModels","type":"Domain","slug":"domain-datamodels"},{"id":"subdomain:DataModels:DomainClassification","label":"DomainClassification","type":"Subdomain","slug":"subdomain-domainclassification"}],"edges":[{"source":"ed97d926:c0aa:81bf:274d:924bd54e4954","target":"debfc5cd:4012:2b84:871b:bce4015d799e","type":"calls"},{"source":"ed2e1074:28af:eb25:a3b0:9a85eda1fafb","target":"ed97d926:c0aa:81bf:274d:924bd54e4954","type":"calls"},{"source":"ed97d926:c0aa:81bf:274d:924bd54e4954","target":"domain:DataModels","type":"belongsTo"},{"source":"ed97d926:c0aa:81bf:274d:924bd54e4954","target":"subdomain:DataModels:DomainClassification","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d08fe428:e350:f193:4df6:f8313dbe622c","label":"DeadCodeAnalysisResponseAsyncFromJSONTyped","type":"Function","slug":"fn-deadcodeanalysisresponseasync-ts-deadcodeanalysisresponseasyncfromjsontyped","lc":13,"lang":"typescript","cc":1,"cbc":1},{"id":"8c27450d:a642:5180:04e5:47a336796d71","label":"DeadCodeAnalysisResponseFromJSON","type":"Function","slug":"fn-deadcodeanalysisresponse-ts-deadcodeanalysisresponsefromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"801e7be5:c146:8050:1cfa:eb3f4e160d63","label":"DeadCodeAnalysisResponseAsyncFromJSON","type":"Function","slug":"fn-deadcodeanalysisresponseasync-ts-deadcodeanalysisresponseasyncfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:AnalysisModels","label":"AnalysisModels","type":"Domain","slug":"domain-analysismodels"},{"id":"subdomain:AnalysisModels:DeadCodeMetrics","label":"DeadCodeMetrics","type":"Subdomain","slug":"subdomain-deadcodemetrics"}],"edges":[{"source":"d08fe428:e350:f193:4df6:f8313dbe622c","target":"8c27450d:a642:5180:04e5:47a336796d71","type":"calls"},{"source":"801e7be5:c146:8050:1cfa:eb3f4e160d63","target":"d08fe428:e350:f193:4df6:f8313dbe622c","type":"calls"},{"source":"d08fe428:e350:f193:4df6:f8313dbe622c","target":"domain:AnalysisModels","type":"belongsTo"},{"source":"d08fe428:e350:f193:4df6:f8313dbe622c","target":"subdomain:AnalysisModels:DeadCodeMetrics","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1006,14 +1006,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-datamodels.html">DataModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-analysismodels.html">AnalysisModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-domainclassification.html">DomainClassification</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-deadcodemetrics.html">DeadCodeMetrics</a></li></ul>
     </div>
     
 
