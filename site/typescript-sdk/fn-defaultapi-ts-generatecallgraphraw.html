@@ -867,7 +867,7 @@ a.pill:hover {
   <div class="container">
     <a href="/typescript-sdk/" class="site-brand">
       <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="#61B8BC"/>
       </svg>
       typescript-sdk Architecture Docs
     </a>
@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/supermodelapi.html" class="pill pill-green">SupermodelAPI</a>
-        <a href="/typescript-sdk/subdomain/endpoints.html" class="pill pill-orange">Endpoints</a>
+        <a href="/typescript-sdk/domain/apiclient.html" class="pill pill-green">ApiClient</a>
+        <a href="/typescript-sdk/subdomain/endpointmapping.html" class="pill pill-orange">EndpointMapping</a>
         
         
         <span class="pill">calls 4</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelAPI","slug":"domain-supermodelapi"},"entity":{"name":"generateCallGraphRaw","slug":"fn-defaultapi-ts-generatecallgraphraw","type":"Function"},"subdomain":{"name":"Endpoints","slug":"subdomain-endpoints"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"ApiClient","slug":"domain-apiclient"},"entity":{"name":"generateCallGraphRaw","slug":"fn-defaultapi-ts-generatecallgraphraw","type":"Function"},"subdomain":{"name":"EndpointMapping","slug":"subdomain-endpointmapping"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/supermodelapi.html">SupermodelAPI</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/endpoints.html">Endpoints</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/apiclient.html">ApiClient</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/endpointmapping.html">EndpointMapping</a><span class="arch-sep">&rarr;</span>
             <span>generateCallGraphRaw() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,18 +959,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  0c71a379_49dd_a526_83e7_98717503a765["generateCallGraphRaw()"]
-  41347204_f854_728c_bd25_e4c7cdfeb5a9["generateCallGraph()"]
-  41347204_f854_728c_bd25_e4c7cdfeb5a9 -->|calls| 0c71a379_49dd_a526_83e7_98717503a765
-  7b796b40_fa00_15e3_0fb3_be2f308dceb6["request()"]
-  0c71a379_49dd_a526_83e7_98717503a765 -->|calls| 7b796b40_fa00_15e3_0fb3_be2f308dceb6
-  41347204_f854_728c_bd25_e4c7cdfeb5a9["generateCallGraph()"]
-  0c71a379_49dd_a526_83e7_98717503a765 -->|calls| 41347204_f854_728c_bd25_e4c7cdfeb5a9
-  b4571296_9378_bfa1_7e50_2b6c3667682e["apiKey()"]
-  0c71a379_49dd_a526_83e7_98717503a765 -->|calls| b4571296_9378_bfa1_7e50_2b6c3667682e
-  8dbaa769_b383_3227_f4a0_1b5fd7d036a5["canConsumeForm()"]
-  0c71a379_49dd_a526_83e7_98717503a765 -->|calls| 8dbaa769_b383_3227_f4a0_1b5fd7d036a5
-  style 0c71a379_49dd_a526_83e7_98717503a765 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  b5251c23_5665_c63b_e95e_6a46ebe2bd39["generateCallGraphRaw()"]
+  ef4349a7_6d5c_bc85_d579_5e1e96a0c771["generateCallGraph()"]
+  ef4349a7_6d5c_bc85_d579_5e1e96a0c771 -->|calls| b5251c23_5665_c63b_e95e_6a46ebe2bd39
+  d2b37aac_4c6c_579a_010f_3af1c2e731bb["request()"]
+  b5251c23_5665_c63b_e95e_6a46ebe2bd39 -->|calls| d2b37aac_4c6c_579a_010f_3af1c2e731bb
+  ef4349a7_6d5c_bc85_d579_5e1e96a0c771["generateCallGraph()"]
+  b5251c23_5665_c63b_e95e_6a46ebe2bd39 -->|calls| ef4349a7_6d5c_bc85_d579_5e1e96a0c771
+  14d00795_d43b_1516_e90a_0a01db2448cd["apiKey()"]
+  b5251c23_5665_c63b_e95e_6a46ebe2bd39 -->|calls| 14d00795_d43b_1516_e90a_0a01db2448cd
+  1cc22721_7ca5_bb7b_4479_b336d3cfa23a["canConsumeForm()"]
+  b5251c23_5665_c63b_e95e_6a46ebe2bd39 -->|calls| 1cc22721_7ca5_bb7b_4479_b336d3cfa23a
+  style b5251c23_5665_c63b_e95e_6a46ebe2bd39 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -978,7 +978,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-defaultapi-ts-generatecallgraphraw"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"0c71a379:49dd:a526:83e7:98717503a765","label":"generateCallGraphRaw","type":"Function","slug":"fn-defaultapi-ts-generatecallgraphraw","lc":57,"lang":"typescript","cc":4,"cbc":1},{"id":"7b796b40:fa00:15e3:0fb3:be2f308dceb6","label":"request","type":"Function","slug":"fn-runtime-ts-request","lc":8,"lang":"typescript","cc":2,"cbc":9},{"id":"41347204:f854:728c:bd25:e4c7cdfeb5a9","label":"generateCallGraph","type":"Function","slug":"fn-defaultapi-ts-generatecallgraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"b4571296:9378:bfa1:7e50:2b6c3667682e","label":"apiKey","type":"Function","slug":"fn-runtime-ts-apikey","lc":7,"lang":"typescript","cbc":9},{"id":"8dbaa769:b383:3227:f4a0:1b5fd7d036a5","label":"canConsumeForm","type":"Function","slug":"fn-runtime-ts-canconsumeform","lc":8,"lang":"typescript","cbc":9},{"id":"domain:SupermodelAPI","label":"SupermodelAPI","type":"Domain","slug":"domain-supermodelapi"},{"id":"subdomain:SupermodelAPI:Endpoints","label":"Endpoints","type":"Subdomain","slug":"subdomain-endpoints"}],"edges":[{"source":"0c71a379:49dd:a526:83e7:98717503a765","target":"7b796b40:fa00:15e3:0fb3:be2f308dceb6","type":"calls"},{"source":"0c71a379:49dd:a526:83e7:98717503a765","target":"41347204:f854:728c:bd25:e4c7cdfeb5a9","type":"calls"},{"source":"0c71a379:49dd:a526:83e7:98717503a765","target":"b4571296:9378:bfa1:7e50:2b6c3667682e","type":"calls"},{"source":"0c71a379:49dd:a526:83e7:98717503a765","target":"8dbaa769:b383:3227:f4a0:1b5fd7d036a5","type":"calls"},{"source":"41347204:f854:728c:bd25:e4c7cdfeb5a9","target":"0c71a379:49dd:a526:83e7:98717503a765","type":"calls"},{"source":"0c71a379:49dd:a526:83e7:98717503a765","target":"domain:SupermodelAPI","type":"belongsTo"},{"source":"0c71a379:49dd:a526:83e7:98717503a765","target":"subdomain:SupermodelAPI:Endpoints","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"b5251c23:5665:c63b:e95e:6a46ebe2bd39","label":"generateCallGraphRaw","type":"Function","slug":"fn-defaultapi-ts-generatecallgraphraw","lc":57,"lang":"typescript","cc":4,"cbc":1},{"id":"d2b37aac:4c6c:579a:010f:3af1c2e731bb","label":"request","type":"Function","slug":"fn-runtime-ts-request","lc":8,"lang":"typescript","cc":2,"cbc":9},{"id":"ef4349a7:6d5c:bc85:d579:5e1e96a0c771","label":"generateCallGraph","type":"Function","slug":"fn-defaultapi-ts-generatecallgraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"14d00795:d43b:1516:e90a:0a01db2448cd","label":"apiKey","type":"Function","slug":"fn-runtime-ts-apikey","lc":7,"lang":"typescript","cbc":9},{"id":"1cc22721:7ca5:bb7b:4479:b336d3cfa23a","label":"canConsumeForm","type":"Function","slug":"fn-runtime-ts-canconsumeform","lc":8,"lang":"typescript","cbc":9},{"id":"domain:ApiClient","label":"ApiClient","type":"Domain","slug":"domain-apiclient"},{"id":"subdomain:ApiClient:EndpointMapping","label":"EndpointMapping","type":"Subdomain","slug":"subdomain-endpointmapping"}],"edges":[{"source":"b5251c23:5665:c63b:e95e:6a46ebe2bd39","target":"d2b37aac:4c6c:579a:010f:3af1c2e731bb","type":"calls"},{"source":"b5251c23:5665:c63b:e95e:6a46ebe2bd39","target":"ef4349a7:6d5c:bc85:d579:5e1e96a0c771","type":"calls"},{"source":"b5251c23:5665:c63b:e95e:6a46ebe2bd39","target":"14d00795:d43b:1516:e90a:0a01db2448cd","type":"calls"},{"source":"b5251c23:5665:c63b:e95e:6a46ebe2bd39","target":"1cc22721:7ca5:bb7b:4479:b336d3cfa23a","type":"calls"},{"source":"ef4349a7:6d5c:bc85:d579:5e1e96a0c771","target":"b5251c23:5665:c63b:e95e:6a46ebe2bd39","type":"calls"},{"source":"b5251c23:5665:c63b:e95e:6a46ebe2bd39","target":"domain:ApiClient","type":"belongsTo"},{"source":"b5251c23:5665:c63b:e95e:6a46ebe2bd39","target":"subdomain:ApiClient:EndpointMapping","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1056,14 +1056,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-supermodelapi.html">SupermodelAPI</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-apiclient.html">ApiClient</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-endpoints.html">Endpoints</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-endpointmapping.html">EndpointMapping</a></li></ul>
     </div>
     
 
