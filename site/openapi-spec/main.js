@@ -438,7 +438,8 @@ window.addEventListener("load", function() {
       var distributions = hubData.distributions || {};
       var hasAnyDist = Object.keys(distributions).some(function(k) { return distributions[k] && distributions[k].length > 0; });
       var hasTopEnts = hubData.topEntities && hubData.topEntities.length > 0;
-      if (!hasAnyDist && !hasTopEnts) {
+      var isDirectory = hubData.entryName === "Directory";
+      if (isDirectory && !hasAnyDist && !hasTopEnts) {
         var hubPanel = hubChartEl.closest(".chart-panel");
         if (hubPanel) hubPanel.style.display = "none";
       }
