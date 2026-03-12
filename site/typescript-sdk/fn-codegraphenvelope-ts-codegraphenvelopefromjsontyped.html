@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>CodeGraphEnvelopeFromJSONTyped() — typescript-sdk Function Reference | typescript-sdk Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the CodeGraphEnvelopeFromJSONTyped() function in CodeGraphEnvelope.ts from the typescript-sdk codebase.">
@@ -916,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/graphmodels.html" class="pill pill-green">GraphModels</a>
-        <a href="/typescript-sdk/subdomain/coregraph.html" class="pill pill-orange">CoreGraph</a>
+        <a href="/typescript-sdk/domain/codeanalysismodels.html" class="pill pill-green">CodeAnalysisModels</a>
+        <a href="/typescript-sdk/subdomain/deadcodeanalysis.html" class="pill pill-orange">DeadCodeAnalysis</a>
         
         
         <span class="pill">calls 3</span>
@@ -941,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphModels","slug":"domain-graphmodels"},"entity":{"name":"CodeGraphEnvelopeFromJSONTyped","slug":"fn-codegraphenvelope-ts-codegraphenvelopefromjsontyped","type":"Function"},"subdomain":{"name":"CoreGraph","slug":"subdomain-coregraph"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisModels","slug":"domain-codeanalysismodels"},"entity":{"name":"CodeGraphEnvelopeFromJSONTyped","slug":"fn-codegraphenvelope-ts-codegraphenvelopefromjsontyped","type":"Function"},"subdomain":{"name":"DeadCodeAnalysis","slug":"subdomain-deadcodeanalysis"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/graphmodels.html">GraphModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/coregraph.html">CoreGraph</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/codeanalysismodels.html">CodeAnalysisModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/deadcodeanalysis.html">DeadCodeAnalysis</a><span class="arch-sep">&rarr;</span>
             <span>CodeGraphEnvelopeFromJSONTyped() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -958,16 +959,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  aa7cd659_2559_f1ea_aac3_db7eb16a0a5e["CodeGraphEnvelopeFromJSONTyped()"]
-  8a4ce939_0329_7067_3219_ac7b2724c0c9["CodeGraphEnvelopeFromJSON()"]
-  8a4ce939_0329_7067_3219_ac7b2724c0c9 -->|calls| aa7cd659_2559_f1ea_aac3_db7eb16a0a5e
-  a68393bf_b9d3_5613_d3d7_43c904078bd9["CodeGraphStatsFromJSON()"]
-  aa7cd659_2559_f1ea_aac3_db7eb16a0a5e -->|calls| a68393bf_b9d3_5613_d3d7_43c904078bd9
-  247eb07b_cc25_4bd0_b0d7_afa582904ac7["CodeGraphEnvelopeMetadataFromJSON()"]
-  aa7cd659_2559_f1ea_aac3_db7eb16a0a5e -->|calls| 247eb07b_cc25_4bd0_b0d7_afa582904ac7
-  29af0a65_7839_a7bb_cd2f_0a3cbfd456e9["CodeGraphEnvelopeGraphFromJSON()"]
-  aa7cd659_2559_f1ea_aac3_db7eb16a0a5e -->|calls| 29af0a65_7839_a7bb_cd2f_0a3cbfd456e9
-  style aa7cd659_2559_f1ea_aac3_db7eb16a0a5e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  374f4aa4_b9c7_0e85_ccbc_fc7222175227["CodeGraphEnvelopeFromJSONTyped()"]
+  e98b8948_03ff_4391_5bfd_e7d7fe073ffb["CodeGraphEnvelopeFromJSON()"]
+  e98b8948_03ff_4391_5bfd_e7d7fe073ffb -->|calls| 374f4aa4_b9c7_0e85_ccbc_fc7222175227
+  f418b8ba_16d0_1dce_227e_78703eda1357["CodeGraphStatsFromJSON()"]
+  374f4aa4_b9c7_0e85_ccbc_fc7222175227 -->|calls| f418b8ba_16d0_1dce_227e_78703eda1357
+  e35f4277_c49c_e75a_7d27_565b7d043995["CodeGraphEnvelopeMetadataFromJSON()"]
+  374f4aa4_b9c7_0e85_ccbc_fc7222175227 -->|calls| e35f4277_c49c_e75a_7d27_565b7d043995
+  11c0c820_f89f_9833_980c_3f68a7991184["CodeGraphEnvelopeGraphFromJSON()"]
+  374f4aa4_b9c7_0e85_ccbc_fc7222175227 -->|calls| 11c0c820_f89f_9833_980c_3f68a7991184
+  style 374f4aa4_b9c7_0e85_ccbc_fc7222175227 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -975,7 +976,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-codegraphenvelope-ts-codegraphenvelopefromjsontyped"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"aa7cd659:2559:f1ea:aac3:db7eb16a0a5e","label":"CodeGraphEnvelopeFromJSONTyped","type":"Function","slug":"fn-codegraphenvelope-ts-codegraphenvelopefromjsontyped","lc":13,"lang":"typescript","cc":3,"cbc":1},{"id":"a68393bf:b9d3:5613:d3d7:43c904078bd9","label":"CodeGraphStatsFromJSON","type":"Function","slug":"fn-codegraphstats-ts-codegraphstatsfromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"247eb07b:cc25:4bd0:b0d7:afa582904ac7","label":"CodeGraphEnvelopeMetadataFromJSON","type":"Function","slug":"fn-codegraphenvelopemetadata-ts-codegraphenvelopemetadatafromjson","lc":3,"lang":"typescript","cc":1,"cbc":3},{"id":"29af0a65:7839:a7bb:cd2f:0a3cbfd456e9","label":"CodeGraphEnvelopeGraphFromJSON","type":"Function","slug":"fn-codegraphenvelopegraph-ts-codegraphenvelopegraphfromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"8a4ce939:0329:7067:3219:ac7b2724c0c9","label":"CodeGraphEnvelopeFromJSON","type":"Function","slug":"fn-codegraphenvelope-ts-codegraphenvelopefromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:GraphModels","label":"GraphModels","type":"Domain","slug":"domain-graphmodels"},{"id":"subdomain:GraphModels:CoreGraph","label":"CoreGraph","type":"Subdomain","slug":"subdomain-coregraph"}],"edges":[{"source":"aa7cd659:2559:f1ea:aac3:db7eb16a0a5e","target":"a68393bf:b9d3:5613:d3d7:43c904078bd9","type":"calls"},{"source":"aa7cd659:2559:f1ea:aac3:db7eb16a0a5e","target":"247eb07b:cc25:4bd0:b0d7:afa582904ac7","type":"calls"},{"source":"aa7cd659:2559:f1ea:aac3:db7eb16a0a5e","target":"29af0a65:7839:a7bb:cd2f:0a3cbfd456e9","type":"calls"},{"source":"8a4ce939:0329:7067:3219:ac7b2724c0c9","target":"aa7cd659:2559:f1ea:aac3:db7eb16a0a5e","type":"calls"},{"source":"aa7cd659:2559:f1ea:aac3:db7eb16a0a5e","target":"domain:GraphModels","type":"belongsTo"},{"source":"aa7cd659:2559:f1ea:aac3:db7eb16a0a5e","target":"subdomain:GraphModels:CoreGraph","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"374f4aa4:b9c7:0e85:ccbc:fc7222175227","label":"CodeGraphEnvelopeFromJSONTyped","type":"Function","slug":"fn-codegraphenvelope-ts-codegraphenvelopefromjsontyped","lc":13,"lang":"typescript","cc":3,"cbc":1},{"id":"f418b8ba:16d0:1dce:227e:78703eda1357","label":"CodeGraphStatsFromJSON","type":"Function","slug":"fn-codegraphstats-ts-codegraphstatsfromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"e35f4277:c49c:e75a:7d27:565b7d043995","label":"CodeGraphEnvelopeMetadataFromJSON","type":"Function","slug":"fn-codegraphenvelopemetadata-ts-codegraphenvelopemetadatafromjson","lc":3,"lang":"typescript","cc":1,"cbc":3},{"id":"11c0c820:f89f:9833:980c:3f68a7991184","label":"CodeGraphEnvelopeGraphFromJSON","type":"Function","slug":"fn-codegraphenvelopegraph-ts-codegraphenvelopegraphfromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"e98b8948:03ff:4391:5bfd:e7d7fe073ffb","label":"CodeGraphEnvelopeFromJSON","type":"Function","slug":"fn-codegraphenvelope-ts-codegraphenvelopefromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:CodeAnalysisModels","label":"CodeAnalysisModels","type":"Domain","slug":"domain-codeanalysismodels"},{"id":"subdomain:CodeAnalysisModels:DeadCodeAnalysis","label":"DeadCodeAnalysis","type":"Subdomain","slug":"subdomain-deadcodeanalysis"}],"edges":[{"source":"374f4aa4:b9c7:0e85:ccbc:fc7222175227","target":"f418b8ba:16d0:1dce:227e:78703eda1357","type":"calls"},{"source":"374f4aa4:b9c7:0e85:ccbc:fc7222175227","target":"e35f4277:c49c:e75a:7d27:565b7d043995","type":"calls"},{"source":"374f4aa4:b9c7:0e85:ccbc:fc7222175227","target":"11c0c820:f89f:9833:980c:3f68a7991184","type":"calls"},{"source":"e98b8948:03ff:4391:5bfd:e7d7fe073ffb","target":"374f4aa4:b9c7:0e85:ccbc:fc7222175227","type":"calls"},{"source":"374f4aa4:b9c7:0e85:ccbc:fc7222175227","target":"domain:CodeAnalysisModels","type":"belongsTo"},{"source":"374f4aa4:b9c7:0e85:ccbc:fc7222175227","target":"subdomain:CodeAnalysisModels:DeadCodeAnalysis","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1009,14 +1010,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-graphmodels.html">GraphModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-codeanalysismodels.html">CodeAnalysisModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-coregraph.html">CoreGraph</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-deadcodeanalysis.html">DeadCodeAnalysis</a></li></ul>
     </div>
     
 

@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>querystringSingleKey() — typescript-sdk Function Reference | typescript-sdk Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the querystringSingleKey() function in runtime.ts from the typescript-sdk codebase.">
@@ -916,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/supermodelsdk.html" class="pill pill-green">SupermodelSDK</a>
-        <a href="/typescript-sdk/subdomain/runtime.html" class="pill pill-orange">Runtime</a>
+        <a href="/typescript-sdk/domain/supermodelapi.html" class="pill pill-green">SupermodelAPI</a>
+        <a href="/typescript-sdk/subdomain/requestconfiguration.html" class="pill pill-orange">RequestConfiguration</a>
         
         
         <span class="pill">calls 1</span>
@@ -941,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelSDK","slug":"domain-supermodelsdk"},"entity":{"name":"querystringSingleKey","slug":"fn-runtime-ts-querystringsinglekey","type":"Function"},"subdomain":{"name":"Runtime","slug":"subdomain-runtime"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelAPI","slug":"domain-supermodelapi"},"entity":{"name":"querystringSingleKey","slug":"fn-runtime-ts-querystringsinglekey","type":"Function"},"subdomain":{"name":"RequestConfiguration","slug":"subdomain-requestconfiguration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/supermodelsdk.html">SupermodelSDK</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/runtime.html">Runtime</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/supermodelapi.html">SupermodelAPI</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/requestconfiguration.html">RequestConfiguration</a><span class="arch-sep">&rarr;</span>
             <span>querystringSingleKey() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -958,12 +959,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3e5bf7b3_ca85_cc5c_4ced_fb1e2471d30a["querystringSingleKey()"]
-  8c2df6e4_0369_b7ef_af74_0334c7c9cba5["querystring()"]
-  8c2df6e4_0369_b7ef_af74_0334c7c9cba5 -->|calls| 3e5bf7b3_ca85_cc5c_4ced_fb1e2471d30a
-  8c2df6e4_0369_b7ef_af74_0334c7c9cba5["querystring()"]
-  3e5bf7b3_ca85_cc5c_4ced_fb1e2471d30a -->|calls| 8c2df6e4_0369_b7ef_af74_0334c7c9cba5
-  style 3e5bf7b3_ca85_cc5c_4ced_fb1e2471d30a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  5f46e2f2_4fc3_9de9_6e47_0e772d70d3c1["querystringSingleKey()"]
+  51d9fb00_599c_0070_b120_f8ccccb475c4["querystring()"]
+  51d9fb00_599c_0070_b120_f8ccccb475c4 -->|calls| 5f46e2f2_4fc3_9de9_6e47_0e772d70d3c1
+  51d9fb00_599c_0070_b120_f8ccccb475c4["querystring()"]
+  5f46e2f2_4fc3_9de9_6e47_0e772d70d3c1 -->|calls| 51d9fb00_599c_0070_b120_f8ccccb475c4
+  style 5f46e2f2_4fc3_9de9_6e47_0e772d70d3c1 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -971,7 +972,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-runtime-ts-querystringsinglekey"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3e5bf7b3:ca85:cc5c:4ced:fb1e2471d30a","label":"querystringSingleKey","type":"Function","slug":"fn-runtime-ts-querystringsinglekey","lc":19,"lang":"typescript","cc":1,"cbc":1},{"id":"8c2df6e4:0369:b7ef:af74:0334c7c9cba5","label":"querystring","type":"Function","slug":"fn-runtime-ts-querystring","lc":6,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:SupermodelSDK","label":"SupermodelSDK","type":"Domain","slug":"domain-supermodelsdk"},{"id":"subdomain:SupermodelSDK:Runtime","label":"Runtime","type":"Subdomain","slug":"subdomain-runtime"}],"edges":[{"source":"3e5bf7b3:ca85:cc5c:4ced:fb1e2471d30a","target":"8c2df6e4:0369:b7ef:af74:0334c7c9cba5","type":"calls"},{"source":"8c2df6e4:0369:b7ef:af74:0334c7c9cba5","target":"3e5bf7b3:ca85:cc5c:4ced:fb1e2471d30a","type":"calls"},{"source":"3e5bf7b3:ca85:cc5c:4ced:fb1e2471d30a","target":"domain:SupermodelSDK","type":"belongsTo"},{"source":"3e5bf7b3:ca85:cc5c:4ced:fb1e2471d30a","target":"subdomain:SupermodelSDK:Runtime","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"5f46e2f2:4fc3:9de9:6e47:0e772d70d3c1","label":"querystringSingleKey","type":"Function","slug":"fn-runtime-ts-querystringsinglekey","lc":19,"lang":"typescript","cc":1,"cbc":1},{"id":"51d9fb00:599c:0070:b120:f8ccccb475c4","label":"querystring","type":"Function","slug":"fn-runtime-ts-querystring","lc":6,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:SupermodelAPI","label":"SupermodelAPI","type":"Domain","slug":"domain-supermodelapi"},{"id":"subdomain:SupermodelAPI:RequestConfiguration","label":"RequestConfiguration","type":"Subdomain","slug":"subdomain-requestconfiguration"}],"edges":[{"source":"5f46e2f2:4fc3:9de9:6e47:0e772d70d3c1","target":"51d9fb00:599c:0070:b120:f8ccccb475c4","type":"calls"},{"source":"51d9fb00:599c:0070:b120:f8ccccb475c4","target":"5f46e2f2:4fc3:9de9:6e47:0e772d70d3c1","type":"calls"},{"source":"5f46e2f2:4fc3:9de9:6e47:0e772d70d3c1","target":"domain:SupermodelAPI","type":"belongsTo"},{"source":"5f46e2f2:4fc3:9de9:6e47:0e772d70d3c1","target":"subdomain:SupermodelAPI:RequestConfiguration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1011,14 +1012,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-supermodelsdk.html">SupermodelSDK</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-supermodelapi.html">SupermodelAPI</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-runtime.html">Runtime</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-requestconfiguration.html">RequestConfiguration</a></li></ul>
     </div>
     
 

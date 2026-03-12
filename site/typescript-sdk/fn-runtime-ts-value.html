@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>value() — typescript-sdk Function Reference | typescript-sdk Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the value() function in runtime.ts from the typescript-sdk codebase.">
@@ -916,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/supermodelsdk.html" class="pill pill-green">SupermodelSDK</a>
-        <a href="/typescript-sdk/subdomain/runtime.html" class="pill pill-orange">Runtime</a>
+        <a href="/typescript-sdk/domain/supermodelapi.html" class="pill pill-green">SupermodelAPI</a>
+        <a href="/typescript-sdk/subdomain/endpointdefinitions.html" class="pill pill-orange">EndpointDefinitions</a>
         
         
         <span class="pill">calls 1</span>
@@ -941,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelSDK","slug":"domain-supermodelsdk"},"entity":{"name":"value","slug":"fn-runtime-ts-value","type":"Function"},"subdomain":{"name":"Runtime","slug":"subdomain-runtime"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelAPI","slug":"domain-supermodelapi"},"entity":{"name":"value","slug":"fn-runtime-ts-value","type":"Function"},"subdomain":{"name":"EndpointDefinitions","slug":"subdomain-endpointdefinitions"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/supermodelsdk.html">SupermodelSDK</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/runtime.html">Runtime</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/supermodelapi.html">SupermodelAPI</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/endpointdefinitions.html">EndpointDefinitions</a><span class="arch-sep">&rarr;</span>
             <span>value() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -958,34 +959,34 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  87048f8a_8373_941f_eee8_bb7b0d816d9a["value()"]
-  6ab4c25e_b479_3be3_2a5a_f7b9cba8ad87["value()"]
-  6ab4c25e_b479_3be3_2a5a_f7b9cba8ad87 -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  da9b110c_7f81_cba9_1c7e_8f6337890192["value()"]
-  da9b110c_7f81_cba9_1c7e_8f6337890192 -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  94c81a95_cfcc_de44_b459_fc3e604c559f["value()"]
-  94c81a95_cfcc_de44_b459_fc3e604c559f -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  36df64f7_28fc_2037_da01_b5d904e3659e["generateCallGraph()"]
-  36df64f7_28fc_2037_da01_b5d904e3659e -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  d55e8c00_73f0_6096_05b5_e4c2bb719a1e["generateCircularDependencyAnalysis()"]
-  d55e8c00_73f0_6096_05b5_e4c2bb719a1e -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  cdbeecf3_170a_0f5a_3b1b_451ce08eb43a["generateDeadCodeAnalysis()"]
-  cdbeecf3_170a_0f5a_3b1b_451ce08eb43a -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  14ef3153_4efc_9f83_a533_2a32745a0c6c["generateDependencyGraph()"]
-  14ef3153_4efc_9f83_a533_2a32745a0c6c -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  d04c8ca3_ff1b_b5f5_8310_ca2002fdf498["generateDomainGraph()"]
-  d04c8ca3_ff1b_b5f5_8310_ca2002fdf498 -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  f46fcde2_3fc2_0fc5_3ca7_8eeece3d7ecd["generateImpactAnalysis()"]
-  f46fcde2_3fc2_0fc5_3ca7_8eeece3d7ecd -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  ede4c895_d39a_5370_2d6f_d4ee97698773["generateParseGraph()"]
-  ede4c895_d39a_5370_2d6f_d4ee97698773 -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  2804448c_17fd_9746_5191_1a104b4b34ec["generateSupermodelGraph()"]
-  2804448c_17fd_9746_5191_1a104b4b34ec -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  9d012766_145c_6449_6a6e_9656a648f409["generateTestCoverageMap()"]
-  9d012766_145c_6449_6a6e_9656a648f409 -->|calls| 87048f8a_8373_941f_eee8_bb7b0d816d9a
-  6ab4c25e_b479_3be3_2a5a_f7b9cba8ad87["value()"]
-  87048f8a_8373_941f_eee8_bb7b0d816d9a -->|calls| 6ab4c25e_b479_3be3_2a5a_f7b9cba8ad87
-  style 87048f8a_8373_941f_eee8_bb7b0d816d9a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  914f7169_2d05_10c9_8c1c_b8ce9c8f833e["value()"]
+  f7246e63_9d61_7546_ecf7_02a227dbf628["value()"]
+  f7246e63_9d61_7546_ecf7_02a227dbf628 -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  dd82c1f1_ef56_0ca6_075d_ef16decff6dc["value()"]
+  dd82c1f1_ef56_0ca6_075d_ef16decff6dc -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  98e6ea00_a546_8c6e_2240_3a1a0fed33dc["value()"]
+  98e6ea00_a546_8c6e_2240_3a1a0fed33dc -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  7c674b17_8fe8_f0d1_0bdd_6b2846e6c3d5["generateCallGraph()"]
+  7c674b17_8fe8_f0d1_0bdd_6b2846e6c3d5 -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  edd6167c_5c45_f3b9_239f_c52b8baa5dc0["generateCircularDependencyAnalysis()"]
+  edd6167c_5c45_f3b9_239f_c52b8baa5dc0 -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  d4fd12c3_7ffc_777b_5e12_80a360de6ffe["generateDeadCodeAnalysis()"]
+  d4fd12c3_7ffc_777b_5e12_80a360de6ffe -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  c775dba7_0a77_7d99_2e6b_7bea9e994134["generateDependencyGraph()"]
+  c775dba7_0a77_7d99_2e6b_7bea9e994134 -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  61c7aa5b_9910_9298_ed58_e37ff619b707["generateDomainGraph()"]
+  61c7aa5b_9910_9298_ed58_e37ff619b707 -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  a597fb0b_e4b8_0f60_f812_ed0855bfb291["generateImpactAnalysis()"]
+  a597fb0b_e4b8_0f60_f812_ed0855bfb291 -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  77ec3b59_826c_59f1_d6bd_8551eeb88e07["generateParseGraph()"]
+  77ec3b59_826c_59f1_d6bd_8551eeb88e07 -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  77c34b75_f2e6_31fe_7304_cb24e37c2242["generateSupermodelGraph()"]
+  77c34b75_f2e6_31fe_7304_cb24e37c2242 -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  ad68fb54_4f4f_ea24_86cb_231527b41c93["generateTestCoverageMap()"]
+  ad68fb54_4f4f_ea24_86cb_231527b41c93 -->|calls| 914f7169_2d05_10c9_8c1c_b8ce9c8f833e
+  f7246e63_9d61_7546_ecf7_02a227dbf628["value()"]
+  914f7169_2d05_10c9_8c1c_b8ce9c8f833e -->|calls| f7246e63_9d61_7546_ecf7_02a227dbf628
+  style 914f7169_2d05_10c9_8c1c_b8ce9c8f833e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -993,7 +994,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-runtime-ts-value"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"87048f8a:8373:941f:eee8:bb7b0d816d9a","label":"value","type":"Function","slug":"fn-runtime-ts-value","lc":3,"lang":"typescript","cc":1,"cbc":12},{"id":"6ab4c25e:b479:3be3:2a5a:f7b9cba8ad87","label":"value","type":"Function","slug":"fn-runtime-ts-value-2","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"da9b110c:7f81:cba9:1c7e:8f6337890192","label":"value","type":"Function","slug":"fn-runtime-ts-value-3","lc":3,"lang":"typescript","cc":1},{"id":"94c81a95:cfcc:de44:b459:fc3e604c559f","label":"value","type":"Function","slug":"fn-runtime-ts-value-4","lc":3,"lang":"typescript","cc":1},{"id":"36df64f7:28fc:2037:da01:b5d904e3659e","label":"generateCallGraph","type":"Function","slug":"fn-defaultapi-ts-generatecallgraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"d55e8c00:73f0:6096:05b5:e4c2bb719a1e","label":"generateCircularDependencyAnalysis","type":"Function","slug":"fn-defaultapi-ts-generatecirculardependencyanalysis","lc":4,"lang":"typescript","cc":2,"cbc":1},{"id":"cdbeecf3:170a:0f5a:3b1b:451ce08eb43a","label":"generateDeadCodeAnalysis","type":"Function","slug":"fn-defaultapi-ts-generatedeadcodeanalysis","lc":4,"lang":"typescript","cc":2,"cbc":1},{"id":"14ef3153:4efc:9f83:a533:2a32745a0c6c","label":"generateDependencyGraph","type":"Function","slug":"fn-defaultapi-ts-generatedependencygraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"d04c8ca3:ff1b:b5f5:8310:ca2002fdf498","label":"generateDomainGraph","type":"Function","slug":"fn-defaultapi-ts-generatedomaingraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"f46fcde2:3fc2:0fc5:3ca7:8eeece3d7ecd","label":"generateImpactAnalysis","type":"Function","slug":"fn-defaultapi-ts-generateimpactanalysis","lc":4,"lang":"typescript","cc":2,"cbc":1},{"id":"ede4c895:d39a:5370:2d6f:d4ee97698773","label":"generateParseGraph","type":"Function","slug":"fn-defaultapi-ts-generateparsegraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"2804448c:17fd:9746:5191:1a104b4b34ec","label":"generateSupermodelGraph","type":"Function","slug":"fn-defaultapi-ts-generatesupermodelgraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"9d012766:145c:6449:6a6e:9656a648f409","label":"generateTestCoverageMap","type":"Function","slug":"fn-defaultapi-ts-generatetestcoveragemap","lc":4,"lang":"typescript","cc":2,"cbc":1},{"id":"domain:SupermodelSDK","label":"SupermodelSDK","type":"Domain","slug":"domain-supermodelsdk"},{"id":"subdomain:SupermodelSDK:Runtime","label":"Runtime","type":"Subdomain","slug":"subdomain-runtime"}],"edges":[{"source":"87048f8a:8373:941f:eee8:bb7b0d816d9a","target":"6ab4c25e:b479:3be3:2a5a:f7b9cba8ad87","type":"calls"},{"source":"6ab4c25e:b479:3be3:2a5a:f7b9cba8ad87","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"da9b110c:7f81:cba9:1c7e:8f6337890192","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"94c81a95:cfcc:de44:b459:fc3e604c559f","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"36df64f7:28fc:2037:da01:b5d904e3659e","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"d55e8c00:73f0:6096:05b5:e4c2bb719a1e","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"cdbeecf3:170a:0f5a:3b1b:451ce08eb43a","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"14ef3153:4efc:9f83:a533:2a32745a0c6c","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"d04c8ca3:ff1b:b5f5:8310:ca2002fdf498","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"f46fcde2:3fc2:0fc5:3ca7:8eeece3d7ecd","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"ede4c895:d39a:5370:2d6f:d4ee97698773","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"2804448c:17fd:9746:5191:1a104b4b34ec","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"9d012766:145c:6449:6a6e:9656a648f409","target":"87048f8a:8373:941f:eee8:bb7b0d816d9a","type":"calls"},{"source":"87048f8a:8373:941f:eee8:bb7b0d816d9a","target":"domain:SupermodelSDK","type":"belongsTo"},{"source":"87048f8a:8373:941f:eee8:bb7b0d816d9a","target":"subdomain:SupermodelSDK:Runtime","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","label":"value","type":"Function","slug":"fn-runtime-ts-value","lc":3,"lang":"typescript","cc":1,"cbc":12},{"id":"f7246e63:9d61:7546:ecf7:02a227dbf628","label":"value","type":"Function","slug":"fn-runtime-ts-value-2","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"dd82c1f1:ef56:0ca6:075d:ef16decff6dc","label":"value","type":"Function","slug":"fn-runtime-ts-value-3","lc":3,"lang":"typescript","cc":1},{"id":"98e6ea00:a546:8c6e:2240:3a1a0fed33dc","label":"value","type":"Function","slug":"fn-runtime-ts-value-4","lc":3,"lang":"typescript","cc":1},{"id":"7c674b17:8fe8:f0d1:0bdd:6b2846e6c3d5","label":"generateCallGraph","type":"Function","slug":"fn-defaultapi-ts-generatecallgraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"edd6167c:5c45:f3b9:239f:c52b8baa5dc0","label":"generateCircularDependencyAnalysis","type":"Function","slug":"fn-defaultapi-ts-generatecirculardependencyanalysis","lc":4,"lang":"typescript","cc":2,"cbc":1},{"id":"d4fd12c3:7ffc:777b:5e12:80a360de6ffe","label":"generateDeadCodeAnalysis","type":"Function","slug":"fn-defaultapi-ts-generatedeadcodeanalysis","lc":4,"lang":"typescript","cc":2,"cbc":1},{"id":"c775dba7:0a77:7d99:2e6b:7bea9e994134","label":"generateDependencyGraph","type":"Function","slug":"fn-defaultapi-ts-generatedependencygraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"61c7aa5b:9910:9298:ed58:e37ff619b707","label":"generateDomainGraph","type":"Function","slug":"fn-defaultapi-ts-generatedomaingraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"a597fb0b:e4b8:0f60:f812:ed0855bfb291","label":"generateImpactAnalysis","type":"Function","slug":"fn-defaultapi-ts-generateimpactanalysis","lc":4,"lang":"typescript","cc":2,"cbc":1},{"id":"77ec3b59:826c:59f1:d6bd:8551eeb88e07","label":"generateParseGraph","type":"Function","slug":"fn-defaultapi-ts-generateparsegraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"77c34b75:f2e6:31fe:7304:cb24e37c2242","label":"generateSupermodelGraph","type":"Function","slug":"fn-defaultapi-ts-generatesupermodelgraph","lc":4,"lang":"typescript","cc":2,"cbc":2},{"id":"ad68fb54:4f4f:ea24:86cb:231527b41c93","label":"generateTestCoverageMap","type":"Function","slug":"fn-defaultapi-ts-generatetestcoveragemap","lc":4,"lang":"typescript","cc":2,"cbc":1},{"id":"domain:SupermodelAPI","label":"SupermodelAPI","type":"Domain","slug":"domain-supermodelapi"},{"id":"subdomain:SupermodelAPI:EndpointDefinitions","label":"EndpointDefinitions","type":"Subdomain","slug":"subdomain-endpointdefinitions"}],"edges":[{"source":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","target":"f7246e63:9d61:7546:ecf7:02a227dbf628","type":"calls"},{"source":"f7246e63:9d61:7546:ecf7:02a227dbf628","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"dd82c1f1:ef56:0ca6:075d:ef16decff6dc","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"98e6ea00:a546:8c6e:2240:3a1a0fed33dc","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"7c674b17:8fe8:f0d1:0bdd:6b2846e6c3d5","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"edd6167c:5c45:f3b9:239f:c52b8baa5dc0","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"d4fd12c3:7ffc:777b:5e12:80a360de6ffe","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"c775dba7:0a77:7d99:2e6b:7bea9e994134","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"61c7aa5b:9910:9298:ed58:e37ff619b707","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"a597fb0b:e4b8:0f60:f812:ed0855bfb291","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"77ec3b59:826c:59f1:d6bd:8551eeb88e07","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"77c34b75:f2e6:31fe:7304:cb24e37c2242","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"ad68fb54:4f4f:ea24:86cb:231527b41c93","target":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","type":"calls"},{"source":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","target":"domain:SupermodelAPI","type":"belongsTo"},{"source":"914f7169:2d05:10c9:8c1c:b8ce9c8f833e","target":"subdomain:SupermodelAPI:EndpointDefinitions","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1017,14 +1018,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-supermodelsdk.html">SupermodelSDK</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-supermodelapi.html">SupermodelAPI</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-runtime.html">Runtime</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-endpointdefinitions.html">EndpointDefinitions</a></li></ul>
     </div>
     
 
