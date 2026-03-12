@@ -917,7 +917,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/repositoryutils.html" class="pill pill-green">RepositoryUtils</a>
-        <a href="/mcp/subdomain/gitprovider.html" class="pill pill-orange">GitProvider</a>
+        <a href="/mcp/subdomain/ignorelogic.html" class="pill pill-orange">IgnoreLogic</a>
         
         
         <span class="pill">calls 4</span>
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtils","slug":"domain-repositoryutils"},"entity":{"name":"buildIgnoreFilter","slug":"fn-zip-repository-ts-buildignorefilter","type":"Function"},"subdomain":{"name":"GitProvider","slug":"subdomain-gitprovider"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtils","slug":"domain-repositoryutils"},"entity":{"name":"buildIgnoreFilter","slug":"fn-zip-repository-ts-buildignorefilter","type":"Function"},"subdomain":{"name":"IgnoreLogic","slug":"subdomain-ignorelogic"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/repositoryutils.html">RepositoryUtils</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/gitprovider.html">GitProvider</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/ignorelogic.html">IgnoreLogic</a><span class="arch-sep">&rarr;</span>
             <span>buildIgnoreFilter() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,18 +958,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  a9f528bf_a378_8e54_e83f_60332424becb["buildIgnoreFilter()"]
-  6ff87e15_178e_dcc6_c7b1_187eab4f81a2["zipRepository()"]
-  6ff87e15_178e_dcc6_c7b1_187eab4f81a2 -->|calls| a9f528bf_a378_8e54_e83f_60332424becb
-  ef38831d_83ce_52f0_ba72_a1ea150d1c78["debug()"]
-  a9f528bf_a378_8e54_e83f_60332424becb -->|calls| ef38831d_83ce_52f0_ba72_a1ea150d1c78
-  0a97d12d_960c_e539_dbc1_64e1cf280fce["findGitignoreFiles()"]
-  a9f528bf_a378_8e54_e83f_60332424becb -->|calls| 0a97d12d_960c_e539_dbc1_64e1cf280fce
-  34bc3d98_96cf_27f6_9d45_a194eaacf06f["warn()"]
-  a9f528bf_a378_8e54_e83f_60332424becb -->|calls| 34bc3d98_96cf_27f6_9d45_a194eaacf06f
-  f069c91c_d1c2_4ee2_d9fe_a80acdf30b78["error()"]
-  a9f528bf_a378_8e54_e83f_60332424becb -->|calls| f069c91c_d1c2_4ee2_d9fe_a80acdf30b78
-  style a9f528bf_a378_8e54_e83f_60332424becb fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  81dbd343_a42b_d77e_c1e7_14096d2e5d64["buildIgnoreFilter()"]
+  e7ee3880_1b45_10c2_c9e9_3b9fed792d24["zipRepository()"]
+  e7ee3880_1b45_10c2_c9e9_3b9fed792d24 -->|calls| 81dbd343_a42b_d77e_c1e7_14096d2e5d64
+  011b02bd_d35c_a596_1d9d_5c965eb02672["debug()"]
+  81dbd343_a42b_d77e_c1e7_14096d2e5d64 -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
+  9f2c96e9_9640_c64b_9394_9b18d3af75b5["findGitignoreFiles()"]
+  81dbd343_a42b_d77e_c1e7_14096d2e5d64 -->|calls| 9f2c96e9_9640_c64b_9394_9b18d3af75b5
+  37a84f71_4929_6bf2_dff7_7b0d3b52e467["warn()"]
+  81dbd343_a42b_d77e_c1e7_14096d2e5d64 -->|calls| 37a84f71_4929_6bf2_dff7_7b0d3b52e467
+  eaa91290_13fe_bfe7_fb83_00e3e5a46ce2["error()"]
+  81dbd343_a42b_d77e_c1e7_14096d2e5d64 -->|calls| eaa91290_13fe_bfe7_fb83_00e3e5a46ce2
+  style 81dbd343_a42b_d77e_c1e7_14096d2e5d64 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -977,7 +977,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-zip-repository-ts-buildignorefilter"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"a9f528bf:a378:8e54:e83f:60332424becb","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"ef38831d:83ce:52f0:ba72:a1ea150d1c78","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"0a97d12d:960c:e539:dbc1:64e1cf280fce","label":"findGitignoreFiles","type":"Function","slug":"fn-zip-repository-ts-findgitignorefiles","lc":54,"lang":"typescript","cc":1,"cbc":1},{"id":"34bc3d98:96cf:27f6:9d45:a194eaacf06f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"f069c91c:d1c2:4ee2:d9fe:a80acdf30b78","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"6ff87e15:178e:dcc6:c7b1:187eab4f81a2","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"domain:RepositoryUtils","label":"RepositoryUtils","type":"Domain","slug":"domain-repositoryutils"},{"id":"subdomain:RepositoryUtils:GitProvider","label":"GitProvider","type":"Subdomain","slug":"subdomain-gitprovider"}],"edges":[{"source":"a9f528bf:a378:8e54:e83f:60332424becb","target":"ef38831d:83ce:52f0:ba72:a1ea150d1c78","type":"calls"},{"source":"a9f528bf:a378:8e54:e83f:60332424becb","target":"0a97d12d:960c:e539:dbc1:64e1cf280fce","type":"calls"},{"source":"a9f528bf:a378:8e54:e83f:60332424becb","target":"34bc3d98:96cf:27f6:9d45:a194eaacf06f","type":"calls"},{"source":"a9f528bf:a378:8e54:e83f:60332424becb","target":"f069c91c:d1c2:4ee2:d9fe:a80acdf30b78","type":"calls"},{"source":"6ff87e15:178e:dcc6:c7b1:187eab4f81a2","target":"a9f528bf:a378:8e54:e83f:60332424becb","type":"calls"},{"source":"a9f528bf:a378:8e54:e83f:60332424becb","target":"domain:RepositoryUtils","type":"belongsTo"},{"source":"a9f528bf:a378:8e54:e83f:60332424becb","target":"subdomain:RepositoryUtils:GitProvider","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"81dbd343:a42b:d77e:c1e7:14096d2e5d64","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"011b02bd:d35c:a596:1d9d:5c965eb02672","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"9f2c96e9:9640:c64b:9394:9b18d3af75b5","label":"findGitignoreFiles","type":"Function","slug":"fn-zip-repository-ts-findgitignorefiles","lc":54,"lang":"typescript","cc":1,"cbc":1},{"id":"37a84f71:4929:6bf2:dff7:7b0d3b52e467","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"eaa91290:13fe:bfe7:fb83:00e3e5a46ce2","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"e7ee3880:1b45:10c2:c9e9:3b9fed792d24","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"domain:RepositoryUtils","label":"RepositoryUtils","type":"Domain","slug":"domain-repositoryutils"},{"id":"subdomain:RepositoryUtils:IgnoreLogic","label":"IgnoreLogic","type":"Subdomain","slug":"subdomain-ignorelogic"}],"edges":[{"source":"81dbd343:a42b:d77e:c1e7:14096d2e5d64","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"81dbd343:a42b:d77e:c1e7:14096d2e5d64","target":"9f2c96e9:9640:c64b:9394:9b18d3af75b5","type":"calls"},{"source":"81dbd343:a42b:d77e:c1e7:14096d2e5d64","target":"37a84f71:4929:6bf2:dff7:7b0d3b52e467","type":"calls"},{"source":"81dbd343:a42b:d77e:c1e7:14096d2e5d64","target":"eaa91290:13fe:bfe7:fb83:00e3e5a46ce2","type":"calls"},{"source":"e7ee3880:1b45:10c2:c9e9:3b9fed792d24","target":"81dbd343:a42b:d77e:c1e7:14096d2e5d64","type":"calls"},{"source":"81dbd343:a42b:d77e:c1e7:14096d2e5d64","target":"domain:RepositoryUtils","type":"belongsTo"},{"source":"81dbd343:a42b:d77e:c1e7:14096d2e5d64","target":"subdomain:RepositoryUtils:IgnoreLogic","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1098,7 +1098,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-gitprovider.html">GitProvider</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-ignorelogic.html">IgnoreLogic</a></li></ul>
     </div>
     
 

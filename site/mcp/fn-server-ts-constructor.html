@@ -917,7 +917,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/mcpserver.html" class="pill pill-green">McpServer</a>
-        <a href="/mcp/subdomain/toolregistry.html" class="pill pill-orange">ToolRegistry</a>
+        <a href="/mcp/subdomain/contextmanagement.html" class="pill pill-orange">ContextManagement</a>
         
         
         <span class="pill">calls 4</span>
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"constructor","slug":"fn-server-ts-constructor","type":"Function"},"subdomain":{"name":"ToolRegistry","slug":"subdomain-toolregistry"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"constructor","slug":"fn-server-ts-constructor","type":"Function"},"subdomain":{"name":"ContextManagement","slug":"subdomain-contextmanagement"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/mcpserver.html">McpServer</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/toolregistry.html">ToolRegistry</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/contextmanagement.html">ContextManagement</a><span class="arch-sep">&rarr;</span>
             <span>constructor() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,16 +958,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  0035b002_62b6_9bf7_f4d7_ab7376089db0["constructor()"]
-  dda29df1_9a9e_f843_11e3_3074d6974b4a["setupHandlers()"]
-  0035b002_62b6_9bf7_f4d7_ab7376089db0 -->|calls| dda29df1_9a9e_f843_11e3_3074d6974b4a
-  106f74c0_c565_ee32_9580_25692794a7a8["constructor()"]
-  0035b002_62b6_9bf7_f4d7_ab7376089db0 -->|calls| 106f74c0_c565_ee32_9580_25692794a7a8
-  43c3065e_b102_77a5_b8d9_8bfe6e201510["start()"]
-  0035b002_62b6_9bf7_f4d7_ab7376089db0 -->|calls| 43c3065e_b102_77a5_b8d9_8bfe6e201510
-  ef38831d_83ce_52f0_ba72_a1ea150d1c78["debug()"]
-  0035b002_62b6_9bf7_f4d7_ab7376089db0 -->|calls| ef38831d_83ce_52f0_ba72_a1ea150d1c78
-  style 0035b002_62b6_9bf7_f4d7_ab7376089db0 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  6b7cedf3_f97c_9c1a_a9f5_16baf6568cd4["constructor()"]
+  5616a316_35c8_2f52_0328_69bf0f842b96["setupHandlers()"]
+  6b7cedf3_f97c_9c1a_a9f5_16baf6568cd4 -->|calls| 5616a316_35c8_2f52_0328_69bf0f842b96
+  0f2ec344_d1b7_a4cf_9c40_4f4cba25094f["constructor()"]
+  6b7cedf3_f97c_9c1a_a9f5_16baf6568cd4 -->|calls| 0f2ec344_d1b7_a4cf_9c40_4f4cba25094f
+  522792b7_7d35_4329_36df_c2b0d53826bd["start()"]
+  6b7cedf3_f97c_9c1a_a9f5_16baf6568cd4 -->|calls| 522792b7_7d35_4329_36df_c2b0d53826bd
+  011b02bd_d35c_a596_1d9d_5c965eb02672["debug()"]
+  6b7cedf3_f97c_9c1a_a9f5_16baf6568cd4 -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
+  style 6b7cedf3_f97c_9c1a_a9f5_16baf6568cd4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -975,7 +975,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-server-ts-constructor"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"0035b002:62b6:9bf7:f4d7:ab7376089db0","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"dda29df1:9a9e:f843:11e3:3074d6974b4a","label":"setupHandlers","type":"Function","slug":"fn-server-ts-setuphandlers","lc":52,"lang":"typescript","cc":4,"cbc":1},{"id":"106f74c0:c565:ee32:9580:25692794a7a8","label":"constructor","type":"Function","slug":"fn-graph-cache-ts-constructor","lc":5,"lang":"typescript","cbc":1},{"id":"43c3065e:b102:77a5:b8d9:8bfe6e201510","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"ef38831d:83ce:52f0:ba72:a1ea150d1c78","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:ToolRegistry","label":"ToolRegistry","type":"Subdomain","slug":"subdomain-toolregistry"}],"edges":[{"source":"0035b002:62b6:9bf7:f4d7:ab7376089db0","target":"dda29df1:9a9e:f843:11e3:3074d6974b4a","type":"calls"},{"source":"0035b002:62b6:9bf7:f4d7:ab7376089db0","target":"106f74c0:c565:ee32:9580:25692794a7a8","type":"calls"},{"source":"0035b002:62b6:9bf7:f4d7:ab7376089db0","target":"43c3065e:b102:77a5:b8d9:8bfe6e201510","type":"calls"},{"source":"0035b002:62b6:9bf7:f4d7:ab7376089db0","target":"ef38831d:83ce:52f0:ba72:a1ea150d1c78","type":"calls"},{"source":"0035b002:62b6:9bf7:f4d7:ab7376089db0","target":"domain:McpServer","type":"belongsTo"},{"source":"0035b002:62b6:9bf7:f4d7:ab7376089db0","target":"subdomain:McpServer:ToolRegistry","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","label":"constructor","type":"Function","slug":"fn-server-ts-constructor","lc":87,"lang":"typescript","cc":4},{"id":"5616a316:35c8:2f52:0328:69bf0f842b96","label":"setupHandlers","type":"Function","slug":"fn-server-ts-setuphandlers","lc":52,"lang":"typescript","cc":4,"cbc":1},{"id":"0f2ec344:d1b7:a4cf:9c40:4f4cba25094f","label":"constructor","type":"Function","slug":"fn-graph-cache-ts-constructor","lc":5,"lang":"typescript","cbc":1},{"id":"522792b7:7d35:4329:36df:c2b0d53826bd","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"011b02bd:d35c:a596:1d9d:5c965eb02672","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:ContextManagement","label":"ContextManagement","type":"Subdomain","slug":"subdomain-contextmanagement"}],"edges":[{"source":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","target":"5616a316:35c8:2f52:0328:69bf0f842b96","type":"calls"},{"source":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","target":"0f2ec344:d1b7:a4cf:9c40:4f4cba25094f","type":"calls"},{"source":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","target":"522792b7:7d35:4329:36df:c2b0d53826bd","type":"calls"},{"source":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","target":"domain:McpServer","type":"belongsTo"},{"source":"6b7cedf3:f97c:9c1a:a9f5:16baf6568cd4","target":"subdomain:McpServer:ContextManagement","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1090,7 +1090,7 @@ Run the full related test suite to catch regressions. Do NOT write standalone te
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-toolregistry.html">ToolRegistry</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-contextmanagement.html">ContextManagement</a></li></ul>
     </div>
     
 

@@ -917,7 +917,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/graphcache.html" class="pill pill-green">GraphCache</a>
-        <a href="/mcp/subdomain/persistence.html" class="pill pill-orange">Persistence</a>
+        <a href="/mcp/subdomain/lrucache.html" class="pill pill-orange">LRUCache</a>
         
         
         <span class="pill">calls 1</span>
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"evictOldest","slug":"fn-graph-cache-ts-evictoldest","type":"Function"},"subdomain":{"name":"Persistence","slug":"subdomain-persistence"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"evictOldest","slug":"fn-graph-cache-ts-evictoldest","type":"Function"},"subdomain":{"name":"LRUCache","slug":"subdomain-lrucache"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/graphcache.html">GraphCache</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/persistence.html">Persistence</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/lrucache.html">LRUCache</a><span class="arch-sep">&rarr;</span>
             <span>evictOldest() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,12 +958,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  970a851b_117e_47da_3677_a4d44dde25ba["evictOldest()"]
-  a2f3f316_e030_808e_a612_9316f7ba46a8["set()"]
-  a2f3f316_e030_808e_a612_9316f7ba46a8 -->|calls| 970a851b_117e_47da_3677_a4d44dde25ba
-  2bea092f_074f_ce60_a2e8_d3226ee18c51["get()"]
-  970a851b_117e_47da_3677_a4d44dde25ba -->|calls| 2bea092f_074f_ce60_a2e8_d3226ee18c51
-  style 970a851b_117e_47da_3677_a4d44dde25ba fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  79abfe28_df5f_714f_a970_afb2d686a3d2["evictOldest()"]
+  1c424b90_b8c3_09ed_603b_ab260dbfc522["set()"]
+  1c424b90_b8c3_09ed_603b_ab260dbfc522 -->|calls| 79abfe28_df5f_714f_a970_afb2d686a3d2
+  90f8f306_ba82_2894_1a47_5ba53a12ae3e["get()"]
+  79abfe28_df5f_714f_a970_afb2d686a3d2 -->|calls| 90f8f306_ba82_2894_1a47_5ba53a12ae3e
+  style 79abfe28_df5f_714f_a970_afb2d686a3d2 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -971,7 +971,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-evictoldest"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"970a851b:117e:47da:3677:a4d44dde25ba","label":"evictOldest","type":"Function","slug":"fn-graph-cache-ts-evictoldest","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"2bea092f:074f:ce60:a2e8:d3226ee18c51","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"a2f3f316:e030:808e:a612:9316f7ba46a8","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Persistence","label":"Persistence","type":"Subdomain","slug":"subdomain-persistence"}],"edges":[{"source":"970a851b:117e:47da:3677:a4d44dde25ba","target":"2bea092f:074f:ce60:a2e8:d3226ee18c51","type":"calls"},{"source":"a2f3f316:e030:808e:a612:9316f7ba46a8","target":"970a851b:117e:47da:3677:a4d44dde25ba","type":"calls"},{"source":"970a851b:117e:47da:3677:a4d44dde25ba","target":"domain:GraphCache","type":"belongsTo"},{"source":"970a851b:117e:47da:3677:a4d44dde25ba","target":"subdomain:GraphCache:Persistence","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"79abfe28:df5f:714f:a970:afb2d686a3d2","label":"evictOldest","type":"Function","slug":"fn-graph-cache-ts-evictoldest","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"90f8f306:ba82:2894:1a47:5ba53a12ae3e","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"1c424b90:b8c3:09ed:603b:ab260dbfc522","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:LRUCache","label":"LRUCache","type":"Subdomain","slug":"subdomain-lrucache"}],"edges":[{"source":"79abfe28:df5f:714f:a970:afb2d686a3d2","target":"90f8f306:ba82:2894:1a47:5ba53a12ae3e","type":"calls"},{"source":"1c424b90:b8c3:09ed:603b:ab260dbfc522","target":"79abfe28:df5f:714f:a970:afb2d686a3d2","type":"calls"},{"source":"79abfe28:df5f:714f:a970:afb2d686a3d2","target":"domain:GraphCache","type":"belongsTo"},{"source":"79abfe28:df5f:714f:a970:afb2d686a3d2","target":"subdomain:GraphCache:LRUCache","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1016,7 +1016,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-persistence.html">Persistence</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-lrucache.html">LRUCache</a></li></ul>
     </div>
     
 

@@ -917,7 +917,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/mcpserver.html" class="pill pill-green">McpServer</a>
-        <a href="/mcp/subdomain/instructionmanager.html" class="pill pill-orange">InstructionManager</a>
+        <a href="/mcp/subdomain/transport.html" class="pill pill-orange">Transport</a>
         
         
         <span class="pill">calls 3</span>
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"main","slug":"fn-index-ts-main","type":"Function"},"subdomain":{"name":"InstructionManager","slug":"subdomain-instructionmanager"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"McpServer","slug":"domain-mcpserver"},"entity":{"name":"main","slug":"fn-index-ts-main","type":"Function"},"subdomain":{"name":"Transport","slug":"subdomain-transport"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/mcpserver.html">McpServer</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/instructionmanager.html">InstructionManager</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/transport.html">Transport</a><span class="arch-sep">&rarr;</span>
             <span>main() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,14 +958,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  26c17575_64f5_b874_cc29_3b4de4174fa8["main()"]
-  ffba4e63_81ca_2912_61d8_993aa0c26cdc["handlePrecache()"]
-  26c17575_64f5_b874_cc29_3b4de4174fa8 -->|calls| ffba4e63_81ca_2912_61d8_993aa0c26cdc
-  ef38831d_83ce_52f0_ba72_a1ea150d1c78["debug()"]
-  26c17575_64f5_b874_cc29_3b4de4174fa8 -->|calls| ef38831d_83ce_52f0_ba72_a1ea150d1c78
-  43c3065e_b102_77a5_b8d9_8bfe6e201510["start()"]
-  26c17575_64f5_b874_cc29_3b4de4174fa8 -->|calls| 43c3065e_b102_77a5_b8d9_8bfe6e201510
-  style 26c17575_64f5_b874_cc29_3b4de4174fa8 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  f0dfc030_608c_6e6b_6f18_74a0981882ef["main()"]
+  466b74bc_693b_4f9a_61dd_704bbbc88464["handlePrecache()"]
+  f0dfc030_608c_6e6b_6f18_74a0981882ef -->|calls| 466b74bc_693b_4f9a_61dd_704bbbc88464
+  011b02bd_d35c_a596_1d9d_5c965eb02672["debug()"]
+  f0dfc030_608c_6e6b_6f18_74a0981882ef -->|calls| 011b02bd_d35c_a596_1d9d_5c965eb02672
+  522792b7_7d35_4329_36df_c2b0d53826bd["start()"]
+  f0dfc030_608c_6e6b_6f18_74a0981882ef -->|calls| 522792b7_7d35_4329_36df_c2b0d53826bd
+  style f0dfc030_608c_6e6b_6f18_74a0981882ef fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -973,7 +973,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-index-ts-main"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"26c17575:64f5:b874:cc29:3b4de4174fa8","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"ffba4e63:81ca:2912:61d8:993aa0c26cdc","label":"handlePrecache","type":"Function","slug":"fn-index-ts-handleprecache","lc":152,"lang":"typescript","cc":1,"cbc":1},{"id":"ef38831d:83ce:52f0:ba72:a1ea150d1c78","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"43c3065e:b102:77a5:b8d9:8bfe6e201510","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:InstructionManager","label":"InstructionManager","type":"Subdomain","slug":"subdomain-instructionmanager"}],"edges":[{"source":"26c17575:64f5:b874:cc29:3b4de4174fa8","target":"ffba4e63:81ca:2912:61d8:993aa0c26cdc","type":"calls"},{"source":"26c17575:64f5:b874:cc29:3b4de4174fa8","target":"ef38831d:83ce:52f0:ba72:a1ea150d1c78","type":"calls"},{"source":"26c17575:64f5:b874:cc29:3b4de4174fa8","target":"43c3065e:b102:77a5:b8d9:8bfe6e201510","type":"calls"},{"source":"26c17575:64f5:b874:cc29:3b4de4174fa8","target":"domain:McpServer","type":"belongsTo"},{"source":"26c17575:64f5:b874:cc29:3b4de4174fa8","target":"subdomain:McpServer:InstructionManager","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"f0dfc030:608c:6e6b:6f18:74a0981882ef","label":"main","type":"Function","slug":"fn-index-ts-main","lc":37,"lang":"typescript","cc":3},{"id":"466b74bc:693b:4f9a:61dd:704bbbc88464","label":"handlePrecache","type":"Function","slug":"fn-index-ts-handleprecache","lc":152,"lang":"typescript","cc":1,"cbc":1},{"id":"011b02bd:d35c:a596:1d9d:5c965eb02672","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"522792b7:7d35:4329:36df:c2b0d53826bd","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"domain:McpServer","label":"McpServer","type":"Domain","slug":"domain-mcpserver"},{"id":"subdomain:McpServer:Transport","label":"Transport","type":"Subdomain","slug":"subdomain-transport"}],"edges":[{"source":"f0dfc030:608c:6e6b:6f18:74a0981882ef","target":"466b74bc:693b:4f9a:61dd:704bbbc88464","type":"calls"},{"source":"f0dfc030:608c:6e6b:6f18:74a0981882ef","target":"011b02bd:d35c:a596:1d9d:5c965eb02672","type":"calls"},{"source":"f0dfc030:608c:6e6b:6f18:74a0981882ef","target":"522792b7:7d35:4329:36df:c2b0d53826bd","type":"calls"},{"source":"f0dfc030:608c:6e6b:6f18:74a0981882ef","target":"domain:McpServer","type":"belongsTo"},{"source":"f0dfc030:608c:6e6b:6f18:74a0981882ef","target":"subdomain:McpServer:Transport","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1038,7 +1038,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-instructionmanager.html">InstructionManager</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-transport.html">Transport</a></li></ul>
     </div>
     
 

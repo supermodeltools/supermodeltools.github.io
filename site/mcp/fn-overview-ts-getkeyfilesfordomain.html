@@ -916,8 +916,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/codeanalysistools.html" class="pill pill-green">CodeAnalysisTools</a>
-        <a href="/mcp/subdomain/architecturalsummarizer.html" class="pill pill-orange">ArchitecturalSummarizer</a>
+        <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
+        <a href="/mcp/subdomain/graphtraversal.html" class="pill pill-orange">GraphTraversal</a>
         
         
         <span class="pill">calls 3</span>
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisTools","slug":"domain-codeanalysistools"},"entity":{"name":"getKeyFilesForDomain","slug":"fn-overview-ts-getkeyfilesfordomain","type":"Function"},"subdomain":{"name":"ArchitecturalSummarizer","slug":"subdomain-architecturalsummarizer"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"getKeyFilesForDomain","slug":"fn-overview-ts-getkeyfilesfordomain","type":"Function"},"subdomain":{"name":"GraphTraversal","slug":"subdomain-graphtraversal"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/codeanalysistools.html">CodeAnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/architecturalsummarizer.html">ArchitecturalSummarizer</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/graphtraversal.html">GraphTraversal</a><span class="arch-sep">&rarr;</span>
             <span>getKeyFilesForDomain() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,16 +958,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3ab85743_6b83_aa0e_2728_54cc26a64f06["getKeyFilesForDomain()"]
-  788c4627_38e5_bb90_3c7b_73b9a22edffb["renderOverview()"]
-  788c4627_38e5_bb90_3c7b_73b9a22edffb -->|calls| 3ab85743_6b83_aa0e_2728_54cc26a64f06
-  2bea092f_074f_ce60_a2e8_d3226ee18c51["get()"]
-  3ab85743_6b83_aa0e_2728_54cc26a64f06 -->|calls| 2bea092f_074f_ce60_a2e8_d3226ee18c51
-  3e5b4ad9_a23d_b587_7e75_e0038a8f78ba["normalizePath()"]
-  3ab85743_6b83_aa0e_2728_54cc26a64f06 -->|calls| 3e5b4ad9_a23d_b587_7e75_e0038a8f78ba
-  a2f3f316_e030_808e_a612_9316f7ba46a8["set()"]
-  3ab85743_6b83_aa0e_2728_54cc26a64f06 -->|calls| a2f3f316_e030_808e_a612_9316f7ba46a8
-  style 3ab85743_6b83_aa0e_2728_54cc26a64f06 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d5f255b9_c7c4_13a2_8d55_041729b51aeb["getKeyFilesForDomain()"]
+  4968582b_e759_28e3_16c5_c1a4822f70f0["renderOverview()"]
+  4968582b_e759_28e3_16c5_c1a4822f70f0 -->|calls| d5f255b9_c7c4_13a2_8d55_041729b51aeb
+  90f8f306_ba82_2894_1a47_5ba53a12ae3e["get()"]
+  d5f255b9_c7c4_13a2_8d55_041729b51aeb -->|calls| 90f8f306_ba82_2894_1a47_5ba53a12ae3e
+  c9a59e84_a208_9c92_c2fa_4c6dcf3056f6["normalizePath()"]
+  d5f255b9_c7c4_13a2_8d55_041729b51aeb -->|calls| c9a59e84_a208_9c92_c2fa_4c6dcf3056f6
+  1c424b90_b8c3_09ed_603b_ab260dbfc522["set()"]
+  d5f255b9_c7c4_13a2_8d55_041729b51aeb -->|calls| 1c424b90_b8c3_09ed_603b_ab260dbfc522
+  style d5f255b9_c7c4_13a2_8d55_041729b51aeb fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -975,7 +975,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-overview-ts-getkeyfilesfordomain"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3ab85743:6b83:aa0e:2728:54cc26a64f06","label":"getKeyFilesForDomain","type":"Function","slug":"fn-overview-ts-getkeyfilesfordomain","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"2bea092f:074f:ce60:a2e8:d3226ee18c51","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"3e5b4ad9:a23d:b587:7e75:e0038a8f78ba","label":"normalizePath","type":"Function","slug":"fn-graph-cache-ts-normalizepath","lc":3,"lang":"typescript","cbc":10},{"id":"a2f3f316:e030:808e:a612:9316f7ba46a8","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"788c4627:38e5:bb90:3c7b:73b9a22edffb","label":"renderOverview","type":"Function","slug":"fn-overview-ts-renderoverview","lc":60,"lang":"typescript","cc":4,"cbc":2},{"id":"domain:CodeAnalysisTools","label":"CodeAnalysisTools","type":"Domain","slug":"domain-codeanalysistools"},{"id":"subdomain:CodeAnalysisTools:ArchitecturalSummarizer","label":"ArchitecturalSummarizer","type":"Subdomain","slug":"subdomain-architecturalsummarizer"}],"edges":[{"source":"3ab85743:6b83:aa0e:2728:54cc26a64f06","target":"2bea092f:074f:ce60:a2e8:d3226ee18c51","type":"calls"},{"source":"3ab85743:6b83:aa0e:2728:54cc26a64f06","target":"3e5b4ad9:a23d:b587:7e75:e0038a8f78ba","type":"calls"},{"source":"3ab85743:6b83:aa0e:2728:54cc26a64f06","target":"a2f3f316:e030:808e:a612:9316f7ba46a8","type":"calls"},{"source":"788c4627:38e5:bb90:3c7b:73b9a22edffb","target":"3ab85743:6b83:aa0e:2728:54cc26a64f06","type":"calls"},{"source":"3ab85743:6b83:aa0e:2728:54cc26a64f06","target":"domain:CodeAnalysisTools","type":"belongsTo"},{"source":"3ab85743:6b83:aa0e:2728:54cc26a64f06","target":"subdomain:CodeAnalysisTools:ArchitecturalSummarizer","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d5f255b9:c7c4:13a2:8d55:041729b51aeb","label":"getKeyFilesForDomain","type":"Function","slug":"fn-overview-ts-getkeyfilesfordomain","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"90f8f306:ba82:2894:1a47:5ba53a12ae3e","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"c9a59e84:a208:9c92:c2fa:4c6dcf3056f6","label":"normalizePath","type":"Function","slug":"fn-graph-cache-ts-normalizepath","lc":3,"lang":"typescript","cbc":10},{"id":"1c424b90:b8c3:09ed:603b:ab260dbfc522","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"4968582b:e759:28e3:16c5:c1a4822f70f0","label":"renderOverview","type":"Function","slug":"fn-overview-ts-renderoverview","lc":60,"lang":"typescript","cc":4,"cbc":2},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:GraphTraversal","label":"GraphTraversal","type":"Subdomain","slug":"subdomain-graphtraversal"}],"edges":[{"source":"d5f255b9:c7c4:13a2:8d55:041729b51aeb","target":"90f8f306:ba82:2894:1a47:5ba53a12ae3e","type":"calls"},{"source":"d5f255b9:c7c4:13a2:8d55:041729b51aeb","target":"c9a59e84:a208:9c92:c2fa:4c6dcf3056f6","type":"calls"},{"source":"d5f255b9:c7c4:13a2:8d55:041729b51aeb","target":"1c424b90:b8c3:09ed:603b:ab260dbfc522","type":"calls"},{"source":"4968582b:e759:28e3:16c5:c1a4822f70f0","target":"d5f255b9:c7c4:13a2:8d55:041729b51aeb","type":"calls"},{"source":"d5f255b9:c7c4:13a2:8d55:041729b51aeb","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"d5f255b9:c7c4:13a2:8d55:041729b51aeb","target":"subdomain:AnalysisTools:GraphTraversal","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1014,14 +1014,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-codeanalysistools.html">CodeAnalysisTools</a></li></ul>
+      <ul><li><a href="/mcp/domain-analysistools.html">AnalysisTools</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-architecturalsummarizer.html">ArchitecturalSummarizer</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-graphtraversal.html">GraphTraversal</a></li></ul>
     </div>
     
 

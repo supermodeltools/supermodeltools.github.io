@@ -11,17 +11,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
 
 <title>GraphCache Domain — mcp Architecture | mcp Architecture Docs</title>
-<meta name="description" content="A specialized LRU and disk-persistent storage layer for indexed representation of source code structures. Architectural overview of the GraphCache domain in the mcp codebase. Contains 3 source files.">
+<meta name="description" content="A specialized LRU and disk-persisted caching system for Supermodel graph IR and derived indexes. Architectural overview of the GraphCache domain in the mcp codebase. Contains 3 source files.">
 <link rel="canonical" href="https://repos.supermodeltools.com/mcp/domain-graphcache/">
 <meta property="og:title" content="GraphCache Domain — mcp Architecture — mcp Architecture Docs">
-<meta property="og:description" content="A specialized LRU and disk-persistent storage layer for indexed representation of source code structures. Architectural overview of the GraphCache domain in the mcp codebase. Contains 3 source files.">
+<meta property="og:description" content="A specialized LRU and disk-persisted caching system for Supermodel graph IR and derived indexes. Architectural overview of the GraphCache domain in the mcp codebase. Contains 3 source files.">
 <meta property="og:url" content="https://repos.supermodeltools.com/mcp/domain-graphcache.html">
 <meta property="og:image" content="https://repos.supermodeltools.com/mcp/images/share/domain-graphcache.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="mcp Architecture Docs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GraphCache Domain — mcp Architecture — mcp Architecture Docs">
-<meta name="twitter:description" content="A specialized LRU and disk-persistent storage layer for indexed representation of source code structures. Architectural overview of the GraphCache domain in the mcp codebase. Contains 3 source files.">
+<meta name="twitter:description" content="A specialized LRU and disk-persisted caching system for Supermodel graph IR and derived indexes. Architectural overview of the GraphCache domain in the mcp codebase. Contains 3 source files.">
 <meta name="twitter:image" content="https://repos.supermodeltools.com/mcp/images/share/domain-graphcache.svg">
 
 <style>:root {
@@ -856,9 +856,9 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"A specialized LRU and disk-persistent storage layer for indexed representation of source code structures. Architectural overview of the GraphCache domain in the mcp codebase. Contains 3 source files.","image":["https://repos.supermodeltools.com/mcp/images/share/domain-graphcache.svg"],"name":"GraphCache Domain — mcp Architecture","url":"https://repos.supermodeltools.com/mcp/domain-graphcache.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"A specialized LRU and disk-persisted caching system for Supermodel graph IR and derived indexes. Architectural overview of the GraphCache domain in the mcp codebase. Contains 3 source files.","image":["https://repos.supermodeltools.com/mcp/images/share/domain-graphcache.svg"],"name":"GraphCache Domain — mcp Architecture","url":"https://repos.supermodeltools.com/mcp/domain-graphcache.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/mcp/","name":"Home","position":1},{"@type":"ListItem","name":"GraphCache Domain — mcp Architecture","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The GraphCache domain is an architectural grouping in the mcp codebase. A specialized LRU and disk-persistent storage layer for indexed representation of source code structures. It contains 3 source files."},"name":"What is the GraphCache domain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The GraphCache domain contains 3 subdomain(s): Indexer, LruManager, Persistence."},"name":"What subdomains are in GraphCache?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The GraphCache domain contains 3 source files."},"name":"How many files are in GraphCache?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The GraphCache domain is an architectural grouping in the mcp codebase. A specialized LRU and disk-persisted caching system for Supermodel graph IR and derived indexes. It contains 3 source files."},"name":"What is the GraphCache domain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The GraphCache domain contains 1 subdomain(s): LRUCache."},"name":"What subdomains are in GraphCache?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The GraphCache domain contains 3 source files."},"name":"How many files are in GraphCache?"}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -929,7 +929,7 @@ a.pill:hover {
 
       
       <div class="entity-summary">
-        <p>A specialized LRU and disk-persistent storage layer for indexed representation of source code structures.</p>
+        <p>A specialized LRU and disk-persisted caching system for Supermodel graph IR and derived indexes.</p>
       </div>
       
     </div>
@@ -951,12 +951,8 @@ a.pill:hover {
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
   domain_GraphCache["GraphCache"]
-  subdomain_GraphCache_Persistence["Persistence"]
-  domain_GraphCache --> subdomain_GraphCache_Persistence
-  subdomain_GraphCache_Indexer["Indexer"]
-  domain_GraphCache --> subdomain_GraphCache_Indexer
-  subdomain_GraphCache_LruManager["LruManager"]
-  domain_GraphCache --> subdomain_GraphCache_LruManager
+  subdomain_GraphCache_LRUCache["LRUCache"]
+  domain_GraphCache --> subdomain_GraphCache_LRUCache
   style domain_GraphCache fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
@@ -965,7 +961,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="domain-graphcache"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Persistence","label":"Persistence","type":"Subdomain","slug":"subdomain-persistence"},{"id":"subdomain:GraphCache:Indexer","label":"Indexer","type":"Subdomain","slug":"subdomain-indexer"},{"id":"subdomain:GraphCache:LruManager","label":"LruManager","type":"Subdomain","slug":"subdomain-lrumanager"}],"edges":[{"source":"domain:GraphCache","target":"subdomain:GraphCache:Persistence","type":"contains"},{"source":"domain:GraphCache","target":"subdomain:GraphCache:Indexer","type":"contains"},{"source":"domain:GraphCache","target":"subdomain:GraphCache:LruManager","type":"contains"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:LRUCache","label":"LRUCache","type":"Subdomain","slug":"subdomain-lrucache"}],"edges":[{"source":"domain:GraphCache","target":"subdomain:GraphCache:LRUCache","type":"contains"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -983,7 +979,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-indexer.html">Indexer</a></li><li><a href="/mcp/subdomain-lrumanager.html">LruManager</a></li><li><a href="/mcp/subdomain-persistence.html">Persistence</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-lrucache.html">LRUCache</a></li></ul>
     </div>
     
 
@@ -1029,12 +1025,12 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What is the GraphCache domain?</summary>
-        <div class="faq-answer">The GraphCache domain is an architectural grouping in the mcp codebase. A specialized LRU and disk-persistent storage layer for indexed representation of source code structures. It contains 3 source files.</div>
+        <div class="faq-answer">The GraphCache domain is an architectural grouping in the mcp codebase. A specialized LRU and disk-persisted caching system for Supermodel graph IR and derived indexes. It contains 3 source files.</div>
       </details>
       
       <details class="faq-item">
         <summary class="faq-question">What subdomains are in GraphCache?</summary>
-        <div class="faq-answer">The GraphCache domain contains 3 subdomain(s): Indexer, LruManager, Persistence.</div>
+        <div class="faq-answer">The GraphCache domain contains 1 subdomain(s): LRUCache.</div>
       </details>
       
       <details class="faq-item">

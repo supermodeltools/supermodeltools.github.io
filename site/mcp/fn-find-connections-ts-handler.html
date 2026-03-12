@@ -916,8 +916,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/codeanalysistools.html" class="pill pill-green">CodeAnalysisTools</a>
-        <a href="/mcp/subdomain/traversalengine.html" class="pill pill-orange">TraversalEngine</a>
+        <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
+        <a href="/mcp/subdomain/markdownrendering.html" class="pill pill-orange">MarkdownRendering</a>
         
         
         <span class="pill">calls 8</span>
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisTools","slug":"domain-codeanalysistools"},"entity":{"name":"handler","slug":"fn-find-connections-ts-handler","type":"Function"},"subdomain":{"name":"TraversalEngine","slug":"subdomain-traversalengine"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"handler","slug":"fn-find-connections-ts-handler","type":"Function"},"subdomain":{"name":"MarkdownRendering","slug":"subdomain-markdownrendering"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/codeanalysistools.html">CodeAnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/traversalengine.html">TraversalEngine</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/markdownrendering.html">MarkdownRendering</a><span class="arch-sep">&rarr;</span>
             <span>handler() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,24 +958,24 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  32ba9c58_d231_013b_aec7_1138c8d1d2a4["handler()"]
-  a8919f55_ffe6_65a5_2343_5864b18052ac["asErrorResult()"]
-  32ba9c58_d231_013b_aec7_1138c8d1d2a4 -->|calls| a8919f55_ffe6_65a5_2343_5864b18052ac
-  e72fb952_3ad5_529b_6b1c_de70eb369921["resolveOrFetchGraph()"]
-  32ba9c58_d231_013b_aec7_1138c8d1d2a4 -->|calls| e72fb952_3ad5_529b_6b1c_de70eb369921
-  59cfa026_1e64_6e6d_99fc_f3361f9127a6["classifyApiError()"]
-  32ba9c58_d231_013b_aec7_1138c8d1d2a4 -->|calls| 59cfa026_1e64_6e6d_99fc_f3361f9127a6
-  f8aa8f6d_4397_2124_0210_797903723f30["collectDomainMembers()"]
-  32ba9c58_d231_013b_aec7_1138c8d1d2a4 -->|calls| f8aa8f6d_4397_2124_0210_797903723f30
-  55766793_e3fb_4522_8f07_0aa9ed8d2c13["asTextContentResult()"]
-  32ba9c58_d231_013b_aec7_1138c8d1d2a4 -->|calls| 55766793_e3fb_4522_8f07_0aa9ed8d2c13
-  2bea092f_074f_ce60_a2e8_d3226ee18c51["get()"]
-  32ba9c58_d231_013b_aec7_1138c8d1d2a4 -->|calls| 2bea092f_074f_ce60_a2e8_d3226ee18c51
-  412af8c4_7957_dfb3_e079_c7ece5d0f483["has()"]
-  32ba9c58_d231_013b_aec7_1138c8d1d2a4 -->|calls| 412af8c4_7957_dfb3_e079_c7ece5d0f483
-  3e5b4ad9_a23d_b587_7e75_e0038a8f78ba["normalizePath()"]
-  32ba9c58_d231_013b_aec7_1138c8d1d2a4 -->|calls| 3e5b4ad9_a23d_b587_7e75_e0038a8f78ba
-  style 32ba9c58_d231_013b_aec7_1138c8d1d2a4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  ac9d2931_e9f7_bd9a_a449_3a44b7772a57["handler()"]
+  eb11034b_9263_3499_5bb6_6218ea90c4dc["asErrorResult()"]
+  ac9d2931_e9f7_bd9a_a449_3a44b7772a57 -->|calls| eb11034b_9263_3499_5bb6_6218ea90c4dc
+  8161861f_81e1_6a38_8b14_7f7403bc6af2["resolveOrFetchGraph()"]
+  ac9d2931_e9f7_bd9a_a449_3a44b7772a57 -->|calls| 8161861f_81e1_6a38_8b14_7f7403bc6af2
+  22a78394_99d7_c8bc_b247_db96bb40434d["classifyApiError()"]
+  ac9d2931_e9f7_bd9a_a449_3a44b7772a57 -->|calls| 22a78394_99d7_c8bc_b247_db96bb40434d
+  818befbe_df44_9d02_ef49_09f943dfffdc["collectDomainMembers()"]
+  ac9d2931_e9f7_bd9a_a449_3a44b7772a57 -->|calls| 818befbe_df44_9d02_ef49_09f943dfffdc
+  f7d31eda_cc08_8a16_272b_ac7eb90406ac["asTextContentResult()"]
+  ac9d2931_e9f7_bd9a_a449_3a44b7772a57 -->|calls| f7d31eda_cc08_8a16_272b_ac7eb90406ac
+  90f8f306_ba82_2894_1a47_5ba53a12ae3e["get()"]
+  ac9d2931_e9f7_bd9a_a449_3a44b7772a57 -->|calls| 90f8f306_ba82_2894_1a47_5ba53a12ae3e
+  5d99301e_7d3f_e889_0e35_d8b8d95f32de["has()"]
+  ac9d2931_e9f7_bd9a_a449_3a44b7772a57 -->|calls| 5d99301e_7d3f_e889_0e35_d8b8d95f32de
+  c9a59e84_a208_9c92_c2fa_4c6dcf3056f6["normalizePath()"]
+  ac9d2931_e9f7_bd9a_a449_3a44b7772a57 -->|calls| c9a59e84_a208_9c92_c2fa_4c6dcf3056f6
+  style ac9d2931_e9f7_bd9a_a449_3a44b7772a57 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -983,7 +983,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-find-connections-ts-handler"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","label":"handler","type":"Function","slug":"fn-find-connections-ts-handler","lc":95,"lang":"typescript","cc":8},{"id":"a8919f55:ffe6:65a5:2343:5864b18052ac","label":"asErrorResult","type":"Function","slug":"fn-types-ts-aserrorresult","lc":15,"lang":"typescript","cbc":8},{"id":"e72fb952:3ad5:529b:6b1c:de70eb369921","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"59cfa026:1e64:6e6d:99fc:f3361f9127a6","label":"classifyApiError","type":"Function","slug":"fn-api-helpers-ts-classifyapierror","lc":133,"lang":"typescript","cbc":4},{"id":"f8aa8f6d:4397:2124:0210:797903723f30","label":"collectDomainMembers","type":"Function","slug":"fn-find-connections-ts-collectdomainmembers","lc":19,"lang":"typescript","cc":1,"cbc":1},{"id":"55766793:e3fb:4522:8f07:0aa9ed8d2c13","label":"asTextContentResult","type":"Function","slug":"fn-types-ts-astextcontentresult","lc":11,"lang":"typescript","cbc":8},{"id":"2bea092f:074f:ce60:a2e8:d3226ee18c51","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"412af8c4:7957:dfb3:e079:c7ece5d0f483","label":"has","type":"Function","slug":"fn-graph-cache-ts-has","lc":3,"lang":"typescript","cbc":8},{"id":"3e5b4ad9:a23d:b587:7e75:e0038a8f78ba","label":"normalizePath","type":"Function","slug":"fn-graph-cache-ts-normalizepath","lc":3,"lang":"typescript","cbc":10},{"id":"domain:CodeAnalysisTools","label":"CodeAnalysisTools","type":"Domain","slug":"domain-codeanalysistools"},{"id":"subdomain:CodeAnalysisTools:TraversalEngine","label":"TraversalEngine","type":"Subdomain","slug":"subdomain-traversalengine"}],"edges":[{"source":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","target":"a8919f55:ffe6:65a5:2343:5864b18052ac","type":"calls"},{"source":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","target":"e72fb952:3ad5:529b:6b1c:de70eb369921","type":"calls"},{"source":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","target":"59cfa026:1e64:6e6d:99fc:f3361f9127a6","type":"calls"},{"source":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","target":"f8aa8f6d:4397:2124:0210:797903723f30","type":"calls"},{"source":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","target":"55766793:e3fb:4522:8f07:0aa9ed8d2c13","type":"calls"},{"source":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","target":"2bea092f:074f:ce60:a2e8:d3226ee18c51","type":"calls"},{"source":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","target":"412af8c4:7957:dfb3:e079:c7ece5d0f483","type":"calls"},{"source":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","target":"3e5b4ad9:a23d:b587:7e75:e0038a8f78ba","type":"calls"},{"source":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","target":"domain:CodeAnalysisTools","type":"belongsTo"},{"source":"32ba9c58:d231:013b:aec7:1138c8d1d2a4","target":"subdomain:CodeAnalysisTools:TraversalEngine","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","label":"handler","type":"Function","slug":"fn-find-connections-ts-handler","lc":95,"lang":"typescript","cc":8},{"id":"eb11034b:9263:3499:5bb6:6218ea90c4dc","label":"asErrorResult","type":"Function","slug":"fn-types-ts-aserrorresult","lc":15,"lang":"typescript","cbc":8},{"id":"8161861f:81e1:6a38:8b14:7f7403bc6af2","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"22a78394:99d7:c8bc:b247:db96bb40434d","label":"classifyApiError","type":"Function","slug":"fn-api-helpers-ts-classifyapierror","lc":133,"lang":"typescript","cbc":4},{"id":"818befbe:df44:9d02:ef49:09f943dfffdc","label":"collectDomainMembers","type":"Function","slug":"fn-find-connections-ts-collectdomainmembers","lc":19,"lang":"typescript","cc":1,"cbc":1},{"id":"f7d31eda:cc08:8a16:272b:ac7eb90406ac","label":"asTextContentResult","type":"Function","slug":"fn-types-ts-astextcontentresult","lc":11,"lang":"typescript","cbc":8},{"id":"90f8f306:ba82:2894:1a47:5ba53a12ae3e","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"5d99301e:7d3f:e889:0e35:d8b8d95f32de","label":"has","type":"Function","slug":"fn-graph-cache-ts-has","lc":3,"lang":"typescript","cbc":8},{"id":"c9a59e84:a208:9c92:c2fa:4c6dcf3056f6","label":"normalizePath","type":"Function","slug":"fn-graph-cache-ts-normalizepath","lc":3,"lang":"typescript","cbc":10},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:MarkdownRendering","label":"MarkdownRendering","type":"Subdomain","slug":"subdomain-markdownrendering"}],"edges":[{"source":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","target":"eb11034b:9263:3499:5bb6:6218ea90c4dc","type":"calls"},{"source":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","target":"8161861f:81e1:6a38:8b14:7f7403bc6af2","type":"calls"},{"source":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","target":"22a78394:99d7:c8bc:b247:db96bb40434d","type":"calls"},{"source":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","target":"818befbe:df44:9d02:ef49:09f943dfffdc","type":"calls"},{"source":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","target":"f7d31eda:cc08:8a16:272b:ac7eb90406ac","type":"calls"},{"source":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","target":"90f8f306:ba82:2894:1a47:5ba53a12ae3e","type":"calls"},{"source":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","target":"5d99301e:7d3f:e889:0e35:d8b8d95f32de","type":"calls"},{"source":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","target":"c9a59e84:a208:9c92:c2fa:4c6dcf3056f6","type":"calls"},{"source":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"ac9d2931:e9f7:bd9a:a449:3a44b7772a57","target":"subdomain:AnalysisTools:MarkdownRendering","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1099,14 +1099,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-codeanalysistools.html">CodeAnalysisTools</a></li></ul>
+      <ul><li><a href="/mcp/domain-analysistools.html">AnalysisTools</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-traversalengine.html">TraversalEngine</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-markdownrendering.html">MarkdownRendering</a></li></ul>
     </div>
     
 
