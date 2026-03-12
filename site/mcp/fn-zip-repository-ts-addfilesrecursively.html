@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
-<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>addFilesRecursively() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the addFilesRecursively() function in zip-repository.ts from the mcp codebase.">
@@ -862,6 +861,7 @@ a.pill:hover {
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"addFilesRecursively() is a function in the mcp codebase."},"name":"What does addFilesRecursively() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"addFilesRecursively() calls 4 function(s): debug, error, formatBytes, warn."},"name":"What does addFilesRecursively() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"addFilesRecursively() is called by 1 function(s): zipRepository."},"name":"What calls addFilesRecursively()?"}]}</script>
 </head>
 <body>
+<script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/mcp").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/repositoryutilities.html" class="pill pill-green">RepositoryUtilities</a>
-        <a href="/mcp/subdomain/identification.html" class="pill pill-orange">Identification</a>
+        <a href="/mcp/subdomain/archiving.html" class="pill pill-orange">Archiving</a>
         
         
         <span class="pill">calls 4</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"addFilesRecursively","slug":"fn-zip-repository-ts-addfilesrecursively","type":"Function"},"subdomain":{"name":"Identification","slug":"subdomain-identification"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"addFilesRecursively","slug":"fn-zip-repository-ts-addfilesrecursively","type":"Function"},"subdomain":{"name":"Archiving","slug":"subdomain-archiving"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/repositoryutilities.html">RepositoryUtilities</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/identification.html">Identification</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/archiving.html">Archiving</a><span class="arch-sep">&rarr;</span>
             <span>addFilesRecursively() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,18 +959,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  74867b9b_5919_8bf0_0893_1cea26cb75f1["addFilesRecursively()"]
-  4905b422_2a9e_a1ff_e8ed_45ca8e89d1e3["zipRepository()"]
-  4905b422_2a9e_a1ff_e8ed_45ca8e89d1e3 -->|calls| 74867b9b_5919_8bf0_0893_1cea26cb75f1
-  ed43b594_d5aa_356b_8b83_c720787a6581["warn()"]
-  74867b9b_5919_8bf0_0893_1cea26cb75f1 -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  a814ad56_0609_2390_1b77_478d9b8da708["error()"]
-  74867b9b_5919_8bf0_0893_1cea26cb75f1 -->|calls| a814ad56_0609_2390_1b77_478d9b8da708
-  23be1f7c_252b_6bcb_b8a7_ae3a93bf4201["debug()"]
-  74867b9b_5919_8bf0_0893_1cea26cb75f1 -->|calls| 23be1f7c_252b_6bcb_b8a7_ae3a93bf4201
-  065924d4_15d7_1780_97e6_d433c28be464["formatBytes()"]
-  74867b9b_5919_8bf0_0893_1cea26cb75f1 -->|calls| 065924d4_15d7_1780_97e6_d433c28be464
-  style 74867b9b_5919_8bf0_0893_1cea26cb75f1 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  05fe6421_4c82_8feb_b120_d2059a4b31f9["addFilesRecursively()"]
+  494911e9_db6e_4156_53ef_f63f2296be95["zipRepository()"]
+  494911e9_db6e_4156_53ef_f63f2296be95 -->|calls| 05fe6421_4c82_8feb_b120_d2059a4b31f9
+  4665b3ca_c2a3_6346_1a8c_4d9a2163645f["warn()"]
+  05fe6421_4c82_8feb_b120_d2059a4b31f9 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  13074885_8019_6780_20c7_4e9dc440c169["error()"]
+  05fe6421_4c82_8feb_b120_d2059a4b31f9 -->|calls| 13074885_8019_6780_20c7_4e9dc440c169
+  b2a9f2d9_d668_db1a_e703_9b0175b70af0["debug()"]
+  05fe6421_4c82_8feb_b120_d2059a4b31f9 -->|calls| b2a9f2d9_d668_db1a_e703_9b0175b70af0
+  559e7279_1f9d_45b6_f942_8d7a307880b0["formatBytes()"]
+  05fe6421_4c82_8feb_b120_d2059a4b31f9 -->|calls| 559e7279_1f9d_45b6_f942_8d7a307880b0
+  style 05fe6421_4c82_8feb_b120_d2059a4b31f9 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -978,7 +978,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-zip-repository-ts-addfilesrecursively"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"74867b9b:5919:8bf0:0893:1cea26cb75f1","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"ed43b594:d5aa:356b:8b83:c720787a6581","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"a814ad56:0609:2390:1b77:478d9b8da708","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"065924d4:15d7:1780:97e6:d433c28be464","label":"formatBytes","type":"Function","slug":"fn-zip-repository-ts-formatbytes","lc":6,"lang":"typescript","cbc":2},{"id":"4905b422:2a9e:a1ff:e8ed:45ca8e89d1e3","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Identification","label":"Identification","type":"Subdomain","slug":"subdomain-identification"}],"edges":[{"source":"74867b9b:5919:8bf0:0893:1cea26cb75f1","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"74867b9b:5919:8bf0:0893:1cea26cb75f1","target":"a814ad56:0609:2390:1b77:478d9b8da708","type":"calls"},{"source":"74867b9b:5919:8bf0:0893:1cea26cb75f1","target":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","type":"calls"},{"source":"74867b9b:5919:8bf0:0893:1cea26cb75f1","target":"065924d4:15d7:1780:97e6:d433c28be464","type":"calls"},{"source":"4905b422:2a9e:a1ff:e8ed:45ca8e89d1e3","target":"74867b9b:5919:8bf0:0893:1cea26cb75f1","type":"calls"},{"source":"74867b9b:5919:8bf0:0893:1cea26cb75f1","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"74867b9b:5919:8bf0:0893:1cea26cb75f1","target":"subdomain:RepositoryUtilities:Identification","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"05fe6421:4c82:8feb:b120:d2059a4b31f9","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"13074885:8019:6780:20c7:4e9dc440c169","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"b2a9f2d9:d668:db1a:e703:9b0175b70af0","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"559e7279:1f9d:45b6:f942:8d7a307880b0","label":"formatBytes","type":"Function","slug":"fn-zip-repository-ts-formatbytes","lc":6,"lang":"typescript","cbc":2},{"id":"494911e9:db6e:4156:53ef:f63f2296be95","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Archiving","label":"Archiving","type":"Subdomain","slug":"subdomain-archiving"}],"edges":[{"source":"05fe6421:4c82:8feb:b120:d2059a4b31f9","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"05fe6421:4c82:8feb:b120:d2059a4b31f9","target":"13074885:8019:6780:20c7:4e9dc440c169","type":"calls"},{"source":"05fe6421:4c82:8feb:b120:d2059a4b31f9","target":"b2a9f2d9:d668:db1a:e703:9b0175b70af0","type":"calls"},{"source":"05fe6421:4c82:8feb:b120:d2059a4b31f9","target":"559e7279:1f9d:45b6:f942:8d7a307880b0","type":"calls"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"05fe6421:4c82:8feb:b120:d2059a4b31f9","type":"calls"},{"source":"05fe6421:4c82:8feb:b120:d2059a4b31f9","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"05fe6421:4c82:8feb:b120:d2059a4b31f9","target":"subdomain:RepositoryUtilities:Archiving","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1121,7 +1121,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-identification.html">Identification</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-archiving.html">Archiving</a></li></ul>
     </div>
     
 

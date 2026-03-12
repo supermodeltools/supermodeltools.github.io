@@ -9,20 +9,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
-<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>RepositoryUtilities Domain — mcp Architecture | mcp Architecture Docs</title>
-<meta name="description" content="Provides filesystem and git-level abstractions for preparing codebases for remote analysis. Architectural overview of the RepositoryUtilities domain in the mcp codebase. Contains 4 source files.">
+<meta name="description" content="Low-level utilities for interacting with the local filesystem and VCS. Architectural overview of the RepositoryUtilities domain in the mcp codebase. Contains 4 source files.">
 <link rel="canonical" href="https://repos.supermodeltools.com/mcp/domain-repositoryutilities/">
 <meta property="og:title" content="RepositoryUtilities Domain — mcp Architecture — mcp Architecture Docs">
-<meta property="og:description" content="Provides filesystem and git-level abstractions for preparing codebases for remote analysis. Architectural overview of the RepositoryUtilities domain in the mcp codebase. Contains 4 source files.">
+<meta property="og:description" content="Low-level utilities for interacting with the local filesystem and VCS. Architectural overview of the RepositoryUtilities domain in the mcp codebase. Contains 4 source files.">
 <meta property="og:url" content="https://repos.supermodeltools.com/mcp/domain-repositoryutilities.html">
 <meta property="og:image" content="https://repos.supermodeltools.com/mcp/images/share/domain-repositoryutilities.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="mcp Architecture Docs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RepositoryUtilities Domain — mcp Architecture — mcp Architecture Docs">
-<meta name="twitter:description" content="Provides filesystem and git-level abstractions for preparing codebases for remote analysis. Architectural overview of the RepositoryUtilities domain in the mcp codebase. Contains 4 source files.">
+<meta name="twitter:description" content="Low-level utilities for interacting with the local filesystem and VCS. Architectural overview of the RepositoryUtilities domain in the mcp codebase. Contains 4 source files.">
 <meta name="twitter:image" content="https://repos.supermodeltools.com/mcp/images/share/domain-repositoryutilities.svg">
 
 <style>:root {
@@ -857,11 +856,12 @@ a.pill:hover {
   .hero-stat .num { font-size: 18px; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Provides filesystem and git-level abstractions for preparing codebases for remote analysis. Architectural overview of the RepositoryUtilities domain in the mcp codebase. Contains 4 source files.","image":["https://repos.supermodeltools.com/mcp/images/share/domain-repositoryutilities.svg"],"name":"RepositoryUtilities Domain — mcp Architecture","url":"https://repos.supermodeltools.com/mcp/domain-repositoryutilities.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Low-level utilities for interacting with the local filesystem and VCS. Architectural overview of the RepositoryUtilities domain in the mcp codebase. Contains 4 source files.","image":["https://repos.supermodeltools.com/mcp/images/share/domain-repositoryutilities.svg"],"name":"RepositoryUtilities Domain — mcp Architecture","url":"https://repos.supermodeltools.com/mcp/domain-repositoryutilities.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/mcp/","name":"Home","position":1},{"@type":"ListItem","name":"RepositoryUtilities Domain — mcp Architecture","position":2}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The RepositoryUtilities domain is an architectural grouping in the mcp codebase. Provides filesystem and git-level abstractions for preparing codebases for remote analysis. It contains 4 source files."},"name":"What is the RepositoryUtilities domain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The RepositoryUtilities domain contains 3 subdomain(s): Compression, Identification, Logging."},"name":"What subdomains are in RepositoryUtilities?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The RepositoryUtilities domain contains 4 source files."},"name":"How many files are in RepositoryUtilities?"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The RepositoryUtilities domain is an architectural grouping in the mcp codebase. Low-level utilities for interacting with the local filesystem and VCS. It contains 4 source files."},"name":"What is the RepositoryUtilities domain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The RepositoryUtilities domain contains 3 subdomain(s): Archiving, ErrorHandling, VCS."},"name":"What subdomains are in RepositoryUtilities?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The RepositoryUtilities domain contains 4 source files."},"name":"How many files are in RepositoryUtilities?"}]}</script>
 </head>
 <body>
+<script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/mcp").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
@@ -930,7 +930,7 @@ a.pill:hover {
 
       
       <div class="entity-summary">
-        <p>Provides filesystem and git-level abstractions for preparing codebases for remote analysis.</p>
+        <p>Low-level utilities for interacting with the local filesystem and VCS.</p>
       </div>
       
     </div>
@@ -952,12 +952,12 @@ a.pill:hover {
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
   domain_RepositoryUtilities["RepositoryUtilities"]
-  subdomain_RepositoryUtilities_Compression["Compression"]
-  domain_RepositoryUtilities --> subdomain_RepositoryUtilities_Compression
-  subdomain_RepositoryUtilities_Identification["Identification"]
-  domain_RepositoryUtilities --> subdomain_RepositoryUtilities_Identification
-  subdomain_RepositoryUtilities_Logging["Logging"]
-  domain_RepositoryUtilities --> subdomain_RepositoryUtilities_Logging
+  subdomain_RepositoryUtilities_Archiving["Archiving"]
+  domain_RepositoryUtilities --> subdomain_RepositoryUtilities_Archiving
+  subdomain_RepositoryUtilities_ErrorHandling["ErrorHandling"]
+  domain_RepositoryUtilities --> subdomain_RepositoryUtilities_ErrorHandling
+  subdomain_RepositoryUtilities_VCS["VCS"]
+  domain_RepositoryUtilities --> subdomain_RepositoryUtilities_VCS
   style domain_RepositoryUtilities fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
@@ -966,7 +966,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="domain-repositoryutilities"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Compression","label":"Compression","type":"Subdomain","slug":"subdomain-compression"},{"id":"subdomain:RepositoryUtilities:Identification","label":"Identification","type":"Subdomain","slug":"subdomain-identification"},{"id":"subdomain:RepositoryUtilities:Logging","label":"Logging","type":"Subdomain","slug":"subdomain-logging"}],"edges":[{"source":"domain:RepositoryUtilities","target":"subdomain:RepositoryUtilities:Compression","type":"contains"},{"source":"domain:RepositoryUtilities","target":"subdomain:RepositoryUtilities:Identification","type":"contains"},{"source":"domain:RepositoryUtilities","target":"subdomain:RepositoryUtilities:Logging","type":"contains"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Archiving","label":"Archiving","type":"Subdomain","slug":"subdomain-archiving"},{"id":"subdomain:RepositoryUtilities:ErrorHandling","label":"ErrorHandling","type":"Subdomain","slug":"subdomain-errorhandling"},{"id":"subdomain:RepositoryUtilities:VCS","label":"VCS","type":"Subdomain","slug":"subdomain-vcs"}],"edges":[{"source":"domain:RepositoryUtilities","target":"subdomain:RepositoryUtilities:Archiving","type":"contains"},{"source":"domain:RepositoryUtilities","target":"subdomain:RepositoryUtilities:ErrorHandling","type":"contains"},{"source":"domain:RepositoryUtilities","target":"subdomain:RepositoryUtilities:VCS","type":"contains"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -984,7 +984,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-compression.html">Compression</a></li><li><a href="/mcp/subdomain-identification.html">Identification</a></li><li><a href="/mcp/subdomain-logging.html">Logging</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-archiving.html">Archiving</a></li><li><a href="/mcp/subdomain-errorhandling.html">ErrorHandling</a></li><li><a href="/mcp/subdomain-vcs.html">VCS</a></li></ul>
     </div>
     
 
@@ -1030,12 +1030,12 @@ a.pill:hover {
       
       <details class="faq-item">
         <summary class="faq-question">What is the RepositoryUtilities domain?</summary>
-        <div class="faq-answer">The RepositoryUtilities domain is an architectural grouping in the mcp codebase. Provides filesystem and git-level abstractions for preparing codebases for remote analysis. It contains 4 source files.</div>
+        <div class="faq-answer">The RepositoryUtilities domain is an architectural grouping in the mcp codebase. Low-level utilities for interacting with the local filesystem and VCS. It contains 4 source files.</div>
       </details>
       
       <details class="faq-item">
         <summary class="faq-question">What subdomains are in RepositoryUtilities?</summary>
-        <div class="faq-answer">The RepositoryUtilities domain contains 3 subdomain(s): Compression, Identification, Logging.</div>
+        <div class="faq-answer">The RepositoryUtilities domain contains 3 subdomain(s): Archiving, ErrorHandling, VCS.</div>
       </details>
       
       <details class="faq-item">

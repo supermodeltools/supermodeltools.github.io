@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
-<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>evictOldest() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the evictOldest() function in graph-cache.ts from the mcp codebase.">
@@ -862,6 +861,7 @@ a.pill:hover {
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"evictOldest() is a function in the mcp codebase."},"name":"What does evictOldest() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"evictOldest() calls 1 function(s): get."},"name":"What does evictOldest() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"evictOldest() is called by 1 function(s): set."},"name":"What calls evictOldest()?"}]}</script>
 </head>
 <body>
+<script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/mcp").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
@@ -959,12 +959,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ad011121_691d_59d9_5092_c59515eae675["evictOldest()"]
-  3f993a3d_7ae0_68ff_0815_573d3cd68c8f["set()"]
-  3f993a3d_7ae0_68ff_0815_573d3cd68c8f -->|calls| ad011121_691d_59d9_5092_c59515eae675
-  23cce284_5fbf_2a36_0b90_f74c81c759d9["get()"]
-  ad011121_691d_59d9_5092_c59515eae675 -->|calls| 23cce284_5fbf_2a36_0b90_f74c81c759d9
-  style ad011121_691d_59d9_5092_c59515eae675 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d603265a_b8ef_bf1a_5c5b_c924f42673f4["evictOldest()"]
+  88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e["set()"]
+  88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e -->|calls| d603265a_b8ef_bf1a_5c5b_c924f42673f4
+  819d664d_2fbd_afd3_a18f_5f46a8d420cd["get()"]
+  d603265a_b8ef_bf1a_5c5b_c924f42673f4 -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
+  style d603265a_b8ef_bf1a_5c5b_c924f42673f4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -972,7 +972,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-evictoldest"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ad011121:691d:59d9:5092:c59515eae675","label":"evictOldest","type":"Function","slug":"fn-graph-cache-ts-evictoldest","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"23cce284:5fbf:2a36:0b90:f74c81c759d9","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Eviction","label":"Eviction","type":"Subdomain","slug":"subdomain-eviction"}],"edges":[{"source":"ad011121:691d:59d9:5092:c59515eae675","target":"23cce284:5fbf:2a36:0b90:f74c81c759d9","type":"calls"},{"source":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","target":"ad011121:691d:59d9:5092:c59515eae675","type":"calls"},{"source":"ad011121:691d:59d9:5092:c59515eae675","target":"domain:GraphCache","type":"belongsTo"},{"source":"ad011121:691d:59d9:5092:c59515eae675","target":"subdomain:GraphCache:Eviction","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d603265a:b8ef:bf1a:5c5b:c924f42673f4","label":"evictOldest","type":"Function","slug":"fn-graph-cache-ts-evictoldest","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Eviction","label":"Eviction","type":"Subdomain","slug":"subdomain-eviction"}],"edges":[{"source":"d603265a:b8ef:bf1a:5c5b:c924f42673f4","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","target":"d603265a:b8ef:bf1a:5c5b:c924f42673f4","type":"calls"},{"source":"d603265a:b8ef:bf1a:5c5b:c924f42673f4","target":"domain:GraphCache","type":"belongsTo"},{"source":"d603265a:b8ef:bf1a:5c5b:c924f42673f4","target":"subdomain:GraphCache:Eviction","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         

@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
-<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>error() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the error() function in logger.ts from the mcp codebase.">
@@ -862,6 +861,7 @@ a.pill:hover {
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"error() is a function in the mcp codebase."},"name":"What does error() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"error() is called by 7 function(s): addFilesRecursively, buildIgnoreFilter, debug, handlePrecache, resolveOrFetchGraph, warn, zipRepository."},"name":"What calls error()?"}]}</script>
 </head>
 <body>
+<script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/mcp").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/repositoryutilities.html" class="pill pill-green">RepositoryUtilities</a>
-        <a href="/mcp/subdomain/logging.html" class="pill pill-orange">Logging</a>
+        <a href="/mcp/subdomain/errorhandling.html" class="pill pill-orange">ErrorHandling</a>
         
         
         
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"error","slug":"fn-logger-ts-error","type":"Function"},"subdomain":{"name":"Logging","slug":"subdomain-logging"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"error","slug":"fn-logger-ts-error","type":"Function"},"subdomain":{"name":"ErrorHandling","slug":"subdomain-errorhandling"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/repositoryutilities.html">RepositoryUtilities</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/logging.html">Logging</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/errorhandling.html">ErrorHandling</a><span class="arch-sep">&rarr;</span>
             <span>error() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,22 +959,22 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  a814ad56_0609_2390_1b77_478d9b8da708["error()"]
-  82919817_4296_a56f_8a62_41ed2523a915["resolveOrFetchGraph()"]
-  82919817_4296_a56f_8a62_41ed2523a915 -->|calls| a814ad56_0609_2390_1b77_478d9b8da708
-  7bf0c541_8231_58b6_6610_6a3f3a2f9b0e["handlePrecache()"]
-  7bf0c541_8231_58b6_6610_6a3f3a2f9b0e -->|calls| a814ad56_0609_2390_1b77_478d9b8da708
-  23be1f7c_252b_6bcb_b8a7_ae3a93bf4201["debug()"]
-  23be1f7c_252b_6bcb_b8a7_ae3a93bf4201 -->|calls| a814ad56_0609_2390_1b77_478d9b8da708
-  ed43b594_d5aa_356b_8b83_c720787a6581["warn()"]
-  ed43b594_d5aa_356b_8b83_c720787a6581 -->|calls| a814ad56_0609_2390_1b77_478d9b8da708
-  4905b422_2a9e_a1ff_e8ed_45ca8e89d1e3["zipRepository()"]
-  4905b422_2a9e_a1ff_e8ed_45ca8e89d1e3 -->|calls| a814ad56_0609_2390_1b77_478d9b8da708
-  5589b899_91f1_5d39_417a_4f0b6db7ee32["buildIgnoreFilter()"]
-  5589b899_91f1_5d39_417a_4f0b6db7ee32 -->|calls| a814ad56_0609_2390_1b77_478d9b8da708
-  74867b9b_5919_8bf0_0893_1cea26cb75f1["addFilesRecursively()"]
-  74867b9b_5919_8bf0_0893_1cea26cb75f1 -->|calls| a814ad56_0609_2390_1b77_478d9b8da708
-  style a814ad56_0609_2390_1b77_478d9b8da708 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  13074885_8019_6780_20c7_4e9dc440c169["error()"]
+  f588a176_91f8_2ea1_bfb8_d9940ec238cc["resolveOrFetchGraph()"]
+  f588a176_91f8_2ea1_bfb8_d9940ec238cc -->|calls| 13074885_8019_6780_20c7_4e9dc440c169
+  0f84379b_2c57_f891_3416_2b8d606056ac["handlePrecache()"]
+  0f84379b_2c57_f891_3416_2b8d606056ac -->|calls| 13074885_8019_6780_20c7_4e9dc440c169
+  b2a9f2d9_d668_db1a_e703_9b0175b70af0["debug()"]
+  b2a9f2d9_d668_db1a_e703_9b0175b70af0 -->|calls| 13074885_8019_6780_20c7_4e9dc440c169
+  4665b3ca_c2a3_6346_1a8c_4d9a2163645f["warn()"]
+  4665b3ca_c2a3_6346_1a8c_4d9a2163645f -->|calls| 13074885_8019_6780_20c7_4e9dc440c169
+  494911e9_db6e_4156_53ef_f63f2296be95["zipRepository()"]
+  494911e9_db6e_4156_53ef_f63f2296be95 -->|calls| 13074885_8019_6780_20c7_4e9dc440c169
+  1b15ff22_ff33_9d79_6356_9486e669a430["buildIgnoreFilter()"]
+  1b15ff22_ff33_9d79_6356_9486e669a430 -->|calls| 13074885_8019_6780_20c7_4e9dc440c169
+  05fe6421_4c82_8feb_b120_d2059a4b31f9["addFilesRecursively()"]
+  05fe6421_4c82_8feb_b120_d2059a4b31f9 -->|calls| 13074885_8019_6780_20c7_4e9dc440c169
+  style 13074885_8019_6780_20c7_4e9dc440c169 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -982,7 +982,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-logger-ts-error"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"a814ad56:0609:2390:1b77:478d9b8da708","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"82919817:4296:a56f:8a62:41ed2523a915","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"7bf0c541:8231:58b6:6610:6a3f3a2f9b0e","label":"handlePrecache","type":"Function","slug":"fn-index-ts-handleprecache","lc":152,"lang":"typescript","cc":1,"cbc":1},{"id":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"ed43b594:d5aa:356b:8b83:c720787a6581","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"4905b422:2a9e:a1ff:e8ed:45ca8e89d1e3","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"5589b899:91f1:5d39:417a:4f0b6db7ee32","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"74867b9b:5919:8bf0:0893:1cea26cb75f1","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Logging","label":"Logging","type":"Subdomain","slug":"subdomain-logging"}],"edges":[{"source":"82919817:4296:a56f:8a62:41ed2523a915","target":"a814ad56:0609:2390:1b77:478d9b8da708","type":"calls"},{"source":"7bf0c541:8231:58b6:6610:6a3f3a2f9b0e","target":"a814ad56:0609:2390:1b77:478d9b8da708","type":"calls"},{"source":"23be1f7c:252b:6bcb:b8a7:ae3a93bf4201","target":"a814ad56:0609:2390:1b77:478d9b8da708","type":"calls"},{"source":"ed43b594:d5aa:356b:8b83:c720787a6581","target":"a814ad56:0609:2390:1b77:478d9b8da708","type":"calls"},{"source":"4905b422:2a9e:a1ff:e8ed:45ca8e89d1e3","target":"a814ad56:0609:2390:1b77:478d9b8da708","type":"calls"},{"source":"5589b899:91f1:5d39:417a:4f0b6db7ee32","target":"a814ad56:0609:2390:1b77:478d9b8da708","type":"calls"},{"source":"74867b9b:5919:8bf0:0893:1cea26cb75f1","target":"a814ad56:0609:2390:1b77:478d9b8da708","type":"calls"},{"source":"a814ad56:0609:2390:1b77:478d9b8da708","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"a814ad56:0609:2390:1b77:478d9b8da708","target":"subdomain:RepositoryUtilities:Logging","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"13074885:8019:6780:20c7:4e9dc440c169","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"f588a176:91f8:2ea1:bfb8:d9940ec238cc","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"0f84379b:2c57:f891:3416:2b8d606056ac","label":"handlePrecache","type":"Function","slug":"fn-index-ts-handleprecache","lc":152,"lang":"typescript","cc":1,"cbc":1},{"id":"b2a9f2d9:d668:db1a:e703:9b0175b70af0","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"494911e9:db6e:4156:53ef:f63f2296be95","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"1b15ff22:ff33:9d79:6356:9486e669a430","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"05fe6421:4c82:8feb:b120:d2059a4b31f9","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:ErrorHandling","label":"ErrorHandling","type":"Subdomain","slug":"subdomain-errorhandling"}],"edges":[{"source":"f588a176:91f8:2ea1:bfb8:d9940ec238cc","target":"13074885:8019:6780:20c7:4e9dc440c169","type":"calls"},{"source":"0f84379b:2c57:f891:3416:2b8d606056ac","target":"13074885:8019:6780:20c7:4e9dc440c169","type":"calls"},{"source":"b2a9f2d9:d668:db1a:e703:9b0175b70af0","target":"13074885:8019:6780:20c7:4e9dc440c169","type":"calls"},{"source":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","target":"13074885:8019:6780:20c7:4e9dc440c169","type":"calls"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"13074885:8019:6780:20c7:4e9dc440c169","type":"calls"},{"source":"1b15ff22:ff33:9d79:6356:9486e669a430","target":"13074885:8019:6780:20c7:4e9dc440c169","type":"calls"},{"source":"05fe6421:4c82:8feb:b120:d2059a4b31f9","target":"13074885:8019:6780:20c7:4e9dc440c169","type":"calls"},{"source":"13074885:8019:6780:20c7:4e9dc440c169","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"13074885:8019:6780:20c7:4e9dc440c169","target":"subdomain:RepositoryUtilities:ErrorHandling","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1013,7 +1013,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-logging.html">Logging</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-errorhandling.html">ErrorHandling</a></li></ul>
     </div>
     
 

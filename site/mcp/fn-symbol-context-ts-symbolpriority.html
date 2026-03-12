@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
-<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>symbolPriority() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the symbolPriority() function in symbol-context.ts from the mcp codebase.">
@@ -862,6 +861,7 @@ a.pill:hover {
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"symbolPriority() is a function in the mcp codebase."},"name":"What does symbolPriority() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"symbolPriority() is called by 1 function(s): findSymbol."},"name":"What calls symbolPriority()?"}]}</script>
 </head>
 <body>
+<script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/mcp").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/codeanalysistools.html" class="pill pill-green">CodeAnalysisTools</a>
-        <a href="/mcp/subdomain/discovery.html" class="pill pill-orange">Discovery</a>
+        <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
+        <a href="/mcp/subdomain/symbolsearch.html" class="pill pill-orange">SymbolSearch</a>
         
         
         
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisTools","slug":"domain-codeanalysistools"},"entity":{"name":"symbolPriority","slug":"fn-symbol-context-ts-symbolpriority","type":"Function"},"subdomain":{"name":"Discovery","slug":"subdomain-discovery"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"symbolPriority","slug":"fn-symbol-context-ts-symbolpriority","type":"Function"},"subdomain":{"name":"SymbolSearch","slug":"subdomain-symbolsearch"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/codeanalysistools.html">CodeAnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/discovery.html">Discovery</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/symbolsearch.html">SymbolSearch</a><span class="arch-sep">&rarr;</span>
             <span>symbolPriority() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,10 +959,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  476f9a3d_0bff_29d4_4a0a_58a16b70ab43["symbolPriority()"]
-  8cb9eb2f_2a5d_d7a7_22f1_97fc51b810b9["findSymbol()"]
-  8cb9eb2f_2a5d_d7a7_22f1_97fc51b810b9 -->|calls| 476f9a3d_0bff_29d4_4a0a_58a16b70ab43
-  style 476f9a3d_0bff_29d4_4a0a_58a16b70ab43 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  d057d133_9f2c_6406_547f_c9a88f23613a["symbolPriority()"]
+  8dea0b79_a31d_d5c3_199a_c54786eb13c2["findSymbol()"]
+  8dea0b79_a31d_d5c3_199a_c54786eb13c2 -->|calls| d057d133_9f2c_6406_547f_c9a88f23613a
+  style d057d133_9f2c_6406_547f_c9a88f23613a fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -970,7 +970,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-symbol-context-ts-symbolpriority"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"476f9a3d:0bff:29d4:4a0a:58a16b70ab43","label":"symbolPriority","type":"Function","slug":"fn-symbol-context-ts-symbolpriority","lc":7,"lang":"typescript","cbc":1},{"id":"8cb9eb2f:2a5d:d7a7:22f1:97fc51b810b9","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"domain:CodeAnalysisTools","label":"CodeAnalysisTools","type":"Domain","slug":"domain-codeanalysistools"},{"id":"subdomain:CodeAnalysisTools:Discovery","label":"Discovery","type":"Subdomain","slug":"subdomain-discovery"}],"edges":[{"source":"8cb9eb2f:2a5d:d7a7:22f1:97fc51b810b9","target":"476f9a3d:0bff:29d4:4a0a:58a16b70ab43","type":"calls"},{"source":"476f9a3d:0bff:29d4:4a0a:58a16b70ab43","target":"domain:CodeAnalysisTools","type":"belongsTo"},{"source":"476f9a3d:0bff:29d4:4a0a:58a16b70ab43","target":"subdomain:CodeAnalysisTools:Discovery","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"d057d133:9f2c:6406:547f:c9a88f23613a","label":"symbolPriority","type":"Function","slug":"fn-symbol-context-ts-symbolpriority","lc":7,"lang":"typescript","cbc":1},{"id":"8dea0b79:a31d:d5c3:199a:c54786eb13c2","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:SymbolSearch","label":"SymbolSearch","type":"Subdomain","slug":"subdomain-symbolsearch"}],"edges":[{"source":"8dea0b79:a31d:d5c3:199a:c54786eb13c2","target":"d057d133:9f2c:6406:547f:c9a88f23613a","type":"calls"},{"source":"d057d133:9f2c:6406:547f:c9a88f23613a","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"d057d133:9f2c:6406:547f:c9a88f23613a","target":"subdomain:AnalysisTools:SymbolSearch","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -998,14 +998,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-codeanalysistools.html">CodeAnalysisTools</a></li></ul>
+      <ul><li><a href="/mcp/domain-analysistools.html">AnalysisTools</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-discovery.html">Discovery</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-symbolsearch.html">SymbolSearch</a></li></ul>
     </div>
     
 

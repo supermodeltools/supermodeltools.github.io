@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
-<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>set() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the set() function in graph-cache.ts from the mcp codebase.">
@@ -862,6 +861,7 @@ a.pill:hover {
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"set() is a function in the mcp codebase."},"name":"What does set() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"set() calls 2 function(s): evictOldest, evictStale."},"name":"What does set() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"set() is called by 7 function(s): buildIndexes, buildSubdomainToParentMap, getKeyFilesForDomain, loadCacheFromDisk, precacheForDirectory, resolveOrFetchGraph, setupHandlers."},"name":"What calls set()?"}]}</script>
 </head>
 <body>
+<script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/mcp").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
@@ -959,26 +959,26 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3f993a3d_7ae0_68ff_0815_573d3cd68c8f["set()"]
-  def01f9d_3682_eee7_901c_e92b938c96c7["buildIndexes()"]
-  def01f9d_3682_eee7_901c_e92b938c96c7 -->|calls| 3f993a3d_7ae0_68ff_0815_573d3cd68c8f
-  9983086a_cf19_4d0d_1bfb_6e877bda015f["loadCacheFromDisk()"]
-  9983086a_cf19_4d0d_1bfb_6e877bda015f -->|calls| 3f993a3d_7ae0_68ff_0815_573d3cd68c8f
-  82919817_4296_a56f_8a62_41ed2523a915["resolveOrFetchGraph()"]
-  82919817_4296_a56f_8a62_41ed2523a915 -->|calls| 3f993a3d_7ae0_68ff_0815_573d3cd68c8f
-  7e758eb2_f104_480e_bde9_bd7a56014952["precacheForDirectory()"]
-  7e758eb2_f104_480e_bde9_bd7a56014952 -->|calls| 3f993a3d_7ae0_68ff_0815_573d3cd68c8f
-  6f4ad58a_bc03_61c4_9e43_1fa1a83e8989["setupHandlers()"]
-  6f4ad58a_bc03_61c4_9e43_1fa1a83e8989 -->|calls| 3f993a3d_7ae0_68ff_0815_573d3cd68c8f
-  d7b6375b_d182_5872_a715_63bcbe268334["buildSubdomainToParentMap()"]
-  d7b6375b_d182_5872_a715_63bcbe268334 -->|calls| 3f993a3d_7ae0_68ff_0815_573d3cd68c8f
-  23c77af2_ec7c_b694_184f_f845993c29ac["getKeyFilesForDomain()"]
-  23c77af2_ec7c_b694_184f_f845993c29ac -->|calls| 3f993a3d_7ae0_68ff_0815_573d3cd68c8f
-  c910621f_fabd_ec34_c3dd_af63c5dc86fe["evictStale()"]
-  3f993a3d_7ae0_68ff_0815_573d3cd68c8f -->|calls| c910621f_fabd_ec34_c3dd_af63c5dc86fe
-  ad011121_691d_59d9_5092_c59515eae675["evictOldest()"]
-  3f993a3d_7ae0_68ff_0815_573d3cd68c8f -->|calls| ad011121_691d_59d9_5092_c59515eae675
-  style 3f993a3d_7ae0_68ff_0815_573d3cd68c8f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e["set()"]
+  abd62fb9_8ec7_5672_6aef_00d745ee4c5e["buildIndexes()"]
+  abd62fb9_8ec7_5672_6aef_00d745ee4c5e -->|calls| 88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e
+  06d9528a_7c97_f5ef_66b6_bc582941d213["loadCacheFromDisk()"]
+  06d9528a_7c97_f5ef_66b6_bc582941d213 -->|calls| 88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e
+  f588a176_91f8_2ea1_bfb8_d9940ec238cc["resolveOrFetchGraph()"]
+  f588a176_91f8_2ea1_bfb8_d9940ec238cc -->|calls| 88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e
+  10367152_acb1_0c31_6651_65c3833f576f["precacheForDirectory()"]
+  10367152_acb1_0c31_6651_65c3833f576f -->|calls| 88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e
+  54327fa2_16a5_e9a2_389a_564fecf26388["setupHandlers()"]
+  54327fa2_16a5_e9a2_389a_564fecf26388 -->|calls| 88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e
+  899d3567_51cf_08d0_01a9_17e066244739["buildSubdomainToParentMap()"]
+  899d3567_51cf_08d0_01a9_17e066244739 -->|calls| 88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e
+  4b712a4c_52f5_a6a0_46f8_09ffd5945c0b["getKeyFilesForDomain()"]
+  4b712a4c_52f5_a6a0_46f8_09ffd5945c0b -->|calls| 88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e
+  d510b1b8_c814_d863_8c65_5b0900749cf6["evictStale()"]
+  88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e -->|calls| d510b1b8_c814_d863_8c65_5b0900749cf6
+  d603265a_b8ef_bf1a_5c5b_c924f42673f4["evictOldest()"]
+  88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e -->|calls| d603265a_b8ef_bf1a_5c5b_c924f42673f4
+  style 88b9d7df_a8c3_e2ca_e8a2_cf33da3fd33e fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -986,7 +986,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-set"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"c910621f:fabd:ec34:c3dd:af63c5dc86fe","label":"evictStale","type":"Function","slug":"fn-graph-cache-ts-evictstale","lc":20,"lang":"typescript","cc":1,"cbc":1},{"id":"ad011121:691d:59d9:5092:c59515eae675","label":"evictOldest","type":"Function","slug":"fn-graph-cache-ts-evictoldest","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"def01f9d:3682:eee7:901c:e92b938c96c7","label":"buildIndexes","type":"Function","slug":"fn-graph-cache-ts-buildindexes","lc":177,"lang":"typescript","cc":4,"cbc":4},{"id":"9983086a:cf19:4d0d:1bfb:6e877bda015f","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"82919817:4296:a56f:8a62:41ed2523a915","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"7e758eb2:f104:480e:bde9:bd7a56014952","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"6f4ad58a:bc03:61c4:9e43:1fa1a83e8989","label":"setupHandlers","type":"Function","slug":"fn-server-ts-setuphandlers","lc":52,"lang":"typescript","cc":4,"cbc":1},{"id":"d7b6375b:d182:5872:a715:63bcbe268334","label":"buildSubdomainToParentMap","type":"Function","slug":"fn-explore-function-ts-buildsubdomaintoparentmap","lc":22,"lang":"typescript","cc":2,"cbc":1},{"id":"23c77af2:ec7c:b694:184f:f845993c29ac","label":"getKeyFilesForDomain","type":"Function","slug":"fn-overview-ts-getkeyfilesfordomain","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Eviction","label":"Eviction","type":"Subdomain","slug":"subdomain-eviction"}],"edges":[{"source":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","target":"c910621f:fabd:ec34:c3dd:af63c5dc86fe","type":"calls"},{"source":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","target":"ad011121:691d:59d9:5092:c59515eae675","type":"calls"},{"source":"def01f9d:3682:eee7:901c:e92b938c96c7","target":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","type":"calls"},{"source":"9983086a:cf19:4d0d:1bfb:6e877bda015f","target":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","type":"calls"},{"source":"82919817:4296:a56f:8a62:41ed2523a915","target":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","type":"calls"},{"source":"7e758eb2:f104:480e:bde9:bd7a56014952","target":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","type":"calls"},{"source":"6f4ad58a:bc03:61c4:9e43:1fa1a83e8989","target":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","type":"calls"},{"source":"d7b6375b:d182:5872:a715:63bcbe268334","target":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","type":"calls"},{"source":"23c77af2:ec7c:b694:184f:f845993c29ac","target":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","type":"calls"},{"source":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","target":"domain:GraphCache","type":"belongsTo"},{"source":"3f993a3d:7ae0:68ff:0815:573d3cd68c8f","target":"subdomain:GraphCache:Eviction","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","label":"set","type":"Function","slug":"fn-graph-cache-ts-set","lc":24,"lang":"typescript","cc":2,"cbc":7},{"id":"d510b1b8:c814:d863:8c65:5b0900749cf6","label":"evictStale","type":"Function","slug":"fn-graph-cache-ts-evictstale","lc":20,"lang":"typescript","cc":1,"cbc":1},{"id":"d603265a:b8ef:bf1a:5c5b:c924f42673f4","label":"evictOldest","type":"Function","slug":"fn-graph-cache-ts-evictoldest","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"abd62fb9:8ec7:5672:6aef:00d745ee4c5e","label":"buildIndexes","type":"Function","slug":"fn-graph-cache-ts-buildindexes","lc":177,"lang":"typescript","cc":4,"cbc":4},{"id":"06d9528a:7c97:f5ef:66b6:bc582941d213","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"f588a176:91f8:2ea1:bfb8:d9940ec238cc","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"10367152:acb1:0c31:6651:65c3833f576f","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"54327fa2:16a5:e9a2:389a:564fecf26388","label":"setupHandlers","type":"Function","slug":"fn-server-ts-setuphandlers","lc":52,"lang":"typescript","cc":4,"cbc":1},{"id":"899d3567:51cf:08d0:01a9:17e066244739","label":"buildSubdomainToParentMap","type":"Function","slug":"fn-explore-function-ts-buildsubdomaintoparentmap","lc":22,"lang":"typescript","cc":2,"cbc":1},{"id":"4b712a4c:52f5:a6a0:46f8:09ffd5945c0b","label":"getKeyFilesForDomain","type":"Function","slug":"fn-overview-ts-getkeyfilesfordomain","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Eviction","label":"Eviction","type":"Subdomain","slug":"subdomain-eviction"}],"edges":[{"source":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","target":"d510b1b8:c814:d863:8c65:5b0900749cf6","type":"calls"},{"source":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","target":"d603265a:b8ef:bf1a:5c5b:c924f42673f4","type":"calls"},{"source":"abd62fb9:8ec7:5672:6aef:00d745ee4c5e","target":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","type":"calls"},{"source":"06d9528a:7c97:f5ef:66b6:bc582941d213","target":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","type":"calls"},{"source":"f588a176:91f8:2ea1:bfb8:d9940ec238cc","target":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","type":"calls"},{"source":"10367152:acb1:0c31:6651:65c3833f576f","target":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","type":"calls"},{"source":"54327fa2:16a5:e9a2:389a:564fecf26388","target":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","type":"calls"},{"source":"899d3567:51cf:08d0:01a9:17e066244739","target":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","type":"calls"},{"source":"4b712a4c:52f5:a6a0:46f8:09ffd5945c0b","target":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","type":"calls"},{"source":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","target":"domain:GraphCache","type":"belongsTo"},{"source":"88b9d7df:a8c3:e2ca:e8a2:cf33da3fd33e","target":"subdomain:GraphCache:Eviction","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         

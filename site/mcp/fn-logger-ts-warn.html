@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
-<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>warn() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the warn() function in logger.ts from the mcp codebase.">
@@ -862,6 +861,7 @@ a.pill:hover {
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"warn() is a function in the mcp codebase."},"name":"What does warn() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"warn() calls 1 function(s): error."},"name":"What does warn() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"warn() is called by 10 function(s): addFilesRecursively, buildIgnoreFilter, cleanupOldZips, estimateDirectorySize, findGitignoreFiles, injectOverviewInstructions, loadCacheFromDisk, precacheForDirectory, and 2 more."},"name":"What calls warn()?"}]}</script>
 </head>
 <body>
+<script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/mcp").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/repositoryutilities.html" class="pill pill-green">RepositoryUtilities</a>
-        <a href="/mcp/subdomain/logging.html" class="pill pill-orange">Logging</a>
+        <a href="/mcp/subdomain/vcs.html" class="pill pill-orange">VCS</a>
         
         
         <span class="pill">calls 1</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"warn","slug":"fn-logger-ts-warn","type":"Function"},"subdomain":{"name":"Logging","slug":"subdomain-logging"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"warn","slug":"fn-logger-ts-warn","type":"Function"},"subdomain":{"name":"VCS","slug":"subdomain-vcs"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/repositoryutilities.html">RepositoryUtilities</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/logging.html">Logging</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/vcs.html">VCS</a><span class="arch-sep">&rarr;</span>
             <span>warn() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,30 +959,30 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ed43b594_d5aa_356b_8b83_c720787a6581["warn()"]
-  9983086a_cf19_4d0d_1bfb_6e877bda015f["loadCacheFromDisk()"]
-  9983086a_cf19_4d0d_1bfb_6e877bda015f -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  7e758eb2_f104_480e_bde9_bd7a56014952["precacheForDirectory()"]
-  7e758eb2_f104_480e_bde9_bd7a56014952 -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  d44466aa_3cb4_fab6_5fff_9111eec110ec["injectOverviewInstructions()"]
-  d44466aa_3cb4_fab6_5fff_9111eec110ec -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  0d2fd702_e000_063b_1046_e1f45fa672e7["start()"]
-  0d2fd702_e000_063b_1046_e1f45fa672e7 -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  4905b422_2a9e_a1ff_e8ed_45ca8e89d1e3["zipRepository()"]
-  4905b422_2a9e_a1ff_e8ed_45ca8e89d1e3 -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  3ed4351f_c52a_668f_43ef_9dc476b67036["estimateDirectorySize()"]
-  3ed4351f_c52a_668f_43ef_9dc476b67036 -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  5589b899_91f1_5d39_417a_4f0b6db7ee32["buildIgnoreFilter()"]
-  5589b899_91f1_5d39_417a_4f0b6db7ee32 -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  2d5b39e6_0c73_d8e6_c95c_7118bbf2c220["findGitignoreFiles()"]
-  2d5b39e6_0c73_d8e6_c95c_7118bbf2c220 -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  74867b9b_5919_8bf0_0893_1cea26cb75f1["addFilesRecursively()"]
-  74867b9b_5919_8bf0_0893_1cea26cb75f1 -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  1fd1b222_4346_2593_6c13_970804546b52["cleanupOldZips()"]
-  1fd1b222_4346_2593_6c13_970804546b52 -->|calls| ed43b594_d5aa_356b_8b83_c720787a6581
-  a814ad56_0609_2390_1b77_478d9b8da708["error()"]
-  ed43b594_d5aa_356b_8b83_c720787a6581 -->|calls| a814ad56_0609_2390_1b77_478d9b8da708
-  style ed43b594_d5aa_356b_8b83_c720787a6581 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  4665b3ca_c2a3_6346_1a8c_4d9a2163645f["warn()"]
+  06d9528a_7c97_f5ef_66b6_bc582941d213["loadCacheFromDisk()"]
+  06d9528a_7c97_f5ef_66b6_bc582941d213 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  10367152_acb1_0c31_6651_65c3833f576f["precacheForDirectory()"]
+  10367152_acb1_0c31_6651_65c3833f576f -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  9128a5ec_c6ee_081f_12c3_e4530888f5f9["injectOverviewInstructions()"]
+  9128a5ec_c6ee_081f_12c3_e4530888f5f9 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  417fac38_8596_98a9_c716_a9fd1c03ff10["start()"]
+  417fac38_8596_98a9_c716_a9fd1c03ff10 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  494911e9_db6e_4156_53ef_f63f2296be95["zipRepository()"]
+  494911e9_db6e_4156_53ef_f63f2296be95 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  542506c2_5282_97fb_f737_804a349088b6["estimateDirectorySize()"]
+  542506c2_5282_97fb_f737_804a349088b6 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  1b15ff22_ff33_9d79_6356_9486e669a430["buildIgnoreFilter()"]
+  1b15ff22_ff33_9d79_6356_9486e669a430 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  b3f3f710_7cf0_54d7_077e_a06020e7717d["findGitignoreFiles()"]
+  b3f3f710_7cf0_54d7_077e_a06020e7717d -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  05fe6421_4c82_8feb_b120_d2059a4b31f9["addFilesRecursively()"]
+  05fe6421_4c82_8feb_b120_d2059a4b31f9 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  8933f648_926d_aa2f_504a_ede3b91dcbd3["cleanupOldZips()"]
+  8933f648_926d_aa2f_504a_ede3b91dcbd3 -->|calls| 4665b3ca_c2a3_6346_1a8c_4d9a2163645f
+  13074885_8019_6780_20c7_4e9dc440c169["error()"]
+  4665b3ca_c2a3_6346_1a8c_4d9a2163645f -->|calls| 13074885_8019_6780_20c7_4e9dc440c169
+  style 4665b3ca_c2a3_6346_1a8c_4d9a2163645f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -990,7 +990,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-logger-ts-warn"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ed43b594:d5aa:356b:8b83:c720787a6581","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"a814ad56:0609:2390:1b77:478d9b8da708","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"9983086a:cf19:4d0d:1bfb:6e877bda015f","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"7e758eb2:f104:480e:bde9:bd7a56014952","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"d44466aa:3cb4:fab6:5fff:9111eec110ec","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"0d2fd702:e000:063b:1046:e1f45fa672e7","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"4905b422:2a9e:a1ff:e8ed:45ca8e89d1e3","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"3ed4351f:c52a:668f:43ef:9dc476b67036","label":"estimateDirectorySize","type":"Function","slug":"fn-zip-repository-ts-estimatedirectorysize","lc":68,"lang":"typescript","cc":1,"cbc":1},{"id":"5589b899:91f1:5d39:417a:4f0b6db7ee32","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"2d5b39e6:0c73:d8e6:c95c:7118bbf2c220","label":"findGitignoreFiles","type":"Function","slug":"fn-zip-repository-ts-findgitignorefiles","lc":54,"lang":"typescript","cc":1,"cbc":1},{"id":"74867b9b:5919:8bf0:0893:1cea26cb75f1","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"1fd1b222:4346:2593:6c13:970804546b52","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Logging","label":"Logging","type":"Subdomain","slug":"subdomain-logging"}],"edges":[{"source":"ed43b594:d5aa:356b:8b83:c720787a6581","target":"a814ad56:0609:2390:1b77:478d9b8da708","type":"calls"},{"source":"9983086a:cf19:4d0d:1bfb:6e877bda015f","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"7e758eb2:f104:480e:bde9:bd7a56014952","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"d44466aa:3cb4:fab6:5fff:9111eec110ec","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"0d2fd702:e000:063b:1046:e1f45fa672e7","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"4905b422:2a9e:a1ff:e8ed:45ca8e89d1e3","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"3ed4351f:c52a:668f:43ef:9dc476b67036","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"5589b899:91f1:5d39:417a:4f0b6db7ee32","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"2d5b39e6:0c73:d8e6:c95c:7118bbf2c220","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"74867b9b:5919:8bf0:0893:1cea26cb75f1","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"1fd1b222:4346:2593:6c13:970804546b52","target":"ed43b594:d5aa:356b:8b83:c720787a6581","type":"calls"},{"source":"ed43b594:d5aa:356b:8b83:c720787a6581","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"ed43b594:d5aa:356b:8b83:c720787a6581","target":"subdomain:RepositoryUtilities:Logging","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"13074885:8019:6780:20c7:4e9dc440c169","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"06d9528a:7c97:f5ef:66b6:bc582941d213","label":"loadCacheFromDisk","type":"Function","slug":"fn-graph-cache-ts-loadcachefromdisk","lc":61,"lang":"typescript","cc":5,"cbc":1},{"id":"10367152:acb1:0c31:6651:65c3833f576f","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"9128a5ec:c6ee:081f:12c3:e4530888f5f9","label":"injectOverviewInstructions","type":"Function","slug":"fn-server-ts-injectoverviewinstructions","lc":21,"lang":"typescript","cc":4,"cbc":1},{"id":"417fac38:8596:98a9:c716:a9fd1c03ff10","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"494911e9:db6e:4156:53ef:f63f2296be95","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"542506c2:5282:97fb:f737:804a349088b6","label":"estimateDirectorySize","type":"Function","slug":"fn-zip-repository-ts-estimatedirectorysize","lc":68,"lang":"typescript","cc":1,"cbc":1},{"id":"1b15ff22:ff33:9d79:6356:9486e669a430","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"b3f3f710:7cf0:54d7:077e:a06020e7717d","label":"findGitignoreFiles","type":"Function","slug":"fn-zip-repository-ts-findgitignorefiles","lc":54,"lang":"typescript","cc":1,"cbc":1},{"id":"05fe6421:4c82:8feb:b120:d2059a4b31f9","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"8933f648:926d:aa2f:504a:ede3b91dcbd3","label":"cleanupOldZips","type":"Function","slug":"fn-zip-repository-ts-cleanupoldzips","lc":39,"lang":"typescript","cc":2,"cbc":1},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:VCS","label":"VCS","type":"Subdomain","slug":"subdomain-vcs"}],"edges":[{"source":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","target":"13074885:8019:6780:20c7:4e9dc440c169","type":"calls"},{"source":"06d9528a:7c97:f5ef:66b6:bc582941d213","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"10367152:acb1:0c31:6651:65c3833f576f","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"9128a5ec:c6ee:081f:12c3:e4530888f5f9","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"417fac38:8596:98a9:c716:a9fd1c03ff10","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"494911e9:db6e:4156:53ef:f63f2296be95","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"542506c2:5282:97fb:f737:804a349088b6","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"1b15ff22:ff33:9d79:6356:9486e669a430","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"b3f3f710:7cf0:54d7:077e:a06020e7717d","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"05fe6421:4c82:8feb:b120:d2059a4b31f9","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"8933f648:926d:aa2f:504a:ede3b91dcbd3","target":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","type":"calls"},{"source":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"4665b3ca:c2a3:6346:1a8c:4d9a2163645f","target":"subdomain:RepositoryUtilities:VCS","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1021,7 +1021,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-logging.html">Logging</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-vcs.html">VCS</a></li></ul>
     </div>
     
 

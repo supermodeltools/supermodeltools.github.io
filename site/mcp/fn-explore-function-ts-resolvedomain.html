@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
-<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>resolveDomain() — mcp Function Reference | mcp Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the resolveDomain() function in explore-function.ts from the mcp codebase.">
@@ -862,6 +861,7 @@ a.pill:hover {
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"resolveDomain() is a function in the mcp codebase."},"name":"What does resolveDomain() do?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"resolveDomain() calls 1 function(s): get."},"name":"What does resolveDomain() call?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"resolveDomain() is called by 2 function(s): describeNode, handler."},"name":"What calls resolveDomain()?"}]}</script>
 </head>
 <body>
+<script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/mcp").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/codeanalysistools.html" class="pill pill-green">CodeAnalysisTools</a>
-        <a href="/mcp/subdomain/discovery.html" class="pill pill-orange">Discovery</a>
+        <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
+        <a href="/mcp/subdomain/overview.html" class="pill pill-orange">Overview</a>
         
         
         <span class="pill">calls 1</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisTools","slug":"domain-codeanalysistools"},"entity":{"name":"resolveDomain","slug":"fn-explore-function-ts-resolvedomain","type":"Function"},"subdomain":{"name":"Discovery","slug":"subdomain-discovery"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"resolveDomain","slug":"fn-explore-function-ts-resolvedomain","type":"Function"},"subdomain":{"name":"Overview","slug":"subdomain-overview"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/codeanalysistools.html">CodeAnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/discovery.html">Discovery</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/overview.html">Overview</a><span class="arch-sep">&rarr;</span>
             <span>resolveDomain() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,14 +959,14 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  fc5cbac0_075d_7a17_65b9_e07d43f6dde0["resolveDomain()"]
-  7015318a_0b8c_6bd7_7f29_b298df16504d["describeNode()"]
-  7015318a_0b8c_6bd7_7f29_b298df16504d -->|calls| fc5cbac0_075d_7a17_65b9_e07d43f6dde0
-  b8894083_8714_2bbd_6926_8732aafa2c0c["handler()"]
-  b8894083_8714_2bbd_6926_8732aafa2c0c -->|calls| fc5cbac0_075d_7a17_65b9_e07d43f6dde0
-  23cce284_5fbf_2a36_0b90_f74c81c759d9["get()"]
-  fc5cbac0_075d_7a17_65b9_e07d43f6dde0 -->|calls| 23cce284_5fbf_2a36_0b90_f74c81c759d9
-  style fc5cbac0_075d_7a17_65b9_e07d43f6dde0 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  0bca00f0_c63a_0f34_d33f_aff0e551346b["resolveDomain()"]
+  9c4d9043_64a3_3a0f_232e_37244f45621f["describeNode()"]
+  9c4d9043_64a3_3a0f_232e_37244f45621f -->|calls| 0bca00f0_c63a_0f34_d33f_aff0e551346b
+  b5aaaadf_12e0_bc04_55e2_f6ffc74377c7["handler()"]
+  b5aaaadf_12e0_bc04_55e2_f6ffc74377c7 -->|calls| 0bca00f0_c63a_0f34_d33f_aff0e551346b
+  819d664d_2fbd_afd3_a18f_5f46a8d420cd["get()"]
+  0bca00f0_c63a_0f34_d33f_aff0e551346b -->|calls| 819d664d_2fbd_afd3_a18f_5f46a8d420cd
+  style 0bca00f0_c63a_0f34_d33f_aff0e551346b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -974,7 +974,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-explore-function-ts-resolvedomain"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","label":"resolveDomain","type":"Function","slug":"fn-explore-function-ts-resolvedomain","lc":35,"lang":"typescript","cc":1,"cbc":2},{"id":"23cce284:5fbf:2a36:0b90:f74c81c759d9","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"7015318a:0b8c:6bd7:7f29:b298df16504d","label":"describeNode","type":"Function","slug":"fn-explore-function-ts-describenode","lc":29,"lang":"typescript","cc":3,"cbc":1},{"id":"b8894083:8714:2bbd:6926:8732aafa2c0c","label":"handler","type":"Function","slug":"fn-explore-function-ts-handler","lc":184,"lang":"typescript","cc":11},{"id":"domain:CodeAnalysisTools","label":"CodeAnalysisTools","type":"Domain","slug":"domain-codeanalysistools"},{"id":"subdomain:CodeAnalysisTools:Discovery","label":"Discovery","type":"Subdomain","slug":"subdomain-discovery"}],"edges":[{"source":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","target":"23cce284:5fbf:2a36:0b90:f74c81c759d9","type":"calls"},{"source":"7015318a:0b8c:6bd7:7f29:b298df16504d","target":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","type":"calls"},{"source":"b8894083:8714:2bbd:6926:8732aafa2c0c","target":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","type":"calls"},{"source":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","target":"domain:CodeAnalysisTools","type":"belongsTo"},{"source":"fc5cbac0:075d:7a17:65b9:e07d43f6dde0","target":"subdomain:CodeAnalysisTools:Discovery","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"0bca00f0:c63a:0f34:d33f:aff0e551346b","label":"resolveDomain","type":"Function","slug":"fn-explore-function-ts-resolvedomain","lc":35,"lang":"typescript","cc":1,"cbc":2},{"id":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"9c4d9043:64a3:3a0f:232e:37244f45621f","label":"describeNode","type":"Function","slug":"fn-explore-function-ts-describenode","lc":29,"lang":"typescript","cc":3,"cbc":1},{"id":"b5aaaadf:12e0:bc04:55e2:f6ffc74377c7","label":"handler","type":"Function","slug":"fn-explore-function-ts-handler","lc":184,"lang":"typescript","cc":11},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:Overview","label":"Overview","type":"Subdomain","slug":"subdomain-overview"}],"edges":[{"source":"0bca00f0:c63a:0f34:d33f:aff0e551346b","target":"819d664d:2fbd:afd3:a18f:5f46a8d420cd","type":"calls"},{"source":"9c4d9043:64a3:3a0f:232e:37244f45621f","target":"0bca00f0:c63a:0f34:d33f:aff0e551346b","type":"calls"},{"source":"b5aaaadf:12e0:bc04:55e2:f6ffc74377c7","target":"0bca00f0:c63a:0f34:d33f:aff0e551346b","type":"calls"},{"source":"0bca00f0:c63a:0f34:d33f:aff0e551346b","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"0bca00f0:c63a:0f34:d33f:aff0e551346b","target":"subdomain:AnalysisTools:Overview","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1030,14 +1030,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-codeanalysistools.html">CodeAnalysisTools</a></li></ul>
+      <ul><li><a href="/mcp/domain-analysistools.html">AnalysisTools</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-discovery.html">Discovery</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-overview.html">Overview</a></li></ul>
     </div>
     
 
