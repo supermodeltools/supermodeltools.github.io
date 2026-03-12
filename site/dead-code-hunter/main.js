@@ -225,8 +225,13 @@ window.addEventListener("load", function() {
         imports: "#D0A27D", extends: "#E589C6", contains: "#808080", partOf: "#71B9BC"
       };
 
+      var hasAnyValue = metrics.some(function(d) { return d.value > 0; });
       var hasMetrics = metrics.length > 0;
       var hasEdges = edgeTypes.length > 0;
+      if (!hasAnyValue && !hasEdges && !(ep.sl > 0 && ep.el > 0)) {
+        var epPanel = epChartEl.closest(".chart-panel, .entity-profile-panel");
+        if (epPanel) epPanel.style.display = "none";
+      }
       var metricsH = hasMetrics ? metrics.length * 32 + 8 : 0;
       var edgesH = hasEdges ? Math.max(edgeTypes.length * 22 + 40, 56) : 0;
       var fileBarH = (ep.sl > 0 && ep.el > 0) ? 44 : 0;

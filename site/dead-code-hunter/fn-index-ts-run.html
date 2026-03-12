@@ -917,7 +917,7 @@ a.pill:hover {
         <a href="/dead-code-hunter/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/dead-code-hunter/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/dead-code-hunter/domain/githubaction.html" class="pill pill-green">GitHubAction</a>
-        <a href="/dead-code-hunter/subdomain/lifecyclemanagement.html" class="pill pill-orange">LifecycleManagement</a>
+        <a href="/dead-code-hunter/subdomain/entryorchestration.html" class="pill pill-orange">EntryOrchestration</a>
         
         
         <span class="pill">calls 9</span>
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GitHubAction","slug":"domain-githubaction"},"entity":{"name":"run","slug":"fn-index-ts-run","type":"Function"},"subdomain":{"name":"LifecycleManagement","slug":"subdomain-lifecyclemanagement"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GitHubAction","slug":"domain-githubaction"},"entity":{"name":"run","slug":"fn-index-ts-run","type":"Function"},"subdomain":{"name":"EntryOrchestration","slug":"subdomain-entryorchestration"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/dead-code-hunter/githubaction.html">GitHubAction</a><span class="arch-sep">&rarr;</span>
-            <a href="/dead-code-hunter/lifecyclemanagement.html">LifecycleManagement</a><span class="arch-sep">&rarr;</span>
+            <a href="/dead-code-hunter/entryorchestration.html">EntryOrchestration</a><span class="arch-sep">&rarr;</span>
             <span>run() — dead-code-hunter Function Reference</span>
           </div>
         </noscript>
@@ -958,26 +958,26 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  657a90eb_c114_9c17_6fde_3f585da1398f["run()"]
-  ac2d8343_6c69_7232_90c1_0758b88e90e4["createZipArchive()"]
-  657a90eb_c114_9c17_6fde_3f585da1398f -->|calls| ac2d8343_6c69_7232_90c1_0758b88e90e4
-  e2f12053_0636_0321_9db6_86b4cdd64391["generateIdempotencyKey()"]
-  657a90eb_c114_9c17_6fde_3f585da1398f -->|calls| e2f12053_0636_0321_9db6_86b4cdd64391
-  af747052_1a0f_3fb1_d127_8086b20755f7["pollForResult()"]
-  657a90eb_c114_9c17_6fde_3f585da1398f -->|calls| af747052_1a0f_3fb1_d127_8086b20755f7
-  17c2d98a_3cd4_d7f7_aeb9_d552724ef172["filterByIgnorePatterns()"]
-  657a90eb_c114_9c17_6fde_3f585da1398f -->|calls| 17c2d98a_3cd4_d7f7_aeb9_d552724ef172
-  ba34947f_b7ec_ab11_9532_0984a93e027f["getChangedFiles()"]
-  657a90eb_c114_9c17_6fde_3f585da1398f -->|calls| ba34947f_b7ec_ab11_9532_0984a93e027f
-  913ed170_f39f_5ffd_d0c2_1916b332589d["filterByChangedFiles()"]
-  657a90eb_c114_9c17_6fde_3f585da1398f -->|calls| 913ed170_f39f_5ffd_d0c2_1916b332589d
-  f351fbbc_a149_aeaa_9192_91a9cc4c007b["formatPrComment()"]
-  657a90eb_c114_9c17_6fde_3f585da1398f -->|calls| f351fbbc_a149_aeaa_9192_91a9cc4c007b
-  0d1c9e0d_0671_222c_cb57_e0445b07df2c["safeSerialize()"]
-  657a90eb_c114_9c17_6fde_3f585da1398f -->|calls| 0d1c9e0d_0671_222c_cb57_e0445b07df2c
-  8dccf85d_e687_964e_fad9_a3131b2d90bb["redactSensitive()"]
-  657a90eb_c114_9c17_6fde_3f585da1398f -->|calls| 8dccf85d_e687_964e_fad9_a3131b2d90bb
-  style 657a90eb_c114_9c17_6fde_3f585da1398f fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a95554f5_bf8f_7f57_a349_405c79bf72b3["run()"]
+  c0d7bb25_a4c6_9d68_dd47_005582537892["createZipArchive()"]
+  a95554f5_bf8f_7f57_a349_405c79bf72b3 -->|calls| c0d7bb25_a4c6_9d68_dd47_005582537892
+  18f0f4eb_f194_d868_33b3_a5135d0fb99c["generateIdempotencyKey()"]
+  a95554f5_bf8f_7f57_a349_405c79bf72b3 -->|calls| 18f0f4eb_f194_d868_33b3_a5135d0fb99c
+  0d1c76f7_0250_6e4a_3c78_f2285bcd0036["pollForResult()"]
+  a95554f5_bf8f_7f57_a349_405c79bf72b3 -->|calls| 0d1c76f7_0250_6e4a_3c78_f2285bcd0036
+  80c5dc92_6fa7_32f5_9a9d_1e326f705259["filterByIgnorePatterns()"]
+  a95554f5_bf8f_7f57_a349_405c79bf72b3 -->|calls| 80c5dc92_6fa7_32f5_9a9d_1e326f705259
+  189e3bb3_f5f8_b873_bd82_31a0599d167a["getChangedFiles()"]
+  a95554f5_bf8f_7f57_a349_405c79bf72b3 -->|calls| 189e3bb3_f5f8_b873_bd82_31a0599d167a
+  1d05f7d1_fada_723e_87f5_7c7cbed15414["filterByChangedFiles()"]
+  a95554f5_bf8f_7f57_a349_405c79bf72b3 -->|calls| 1d05f7d1_fada_723e_87f5_7c7cbed15414
+  c03edbfe_cc17_99ac_57fc_5da3138b0c52["formatPrComment()"]
+  a95554f5_bf8f_7f57_a349_405c79bf72b3 -->|calls| c03edbfe_cc17_99ac_57fc_5da3138b0c52
+  e06e0091_ccb1_9627_fa9d_b66073954d39["safeSerialize()"]
+  a95554f5_bf8f_7f57_a349_405c79bf72b3 -->|calls| e06e0091_ccb1_9627_fa9d_b66073954d39
+  08d27b30_cf46_d120_f57b_ff120ca5ffa0["redactSensitive()"]
+  a95554f5_bf8f_7f57_a349_405c79bf72b3 -->|calls| 08d27b30_cf46_d120_f57b_ff120ca5ffa0
+  style a95554f5_bf8f_7f57_a349_405c79bf72b3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -985,7 +985,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-index-ts-run"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"657a90eb:c114:9c17:6fde:3f585da1398f","label":"run","type":"Function","slug":"fn-index-ts-run","lc":177,"lang":"typescript","cc":9},{"id":"ac2d8343:6c69:7232:90c1:0758b88e90e4","label":"createZipArchive","type":"Function","slug":"fn-index-ts-createziparchive","lc":14,"lang":"typescript","cbc":1},{"id":"e2f12053:0636:0321:9db6:86b4cdd64391","label":"generateIdempotencyKey","type":"Function","slug":"fn-index-ts-generateidempotencykey","lc":17,"lang":"typescript","cbc":1},{"id":"af747052:1a0f:3fb1:d127:8086b20755f7","label":"pollForResult","type":"Function","slug":"fn-index-ts-pollforresult","lc":33,"lang":"typescript","cc":1,"cbc":1},{"id":"17c2d98a:3cd4:d7f7:aeb9:d552724ef172","label":"filterByIgnorePatterns","type":"Function","slug":"fn-dead-code-ts-filterbyignorepatterns","lc":7,"lang":"typescript","cbc":1},{"id":"ba34947f:b7ec:ab11:9532:0984a93e027f","label":"getChangedFiles","type":"Function","slug":"fn-index-ts-getchangedfiles","lc":26,"lang":"typescript","cbc":1},{"id":"913ed170:f39f:5ffd:d0c2:1916b332589d","label":"filterByChangedFiles","type":"Function","slug":"fn-dead-code-ts-filterbychangedfiles","lc":6,"lang":"typescript","cbc":1},{"id":"f351fbbc:a149:aeaa:9192:91a9cc4c007b","label":"formatPrComment","type":"Function","slug":"fn-dead-code-ts-formatprcomment","lc":52,"lang":"typescript","cc":1,"cbc":1},{"id":"0d1c9e0d:0671:222c:cb57:e0445b07df2c","label":"safeSerialize","type":"Function","slug":"fn-index-ts-safeserialize","lc":29,"lang":"typescript","cbc":1},{"id":"8dccf85d:e687:964e:fad9:a3131b2d90bb","label":"redactSensitive","type":"Function","slug":"fn-index-ts-redactsensitive","lc":15,"lang":"typescript","cbc":1},{"id":"domain:GitHubAction","label":"GitHubAction","type":"Domain","slug":"domain-githubaction"},{"id":"subdomain:GitHubAction:LifecycleManagement","label":"LifecycleManagement","type":"Subdomain","slug":"subdomain-lifecyclemanagement"}],"edges":[{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"ac2d8343:6c69:7232:90c1:0758b88e90e4","type":"calls"},{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"e2f12053:0636:0321:9db6:86b4cdd64391","type":"calls"},{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"af747052:1a0f:3fb1:d127:8086b20755f7","type":"calls"},{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"17c2d98a:3cd4:d7f7:aeb9:d552724ef172","type":"calls"},{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"ba34947f:b7ec:ab11:9532:0984a93e027f","type":"calls"},{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"913ed170:f39f:5ffd:d0c2:1916b332589d","type":"calls"},{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"f351fbbc:a149:aeaa:9192:91a9cc4c007b","type":"calls"},{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"0d1c9e0d:0671:222c:cb57:e0445b07df2c","type":"calls"},{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"8dccf85d:e687:964e:fad9:a3131b2d90bb","type":"calls"},{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"domain:GitHubAction","type":"belongsTo"},{"source":"657a90eb:c114:9c17:6fde:3f585da1398f","target":"subdomain:GitHubAction:LifecycleManagement","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a95554f5:bf8f:7f57:a349:405c79bf72b3","label":"run","type":"Function","slug":"fn-index-ts-run","lc":177,"lang":"typescript","cc":9},{"id":"c0d7bb25:a4c6:9d68:dd47:005582537892","label":"createZipArchive","type":"Function","slug":"fn-index-ts-createziparchive","lc":14,"lang":"typescript","cbc":1},{"id":"18f0f4eb:f194:d868:33b3:a5135d0fb99c","label":"generateIdempotencyKey","type":"Function","slug":"fn-index-ts-generateidempotencykey","lc":17,"lang":"typescript","cbc":1},{"id":"0d1c76f7:0250:6e4a:3c78:f2285bcd0036","label":"pollForResult","type":"Function","slug":"fn-index-ts-pollforresult","lc":33,"lang":"typescript","cc":1,"cbc":1},{"id":"80c5dc92:6fa7:32f5:9a9d:1e326f705259","label":"filterByIgnorePatterns","type":"Function","slug":"fn-dead-code-ts-filterbyignorepatterns","lc":7,"lang":"typescript","cbc":1},{"id":"189e3bb3:f5f8:b873:bd82:31a0599d167a","label":"getChangedFiles","type":"Function","slug":"fn-index-ts-getchangedfiles","lc":26,"lang":"typescript","cbc":1},{"id":"1d05f7d1:fada:723e:87f5:7c7cbed15414","label":"filterByChangedFiles","type":"Function","slug":"fn-dead-code-ts-filterbychangedfiles","lc":6,"lang":"typescript","cbc":1},{"id":"c03edbfe:cc17:99ac:57fc:5da3138b0c52","label":"formatPrComment","type":"Function","slug":"fn-dead-code-ts-formatprcomment","lc":52,"lang":"typescript","cc":1,"cbc":1},{"id":"e06e0091:ccb1:9627:fa9d:b66073954d39","label":"safeSerialize","type":"Function","slug":"fn-index-ts-safeserialize","lc":29,"lang":"typescript","cbc":1},{"id":"08d27b30:cf46:d120:f57b:ff120ca5ffa0","label":"redactSensitive","type":"Function","slug":"fn-index-ts-redactsensitive","lc":15,"lang":"typescript","cbc":1},{"id":"domain:GitHubAction","label":"GitHubAction","type":"Domain","slug":"domain-githubaction"},{"id":"subdomain:GitHubAction:EntryOrchestration","label":"EntryOrchestration","type":"Subdomain","slug":"subdomain-entryorchestration"}],"edges":[{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"c0d7bb25:a4c6:9d68:dd47:005582537892","type":"calls"},{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"18f0f4eb:f194:d868:33b3:a5135d0fb99c","type":"calls"},{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"0d1c76f7:0250:6e4a:3c78:f2285bcd0036","type":"calls"},{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"80c5dc92:6fa7:32f5:9a9d:1e326f705259","type":"calls"},{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"189e3bb3:f5f8:b873:bd82:31a0599d167a","type":"calls"},{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"1d05f7d1:fada:723e:87f5:7c7cbed15414","type":"calls"},{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"c03edbfe:cc17:99ac:57fc:5da3138b0c52","type":"calls"},{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"e06e0091:ccb1:9627:fa9d:b66073954d39","type":"calls"},{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"08d27b30:cf46:d120:f57b:ff120ca5ffa0","type":"calls"},{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"domain:GitHubAction","type":"belongsTo"},{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"subdomain:GitHubAction:EntryOrchestration","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1190,7 +1190,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/dead-code-hunter/subdomain-lifecyclemanagement.html">LifecycleManagement</a></li></ul>
+      <ul><li><a href="/dead-code-hunter/subdomain-entryorchestration.html">EntryOrchestration</a></li></ul>
     </div>
     
 
