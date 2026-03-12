@@ -916,8 +916,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/graphanalysis.html" class="pill pill-green">GraphAnalysis</a>
-        <a href="/typescript-sdk/subdomain/irnodes.html" class="pill pill-orange">IRNodes</a>
+        <a href="/typescript-sdk/domain/graphmodels.html" class="pill pill-green">GraphModels</a>
+        <a href="/typescript-sdk/subdomain/coregraph.html" class="pill pill-orange">CoreGraph</a>
         
         
         
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphAnalysis","slug":"domain-graphanalysis"},"entity":{"name":"SupermodelIRGraphToJSON","slug":"fn-supermodelirgraph-ts-supermodelirgraphtojson","type":"Function"},"subdomain":{"name":"IRNodes","slug":"subdomain-irnodes"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphModels","slug":"domain-graphmodels"},"entity":{"name":"SupermodelIRGraphToJSON","slug":"fn-supermodelirgraph-ts-supermodelirgraphtojson","type":"Function"},"subdomain":{"name":"CoreGraph","slug":"subdomain-coregraph"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/graphanalysis.html">GraphAnalysis</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/irnodes.html">IRNodes</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/graphmodels.html">GraphModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/coregraph.html">CoreGraph</a><span class="arch-sep">&rarr;</span>
             <span>SupermodelIRGraphToJSON() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -958,10 +958,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  60f38972_8670_b0e0_7f41_9a6c149bb5ae["SupermodelIRGraphToJSON()"]
-  8d35af18_6218_318a_61fa_1162b81da473["SupermodelIRToJSON()"]
-  8d35af18_6218_318a_61fa_1162b81da473 -->|calls| 60f38972_8670_b0e0_7f41_9a6c149bb5ae
-  style 60f38972_8670_b0e0_7f41_9a6c149bb5ae fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  e81cdddd_355d_0e38_60a7_b02321ccfb5c["SupermodelIRGraphToJSON()"]
+  67fc74b1_037d_6478_42a5_9b4c3f23764f["SupermodelIRToJSON()"]
+  67fc74b1_037d_6478_42a5_9b4c3f23764f -->|calls| e81cdddd_355d_0e38_60a7_b02321ccfb5c
+  style e81cdddd_355d_0e38_60a7_b02321ccfb5c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -969,7 +969,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-supermodelirgraph-ts-supermodelirgraphtojson"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"60f38972:8670:b0e0:7f41:9a6c149bb5ae","label":"SupermodelIRGraphToJSON","type":"Function","slug":"fn-supermodelirgraph-ts-supermodelirgraphtojson","lc":10,"lang":"typescript","cbc":1},{"id":"8d35af18:6218:318a:61fa:1162b81da473","label":"SupermodelIRToJSON","type":"Function","slug":"fn-supermodelir-ts-supermodelirtojson","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:GraphAnalysis","label":"GraphAnalysis","type":"Domain","slug":"domain-graphanalysis"},{"id":"subdomain:GraphAnalysis:IRNodes","label":"IRNodes","type":"Subdomain","slug":"subdomain-irnodes"}],"edges":[{"source":"8d35af18:6218:318a:61fa:1162b81da473","target":"60f38972:8670:b0e0:7f41:9a6c149bb5ae","type":"calls"},{"source":"60f38972:8670:b0e0:7f41:9a6c149bb5ae","target":"domain:GraphAnalysis","type":"belongsTo"},{"source":"60f38972:8670:b0e0:7f41:9a6c149bb5ae","target":"subdomain:GraphAnalysis:IRNodes","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"e81cdddd:355d:0e38:60a7:b02321ccfb5c","label":"SupermodelIRGraphToJSON","type":"Function","slug":"fn-supermodelirgraph-ts-supermodelirgraphtojson","lc":10,"lang":"typescript","cbc":1},{"id":"67fc74b1:037d:6478:42a5:9b4c3f23764f","label":"SupermodelIRToJSON","type":"Function","slug":"fn-supermodelir-ts-supermodelirtojson","lc":18,"lang":"typescript","cc":3,"cbc":1},{"id":"domain:GraphModels","label":"GraphModels","type":"Domain","slug":"domain-graphmodels"},{"id":"subdomain:GraphModels:CoreGraph","label":"CoreGraph","type":"Subdomain","slug":"subdomain-coregraph"}],"edges":[{"source":"67fc74b1:037d:6478:42a5:9b4c3f23764f","target":"e81cdddd:355d:0e38:60a7:b02321ccfb5c","type":"calls"},{"source":"e81cdddd:355d:0e38:60a7:b02321ccfb5c","target":"domain:GraphModels","type":"belongsTo"},{"source":"e81cdddd:355d:0e38:60a7:b02321ccfb5c","target":"subdomain:GraphModels:CoreGraph","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1000,14 +1000,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-graphanalysis.html">GraphAnalysis</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-graphmodels.html">GraphModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-irnodes.html">IRNodes</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-coregraph.html">CoreGraph</a></li></ul>
     </div>
     
 

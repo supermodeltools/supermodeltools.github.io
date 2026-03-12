@@ -916,8 +916,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/graphanalysis.html" class="pill pill-green">GraphAnalysis</a>
-        <a href="/typescript-sdk/subdomain/irnodes.html" class="pill pill-orange">IRNodes</a>
+        <a href="/typescript-sdk/domain/graphmodels.html" class="pill pill-green">GraphModels</a>
+        <a href="/typescript-sdk/subdomain/coregraph.html" class="pill pill-orange">CoreGraph</a>
         
         
         
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphAnalysis","slug":"domain-graphanalysis"},"entity":{"name":"DomainSummaryFromJSONTyped","slug":"fn-domainsummary-ts-domainsummaryfromjsontyped","type":"Function"},"subdomain":{"name":"IRNodes","slug":"subdomain-irnodes"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphModels","slug":"domain-graphmodels"},"entity":{"name":"DomainSummaryFromJSONTyped","slug":"fn-domainsummary-ts-domainsummaryfromjsontyped","type":"Function"},"subdomain":{"name":"CoreGraph","slug":"subdomain-coregraph"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/graphanalysis.html">GraphAnalysis</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/irnodes.html">IRNodes</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/graphmodels.html">GraphModels</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/coregraph.html">CoreGraph</a><span class="arch-sep">&rarr;</span>
             <span>DomainSummaryFromJSONTyped() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -958,10 +958,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  ff5b0f2d_b182_7fae_f36e_fbea628b2749["DomainSummaryFromJSONTyped()"]
-  1a080b9c_b98f_459a_5f25_1a798e4fd019["DomainSummaryFromJSON()"]
-  1a080b9c_b98f_459a_5f25_1a798e4fd019 -->|calls| ff5b0f2d_b182_7fae_f36e_fbea628b2749
-  style ff5b0f2d_b182_7fae_f36e_fbea628b2749 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  7deb9cf4_d055_2fcd_531f_2f2e413a7627["DomainSummaryFromJSONTyped()"]
+  6a4cf7b7_62f5_00aa_49f2_2d24a6f6ba14["DomainSummaryFromJSON()"]
+  6a4cf7b7_62f5_00aa_49f2_2d24a6f6ba14 -->|calls| 7deb9cf4_d055_2fcd_531f_2f2e413a7627
+  style 7deb9cf4_d055_2fcd_531f_2f2e413a7627 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -969,7 +969,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-domainsummary-ts-domainsummaryfromjsontyped"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"ff5b0f2d:b182:7fae:f36e:fbea628b2749","label":"DomainSummaryFromJSONTyped","type":"Function","slug":"fn-domainsummary-ts-domainsummaryfromjsontyped","lc":13,"lang":"typescript","cbc":1},{"id":"1a080b9c:b98f:459a:5f25:1a798e4fd019","label":"DomainSummaryFromJSON","type":"Function","slug":"fn-domainsummary-ts-domainsummaryfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:GraphAnalysis","label":"GraphAnalysis","type":"Domain","slug":"domain-graphanalysis"},{"id":"subdomain:GraphAnalysis:IRNodes","label":"IRNodes","type":"Subdomain","slug":"subdomain-irnodes"}],"edges":[{"source":"1a080b9c:b98f:459a:5f25:1a798e4fd019","target":"ff5b0f2d:b182:7fae:f36e:fbea628b2749","type":"calls"},{"source":"ff5b0f2d:b182:7fae:f36e:fbea628b2749","target":"domain:GraphAnalysis","type":"belongsTo"},{"source":"ff5b0f2d:b182:7fae:f36e:fbea628b2749","target":"subdomain:GraphAnalysis:IRNodes","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"7deb9cf4:d055:2fcd:531f:2f2e413a7627","label":"DomainSummaryFromJSONTyped","type":"Function","slug":"fn-domainsummary-ts-domainsummaryfromjsontyped","lc":13,"lang":"typescript","cbc":1},{"id":"6a4cf7b7:62f5:00aa:49f2:2d24a6f6ba14","label":"DomainSummaryFromJSON","type":"Function","slug":"fn-domainsummary-ts-domainsummaryfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:GraphModels","label":"GraphModels","type":"Domain","slug":"domain-graphmodels"},{"id":"subdomain:GraphModels:CoreGraph","label":"CoreGraph","type":"Subdomain","slug":"subdomain-coregraph"}],"edges":[{"source":"6a4cf7b7:62f5:00aa:49f2:2d24a6f6ba14","target":"7deb9cf4:d055:2fcd:531f:2f2e413a7627","type":"calls"},{"source":"7deb9cf4:d055:2fcd:531f:2f2e413a7627","target":"domain:GraphModels","type":"belongsTo"},{"source":"7deb9cf4:d055:2fcd:531f:2f2e413a7627","target":"subdomain:GraphModels:CoreGraph","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1003,14 +1003,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-graphanalysis.html">GraphAnalysis</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-graphmodels.html">GraphModels</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-irnodes.html">IRNodes</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-coregraph.html">CoreGraph</a></li></ul>
     </div>
     
 
