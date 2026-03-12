@@ -917,7 +917,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/graphcache.html" class="pill pill-green">GraphCache</a>
-        <a href="/mcp/subdomain/indexingengine.html" class="pill pill-orange">IndexingEngine</a>
+        <a href="/mcp/subdomain/indexer.html" class="pill pill-orange">Indexer</a>
         
         
         
@@ -933,7 +933,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"cb":1,"el":572,"et":{"calls":1},"lc":3,"sl":570}</script>
+      <script type="application/json" id="entity-profile-data">{"cb":1,"co":0,"el":572,"et":{"calls":1},"lc":3,"sl":570}</script>
     </div>
 
     
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"setRepoMap","slug":"fn-graph-cache-ts-setrepomap","type":"Function"},"subdomain":{"name":"IndexingEngine","slug":"subdomain-indexingengine"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"setRepoMap","slug":"fn-graph-cache-ts-setrepomap","type":"Function"},"subdomain":{"name":"Indexer","slug":"subdomain-indexer"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/graphcache.html">GraphCache</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/indexingengine.html">IndexingEngine</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/indexer.html">Indexer</a><span class="arch-sep">&rarr;</span>
             <span>setRepoMap() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -958,10 +958,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  3f840347_d022_5c7c_45a8_9f4da270cce4["setRepoMap()"]
-  cc6f14e8_2b85_d83a_c79f_83d9e426064f["start()"]
-  cc6f14e8_2b85_d83a_c79f_83d9e426064f -->|calls| 3f840347_d022_5c7c_45a8_9f4da270cce4
-  style 3f840347_d022_5c7c_45a8_9f4da270cce4 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  b1c49769_dcc7_47e3_9f09_21c956a975be["setRepoMap()"]
+  43c3065e_b102_77a5_b8d9_8bfe6e201510["start()"]
+  43c3065e_b102_77a5_b8d9_8bfe6e201510 -->|calls| b1c49769_dcc7_47e3_9f09_21c956a975be
+  style b1c49769_dcc7_47e3_9f09_21c956a975be fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -969,7 +969,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-setrepomap"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"3f840347:d022:5c7c:45a8:9f4da270cce4","label":"setRepoMap","type":"Function","slug":"fn-graph-cache-ts-setrepomap","lc":3,"lang":"typescript","cbc":1},{"id":"cc6f14e8:2b85:d83a:c79f:83d9e426064f","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:IndexingEngine","label":"IndexingEngine","type":"Subdomain","slug":"subdomain-indexingengine"}],"edges":[{"source":"cc6f14e8:2b85:d83a:c79f:83d9e426064f","target":"3f840347:d022:5c7c:45a8:9f4da270cce4","type":"calls"},{"source":"3f840347:d022:5c7c:45a8:9f4da270cce4","target":"domain:GraphCache","type":"belongsTo"},{"source":"3f840347:d022:5c7c:45a8:9f4da270cce4","target":"subdomain:GraphCache:IndexingEngine","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"b1c49769:dcc7:47e3:9f09:21c956a975be","label":"setRepoMap","type":"Function","slug":"fn-graph-cache-ts-setrepomap","lc":3,"lang":"typescript","cbc":1},{"id":"43c3065e:b102:77a5:b8d9:8bfe6e201510","label":"start","type":"Function","slug":"fn-server-ts-start","lc":41,"lang":"typescript","cc":9,"cbc":2},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Indexer","label":"Indexer","type":"Subdomain","slug":"subdomain-indexer"}],"edges":[{"source":"43c3065e:b102:77a5:b8d9:8bfe6e201510","target":"b1c49769:dcc7:47e3:9f09:21c956a975be","type":"calls"},{"source":"b1c49769:dcc7:47e3:9f09:21c956a975be","target":"domain:GraphCache","type":"belongsTo"},{"source":"b1c49769:dcc7:47e3:9f09:21c956a975be","target":"subdomain:GraphCache:Indexer","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1000,7 +1000,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-indexingengine.html">IndexingEngine</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-indexer.html">Indexer</a></li></ul>
     </div>
     
 

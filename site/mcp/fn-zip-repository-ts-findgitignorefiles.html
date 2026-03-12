@@ -916,7 +916,7 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/filesystemutilities.html" class="pill pill-green">FileSystemUtilities</a>
+        <a href="/mcp/domain/repositoryutils.html" class="pill pill-green">RepositoryUtils</a>
         <a href="/mcp/subdomain/archiveservice.html" class="pill pill-orange">ArchiveService</a>
         
         
@@ -941,10 +941,10 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"FileSystemUtilities","slug":"domain-filesystemutilities"},"entity":{"name":"findGitignoreFiles","slug":"fn-zip-repository-ts-findgitignorefiles","type":"Function"},"subdomain":{"name":"ArchiveService","slug":"subdomain-archiveservice"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtils","slug":"domain-repositoryutils"},"entity":{"name":"findGitignoreFiles","slug":"fn-zip-repository-ts-findgitignorefiles","type":"Function"},"subdomain":{"name":"ArchiveService","slug":"subdomain-archiveservice"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/filesystemutilities.html">FileSystemUtilities</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/repositoryutils.html">RepositoryUtils</a><span class="arch-sep">&rarr;</span>
             <a href="/mcp/archiveservice.html">ArchiveService</a><span class="arch-sep">&rarr;</span>
             <span>findGitignoreFiles() — mcp Function Reference</span>
           </div>
@@ -958,12 +958,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  fafb45b5_bd34_51fd_478d_35f53e5b63a3["findGitignoreFiles()"]
-  c966e1a3_9074_9ecf_8919_62aee5c3db06["buildIgnoreFilter()"]
-  c966e1a3_9074_9ecf_8919_62aee5c3db06 -->|calls| fafb45b5_bd34_51fd_478d_35f53e5b63a3
-  684a3374_fe1e_3038_27be_d798f1aab688["warn()"]
-  fafb45b5_bd34_51fd_478d_35f53e5b63a3 -->|calls| 684a3374_fe1e_3038_27be_d798f1aab688
-  style fafb45b5_bd34_51fd_478d_35f53e5b63a3 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  0a97d12d_960c_e539_dbc1_64e1cf280fce["findGitignoreFiles()"]
+  a9f528bf_a378_8e54_e83f_60332424becb["buildIgnoreFilter()"]
+  a9f528bf_a378_8e54_e83f_60332424becb -->|calls| 0a97d12d_960c_e539_dbc1_64e1cf280fce
+  34bc3d98_96cf_27f6_9d45_a194eaacf06f["warn()"]
+  0a97d12d_960c_e539_dbc1_64e1cf280fce -->|calls| 34bc3d98_96cf_27f6_9d45_a194eaacf06f
+  style 0a97d12d_960c_e539_dbc1_64e1cf280fce fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -971,7 +971,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-zip-repository-ts-findgitignorefiles"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"fafb45b5:bd34:51fd:478d:35f53e5b63a3","label":"findGitignoreFiles","type":"Function","slug":"fn-zip-repository-ts-findgitignorefiles","lc":54,"lang":"typescript","cc":1,"cbc":1},{"id":"684a3374:fe1e:3038:27be:d798f1aab688","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"c966e1a3:9074:9ecf:8919:62aee5c3db06","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:FileSystemUtilities","label":"FileSystemUtilities","type":"Domain","slug":"domain-filesystemutilities"},{"id":"subdomain:FileSystemUtilities:ArchiveService","label":"ArchiveService","type":"Subdomain","slug":"subdomain-archiveservice"}],"edges":[{"source":"fafb45b5:bd34:51fd:478d:35f53e5b63a3","target":"684a3374:fe1e:3038:27be:d798f1aab688","type":"calls"},{"source":"c966e1a3:9074:9ecf:8919:62aee5c3db06","target":"fafb45b5:bd34:51fd:478d:35f53e5b63a3","type":"calls"},{"source":"fafb45b5:bd34:51fd:478d:35f53e5b63a3","target":"domain:FileSystemUtilities","type":"belongsTo"},{"source":"fafb45b5:bd34:51fd:478d:35f53e5b63a3","target":"subdomain:FileSystemUtilities:ArchiveService","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"0a97d12d:960c:e539:dbc1:64e1cf280fce","label":"findGitignoreFiles","type":"Function","slug":"fn-zip-repository-ts-findgitignorefiles","lc":54,"lang":"typescript","cc":1,"cbc":1},{"id":"34bc3d98:96cf:27f6:9d45:a194eaacf06f","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"a9f528bf:a378:8e54:e83f:60332424becb","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:RepositoryUtils","label":"RepositoryUtils","type":"Domain","slug":"domain-repositoryutils"},{"id":"subdomain:RepositoryUtils:ArchiveService","label":"ArchiveService","type":"Subdomain","slug":"subdomain-archiveservice"}],"edges":[{"source":"0a97d12d:960c:e539:dbc1:64e1cf280fce","target":"34bc3d98:96cf:27f6:9d45:a194eaacf06f","type":"calls"},{"source":"a9f528bf:a378:8e54:e83f:60332424becb","target":"0a97d12d:960c:e539:dbc1:64e1cf280fce","type":"calls"},{"source":"0a97d12d:960c:e539:dbc1:64e1cf280fce","target":"domain:RepositoryUtils","type":"belongsTo"},{"source":"0a97d12d:960c:e539:dbc1:64e1cf280fce","target":"subdomain:RepositoryUtils:ArchiveService","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1046,7 +1046,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-filesystemutilities.html">FileSystemUtilities</a></li></ul>
+      <ul><li><a href="/mcp/domain-repositoryutils.html">RepositoryUtils</a></li></ul>
     </div>
     
 

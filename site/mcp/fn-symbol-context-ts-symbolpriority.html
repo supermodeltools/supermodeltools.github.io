@@ -916,7 +916,7 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/supermodeltools.html" class="pill pill-green">SupermodelTools</a>
+        <a href="/mcp/domain/codeanalysistools.html" class="pill pill-green">CodeAnalysisTools</a>
         <a href="/mcp/subdomain/symbolresolver.html" class="pill pill-orange">SymbolResolver</a>
         
         
@@ -933,7 +933,7 @@ a.pill:hover {
     <div class="chart-panel entity-profile-panel">
       <h3>Entity Profile</h3>
       <div id="entity-profile-chart"></div>
-      <script type="application/json" id="entity-profile-data">{"cb":1,"el":254,"et":{"calls":1},"lc":7,"sl":248}</script>
+      <script type="application/json" id="entity-profile-data">{"cb":1,"co":0,"el":254,"et":{"calls":1},"lc":7,"sl":248}</script>
     </div>
 
     
@@ -941,10 +941,10 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"SupermodelTools","slug":"domain-supermodeltools"},"entity":{"name":"symbolPriority","slug":"fn-symbol-context-ts-symbolpriority","type":"Function"},"subdomain":{"name":"SymbolResolver","slug":"subdomain-symbolresolver"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeAnalysisTools","slug":"domain-codeanalysistools"},"entity":{"name":"symbolPriority","slug":"fn-symbol-context-ts-symbolpriority","type":"Function"},"subdomain":{"name":"SymbolResolver","slug":"subdomain-symbolresolver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/supermodeltools.html">SupermodelTools</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/codeanalysistools.html">CodeAnalysisTools</a><span class="arch-sep">&rarr;</span>
             <a href="/mcp/symbolresolver.html">SymbolResolver</a><span class="arch-sep">&rarr;</span>
             <span>symbolPriority() — mcp Function Reference</span>
           </div>
@@ -958,10 +958,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  e94b0412_d8a6_99d1_14bf_3154c915ff8b["symbolPriority()"]
-  e55df450_97c9_d46a_0d6e_c8f7be471969["findSymbol()"]
-  e55df450_97c9_d46a_0d6e_c8f7be471969 -->|calls| e94b0412_d8a6_99d1_14bf_3154c915ff8b
-  style e94b0412_d8a6_99d1_14bf_3154c915ff8b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  c47879e9_acde_375c_adfd_7cc640276c83["symbolPriority()"]
+  5828ae58_401e_c2d1_187a_babfaf92180e["findSymbol()"]
+  5828ae58_401e_c2d1_187a_babfaf92180e -->|calls| c47879e9_acde_375c_adfd_7cc640276c83
+  style c47879e9_acde_375c_adfd_7cc640276c83 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -969,7 +969,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-symbol-context-ts-symbolpriority"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"e94b0412:d8a6:99d1:14bf:3154c915ff8b","label":"symbolPriority","type":"Function","slug":"fn-symbol-context-ts-symbolpriority","lc":7,"lang":"typescript","cbc":1},{"id":"e55df450:97c9:d46a:0d6e:c8f7be471969","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"domain:SupermodelTools","label":"SupermodelTools","type":"Domain","slug":"domain-supermodeltools"},{"id":"subdomain:SupermodelTools:SymbolResolver","label":"SymbolResolver","type":"Subdomain","slug":"subdomain-symbolresolver"}],"edges":[{"source":"e55df450:97c9:d46a:0d6e:c8f7be471969","target":"e94b0412:d8a6:99d1:14bf:3154c915ff8b","type":"calls"},{"source":"e94b0412:d8a6:99d1:14bf:3154c915ff8b","target":"domain:SupermodelTools","type":"belongsTo"},{"source":"e94b0412:d8a6:99d1:14bf:3154c915ff8b","target":"subdomain:SupermodelTools:SymbolResolver","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"c47879e9:acde:375c:adfd:7cc640276c83","label":"symbolPriority","type":"Function","slug":"fn-symbol-context-ts-symbolpriority","lc":7,"lang":"typescript","cbc":1},{"id":"5828ae58:401e:c2d1:187a:babfaf92180e","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"domain:CodeAnalysisTools","label":"CodeAnalysisTools","type":"Domain","slug":"domain-codeanalysistools"},{"id":"subdomain:CodeAnalysisTools:SymbolResolver","label":"SymbolResolver","type":"Subdomain","slug":"subdomain-symbolresolver"}],"edges":[{"source":"5828ae58:401e:c2d1:187a:babfaf92180e","target":"c47879e9:acde:375c:adfd:7cc640276c83","type":"calls"},{"source":"c47879e9:acde:375c:adfd:7cc640276c83","target":"domain:CodeAnalysisTools","type":"belongsTo"},{"source":"c47879e9:acde:375c:adfd:7cc640276c83","target":"subdomain:CodeAnalysisTools:SymbolResolver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -997,7 +997,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-supermodeltools.html">SupermodelTools</a></li></ul>
+      <ul><li><a href="/mcp/domain-codeanalysistools.html">CodeAnalysisTools</a></li></ul>
     </div>
     
 
