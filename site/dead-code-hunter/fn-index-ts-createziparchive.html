@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+<script>var __basePath = (function() { try { return new URL("").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
 
 <title>createZipArchive() — dead-code-hunter Function Reference | dead-code-hunter Architecture Docs</title>
 <meta name="description" content="Architecture documentation for the createZipArchive() function in index.ts from the dead-code-hunter codebase.">
@@ -917,7 +918,7 @@ a.pill:hover {
         <a href="/dead-code-hunter/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/dead-code-hunter/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/dead-code-hunter/domain/githubaction.html" class="pill pill-green">GitHubAction</a>
-        <a href="/dead-code-hunter/subdomain/entryorchestration.html" class="pill pill-orange">EntryOrchestration</a>
+        <a href="/dead-code-hunter/subdomain/inputhandling.html" class="pill pill-orange">InputHandling</a>
         
         
         
@@ -941,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GitHubAction","slug":"domain-githubaction"},"entity":{"name":"createZipArchive","slug":"fn-index-ts-createziparchive","type":"Function"},"subdomain":{"name":"EntryOrchestration","slug":"subdomain-entryorchestration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GitHubAction","slug":"domain-githubaction"},"entity":{"name":"createZipArchive","slug":"fn-index-ts-createziparchive","type":"Function"},"subdomain":{"name":"InputHandling","slug":"subdomain-inputhandling"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/dead-code-hunter/githubaction.html">GitHubAction</a><span class="arch-sep">&rarr;</span>
-            <a href="/dead-code-hunter/entryorchestration.html">EntryOrchestration</a><span class="arch-sep">&rarr;</span>
+            <a href="/dead-code-hunter/inputhandling.html">InputHandling</a><span class="arch-sep">&rarr;</span>
             <span>createZipArchive() — dead-code-hunter Function Reference</span>
           </div>
         </noscript>
@@ -958,10 +959,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  c0d7bb25_a4c6_9d68_dd47_005582537892["createZipArchive()"]
-  a95554f5_bf8f_7f57_a349_405c79bf72b3["run()"]
-  a95554f5_bf8f_7f57_a349_405c79bf72b3 -->|calls| c0d7bb25_a4c6_9d68_dd47_005582537892
-  style c0d7bb25_a4c6_9d68_dd47_005582537892 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  13810e71_eca2_6d9f_0320_358bbac9bd12["createZipArchive()"]
+  9707382e_d141_391a_9107_ce501693c30c["run()"]
+  9707382e_d141_391a_9107_ce501693c30c -->|calls| 13810e71_eca2_6d9f_0320_358bbac9bd12
+  style 13810e71_eca2_6d9f_0320_358bbac9bd12 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -969,7 +970,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-index-ts-createziparchive"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"c0d7bb25:a4c6:9d68:dd47:005582537892","label":"createZipArchive","type":"Function","slug":"fn-index-ts-createziparchive","lc":14,"lang":"typescript","cbc":1},{"id":"a95554f5:bf8f:7f57:a349:405c79bf72b3","label":"run","type":"Function","slug":"fn-index-ts-run","lc":177,"lang":"typescript","cc":9},{"id":"domain:GitHubAction","label":"GitHubAction","type":"Domain","slug":"domain-githubaction"},{"id":"subdomain:GitHubAction:EntryOrchestration","label":"EntryOrchestration","type":"Subdomain","slug":"subdomain-entryorchestration"}],"edges":[{"source":"a95554f5:bf8f:7f57:a349:405c79bf72b3","target":"c0d7bb25:a4c6:9d68:dd47:005582537892","type":"calls"},{"source":"c0d7bb25:a4c6:9d68:dd47:005582537892","target":"domain:GitHubAction","type":"belongsTo"},{"source":"c0d7bb25:a4c6:9d68:dd47:005582537892","target":"subdomain:GitHubAction:EntryOrchestration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"13810e71:eca2:6d9f:0320:358bbac9bd12","label":"createZipArchive","type":"Function","slug":"fn-index-ts-createziparchive","lc":14,"lang":"typescript","cbc":1},{"id":"9707382e:d141:391a:9107:ce501693c30c","label":"run","type":"Function","slug":"fn-index-ts-run","lc":177,"lang":"typescript","cc":9},{"id":"domain:GitHubAction","label":"GitHubAction","type":"Domain","slug":"domain-githubaction"},{"id":"subdomain:GitHubAction:InputHandling","label":"InputHandling","type":"Subdomain","slug":"subdomain-inputhandling"}],"edges":[{"source":"9707382e:d141:391a:9107:ce501693c30c","target":"13810e71:eca2:6d9f:0320:358bbac9bd12","type":"calls"},{"source":"13810e71:eca2:6d9f:0320:358bbac9bd12","target":"domain:GitHubAction","type":"belongsTo"},{"source":"13810e71:eca2:6d9f:0320:358bbac9bd12","target":"subdomain:GitHubAction:InputHandling","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1011,7 +1012,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/dead-code-hunter/subdomain-entryorchestration.html">EntryOrchestration</a></li></ul>
+      <ul><li><a href="/dead-code-hunter/subdomain-inputhandling.html">InputHandling</a></li></ul>
     </div>
     
 
