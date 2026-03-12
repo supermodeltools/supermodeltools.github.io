@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="" href="/typescript-sdk/feed.xml">
+<link rel="manifest" href="/typescript-sdk/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&family=Martian+Mono:wght@300;400;500&family=Lexend+Peta:wght@400&display=swap" rel="stylesheet">
+
+<title>CircularDependency — typescript-sdk Architecture | typescript-sdk Architecture Docs</title>
+<meta name="description" content="Models for representing and resolving import cycles Architecture documentation for the CircularDependency subdomain (part of AnalysisModels domain) in the typescript-sdk codebase. Contains 0 source files.">
+<link rel="canonical" href="https://repos.supermodeltools.com/typescript-sdk/subdomain-circulardependency/">
+<meta property="og:title" content="CircularDependency — typescript-sdk Architecture — typescript-sdk Architecture Docs">
+<meta property="og:description" content="Models for representing and resolving import cycles Architecture documentation for the CircularDependency subdomain (part of AnalysisModels domain) in the typescript-sdk codebase. Contains 0 source files.">
+<meta property="og:url" content="https://repos.supermodeltools.com/typescript-sdk/subdomain-circulardependency.html">
+<meta property="og:image" content="https://repos.supermodeltools.com/typescript-sdk/images/share/subdomain-circulardependency.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="typescript-sdk Architecture Docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CircularDependency — typescript-sdk Architecture — typescript-sdk Architecture Docs">
+<meta name="twitter:description" content="Models for representing and resolving import cycles Architecture documentation for the CircularDependency subdomain (part of AnalysisModels domain) in the typescript-sdk codebase. Contains 0 source files.">
+<meta name="twitter:image" content="https://repos.supermodeltools.com/typescript-sdk/images/share/subdomain-circulardependency.svg">
+
+<style>:root {
+  --bg: #000000;
+  --bg-card: #161616;
+  --bg-hover: #08191C;
+  --border: #202020;
+  --text: #FFFFFF;
+  --text-muted: #808080;
+  --accent: #71B9BC;
+  --accent-light: #8CC6C9;
+  --green: #7CCE86;
+  --orange: #D0A27D;
+  --red: #E589C6;
+  --blue: #8E8CE9;
+  --font: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: 'Martian Mono', "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --max-w: 1200px;
+  --radius: 0px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: 0em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 2px; }
+
+.skip-link { position: absolute; top: -100%; left: 16px; background: var(--accent); color: #000; padding: 8px 16px; border-radius: 6px; z-index: 1001; font-size: 14px; font-weight: 600; }
+.skip-link:focus { top: 12px; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+ 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.site-brand:hover { text-decoration: none; opacity: 0.8; }
+.logo-icon { height: 20px; display: flex; align-items: center; }
+.logo-icon svg { height: 100%; width: auto; }
+.logo-wordmark { height: 16px; display: flex; align-items: center; }
+.logo-wordmark svg { height: 100%; width: auto; }
+.site-nav { display: flex; gap: 16px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.site-nav a { color: var(--text-muted); font-size: 0.68rem; font-weight: 300; font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.nav-all-repos { color: var(--accent-light) !important; padding-right: 12px; margin-right: 4px; border-right: 1px solid var(--border); }
+.nav-all-repos:hover { color: var(--text) !important; }
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 64px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+ 
+.entity-page { padding: 32px 0; }
+.entity-header { margin-bottom: 32px; }
+.entity-breadcrumb {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entity-breadcrumb a { color: var(--text-muted); }
+.entity-breadcrumb a:hover { color: var(--accent-light); }
+.entity-breadcrumb .sep { opacity: 0.4; }
+.entity-title {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.entity-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+ 
+.entity-summary {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.entity-summary p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+ 
+.entity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-family: var(--mono);
+  text-decoration: none;
+}
+a.pill:hover {
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+.pill-accent { border-color: var(--accent); color: var(--accent-light); }
+.pill-green { border-color: var(--green); color: var(--green); }
+.pill-orange { border-color: var(--orange); color: var(--orange); }
+.pill-blue { border-color: var(--blue); color: var(--blue); }
+
+ 
+.entity-section {
+  margin-bottom: 32px;
+}
+.entity-section h2 {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.entity-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.entity-section li {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.entity-section li:hover {
+  border-color: var(--border);
+}
+
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+ 
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.hero-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hero-btn-star { border-color: var(--orange); color: var(--orange); }
+.hero-btn-star:hover { background: rgba(208, 162, 125, 0.1); }
+.hero-btn-fork { border-color: var(--blue); color: var(--blue); }
+.hero-btn-fork:hover { background: rgba(142, 140, 233, 0.1); }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-top: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--accent-light);
+}
+.hero-stat .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-stat-link {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hero-stat-link:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section { margin-bottom: 48px; }
+
+ 
+.hub-header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hub-header h1 {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+.hub-desc {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 15px;
+  max-width: 700px;
+}
+.hub-meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.pagination a, .pagination span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination a {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pagination a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pagination .current {
+  background: var(--accent);
+  color: #000;
+}
+
+ 
+.tax-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tax-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.tax-entry:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tax-entry-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.tax-entry-left > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tax-domain-tag {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tax-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+ 
+.visuals-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.visuals-panel h3 {
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0em;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+.visuals-archmap {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arch-map-svg { min-height: 40px; }
+.arch-map-svg svg { display: block; width: 100%; }
+.arch-map-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.arch-sep { opacity: 0.4; }
+.visuals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.visuals-row > .visuals-cell:only-child {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .visuals-row { grid-template-columns: 1fr; }
+}
+
+ 
+.mermaid-container {
+  overflow-x: auto;
+  min-height: 0;
+}
+.mermaid { background: transparent !important; }
+
+ 
+.force-graph-container {
+  overflow: hidden;
+  min-height: 0;
+}
+#force-graph { height: 320px; width: 100%; }
+#force-graph svg { width: 100%; height: 100%; }
+
+ 
+.entity-faqs { margin-bottom: 32px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-question::after { content: "\2212"; }
+.faq-answer {
+  padding: 0 18px 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+ 
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #08191C 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+}
+.cta-heading {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.cta-description {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
+ 
+.chart-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.chart-panel h3 {
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Lexend Peta', sans-serif;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0em;
+  margin: 0 0 12px 0;
+}
+.chart-panel-compact {
+  padding: 16px;
+  margin-top: 16px;
+}
+.hub-charts {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.hub-chart-cell {
+  flex: 1;
+  min-width: 0;
+}
+.hub-chart-cell h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
+}
+.entity-profile-panel {
+  margin-top: 24px;
+}
+.source-code-section {
+  position: relative;
+}
+.source-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin: 0 0 8px 0;
+}
+.source-code {
+  background: #161616;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  line-height: 1.5;
+}
+.source-code code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #FFFFFF;
+  white-space: pre;
+  tab-size: 2;
+  margin-bottom: 0;
+}
+ 
+.hp-composition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  height: 200px;
+}
+.hp-comp-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 12px;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+.hp-comp-item:hover { opacity: 1; text-decoration: none; }
+.hp-comp-name {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  white-space: nowrap;
+}
+.hp-comp-count {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-family: var(--mono);
+  margin-top: 2px;
+}
+
+#homepage-chart, #hub-chart, #all-entities-chart { width: 100%; }
+#homepage-chart svg, #hub-chart svg, #taxonomy-chart svg, #all-entities-chart svg, #letter-chart svg {
+  width: 100%;
+  display: block;
+}
+
+ 
+.arch-map-panel { padding: 20px 20px 12px; }
+#arch-overview { width: 100%; min-height: 360px; }
+#arch-overview svg { width: 100%; height: 100%; display: block; }
+
+ 
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.letter-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.letter-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.letter-active {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
+
+ 
+.jsonld { display: none; }
+
+ 
+.search-toggle { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 5px 10px; font-size: 14px; }
+.search-toggle:hover { border-color: var(--accent); color: var(--text); }
+.search-toggle svg { width: 16px; height: 16px; }
+.search-kbd { font-size: 11px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: inherit; }
+
+ 
+.search-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; }
+.search-overlay[hidden] { display: none; }
+.search-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 640px; max-height: 70vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+ 
+.search-input-wrap { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.search-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+.search-input { flex: 1; background: none; border: none; color: var(--text); font-size: 16px; font-family: inherit; outline: none; }
+.search-input::placeholder { color: var(--text-muted); }
+.search-esc { font-size: 11px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; color: var(--text-muted); }
+
+ 
+.search-results { overflow-y: auto; flex: 1; }
+.search-result { display: block; padding: 10px 16px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+.search-result:hover, .search-result.active { background: var(--bg); }
+.search-result-title { font-weight: 600; font-size: 14px; }
+.search-result-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-result-meta { display: flex; gap: 6px; margin-top: 4px; }
+.search-result-meta .pill { font-size: 11px; padding: 1px 6px; }
+.search-no-results { padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+ 
+.search-footer { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+.search-footer kbd { font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0 4px; }
+
+ 
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 12px 0; }
+  .site-brand { font-size: 16px; }
+  .site-brand svg { width: 20px; height: 20px; }
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 15px; }
+  .hero-actions { gap: 8px; }
+  .hero-btn { padding: 6px 12px; font-size: 12px; }
+  .hero-stats { gap: 8px 16px; }
+  .hero-stat .num { font-size: 22px; }
+  .hero-stat .label { font-size: 12px; }
+  .hero-stat-link { padding: 8px 12px; }
+
+  .entity-page { padding: 20px 0; }
+  .entity-header { margin-bottom: 20px; }
+  .entity-title { font-size: 20px; }
+  .entity-desc { font-size: 14px; }
+  .entity-meta { gap: 6px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  .entity-summary { padding: 12px 14px; margin-top: 12px; }
+  .entity-summary p { font-size: 14px; }
+
+  .entity-section { margin-bottom: 24px; }
+  .entity-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .entity-section li { font-size: 13px; padding: 5px 10px; }
+
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+
+  .tax-grid { grid-template-columns: 1fr; }
+  .tax-entry { padding: 12px 14px; font-size: 13px; }
+
+  .hub-header { padding: 20px 0; margin-bottom: 24px; }
+  .hub-header h1 { font-size: 22px; }
+  .hub-desc { font-size: 14px; }
+
+  .visuals-panel { padding: 12px; gap: 10px; }
+  .visuals-panel h3 { font-size: 12px; margin-bottom: 6px; }
+  .visuals-archmap { padding-bottom: 10px; }
+  #force-graph { height: 260px; }
+
+  .faq-question { padding: 12px 14px; font-size: 14px; }
+  .faq-answer { padding: 0 14px 12px; font-size: 13px; }
+
+  .cta-section { padding: 28px 20px; }
+  .cta-heading { font-size: 18px; }
+  .cta-description { font-size: 14px; }
+  .cta-button { padding: 10px 22px; font-size: 14px; }
+
+  .pagination a, .pagination span { padding: 6px 10px; font-size: 13px; }
+
+  .chart-panel { padding: 14px; margin-bottom: 24px; }
+  .chart-panel h3 { font-size: 12px; margin-bottom: 8px; }
+  .chart-panel-compact { padding: 12px; margin-top: 12px; }
+  .hub-charts { flex-direction: column; gap: 16px; }
+  .letter-nav { gap: 4px; margin-bottom: 16px; }
+  .letter-link { width: 32px; height: 32px; font-size: 12px; }
+
+  .section-title { font-size: 18px; }
+  .section { margin-bottom: 36px; }
+  .site-footer { margin-top: 40px; padding: 24px 0; }
+  .search-kbd { display: none; }
+  .search-overlay { padding-top: 0; align-items: stretch; }
+  .search-modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+  .search-footer { display: none; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .entity-title { font-size: 18px; }
+  .hero h1 { font-size: 20px; }
+  .hero-stat .num { font-size: 18px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","datePublished":"2025-01-01","description":"Models for representing and resolving import cycles Architecture documentation for the CircularDependency subdomain (part of AnalysisModels domain) in the typescript-sdk codebase. Contains 0 source files.","image":["https://repos.supermodeltools.com/typescript-sdk/images/share/subdomain-circulardependency.svg"],"name":"CircularDependency — typescript-sdk Architecture","url":"https://repos.supermodeltools.com/typescript-sdk/subdomain-circulardependency.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://repos.supermodeltools.com/typescript-sdk/","name":"Home","position":1},{"@type":"ListItem","name":"CircularDependency — typescript-sdk Architecture","position":2}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"CircularDependency is a subdomain in the typescript-sdk codebase, part of the AnalysisModels domain. Models for representing and resolving import cycles It contains 0 source files."},"name":"What is the CircularDependency subdomain?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"CircularDependency belongs to the AnalysisModels domain."},"name":"Which domain does CircularDependency belong to?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The CircularDependency subdomain contains 237 function(s): AffectedEntryPointFromJSON, AffectedEntryPointFromJSONTyped, AffectedEntryPointToJSON, AffectedFileFromJSON, AffectedFileFromJSONTyped, AffectedFileToJSON, AffectedFunctionFromJSON, AffectedFunctionFromJSONTyped, and 229 more."},"name":"What functions are in CircularDependency?"}]}</script>
+</head>
+<body>
+<script>var __basePath = (function() { try { return new URL("https:\/\/repos.supermodeltools.com\/typescript-sdk").pathname.replace(/\/$/, ""); } catch(e) { return ""; } })();</script>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="https://supermodeltools.com" class="site-brand">
+      <span class="logo-icon"><svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="#61B8BC"/></svg></span>
+      <span class="logo-wordmark"><svg viewBox="0 0 599 66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.0873 0C30.6289 0 36.7264 2.17281 41.8071 6.16637L42.0132 6.32909V19.4152L40.986 17.713C36.1927 9.7765 29.3085 6.24042 21.73 6.24033C16.2897 6.24033 10.9687 9.40925 10.9686 15.2141C10.9686 17.3774 11.548 19.1892 12.8179 20.7592C14.0976 22.3411 16.1111 23.7184 19.0499 24.9434L31.2658 30.0109C35.4509 31.7279 38.6869 34.0259 40.876 36.9242C43.0688 39.8276 44.1861 43.3005 44.1862 47.317C44.1862 52.893 41.9482 57.5803 38.0664 60.8659C34.1913 64.1458 28.7144 66 22.2727 66C13.2811 66 6.33602 63.2904 1.32495 58.0934L1.19332 57.9571L1.17605 57.769L0 44.6079L1.02716 44.2878C7.38706 54.937 15.1949 59.6708 23.7207 59.6709C27.3779 59.6709 30.3373 58.6763 32.3739 56.9269C34.4021 55.1845 35.5686 52.6484 35.5686 49.4514C35.5685 47.2029 34.9232 45.1173 33.5175 43.2724C32.1079 41.4221 29.9103 39.785 26.7633 38.4785L15.0934 33.7671L15.088 33.765C10.7294 31.9618 7.58148 29.7323 5.5253 27.008C3.46381 24.2765 2.53229 21.09 2.53229 17.4372C2.53236 12.2578 4.65951 7.88309 8.3133 4.81074C11.9608 1.74391 17.097 9.1588e-06 23.0873 0Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M395.406 0C415.003 0 428.633 14.1288 428.633 33C428.633 51.8712 415.003 66 395.406 66C375.806 65.9998 362.27 51.8691 362.27 33C362.27 14.1309 375.806 0.00023386 395.406 0ZM395.406 6.15052C388.851 6.15064 383.007 8.54118 378.798 13.066C374.587 17.5936 371.973 24.3021 371.973 33C371.973 41.6979 374.587 48.4064 378.798 52.934C383.007 57.4588 388.851 59.8494 395.406 59.8495C401.961 59.8495 407.805 57.459 412.014 52.934C416.225 48.4064 418.839 41.6979 418.839 33C418.839 24.3021 416.225 17.5936 412.014 13.066C407.805 8.54103 401.961 6.15052 395.406 6.15052Z" fill="white"/><path d="M67.9824 2.18824C66.2453 4.56874 65.4252 5.69742 65.0218 6.52139C64.6517 7.27742 64.6463 7.74277 64.6463 8.89981V40.914C64.6463 46.7288 66.314 51.3205 69.2631 54.4534C72.2074 57.5809 76.485 59.3148 81.834 59.3148C87.0424 59.3148 91.2052 57.5841 94.0714 54.4587C96.944 51.3262 98.5684 46.7325 98.5685 40.914V8.72125C98.5685 7.56246 98.5621 7.1043 98.1865 6.37558C97.7746 5.57652 96.9356 4.49442 95.1514 2.20197L94.476 1.33344L108.803 1.33344L108.28 2.15971C106.772 4.53886 106.058 5.66822 105.707 6.49497C105.38 7.26259 105.376 7.7413 105.376 8.89981V40.3804C105.376 48.5221 103.132 54.942 98.8652 59.3286C94.595 63.719 88.3701 65.9989 80.5662 65.9989C72.7212 65.9989 66.4518 63.7651 62.1464 59.4089C57.8436 55.0551 55.5767 48.6559 55.5767 40.4692L55.5767 8.72125C55.5767 7.56095 55.5714 7.08627 55.2476 6.34388C54.8977 5.54174 54.1864 4.45823 52.6775 2.1671L52.1283 1.33344L68.6071 1.33344L67.9824 2.18824Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M143.979 1.33344C150.548 1.33344 155.868 3.09393 159.555 6.17588C163.25 9.26459 165.259 13.6431 165.259 18.7707C165.259 23.8981 163.25 28.2767 159.555 31.3654C155.868 34.4473 150.548 36.2079 143.979 36.2079H130.955V57.2766C130.955 58.4358 130.962 58.8969 131.329 59.6276C131.73 60.427 132.548 61.5091 134.286 63.8012L134.941 64.6655H118.458L118.982 63.8392C120.49 61.4599 121.203 60.3297 121.554 59.5029C121.881 58.7354 121.886 58.2574 121.886 57.0991V8.72125C121.886 7.56095 121.88 7.08627 121.557 6.34388C121.207 5.54177 120.496 4.45799 118.988 2.1671L118.437 1.33344L143.979 1.33344ZM130.955 30.5909H142.441C146.952 30.5909 150.263 29.332 152.443 27.2637C154.621 25.1963 155.737 22.2582 155.737 18.7707C155.737 15.2831 154.621 12.345 152.443 10.2776C150.263 8.20934 146.952 6.95037 142.441 6.95037L130.955 6.95037V30.5909Z" fill="white"/><path d="M215.074 13.1125L214.138 12.2228C211.437 9.65763 209.662 8.42303 208.218 7.81785C206.794 7.22146 205.654 7.21769 204.113 7.21769L184.573 7.21769V28.1893L200.403 28.1893C201.858 28.1893 202.906 28.1856 204.147 27.793C205.395 27.3982 206.876 26.5961 209.119 24.9212L210.006 24.2587V38.0052L209.119 37.3427C206.876 35.6677 205.395 34.8646 204.147 34.4697C202.906 34.0772 201.858 34.0735 200.403 34.0735H184.573V58.7812H202.575C204.289 58.7812 205.551 58.7778 207.298 58.0765C209.074 57.3636 211.375 55.9171 215.077 52.9456L216.158 52.0781L214.526 64.1953L214.464 64.6655L172.075 64.6655L172.599 63.8392C174.107 61.4599 174.82 60.3297 175.172 59.5029C175.498 58.7355 175.503 58.2573 175.503 57.0991V8.72125C175.503 7.56095 175.498 7.08627 175.174 6.34388C174.824 5.54175 174.113 4.45814 172.604 2.1671L172.055 1.33344L215.074 1.33344V13.1125Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M249.455 1.33344C256.102 1.33347 261.509 2.95422 265.266 5.89799C269.036 8.85233 271.097 13.1025 271.097 18.2371C271.097 22.7752 269.46 26.6093 266.46 29.4635C263.652 32.1362 259.682 33.9182 254.828 34.6504L271.88 55.8714L272.993 57.2291C273.977 58.4221 274.614 59.1683 275.313 59.896C276.246 60.8675 277.292 61.8088 279.425 63.7262L280.471 64.6655H267.558L244.114 35.0519H236.793V57.1879C236.793 58.3928 236.8 58.8627 237.211 59.5948C237.664 60.4021 238.587 61.4827 240.555 63.7758L241.318 64.6655H224.295L224.82 63.8392C226.327 61.4599 227.04 60.3297 227.392 59.5029C227.718 58.7354 227.723 58.2574 227.723 57.0991V8.72125C227.723 7.56095 227.718 7.08627 227.394 6.34388C227.044 5.54175 226.333 4.45807 224.824 2.1671L224.275 1.33344L249.455 1.33344ZM236.793 29.7013L248.278 29.7013C252.583 29.7013 255.899 28.6546 258.131 26.7449C260.352 24.8446 261.574 22.027 261.574 18.3258C261.574 14.6247 260.352 11.807 258.131 9.90676C255.899 7.99709 252.583 6.95037 248.278 6.95037L236.793 6.95037V29.7013Z" fill="white"/><path d="M319.307 35.5697L342.18 1.33344L353.413 1.33344L352.909 2.15337C351.447 4.53226 350.755 5.66221 350.413 6.48969C350.096 7.2598 350.092 7.7411 350.092 8.89981V57.2766C350.092 58.4371 350.096 58.9146 350.411 59.6593C350.751 60.4621 351.441 61.5464 352.904 63.8371L353.432 64.6655H336.431L337.163 63.7832C339.174 61.3579 340.125 60.2072 340.592 59.373C341.016 58.6159 341.021 58.1636 341.021 57.0104V14.2061L317.861 49.3827L294.789 14.2938V57.2766C294.789 58.4357 294.796 58.8945 295.171 59.6234C295.583 60.4224 296.422 61.5039 298.206 63.7959L298.883 64.6655L284.736 64.6655L285.26 63.8392C286.768 61.4599 287.481 60.3297 287.832 59.5029C288.159 58.7354 288.164 58.2574 288.164 57.0991V8.72125C288.164 7.56094 288.158 7.08627 287.834 6.34388C287.484 5.54175 286.773 4.45809 285.264 2.1671L284.715 1.33344L296.345 1.33344L319.307 35.5697Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M462.146 1.33344C471.31 1.33344 479.53 4.12535 485.465 9.50314C491.407 14.8866 495.011 22.8181 495.011 32.9989C495.011 43.1799 491.407 51.1123 485.465 56.4958C479.53 61.8734 471.31 64.6655 462.146 64.6655H437.349L437.873 63.8392C439.381 61.4599 440.094 60.3297 440.445 59.5029C440.772 58.7355 440.777 58.2574 440.777 57.0991V8.72125C440.777 7.56095 440.771 7.08627 440.447 6.34388C440.098 5.54175 439.386 4.45814 437.877 2.1671L437.328 1.33344L462.146 1.33344ZM449.846 58.87H460.698C467.229 58.87 473.374 56.7321 477.884 52.4532C482.388 48.179 485.308 41.7235 485.308 32.9989C485.308 24.2296 482.388 17.7755 477.885 13.513C473.376 9.24538 467.23 7.12792 460.698 7.12788L449.846 7.12788V58.87Z" fill="white"/><path d="M546.694 13.1125L545.756 12.2228C543.055 9.65771 541.281 8.42305 539.837 7.81785C538.413 7.22128 537.272 7.21769 535.732 7.21769L516.191 7.21769V28.1893H532.021C533.476 28.1893 534.525 28.1857 535.766 27.793C537.014 27.3982 538.494 26.5958 540.737 24.9212L541.625 24.2587V38.0052L540.737 37.3427C538.494 35.6678 537.014 34.8646 535.766 34.4697C534.525 34.077 533.476 34.0735 532.021 34.0735H516.191V58.7812H534.193C535.907 58.7812 537.169 58.7778 538.917 58.0765C540.693 57.3636 542.994 55.9175 546.696 52.9456L547.776 52.0781L546.082 64.6655L503.694 64.6655L504.218 63.8392C505.725 61.4599 506.438 60.3297 506.79 59.5029C507.116 58.7354 507.121 58.2574 507.121 57.0991V8.72125C507.121 7.56095 507.116 7.08627 506.792 6.34388C506.442 5.54177 505.732 4.45798 504.223 2.1671L503.673 1.33344L546.694 1.33344V13.1125Z" fill="white"/><path d="M571.402 2.16499C569.848 4.54437 569.114 5.67416 568.752 6.50026C568.417 7.26545 568.412 7.74154 568.412 8.89981V58.6037H585.056C586.861 58.6037 588.208 58.5998 590.017 57.8261C591.855 57.04 594.199 55.444 597.9 52.1627L599 51.1874L597.311 64.6655H555.914L556.438 63.8392C557.945 61.4599 558.659 60.3297 559.011 59.5029C559.337 58.7355 559.342 58.2573 559.342 57.0991V8.72125C559.342 7.56096 559.337 7.08627 559.013 6.34388C558.663 5.54174 557.952 4.4582 556.443 2.1671L555.894 1.33344L571.945 1.33344L571.402 2.16499Z" fill="white"/></svg></span>
+    </a>
+    <nav class="site-nav">
+      <a href="https://repos.supermodeltools.com/" class="nav-all-repos">&larr; All Repos</a>
+      <a href="/typescript-sdk/node_type/index.html">By Type</a>
+      <a href="/typescript-sdk/domain/index.html">Domains</a>
+      <a href="/typescript-sdk/language/index.html">Languages</a>
+      <a href="/typescript-sdk/tags/index.html">Tags</a>
+      <button class="search-toggle" aria-label="Search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <kbd class="search-kbd">/</kbd>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search entities..." autocomplete="off">
+      <kbd class="search-esc">Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-footer">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+<main class="entity-page" id="main-content">
+  <div class="container">
+    <div class="entity-header">
+      <div class="entity-breadcrumb">
+        <a href="/typescript-sdk/">Home</a>
+        <span class="sep">/</span>
+        <a href="/typescript-sdk/node_type/subdomain.html">Subdomain</a><span class="sep">/</span>
+        <span>CircularDependency — typescript-sdk Architecture</span>
+      </div>
+      <h1 class="entity-title">CircularDependency — typescript-sdk Architecture</h1>
+      
+
+      <div class="entity-meta">
+        <a href="/typescript-sdk/node_type/subdomain.html" class="pill pill-accent">Subdomain</a>
+        
+        <a href="/typescript-sdk/domain/analysismodels.html" class="pill pill-green">AnalysisModels</a>
+        <a href="/typescript-sdk/subdomain/circulardependency.html" class="pill pill-orange">CircularDependency</a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+      <div class="entity-summary">
+        <p>Models for representing and resolving import cycles</p>
+      </div>
+      
+    </div>
+
+    <div class="chart-panel entity-profile-panel">
+      <h3>Entity Profile</h3>
+      <div id="entity-profile-chart"></div>
+      <script type="application/json" id="entity-profile-data">{"lc":0}</script>
+    </div>
+
+    
+    <div class="visuals-panel">
+      
+
+      
+      <div class="visuals-row">
+        
+
+        
+        <div class="visuals-cell force-graph-container">
+          <h3>Relationship Graph</h3>
+          <div id="force-graph" data-center="subdomain-circulardependency"></div>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"subdomain:AnalysisModels:CircularDependency","label":"CircularDependency","type":"Subdomain","slug":"subdomain-circulardependency"},{"id":"domain:AnalysisModels","label":"AnalysisModels","type":"Domain","slug":"domain-analysismodels"}],"edges":[{"source":"subdomain:AnalysisModels:CircularDependency","target":"domain:AnalysisModels","type":"partOf"}]}</script>
+          <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Domain</h2>
+      <ul><li><a href="/typescript-sdk/domain-analysismodels.html">AnalysisModels</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="entity-section">
+      <h2>Functions</h2>
+      <ul><li><a href="/typescript-sdk/fn-affectedentrypoint-ts-affectedentrypointfromjson.html">AffectedEntryPointFromJSON()</a></li><li><a href="/typescript-sdk/fn-affectedentrypoint-ts-affectedentrypointfromjsontyped.html">AffectedEntryPointFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-affectedentrypoint-ts-affectedentrypointtojson.html">AffectedEntryPointToJSON()</a></li><li><a href="/typescript-sdk/fn-affectedfile-ts-affectedfilefromjson.html">AffectedFileFromJSON()</a></li><li><a href="/typescript-sdk/fn-affectedfile-ts-affectedfilefromjsontyped.html">AffectedFileFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-affectedfile-ts-affectedfiletojson.html">AffectedFileToJSON()</a></li><li><a href="/typescript-sdk/fn-affectedfunction-ts-affectedfunctionfromjson.html">AffectedFunctionFromJSON()</a></li><li><a href="/typescript-sdk/fn-affectedfunction-ts-affectedfunctionfromjsontyped.html">AffectedFunctionFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-affectedfunction-ts-affectedfunctiontojson.html">AffectedFunctionToJSON()</a></li><li><a href="/typescript-sdk/fn-alivecodeitem-ts-alivecodeitemfromjson.html">AliveCodeItemFromJSON()</a></li><li><a href="/typescript-sdk/fn-alivecodeitem-ts-alivecodeitemfromjsontyped.html">AliveCodeItemFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-alivecodeitem-ts-alivecodeitemtojson.html">AliveCodeItemToJSON()</a></li><li><a href="/typescript-sdk/fn-blastradius-ts-blastradiusfromjson.html">BlastRadiusFromJSON()</a></li><li><a href="/typescript-sdk/fn-blastradius-ts-blastradiusfromjsontyped.html">BlastRadiusFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-blastradius-ts-blastradiustojson.html">BlastRadiusToJSON()</a></li><li><a href="/typescript-sdk/fn-circulardependencycycle-ts-circulardependencycyclefromjson.html">CircularDependencyCycleFromJSON()</a></li><li><a href="/typescript-sdk/fn-circulardependencycycle-ts-circulardependencycyclefromjsontyped.html">CircularDependencyCycleFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-circulardependencycycle-ts-circulardependencycycletojson.html">CircularDependencyCycleToJSON()</a></li><li><a href="/typescript-sdk/fn-circulardependencymetadata-ts-circulardependencymetadatafromjson.html">CircularDependencyMetadataFromJSON()</a></li><li><a href="/typescript-sdk/fn-circulardependencymetadata-ts-circulardependencymetadatafromjsontyped.html">CircularDependencyMetadataFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-circulardependencymetadata-ts-circulardependencymetadatatojson.html">CircularDependencyMetadataToJSON()</a></li><li><a href="/typescript-sdk/fn-circulardependencyresponseasync-ts-circulardependencyresponseasyncfromjson.html">CircularDependencyResponseAsyncFromJSON()</a></li><li><a href="/typescript-sdk/fn-circulardependencyresponseasync-ts-circulardependencyresponseasyncfromjsontyped.html">CircularDependencyResponseAsyncFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-circulardependencyresponseasync-ts-circulardependencyresponseasynctojson.html">CircularDependencyResponseAsyncToJSON()</a></li><li><a href="/typescript-sdk/fn-circulardependencyresponse-ts-circulardependencyresponsefromjson.html">CircularDependencyResponseFromJSON()</a></li><li><a href="/typescript-sdk/fn-circulardependencyresponse-ts-circulardependencyresponsefromjsontyped.html">CircularDependencyResponseFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-circulardependencyresponse-ts-circulardependencyresponsetojson.html">CircularDependencyResponseToJSON()</a></li><li><a href="/typescript-sdk/fn-circulardependencysummary-ts-circulardependencysummaryfromjson.html">CircularDependencySummaryFromJSON()</a></li><li><a href="/typescript-sdk/fn-circulardependencysummary-ts-circulardependencysummaryfromjsontyped.html">CircularDependencySummaryFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-circulardependencysummary-ts-circulardependencysummarytojson.html">CircularDependencySummaryToJSON()</a></li><li><a href="/typescript-sdk/fn-classificationstats-ts-classificationstatsfromjson.html">ClassificationStatsFromJSON()</a></li><li><a href="/typescript-sdk/fn-classificationstats-ts-classificationstatsfromjsontyped.html">ClassificationStatsFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-classificationstats-ts-classificationstatstojson.html">ClassificationStatsToJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopeasync-ts-codegraphenvelopeasyncfromjson.html">CodeGraphEnvelopeAsyncFromJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopeasync-ts-codegraphenvelopeasyncfromjsontyped.html">CodeGraphEnvelopeAsyncFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopeasync-ts-codegraphenvelopeasynctojson.html">CodeGraphEnvelopeAsyncToJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelope-ts-codegraphenvelopefromjson.html">CodeGraphEnvelopeFromJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelope-ts-codegraphenvelopefromjsontyped.html">CodeGraphEnvelopeFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopegraph-ts-codegraphenvelopegraphfromjson.html">CodeGraphEnvelopeGraphFromJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopegraph-ts-codegraphenvelopegraphfromjsontyped.html">CodeGraphEnvelopeGraphFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopegraph-ts-codegraphenvelopegraphtojson.html">CodeGraphEnvelopeGraphToJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopemetadata-ts-codegraphenvelopemetadatafromjson.html">CodeGraphEnvelopeMetadataFromJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopemetadata-ts-codegraphenvelopemetadatafromjsontyped.html">CodeGraphEnvelopeMetadataFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopemetadata-ts-codegraphenvelopemetadatatojson.html">CodeGraphEnvelopeMetadataToJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelope-ts-codegraphenvelopetojson.html">CodeGraphEnvelopeToJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphnode-ts-codegraphnodefromjson.html">CodeGraphNodeFromJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphnode-ts-codegraphnodefromjsontyped.html">CodeGraphNodeFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-codegraphnode-ts-codegraphnodetojson.html">CodeGraphNodeToJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphrelationship-ts-codegraphrelationshipfromjson.html">CodeGraphRelationshipFromJSON()</a></li><li><a href="/typescript-sdk/fn-codegraphrelationship-ts-codegraphrelationshipfromjsontyped.html">CodeGraphRelationshipFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-codegraphrelationship-ts-codegraphrelationshiptojson.html">CodeGraphRelationshipToJSON()</a></li><li><a href="/typescript-sdk/fn-coveragebydomain-ts-coveragebydomainfromjson.html">CoverageByDomainFromJSON()</a></li><li><a href="/typescript-sdk/fn-coveragebydomain-ts-coveragebydomainfromjsontyped.html">CoverageByDomainFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-coveragebydomain-ts-coveragebydomaintojson.html">CoverageByDomainToJSON()</a></li><li><a href="/typescript-sdk/fn-coveragebyfile-ts-coveragebyfilefromjson.html">CoverageByFileFromJSON()</a></li><li><a href="/typescript-sdk/fn-coveragebyfile-ts-coveragebyfilefromjsontyped.html">CoverageByFileFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-coveragebyfile-ts-coveragebyfiletojson.html">CoverageByFileToJSON()</a></li><li><a href="/typescript-sdk/fn-criticalfile-ts-criticalfilefromjson.html">CriticalFileFromJSON()</a></li><li><a href="/typescript-sdk/fn-criticalfile-ts-criticalfilefromjsontyped.html">CriticalFileFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-criticalfile-ts-criticalfiletojson.html">CriticalFileToJSON()</a></li><li><a href="/typescript-sdk/fn-crossdomaindependency-ts-crossdomaindependencyfromjson.html">CrossDomainDependencyFromJSON()</a></li><li><a href="/typescript-sdk/fn-crossdomaindependency-ts-crossdomaindependencyfromjsontyped.html">CrossDomainDependencyFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-crossdomaindependency-ts-crossdomaindependencytojson.html">CrossDomainDependencyToJSON()</a></li><li><a href="/typescript-sdk/fn-cycleedge-ts-cycleedgefromjson.html">CycleEdgeFromJSON()</a></li><li><a href="/typescript-sdk/fn-cycleedge-ts-cycleedgefromjsontyped.html">CycleEdgeFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-cycleedge-ts-cycleedgetojson.html">CycleEdgeToJSON()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysismetadata-ts-deadcodeanalysismetadatafromjson.html">DeadCodeAnalysisMetadataFromJSON()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysismetadata-ts-deadcodeanalysismetadatafromjsontyped.html">DeadCodeAnalysisMetadataFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysismetadata-ts-deadcodeanalysismetadatatojson.html">DeadCodeAnalysisMetadataToJSON()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysisresponseasync-ts-deadcodeanalysisresponseasyncfromjson.html">DeadCodeAnalysisResponseAsyncFromJSON()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysisresponseasync-ts-deadcodeanalysisresponseasyncfromjsontyped.html">DeadCodeAnalysisResponseAsyncFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysisresponseasync-ts-deadcodeanalysisresponseasynctojson.html">DeadCodeAnalysisResponseAsyncToJSON()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysisresponse-ts-deadcodeanalysisresponsefromjson.html">DeadCodeAnalysisResponseFromJSON()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysisresponse-ts-deadcodeanalysisresponsefromjsontyped.html">DeadCodeAnalysisResponseFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysisresponse-ts-deadcodeanalysisresponsetojson.html">DeadCodeAnalysisResponseToJSON()</a></li><li><a href="/typescript-sdk/fn-deadcodecandidate-ts-deadcodecandidatefromjson.html">DeadCodeCandidateFromJSON()</a></li><li><a href="/typescript-sdk/fn-deadcodecandidate-ts-deadcodecandidatefromjsontyped.html">DeadCodeCandidateFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-deadcodecandidate-ts-deadcodecandidatetojson.html">DeadCodeCandidateToJSON()</a></li><li><a href="/typescript-sdk/fn-domainclassassignment-ts-domainclassassignmentfromjson.html">DomainClassAssignmentFromJSON()</a></li><li><a href="/typescript-sdk/fn-domainclassassignment-ts-domainclassassignmentfromjsontyped.html">DomainClassAssignmentFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-domainclassassignment-ts-domainclassassignmenttojson.html">DomainClassAssignmentToJSON()</a></li><li><a href="/typescript-sdk/fn-domainclassificationresponseasync-ts-domainclassificationresponseasyncfromjson.html">DomainClassificationResponseAsyncFromJSON()</a></li><li><a href="/typescript-sdk/fn-domainclassificationresponseasync-ts-domainclassificationresponseasyncfromjsontyped.html">DomainClassificationResponseAsyncFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-domainclassificationresponse-ts-domainclassificationresponsefromjson.html">DomainClassificationResponseFromJSON()</a></li><li><a href="/typescript-sdk/fn-domainclassificationresponse-ts-domainclassificationresponsefromjsontyped.html">DomainClassificationResponseFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-domainclassificationresponsegraph-ts-domainclassificationresponsegraphfromjson.html">DomainClassificationResponseGraphFromJSON()</a></li><li><a href="/typescript-sdk/fn-domainclassificationresponsegraph-ts-domainclassificationresponsegraphfromjsontyped.html">DomainClassificationResponseGraphFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-domainfileassignment-ts-domainfileassignmentfromjson.html">DomainFileAssignmentFromJSON()</a></li><li><a href="/typescript-sdk/fn-domainfileassignment-ts-domainfileassignmentfromjsontyped.html">DomainFileAssignmentFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-domainfileassignment-ts-domainfileassignmenttojson.html">DomainFileAssignmentToJSON()</a></li><li><a href="/typescript-sdk/fn-domainfunctionassignment-ts-domainfunctionassignmentfromjson.html">DomainFunctionAssignmentFromJSON()</a></li><li><a href="/typescript-sdk/fn-domainfunctionassignment-ts-domainfunctionassignmentfromjsontyped.html">DomainFunctionAssignmentFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-domainfunctionassignment-ts-domainfunctionassignmenttojson.html">DomainFunctionAssignmentToJSON()</a></li><li><a href="/typescript-sdk/fn-domainrelationship-ts-domainrelationshipfromjson.html">DomainRelationshipFromJSON()</a></li><li><a href="/typescript-sdk/fn-domainrelationship-ts-domainrelationshipfromjsontyped.html">DomainRelationshipFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-domainrelationship-ts-domainrelationshiptojson.html">DomainRelationshipToJSON()</a></li><li><a href="/typescript-sdk/fn-domainsummary-ts-domainsummaryfromjson.html">DomainSummaryFromJSON()</a></li><li><a href="/typescript-sdk/fn-domainsummary-ts-domainsummaryfromjsontyped.html">DomainSummaryFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-domainsummary-ts-domainsummarytojson.html">DomainSummaryToJSON()</a></li><li><a href="/typescript-sdk/fn-entrypoint-ts-entrypointfromjson.html">EntryPointFromJSON()</a></li><li><a href="/typescript-sdk/fn-entrypoint-ts-entrypointfromjsontyped.html">EntryPointFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-entrypoint-ts-entrypointtojson.html">EntryPointToJSON()</a></li><li><a href="/typescript-sdk/fn-errordetailsinner-ts-errordetailsinnerfromjson.html">ErrorDetailsInnerFromJSON()</a></li><li><a href="/typescript-sdk/fn-errordetailsinner-ts-errordetailsinnerfromjsontyped.html">ErrorDetailsInnerFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-errordetailsinner-ts-errordetailsinnertojson.html">ErrorDetailsInnerToJSON()</a></li><li><a href="/typescript-sdk/fn-functiondescription-ts-functiondescriptionfromjson.html">FunctionDescriptionFromJSON()</a></li><li><a href="/typescript-sdk/fn-functiondescription-ts-functiondescriptionfromjsontyped.html">FunctionDescriptionFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-functiondescription-ts-functiondescriptiontojson.html">FunctionDescriptionToJSON()</a></li><li><a href="/typescript-sdk/fn-impactanalysismetadata-ts-impactanalysismetadatafromjson.html">ImpactAnalysisMetadataFromJSON()</a></li><li><a href="/typescript-sdk/fn-impactanalysismetadata-ts-impactanalysismetadatafromjsontyped.html">ImpactAnalysisMetadataFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-impactanalysismetadata-ts-impactanalysismetadatatojson.html">ImpactAnalysisMetadataToJSON()</a></li><li><a href="/typescript-sdk/fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjson.html">ImpactAnalysisResponseAsyncFromJSON()</a></li><li><a href="/typescript-sdk/fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjsontyped.html">ImpactAnalysisResponseAsyncFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-impactanalysisresponseasync-ts-impactanalysisresponseasynctojson.html">ImpactAnalysisResponseAsyncToJSON()</a></li><li><a href="/typescript-sdk/fn-impactanalysisresponse-ts-impactanalysisresponsefromjson.html">ImpactAnalysisResponseFromJSON()</a></li><li><a href="/typescript-sdk/fn-impactanalysisresponse-ts-impactanalysisresponsefromjsontyped.html">ImpactAnalysisResponseFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-impactanalysisresponse-ts-impactanalysisresponsetojson.html">ImpactAnalysisResponseToJSON()</a></li><li><a href="/typescript-sdk/fn-impactglobalmetrics-ts-impactglobalmetricsfromjson.html">ImpactGlobalMetricsFromJSON()</a></li><li><a href="/typescript-sdk/fn-impactglobalmetrics-ts-impactglobalmetricsfromjsontyped.html">ImpactGlobalMetricsFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-impactglobalmetrics-ts-impactglobalmetricstojson.html">ImpactGlobalMetricsToJSON()</a></li><li><a href="/typescript-sdk/fn-impactresult-ts-impactresultfromjson.html">ImpactResultFromJSON()</a></li><li><a href="/typescript-sdk/fn-impactresult-ts-impactresultfromjsontyped.html">ImpactResultFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-impactresult-ts-impactresulttojson.html">ImpactResultToJSON()</a></li><li><a href="/typescript-sdk/fn-impacttarget-ts-impacttargetfromjson.html">ImpactTargetFromJSON()</a></li><li><a href="/typescript-sdk/fn-impacttarget-ts-impacttargetfromjsontyped.html">ImpactTargetFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-impacttarget-ts-impacttargettojson.html">ImpactTargetToJSON()</a></li><li><a href="/typescript-sdk/fn-jobstatus-ts-jobstatusfromjson.html">JobStatusFromJSON()</a></li><li><a href="/typescript-sdk/fn-jobstatus-ts-jobstatusfromjsontyped.html">JobStatusFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-jobstatus-ts-jobstatustojson.html">JobStatusToJSON()</a></li><li><a href="/typescript-sdk/fn-modelerror-ts-modelerrorfromjson.html">ModelErrorFromJSON()</a></li><li><a href="/typescript-sdk/fn-modelerror-ts-modelerrorfromjsontyped.html">ModelErrorFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-modelerror-ts-modelerrortojson.html">ModelErrorToJSON()</a></li><li><a href="/typescript-sdk/fn-nearesttestedcaller-ts-nearesttestedcallerfromjson.html">NearestTestedCallerFromJSON()</a></li><li><a href="/typescript-sdk/fn-nearesttestedcaller-ts-nearesttestedcallerfromjsontyped.html">NearestTestedCallerFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-nearesttestedcaller-ts-nearesttestedcallertojson.html">NearestTestedCallerToJSON()</a></li><li><a href="/typescript-sdk/fn-subdomainsummary-ts-subdomainsummaryfromjson.html">SubdomainSummaryFromJSON()</a></li><li><a href="/typescript-sdk/fn-subdomainsummary-ts-subdomainsummaryfromjsontyped.html">SubdomainSummaryFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-subdomainsummary-ts-subdomainsummarytojson.html">SubdomainSummaryToJSON()</a></li><li><a href="/typescript-sdk/fn-supermodelartifact-ts-supermodelartifactfromjson.html">SupermodelArtifactFromJSON()</a></li><li><a href="/typescript-sdk/fn-supermodelartifact-ts-supermodelartifactfromjsontyped.html">SupermodelArtifactFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-supermodelartifact-ts-supermodelartifacttojson.html">SupermodelArtifactToJSON()</a></li><li><a href="/typescript-sdk/fn-supermodelirasync-ts-supermodelirasyncfromjson.html">SupermodelIRAsyncFromJSON()</a></li><li><a href="/typescript-sdk/fn-supermodelirasync-ts-supermodelirasyncfromjsontyped.html">SupermodelIRAsyncFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-supermodelirasync-ts-supermodelirasynctojson.html">SupermodelIRAsyncToJSON()</a></li><li><a href="/typescript-sdk/fn-supermodelir-ts-supermodelirfromjson.html">SupermodelIRFromJSON()</a></li><li><a href="/typescript-sdk/fn-supermodelir-ts-supermodelirfromjsontyped.html">SupermodelIRFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-supermodelirgraph-ts-supermodelirgraphfromjson.html">SupermodelIRGraphFromJSON()</a></li><li><a href="/typescript-sdk/fn-supermodelirgraph-ts-supermodelirgraphfromjsontyped.html">SupermodelIRGraphFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-supermodelirgraph-ts-supermodelirgraphtojson.html">SupermodelIRGraphToJSON()</a></li><li><a href="/typescript-sdk/fn-supermodelirstats-ts-supermodelirstatsfromjson.html">SupermodelIRStatsFromJSON()</a></li><li><a href="/typescript-sdk/fn-supermodelirstats-ts-supermodelirstatsfromjsontyped.html">SupermodelIRStatsFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-supermodelirstats-ts-supermodelirstatstojson.html">SupermodelIRStatsToJSON()</a></li><li><a href="/typescript-sdk/fn-supermodelir-ts-supermodelirtojson.html">SupermodelIRToJSON()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjson.html">TestCoverageMapMetadataFromJSON()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapmetadata-ts-testcoveragemapmetadatafromjsontyped.html">TestCoverageMapMetadataFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapmetadata-ts-testcoveragemapmetadatatojson.html">TestCoverageMapMetadataToJSON()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapresponseasync-ts-testcoveragemapresponseasyncfromjson.html">TestCoverageMapResponseAsyncFromJSON()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapresponseasync-ts-testcoveragemapresponseasyncfromjsontyped.html">TestCoverageMapResponseAsyncFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapresponseasync-ts-testcoveragemapresponseasynctojson.html">TestCoverageMapResponseAsyncToJSON()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjson.html">TestCoverageMapResponseFromJSON()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapresponse-ts-testcoveragemapresponsefromjsontyped.html">TestCoverageMapResponseFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapresponse-ts-testcoveragemapresponsetojson.html">TestCoverageMapResponseToJSON()</a></li><li><a href="/typescript-sdk/fn-testfileinfo-ts-testfileinfofromjson.html">TestFileInfoFromJSON()</a></li><li><a href="/typescript-sdk/fn-testfileinfo-ts-testfileinfofromjsontyped.html">TestFileInfoFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-testfileinfo-ts-testfileinfotojson.html">TestFileInfoToJSON()</a></li><li><a href="/typescript-sdk/fn-testedfunction-ts-testedfunctionfromjson.html">TestedFunctionFromJSON()</a></li><li><a href="/typescript-sdk/fn-testedfunction-ts-testedfunctionfromjsontyped.html">TestedFunctionFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-testedfunction-ts-testedfunctiontojson.html">TestedFunctionToJSON()</a></li><li><a href="/typescript-sdk/fn-testedsibling-ts-testedsiblingfromjson.html">TestedSiblingFromJSON()</a></li><li><a href="/typescript-sdk/fn-testedsibling-ts-testedsiblingfromjsontyped.html">TestedSiblingFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-testedsibling-ts-testedsiblingtojson.html">TestedSiblingToJSON()</a></li><li><a href="/typescript-sdk/fn-unassignedfunction-ts-unassignedfunctionfromjson.html">UnassignedFunctionFromJSON()</a></li><li><a href="/typescript-sdk/fn-unassignedfunction-ts-unassignedfunctionfromjsontyped.html">UnassignedFunctionFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-unassignedfunction-ts-unassignedfunctiontojson.html">UnassignedFunctionToJSON()</a></li><li><a href="/typescript-sdk/fn-untestedfunction-ts-untestedfunctionfromjson.html">UntestedFunctionFromJSON()</a></li><li><a href="/typescript-sdk/fn-untestedfunction-ts-untestedfunctionfromjsontyped.html">UntestedFunctionFromJSONTyped()</a></li><li><a href="/typescript-sdk/fn-untestedfunction-ts-untestedfunctiontojson.html">UntestedFunctionToJSON()</a></li><li><a href="/typescript-sdk/fn-affectedentrypoint-ts-instanceofaffectedentrypoint.html">instanceOfAffectedEntryPoint()</a></li><li><a href="/typescript-sdk/fn-affectedfile-ts-instanceofaffectedfile.html">instanceOfAffectedFile()</a></li><li><a href="/typescript-sdk/fn-affectedfunction-ts-instanceofaffectedfunction.html">instanceOfAffectedFunction()</a></li><li><a href="/typescript-sdk/fn-alivecodeitem-ts-instanceofalivecodeitem.html">instanceOfAliveCodeItem()</a></li><li><a href="/typescript-sdk/fn-blastradius-ts-instanceofblastradius.html">instanceOfBlastRadius()</a></li><li><a href="/typescript-sdk/fn-circulardependencycycle-ts-instanceofcirculardependencycycle.html">instanceOfCircularDependencyCycle()</a></li><li><a href="/typescript-sdk/fn-circulardependencymetadata-ts-instanceofcirculardependencymetadata.html">instanceOfCircularDependencyMetadata()</a></li><li><a href="/typescript-sdk/fn-circulardependencyresponse-ts-instanceofcirculardependencyresponse.html">instanceOfCircularDependencyResponse()</a></li><li><a href="/typescript-sdk/fn-circulardependencyresponseasync-ts-instanceofcirculardependencyresponseasync.html">instanceOfCircularDependencyResponseAsync()</a></li><li><a href="/typescript-sdk/fn-circulardependencysummary-ts-instanceofcirculardependencysummary.html">instanceOfCircularDependencySummary()</a></li><li><a href="/typescript-sdk/fn-classificationstats-ts-instanceofclassificationstats.html">instanceOfClassificationStats()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelope-ts-instanceofcodegraphenvelope.html">instanceOfCodeGraphEnvelope()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopeasync-ts-instanceofcodegraphenvelopeasync.html">instanceOfCodeGraphEnvelopeAsync()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopegraph-ts-instanceofcodegraphenvelopegraph.html">instanceOfCodeGraphEnvelopeGraph()</a></li><li><a href="/typescript-sdk/fn-codegraphenvelopemetadata-ts-instanceofcodegraphenvelopemetadata.html">instanceOfCodeGraphEnvelopeMetadata()</a></li><li><a href="/typescript-sdk/fn-codegraphnode-ts-instanceofcodegraphnode.html">instanceOfCodeGraphNode()</a></li><li><a href="/typescript-sdk/fn-codegraphrelationship-ts-instanceofcodegraphrelationship.html">instanceOfCodeGraphRelationship()</a></li><li><a href="/typescript-sdk/fn-coveragebydomain-ts-instanceofcoveragebydomain.html">instanceOfCoverageByDomain()</a></li><li><a href="/typescript-sdk/fn-coveragebyfile-ts-instanceofcoveragebyfile.html">instanceOfCoverageByFile()</a></li><li><a href="/typescript-sdk/fn-criticalfile-ts-instanceofcriticalfile.html">instanceOfCriticalFile()</a></li><li><a href="/typescript-sdk/fn-crossdomaindependency-ts-instanceofcrossdomaindependency.html">instanceOfCrossDomainDependency()</a></li><li><a href="/typescript-sdk/fn-cycleedge-ts-instanceofcycleedge.html">instanceOfCycleEdge()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysismetadata-ts-instanceofdeadcodeanalysismetadata.html">instanceOfDeadCodeAnalysisMetadata()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysisresponse-ts-instanceofdeadcodeanalysisresponse.html">instanceOfDeadCodeAnalysisResponse()</a></li><li><a href="/typescript-sdk/fn-deadcodeanalysisresponseasync-ts-instanceofdeadcodeanalysisresponseasync.html">instanceOfDeadCodeAnalysisResponseAsync()</a></li><li><a href="/typescript-sdk/fn-deadcodecandidate-ts-instanceofdeadcodecandidate.html">instanceOfDeadCodeCandidate()</a></li><li><a href="/typescript-sdk/fn-domainclassassignment-ts-instanceofdomainclassassignment.html">instanceOfDomainClassAssignment()</a></li><li><a href="/typescript-sdk/fn-domainclassificationresponse-ts-instanceofdomainclassificationresponse.html">instanceOfDomainClassificationResponse()</a></li><li><a href="/typescript-sdk/fn-domainclassificationresponseasync-ts-instanceofdomainclassificationresponseasync.html">instanceOfDomainClassificationResponseAsync()</a></li><li><a href="/typescript-sdk/fn-domainclassificationresponsegraph-ts-instanceofdomainclassificationresponsegraph.html">instanceOfDomainClassificationResponseGraph()</a></li><li><a href="/typescript-sdk/fn-domainfileassignment-ts-instanceofdomainfileassignment.html">instanceOfDomainFileAssignment()</a></li><li><a href="/typescript-sdk/fn-domainfunctionassignment-ts-instanceofdomainfunctionassignment.html">instanceOfDomainFunctionAssignment()</a></li><li><a href="/typescript-sdk/fn-domainrelationship-ts-instanceofdomainrelationship.html">instanceOfDomainRelationship()</a></li><li><a href="/typescript-sdk/fn-domainsummary-ts-instanceofdomainsummary.html">instanceOfDomainSummary()</a></li><li><a href="/typescript-sdk/fn-entrypoint-ts-instanceofentrypoint.html">instanceOfEntryPoint()</a></li><li><a href="/typescript-sdk/fn-errordetailsinner-ts-instanceoferrordetailsinner.html">instanceOfErrorDetailsInner()</a></li><li><a href="/typescript-sdk/fn-functiondescription-ts-instanceoffunctiondescription.html">instanceOfFunctionDescription()</a></li><li><a href="/typescript-sdk/fn-impactanalysismetadata-ts-instanceofimpactanalysismetadata.html">instanceOfImpactAnalysisMetadata()</a></li><li><a href="/typescript-sdk/fn-impactanalysisresponse-ts-instanceofimpactanalysisresponse.html">instanceOfImpactAnalysisResponse()</a></li><li><a href="/typescript-sdk/fn-impactanalysisresponseasync-ts-instanceofimpactanalysisresponseasync.html">instanceOfImpactAnalysisResponseAsync()</a></li><li><a href="/typescript-sdk/fn-impactglobalmetrics-ts-instanceofimpactglobalmetrics.html">instanceOfImpactGlobalMetrics()</a></li><li><a href="/typescript-sdk/fn-impactresult-ts-instanceofimpactresult.html">instanceOfImpactResult()</a></li><li><a href="/typescript-sdk/fn-impacttarget-ts-instanceofimpacttarget.html">instanceOfImpactTarget()</a></li><li><a href="/typescript-sdk/fn-jobstatus-ts-instanceofjobstatus.html">instanceOfJobStatus()</a></li><li><a href="/typescript-sdk/fn-modelerror-ts-instanceofmodelerror.html">instanceOfModelError()</a></li><li><a href="/typescript-sdk/fn-nearesttestedcaller-ts-instanceofnearesttestedcaller.html">instanceOfNearestTestedCaller()</a></li><li><a href="/typescript-sdk/fn-subdomainsummary-ts-instanceofsubdomainsummary.html">instanceOfSubdomainSummary()</a></li><li><a href="/typescript-sdk/fn-supermodelartifact-ts-instanceofsupermodelartifact.html">instanceOfSupermodelArtifact()</a></li><li><a href="/typescript-sdk/fn-supermodelir-ts-instanceofsupermodelir.html">instanceOfSupermodelIR()</a></li><li><a href="/typescript-sdk/fn-supermodelirasync-ts-instanceofsupermodelirasync.html">instanceOfSupermodelIRAsync()</a></li><li><a href="/typescript-sdk/fn-supermodelirgraph-ts-instanceofsupermodelirgraph.html">instanceOfSupermodelIRGraph()</a></li><li><a href="/typescript-sdk/fn-supermodelirstats-ts-instanceofsupermodelirstats.html">instanceOfSupermodelIRStats()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapmetadata-ts-instanceoftestcoveragemapmetadata.html">instanceOfTestCoverageMapMetadata()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapresponse-ts-instanceoftestcoveragemapresponse.html">instanceOfTestCoverageMapResponse()</a></li><li><a href="/typescript-sdk/fn-testcoveragemapresponseasync-ts-instanceoftestcoveragemapresponseasync.html">instanceOfTestCoverageMapResponseAsync()</a></li><li><a href="/typescript-sdk/fn-testfileinfo-ts-instanceoftestfileinfo.html">instanceOfTestFileInfo()</a></li><li><a href="/typescript-sdk/fn-testedfunction-ts-instanceoftestedfunction.html">instanceOfTestedFunction()</a></li><li><a href="/typescript-sdk/fn-testedsibling-ts-instanceoftestedsibling.html">instanceOfTestedSibling()</a></li><li><a href="/typescript-sdk/fn-unassignedfunction-ts-instanceofunassignedfunction.html">instanceOfUnassignedFunction()</a></li><li><a href="/typescript-sdk/fn-untestedfunction-ts-instanceofuntestedfunction.html">instanceOfUntestedFunction()</a></li></ul>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="entity-section entity-faqs">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What is the CircularDependency subdomain?</summary>
+        <div class="faq-answer">CircularDependency is a subdomain in the typescript-sdk codebase, part of the AnalysisModels domain. Models for representing and resolving import cycles It contains 0 source files.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Which domain does CircularDependency belong to?</summary>
+        <div class="faq-answer">CircularDependency belongs to the AnalysisModels domain.</div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">What functions are in CircularDependency?</summary>
+        <div class="faq-answer">The CircularDependency subdomain contains 237 function(s): AffectedEntryPointFromJSON, AffectedEntryPointFromJSONTyped, AffectedEntryPointToJSON, AffectedFileFromJSON, AffectedFileFromJSONTyped, AffectedFileToJSON, AffectedFunctionFromJSON, AffectedFunctionFromJSONTyped, and 229 more.</div>
+      </details>
+      
+    </div>
+    
+
+    
+    <div class="cta-section">
+      <h2 class="cta-heading">Analyze Your Own Codebase</h2>
+      <p class="cta-description">Get architecture documentation, dependency graphs, and domain analysis for your codebase in minutes.</p>
+      <a href="https://dashboard.supermodeltools.com/billing/" class="cta-button" rel="noopener">Try Supermodel Free</a>
+    </div>
+    
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-credit">Generated with <a href="https://github.com/supermodeltools/arch-docs">arch-docs</a> by <a href="https://supermodeltools.com">supermodeltools</a></p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="/typescript-sdk/main.js"></script>
+</body>
+</html>
