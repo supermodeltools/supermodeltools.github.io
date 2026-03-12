@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/analysismodels.html" class="pill pill-green">AnalysisModels</a>
-        <a href="/typescript-sdk/subdomain/impactmetrics.html" class="pill pill-orange">ImpactMetrics</a>
+        <a href="/typescript-sdk/domain/codegraph.html" class="pill pill-green">CodeGraph</a>
+        <a href="/typescript-sdk/subdomain/nodes.html" class="pill pill-orange">Nodes</a>
         
         
         <span class="pill">calls 1</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisModels","slug":"domain-analysismodels"},"entity":{"name":"UntestedFunctionFromJSON","slug":"fn-untestedfunction-ts-untestedfunctionfromjson","type":"Function"},"subdomain":{"name":"ImpactMetrics","slug":"subdomain-impactmetrics"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeGraph","slug":"domain-codegraph"},"entity":{"name":"UntestedFunctionFromJSON","slug":"fn-untestedfunction-ts-untestedfunctionfromjson","type":"Function"},"subdomain":{"name":"Nodes","slug":"subdomain-nodes"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/analysismodels.html">AnalysisModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/impactmetrics.html">ImpactMetrics</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/codegraph.html">CodeGraph</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/nodes.html">Nodes</a><span class="arch-sep">&rarr;</span>
             <span>UntestedFunctionFromJSON() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,10 +959,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  e52d6856_8be7_b904_2ddd_04165c1314c1["UntestedFunctionFromJSON()"]
-  36b0166f_bba1_cca7_fbc5_e083afeccf64["UntestedFunctionFromJSONTyped()"]
-  e52d6856_8be7_b904_2ddd_04165c1314c1 -->|calls| 36b0166f_bba1_cca7_fbc5_e083afeccf64
-  style e52d6856_8be7_b904_2ddd_04165c1314c1 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  c4c599b3_b5f9_a652_f29e_4ebd6304bdfc["UntestedFunctionFromJSON()"]
+  7700a4bf_e3e2_e92b_8332_3abfdd13b8fb["UntestedFunctionFromJSONTyped()"]
+  c4c599b3_b5f9_a652_f29e_4ebd6304bdfc -->|calls| 7700a4bf_e3e2_e92b_8332_3abfdd13b8fb
+  style c4c599b3_b5f9_a652_f29e_4ebd6304bdfc fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -970,7 +970,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-untestedfunction-ts-untestedfunctionfromjson"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"e52d6856:8be7:b904:2ddd:04165c1314c1","label":"UntestedFunctionFromJSON","type":"Function","slug":"fn-untestedfunction-ts-untestedfunctionfromjson","lc":3,"lang":"typescript","cc":1},{"id":"36b0166f:bba1:cca7:fbc5:e083afeccf64","label":"UntestedFunctionFromJSONTyped","type":"Function","slug":"fn-untestedfunction-ts-untestedfunctionfromjsontyped","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:AnalysisModels","label":"AnalysisModels","type":"Domain","slug":"domain-analysismodels"},{"id":"subdomain:AnalysisModels:ImpactMetrics","label":"ImpactMetrics","type":"Subdomain","slug":"subdomain-impactmetrics"}],"edges":[{"source":"e52d6856:8be7:b904:2ddd:04165c1314c1","target":"36b0166f:bba1:cca7:fbc5:e083afeccf64","type":"calls"},{"source":"e52d6856:8be7:b904:2ddd:04165c1314c1","target":"domain:AnalysisModels","type":"belongsTo"},{"source":"e52d6856:8be7:b904:2ddd:04165c1314c1","target":"subdomain:AnalysisModels:ImpactMetrics","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"c4c599b3:b5f9:a652:f29e:4ebd6304bdfc","label":"UntestedFunctionFromJSON","type":"Function","slug":"fn-untestedfunction-ts-untestedfunctionfromjson","lc":3,"lang":"typescript","cc":1},{"id":"7700a4bf:e3e2:e92b:8332:3abfdd13b8fb","label":"UntestedFunctionFromJSONTyped","type":"Function","slug":"fn-untestedfunction-ts-untestedfunctionfromjsontyped","lc":17,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:CodeGraph","label":"CodeGraph","type":"Domain","slug":"domain-codegraph"},{"id":"subdomain:CodeGraph:Nodes","label":"Nodes","type":"Subdomain","slug":"subdomain-nodes"}],"edges":[{"source":"c4c599b3:b5f9:a652:f29e:4ebd6304bdfc","target":"7700a4bf:e3e2:e92b:8332:3abfdd13b8fb","type":"calls"},{"source":"c4c599b3:b5f9:a652:f29e:4ebd6304bdfc","target":"domain:CodeGraph","type":"belongsTo"},{"source":"c4c599b3:b5f9:a652:f29e:4ebd6304bdfc","target":"subdomain:CodeGraph:Nodes","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -994,14 +994,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-analysismodels.html">AnalysisModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-codegraph.html">CodeGraph</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-impactmetrics.html">ImpactMetrics</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-nodes.html">Nodes</a></li></ul>
     </div>
     
 

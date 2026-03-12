@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/analysismodels.html" class="pill pill-green">AnalysisModels</a>
-        <a href="/typescript-sdk/subdomain/impactmetrics.html" class="pill pill-orange">ImpactMetrics</a>
+        <a href="/typescript-sdk/domain/codegraph.html" class="pill pill-green">CodeGraph</a>
+        <a href="/typescript-sdk/subdomain/nodes.html" class="pill pill-orange">Nodes</a>
         
         
         
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisModels","slug":"domain-analysismodels"},"entity":{"name":"AffectedFileFromJSONTyped","slug":"fn-affectedfile-ts-affectedfilefromjsontyped","type":"Function"},"subdomain":{"name":"ImpactMetrics","slug":"subdomain-impactmetrics"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeGraph","slug":"domain-codegraph"},"entity":{"name":"AffectedFileFromJSONTyped","slug":"fn-affectedfile-ts-affectedfilefromjsontyped","type":"Function"},"subdomain":{"name":"Nodes","slug":"subdomain-nodes"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/analysismodels.html">AnalysisModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/impactmetrics.html">ImpactMetrics</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/codegraph.html">CodeGraph</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/nodes.html">Nodes</a><span class="arch-sep">&rarr;</span>
             <span>AffectedFileFromJSONTyped() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,10 +959,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  96e065ce_caf0_9539_fe2f_fff1ee7ebe99["AffectedFileFromJSONTyped()"]
-  2c7e3970_d77e_603b_211b_101d74472783["AffectedFileFromJSON()"]
-  2c7e3970_d77e_603b_211b_101d74472783 -->|calls| 96e065ce_caf0_9539_fe2f_fff1ee7ebe99
-  style 96e065ce_caf0_9539_fe2f_fff1ee7ebe99 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  e943a35b_7a09_da19_b4e7_b96b354c18df["AffectedFileFromJSONTyped()"]
+  a939e5f0_da7f_64bf_376e_d4c731c7e94f["AffectedFileFromJSON()"]
+  a939e5f0_da7f_64bf_376e_d4c731c7e94f -->|calls| e943a35b_7a09_da19_b4e7_b96b354c18df
+  style e943a35b_7a09_da19_b4e7_b96b354c18df fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -970,7 +970,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-affectedfile-ts-affectedfilefromjsontyped"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"96e065ce:caf0:9539:fe2f:fff1ee7ebe99","label":"AffectedFileFromJSONTyped","type":"Function","slug":"fn-affectedfile-ts-affectedfilefromjsontyped","lc":11,"lang":"typescript","cbc":1},{"id":"2c7e3970:d77e:603b:211b:101d74472783","label":"AffectedFileFromJSON","type":"Function","slug":"fn-affectedfile-ts-affectedfilefromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:AnalysisModels","label":"AnalysisModels","type":"Domain","slug":"domain-analysismodels"},{"id":"subdomain:AnalysisModels:ImpactMetrics","label":"ImpactMetrics","type":"Subdomain","slug":"subdomain-impactmetrics"}],"edges":[{"source":"2c7e3970:d77e:603b:211b:101d74472783","target":"96e065ce:caf0:9539:fe2f:fff1ee7ebe99","type":"calls"},{"source":"96e065ce:caf0:9539:fe2f:fff1ee7ebe99","target":"domain:AnalysisModels","type":"belongsTo"},{"source":"96e065ce:caf0:9539:fe2f:fff1ee7ebe99","target":"subdomain:AnalysisModels:ImpactMetrics","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"e943a35b:7a09:da19:b4e7:b96b354c18df","label":"AffectedFileFromJSONTyped","type":"Function","slug":"fn-affectedfile-ts-affectedfilefromjsontyped","lc":11,"lang":"typescript","cbc":1},{"id":"a939e5f0:da7f:64bf:376e:d4c731c7e94f","label":"AffectedFileFromJSON","type":"Function","slug":"fn-affectedfile-ts-affectedfilefromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:CodeGraph","label":"CodeGraph","type":"Domain","slug":"domain-codegraph"},{"id":"subdomain:CodeGraph:Nodes","label":"Nodes","type":"Subdomain","slug":"subdomain-nodes"}],"edges":[{"source":"a939e5f0:da7f:64bf:376e:d4c731c7e94f","target":"e943a35b:7a09:da19:b4e7:b96b354c18df","type":"calls"},{"source":"e943a35b:7a09:da19:b4e7:b96b354c18df","target":"domain:CodeGraph","type":"belongsTo"},{"source":"e943a35b:7a09:da19:b4e7:b96b354c18df","target":"subdomain:CodeGraph:Nodes","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1002,14 +1002,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-analysismodels.html">AnalysisModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-codegraph.html">CodeGraph</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-impactmetrics.html">ImpactMetrics</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-nodes.html">Nodes</a></li></ul>
     </div>
     
 

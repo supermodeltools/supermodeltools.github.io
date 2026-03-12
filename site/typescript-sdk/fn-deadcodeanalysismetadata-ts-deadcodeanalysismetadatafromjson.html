@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/analysismodels.html" class="pill pill-green">AnalysisModels</a>
-        <a href="/typescript-sdk/subdomain/deadcodemetrics.html" class="pill pill-orange">DeadCodeMetrics</a>
+        <a href="/typescript-sdk/domain/codegraph.html" class="pill pill-green">CodeGraph</a>
+        <a href="/typescript-sdk/subdomain/stats.html" class="pill pill-orange">Stats</a>
         
         
         <span class="pill">calls 1</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisModels","slug":"domain-analysismodels"},"entity":{"name":"DeadCodeAnalysisMetadataFromJSON","slug":"fn-deadcodeanalysismetadata-ts-deadcodeanalysismetadatafromjson","type":"Function"},"subdomain":{"name":"DeadCodeMetrics","slug":"subdomain-deadcodemetrics"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeGraph","slug":"domain-codegraph"},"entity":{"name":"DeadCodeAnalysisMetadataFromJSON","slug":"fn-deadcodeanalysismetadata-ts-deadcodeanalysismetadatafromjson","type":"Function"},"subdomain":{"name":"Stats","slug":"subdomain-stats"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/analysismodels.html">AnalysisModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/deadcodemetrics.html">DeadCodeMetrics</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/codegraph.html">CodeGraph</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/stats.html">Stats</a><span class="arch-sep">&rarr;</span>
             <span>DeadCodeAnalysisMetadataFromJSON() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,12 +959,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  38f7a9c1_a392_3e61_6455_622c2ae0af24["DeadCodeAnalysisMetadataFromJSON()"]
-  da74c68c_9275_3563_1173_b4c097fe7284["DeadCodeAnalysisResponseFromJSONTyped()"]
-  da74c68c_9275_3563_1173_b4c097fe7284 -->|calls| 38f7a9c1_a392_3e61_6455_622c2ae0af24
-  54b37c8a_4292_f3e0_130b_3f04671cc989["DeadCodeAnalysisMetadataFromJSONTyped()"]
-  38f7a9c1_a392_3e61_6455_622c2ae0af24 -->|calls| 54b37c8a_4292_f3e0_130b_3f04671cc989
-  style 38f7a9c1_a392_3e61_6455_622c2ae0af24 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  975820b0_f4b9_81e4_322b_c8b88be21966["DeadCodeAnalysisMetadataFromJSON()"]
+  534f4a2e_5d79_df01_e7bc_6153de1447c7["DeadCodeAnalysisResponseFromJSONTyped()"]
+  534f4a2e_5d79_df01_e7bc_6153de1447c7 -->|calls| 975820b0_f4b9_81e4_322b_c8b88be21966
+  5b63567f_f32c_94da_fdae_9287f91f5ecb["DeadCodeAnalysisMetadataFromJSONTyped()"]
+  975820b0_f4b9_81e4_322b_c8b88be21966 -->|calls| 5b63567f_f32c_94da_fdae_9287f91f5ecb
+  style 975820b0_f4b9_81e4_322b_c8b88be21966 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -972,7 +972,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-deadcodeanalysismetadata-ts-deadcodeanalysismetadatafromjson"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"38f7a9c1:a392:3e61:6455:622c2ae0af24","label":"DeadCodeAnalysisMetadataFromJSON","type":"Function","slug":"fn-deadcodeanalysismetadata-ts-deadcodeanalysismetadatafromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"54b37c8a:4292:f3e0:130b:3f04671cc989","label":"DeadCodeAnalysisMetadataFromJSONTyped","type":"Function","slug":"fn-deadcodeanalysismetadata-ts-deadcodeanalysismetadatafromjsontyped","lc":17,"lang":"typescript","cbc":1},{"id":"da74c68c:9275:3563:1173:b4c097fe7284","label":"DeadCodeAnalysisResponseFromJSONTyped","type":"Function","slug":"fn-deadcodeanalysisresponse-ts-deadcodeanalysisresponsefromjsontyped","lc":12,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:AnalysisModels","label":"AnalysisModels","type":"Domain","slug":"domain-analysismodels"},{"id":"subdomain:AnalysisModels:DeadCodeMetrics","label":"DeadCodeMetrics","type":"Subdomain","slug":"subdomain-deadcodemetrics"}],"edges":[{"source":"38f7a9c1:a392:3e61:6455:622c2ae0af24","target":"54b37c8a:4292:f3e0:130b:3f04671cc989","type":"calls"},{"source":"da74c68c:9275:3563:1173:b4c097fe7284","target":"38f7a9c1:a392:3e61:6455:622c2ae0af24","type":"calls"},{"source":"38f7a9c1:a392:3e61:6455:622c2ae0af24","target":"domain:AnalysisModels","type":"belongsTo"},{"source":"38f7a9c1:a392:3e61:6455:622c2ae0af24","target":"subdomain:AnalysisModels:DeadCodeMetrics","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"975820b0:f4b9:81e4:322b:c8b88be21966","label":"DeadCodeAnalysisMetadataFromJSON","type":"Function","slug":"fn-deadcodeanalysismetadata-ts-deadcodeanalysismetadatafromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"5b63567f:f32c:94da:fdae:9287f91f5ecb","label":"DeadCodeAnalysisMetadataFromJSONTyped","type":"Function","slug":"fn-deadcodeanalysismetadata-ts-deadcodeanalysismetadatafromjsontyped","lc":17,"lang":"typescript","cbc":1},{"id":"534f4a2e:5d79:df01:e7bc:6153de1447c7","label":"DeadCodeAnalysisResponseFromJSONTyped","type":"Function","slug":"fn-deadcodeanalysisresponse-ts-deadcodeanalysisresponsefromjsontyped","lc":12,"lang":"typescript","cc":1,"cbc":1},{"id":"domain:CodeGraph","label":"CodeGraph","type":"Domain","slug":"domain-codegraph"},{"id":"subdomain:CodeGraph:Stats","label":"Stats","type":"Subdomain","slug":"subdomain-stats"}],"edges":[{"source":"975820b0:f4b9:81e4:322b:c8b88be21966","target":"5b63567f:f32c:94da:fdae:9287f91f5ecb","type":"calls"},{"source":"534f4a2e:5d79:df01:e7bc:6153de1447c7","target":"975820b0:f4b9:81e4:322b:c8b88be21966","type":"calls"},{"source":"975820b0:f4b9:81e4:322b:c8b88be21966","target":"domain:CodeGraph","type":"belongsTo"},{"source":"975820b0:f4b9:81e4:322b:c8b88be21966","target":"subdomain:CodeGraph:Stats","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -996,14 +996,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-analysismodels.html">AnalysisModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-codegraph.html">CodeGraph</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-deadcodemetrics.html">DeadCodeMetrics</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-stats.html">Stats</a></li></ul>
     </div>
     
 

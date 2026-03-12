@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/analysismodels.html" class="pill pill-green">AnalysisModels</a>
-        <a href="/typescript-sdk/subdomain/impactmetrics.html" class="pill pill-orange">ImpactMetrics</a>
+        <a href="/typescript-sdk/domain/codegraph.html" class="pill pill-green">CodeGraph</a>
+        <a href="/typescript-sdk/subdomain/stats.html" class="pill pill-orange">Stats</a>
         
         
         
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisModels","slug":"domain-analysismodels"},"entity":{"name":"SupermodelArtifactFromJSONTyped","slug":"fn-supermodelartifact-ts-supermodelartifactfromjsontyped","type":"Function"},"subdomain":{"name":"ImpactMetrics","slug":"subdomain-impactmetrics"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeGraph","slug":"domain-codegraph"},"entity":{"name":"SupermodelArtifactFromJSONTyped","slug":"fn-supermodelartifact-ts-supermodelartifactfromjsontyped","type":"Function"},"subdomain":{"name":"Stats","slug":"subdomain-stats"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/analysismodels.html">AnalysisModels</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/impactmetrics.html">ImpactMetrics</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/codegraph.html">CodeGraph</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/stats.html">Stats</a><span class="arch-sep">&rarr;</span>
             <span>SupermodelArtifactFromJSONTyped() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -959,10 +959,10 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  a3f7f7d5_11db_33a4_c0ba_e6308819fff6["SupermodelArtifactFromJSONTyped()"]
-  f98e3ad5_f616_431f_06ff_45c34d767c92["SupermodelArtifactFromJSON()"]
-  f98e3ad5_f616_431f_06ff_45c34d767c92 -->|calls| a3f7f7d5_11db_33a4_c0ba_e6308819fff6
-  style a3f7f7d5_11db_33a4_c0ba_e6308819fff6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  165491ff_c23a_d388_8563_7a0a5f955a59["SupermodelArtifactFromJSONTyped()"]
+  4d709653_b748_6aca_abfe_80cc3091b264["SupermodelArtifactFromJSON()"]
+  4d709653_b748_6aca_abfe_80cc3091b264 -->|calls| 165491ff_c23a_d388_8563_7a0a5f955a59
+  style 165491ff_c23a_d388_8563_7a0a5f955a59 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -970,7 +970,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-supermodelartifact-ts-supermodelartifactfromjsontyped"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"a3f7f7d5:11db:33a4:c0ba:e6308819fff6","label":"SupermodelArtifactFromJSONTyped","type":"Function","slug":"fn-supermodelartifact-ts-supermodelartifactfromjsontyped","lc":12,"lang":"typescript","cbc":1},{"id":"f98e3ad5:f616:431f:06ff:45c34d767c92","label":"SupermodelArtifactFromJSON","type":"Function","slug":"fn-supermodelartifact-ts-supermodelartifactfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:AnalysisModels","label":"AnalysisModels","type":"Domain","slug":"domain-analysismodels"},{"id":"subdomain:AnalysisModels:ImpactMetrics","label":"ImpactMetrics","type":"Subdomain","slug":"subdomain-impactmetrics"}],"edges":[{"source":"f98e3ad5:f616:431f:06ff:45c34d767c92","target":"a3f7f7d5:11db:33a4:c0ba:e6308819fff6","type":"calls"},{"source":"a3f7f7d5:11db:33a4:c0ba:e6308819fff6","target":"domain:AnalysisModels","type":"belongsTo"},{"source":"a3f7f7d5:11db:33a4:c0ba:e6308819fff6","target":"subdomain:AnalysisModels:ImpactMetrics","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"165491ff:c23a:d388:8563:7a0a5f955a59","label":"SupermodelArtifactFromJSONTyped","type":"Function","slug":"fn-supermodelartifact-ts-supermodelartifactfromjsontyped","lc":12,"lang":"typescript","cbc":1},{"id":"4d709653:b748:6aca:abfe:80cc3091b264","label":"SupermodelArtifactFromJSON","type":"Function","slug":"fn-supermodelartifact-ts-supermodelartifactfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:CodeGraph","label":"CodeGraph","type":"Domain","slug":"domain-codegraph"},{"id":"subdomain:CodeGraph:Stats","label":"Stats","type":"Subdomain","slug":"subdomain-stats"}],"edges":[{"source":"4d709653:b748:6aca:abfe:80cc3091b264","target":"165491ff:c23a:d388:8563:7a0a5f955a59","type":"calls"},{"source":"165491ff:c23a:d388:8563:7a0a5f955a59","target":"domain:CodeGraph","type":"belongsTo"},{"source":"165491ff:c23a:d388:8563:7a0a5f955a59","target":"subdomain:CodeGraph:Stats","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1003,14 +1003,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-analysismodels.html">AnalysisModels</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-codegraph.html">CodeGraph</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-impactmetrics.html">ImpactMetrics</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-stats.html">Stats</a></li></ul>
     </div>
     
 
