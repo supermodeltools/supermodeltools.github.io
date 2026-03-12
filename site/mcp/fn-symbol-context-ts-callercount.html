@@ -867,7 +867,7 @@ a.pill:hover {
   <div class="container">
     <a href="/mcp/" class="site-brand">
       <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="#61B8BC"/>
       </svg>
       mcp Architecture Docs
     </a>
@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
-        <a href="/mcp/subdomain/symboldiscovery.html" class="pill pill-orange">SymbolDiscovery</a>
+        <a href="/mcp/subdomain/symbolresolver.html" class="pill pill-orange">SymbolResolver</a>
         
         
         <span class="pill">calls 1</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"callerCount","slug":"fn-symbol-context-ts-callercount","type":"Function"},"subdomain":{"name":"SymbolDiscovery","slug":"subdomain-symboldiscovery"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"callerCount","slug":"fn-symbol-context-ts-callercount","type":"Function"},"subdomain":{"name":"SymbolResolver","slug":"subdomain-symbolresolver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/symboldiscovery.html">SymbolDiscovery</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/symbolresolver.html">SymbolResolver</a><span class="arch-sep">&rarr;</span>
             <span>callerCount() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,12 +959,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  671a99a5_5913_dfb7_3f38_c725b36046d8["callerCount()"]
-  770d3b3c_b219_9995_68fa_f21fc5ba9ccb["findSymbol()"]
-  770d3b3c_b219_9995_68fa_f21fc5ba9ccb -->|calls| 671a99a5_5913_dfb7_3f38_c725b36046d8
-  6984f99c_8542_eb7a_cc81_dcca455d16b5["get()"]
-  671a99a5_5913_dfb7_3f38_c725b36046d8 -->|calls| 6984f99c_8542_eb7a_cc81_dcca455d16b5
-  style 671a99a5_5913_dfb7_3f38_c725b36046d8 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  6a3e1103_3c99_b717_a39c_4e15887d4335["callerCount()"]
+  3b421ad5_dcdc_911a_b76b_2f91ceb943dd["findSymbol()"]
+  3b421ad5_dcdc_911a_b76b_2f91ceb943dd -->|calls| 6a3e1103_3c99_b717_a39c_4e15887d4335
+  46df711f_1af0_e068_7c1d_49dad3d78475["get()"]
+  6a3e1103_3c99_b717_a39c_4e15887d4335 -->|calls| 46df711f_1af0_e068_7c1d_49dad3d78475
+  style 6a3e1103_3c99_b717_a39c_4e15887d4335 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -972,7 +972,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-symbol-context-ts-callercount"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"671a99a5:5913:dfb7:3f38:c725b36046d8","label":"callerCount","type":"Function","slug":"fn-symbol-context-ts-callercount","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"6984f99c:8542:eb7a:cc81:dcca455d16b5","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"770d3b3c:b219:9995:68fa:f21fc5ba9ccb","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:SymbolDiscovery","label":"SymbolDiscovery","type":"Subdomain","slug":"subdomain-symboldiscovery"}],"edges":[{"source":"671a99a5:5913:dfb7:3f38:c725b36046d8","target":"6984f99c:8542:eb7a:cc81:dcca455d16b5","type":"calls"},{"source":"770d3b3c:b219:9995:68fa:f21fc5ba9ccb","target":"671a99a5:5913:dfb7:3f38:c725b36046d8","type":"calls"},{"source":"671a99a5:5913:dfb7:3f38:c725b36046d8","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"671a99a5:5913:dfb7:3f38:c725b36046d8","target":"subdomain:AnalysisTools:SymbolDiscovery","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"6a3e1103:3c99:b717:a39c:4e15887d4335","label":"callerCount","type":"Function","slug":"fn-symbol-context-ts-callercount","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"46df711f:1af0:e068:7c1d:49dad3d78475","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"3b421ad5:dcdc:911a:b76b:2f91ceb943dd","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:SymbolResolver","label":"SymbolResolver","type":"Subdomain","slug":"subdomain-symbolresolver"}],"edges":[{"source":"6a3e1103:3c99:b717:a39c:4e15887d4335","target":"46df711f:1af0:e068:7c1d:49dad3d78475","type":"calls"},{"source":"3b421ad5:dcdc:911a:b76b:2f91ceb943dd","target":"6a3e1103:3c99:b717:a39c:4e15887d4335","type":"calls"},{"source":"6a3e1103:3c99:b717:a39c:4e15887d4335","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"6a3e1103:3c99:b717:a39c:4e15887d4335","target":"subdomain:AnalysisTools:SymbolResolver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1003,7 +1003,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-symboldiscovery.html">SymbolDiscovery</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-symbolresolver.html">SymbolResolver</a></li></ul>
     </div>
     
 

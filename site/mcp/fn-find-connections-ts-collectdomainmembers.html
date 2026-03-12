@@ -867,7 +867,7 @@ a.pill:hover {
   <div class="container">
     <a href="/mcp/" class="site-brand">
       <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="#61B8BC"/>
       </svg>
       mcp Architecture Docs
     </a>
@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
-        <a href="/mcp/subdomain/domaininference.html" class="pill pill-orange">DomainInference</a>
+        <a href="/mcp/subdomain/viewrenderer.html" class="pill pill-orange">ViewRenderer</a>
         
         
         <span class="pill">calls 1</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"collectDomainMembers","slug":"fn-find-connections-ts-collectdomainmembers","type":"Function"},"subdomain":{"name":"DomainInference","slug":"subdomain-domaininference"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"collectDomainMembers","slug":"fn-find-connections-ts-collectdomainmembers","type":"Function"},"subdomain":{"name":"ViewRenderer","slug":"subdomain-viewrenderer"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/domaininference.html">DomainInference</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/viewrenderer.html">ViewRenderer</a><span class="arch-sep">&rarr;</span>
             <span>collectDomainMembers() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,12 +959,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  d72df97b_631d_3934_99e5_d9d88febf16d["collectDomainMembers()"]
-  37f7bbdf_c25c_1c60_ff4d_12020e40f446["handler()"]
-  37f7bbdf_c25c_1c60_ff4d_12020e40f446 -->|calls| d72df97b_631d_3934_99e5_d9d88febf16d
-  6984f99c_8542_eb7a_cc81_dcca455d16b5["get()"]
-  d72df97b_631d_3934_99e5_d9d88febf16d -->|calls| 6984f99c_8542_eb7a_cc81_dcca455d16b5
-  style d72df97b_631d_3934_99e5_d9d88febf16d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  5352e1a4_ca74_788d_2d85_83d0cc997645["collectDomainMembers()"]
+  d2bf8299_2bf0_8bbe_84c1_7072e8a6c180["handler()"]
+  d2bf8299_2bf0_8bbe_84c1_7072e8a6c180 -->|calls| 5352e1a4_ca74_788d_2d85_83d0cc997645
+  46df711f_1af0_e068_7c1d_49dad3d78475["get()"]
+  5352e1a4_ca74_788d_2d85_83d0cc997645 -->|calls| 46df711f_1af0_e068_7c1d_49dad3d78475
+  style 5352e1a4_ca74_788d_2d85_83d0cc997645 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -972,7 +972,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-find-connections-ts-collectdomainmembers"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"d72df97b:631d:3934:99e5:d9d88febf16d","label":"collectDomainMembers","type":"Function","slug":"fn-find-connections-ts-collectdomainmembers","lc":19,"lang":"typescript","cc":1,"cbc":1},{"id":"6984f99c:8542:eb7a:cc81:dcca455d16b5","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"37f7bbdf:c25c:1c60:ff4d:12020e40f446","label":"handler","type":"Function","slug":"fn-find-connections-ts-handler","lc":95,"lang":"typescript","cc":8},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:DomainInference","label":"DomainInference","type":"Subdomain","slug":"subdomain-domaininference"}],"edges":[{"source":"d72df97b:631d:3934:99e5:d9d88febf16d","target":"6984f99c:8542:eb7a:cc81:dcca455d16b5","type":"calls"},{"source":"37f7bbdf:c25c:1c60:ff4d:12020e40f446","target":"d72df97b:631d:3934:99e5:d9d88febf16d","type":"calls"},{"source":"d72df97b:631d:3934:99e5:d9d88febf16d","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"d72df97b:631d:3934:99e5:d9d88febf16d","target":"subdomain:AnalysisTools:DomainInference","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"5352e1a4:ca74:788d:2d85:83d0cc997645","label":"collectDomainMembers","type":"Function","slug":"fn-find-connections-ts-collectdomainmembers","lc":19,"lang":"typescript","cc":1,"cbc":1},{"id":"46df711f:1af0:e068:7c1d:49dad3d78475","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"d2bf8299:2bf0:8bbe:84c1:7072e8a6c180","label":"handler","type":"Function","slug":"fn-find-connections-ts-handler","lc":95,"lang":"typescript","cc":8},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:ViewRenderer","label":"ViewRenderer","type":"Subdomain","slug":"subdomain-viewrenderer"}],"edges":[{"source":"5352e1a4:ca74:788d:2d85:83d0cc997645","target":"46df711f:1af0:e068:7c1d:49dad3d78475","type":"calls"},{"source":"d2bf8299:2bf0:8bbe:84c1:7072e8a6c180","target":"5352e1a4:ca74:788d:2d85:83d0cc997645","type":"calls"},{"source":"5352e1a4:ca74:788d:2d85:83d0cc997645","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"5352e1a4:ca74:788d:2d85:83d0cc997645","target":"subdomain:AnalysisTools:ViewRenderer","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1019,7 +1019,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-domaininference.html">DomainInference</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-viewrenderer.html">ViewRenderer</a></li></ul>
     </div>
     
 

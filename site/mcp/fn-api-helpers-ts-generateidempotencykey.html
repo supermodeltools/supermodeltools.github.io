@@ -867,7 +867,7 @@ a.pill:hover {
   <div class="container">
     <a href="/mcp/" class="site-brand">
       <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="#61B8BC"/>
       </svg>
       mcp Architecture Docs
     </a>
@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/repositoryutilities.html" class="pill pill-green">RepositoryUtilities</a>
-        <a href="/mcp/subdomain/compression.html" class="pill pill-orange">Compression</a>
+        <a href="/mcp/domain/filesystems.html" class="pill pill-green">FileSystems</a>
+        <a href="/mcp/subdomain/idempotency.html" class="pill pill-orange">Idempotency</a>
         
         
         
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"generateIdempotencyKey","slug":"fn-api-helpers-ts-generateidempotencykey","type":"Function"},"subdomain":{"name":"Compression","slug":"subdomain-compression"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"FileSystems","slug":"domain-filesystems"},"entity":{"name":"generateIdempotencyKey","slug":"fn-api-helpers-ts-generateidempotencykey","type":"Function"},"subdomain":{"name":"Idempotency","slug":"subdomain-idempotency"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/repositoryutilities.html">RepositoryUtilities</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/compression.html">Compression</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/filesystems.html">FileSystems</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/idempotency.html">Idempotency</a><span class="arch-sep">&rarr;</span>
             <span>generateIdempotencyKey() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,12 +959,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  cf3809f7_631e_61f5_b402_f654ed25f834["generateIdempotencyKey()"]
-  c22cb3c0_1305_8529_18e7_564222204acb["resolveOrFetchGraph()"]
-  c22cb3c0_1305_8529_18e7_564222204acb -->|calls| cf3809f7_631e_61f5_b402_f654ed25f834
-  c26f0bac_64d7_c799_1edb_01467b9ddf7f["precacheForDirectory()"]
-  c26f0bac_64d7_c799_1edb_01467b9ddf7f -->|calls| cf3809f7_631e_61f5_b402_f654ed25f834
-  style cf3809f7_631e_61f5_b402_f654ed25f834 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a115fcfb_a2e8_f5e0_409e_de3f9ce35106["generateIdempotencyKey()"]
+  d45be418_d14f_5298_5b3d_7287ec09cb7f["resolveOrFetchGraph()"]
+  d45be418_d14f_5298_5b3d_7287ec09cb7f -->|calls| a115fcfb_a2e8_f5e0_409e_de3f9ce35106
+  ff9cc632_21c9_73c6_878b_c29b95bfe144["precacheForDirectory()"]
+  ff9cc632_21c9_73c6_878b_c29b95bfe144 -->|calls| a115fcfb_a2e8_f5e0_409e_de3f9ce35106
+  style a115fcfb_a2e8_f5e0_409e_de3f9ce35106 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -972,7 +972,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-api-helpers-ts-generateidempotencykey"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"cf3809f7:631e:61f5:b402:f654ed25f834","label":"generateIdempotencyKey","type":"Function","slug":"fn-api-helpers-ts-generateidempotencykey","lc":37,"lang":"typescript","cbc":2},{"id":"c22cb3c0:1305:8529:18e7:564222204acb","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"c26f0bac:64d7:c799:1edb:01467b9ddf7f","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:Compression","label":"Compression","type":"Subdomain","slug":"subdomain-compression"}],"edges":[{"source":"c22cb3c0:1305:8529:18e7:564222204acb","target":"cf3809f7:631e:61f5:b402:f654ed25f834","type":"calls"},{"source":"c26f0bac:64d7:c799:1edb:01467b9ddf7f","target":"cf3809f7:631e:61f5:b402:f654ed25f834","type":"calls"},{"source":"cf3809f7:631e:61f5:b402:f654ed25f834","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"cf3809f7:631e:61f5:b402:f654ed25f834","target":"subdomain:RepositoryUtilities:Compression","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a115fcfb:a2e8:f5e0:409e:de3f9ce35106","label":"generateIdempotencyKey","type":"Function","slug":"fn-api-helpers-ts-generateidempotencykey","lc":37,"lang":"typescript","cbc":2},{"id":"d45be418:d14f:5298:5b3d:7287ec09cb7f","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"ff9cc632:21c9:73c6:878b:c29b95bfe144","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"domain:FileSystems","label":"FileSystems","type":"Domain","slug":"domain-filesystems"},{"id":"subdomain:FileSystems:Idempotency","label":"Idempotency","type":"Subdomain","slug":"subdomain-idempotency"}],"edges":[{"source":"d45be418:d14f:5298:5b3d:7287ec09cb7f","target":"a115fcfb:a2e8:f5e0:409e:de3f9ce35106","type":"calls"},{"source":"ff9cc632:21c9:73c6:878b:c29b95bfe144","target":"a115fcfb:a2e8:f5e0:409e:de3f9ce35106","type":"calls"},{"source":"a115fcfb:a2e8:f5e0:409e:de3f9ce35106","target":"domain:FileSystems","type":"belongsTo"},{"source":"a115fcfb:a2e8:f5e0:409e:de3f9ce35106","target":"subdomain:FileSystems:Idempotency","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1030,14 +1030,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-repositoryutilities.html">RepositoryUtilities</a></li></ul>
+      <ul><li><a href="/mcp/domain-filesystems.html">FileSystems</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-compression.html">Compression</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-idempotency.html">Idempotency</a></li></ul>
     </div>
     
 

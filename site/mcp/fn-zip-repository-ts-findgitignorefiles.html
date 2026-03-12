@@ -867,7 +867,7 @@ a.pill:hover {
   <div class="container">
     <a href="/mcp/" class="site-brand">
       <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="#61B8BC"/>
       </svg>
       mcp Architecture Docs
     </a>
@@ -917,8 +917,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/repositoryutilities.html" class="pill pill-green">RepositoryUtilities</a>
-        <a href="/mcp/subdomain/identitygeneration.html" class="pill pill-orange">IdentityGeneration</a>
+        <a href="/mcp/domain/filesystems.html" class="pill pill-green">FileSystems</a>
+        <a href="/mcp/subdomain/archiver.html" class="pill pill-orange">Archiver</a>
         
         
         <span class="pill">calls 1</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"findGitignoreFiles","slug":"fn-zip-repository-ts-findgitignorefiles","type":"Function"},"subdomain":{"name":"IdentityGeneration","slug":"subdomain-identitygeneration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"FileSystems","slug":"domain-filesystems"},"entity":{"name":"findGitignoreFiles","slug":"fn-zip-repository-ts-findgitignorefiles","type":"Function"},"subdomain":{"name":"Archiver","slug":"subdomain-archiver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/repositoryutilities.html">RepositoryUtilities</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/identitygeneration.html">IdentityGeneration</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/filesystems.html">FileSystems</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/archiver.html">Archiver</a><span class="arch-sep">&rarr;</span>
             <span>findGitignoreFiles() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,12 +959,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  f212deb3_e2e4_e520_4a4a_93d4134055fb["findGitignoreFiles()"]
-  8a66af1b_ed08_8575_6ab8_2aba4d2f2d65["buildIgnoreFilter()"]
-  8a66af1b_ed08_8575_6ab8_2aba4d2f2d65 -->|calls| f212deb3_e2e4_e520_4a4a_93d4134055fb
-  ba969989_4520_414f_fb6c_9a82c7a83c6c["warn()"]
-  f212deb3_e2e4_e520_4a4a_93d4134055fb -->|calls| ba969989_4520_414f_fb6c_9a82c7a83c6c
-  style f212deb3_e2e4_e520_4a4a_93d4134055fb fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  5b8b0bf1_373d_c2f3_2e43_8e0d76b9b530["findGitignoreFiles()"]
+  2f47b596_6594_01ad_ac82_fd2e1de07ab4["buildIgnoreFilter()"]
+  2f47b596_6594_01ad_ac82_fd2e1de07ab4 -->|calls| 5b8b0bf1_373d_c2f3_2e43_8e0d76b9b530
+  078f7e96_61c2_e42a_e0c7_97da6a957236["warn()"]
+  5b8b0bf1_373d_c2f3_2e43_8e0d76b9b530 -->|calls| 078f7e96_61c2_e42a_e0c7_97da6a957236
+  style 5b8b0bf1_373d_c2f3_2e43_8e0d76b9b530 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -972,7 +972,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-zip-repository-ts-findgitignorefiles"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"f212deb3:e2e4:e520:4a4a:93d4134055fb","label":"findGitignoreFiles","type":"Function","slug":"fn-zip-repository-ts-findgitignorefiles","lc":54,"lang":"typescript","cc":1,"cbc":1},{"id":"ba969989:4520:414f:fb6c:9a82c7a83c6c","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"8a66af1b:ed08:8575:6ab8:2aba4d2f2d65","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:IdentityGeneration","label":"IdentityGeneration","type":"Subdomain","slug":"subdomain-identitygeneration"}],"edges":[{"source":"f212deb3:e2e4:e520:4a4a:93d4134055fb","target":"ba969989:4520:414f:fb6c:9a82c7a83c6c","type":"calls"},{"source":"8a66af1b:ed08:8575:6ab8:2aba4d2f2d65","target":"f212deb3:e2e4:e520:4a4a:93d4134055fb","type":"calls"},{"source":"f212deb3:e2e4:e520:4a4a:93d4134055fb","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"f212deb3:e2e4:e520:4a4a:93d4134055fb","target":"subdomain:RepositoryUtilities:IdentityGeneration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"5b8b0bf1:373d:c2f3:2e43:8e0d76b9b530","label":"findGitignoreFiles","type":"Function","slug":"fn-zip-repository-ts-findgitignorefiles","lc":54,"lang":"typescript","cc":1,"cbc":1},{"id":"078f7e96:61c2:e42a:e0c7:97da6a957236","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"2f47b596:6594:01ad:ac82:fd2e1de07ab4","label":"buildIgnoreFilter","type":"Function","slug":"fn-zip-repository-ts-buildignorefilter","lc":93,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:FileSystems","label":"FileSystems","type":"Domain","slug":"domain-filesystems"},{"id":"subdomain:FileSystems:Archiver","label":"Archiver","type":"Subdomain","slug":"subdomain-archiver"}],"edges":[{"source":"5b8b0bf1:373d:c2f3:2e43:8e0d76b9b530","target":"078f7e96:61c2:e42a:e0c7:97da6a957236","type":"calls"},{"source":"2f47b596:6594:01ad:ac82:fd2e1de07ab4","target":"5b8b0bf1:373d:c2f3:2e43:8e0d76b9b530","type":"calls"},{"source":"5b8b0bf1:373d:c2f3:2e43:8e0d76b9b530","target":"domain:FileSystems","type":"belongsTo"},{"source":"5b8b0bf1:373d:c2f3:2e43:8e0d76b9b530","target":"subdomain:FileSystems:Archiver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1047,14 +1047,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-repositoryutilities.html">RepositoryUtilities</a></li></ul>
+      <ul><li><a href="/mcp/domain-filesystems.html">FileSystems</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-identitygeneration.html">IdentityGeneration</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-archiver.html">Archiver</a></li></ul>
     </div>
     
 

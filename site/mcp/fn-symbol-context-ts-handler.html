@@ -867,7 +867,7 @@ a.pill:hover {
   <div class="container">
     <a href="/mcp/" class="site-brand">
       <svg viewBox="0 0 90 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="currentColor"/>
+        <path d="M90 61.1124C75.9375 73.4694 59.8419 78 44.7554 78C29.669 78 11.8614 72.6122 0 61.1011V16.9458C11.6168 6 29.891 0 44.9887 0C62.77 0 78.8723 6.97959 89.9887 16.9458V61.1124H90ZM88.1881 38.9553C77.7923 22.8824 59.8983 15.7959 44.7554 15.7959C29.6126 15.7959 13.4515 21.9008 1.556 38.9444C12.5382 54.69 26.9 62.5085 44.7554 62.0944C67.6297 61.5639 77.6495 51.9184 88.1881 38.9553ZM44.7554 16.3475C32.4756 16.3475 22.3888 26.6879 22.2554 38.9388C34.3765 38.9162 44.7554 29.1429 44.7554 16.3475C44.7554 29.1429 55.1344 38.9162 67.2554 38.9388C67.1202 26.5216 57.1141 16.3475 44.7554 16.3475ZM44.7554 61.5639C44.7554 48.4898 34.3765 38.9613 22.2554 38.9388C22.3888 51.1897 32.4756 61.5639 44.7554 61.5639C57.0352 61.5639 67.122 51.1897 67.2554 38.9388C55.1344 38.9613 44.7554 48.4898 44.7554 61.5639Z" fill="#61B8BC"/>
       </svg>
       mcp Architecture Docs
     </a>
@@ -918,7 +918,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/analysistools.html" class="pill pill-green">AnalysisTools</a>
-        <a href="/mcp/subdomain/symboldiscovery.html" class="pill pill-orange">SymbolDiscovery</a>
+        <a href="/mcp/subdomain/symbolresolver.html" class="pill pill-orange">SymbolResolver</a>
         
         
         <span class="pill">calls 7</span>
@@ -942,11 +942,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"handler","slug":"fn-symbol-context-ts-handler","type":"Function"},"subdomain":{"name":"SymbolDiscovery","slug":"subdomain-symboldiscovery"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"AnalysisTools","slug":"domain-analysistools"},"entity":{"name":"handler","slug":"fn-symbol-context-ts-handler","type":"Function"},"subdomain":{"name":"SymbolResolver","slug":"subdomain-symbolresolver"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/analysistools.html">AnalysisTools</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/symboldiscovery.html">SymbolDiscovery</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/symbolresolver.html">SymbolResolver</a><span class="arch-sep">&rarr;</span>
             <span>handler() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -959,24 +959,24 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  aed3d758_149a_6ef3_8af5_c67ec29e3d43["handler()"]
-  425b1e6e_b8a6_3ffb_8015_bfb345baa350["setupHandlers()"]
-  425b1e6e_b8a6_3ffb_8015_bfb345baa350 -->|calls| aed3d758_149a_6ef3_8af5_c67ec29e3d43
-  2a3f22fe_02d5_c02e_be7d_77e651f2f6aa["asErrorResult()"]
-  aed3d758_149a_6ef3_8af5_c67ec29e3d43 -->|calls| 2a3f22fe_02d5_c02e_be7d_77e651f2f6aa
-  c22cb3c0_1305_8529_18e7_564222204acb["resolveOrFetchGraph()"]
-  aed3d758_149a_6ef3_8af5_c67ec29e3d43 -->|calls| c22cb3c0_1305_8529_18e7_564222204acb
-  8756034c_3ae2_bda2_bad5_843f616a864b["classifyApiError()"]
-  aed3d758_149a_6ef3_8af5_c67ec29e3d43 -->|calls| 8756034c_3ae2_bda2_bad5_843f616a864b
-  770d3b3c_b219_9995_68fa_f21fc5ba9ccb["findSymbol()"]
-  aed3d758_149a_6ef3_8af5_c67ec29e3d43 -->|calls| 770d3b3c_b219_9995_68fa_f21fc5ba9ccb
-  fdc68f47_d3e8_1c50_62ee_bc9e2bc61a73["renderBriefSymbolContext()"]
-  aed3d758_149a_6ef3_8af5_c67ec29e3d43 -->|calls| fdc68f47_d3e8_1c50_62ee_bc9e2bc61a73
-  7ab528e9_15ce_07c0_d481_43e7e9e0a4a4["renderSymbolContext()"]
-  aed3d758_149a_6ef3_8af5_c67ec29e3d43 -->|calls| 7ab528e9_15ce_07c0_d481_43e7e9e0a4a4
-  701ed9cc_601c_06ee_c215_05d22483160a["asTextContentResult()"]
-  aed3d758_149a_6ef3_8af5_c67ec29e3d43 -->|calls| 701ed9cc_601c_06ee_c215_05d22483160a
-  style aed3d758_149a_6ef3_8af5_c67ec29e3d43 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  5aee88e0_f405_86b1_5bd6_5208f86f5773["handler()"]
+  ad5322c9_1449_df38_dd7a_032f47c8d6d2["setupHandlers()"]
+  ad5322c9_1449_df38_dd7a_032f47c8d6d2 -->|calls| 5aee88e0_f405_86b1_5bd6_5208f86f5773
+  25fefa95_26a9_14d5_d1ea_a5a5b2394cd5["asErrorResult()"]
+  5aee88e0_f405_86b1_5bd6_5208f86f5773 -->|calls| 25fefa95_26a9_14d5_d1ea_a5a5b2394cd5
+  d45be418_d14f_5298_5b3d_7287ec09cb7f["resolveOrFetchGraph()"]
+  5aee88e0_f405_86b1_5bd6_5208f86f5773 -->|calls| d45be418_d14f_5298_5b3d_7287ec09cb7f
+  372e53bb_9391_a66b_be77_5183987c0141["classifyApiError()"]
+  5aee88e0_f405_86b1_5bd6_5208f86f5773 -->|calls| 372e53bb_9391_a66b_be77_5183987c0141
+  3b421ad5_dcdc_911a_b76b_2f91ceb943dd["findSymbol()"]
+  5aee88e0_f405_86b1_5bd6_5208f86f5773 -->|calls| 3b421ad5_dcdc_911a_b76b_2f91ceb943dd
+  7afef407_72e0_100d_514a_f244b9d5ec23["renderBriefSymbolContext()"]
+  5aee88e0_f405_86b1_5bd6_5208f86f5773 -->|calls| 7afef407_72e0_100d_514a_f244b9d5ec23
+  c6eba84a_0158_2c17_4793_097259bd7f76["renderSymbolContext()"]
+  5aee88e0_f405_86b1_5bd6_5208f86f5773 -->|calls| c6eba84a_0158_2c17_4793_097259bd7f76
+  0f7f9556_e58f_5289_9543_c30bce6c2326["asTextContentResult()"]
+  5aee88e0_f405_86b1_5bd6_5208f86f5773 -->|calls| 0f7f9556_e58f_5289_9543_c30bce6c2326
+  style 5aee88e0_f405_86b1_5bd6_5208f86f5773 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -984,7 +984,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-symbol-context-ts-handler"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","label":"handler","type":"Function","slug":"fn-symbol-context-ts-handler","lc":80,"lang":"typescript","cc":7,"cbc":1},{"id":"2a3f22fe:02d5:c02e:be7d:77e651f2f6aa","label":"asErrorResult","type":"Function","slug":"fn-types-ts-aserrorresult","lc":15,"lang":"typescript","cbc":8},{"id":"c22cb3c0:1305:8529:18e7:564222204acb","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"8756034c:3ae2:bda2:bad5:843f616a864b","label":"classifyApiError","type":"Function","slug":"fn-api-helpers-ts-classifyapierror","lc":133,"lang":"typescript","cbc":4},{"id":"770d3b3c:b219:9995:68fa:f21fc5ba9ccb","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"fdc68f47:d3e8:1c50:62ee:bc9e2bc61a73","label":"renderBriefSymbolContext","type":"Function","slug":"fn-symbol-context-ts-renderbriefsymbolcontext","lc":45,"lang":"typescript","cc":3,"cbc":3},{"id":"7ab528e9:15ce:07c0:d481:43e7e9e0a4a4","label":"renderSymbolContext","type":"Function","slug":"fn-symbol-context-ts-rendersymbolcontext","lc":157,"lang":"typescript","cc":4,"cbc":1},{"id":"701ed9cc:601c:06ee:c215:05d22483160a","label":"asTextContentResult","type":"Function","slug":"fn-types-ts-astextcontentresult","lc":11,"lang":"typescript","cbc":8},{"id":"425b1e6e:b8a6:3ffb:8015:bfb345baa350","label":"setupHandlers","type":"Function","slug":"fn-server-ts-setuphandlers","lc":52,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:SymbolDiscovery","label":"SymbolDiscovery","type":"Subdomain","slug":"subdomain-symboldiscovery"}],"edges":[{"source":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","target":"2a3f22fe:02d5:c02e:be7d:77e651f2f6aa","type":"calls"},{"source":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","target":"c22cb3c0:1305:8529:18e7:564222204acb","type":"calls"},{"source":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","target":"8756034c:3ae2:bda2:bad5:843f616a864b","type":"calls"},{"source":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","target":"770d3b3c:b219:9995:68fa:f21fc5ba9ccb","type":"calls"},{"source":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","target":"fdc68f47:d3e8:1c50:62ee:bc9e2bc61a73","type":"calls"},{"source":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","target":"7ab528e9:15ce:07c0:d481:43e7e9e0a4a4","type":"calls"},{"source":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","target":"701ed9cc:601c:06ee:c215:05d22483160a","type":"calls"},{"source":"425b1e6e:b8a6:3ffb:8015:bfb345baa350","target":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","type":"calls"},{"source":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"aed3d758:149a:6ef3:8af5:c67ec29e3d43","target":"subdomain:AnalysisTools:SymbolDiscovery","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"5aee88e0:f405:86b1:5bd6:5208f86f5773","label":"handler","type":"Function","slug":"fn-symbol-context-ts-handler","lc":80,"lang":"typescript","cc":7,"cbc":1},{"id":"25fefa95:26a9:14d5:d1ea:a5a5b2394cd5","label":"asErrorResult","type":"Function","slug":"fn-types-ts-aserrorresult","lc":15,"lang":"typescript","cbc":8},{"id":"d45be418:d14f:5298:5b3d:7287ec09cb7f","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"372e53bb:9391:a66b:be77:5183987c0141","label":"classifyApiError","type":"Function","slug":"fn-api-helpers-ts-classifyapierror","lc":133,"lang":"typescript","cbc":4},{"id":"3b421ad5:dcdc:911a:b76b:2f91ceb943dd","label":"findSymbol","type":"Function","slug":"fn-symbol-context-ts-findsymbol","lc":81,"lang":"typescript","cc":5,"cbc":6},{"id":"7afef407:72e0:100d:514a:f244b9d5ec23","label":"renderBriefSymbolContext","type":"Function","slug":"fn-symbol-context-ts-renderbriefsymbolcontext","lc":45,"lang":"typescript","cc":3,"cbc":3},{"id":"c6eba84a:0158:2c17:4793:097259bd7f76","label":"renderSymbolContext","type":"Function","slug":"fn-symbol-context-ts-rendersymbolcontext","lc":157,"lang":"typescript","cc":4,"cbc":1},{"id":"0f7f9556:e58f:5289:9543:c30bce6c2326","label":"asTextContentResult","type":"Function","slug":"fn-types-ts-astextcontentresult","lc":11,"lang":"typescript","cbc":8},{"id":"ad5322c9:1449:df38:dd7a:032f47c8d6d2","label":"setupHandlers","type":"Function","slug":"fn-server-ts-setuphandlers","lc":52,"lang":"typescript","cc":4,"cbc":1},{"id":"domain:AnalysisTools","label":"AnalysisTools","type":"Domain","slug":"domain-analysistools"},{"id":"subdomain:AnalysisTools:SymbolResolver","label":"SymbolResolver","type":"Subdomain","slug":"subdomain-symbolresolver"}],"edges":[{"source":"5aee88e0:f405:86b1:5bd6:5208f86f5773","target":"25fefa95:26a9:14d5:d1ea:a5a5b2394cd5","type":"calls"},{"source":"5aee88e0:f405:86b1:5bd6:5208f86f5773","target":"d45be418:d14f:5298:5b3d:7287ec09cb7f","type":"calls"},{"source":"5aee88e0:f405:86b1:5bd6:5208f86f5773","target":"372e53bb:9391:a66b:be77:5183987c0141","type":"calls"},{"source":"5aee88e0:f405:86b1:5bd6:5208f86f5773","target":"3b421ad5:dcdc:911a:b76b:2f91ceb943dd","type":"calls"},{"source":"5aee88e0:f405:86b1:5bd6:5208f86f5773","target":"7afef407:72e0:100d:514a:f244b9d5ec23","type":"calls"},{"source":"5aee88e0:f405:86b1:5bd6:5208f86f5773","target":"c6eba84a:0158:2c17:4793:097259bd7f76","type":"calls"},{"source":"5aee88e0:f405:86b1:5bd6:5208f86f5773","target":"0f7f9556:e58f:5289:9543:c30bce6c2326","type":"calls"},{"source":"ad5322c9:1449:df38:dd7a:032f47c8d6d2","target":"5aee88e0:f405:86b1:5bd6:5208f86f5773","type":"calls"},{"source":"5aee88e0:f405:86b1:5bd6:5208f86f5773","target":"domain:AnalysisTools","type":"belongsTo"},{"source":"5aee88e0:f405:86b1:5bd6:5208f86f5773","target":"subdomain:AnalysisTools:SymbolResolver","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1092,7 +1092,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-symboldiscovery.html">SymbolDiscovery</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-symbolresolver.html">SymbolResolver</a></li></ul>
     </div>
     
 
