@@ -916,8 +916,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/typescript-sdk/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/typescript-sdk/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/typescript-sdk/domain/codegraphstore.html" class="pill pill-green">CodeGraphStore</a>
-        <a href="/typescript-sdk/subdomain/graphnodes.html" class="pill pill-orange">GraphNodes</a>
+        <a href="/typescript-sdk/domain/graphanalysis.html" class="pill pill-green">GraphAnalysis</a>
+        <a href="/typescript-sdk/subdomain/metadata.html" class="pill pill-orange">Metadata</a>
         
         
         <span class="pill">calls 1</span>
@@ -941,11 +941,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"CodeGraphStore","slug":"domain-codegraphstore"},"entity":{"name":"ImpactAnalysisResponseAsyncFromJSONTyped","slug":"fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjsontyped","type":"Function"},"subdomain":{"name":"GraphNodes","slug":"subdomain-graphnodes"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphAnalysis","slug":"domain-graphanalysis"},"entity":{"name":"ImpactAnalysisResponseAsyncFromJSONTyped","slug":"fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjsontyped","type":"Function"},"subdomain":{"name":"Metadata","slug":"subdomain-metadata"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/typescript-sdk/codegraphstore.html">CodeGraphStore</a><span class="arch-sep">&rarr;</span>
-            <a href="/typescript-sdk/graphnodes.html">GraphNodes</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/graphanalysis.html">GraphAnalysis</a><span class="arch-sep">&rarr;</span>
+            <a href="/typescript-sdk/metadata.html">Metadata</a><span class="arch-sep">&rarr;</span>
             <span>ImpactAnalysisResponseAsyncFromJSONTyped() — typescript-sdk Function Reference</span>
           </div>
         </noscript>
@@ -958,12 +958,12 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  cbddf6e7_edc9_9416_f786_dae4296e368b["ImpactAnalysisResponseAsyncFromJSONTyped()"]
-  576a9132_81b2_e9eb_ea16_655e974aa2ca["ImpactAnalysisResponseAsyncFromJSON()"]
-  576a9132_81b2_e9eb_ea16_655e974aa2ca -->|calls| cbddf6e7_edc9_9416_f786_dae4296e368b
-  3a806b99_1dac_f029_7973_9ce0a9ea4472["ImpactAnalysisResponseFromJSON()"]
-  cbddf6e7_edc9_9416_f786_dae4296e368b -->|calls| 3a806b99_1dac_f029_7973_9ce0a9ea4472
-  style cbddf6e7_edc9_9416_f786_dae4296e368b fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  a53f7476_5b61_bbc8_359f_c41917820d2d["ImpactAnalysisResponseAsyncFromJSONTyped()"]
+  47391e44_2817_b88d_c325_3ae93f01fe9c["ImpactAnalysisResponseAsyncFromJSON()"]
+  47391e44_2817_b88d_c325_3ae93f01fe9c -->|calls| a53f7476_5b61_bbc8_359f_c41917820d2d
+  9739fd07_17d6_7529_3869_002f748734b8["ImpactAnalysisResponseFromJSON()"]
+  a53f7476_5b61_bbc8_359f_c41917820d2d -->|calls| 9739fd07_17d6_7529_3869_002f748734b8
+  style a53f7476_5b61_bbc8_359f_c41917820d2d fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -971,7 +971,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjsontyped"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"cbddf6e7:edc9:9416:f786:dae4296e368b","label":"ImpactAnalysisResponseAsyncFromJSONTyped","type":"Function","slug":"fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjsontyped","lc":13,"lang":"typescript","cc":1,"cbc":1},{"id":"3a806b99:1dac:f029:7973:9ce0a9ea4472","label":"ImpactAnalysisResponseFromJSON","type":"Function","slug":"fn-impactanalysisresponse-ts-impactanalysisresponsefromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"576a9132:81b2:e9eb:ea16:655e974aa2ca","label":"ImpactAnalysisResponseAsyncFromJSON","type":"Function","slug":"fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:CodeGraphStore","label":"CodeGraphStore","type":"Domain","slug":"domain-codegraphstore"},{"id":"subdomain:CodeGraphStore:GraphNodes","label":"GraphNodes","type":"Subdomain","slug":"subdomain-graphnodes"}],"edges":[{"source":"cbddf6e7:edc9:9416:f786:dae4296e368b","target":"3a806b99:1dac:f029:7973:9ce0a9ea4472","type":"calls"},{"source":"576a9132:81b2:e9eb:ea16:655e974aa2ca","target":"cbddf6e7:edc9:9416:f786:dae4296e368b","type":"calls"},{"source":"cbddf6e7:edc9:9416:f786:dae4296e368b","target":"domain:CodeGraphStore","type":"belongsTo"},{"source":"cbddf6e7:edc9:9416:f786:dae4296e368b","target":"subdomain:CodeGraphStore:GraphNodes","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"a53f7476:5b61:bbc8:359f:c41917820d2d","label":"ImpactAnalysisResponseAsyncFromJSONTyped","type":"Function","slug":"fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjsontyped","lc":13,"lang":"typescript","cc":1,"cbc":1},{"id":"9739fd07:17d6:7529:3869:002f748734b8","label":"ImpactAnalysisResponseFromJSON","type":"Function","slug":"fn-impactanalysisresponse-ts-impactanalysisresponsefromjson","lc":3,"lang":"typescript","cc":1,"cbc":1},{"id":"47391e44:2817:b88d:c325:3ae93f01fe9c","label":"ImpactAnalysisResponseAsyncFromJSON","type":"Function","slug":"fn-impactanalysisresponseasync-ts-impactanalysisresponseasyncfromjson","lc":3,"lang":"typescript","cc":1},{"id":"domain:GraphAnalysis","label":"GraphAnalysis","type":"Domain","slug":"domain-graphanalysis"},{"id":"subdomain:GraphAnalysis:Metadata","label":"Metadata","type":"Subdomain","slug":"subdomain-metadata"}],"edges":[{"source":"a53f7476:5b61:bbc8:359f:c41917820d2d","target":"9739fd07:17d6:7529:3869:002f748734b8","type":"calls"},{"source":"47391e44:2817:b88d:c325:3ae93f01fe9c","target":"a53f7476:5b61:bbc8:359f:c41917820d2d","type":"calls"},{"source":"a53f7476:5b61:bbc8:359f:c41917820d2d","target":"domain:GraphAnalysis","type":"belongsTo"},{"source":"a53f7476:5b61:bbc8:359f:c41917820d2d","target":"subdomain:GraphAnalysis:Metadata","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1005,14 +1005,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/typescript-sdk/domain-codegraphstore.html">CodeGraphStore</a></li></ul>
+      <ul><li><a href="/typescript-sdk/domain-graphanalysis.html">GraphAnalysis</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/typescript-sdk/subdomain-graphnodes.html">GraphNodes</a></li></ul>
+      <ul><li><a href="/typescript-sdk/subdomain-metadata.html">Metadata</a></li></ul>
     </div>
     
 
