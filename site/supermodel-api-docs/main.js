@@ -212,7 +212,7 @@ window.addEventListener("load", function() {
         { key: "tc", label: "Types", color: "#A98466" },
         { key: "fc", label: "Files", color: "#808080" }
       ];
-      var metrics = metricDefs.filter(function(d) { return ep[d.key] > 0; })
+      var metrics = metricDefs.filter(function(d) { return ep[d.key] !== undefined; })
         .map(function(d) { return { label: d.label, value: ep[d.key], color: d.color }; });
 
       // Edge types from compact map {type: count}
