@@ -915,7 +915,7 @@ a.pill:hover {
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
         <a href="/mcp/domain/graphcache.html" class="pill pill-green">GraphCache</a>
-        <a href="/mcp/subdomain/eviction.html" class="pill pill-orange">Eviction</a>
+        <a href="/mcp/subdomain/evictionpolicy.html" class="pill pill-orange">EvictionPolicy</a>
         
         
         <span class="pill">calls 2</span>
@@ -939,11 +939,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"detectRepo","slug":"fn-graph-cache-ts-detectrepo","type":"Function"},"subdomain":{"name":"Eviction","slug":"subdomain-eviction"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"GraphCache","slug":"domain-graphcache"},"entity":{"name":"detectRepo","slug":"fn-graph-cache-ts-detectrepo","type":"Function"},"subdomain":{"name":"EvictionPolicy","slug":"subdomain-evictionpolicy"}}</script>
         <noscript>
           <div class="arch-map-fallback">
             <a href="/mcp/graphcache.html">GraphCache</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/eviction.html">Eviction</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/evictionpolicy.html">EvictionPolicy</a><span class="arch-sep">&rarr;</span>
             <span>detectRepo() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -956,16 +956,16 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  e512308b_d004_63cc_2024_571537c8e2b6["detectRepo()"]
-  ceb0aa18_21a2_b038_5fea_249bfea68581["resolveOrFetchGraph()"]
-  ceb0aa18_21a2_b038_5fea_249bfea68581 -->|calls| e512308b_d004_63cc_2024_571537c8e2b6
-  480e1bfd_b440_c0ea_c7e9_056ef8e43059["precacheForDirectory()"]
-  480e1bfd_b440_c0ea_c7e9_056ef8e43059 -->|calls| e512308b_d004_63cc_2024_571537c8e2b6
-  d15f9a84_f4fe_850d_65e0_e6858d98f1b6["has()"]
-  e512308b_d004_63cc_2024_571537c8e2b6 -->|calls| d15f9a84_f4fe_850d_65e0_e6858d98f1b6
-  9a1615dd_f408_1089_7245_acb0e7c3c990["get()"]
-  e512308b_d004_63cc_2024_571537c8e2b6 -->|calls| 9a1615dd_f408_1089_7245_acb0e7c3c990
-  style e512308b_d004_63cc_2024_571537c8e2b6 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  0eb83bde_f8de_c9a1_88a7_568b9d7d88a0["detectRepo()"]
+  90913de6_e274_15ee_2a02_a376622a7fce["resolveOrFetchGraph()"]
+  90913de6_e274_15ee_2a02_a376622a7fce -->|calls| 0eb83bde_f8de_c9a1_88a7_568b9d7d88a0
+  fee076ff_fa58_95b1_a768_546404f22517["precacheForDirectory()"]
+  fee076ff_fa58_95b1_a768_546404f22517 -->|calls| 0eb83bde_f8de_c9a1_88a7_568b9d7d88a0
+  fed9a9f9_4a60_9b05_95ff_ffac073114dd["has()"]
+  0eb83bde_f8de_c9a1_88a7_568b9d7d88a0 -->|calls| fed9a9f9_4a60_9b05_95ff_ffac073114dd
+  21016dc5_9693_7a51_e4c3_0b550be7cb1b["get()"]
+  0eb83bde_f8de_c9a1_88a7_568b9d7d88a0 -->|calls| 21016dc5_9693_7a51_e4c3_0b550be7cb1b
+  style 0eb83bde_f8de_c9a1_88a7_568b9d7d88a0 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -973,7 +973,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-graph-cache-ts-detectrepo"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"e512308b:d004:63cc:2024:571537c8e2b6","label":"detectRepo","type":"Function","slug":"fn-graph-cache-ts-detectrepo","lc":75,"lang":"typescript","cc":2,"cbc":2},{"id":"d15f9a84:f4fe:850d:65e0:e6858d98f1b6","label":"has","type":"Function","slug":"fn-graph-cache-ts-has","lc":3,"lang":"typescript","cbc":8},{"id":"9a1615dd:f408:1089:7245:acb0e7c3c990","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"ceb0aa18:21a2:b038:5fea:249bfea68581","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"480e1bfd:b440:c0ea:c7e9:056ef8e43059","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:Eviction","label":"Eviction","type":"Subdomain","slug":"subdomain-eviction"}],"edges":[{"source":"e512308b:d004:63cc:2024:571537c8e2b6","target":"d15f9a84:f4fe:850d:65e0:e6858d98f1b6","type":"calls"},{"source":"e512308b:d004:63cc:2024:571537c8e2b6","target":"9a1615dd:f408:1089:7245:acb0e7c3c990","type":"calls"},{"source":"ceb0aa18:21a2:b038:5fea:249bfea68581","target":"e512308b:d004:63cc:2024:571537c8e2b6","type":"calls"},{"source":"480e1bfd:b440:c0ea:c7e9:056ef8e43059","target":"e512308b:d004:63cc:2024:571537c8e2b6","type":"calls"},{"source":"e512308b:d004:63cc:2024:571537c8e2b6","target":"domain:GraphCache","type":"belongsTo"},{"source":"e512308b:d004:63cc:2024:571537c8e2b6","target":"subdomain:GraphCache:Eviction","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"0eb83bde:f8de:c9a1:88a7:568b9d7d88a0","label":"detectRepo","type":"Function","slug":"fn-graph-cache-ts-detectrepo","lc":75,"lang":"typescript","cc":2,"cbc":2},{"id":"fed9a9f9:4a60:9b05:95ff:ffac073114dd","label":"has","type":"Function","slug":"fn-graph-cache-ts-has","lc":3,"lang":"typescript","cbc":8},{"id":"21016dc5:9693:7a51:e4c3:0b550be7cb1b","label":"get","type":"Function","slug":"fn-graph-cache-ts-get","lc":9,"lang":"typescript","cbc":20},{"id":"90913de6:e274:15ee:2a02:a376622a7fce","label":"resolveOrFetchGraph","type":"Function","slug":"fn-graph-cache-ts-resolveorfetchgraph","lc":52,"lang":"typescript","cc":7,"cbc":8},{"id":"fee076ff:fa58:95b1:a768:546404f22517","label":"precacheForDirectory","type":"Function","slug":"fn-graph-cache-ts-precachefordirectory","lc":62,"lang":"typescript","cc":11,"cbc":1},{"id":"domain:GraphCache","label":"GraphCache","type":"Domain","slug":"domain-graphcache"},{"id":"subdomain:GraphCache:EvictionPolicy","label":"EvictionPolicy","type":"Subdomain","slug":"subdomain-evictionpolicy"}],"edges":[{"source":"0eb83bde:f8de:c9a1:88a7:568b9d7d88a0","target":"fed9a9f9:4a60:9b05:95ff:ffac073114dd","type":"calls"},{"source":"0eb83bde:f8de:c9a1:88a7:568b9d7d88a0","target":"21016dc5:9693:7a51:e4c3:0b550be7cb1b","type":"calls"},{"source":"90913de6:e274:15ee:2a02:a376622a7fce","target":"0eb83bde:f8de:c9a1:88a7:568b9d7d88a0","type":"calls"},{"source":"fee076ff:fa58:95b1:a768:546404f22517","target":"0eb83bde:f8de:c9a1:88a7:568b9d7d88a0","type":"calls"},{"source":"0eb83bde:f8de:c9a1:88a7:568b9d7d88a0","target":"domain:GraphCache","type":"belongsTo"},{"source":"0eb83bde:f8de:c9a1:88a7:568b9d7d88a0","target":"subdomain:GraphCache:EvictionPolicy","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1076,7 +1076,7 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-eviction.html">Eviction</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-evictionpolicy.html">EvictionPolicy</a></li></ul>
     </div>
     
 

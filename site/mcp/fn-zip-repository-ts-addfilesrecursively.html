@@ -914,8 +914,8 @@ a.pill:hover {
       <div class="entity-meta">
         <a href="/mcp/node_type/function.html" class="pill pill-accent">Function</a>
         <a href="/mcp/language/typescript.html" class="pill pill-blue">typescript</a>
-        <a href="/mcp/domain/repositoryutils.html" class="pill pill-green">RepositoryUtils</a>
-        <a href="/mcp/subdomain/gitintegration.html" class="pill pill-orange">GitIntegration</a>
+        <a href="/mcp/domain/repositoryutilities.html" class="pill pill-green">RepositoryUtilities</a>
+        <a href="/mcp/subdomain/archiveengine.html" class="pill pill-orange">ArchiveEngine</a>
         
         
         <span class="pill">calls 4</span>
@@ -939,11 +939,11 @@ a.pill:hover {
       
       <div class="visuals-archmap" id="arch-map-container">
         <div class="arch-map-svg"></div>
-        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtils","slug":"domain-repositoryutils"},"entity":{"name":"addFilesRecursively","slug":"fn-zip-repository-ts-addfilesrecursively","type":"Function"},"subdomain":{"name":"GitIntegration","slug":"subdomain-gitintegration"}}</script>
+        <script type="application/json" id="arch-map-data">{"domain":{"name":"RepositoryUtilities","slug":"domain-repositoryutilities"},"entity":{"name":"addFilesRecursively","slug":"fn-zip-repository-ts-addfilesrecursively","type":"Function"},"subdomain":{"name":"ArchiveEngine","slug":"subdomain-archiveengine"}}</script>
         <noscript>
           <div class="arch-map-fallback">
-            <a href="/mcp/repositoryutils.html">RepositoryUtils</a><span class="arch-sep">&rarr;</span>
-            <a href="/mcp/gitintegration.html">GitIntegration</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/repositoryutilities.html">RepositoryUtilities</a><span class="arch-sep">&rarr;</span>
+            <a href="/mcp/archiveengine.html">ArchiveEngine</a><span class="arch-sep">&rarr;</span>
             <span>addFilesRecursively() — mcp Function Reference</span>
           </div>
         </noscript>
@@ -956,18 +956,18 @@ a.pill:hover {
         <div class="visuals-cell mermaid-container">
           <h3>Dependency Diagram</h3>
           <pre class="mermaid">graph TD
-  27d7ba8d_57ef_9c85_1b53_9bb2fbf9637c["addFilesRecursively()"]
-  aec19fa0_f8c1_e8fc_0a45_52dbaa3948a6["zipRepository()"]
-  aec19fa0_f8c1_e8fc_0a45_52dbaa3948a6 -->|calls| 27d7ba8d_57ef_9c85_1b53_9bb2fbf9637c
-  6db5a1f2_d760_7154_6b0b_eaef4be1a066["warn()"]
-  27d7ba8d_57ef_9c85_1b53_9bb2fbf9637c -->|calls| 6db5a1f2_d760_7154_6b0b_eaef4be1a066
-  63082d30_d4d7_fb40_c865_333f18e4d4c1["error()"]
-  27d7ba8d_57ef_9c85_1b53_9bb2fbf9637c -->|calls| 63082d30_d4d7_fb40_c865_333f18e4d4c1
-  197a8d14_a0f6_f011_6a7a_016acb069f52["debug()"]
-  27d7ba8d_57ef_9c85_1b53_9bb2fbf9637c -->|calls| 197a8d14_a0f6_f011_6a7a_016acb069f52
-  5a14bee7_deec_475a_64af_952cdad5a47b["formatBytes()"]
-  27d7ba8d_57ef_9c85_1b53_9bb2fbf9637c -->|calls| 5a14bee7_deec_475a_64af_952cdad5a47b
-  style 27d7ba8d_57ef_9c85_1b53_9bb2fbf9637c fill:#6366f1,stroke:#818cf8,color:#fff</pre>
+  91f2f08a_22a7_942d_e7eb_d25ac5ddd078["addFilesRecursively()"]
+  0fdd9ffa_8067_acac_84a3_112bec98610b["zipRepository()"]
+  0fdd9ffa_8067_acac_84a3_112bec98610b -->|calls| 91f2f08a_22a7_942d_e7eb_d25ac5ddd078
+  8a989b8d_4a94_d23a_6a8b_bba659dd2fb3["warn()"]
+  91f2f08a_22a7_942d_e7eb_d25ac5ddd078 -->|calls| 8a989b8d_4a94_d23a_6a8b_bba659dd2fb3
+  5d0cd867_b4da_01f7_08d8_f0fcdb63dc2d["error()"]
+  91f2f08a_22a7_942d_e7eb_d25ac5ddd078 -->|calls| 5d0cd867_b4da_01f7_08d8_f0fcdb63dc2d
+  1e5afb4f_1208_74da_f26a_26b2d5b86928["debug()"]
+  91f2f08a_22a7_942d_e7eb_d25ac5ddd078 -->|calls| 1e5afb4f_1208_74da_f26a_26b2d5b86928
+  b5e313da_a9ec_b076_d9cb_57ec911feaa8["formatBytes()"]
+  91f2f08a_22a7_942d_e7eb_d25ac5ddd078 -->|calls| b5e313da_a9ec_b076_d9cb_57ec911feaa8
+  style 91f2f08a_22a7_942d_e7eb_d25ac5ddd078 fill:#6366f1,stroke:#818cf8,color:#fff</pre>
         </div>
         
 
@@ -975,7 +975,7 @@ a.pill:hover {
         <div class="visuals-cell force-graph-container">
           <h3>Relationship Graph</h3>
           <div id="force-graph" data-center="fn-zip-repository-ts-addfilesrecursively"></div>
-          <script type="application/json" id="graph-data">{"nodes":[{"id":"27d7ba8d:57ef:9c85:1b53:9bb2fbf9637c","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"6db5a1f2:d760:7154:6b0b:eaef4be1a066","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"63082d30:d4d7:fb40:c865:333f18e4d4c1","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"197a8d14:a0f6:f011:6a7a:016acb069f52","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"5a14bee7:deec:475a:64af:952cdad5a47b","label":"formatBytes","type":"Function","slug":"fn-zip-repository-ts-formatbytes","lc":6,"lang":"typescript","cbc":2},{"id":"aec19fa0:f8c1:e8fc:0a45:52dbaa3948a6","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"domain:RepositoryUtils","label":"RepositoryUtils","type":"Domain","slug":"domain-repositoryutils"},{"id":"subdomain:RepositoryUtils:GitIntegration","label":"GitIntegration","type":"Subdomain","slug":"subdomain-gitintegration"}],"edges":[{"source":"27d7ba8d:57ef:9c85:1b53:9bb2fbf9637c","target":"6db5a1f2:d760:7154:6b0b:eaef4be1a066","type":"calls"},{"source":"27d7ba8d:57ef:9c85:1b53:9bb2fbf9637c","target":"63082d30:d4d7:fb40:c865:333f18e4d4c1","type":"calls"},{"source":"27d7ba8d:57ef:9c85:1b53:9bb2fbf9637c","target":"197a8d14:a0f6:f011:6a7a:016acb069f52","type":"calls"},{"source":"27d7ba8d:57ef:9c85:1b53:9bb2fbf9637c","target":"5a14bee7:deec:475a:64af:952cdad5a47b","type":"calls"},{"source":"aec19fa0:f8c1:e8fc:0a45:52dbaa3948a6","target":"27d7ba8d:57ef:9c85:1b53:9bb2fbf9637c","type":"calls"},{"source":"27d7ba8d:57ef:9c85:1b53:9bb2fbf9637c","target":"domain:RepositoryUtils","type":"belongsTo"},{"source":"27d7ba8d:57ef:9c85:1b53:9bb2fbf9637c","target":"subdomain:RepositoryUtils:GitIntegration","type":"belongsTo"}]}</script>
+          <script type="application/json" id="graph-data">{"nodes":[{"id":"91f2f08a:22a7:942d:e7eb:d25ac5ddd078","label":"addFilesRecursively","type":"Function","slug":"fn-zip-repository-ts-addfilesrecursively","lc":115,"lang":"typescript","cc":4,"cbc":1},{"id":"8a989b8d:4a94:d23a:6a8b:bba659dd2fb3","label":"warn","type":"Function","slug":"fn-logger-ts-warn","lc":3,"lang":"typescript","cc":1,"cbc":10},{"id":"5d0cd867:b4da:01f7:08d8:f0fcdb63dc2d","label":"error","type":"Function","slug":"fn-logger-ts-error","lc":3,"lang":"typescript","cbc":7},{"id":"1e5afb4f:1208:74da:f26a:26b2d5b86928","label":"debug","type":"Function","slug":"fn-logger-ts-debug","lc":5,"lang":"typescript","cc":1,"cbc":10},{"id":"b5e313da:a9ec:b076:d9cb:57ec911feaa8","label":"formatBytes","type":"Function","slug":"fn-zip-repository-ts-formatbytes","lc":6,"lang":"typescript","cbc":2},{"id":"0fdd9ffa:8067:acac:84a3:112bec98610b","label":"zipRepository","type":"Function","slug":"fn-zip-repository-ts-ziprepository","lc":165,"lang":"typescript","cc":7,"cbc":2},{"id":"domain:RepositoryUtilities","label":"RepositoryUtilities","type":"Domain","slug":"domain-repositoryutilities"},{"id":"subdomain:RepositoryUtilities:ArchiveEngine","label":"ArchiveEngine","type":"Subdomain","slug":"subdomain-archiveengine"}],"edges":[{"source":"91f2f08a:22a7:942d:e7eb:d25ac5ddd078","target":"8a989b8d:4a94:d23a:6a8b:bba659dd2fb3","type":"calls"},{"source":"91f2f08a:22a7:942d:e7eb:d25ac5ddd078","target":"5d0cd867:b4da:01f7:08d8:f0fcdb63dc2d","type":"calls"},{"source":"91f2f08a:22a7:942d:e7eb:d25ac5ddd078","target":"1e5afb4f:1208:74da:f26a:26b2d5b86928","type":"calls"},{"source":"91f2f08a:22a7:942d:e7eb:d25ac5ddd078","target":"b5e313da:a9ec:b076:d9cb:57ec911feaa8","type":"calls"},{"source":"0fdd9ffa:8067:acac:84a3:112bec98610b","target":"91f2f08a:22a7:942d:e7eb:d25ac5ddd078","type":"calls"},{"source":"91f2f08a:22a7:942d:e7eb:d25ac5ddd078","target":"domain:RepositoryUtilities","type":"belongsTo"},{"source":"91f2f08a:22a7:942d:e7eb:d25ac5ddd078","target":"subdomain:RepositoryUtilities:ArchiveEngine","type":"belongsTo"}]}</script>
           <noscript><p class="text-muted">Enable JavaScript to view the interactive relationship graph.</p></noscript>
         </div>
         
@@ -1111,14 +1111,14 @@ a.pill:hover {
     
     <div class="entity-section">
       <h2>Domain</h2>
-      <ul><li><a href="/mcp/domain-repositoryutils.html">RepositoryUtils</a></li></ul>
+      <ul><li><a href="/mcp/domain-repositoryutilities.html">RepositoryUtilities</a></li></ul>
     </div>
     
 
     
     <div class="entity-section">
       <h2>Subdomains</h2>
-      <ul><li><a href="/mcp/subdomain-gitintegration.html">GitIntegration</a></li></ul>
+      <ul><li><a href="/mcp/subdomain-archiveengine.html">ArchiveEngine</a></li></ul>
     </div>
     
 
